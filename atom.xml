@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fei0810.github.io</id>
+    <title>思考问题的熊</title>
+    <updated>2019-11-07T17:10:47.645Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fei0810.github.io"/>
+    <link rel="self" href="https://fei0810.github.io/atom.xml"/>
+    <subtitle>记录所思所学所想，包括但不限于数据科学/生物信息/经济学/生产力工具等等。</subtitle>
+    <logo>https://fei0810.github.io/images/avatar.png</logo>
+    <icon>https://fei0810.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2019, 思考问题的熊</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://fei0810.github.io/post/hello-gridea</id>
+        <link href="https://fei0810.github.io/post/hello-gridea">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></content>
+    </entry>
+</feed>
