@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fei0810.github.io</id>
     <title>思考问题的熊</title>
-    <updated>2019-11-08T02:40:56.923Z</updated>
+    <updated>2019-11-08T02:49:06.786Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fei0810.github.io"/>
     <link rel="self" href="https://fei0810.github.io/atom.xml"/>
-    <subtitle>记录我的所思所学所想&lt;br&gt;包括但不限于数据科学/生物信息/经济学/生产力工具等&lt;br&gt;很高兴和你相遇</subtitle>
+    <subtitle>很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学所想&lt;br&gt;</subtitle>
     <logo>https://fei0810.github.io/images/avatar.png</logo>
     <icon>https://fei0810.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 思考问题的熊</rights>

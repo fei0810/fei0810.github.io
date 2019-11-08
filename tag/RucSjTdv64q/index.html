@@ -1,333 +1,224 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title></title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学所想<br>" />
+<link rel="shortcut icon" href="https://fei0810.github.io/favicon.ico?v=1573181333205">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
 <link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
-<script src="https://fei0810.github.io/media/script.js"></script>
+<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://fei0810.github.io/atom.xml">
 
-    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
-</head>
-<body>
-  <div class="antialiased">
-    <div class="max-w-5xl mx-auto px-6 md:px-8">
-      <div class="flex justify-between items-center mt-10">
-  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
-    <a href="https://fei0810.github.io">思考问题的熊</a>
-  </h1>
-  <div class="block lg:hidden" id="thumb-menu">
-    <button id="thumb-open" type="button" class="block">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91022805-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://fei0810.github.io">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
     </button>
-    <button id="thumb-close" type="button" class="hidden">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
-    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+    </nav>
   </div>
 </div>
-<div id="nav-list" class="lg:block hidden">
-  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
-    <div class="lg:flex -mb-px">
-      
-        
-          <a href="/" class="nav-link">首页</a>
-        
-      
-        
-          <a href="/archives" class="nav-link">归档</a>
-        
-      
-        
-          <a href="/tags" class="nav-link">标签</a>
-        
-      
-        
-          <a href="/post/about" class="nav-link">关于</a>
-        
-      
-        
-          <a href="/post/resource" class="nav-link">资料</a>
-        
-      
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 思考</h1>
+        </div>
+      </div>
     </div>
-    <div class="lg:flex">
+    <div class="main">
+      <div class="inner">
+        <div class="items">
+  
+    <div class="item Article">
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-        <div>RSS</div>
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      <a class="item-main" href="https://fei0810.github.io/post/2019-01-15-igvdebug">
+        <div class="item-meta">
+          <time datetime="2019-01-15 21:36:04">2019-01-15</time>
+        </div>
+        <h2>IGV 哐当就不能用了，我的 debug 思路</h2>
       </a>
     </div>
-  </div>
-</div>
-      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
-        <div class="w-full md:w-2/3">
-  <div class="mt-6 lg:mt-10 border-b border-gray-400">
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2019-01-15-igvdebug" class="hover:underline">IGV 哐当就不能用了，我的 debug 思路</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/RucSjTdv64q" class="hover:underline hover:text-gray-900">思考</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-01-15</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>17 min read</div>
-            </div>
-          </div>
-          
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2018-12-29-my2018">
+        <div class="item-meta">
+          <time datetime="2018-12-29 12:01:29">2018-12-29</time>
         </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2018-12-29-my2018" class="hover:underline">2018，思考问题的熊</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/ohwmjjwnK9" class="hover:underline hover:text-gray-900">日常</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-12-29</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>6 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2018-08-15-bioinfohistory" class="hover:underline">生物信息学简史</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/RucSjTdv64q" class="hover:underline hover:text-gray-900">思考</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-08-15</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>25 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2018-03-11-howtouseevernote" class="hover:underline">高效使用云笔记的 5 个问题和 10 个关键</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/ohwmjjwnK9" class="hover:underline hover:text-gray-900">日常</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-03-11</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>16 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2018-02-26-easylifeeasylearn" class="hover:underline">2018，不妨从“丢”开始</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/ohwmjjwnK9" class="hover:underline hover:text-gray-900">日常</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-02-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>6 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2017-10-15-whykeepwriting" class="hover:underline">为什么要写作</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/ohwmjjwnK9" class="hover:underline hover:text-gray-900">日常</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-10-15</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>8 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2017-05-05-HowToLearn" class="hover:underline">究竟应该如何学习</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/RXjuqtQXu" class="hover:underline hover:text-gray-900">读书</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-05-05</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>10 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2017-04-25-HowToTalk" class="hover:underline">如何发言更自信</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/RucSjTdv64q" class="hover:underline hover:text-gray-900">思考</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-04-25</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>6 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://fei0810.github.io/post/2017-04-03-HowToAskQuestion" class="hover:underline">如何让别人回答你的问题</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://fei0810.github.io/tag/ohwmjjwnK9" class="hover:underline hover:text-gray-900">日常</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-04-03</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>9 min read</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    
-  </div>
-  <div class="mt-6 flex justify-between">
-    
-    
-      <a href="https://fei0810.github.io/tag/RucSjTdv64q//page/2/" class="pb-px text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" class="fill-current text-gray-900" /></svg>
+        <h2>2018，思考问题的熊</h2>
       </a>
-    
-  </div>
-</div>
-        <div class="w-full md:w-1/3 md:pl-8">
-          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">当前标签</div>
-          <div>
-            <h1 class="text-2xl">思考</h1>
-          </div>
-        </div>
-      </div>
-      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
-</div>
     </div>
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2018-08-15-bioinfohistory">
+        <div class="item-meta">
+          <time datetime="2018-08-15 19:22:06">2018-08-15</time>
+        </div>
+        <h2>生物信息学简史</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2018-03-11-howtouseevernote">
+        <div class="item-meta">
+          <time datetime="2018-03-11 20:47:23">2018-03-11</time>
+        </div>
+        <h2>高效使用云笔记的 5 个问题和 10 个关键</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2018-02-26-easylifeeasylearn">
+        <div class="item-meta">
+          <time datetime="2018-02-26 22:11:14">2018-02-26</time>
+        </div>
+        <h2>2018，不妨从“丢”开始</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2017-10-15-whykeepwriting">
+        <div class="item-meta">
+          <time datetime="2017-10-15 13:27:49">2017-10-15</time>
+        </div>
+        <h2>为什么要写作</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2017-05-05-HowToLearn">
+        <div class="item-meta">
+          <time datetime="2017-05-05 14:07:06">2017-05-05</time>
+        </div>
+        <h2>究竟应该如何学习</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2017-04-25-HowToTalk">
+        <div class="item-meta">
+          <time datetime="2017-04-25 13:04:45">2017-04-25</time>
+        </div>
+        <h2>如何发言更自信</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+      <a class="item-main" href="https://fei0810.github.io/post/2017-04-03-HowToAskQuestion">
+        <div class="item-meta">
+          <time datetime="2017-04-03 09:01:09">2017-04-03</time>
+        </div>
+        <h2>如何让别人回答你的问题</h2>
+      </a>
+    </div>
+  
+</div>
+
+        <div class="navigation">
+  
+  
+    <a href="https://fei0810.github.io/tag/RucSjTdv64q//page/2/">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="main">
+    <a href="https://fei0810.github.io">
+      <img class="avatar" src="https://fei0810.github.io/images/avatar.png?v=1573181333205" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
+    </p>
+    <a class="footer-rss" href="https://fei0810.github.io/atom.xml">RSS</a>
   </div>
-</body>
+</footer>
+
+<script src="https://fei0810.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
 </html>

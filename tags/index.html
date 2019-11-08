@@ -1,154 +1,295 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title></title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学所想<br>" />
+<link rel="shortcut icon" href="https://fei0810.github.io/favicon.ico?v=1573181333205">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
 <link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
-<script src="https://fei0810.github.io/media/script.js"></script>
+<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://fei0810.github.io/atom.xml">
 
-    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
-</head>
-<body>
-  <div class="antialiased">
-    <div class="max-w-5xl mx-auto px-6 md:px-8">
-      <div class="flex justify-between items-center mt-10">
-  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
-    <a href="https://fei0810.github.io">思考问题的熊</a>
-  </h1>
-  <div class="block lg:hidden" id="thumb-menu">
-    <button id="thumb-open" type="button" class="block">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91022805-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://fei0810.github.io">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
     </button>
-    <button id="thumb-close" type="button" class="hidden">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
-    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+    </nav>
   </div>
 </div>
-<div id="nav-list" class="lg:block hidden">
-  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
-    <div class="lg:flex -mb-px">
-      
-        
-          <a href="/" class="nav-link">首页</a>
-        
-      
-        
-          <a href="/archives" class="nav-link">归档</a>
-        
-      
-        
-          <a href="/tags" class="nav-link">标签</a>
-        
-      
-        
-          <a href="/post/about" class="nav-link">关于</a>
-        
-      
-        
-          <a href="/post/resource" class="nav-link">资料</a>
-        
-      
-    </div>
-    <div class="lg:flex">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-        <div>RSS</div>
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-      </a>
-    </div>
-  </div>
-</div>
-      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
-        <div class="w-full">
-          <div class="mt-6 lg:mt-10 border-b border-gray-400">
-            <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-              
-                <a href="https://fei0810.github.io/tag/4K-ebk46B" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">生物信息 [17]</a>
-              
-                <a href="https://fei0810.github.io/tag/2pQFVZIoZ" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">RNA-seq [6]</a>
-              
-                <a href="https://fei0810.github.io/tag/TASd4RiPWW" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">R [22]</a>
-              
-                <a href="https://fei0810.github.io/tag/d06bjGU2D" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">效率 [6]</a>
-              
-                <a href="https://fei0810.github.io/tag/NJiuPskcxN" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">文献 [15]</a>
-              
-                <a href="https://fei0810.github.io/tag/s6gW_S2vJ" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">VScode [6]</a>
-              
-                <a href="https://fei0810.github.io/tag/ohwmjjwnK9" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">日常 [10]</a>
-              
-                <a href="https://fei0810.github.io/tag/8XAL9JW0ta" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">macOS [1]</a>
-              
-                <a href="https://fei0810.github.io/tag/suLAWOmp8B" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">数据科学 [28]</a>
-              
-                <a href="https://fei0810.github.io/tag/0phqKOZB0f" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">linux [16]</a>
-              
-                <a href="https://fei0810.github.io/tag/GoxoYoG8Sk" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">conda [1]</a>
-              
-                <a href="https://fei0810.github.io/tag/SLNgBHmmT8" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">Python [2]</a>
-              
-                <a href="https://fei0810.github.io/tag/Wp11KKEOIE" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">google [2]</a>
-              
-                <a href="https://fei0810.github.io/tag/RXjuqtQXu" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">读书 [6]</a>
-              
-                <a href="https://fei0810.github.io/tag/aXno8Hi7ZI" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">shiny [1]</a>
-              
-                <a href="https://fei0810.github.io/tag/X-fsroEL3p_" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">debug [2]</a>
-              
-                <a href="https://fei0810.github.io/tag/7wOGWr3E3LP" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">ggplot2 [1]</a>
-              
-                <a href="https://fei0810.github.io/tag/_KKsZgpAb" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">表观遗传 [3]</a>
-              
-                <a href="https://fei0810.github.io/tag/iB4lHP6kBLj" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">印象笔记 [3]</a>
-              
-                <a href="https://fei0810.github.io/tag/RucSjTdv64q" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">思考 [18]</a>
-              
-                <a href="https://fei0810.github.io/tag/smHfZhQA5" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">经济学 [16]</a>
-              
-                <a href="https://fei0810.github.io/tag/oKfRjrUIA" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">算法 [7]</a>
-              
-                <a href="https://fei0810.github.io/tag/QwXCZFZN3" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">统计 [12]</a>
-              
-                <a href="https://fei0810.github.io/tag/PlVlyzwDeEj" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">markdown [3]</a>
-              
-                <a href="https://fei0810.github.io/tag/Bc9Uq0h6b5U" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">Docker [1]</a>
-              
-                <a href="https://fei0810.github.io/tag/ww-BRInpYJ" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">机器学习 [1]</a>
-              
-                <a href="https://fei0810.github.io/tag/mTRd0HZxDba" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">考研 [21]</a>
-              
-                <a href="https://fei0810.github.io/tag/a-ZopNPeJQ2" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">英语 [4]</a>
-              
-            </div>
-          </div>
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 目前共计 28 个标签</h1>
         </div>
       </div>
-      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
-</div>
     </div>
+    <div class="main">
+      <div class="inner">
+        <div class="tags">
+          
+            <a class="tag" href="https://fei0810.github.io/tag/4K-ebk46B">
+              <div class="tag-name">生物信息</div>
+              <div class="tag-count">17</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/2pQFVZIoZ">
+              <div class="tag-name">RNA-seq</div>
+              <div class="tag-count">6</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/TASd4RiPWW">
+              <div class="tag-name">R</div>
+              <div class="tag-count">22</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/d06bjGU2D">
+              <div class="tag-name">效率</div>
+              <div class="tag-count">6</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/NJiuPskcxN">
+              <div class="tag-name">文献</div>
+              <div class="tag-count">15</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/s6gW_S2vJ">
+              <div class="tag-name">VScode</div>
+              <div class="tag-count">6</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/ohwmjjwnK9">
+              <div class="tag-name">日常</div>
+              <div class="tag-count">10</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/8XAL9JW0ta">
+              <div class="tag-name">macOS</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/suLAWOmp8B">
+              <div class="tag-name">数据科学</div>
+              <div class="tag-count">28</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/0phqKOZB0f">
+              <div class="tag-name">linux</div>
+              <div class="tag-count">16</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/GoxoYoG8Sk">
+              <div class="tag-name">conda</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/SLNgBHmmT8">
+              <div class="tag-name">Python</div>
+              <div class="tag-count">2</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/Wp11KKEOIE">
+              <div class="tag-name">google</div>
+              <div class="tag-count">2</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/RXjuqtQXu">
+              <div class="tag-name">读书</div>
+              <div class="tag-count">6</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/aXno8Hi7ZI">
+              <div class="tag-name">shiny</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/X-fsroEL3p_">
+              <div class="tag-name">debug</div>
+              <div class="tag-count">2</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/7wOGWr3E3LP">
+              <div class="tag-name">ggplot2</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/_KKsZgpAb">
+              <div class="tag-name">表观遗传</div>
+              <div class="tag-count">3</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/iB4lHP6kBLj">
+              <div class="tag-name">印象笔记</div>
+              <div class="tag-count">3</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/RucSjTdv64q">
+              <div class="tag-name">思考</div>
+              <div class="tag-count">18</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/smHfZhQA5">
+              <div class="tag-name">经济学</div>
+              <div class="tag-count">16</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/oKfRjrUIA">
+              <div class="tag-name">算法</div>
+              <div class="tag-count">7</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/QwXCZFZN3">
+              <div class="tag-name">统计</div>
+              <div class="tag-count">12</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/PlVlyzwDeEj">
+              <div class="tag-name">markdown</div>
+              <div class="tag-count">3</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/Bc9Uq0h6b5U">
+              <div class="tag-name">Docker</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/ww-BRInpYJ">
+              <div class="tag-name">机器学习</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/mTRd0HZxDba">
+              <div class="tag-name">考研</div>
+              <div class="tag-count">21</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+            <a class="tag" href="https://fei0810.github.io/tag/a-ZopNPeJQ2">
+              <div class="tag-name">英语</div>
+              <div class="tag-count">4</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="main">
+    <a href="https://fei0810.github.io">
+      <img class="avatar" src="https://fei0810.github.io/images/avatar.png?v=1573181333205" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
+    </p>
+    <a class="footer-rss" href="https://fei0810.github.io/atom.xml">RSS</a>
   </div>
-</body>
+</footer>
+
+<script src="https://fei0810.github.io/media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
 </html>
