@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://fei0810.github.io</id>
+    <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2019-11-08T02:49:06.786Z</updated>
+    <updated>2019-11-08T03:03:48.558Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://fei0810.github.io"/>
-    <link rel="self" href="https://fei0810.github.io/atom.xml"/>
+    <link rel="alternate" href="https://kaopubear.top/"/>
+    <link rel="self" href="https://kaopubear.top//atom.xml"/>
     <subtitle>很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学所想&lt;br&gt;</subtitle>
-    <logo>https://fei0810.github.io/images/avatar.png</logo>
-    <icon>https://fei0810.github.io/favicon.ico</icon>
+    <logo>https://kaopubear.top//images/avatar.png</logo>
+    <icon>https://kaopubear.top//favicon.ico</icon>
     <rights>All rights reserved 2019, 思考问题的熊</rights>
     <entry>
         <title type="html"><![CDATA[转录组表达分析知识图谱]]></title>
-        <id>https://fei0810.github.io/post/2019-10-11-rnaseqexpressionanalysis</id>
-        <link href="https://fei0810.github.io/post/2019-10-11-rnaseqexpressionanalysis">
+        <id>https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis</id>
+        <link href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis">
         </link>
         <updated>2019-10-11T11:31:43.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
@@ -27,8 +27,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[船新版本 DESeq2 处理大量样本速度显著提升]]></title>
-        <id>https://fei0810.github.io/post/2019-09-17-fasterdeseq2</id>
-        <link href="https://fei0810.github.io/post/2019-09-17-fasterdeseq2">
+        <id>https://kaopubear.top//post/2019-09-17-fasterdeseq2</id>
+        <link href="https://kaopubear.top//post/2019-09-17-fasterdeseq2">
         </link>
         <updated>2019-09-17T12:15:31.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="太长不看版本">太长不看版本</h2>
@@ -40,8 +40,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Zotero入门学习路径]]></title>
-        <id>https://fei0810.github.io/post/2019-09-11-howtolearnzotero</id>
-        <link href="https://fei0810.github.io/post/2019-09-11-howtolearnzotero">
+        <id>https://kaopubear.top//post/2019-09-11-howtolearnzotero</id>
+        <link href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
         </link>
         <updated>2019-09-11T10:17:37.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
@@ -57,8 +57,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[VScode入门学习路径]]></title>
-        <id>https://fei0810.github.io/post/2019-09-11-howtolearnvscode</id>
-        <link href="https://fei0810.github.io/post/2019-09-11-howtolearnvscode">
+        <id>https://kaopubear.top//post/2019-09-11-howtolearnvscode</id>
+        <link href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
         </link>
         <updated>2019-09-11T10:14:31.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
@@ -76,8 +76,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[当我谈工具的时候我在谈什么]]></title>
-        <id>https://fei0810.github.io/post/2019-09-10-howtolearntools</id>
-        <link href="https://fei0810.github.io/post/2019-09-10-howtolearntools">
+        <id>https://kaopubear.top//post/2019-09-10-howtolearntools</id>
+        <link href="https://kaopubear.top//post/2019-09-10-howtolearntools">
         </link>
         <updated>2019-09-10T10:08:00.000Z</updated>
         <summary type="html"><![CDATA[<h1 id="好工具那么多你知道如何学吗">好工具那么多，你知道如何学吗</h1>
@@ -93,8 +93,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[如何使用语雀快速发表自己的博客]]></title>
-        <id>https://fei0810.github.io/post/2019-09-01-howtouseyuque</id>
-        <link href="https://fei0810.github.io/post/2019-09-01-howtouseyuque">
+        <id>https://kaopubear.top//post/2019-09-01-howtouseyuque</id>
+        <link href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
         </link>
         <updated>2019-09-01T07:41:32.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="写在前面">写在前面</h2>
@@ -110,8 +110,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[biotools 综合性生物信息工具资源网站]]></title>
-        <id>https://fei0810.github.io/post/2019-08-15-biotools-web</id>
-        <link href="https://fei0810.github.io/post/2019-08-15-biotools-web">
+        <id>https://kaopubear.top//post/2019-08-15-biotools-web</id>
+        <link href="https://kaopubear.top//post/2019-08-15-biotools-web">
         </link>
         <updated>2019-08-15T07:48:30.000Z</updated>
         <summary type="html"><![CDATA[<p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
@@ -123,8 +123,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[听说你也有 emojifont 的字体使用困惑]]></title>
-        <id>https://fei0810.github.io/post/2019-08-13-emojifont-debug</id>
-        <link href="https://fei0810.github.io/post/2019-08-13-emojifont-debug">
+        <id>https://kaopubear.top//post/2019-08-13-emojifont-debug</id>
+        <link href="https://kaopubear.top//post/2019-08-13-emojifont-debug">
         </link>
         <updated>2019-08-13T07:46:25.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="问题复现">问题复现</h2>
@@ -142,8 +142,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[首届生物信息人才发展论坛背后的故事]]></title>
-        <id>https://fei0810.github.io/post/2019-08-07-thefirstbiotraineeforum</id>
-        <link href="https://fei0810.github.io/post/2019-08-07-thefirstbiotraineeforum">
+        <id>https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum</id>
+        <link href="https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum">
         </link>
         <updated>2019-08-07T05:55:17.000Z</updated>
         <summary type="html"><![CDATA[<p>第一届生物信息人才发展论坛落幕已经半月有余，算上前前后后的准备周期，在大家眼中一个「小而美」的论坛其实陆陆续续持续了一个多月的时间。</p>
@@ -155,8 +155,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[上手 MacBook Pro 基础操作和配置]]></title>
-        <id>https://fei0810.github.io/post/2019-07-30-learnusemac1</id>
-        <link href="https://fei0810.github.io/post/2019-07-30-learnusemac1">
+        <id>https://kaopubear.top//post/2019-07-30-learnusemac1</id>
+        <link href="https://kaopubear.top//post/2019-07-30-learnusemac1">
         </link>
         <updated>2019-07-30T05:46:39.000Z</updated>
         <summary type="html"><![CDATA[<p>这个月，我成为了一名Mac用户。macOS诞生于1984年，经历了35年的发展之后，其在全球操作系统市场中的份额已经不到10%。</p>
