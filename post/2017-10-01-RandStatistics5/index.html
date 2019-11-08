@@ -1,0 +1,2003 @@
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+  <script src="https://fei0810.github.io/media/prism.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://fei0810.github.io">思考问题的熊</a>
+  </h1>
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
+      
+        
+          <a href="/" class="nav-link">首页</a>
+        
+      
+        
+          <a href="/archives" class="nav-link">归档</a>
+        
+      
+        
+          <a href="/tags" class="nav-link">标签</a>
+        
+      
+        
+          <a href="/post/about" class="nav-link">关于</a>
+        
+      
+        
+          <a href="/post/resource" class="nav-link">资料</a>
+        
+      
+    </div>
+    <div class="lg:flex">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3 mt-6">
+          <h1 class="text-4xl">统计学基础与 R-5</h1>
+          
+          <div class="mt-6 lg:mt-10 post-content">
+            <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="单双样本均值分析">单双样本均值分析</h2>
+<p>根据数据组数的不同，均值比较可以分为单样本、双样本和多样本。本节首先介绍单样本和双样本。</p>
+<h3 id="假设检验一般步骤">假设检验一般步骤</h3>
+<p>谈具体的假设检验之前首先介绍假设检验的一般步骤。</p>
+<ol>
+<li><strong>确定假设</strong></li>
+</ol>
+<p><strong>原假设</strong> (null hypothesis, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>) 指需要检验的假设，只要当我们有足够的证据时才能否定。在某种意义上与原假设相反的的假设被称为<strong>备择假设</strong>（alternative hypothesis，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）。</p>
+<p>假设检验是无法给出绝对证明的，我们只能在假定原假设为真的情况下通过假设检验来判断结果是否可信。如果结果极不可能发生，则拒绝原假设，进而接受备择假设。</p>
+<p>根据接受假设和真实情况之间的关系，会有四种可能发生。</p>
+<!--more-->
+<table>
+<thead>
+<tr>
+<th></th>
+<th>真实情况<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th>真实情况<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>接受<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为真且被接受</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是真，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>被接受</td>
+</tr>
+<tr>
+<td>拒绝<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为真但是被拒绝</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是真，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>被拒绝</td>
+</tr>
+</tbody>
+</table>
+<p>其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为真但是被拒绝的错误概率称为** I 型错误**，通常用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span>表示，也称为<strong>显著性水平</strong>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为真但是接受<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的错误概率称为** II 型错误**，常用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span></span></span></span>表示。</p>
+<p>检验的<strong>功效</strong>（power）=1-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span></span></span></span>。虽然我们希望<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span></span></span></span>都可以尽可能小，但这两者往往是矛盾的，通常我们会先固定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span>在某个水平，再找合适的检验使<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05278em;">β</span></span></span></span>尽可能小。</p>
+<ol start="2">
+<li><strong>选择检验统计量</strong></li>
+</ol>
+<p><strong>检验统计量</strong>（test statistic）是用于对假设进行检验的统计量，进行检验的过程建立在这个统计量之上。</p>
+<ol start="3">
+<li><strong>决定拒绝域</strong></li>
+</ol>
+<p><strong>拒绝域</strong>是可以不接受原假设的一组数值，其分界点被称为临界点。为了求出拒绝域首先要确定假设检验的显著性水平，也就是当样本结果的不可能发生程度多大时就可以拒绝原假设。</p>
+<p><strong>单尾检验</strong>指检验的拒绝域落在可能数据集的一侧（左侧或者右侧），<strong>双尾检验</strong>的拒绝域则分布在数据集的两侧，对于检验水平是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span>的双尾检测而言，两侧分别是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\alpha/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mord">/</span><span class="mord">2</span></span></span></span>。如果备择假设的表示是“不等于”，则应该使用双尾检验。</p>
+<ol start="4">
+<li><strong>求出 p 值</strong></li>
+</ol>
+<p>p 值取决于检验统计量和拒绝域。表示得到更加极端结果的概率。</p>
+<ol start="5">
+<li>
+<p><strong>判断样本结果是否在拒绝域内</strong></p>
+</li>
+<li>
+<p><strong>做出决策</strong></p>
+</li>
+</ol>
+<h3 id="单样本-t-test">单样本 t-test</h3>
+<p>说完假设检验的基本流程之后，下面介绍和均值比较相关的假设检验，首先是<strong>单样本 t-test</strong>。</p>
+<p>在数据符合正态分布的前提下使用单样本 t-test 来比较一组样本的均值和已知（理论/总体）均值，所谓的已知均值可能来自于之前的实验数据或者理论值。根据研究问题（原假设）的不同又分为双尾（不等）和单尾检验（大于或者小于）。</p>
+<p>统计量计算公式为</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mo>−</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><mrow><mi>s</mi><mi mathvariant="normal">/</mi><msqrt><mi>n</mi></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">t=\frac{\overline{X}-\mu_0}{s/\sqrt{n}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.50061em;vertical-align:-0.9402800000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.56033em;"><span style="top:-2.30972em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="mord">/</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8002800000000001em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathdefault">n</span></span></span><span style="top:-2.76028em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,
+-10,-9.5,-14c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54c44.2,-33.3,65.8,
+-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10s173,378,173,378c0.7,0,
+35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429c69,-144,104.5,-217.7,106.5,
+-221c5.3,-9.3,12,-14,20,-14H400000v40H845.2724s-225.272,467,-225.272,467
+s-235,486,-235,486c-2.7,4.7,-9,7,-19,7c-6,0,-10,-1,-12,-3s-194,-422,-194,-422
+s-65,47,-65,47z M834 80H400000v40H845z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.23972em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9402800000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span>表示样本均值，n 表示样本量，s 是样本标准差（总体方差未知），<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>表示理论值。通过统计量 t 和自由度，我们可以计算出对应的 p 值。</p>
+<p>使用 R 进行单样本 t-test，这里借用 R 自带数据集 PlantGrowth 的 10 个对照组数据。</p>
+<pre><code class="language-r">weight &lt;- PlantGrowth$weight[PlantGrowth$group==&quot;ctrl&quot;]
+shapiro.test(weight)
+summary(weight)
+
+#	Shapiro-Wilk normality test
+#
+#data:  weight
+#W = 0.95668, p-value = 0.7475
+#
+#   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+#  4.170   4.550   5.155   5.032   5.293   6.110
+
+</code></pre>
+<p>可以发现均值大概是 5 左右，且数据符合正态分布。下面检验和理论值 7 相比的情况，原假设是等于 7，备择假设是不等于 7，所以采用双尾检验。</p>
+<pre><code class="language-r">t.test(weight,mu = 7)
+
+#	One Sample t-test
+#
+#data:  weight
+#t = -10.673, df = 9, p-value = 2.075e-06
+#alternative hypothesis: true mean is not equal to 7
+#95 percent confidence interval:
+# 4.614882 5.449118
+#sample estimates:
+#mean of x
+#    5.032
+
+</code></pre>
+<p>通过上述结果看出统计量 t 为-10.673，自由度是 9，p 值是 2.075e-06&lt;0.05，所以拒绝原假设。</p>
+<h3 id="单样本-wilcoxon-符号秩检验">单样本 Wilcoxon 符号秩检验</h3>
+<p>如果样本数据没有通过正态分布检验就要采用单样本 wilcoxon 符号秩检验进行计算。使用该检验需要满足的条件是样本值均匀地分布在均值两侧。</p>
+<p>其 R 中的函数为 wilcox.test()</p>
+<pre><code class="language-r">wilcox.test(weight,mu=7)
+</code></pre>
+<p>通过结果可知拒绝原假设。</p>
+<h3 id="独立双样本-t-test">独立双样本 t-test</h3>
+<p>两个<strong>独立</strong>样本是指两个比较的样本之间没有关联，不互相影响。使用双样本独立 t-test 的前提是<strong>两个样本符合正态分布且方差相等</strong>。</p>
+<p>独立双样本 t-test 其统计量计算公式为</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mn>1</mn></msub><mo>−</mo><msub><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover><mn>2</mn></msub></mrow><msqrt><mrow><mfrac><msup><mi>S</mi><mn>2</mn></msup><msub><mi>n</mi><mn>1</mn></msub></mfrac><mo>+</mo><mfrac><msup><mi>S</mi><mn>2</mn></msup><msub><mi>n</mi><mn>2</mn></msub></mfrac></mrow></msqrt></mfrac></mrow><annotation encoding="application/x-tex">t = \frac{\overline{X}_1 - \overline{X}_2}{\sqrt{ \frac{S^2}{n_1} + \frac{S^2}{n_2} }}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.29033em;vertical-align:-1.73em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.56033em;"><span style="top:-2.11em;"><span class="pstrut" style="height:3.22066em;"></span><span class="mord"><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.22066em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.91642em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31731428571428577em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463142857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.44509999999999994em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.91642em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31731428571428577em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7463142857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.44509999999999994em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.18066em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
+572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
+-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
+c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
+s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
+-658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
+M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6193399999999999em;"><span></span></span></span></span></span></span></span><span style="top:-3.45066em;"><span class="pstrut" style="height:3.22066em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.89766em;"><span class="pstrut" style="height:3.22066em;"></span><span class="mord"><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.73em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>X</mi><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{X}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">X</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span>分别表示两个样本的均值，n 表示样本量。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">s^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>表示两个独立样本的方差合并估计，计算公式为</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><mo>+</mo><mo>(</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup></mrow><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">s^2 = \frac{(n_1-1)s^2_1+(n_2-1)s^2_2}{n_1+n_2-2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8641079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.327108em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.491108em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.4518920000000004em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24810799999999997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-2.4518920000000004em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24810799999999997em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>依旧以 PlantGrowth 数据进行举例，PlantGrowth 共有三组数据，在这里取两组进行分析。</p>
+<pre><code class="language-r"># 查看各组基本信息
+library(dplyr)
+tmp1&lt;-group_by(PlantGrowth,group) %&gt;% summarise(count=n(),mean=mean(weight),sd=sd(weight))
+tmp1
+
+# A tibble: 3 x 4
+#   group count  mean        sd
+#  &lt;fctr&gt; &lt;int&gt; &lt;dbl&gt;     &lt;dbl&gt;
+#1   ctrl    10 5.032 0.5830914
+#2   trt1    10 4.661 0.7936757
+#3   trt2    10 5.526 0.4425733
+</code></pre>
+<p>进行独立双样本 t-test 前，首先验证数据是否符合正态分布 (Shapiro-Wilk normality test) 以及两个样本<strong>方差是否相等 (F-test)</strong>。</p>
+<p><strong>关于方差比较</strong></p>
+<ul>
+<li>
+<p>两个方差比较通常使用 F-test，在 R 中的函数为 var.test()，进行 F-test 检验前一定要首先进行正态分布检验，该统计量对于正态分布这个前提条件非常敏感；</p>
+</li>
+<li>
+<p>多个方差进行比较还可以使用 Bartlett’s test，该方法同样要求满足正态分布前提条件；</p>
+</li>
+<li>
+<p>如果不能确定数据是否符合正态分布，可以使用 Levene’s test 进行检验，其对数据正态分布的要求并非十分严格；</p>
+</li>
+<li>
+<p>Fligner-Killeen test 则是一种非参数检验方法，数据可以不满足正态分布；</p>
+</li>
+<li>
+<p>关于方差比较部分内容，在本章不再展开。</p>
+</li>
+</ul>
+<pre><code class="language-r">shapiro.test(PlantGrowth$weight[PlantGrowth$group==&quot;ctrl&quot;])
+shapiro.test(PlantGrowth$weight[PlantGrowth$group==&quot;trt1&quot;])
+var.test(PlantGrowth$weight[PlantGrowth$group==&quot;ctrl&quot;],
+         PlantGrowth$weight[PlantGrowth$group==&quot;trt1&quot;])
+
+#	Shapiro-Wilk normality test
+#
+#data:  PlantGrowth$weight[PlantGrowth$group == &quot;ctrl&quot;]
+#W = 0.95668, p-value = 0.7475
+#
+#	Shapiro-Wilk normality test
+#
+#data:  PlantGrowth$weight[PlantGrowth$group == &quot;trt1&quot;]
+#W = 0.93041, p-value = 0.4519
+#
+#	F test to compare two variances
+#
+#data:  PlantGrowth$weight[PlantGrowth$group == &quot;ctrl&quot;] and PlantGrowth$weight[PlantGrowth$group == &quot;trt1&quot;]
+#F = 0.53974, num df = 9, denom df = 9, p-value = 0.3719
+#alternative hypothesis: true ratio of variances is not equal to 1
+#95 percent confidence interval:
+# 0.1340645 2.1730025
+#sample estimates:
+#ratio of variances
+#         0.5397431
+</code></pre>
+<p>满足前提条件，继续方差相等的独立双样本 t-test</p>
+<pre><code class="language-r">t.test(PlantGrowth$weight[PlantGrowth$group==&quot;ctrl&quot;],
+       PlantGrowth$weight[PlantGrowth$group==&quot;trt1&quot;],
+       var.equal = T )
+
+#	Two Sample t-test
+#
+#data:  PlantGrowth$weight[PlantGrowth$group == &quot;ctrl&quot;] and PlantGrowth$weight[PlantGrowth$group == &quot;trt1&quot;]
+#t = 1.1913, df = 18, p-value = 0.249
+#alternative hypothesis: true difference in means is not equal to 0
+#95 percent confidence interval:
+# -0.2833003  1.0253003
+#sample estimates:
+#mean of x mean of y
+#    5.032     4.661
+</code></pre>
+<h3 id="独立双样本-wilcoxon-test">独立双样本 Wilcoxon test</h3>
+<p>当两个样本不满足正态分布时，使用 Wilcoxon 秩和检验进行非参数检验。</p>
+<pre><code class="language-r">wilcox.test(PlantGrowth$weight[PlantGrowth$group==&quot;ctrl&quot;],
+            PlantGrowth$weight[PlantGrowth$group==&quot;trt1&quot;],
+            exact = F )
+
+# 	Wilcoxon rank sum test with continuity correction
+#
+# data:  PlantGrowth$weight[PlantGrowth$group == &quot;ctrl&quot;] and PlantGrowth$weight[PlantGrowth$group == &quot;trt1&quot;]
+# W = 67.5, p-value = 0.1986
+# alternative hypothesis: true location shift is not equal to 0
+</code></pre>
+<h3 id="非独立双样本-t-test">非独立双样本 t-test</h3>
+<p>在很多试验中需要比较的两组样本往往有关系的，比如一组病人服药前后的变化，每个人以自己为对照。所谓非独立双样本，就是在第一组样本中的每个数据点都和第二组样本中唯一的数据点对应。</p>
+<p>非独立样本和独立样本相比，可以显著降低样本量，提高统计的 power。其统计量计算公式和单样本 t 检验一致。</p>
+<pre><code class="language-r">t.test(PlantGrowth$weight[PlantGrowth$group==&quot;ctrl&quot;],
+       PlantGrowth$weight[PlantGrowth$group==&quot;trt1&quot;],
+       paired = T )
+
+# 	Paired t-test
+#
+# data:  PlantGrowth$weight[PlantGrowth$group == &quot;ctrl&quot;] and PlantGrowth$weight[PlantGrowth$group == &quot;trt1&quot;]
+# t = 0.99384, df = 9, p-value = 0.3463
+# alternative hypothesis: true difference in means is not equal to 0
+# 95 percent confidence interval:
+#  -0.4734609  1.2154609
+# sample estimates:
+# mean of the differences
+#                   0.371
+
+</code></pre>
+<h3 id="非独立双样本-wilcoxon-test">非独立双样本 Wilcoxon test</h3>
+<p>和单样本类似，如果不符合正态分布则使用非参数检验。</p>
+<pre><code class="language-r">wilcox.test(PlantGrowth$weight[PlantGrowth$group==&quot;ctrl&quot;],
+            PlantGrowth$weight[PlantGrowth$group==&quot;trt1&quot;],
+            exact = F , paired = T)
+
+# 	Wilcoxon signed rank test with continuity correction
+#
+# data:  PlantGrowth$weight[PlantGrowth$group == &quot;ctrl&quot;] and PlantGrowth$weight[PlantGrowth$group == &quot;trt1&quot;]
+# V = 37, p-value = 0.359
+# alternative hypothesis: true location shift is not equal to 0
+</code></pre>
+<hr>
+<figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+
+          </div>
+          
+            
+  
+            
+              <div class="mt-6">
+                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script>
+
+var options = {
+  shortname: 'kaopubear',
+  apikey: 'S3aqfVwpSDyKQ2A8Zpg9bXlFmZue0eFVbb3JWkNZtefxqCH39Fd2cLkwP7X0MPDi',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+              </div>
+            
+          
+        </div>
+        
+          <div class="w-full md:w-1/3">
+            <div class="mt-6 md:pl-8">
+              <h4 class="text-base font-thin text-gray-700 mb-2">发布时间</h4>
+              <div class="text-lg mb-6">2017-10-01</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">标签</h4>
+              <div class="mb-6">
+                
+                  <a href="https://fei0810.github.io/tag/suLAWOmp8B" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">数据科学</a>
+                
+                  <a href="https://fei0810.github.io/tag/QwXCZFZN3" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">统计</a>
+                
+                  <a href="https://fei0810.github.io/tag/TASd4RiPWW" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">R</a>
+                
+              </div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">阅读时间</h4>
+              <div class="text-lg mb-6">11 min read</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
+              <div class="border-b border-gray-400">
+                
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-09-17-fasterdeseq2" class="text-lg hover:underline my-2 inline-block">船新版本 DESeq2 处理大量样本速度显著提升</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-08-13-emojifont-debug" class="text-lg hover:underline my-2 inline-block">听说你也有 emojifont 的字体使用困惑</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-28-csvtkbasic" class="text-lg hover:underline my-2 inline-block">csvtk命令行版极简dplyr</a>
+        </div>
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+  <script>
+    Prism.highlightAll()
+  </script>
+</body>
+</html>

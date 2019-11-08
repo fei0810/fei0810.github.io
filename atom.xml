@@ -2,25 +2,176 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fei0810.github.io</id>
     <title>思考问题的熊</title>
-    <updated>2019-11-07T17:10:47.645Z</updated>
+    <updated>2019-11-08T02:38:09.975Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fei0810.github.io"/>
     <link rel="self" href="https://fei0810.github.io/atom.xml"/>
-    <subtitle>记录所思所学所想，包括但不限于数据科学/生物信息/经济学/生产力工具等等。</subtitle>
+    <subtitle>记录我的所思所学所想&lt;br&gt;包括但不限于数据科学/生物信息/经济学/生产力工具等&lt;br&gt;很高兴和你相遇</subtitle>
     <logo>https://fei0810.github.io/images/avatar.png</logo>
     <icon>https://fei0810.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 思考问题的熊</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://fei0810.github.io/post/hello-gridea</id>
-        <link href="https://fei0810.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[转录组表达分析知识图谱]]></title>
+        <id>https://fei0810.github.io/post/2019-10-11-rnaseqexpressionanalysis</id>
+        <link href="https://fei0810.github.io/post/2019-10-11-rnaseqexpressionanalysis">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <updated>2019-10-11T11:31:43.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
+<p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
+<p>Annual Review 系列杂志的综述应该说是综述界的老大哥。最近在 Annual Review of Biomedical Data Science 发表了「另」一篇 RNA-Seq 相关的重磅综述。之所以说是另一篇，因为同期在 Nature Reviews Genetics 发表过一篇看名字就非常霸气的综述：RNA sequencing: the teenage years 。</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        <content type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
+<p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
+<p>Annual Review 系列杂志的综述应该说是综述界的老大哥。最近在 Annual Review of Biomedical Data Science 发表了「另」一篇 RNA-Seq 相关的重磅综述。之所以说是另一篇，因为同期在 Nature Reviews Genetics 发表过一篇看名字就非常霸气的综述：RNA sequencing: the teenage years 。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[船新版本 DESeq2 处理大量样本速度显著提升]]></title>
+        <id>https://fei0810.github.io/post/2019-09-17-fasterdeseq2</id>
+        <link href="https://fei0810.github.io/post/2019-09-17-fasterdeseq2">
+        </link>
+        <updated>2019-09-17T12:15:31.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="太长不看版本">太长不看版本</h2>
+<p>DESeq 最新版本（v1.25.9）针对大样本分析的速度和之前相比有了质的飞越，果子老师的 1215 个 TCGA 样本差异分析时间从 1200 分钟缩短到单线程 20 分钟，使用多线程的情况下最快 6 分钟搞定。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="太长不看版本">太长不看版本</h2>
+<p>DESeq 最新版本（v1.25.9）针对大样本分析的速度和之前相比有了质的飞越，果子老师的 1215 个 TCGA 样本差异分析时间从 1200 分钟缩短到单线程 20 分钟，使用多线程的情况下最快 6 分钟搞定。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Zotero入门学习路径]]></title>
+        <id>https://fei0810.github.io/post/2019-09-11-howtolearnzotero</id>
+        <link href="https://fei0810.github.io/post/2019-09-11-howtolearnzotero">
+        </link>
+        <updated>2019-09-11T10:17:37.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
+<p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
+<p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
+<p>目前常用的文献管理工具有很多，比较有代表性的如下几个：</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
+<p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
+<p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
+<p>目前常用的文献管理工具有很多，比较有代表性的如下几个：</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VScode入门学习路径]]></title>
+        <id>https://fei0810.github.io/post/2019-09-11-howtolearnvscode</id>
+        <link href="https://fei0810.github.io/post/2019-09-11-howtolearnvscode">
+        </link>
+        <updated>2019-09-11T10:14:31.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
+<p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
+<p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
+<p>提到代码编辑器，可能了解生信技能树或者听过生信技能树课程的小伙伴第一反应都会是Notepad++，这款代码编辑器最早发布于2003年，并且一致更新至今非常经典。因为使用惯性和轻量的特点，这款代码编辑器依旧很受欢迎。</p>
+<p>但是在2019年的今天，有更多好用的代码编辑器可以向你推荐。目前比较受大家欢迎且用户量较大的代码编辑器主要用三个，分别是VS code、Atom 和 Sublime text 。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
+<p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
+<p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
+<p>提到代码编辑器，可能了解生信技能树或者听过生信技能树课程的小伙伴第一反应都会是Notepad++，这款代码编辑器最早发布于2003年，并且一致更新至今非常经典。因为使用惯性和轻量的特点，这款代码编辑器依旧很受欢迎。</p>
+<p>但是在2019年的今天，有更多好用的代码编辑器可以向你推荐。目前比较受大家欢迎且用户量较大的代码编辑器主要用三个，分别是VS code、Atom 和 Sublime text 。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[当我谈工具的时候我在谈什么]]></title>
+        <id>https://fei0810.github.io/post/2019-09-10-howtolearntools</id>
+        <link href="https://fei0810.github.io/post/2019-09-10-howtolearntools">
+        </link>
+        <updated>2019-09-10T10:08:00.000Z</updated>
+        <summary type="html"><![CDATA[<h1 id="好工具那么多你知道如何学吗">好工具那么多，你知道如何学吗</h1>
+<p>比知道一个工具更重要的是想明白如何学习一个工具。**比如为了以 VS code 为例进行说明，我甚至在今天上午直接写了一个 VS code 插件。**是的，写了一个插件，不是用了一个插件。</p>
+<h2 id="工具重不重要">工具重不重要</h2>
+<p>但凡说起工具，首先避不开的问题是「工具重不重要」。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h1 id="好工具那么多你知道如何学吗">好工具那么多，你知道如何学吗</h1>
+<p>比知道一个工具更重要的是想明白如何学习一个工具。**比如为了以 VS code 为例进行说明，我甚至在今天上午直接写了一个 VS code 插件。**是的，写了一个插件，不是用了一个插件。</p>
+<h2 id="工具重不重要">工具重不重要</h2>
+<p>但凡说起工具，首先避不开的问题是「工具重不重要」。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何使用语雀快速发表自己的博客]]></title>
+        <id>https://fei0810.github.io/post/2019-09-01-howtouseyuque</id>
+        <link href="https://fei0810.github.io/post/2019-09-01-howtouseyuque">
+        </link>
+        <updated>2019-09-01T07:41:32.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="写在前面">写在前面</h2>
+<p>生信圈子很多人在用的「简书」最近一段时间凉凉了。朋友圈一片哀嚎，大家纷纷表示恐慌，不知道该去哪里安放自己的创作欲望。</p>
+<p>动手能力强的朋友计划动手搭建自己的博客，类似于已经更新了快三年的「<a href="https://kaopubear.top/">思考问题的熊</a>」以及最近势头很生猛的「<a href="http://xuzhougeng.top/">洲更</a>」。</p>
+<p>还有一些人暂时没有自己搭建博客的计划，只是希望能找到一个适合写作和分享的地方，在这里推荐一下「语雀」。如果你想要一个可以<strong>有二级域名</strong>，<strong>支持 markdown，自带图床，可以私藏可以公开分享，可以点赞评论同时还不要钱</strong>的写作平台，语雀可能是最好的选择。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="写在前面">写在前面</h2>
+<p>生信圈子很多人在用的「简书」最近一段时间凉凉了。朋友圈一片哀嚎，大家纷纷表示恐慌，不知道该去哪里安放自己的创作欲望。</p>
+<p>动手能力强的朋友计划动手搭建自己的博客，类似于已经更新了快三年的「<a href="https://kaopubear.top/">思考问题的熊</a>」以及最近势头很生猛的「<a href="http://xuzhougeng.top/">洲更</a>」。</p>
+<p>还有一些人暂时没有自己搭建博客的计划，只是希望能找到一个适合写作和分享的地方，在这里推荐一下「语雀」。如果你想要一个可以<strong>有二级域名</strong>，<strong>支持 markdown，自带图床，可以私藏可以公开分享，可以点赞评论同时还不要钱</strong>的写作平台，语雀可能是最好的选择。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[biotools 综合性生物信息工具资源网站]]></title>
+        <id>https://fei0810.github.io/post/2019-08-15-biotools-web</id>
+        <link href="https://fei0810.github.io/post/2019-08-15-biotools-web">
+        </link>
+        <updated>2019-08-15T07:48:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
+<p>今天是这个系列的最后一篇文章，介绍一个综合性生物信息工具资源网站 <strong>biotools</strong>。以后只要用好这三个工具，就不会害怕生物信息不知道用什么和怎么选工具的问题。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
+<p>今天是这个系列的最后一篇文章，介绍一个综合性生物信息工具资源网站 <strong>biotools</strong>。以后只要用好这三个工具，就不会害怕生物信息不知道用什么和怎么选工具的问题。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[听说你也有 emojifont 的字体使用困惑]]></title>
+        <id>https://fei0810.github.io/post/2019-08-13-emojifont-debug</id>
+        <link href="https://fei0810.github.io/post/2019-08-13-emojifont-debug">
+        </link>
+        <updated>2019-08-13T07:46:25.000Z</updated>
+        <summary type="html"><![CDATA[<h2 id="问题复现">问题复现</h2>
+<blockquote>
+<p>Y 叔有一个神包，能够在 ggplot 图层里随心所欲的添加各种 emoji，然而很多人在使用的时候却不能「随心所欲」，经常一行函数输进去一张白板输出来。最近在我的星球里也有人提到这个问题，作为一个无趣的人我虽然之前没有实际使用过这个有趣的包，但是今天要被迫营业了。</p>
+</blockquote>
+<p>在反馈中可以看到 Windows 中的基本错误信息有两类：一是提示 warning，虽然能出图但是图和想象中的样子不一样；二是提示 warning，然后直接输出一个空白图层。其中 warning 的内容是： <code>In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, : Windows 字体数据库里没有这样的字体系列。</code></p>
+]]></summary>
+        <content type="html"><![CDATA[<h2 id="问题复现">问题复现</h2>
+<blockquote>
+<p>Y 叔有一个神包，能够在 ggplot 图层里随心所欲的添加各种 emoji，然而很多人在使用的时候却不能「随心所欲」，经常一行函数输进去一张白板输出来。最近在我的星球里也有人提到这个问题，作为一个无趣的人我虽然之前没有实际使用过这个有趣的包，但是今天要被迫营业了。</p>
+</blockquote>
+<p>在反馈中可以看到 Windows 中的基本错误信息有两类：一是提示 warning，虽然能出图但是图和想象中的样子不一样；二是提示 warning，然后直接输出一个空白图层。其中 warning 的内容是： <code>In grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, : Windows 字体数据库里没有这样的字体系列。</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[首届生物信息人才发展论坛背后的故事]]></title>
+        <id>https://fei0810.github.io/post/2019-08-07-thefirstbiotraineeforum</id>
+        <link href="https://fei0810.github.io/post/2019-08-07-thefirstbiotraineeforum">
+        </link>
+        <updated>2019-08-07T05:55:17.000Z</updated>
+        <summary type="html"><![CDATA[<p>第一届生物信息人才发展论坛落幕已经半月有余，算上前前后后的准备周期，在大家眼中一个「小而美」的论坛其实陆陆续续持续了一个多月的时间。</p>
+<p>作为组织者和参会者之一，按道理应该有很多话要说才对。但是过去一个多月尤其是论坛期间的高度集中和紧张，导致我突然变得不知道该从何说起。和健明聊起来，他也是同样的感受。尽管如此，因为没有记录就没有发生，所以还是要从组织者和参会者两个不同的角度做一些记录和回顾，聊聊自己的感受和想法。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>第一届生物信息人才发展论坛落幕已经半月有余，算上前前后后的准备周期，在大家眼中一个「小而美」的论坛其实陆陆续续持续了一个多月的时间。</p>
+<p>作为组织者和参会者之一，按道理应该有很多话要说才对。但是过去一个多月尤其是论坛期间的高度集中和紧张，导致我突然变得不知道该从何说起。和健明聊起来，他也是同样的感受。尽管如此，因为没有记录就没有发生，所以还是要从组织者和参会者两个不同的角度做一些记录和回顾，聊聊自己的感受和想法。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[上手 MacBook Pro 基础操作和配置]]></title>
+        <id>https://fei0810.github.io/post/2019-07-30-learnusemac1</id>
+        <link href="https://fei0810.github.io/post/2019-07-30-learnusemac1">
+        </link>
+        <updated>2019-07-30T05:46:39.000Z</updated>
+        <summary type="html"><![CDATA[<p>这个月，我成为了一名Mac用户。macOS诞生于1984年，经历了35年的发展之后，其在全球操作系统市场中的份额已经不到10%。</p>
+<p>macOS是第一个商用的图形界面操作系统，和Windows相比更加注重人际交互的细节感知。例如，在macOS中无需关注剩余内存空间，因为系统首先会占满所有内存，然后根据软件使用情况进行自动调整从而保证系统的稳定。</p>
+<h2 id="基础操作和设置">基础操作和设置</h2>
+<h3 id="不在触控板的触控板设置">不在触控板的触控板设置</h3>
+<p>触控板是Mac优秀使用体验的一个直观表现，各种多指操作非常顺滑。在<strong>系统偏好设置</strong>中的<strong>触控板</strong>，可以完成大多数的设置操作。例如使用轻点来实现点按的效果，使用双指从右边缘向左轻扫查看通知。但是还有几项我们常用的操作被藏在了偏好设置的其他地方。</p>
+<p>使用鼠标时一个常用的操作就是一次选择多个文件进行移动，而通过触控版完整这项相同的工作则十分费力。在macOS中可以通过在<strong>辅助功能</strong>中开启<strong>三指拖移</strong>来实现同样的功能。开启该功能后可以方便的进行文字和文件多选以及拖移操作。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这个月，我成为了一名Mac用户。macOS诞生于1984年，经历了35年的发展之后，其在全球操作系统市场中的份额已经不到10%。</p>
+<p>macOS是第一个商用的图形界面操作系统，和Windows相比更加注重人际交互的细节感知。例如，在macOS中无需关注剩余内存空间，因为系统首先会占满所有内存，然后根据软件使用情况进行自动调整从而保证系统的稳定。</p>
+<h2 id="基础操作和设置">基础操作和设置</h2>
+<h3 id="不在触控板的触控板设置">不在触控板的触控板设置</h3>
+<p>触控板是Mac优秀使用体验的一个直观表现，各种多指操作非常顺滑。在<strong>系统偏好设置</strong>中的<strong>触控板</strong>，可以完成大多数的设置操作。例如使用轻点来实现点按的效果，使用双指从右边缘向左轻扫查看通知。但是还有几项我们常用的操作被藏在了偏好设置的其他地方。</p>
+<p>使用鼠标时一个常用的操作就是一次选择多个文件进行移动，而通过触控版完整这项相同的工作则十分费力。在macOS中可以通过在<strong>辅助功能</strong>中开启<strong>三指拖移</strong>来实现同样的功能。开启该功能后可以方便的进行文字和文件多选以及拖移操作。</p>
 ]]></content>
     </entry>
 </feed>

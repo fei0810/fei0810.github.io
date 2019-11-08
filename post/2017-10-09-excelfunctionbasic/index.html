@@ -1,0 +1,1257 @@
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+  <script src="https://fei0810.github.io/media/prism.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://fei0810.github.io">思考问题的熊</a>
+  </h1>
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
+      
+        
+          <a href="/" class="nav-link">首页</a>
+        
+      
+        
+          <a href="/archives" class="nav-link">归档</a>
+        
+      
+        
+          <a href="/tags" class="nav-link">标签</a>
+        
+      
+        
+          <a href="/post/about" class="nav-link">关于</a>
+        
+      
+        
+          <a href="/post/resource" class="nav-link">资料</a>
+        
+      
+    </div>
+    <div class="lg:flex">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3 mt-6">
+          <h1 class="text-4xl">Excel 初级公式</h1>
+          
+          <div class="mt-6 lg:mt-10 post-content">
+            <blockquote>
+<p>懒是人类进步的绊脚石，偷懒是人类进步的阶梯。如果完成任何一项工作时觉得复杂，那一定就有还不知道的更简单的方法。</p>
+</blockquote>
+<h2 id="基本知识">基本知识</h2>
+<p>Excel 可以处理的数值有效位数最多为 15 位，公式中文本类型的常量必须写在半角双引号内</p>
+<p>运算符包括算数运算符和比较运算符，其中比较运算符返回逻辑值</p>
+<p>&lt;&gt; 表示不等于</p>
+<p>excel 所有数据类型中，数值最小，文本大于数值，最大的是逻辑值 true</p>
+<p>文本运算符 &amp; 可以将两个数据合并为一个文本类型数据</p>
+<!-- more -->
+<p>引用运算符 冒号 单个空格 逗号 其中单个空格返回空格左右两边的单元格引用的交叉区域，而逗号返回左右两边单元格引用的合并区域</p>
+<p>相对引用和绝对引用往往混合使用效果更佳，注意，F4 可以快速切换</p>
+<p>如果想确定使用提示列表里的某个函数可以按 tab 键补全，另外 ctrl+shift+A 可以显示出所有需要的参数</p>
+<h2 id="sumif-函数">SUMIF 函数</h2>
+<p>=SUMIF（条件区域，求和条件，求和区域）</p>
+<p>如果条件区域和求和区域相同，只需要写出求和区域即可</p>
+<p>条件区域的写法 &quot;&gt;100&quot; &quot;&lt;&gt;100&quot;</p>
+<p>求和条件可以是数字 文本 单元格引用格式 也可以是公式，文本必须在双引号之间</p>
+<p>SUMIFS 可以用来多条件求和</p>
+<p><strong>注意</strong>：AVERAGEIF 按照条件求平均值，用法和 SUMIF 相同</p>
+<h2 id="按照模糊条件求和时可以结合通配符使用">按照模糊条件求和时可以结合通配符使用</h2>
+<p>SUMIF（范围，“Chr*”，求和范围）</p>
+<p>关于通配符，excel 中只有两种通配符，分别是？和* ，其中*代表任意字符，? 代表单一字符</p>
+<p>写法可以如下 SUMIF（范围，“<em>”“&amp;A2&amp;</em>”, 求和范围） 表示匹配中间内容是 A2 单元格的</p>
+<h2 id="countif">COUNTIF</h2>
+<p>=COUNTIF（单元格区域，计数条件） 参数可以是数字，表达式和单元格引用以及文本字符串，且可以使用比较运算符和通配符</p>
+<p>例如=COUNTIF(A2:A10,&quot;??&quot;) 或者 (A2:A10,&quot;<em>&quot;&amp;B2&amp;&quot;</em>&quot;)</p>
+<p>如果想用 COUNTIF 统计所有非真空单元格个数，可以使用筛选条件&quot;&lt;&gt;&quot;</p>
+<p>COUNTBLANK 专门用来统计所有空单元格个数</p>
+<p>COUNTA 统计所有非真空单元格个数</p>
+<p>COUNT 统计所有数值单元格个数</p>
+<p>另外，在我们日常数据的过程中，很可能会用到多条件统计</p>
+<ul>
+<li>COUNTIFS(A1:A10,&quot;&gt;=60&quot;,B1:B10,&quot;&gt;=80&quot;)</li>
+</ul>
+<p>如何对数据进行取舍，方法很多且都很常用</p>
+<ul>
+<li>ROUND（取舍的数值，保留的位数）
+<ul>
+<li>需要注意的是，其中保留的位数可正可负可 0，差别自己试一下就知道了</li>
+<li>如果你想强行向上取舍，使用 ROUNDUP</li>
+<li>反之如果你想强行向下取舍，使用 ROUNDDOWN</li>
+</ul>
+</li>
+</ul>
+<p>取整还可以用 INT 和 TRUNC</p>
+<h2 id="对字符串进行操作">对字符串进行操作</h2>
+<p>首先是对字符串进行合并</p>
+<ul>
+<li>excel 可以非常方便的对数据进行分类，点一下鼠标就可以了。但是有的时候我们想把几列的内容合并起来，可是并没有一个合列的选项。如果想用合并单元格，这会犯非常低级的错误。</li>
+<li>可以使用 CONCATENATE 函数</li>
+<li>CONCATENATE(A2,A3,&quot;任意其它字符串&quot;,A4) 想怎么合就怎么合，如果觉得函数太长，好吧，可以用&amp;</li>
+</ul>
+<p>有的时候我们还想统计一下文本的长度</p>
+<ul>
+<li>长度可以用字符和字节来表示，其中一个中文占一个字符，占两个字节</li>
+<li>统计字符长度用 LEN()</li>
+<li>统计字节长度用 LENB()</li>
+<li>注意，如果一个函数针对的是字符，那么再后面加上 B 往往就可以处理字符了</li>
+</ul>
+<p>excel 本身是不区分大小写的，可以使用函数 EXACT 来完成</p>
+<p>如果你想查找一个字符所在的位置，咋整</p>
+<ul>
+<li>可以使用 FIND 或者 SEARCH（查找的字符，查找的位置，从第几个字符开始查找）</li>
+<li>注意，只有 FIND 可以区分大小写，只用 SEARCH 可以使用通配符，如果想把通配符当作普通字符来处理，需要再*前面加~</li>
+</ul>
+<p>截取字符</p>
+<ul>
+<li>可左可右可中间</li>
+<li>左边 LEFT（要处理的字符串，6 要提取的字符个数）</li>
+<li>右边 RIGHT 同理</li>
+<li>中间多了一个参数。 MID（要处理的字符串，从第几个字符开始提取，提取几个字符）</li>
+</ul>
+<p>替换字符，似乎可以查找替换啊。但是，类似与 linux 中的 sed，excel 中有两个函数可以使用，一个是 SUBSTITUTE，另一个是 REPLACE</p>
+<ul>
+<li>SUBSTITUTE（需要替换字符的文本或者单元格引用，需要替换的文本，需要替换成什么，替换第几次出现的字符）
+<ul>
+<li>注意，这个函数是用来替换指定文本的，如果不知道具体文本，只是想在指定位置进行替换要使用下面的函数</li>
+</ul>
+</li>
+<li>REPLACE（需要替换字符的文本或者指定的单元格，要替换的起始位置，替换字符的个数，要替换成什么）
+<ul>
+<li>比如给电话号码中间四位加星号，就可以用这个函数 =REPLACE(A1,4,4,&quot;&quot;) 1850697</li>
+</ul>
+</li>
+</ul>
+<h2 id="常用的查找函数">常用的查找函数</h2>
+<p>VLOOKUP 最常用的函数，具体的用法就是（你找啥，在哪找，要找对应的那一列，精确查找还是模糊查找）</p>
+<p>有几点需要注意</p>
+<ul>
+<li>第一个参数可以使用通配符进行模糊匹配</li>
+<li>查找区域中匹配的内容必须位于第一列</li>
+<li>有多个对应值只会返回第一个值</li>
+<li>0/FALSE 表示精确匹配，excel 里的说明有问题</li>
+</ul>
+<p>在平时的实际应用中，有一个问题曾经困扰了我很久。就是怎么同时返回多列对应 的数值。</p>
+<ul>
+<li>
+<p>这个问题可以通过对第一第二个参数使用绝对引用，对第三个参数使用相对应用，利用 COLUMN 函数。</p>
+</li>
+<li>
+<p>=VLOOKUP(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mn>2</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">E2,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord">2</span><span class="mpunct">,</span></span></span></span>A<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>:</mo></mrow><annotation encoding="application/x-tex">2:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>D$100,COLUMN(B:B),0)</p>
+</li>
+</ul>
+<p>MATCH 可以在某一个范围内搜索特定的项</p>
+<ul>
+<li>MATCH（要查找的内容，搜索的区域，匹配类型）</li>
+<li>查找的内容可以是值，数字，单元格引用</li>
+<li>查找的范围只能是一行或者一列</li>
+<li>匹配类型有三种
+<ul>
+<li>-1 MATCH 查找大于或等于查找值的最小值，查找范围内的值必须按降序排列</li>
+<li>1 小于或者等于查找值的最大值，查找范围内的值必须按照升序排列</li>
+<li>0 完全等于</li>
+</ul>
+</li>
+<li>MATCH 返回的是位置而非值本身，匹配文本时不区分大小写</li>
+<li>同样可以配合通配符使用</li>
+</ul>
+<p>INDEX 返回所在区域交叉处的位置</p>
+<ul>
+<li>INDEX（范围，行序号，列序号）</li>
+</ul>
+<p>如果将 INDEX 和 MATCH 连用可以解决 VLOOKUP 的一些问题</p>
+<ul>
+<li>比如 =INDEX($A<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>:</mo></mrow><annotation encoding="application/x-tex">2:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>C<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>33</mn><mo separator="true">,</mo><mi>M</mi><mi>A</mi><mi>T</mi><mi>C</mi><mi>H</mi><mo>(</mo><mi mathvariant="normal">&quot;</mi><mi>A</mi><mi>R</mi><mi>R</mi><mn>1</mn><mi mathvariant="normal">&quot;</mi><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">33,MATCH(&quot;ARR1&quot;,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3</span><span class="mord">3</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord">&quot;</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord">1</span><span class="mord">&quot;</span><span class="mpunct">,</span></span></span></span>A<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>:</mo></mrow><annotation encoding="application/x-tex">2:</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span></span></span>A$33,0),3) 即可以进行逆向搜索。</li>
+</ul>
+<hr>
+<figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+
+          </div>
+          
+            
+  
+            
+              <div class="mt-6">
+                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script>
+
+var options = {
+  shortname: 'kaopubear',
+  apikey: 'S3aqfVwpSDyKQ2A8Zpg9bXlFmZue0eFVbb3JWkNZtefxqCH39Fd2cLkwP7X0MPDi',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+              </div>
+            
+          
+        </div>
+        
+          <div class="w-full md:w-1/3">
+            <div class="mt-6 md:pl-8">
+              <h4 class="text-base font-thin text-gray-700 mb-2">发布时间</h4>
+              <div class="text-lg mb-6">2017-10-09</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">标签</h4>
+              <div class="mb-6">
+                
+                  <a href="https://fei0810.github.io/tag/suLAWOmp8B" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">数据科学</a>
+                
+              </div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">阅读时间</h4>
+              <div class="text-lg mb-6">7 min read</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
+              <div class="border-b border-gray-400">
+                
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-28-csvtkbasic" class="text-lg hover:underline my-2 inline-block">csvtk命令行版极简dplyr</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-19-datamashmanual" class="text-lg hover:underline my-2 inline-block">linux极简统计分析工具datamash教程</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-04-18-weneedgoodquestion" class="text-lg hover:underline my-2 inline-block">数据分析需要更好的问题</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+  <script>
+    Prism.highlightAll()
+  </script>
+</body>
+</html>

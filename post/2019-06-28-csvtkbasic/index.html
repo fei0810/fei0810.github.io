@@ -1,0 +1,1629 @@
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+  <script src="https://fei0810.github.io/media/prism.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://fei0810.github.io">思考问题的熊</a>
+  </h1>
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
+      
+        
+          <a href="/" class="nav-link">首页</a>
+        
+      
+        
+          <a href="/archives" class="nav-link">归档</a>
+        
+      
+        
+          <a href="/tags" class="nav-link">标签</a>
+        
+      
+        
+          <a href="/post/about" class="nav-link">关于</a>
+        
+      
+        
+          <a href="/post/resource" class="nav-link">资料</a>
+        
+      
+    </div>
+    <div class="lg:flex">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3 mt-6">
+          <h1 class="text-4xl">csvtk命令行版极简dplyr</h1>
+          
+          <div class="mt-6 lg:mt-10 post-content">
+            <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。</p>
+</blockquote>
+<p>之前写 <a href="https://kaopubear.top/2019-06-19-datamashmanual/">datamash 的使用教程</a>，收到了一位读者的私信，内容如上。</p>
+<p>话说这位读者不是别人，正是大名鼎鼎 seqkit 和 csvtk 的开发者 <a href="https://github.com/shenwei356">shenwei356</a> (github ID)，江湖人称「爪哥」。我从来没有问过他为什么 ID 有个数字后缀「356」，我私以为是一年 365 天里有 356 天他都在写程序，剩下的几天过年放假。说到爪哥，如果你看到这篇文章之前不知道他我不怪你，但是今天以后希望他可以每天都和你在一起。</p>
+<p>爪哥用两个工具就让自己在生物信息领域有了一席之地。其中 seqkit 是用来处理 fasta/q 文本的工具，这篇文章要写的 csvtk 是处理 c/tsv 文本的工具。如果你感觉我的说法夸张了，不妨想想每天接触到的各种文件，无论是 gff 还是 bed 还是 sam 甚至是 vcf，其本质都是 tsv 格式，再加上 seqkit 针对的 fasta 和 fastq。如果你能熟练使用这两个工具，今后的每一天就都会感受到爪哥无微不至的关怀。我经常在敲完一行命令后会在心里大喊一声「爪哥NB」。</p>
+<!--more-->
+<h2 id="csvtk-特点">csvtk 特点</h2>
+<p>熟悉 Linux 的人谈到命令行的文本处理，定会奉上文本处理「三剑客」：awk，sed，grep。csvtk 并不想抢他们的风头，而是可以无痛的整合到各种处理流程中。它凭借自己的特点，让命令行里的文本处理更容易。</p>
+<p>csvtk 的特点之一是对 header 的识别和处理，它可以让你省去很多原本在使用 awk 等命令时针对 header 行的代码。既然考虑到了 header，特点之二就是支持通过列名来进行列的选择，这里的选择还包括<strong>反选</strong>和<strong>模糊选择</strong>。除此之外，之所以说便于和其他流程的整合，还因为它可以直接处理标准输入和压缩文本，同时这个软件本身不需要编译也没有任何其它依赖，非常容易安装，conda 可以直接搞定。</p>
+<p>csvtk 本身支持多线程以及若干子命令，用起来会发现通常其速度和效率比在 python 和 R 中输入很多行代码都要高。如果这些依旧不能打动你，csvtk 还有一个神奇的功能：直接用一行代码在命令行里<strong>画图</strong>。真 6。</p>
+<h2 id="csvtk-介绍">csvtk 介绍</h2>
+<p>csvtk 有三十多个子命令，基本上可以理解为是<strong>命令行版极简 dplyr 加若干 linux 命令的增强整合</strong>。子命令按照类别和功能分类，可以分为如下几类，其中结尾带有<code>+</code>的子命令是我常用的和值得尤其关注的。</p>
+<h3 id="文本信息类">文本信息类</h3>
+<ul>
+<li><code>headers</code> 打印首行（列名）</li>
+<li><code>dim</code> 查看文件的行列数 ，和 R 中的 <code>dim</code> 类似 <code>+</code></li>
+<li><code>summary</code> 对所选列进行简单的描述性统计，如果是统计内容是数字，则类似于 R 中的 <code>summary()</code> ，同时支持分组统计。如果统计内容是文本，支持类似于 <code>datamash</code> 的多内容统计。<code>+</code></li>
+</ul>
+<h3 id="格式转化类">格式转化类</h3>
+<ul>
+<li><code>pretty</code> 可以让 csv 变成漂亮的对齐易读表格<code>+</code></li>
+<li><code>transpose</code> 类似于 R 中的<code>t()</code>对数据进行转置</li>
+<li><code>csv2json</code> 则可以让数据转换为 json 格式</li>
+<li><code>csv2md</code> 则是炫酷的直接变成 markdown 支持的表格<code>+</code></li>
+</ul>
+<h3 id="集合操作类">集合操作类</h3>
+<p>这一类命令是操作的重点，有很多子命令，其中部分类似于 unix 中对应的命令但又有所区别。</p>
+<ul>
+<li><code>head</code> 查看文件开始若干行</li>
+<li><code>concat</code> 合并文件，类似于<code>cat</code>但是可以按照列名进行匹配合并</li>
+<li><code>sample</code> 按照比例对文本进行提取</li>
+<li><code>cut</code> 按照列选择，支持列数和列名，支持反选和模糊选择<code>+</code></li>
+<li><code>uniq</code> <strong>无需排序</strong>进行去重<code>+</code></li>
+<li><code>freq</code> 所选字段评率统计</li>
+<li><code>inter</code> 多个文件取交集</li>
+<li><code>grep</code> 类似于 lunix 的 grep，支持正则和反选等操作<code>+</code></li>
+<li><code>filter</code> 按照数学表达式筛选，支持多列判断，精简版</li>
+<li><code>filter2</code> 按照数学表达式筛选，约等于 lunix 中的 awk，复杂版<code>+</code></li>
+<li><code>join</code> 按照字段合并多个文件，类似于 linux 的 join</li>
+<li><code>split</code> 按照某列值拆分文件，也就是分组保存为多个文件</li>
+<li><code>collapse</code> 按照所选字段的 key 合并其它字段<code>+</code></li>
+</ul>
+<h3 id="文本编辑类">文本编辑类</h3>
+<p>如果你熟悉 R 中的 dplyr，这类型的子命令中有不少都会让你感觉熟悉。</p>
+<ul>
+<li><code>add-header</code> 增加列名</li>
+<li><code>del-header</code> 删除列名</li>
+<li><code>rename</code> 对列重命名</li>
+<li><code>rename2</code> 支持正则表达式的列重命名</li>
+<li><code>replace</code> 通过正则表达式替换所选列对应的内容，支持捕获变量，内置特殊替换符号<code>+</code></li>
+<li><code>mutate</code> 对某一列进行正则表达处理增加新的一列</li>
+<li><code>mutate2</code> 对多列进行 awk 类似的字符和数学表达式处理，增加新列<code>+</code></li>
+<li><code>gather</code>  类似于 dplyr 中的<code>gather()</code>函数，数据「由宽变长」</li>
+<li><code>sort</code> 支持按照一列或者多列排序，且支持自定义顺序排序</li>
+</ul>
+<h3 id="画图">画图</h3>
+<p>借助 gonum 中的 plot 包，csvtk 还可以直接画一些基本的统计图，这功能其实已经超越 dplyr 向着 ggplot2 挺进了。画图相关命令可以根据文件后缀自动确定输出类型。</p>
+<p>plot 支持 boxplot, histogram, line 和 scatter 四种图，图的主要元素都可以设置，支持的输出格式包括 eps/pdf/svg/tiff/jpg/png，对应如下三个命令：</p>
+<ul>
+<li><code>csvtk plot hist</code></li>
+<li><code>csvtk plot box</code></li>
+<li><code>csvtk plot line</code></li>
+</ul>
+<h2 id="csvtk-示例">csvtk 示例</h2>
+<p>因为篇幅的原因，这里仅展示几个使用示例，更多更详细的内容可以直接参考爪哥写的使用文档。另外本文使用的数据也来自官方测试数据。</p>
+<h3 id="描述统计量">描述统计量</h3>
+<p>csvtk 的 <code>summary</code> 命令有两个亮点，第一是支持对文本和数值的多种分组统计；第二个是可以过滤对应字段的非数值内容（比如<code>N/A</code>）。</p>
+<pre><code class="language-sh">$ cat digitals2.csv
+f1,f2,f3,f4,f5
+foo,bar,xyz,1,0
+foo,bar2,xyz,1.5,-1
+foo,bar2,xyz,3,2
+foo,bar,xyz,5,3
+foo,bar2,xyz,N/A,4
+
+</code></pre>
+<p>针对上述数据，按照第一列和第二列进行分组，同时计算第四列和第五列的和，排除非数值内容，以易读方式输出结果。命令如下：</p>
+<pre><code class="language-sh">$ cat digitals2.csv | \
+csvtk summary -i -f f4:sum,f5:sum -g f1,f2 | \
+csvtk pretty
+
+f1    f2     f4:sum   f5:sum
+bar   xyz    7.00     106.00
+bar   xyz2   4.00     4.00
+foo   bar    6.00     3.00
+foo   bar2   4.50     5.00
+</code></pre>
+<h3 id="一键变漂亮">一键变漂亮</h3>
+<p>上面已经用到的<code>pretty</code>命令可以让输出的结果更加易读。</p>
+<pre><code class="language-sh">$ cat names.csv
+id,first_name,last_name,username
+11,Rob,Pike,rob
+2,Ken,Thompson,ken
+4,Robert,Griesemer,gri
+1,Robert,Thompson,abc
+
+$ cat names.csv |csvtk pretty
+id   first_name   last_name   username
+11   Rob          Pike        rob
+2    Ken          Thompson    ken
+4    Robert       Griesemer   gri
+1    Robert       Thompson    abc
+
+$ cat names.csv |csvtk pretty -r
+id   first_name   last_name   username
+11          Rob        Pike        rob
+ 2          Ken    Thompson        ken
+ 4       Robert   Griesemer        gri
+ 1       Robert    Thompson        abc
+
+</code></pre>
+<h3 id="无需排序快速去重">无需排序快速去重</h3>
+<p>之前曾经讨论<a href="https://kaopubear.top/2019-06-03-uniq-big-file/">一个大文本去重的问题</a>，从当时的结果来看，对于大文本在 linux 中排序是去重的主要限速步骤。但是在 csvtk 中，可以不通过排序而直接进行去重。针对当时的问题，对于一个 3,741,430 行的文本，先排序再去重需要 30s 左右的时间，而使用 csvtk uniq 仅需要两三秒。</p>
+<pre><code class="language-sh">time awk 'OFS=&quot;\t&quot; { if($1&gt;$2){print $2,$1,$3} else {print} }' howtouniq.txt \
+    | csvtk uniq -H -t -f 1,2 &gt; howtouniq.txt.awk-csvtk
+
+#real    0m2.674s
+#user    0m5.660s
+#sys     0m0.482s
+</code></pre>
+<h3 id="复杂条件筛选数据">复杂条件筛选数据</h3>
+<p>csvtk 中的 <code>filter2</code> 支持使用复杂条件筛选数据，类似于 awk。首先支持 <code>+ - / * &amp; | ^ ** %</code> 等运算，也支持<code>&gt; &gt;= &lt; &lt;= == != =~ !~</code>，同时还可以使用<code>|| &amp;&amp;</code> 对多个条件进行组合。例如：</p>
+<pre><code class="language-sh">
+$ cat names.csv
+id,first_name,last_name,username
+11,&quot;Rob&quot;,&quot;Pike&quot;,rob
+2,Ken,Thompson,ken
+4,&quot;Robert&quot;,&quot;Griesemer&quot;,&quot;gri&quot;
+1,&quot;Robert&quot;,&quot;Thompson&quot;,&quot;abc&quot;
+NA,&quot;Robert&quot;,&quot;Abel&quot;,&quot;123&quot;
+
+$ cat names.csv | csvtk filter2 -f '$id &gt; 3 || $username==&quot;ken&quot;'
+id,first_name,last_name,username
+11,Rob,Pike,rob
+2,Ken,Thompson,ken
+4,Robert,Griesemer,gri
+
+</code></pre>
+<h3 id="快速添加新列">快速添加新列</h3>
+<p>使用<code>mutate2</code>可以按照复杂运算快速添加新的内容，支持的操作和<code>filter2</code>一致。</p>
+<p>比如拼接字符串：</p>
+<pre><code class="language-sh">$ cat names.csv  \
+    | csvtk mutate2 -n full_name -e ' $first_name + &quot; &quot; + $last_name ' \
+    | csvtk pretty
+id   first_name   last_name   username   full_name
+11   Rob          Pike        rob        Rob Pike
+2    Ken          Thompson    ken        Ken Thompson
+4    Robert       Griesemer   gri        Robert Griesemer
+1    Robert       Thompson    abc        Robert Thompson
+NA   Robert       Abel        123        Robert Abel
+
+</code></pre>
+<p>甚至还可以通过三元运算符进行判断填空：</p>
+<pre><code class="language-sh">cat digitals.tsv | csvtk mutate2 -t -H -e '$1 &gt; 5 ? &quot;big&quot; : &quot;small&quot; '
+4       5       6       small
+1       2       3       small
+7       8       0       big
+8       1,000   4       big
+</code></pre>
+<h3 id="单行命令快速出图">单行命令快速出图</h3>
+<p>在测试数据中，有一组数据包含不同组别的序列长度和 GC 含量，可以通过<code>plot hist</code>绘制长度的直方图，通过<code>plot box</code>绘制每组的 GC 含量箱线图。</p>
+<pre><code class="language-sh">
+$ zcat grouped_data.tsv.gz | head -n 5 | csvtk -t pretty
+Group     Length   GC Content
+Group A   97       57.73
+Group A   95       49.47
+Group A   97       49.48
+Group A   100      51.00
+
+csvtk -t plot hist grouped_data.tsv.gz -f 2 --title Histogram -o histogram.png
+
+csvtk -t plot box grouped_data.tsv.gz -g &quot;Group&quot; -f &quot;GC Content&quot; --width 3 --title &quot;Box plot&quot; &gt; boxplot.png
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190627224719.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190627224729.png" alt=""></figure>
+<h2 id="one-more-thing">one more thing</h2>
+<p>文末还是要说回开发者。爪哥是一个非常勤奋的人，可以看看他的 GitHub，嗯，真绿。csvtk 最近一次 commit 是在 8 天前，seqkit 最近一次 commit 也是在 8 天前。</p>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190627225102.png" alt=""></figure>
+<p>所以，如果你在使用过程中有什么问题和需求，不妨去给他提几个 issue，没准他一顺手就实现了你的想法。</p>
+<hr>
+<figure data-type="image" tabindex="4"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+
+          </div>
+          
+            
+  
+            
+              <div class="mt-6">
+                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script>
+
+var options = {
+  shortname: 'kaopubear',
+  apikey: 'S3aqfVwpSDyKQ2A8Zpg9bXlFmZue0eFVbb3JWkNZtefxqCH39Fd2cLkwP7X0MPDi',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+              </div>
+            
+          
+        </div>
+        
+          <div class="w-full md:w-1/3">
+            <div class="mt-6 md:pl-8">
+              <h4 class="text-base font-thin text-gray-700 mb-2">发布时间</h4>
+              <div class="text-lg mb-6">2019-06-28</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">标签</h4>
+              <div class="mb-6">
+                
+                  <a href="https://fei0810.github.io/tag/suLAWOmp8B" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">数据科学</a>
+                
+                  <a href="https://fei0810.github.io/tag/0phqKOZB0f" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">linux</a>
+                
+              </div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">阅读时间</h4>
+              <div class="text-lg mb-6">11 min read</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
+              <div class="border-b border-gray-400">
+                
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-19-datamashmanual" class="text-lg hover:underline my-2 inline-block">linux极简统计分析工具datamash教程</a>
+        </div>
+      
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-19-datamashmanual" class="text-lg hover:underline my-2 inline-block">linux极简统计分析工具datamash教程</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-03-uniq-big-file" class="text-lg hover:underline my-2 inline-block">大文本另类去重多种解法</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+  <script>
+    Prism.highlightAll()
+  </script>
+</body>
+</html>

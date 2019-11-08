@@ -1,0 +1,1298 @@
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+  <script src="https://fei0810.github.io/media/prism.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://fei0810.github.io">思考问题的熊</a>
+  </h1>
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
+      
+        
+          <a href="/" class="nav-link">首页</a>
+        
+      
+        
+          <a href="/archives" class="nav-link">归档</a>
+        
+      
+        
+          <a href="/tags" class="nav-link">标签</a>
+        
+      
+        
+          <a href="/post/about" class="nav-link">关于</a>
+        
+      
+        
+          <a href="/post/resource" class="nav-link">资料</a>
+        
+      
+    </div>
+    <div class="lg:flex">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3 mt-6">
+          <h1 class="text-4xl">序列比对其他相关问题</h1>
+          
+          <div class="mt-6 lg:mt-10 post-content">
+            <h2 id="全局比对-global-alignment">全局比对 Global Alignment</h2>
+<p>由芝加哥的 Needleman 和 Wunsch 两位于上个世纪 70 年代初提出，常被称之为 Needleman-Wunsch 算法。算法针对用户指定的打分函数，确定性地找出两条序列间的最优比对。</p>
+<p>Needle-Wunsch 算法对两条序列所有残基进行全局比对的局限性。</p>
+<ul>
+<li>功能相关的蛋白之间虽然可能在整体序列上相差甚远， 却常常会具有相同的功能域</li>
+<li>序列片段能够独立发挥特定的生物学功能，却在不同蛋白之间相当保守</li>
+<li>仅靠全局比对的算法无法发现这样的片段</li>
+<li>内含子的发现使得在做核酸水平的序列比对时必须要正确处理内含子导致的大片段的差异</li>
+</ul>
+<!--more-->
+<h2 id="局部比对-local-alignment">局部比对 Local Alignment</h2>
+<p>1981 年，物理学家 Temple Smith 和数学家 Michael Waterman 在 Journal of Molcular Biology 上发表了一篇仅有四页的文章，提出 Smith-Waterman 局部比对算法</p>
+<p>race back begins at the highest score inthe matrix and continues until you reach 0。And also the secondary best alignment</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ccb0e4b771c757c.jpg" alt="img"></figure>
+<p>核心思想是给分数增加了下限 0 分</p>
+<p>所有的回溯都是局部的，所有的最终比对也是局部的。引入止损下限，差异扩大之后重启比对，找到局部水平的相似性</p>
+<h2 id="空位罚分的改进">空位罚分的改进</h2>
+<p>Affine gap penalty</p>
+<ul>
+<li>opening a gap receives a score ofd</li>
+<li>extending a gap receives a score of e</li>
+<li>Penalty = d + (n-1)* e</li>
+</ul>
+<p>有限向量机<br>
+<img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-7102a385725a4e40.jpg" alt="alt"></p>
+<p>扩展公式</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-80a9e576ea651253.jpg" alt="alt"></figure>
+<h2 id="全局比对的时间复杂性">全局比对的时间复杂性</h2>
+<p>O(mn) 正比于 m*n</p>
+<h2 id="全基因组比对">全基因组比对</h2>
+<h3 id="同源-homology-的分类">同源 homology 的分类</h3>
+<ul>
+<li>
+<p>直系同源 ortholog 来自于不同的物种，演化过程中基因没有丢失，各物种中都有</p>
+<p>chaining</p>
+</li>
+<li>
+<p>旁系同源 paralog 来自于一个物种内部基因组的复制</p>
+<p>netting</p>
+</li>
+</ul>
+<h2 id="ngs-sequence-alignment">NGS: Sequence alignment</h2>
+<p>Map the large numbers of short reads to a reference genome</p>
+<ul>
+<li>In a broader sense: Identify similar sequences (DNA, RNA, or protein) inconsequence of functional, structural, or evolutionary relationships between the them</li>
+<li>Applications: Genome assembly, SNP detection, homology search, etc</li>
+</ul>
+<p>short: greater search sensitivity</p>
+<p>large: faster search speed</p>
+<h3 id="in-exact-alignment">In-exact alignment</h3>
+<p>BWA 和 bowtie 的相关算法，大大减少了对服务器的要求</p>
+<p><strong>如何快速的知道某段序列大约在基因组的哪个位置</strong></p>
+<ol>
+<li>如何定义大约这个概念</li>
+</ol>
+<ul>
+<li>Hamming Distance or Sequence Similarity</li>
+<li>Ungapped vs Gapped Global vs Local</li>
+<li>All positions or the single best</li>
+</ul>
+<ol start="2">
+<li>Efficiency depends on the data characteristics &amp; goals</li>
+</ol>
+<ul>
+<li>Smith-Waterman: Exhaustive search for optimal alignments</li>
+<li>BLAST: Hash-table based homology searches</li>
+<li>Bowtie: BWT alignment for short read mapping</li>
+</ul>
+<h3 id="bwt-算法">BWT 算法</h3>
+<p>核心是绕最后一个序列转圈</p>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d77ac044d4b6743f.jpg" alt="alt"></figure>
+<ul>
+<li>
+<p>先给每一个 T 做 rotations, 再进行 sort, 生成 bw 矩阵，最后一列从头到尾就是 BWT</p>
+</li>
+<li>
+<p>回溯</p>
+<p>给每一个 T 的字母一个出现次数的排序，图示如下</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-7f6db222b92d5b06.jpg" alt="alt"></figure>
+</li>
+</ul>
+<h3 id="suffix后缀-arrays">Suffix（后缀） Arrays</h3>
+<blockquote>
+<p>类似于电话本中的索引结构</p>
+</blockquote>
+<p><strong>What if we need to check many queries</strong></p>
+<ul>
+<li>
+<p>We don't need to check every page of the phone book to find 'Ma'</p>
+</li>
+<li>
+<p>Sorting alphabetically lets us immediately skip 96% (25/26) of the book withoutany loss in accuracy</p>
+</li>
+</ul>
+<p><strong>Sorting the genome: Suffix Array (Manber &amp; Myers1991)</strong></p>
+<ul>
+<li>Sort every suffix of the genome</li>
+</ul>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1bf7617aa186f44f.jpg" alt="alt"></figure>
+<p>所有具有相同 prefix（前缀）的 suffixes（后缀）会聚在一起，这样就可以进行类似于二分法的排除</p>
+<p><strong>全基因组建立 index</strong></p>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2728285ca4cda020.jpg" alt="alt"></figure>
+<ul>
+<li>
+<p>An array of integers giving the startingpositions of suffixes of a string inlexicographical order</p>
+</li>
+<li>
+<p>从中间的 index 开始找，过滤一半</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8c9e641581731988.jpg" alt="alt"></figure>
+<p><strong>效率</strong></p>
+<p>Total Runtime: O(m log n)</p>
+<ul>
+<li>More complicated, but much faster!</li>
+<li>Looking up a query loops 32 times instead of 3B</li>
+</ul>
+<p>Searching the array is very fast, but it takes time to construct</p>
+<ul>
+<li>This time will be amortized over many, many searches</li>
+<li>Run it once &quot;overnight&quot; and save it away for all future queries</li>
+<li>非常消耗内存</li>
+</ul>
+<h3 id="blastdot-matrix">BLAST/Dot matrix</h3>
+<p><strong>Indexing-based local alignment</strong></p>
+<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-71d09c0f3d71dd54.jpg" alt="alt"></figure>
+<p><strong>Basic Local Alignment Search Tool</strong></p>
+<blockquote>
+<p>围绕最优比对路径进行计算</p>
+</blockquote>
+<p>BLAST Ideas 核心思想：Seeding‐and‐extending</p>
+<ul>
+<li>
+<p>Find matches (seed) between the query and subject 找到高度相似的小片段，种子</p>
+</li>
+<li>
+<p>Extend seed into High Scoring Segment Pairs (HSPs) 向两端延伸并进行比对</p>
+<p>Run Smith‐Waterman algorithm on the specified region only</p>
+</li>
+<li>
+<p>Assess the reliability of the alignment 打分评估</p>
+</li>
+</ul>
+<p>将序列切分，在数据库中定位候选序列和位置</p>
+<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e4f4ca9c765403dd.jpg" alt="alt"></figure>
+<p>得到候选序列和查询序列的 heatmap</p>
+<p>去掉零散的 hit, 直留下对角线，形成 hit cluster</p>
+<p>以 hit cluster 为基础向左右进行延伸直到分数不符合要去</p>
+<p>在扩展的区域进行局部比对</p>
+<figure data-type="image" tabindex="10"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2f6e770b76db1ad6.jpg" alt="alt"></figure>
+<p><strong>blast 加速</strong></p>
+<ul>
+<li>标记低复杂度，易产生假阳性</li>
+<li>考虑与种子相似的邻居单字</li>
+</ul>
+<p><strong>分数评估，避免随机因素</strong></p>
+<p>E value</p>
+<figure data-type="image" tabindex="11"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-83fdec479a8701f3.jpg" alt="alt"></figure>
+<ul>
+<li>n 数据库大小</li>
+<li>k 和打分矩阵相关</li>
+<li>m 长度</li>
+<li>s 比对的分数</li>
+</ul>
+<p>在随机情况下获得比当前分数高的可能比对条数，不是概率是个望值。p 为 0.05 时，E 也是 0.05。</p>
+<p>BLAST 是一种启发式算法，不确定有最优解</p>
+<figure data-type="image" tabindex="12"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6fa0263571430462.jpg" alt="alt"></figure>
+<p>只在有效区域应用动态规划算法</p>
+<hr>
+<figure data-type="image" tabindex="13"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="14"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+
+          </div>
+          
+            
+  
+            
+              <div class="mt-6">
+                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script>
+
+var options = {
+  shortname: 'kaopubear',
+  apikey: 'S3aqfVwpSDyKQ2A8Zpg9bXlFmZue0eFVbb3JWkNZtefxqCH39Fd2cLkwP7X0MPDi',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+              </div>
+            
+          
+        </div>
+        
+          <div class="w-full md:w-1/3">
+            <div class="mt-6 md:pl-8">
+              <h4 class="text-base font-thin text-gray-700 mb-2">发布时间</h4>
+              <div class="text-lg mb-6">2017-08-14</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">标签</h4>
+              <div class="mb-6">
+                
+                  <a href="https://fei0810.github.io/tag/4K-ebk46B" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">生物信息</a>
+                
+              </div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">阅读时间</h4>
+              <div class="text-lg mb-6">6 min read</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
+              <div class="border-b border-gray-400">
+                
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-10-11-rnaseqexpressionanalysis" class="text-lg hover:underline my-2 inline-block">转录组表达分析知识图谱</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-09-17-fasterdeseq2" class="text-lg hover:underline my-2 inline-block">船新版本 DESeq2 处理大量样本速度显著提升</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-08-15-biotools-web" class="text-lg hover:underline my-2 inline-block">biotools 综合性生物信息工具资源网站</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+  <script>
+    Prism.highlightAll()
+  </script>
+</body>
+</html>

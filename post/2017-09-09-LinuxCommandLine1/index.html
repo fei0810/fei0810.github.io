@@ -1,0 +1,1317 @@
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
+
+    
+
+  <script src="https://fei0810.github.io/media/prism.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://fei0810.github.io">思考问题的熊</a>
+  </h1>
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
+      
+        
+          <a href="/" class="nav-link">首页</a>
+        
+      
+        
+          <a href="/archives" class="nav-link">归档</a>
+        
+      
+        
+          <a href="/tags" class="nav-link">标签</a>
+        
+      
+        
+          <a href="/post/about" class="nav-link">关于</a>
+        
+      
+        
+          <a href="/post/resource" class="nav-link">资料</a>
+        
+      
+    </div>
+    <div class="lg:flex">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3 mt-6">
+          <h1 class="text-4xl">Linux Command Line 学习笔记 1</h1>
+          
+          <div class="mt-6 lg:mt-10 post-content">
+            <blockquote>
+<p>说明；写 <strong>Linux Command Line 学习笔记</strong>系列文章本意<strong>只是</strong>记录自己学习 <strong>《Linux  Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的是原版书，所以很多地方中英混杂。更详细地学习建议去阅读原书即可。</p>
+</blockquote>
+<p>关于为什么应该学习 linux 或者说 ubuntn，因为 ubuntn 的中文名字叫做“有盼头”，学了它，你才真正有可能成为计算机的主人，才可能自由地使用你的电脑。</p>
+<p>所谓自由，解释如下：</p>
+<blockquote>
+<p>Freedom is the power to decide what your computer does, and the only way to have this freedom is to know what your computer is doing. Freedom is a computer that is without secrets, one where everything can be known if you care enough to find out.</p>
+</blockquote>
+<p>关于为什么要学习命令行操作而非使用图形界面，解释如下：</p>
+<blockquote>
+<p>graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible<br>
+图形用户界面让简单的任务更容易完成，而命令行界面使完成复杂的任务成为可能。</p>
+</blockquote>
+<!--more-->
+<h2 id="what-is-the-shell">What Is The Shell</h2>
+<p>一个程序，它接受从键盘输入的命令，然后把命令传递给操作系统去执行。</p>
+<h2 id="navigation">Navigation</h2>
+<p>一个可以让我们访问 shell 的东西，也叫做终端</p>
+<ul>
+<li>
+<p>The File System Tree</p>
+</li>
+<li>
+<p>Current Working Directory<br>
+<code>pwd</code></p>
+</li>
+<li>
+<p>Listing The Contents Of A Directory<br>
+<code>ls</code></p>
+<pre><code>-a 列出所有文件
+-d 查看目录信息
+-F 添加指示符
+-h 人类可读
+-r 相反顺序显示
+-l 详细信息
+-t 按照修改时间排序
+-S 按照文件大小排序
+</code></pre>
+<p>通常当我要查看哪些文件占用了大量空间时会使用<code>ls -alhS |less</code>；当我要看看最近修改过哪些文件时会使用<code>ls -alht |less</code>。</p>
+<p>关于详细格式，需要注意第二行显示的文件硬连接数目，显示的时间如果太久远会有年份信息，如果很近就只有月份信息了。而这个时间日期是上次修改的时间，不是文件创建时间。</p>
+</li>
+<li>
+<p>Changing The Current Working Directory</p>
+<ul>
+<li>Absolute Pathnames<br>
+绝对路径开始于根目录，紧跟着目录树的一个个分支，一直到达所期望的目录或文件。</li>
+<li>Relative Pathnames<br>
+相对路径开始于工作目录。符号“.” 指的是工作目录，“..” 指的是工作目录的父目录。</li>
+</ul>
+</li>
+<li>
+<p>Shortcuts</p>
+<ul>
+<li><code>cd</code> 进入 home</li>
+<li><code>cd -</code>先前目录</li>
+<li><code>cd ~foo</code> 进入 foo 的 home</li>
+</ul>
+</li>
+</ul>
+<h2 id="exploring-the-system">Exploring The System</h2>
+<ul>
+<li>
+<p><code>uname -a</code></p>
+</li>
+<li>
+<p>内核 <code>cat /proc/version</code></p>
+</li>
+<li>
+<p>linux 版本 <code>lsb_release -a</code></p>
+</li>
+<li>
+<p>系统位数 <code>file /bin/ls</code></p>
+</li>
+<li>
+<p>the amount of free memory</p>
+<p><code>free</code></p>
+</li>
+<li>
+<p>current amount of free space on your disk drives</p>
+<p><code>df</code></p>
+</li>
+<li>
+<p>查看文件类型</p>
+<p><code>file</code></p>
+<p>Linux 没有文件后缀的概念，后缀往往只是让用户易于理解</p>
+<p>Linux 的宗旨是一切皆文件</p>
+</li>
+<li>
+<p>查看文本内容</p>
+<p><code>less</code></p>
+<figure data-type="image" tabindex="1"><img src="https://img.mubu.com/document_image/86742655-ae86-413b-bc49-6292c18c728f.jpg" alt="img"></figure>
+<p><strong>remember: less is more!</strong></p>
+<blockquote>
+<p>一个小小的复制粘贴技巧，鼠标左键双击文件名会自动复制，在需要的地方单击鼠标中间就可以直接黏贴刚才复制过的文件名了。</p>
+</blockquote>
+</li>
+<li>
+<p>linux 文件系统</p>
+<figure data-type="image" tabindex="2"><img src="https://img.mubu.com/document_image/9efab35f-5960-44bc-944a-55c634983915.jpg" alt="img"></figure>
+</li>
+<li>
+<p>链接</p>
+<ul>
+<li>Symbolic Links
+<ul>
+<li>the same way as a Windows shortcut though of course, they predate the Windows feature by many years</li>
+<li>when we create a symbolic link, we are creating a text description of where the target file is relative to the symbolic link.</li>
+</ul>
+</li>
+<li>hard links
+<ul>
+<li>
+<p>every file has a single hard link that gives the file its name</p>
+</li>
+<li>
+<p>When we create a hard link, we create an additional directory entry for a file</p>
+<ul>
+<li>a link cannot reference a file that is not on the same disk partition as the link itself</li>
+<li>may not reference a directory</li>
+</ul>
+</li>
+<li>
+<p><code>-rw-r--r-- 4 me me 1650 2008-01-10 16:33 fun</code></p>
+<p>a “4” which is the number of  <strong>hard links</strong> that now exist for the file</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="manipulating-files-and-directories">Manipulating Files And Directories</h2>
+<ul>
+<li>
+<p>通配符</p>
+<p><code>*</code> Matches any characters</p>
+<p><code>?</code> Matches any single character</p>
+<p><code>[characters]</code> Matches any character that is a member of the set characters</p>
+<p><code>[!characters]</code> Matches any character that is not a member of the set characters</p>
+<p><code>[[:class:]]</code> Matches any character that is a member of the specified class</p>
+<p><code>[:alnum:]</code> Matches any alphanumeric character</p>
+<p><code>[:alpha:]</code> Matches any alphabetic character</p>
+<p><code>[:digit:]</code> Matches any numeral</p>
+<p><code>[:lower:]</code> Matches any lowercase letter</p>
+<p><code>[:upper:]</code> Matches any uppercase letter</p>
+<p><code>[abc]*</code> Any file beginning with either an “a”, a“b”, or a“c”</p>
+<p><code>BACKUP.[0-9][0-9][0-9]</code> Any file beginning with “BACKUP.”followed by exactly three numerals</p>
+<p><code>[[:upper:]]*</code> Any file beginning with an uppercase letter</p>
+<p><code>[![:digit:]]*</code> Any file not beginning with a numeral</p>
+<p><code>*[[:lower:]123]</code> Any file ending with a lowercase letter or the numerals “1”, “2”, or “3”</p>
+</li>
+<li>
+<p>cp – Copy files and directories</p>
+<pre><code>-a 全部拷贝包括权限此参数的效果和同时指定&quot;-dpR&quot;参数相同
+-d：当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录
+-f：强行复制文件或目录，不论目标文件或目录是否已存在
+-i：覆盖既有文件之前先询问用户
+-l：对源文件建立硬连接，而非复制文件
+-p：保留源文件或目录的属性
+-R/r：递归处理，将指定目录下的所有文件与子目录一并处理
+-s：对源文件建立符号连接，而非复制文件
+-u：使用这项参数后只会在源文件的更改时间较目标文件更新时或是名称相互对应的目标文件并不存在时，才复制文件
+-S：在备份文件时，用指定的后缀“SUFFIX”代替文件的默认后缀
+-b：覆盖已存在的文件目标前将目标文件备份
+-v：详细显示命令执行的操作
+</code></pre>
+</li>
+<li>
+<p>mv – Move/rename files and directories</p>
+</li>
+<li>
+<p>mkdir – Create directories</p>
+</li>
+<li>
+<p>rm – Remove files and directories</p>
+<ul>
+<li>务必小心 Be Careful With rm</li>
+<li>Be particularly careful with wildcards. Consider this classic example. Let's say you want to delete just the HTML files in a directory. To do this, you type: <code>rm *.html</code></li>
+<li>which is correct, but if you accidentally place a space between the “*” and the“.html” like so: <code>rm * .html</code></li>
+<li>the rm command will delete all the files in the directory and then <strong>complain</strong> that there is no file called “.html”.</li>
+<li>Here is a useful tip. Whenever you use wildcards with rm (besides carefully checking your typing!), test the wildcard first with ls. This will let you see the files that will be deleted. Then press the up arrow key to recall the command and replace the ls with rm.</li>
+</ul>
+</li>
+<li>
+<p>ln – Create hard and symbolic links</p>
+</li>
+</ul>
+<p><a href="http://sourceforge.net/projects/linuxcommand/files/TLCL/16.07/TLCL-16.07.pdf/download">《The Linux Command Line》 原版书籍下载地址</a></p>
+<hr>
+<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+
+          </div>
+          
+            
+  
+            
+              <div class="mt-6">
+                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script>
+
+var options = {
+  shortname: 'kaopubear',
+  apikey: 'S3aqfVwpSDyKQ2A8Zpg9bXlFmZue0eFVbb3JWkNZtefxqCH39Fd2cLkwP7X0MPDi',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+              </div>
+            
+          
+        </div>
+        
+          <div class="w-full md:w-1/3">
+            <div class="mt-6 md:pl-8">
+              <h4 class="text-base font-thin text-gray-700 mb-2">发布时间</h4>
+              <div class="text-lg mb-6">2017-09-09</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">标签</h4>
+              <div class="mb-6">
+                
+                  <a href="https://fei0810.github.io/tag/0phqKOZB0f" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">linux</a>
+                
+              </div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">阅读时间</h4>
+              <div class="text-lg mb-6">7 min read</div>
+              <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
+              <div class="border-b border-gray-400">
+                
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-28-csvtkbasic" class="text-lg hover:underline my-2 inline-block">csvtk命令行版极简dplyr</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-19-datamashmanual" class="text-lg hover:underline my-2 inline-block">linux极简统计分析工具datamash教程</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://fei0810.github.io/post/2019-06-03-uniq-big-file" class="text-lg hover:underline my-2 inline-block">大文本另类去重多种解法</a>
+        </div>
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+      
+    
+  
+
+
+              </div>
+            </div>
+          </div>
+        
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+  <script>
+    Prism.highlightAll()
+  </script>
+</body>
+</html>

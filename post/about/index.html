@@ -1,176 +1,196 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" >
-
-<title>关于 | 思考问题的熊</title>
-<meta name="description" content="记录所思所学所想，包括但不限于数据科学/生物信息/经济学/生产力工具等等。">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://fei0810.github.io/favicon.ico?v=1573146595094">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
 <link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
 
+    
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="https://fei0810.github.io/styles/main.css">
+<script src="https://fei0810.github.io/media/script.js"></script>
 
+    
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-  </head>
-  <body>
-  
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://fei0810.github.io">思考问题的熊</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
+  <script src="https://fei0810.github.io/media/prism.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://fei0810.github.io">思考问题的熊</a>
+  </h1>
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
     </button>
-    <div class="collapsible-body">
-      <ul class="inline">
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
+  </div>
+</div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
+      
         
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
+          <a href="/" class="nav-link">首页</a>
         
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
+      
         
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
+          <a href="/archives" class="nav-link">归档</a>
         
-          <li>
-            
-              <a href="/post/about" class="menu">
-                关于
-              </a>
-            
-          </li>
+      
         
-      </ul>
+          <a href="/tags" class="nav-link">标签</a>
+        
+      
+        
+          <a href="/post/about" class="nav-link">关于</a>
+        
+      
+        
+          <a href="/post/resource" class="nav-link">资料</a>
+        
+      
+    </div>
+    <div class="lg:flex">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://fei0810.github.io/atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
     </div>
   </div>
-</nav>
-
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <article class="article">
-            <h1>关于</h1>
-            <p class="article-meta">
-              2019-01-25
-              
-            </p>
-            
-            <div class="post-content">
-              <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3 mt-6">
+          <h1 class="text-4xl">关于</h1>
+          
+          <div class="mt-6 lg:mt-10 post-content">
+            <blockquote>
+<p>欢迎来到我的博客，很高兴遇见你！🤝</p>
 </blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+<h2 id="关于我">🐻关于我</h2>
+<p>不严格地回溯，大四（2014年）是我开始写作的一年，那时的内容主要是考研经历和备考建议。前前后后这个主题写了 20 多万字，目前已整理成册开源在 <a href="https://book.kaopubear.top/">Gitbook</a>。至今（2018 年 11 月） 4 年过去，写作这个爱好算是坚持了下来。</p>
+<p>如果你通过这个博客学到了一点东西，那么对我最好的奖赏就是请你也尝试教我些东西（可以通过邮箱或者其他社交平台和我联系）。希望所有读到此博客文章的读者都有所收获。<strong>希望我自己在硕博期间尽心尽力有所收获，于人于己问心无愧。</strong></p>
+<h2 id="部分经历">🎉 部分经历</h2>
+<ul>
+<li>印象笔记官方资深印象大使/幕布官方布道师</li>
+<li>生信技能树团队核心成员/openbiox 常委</li>
+<li>中国科学院 2017/2018年生物统计学研究生课程助教</li>
+<li>锤子科技 2015/2016 年产品发布会志愿者</li>
+</ul>
+<h2 id="部分文章非专业相关">📝 部分文章(非专业相关)</h2>
+<ul>
+<li>
+<p>考研文集「<a href="https://book.kaopubear.top">靠谱学长说：聊聊考研复习这件事</a>」</p>
+<p>国内用户可以访问「语雀」<a href="https://www.yuque.com/kaopubear/kaoyan">同步版本</a>提高访问速度。这些文章4年时间（截至2018年底）被数以万计的考研人阅读分享。</p>
+</li>
+<li>
+<p>工具教程「文献管理神器 Zotero 学习路径指南」<br>
+<a href="https://sspai.com/post/56724">少数派首页推荐</a></p>
+</li>
+<li>
+<p>工具教程「印象笔记入门进阶与避坑指南」</p>
+<p><a href="https://sspai.com/post/47150">少数派首页推荐</a></p>
+<p><a href="https://mp.weixin.qq.com/s/5OEdCliNwog1MkSK9_BaDg">印象笔记官方推荐</a></p>
+</li>
+<li>
+<p>工具教程「给你的印象笔记模板使用心得」<br>
+<a href="https://sspai.com/post/52701">少数派首页推荐</a></p>
+</li>
+<li>
+<p>英语学习「如何用英语打开一扇门」</p>
+<p><a href="https://www.jianshu.com/p/0724c80bef3f">简书首页热门 上篇</a></p>
+<p><a href="https://www.jianshu.com/p/e37072a1a4db">简书首页热门 下篇</a></p>
+</li>
+<li>
+<p>科普文章「贯穿你我一生的基因之谜」</p>
+<p><a href="https://sspai.com/post/47151">少数派首页推荐</a></p>
+</li>
+</ul>
+<h2 id="学术研究专业相关">📄 学术研究(专业相关)</h2>
+<p>可参考个人 <a href="https://www.researchgate.net/profile/Fei_Zhao44">ResearchGate</a></p>
+<h2 id="关于博客">🏠 关于博客</h2>
+<p>目前（预计持续到2020年）我正在中科院进行硕博连读，生物信息专业。</p>
+<p>这个博客主要用来记录一些平日的学习笔记和心得，偶尔也会有一些所思所想。我希望自己每周能够学习一个技术（专业）知识，同时阅读并点评一篇文献（文章/书）。如果是适合公开（和当前工作不存在冲突）的内容，我尽量每周至少发布一篇有观点有态度的技术博客和文献笔记亦或者读书笔记。</p>
+<p>为此，我还给这个 Flag 起了一个名字，叫做 <strong>Weekly STAR (Share Technique and Review)</strong> 。</p>
+<hr>
+<h2 id="推荐联系方式">📪 推荐联系方式</h2>
+<p>最快速的提问和交流方式在<strong>知识星球「靠谱熊基地」</strong></p>
+<p>点击链接 https://t.xiaomiquan.com/62BIAqn 微信扫码可以加入</p>
+<p><strong>其他联系方式</strong></p>
+<p>简书：<a href="http://www.jianshu.com/u/963b2c9fee02">思考问题的熊</a></p>
+<p>邮箱：zhaofei920810@gmail.com (<em>文章转载等事宜</em>)</p>
+<hr>
+<p><strong>说明</strong>：如果你是因为考研而找到这个博客，所有考研相关内容已经整理成册并全部开源，如有需要请直接到 <a href="https://book.kaopubear.top/">GitBook</a> 或者<a href="https://www.yuque.com/kaopubear/kaoyan">语雀</a>(国内读者)在线阅读《靠谱学长说-聊聊考研复习这件事》</p>
 
-            </div>
-          </article>
-        </div>
-        <div class="paper" data-aos="fade-in">
+          </div>
+          
+            
+  
+            
+              <div class="mt-6">
+                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+
+<div id="disqus_thread"></div>
+
+<script>
+
+var options = {
+  shortname: 'kaopubear',
+  apikey: 'S3aqfVwpSDyKQ2A8Zpg9bXlFmZue0eFVbb3JWkNZtefxqCH39Fd2cLkwP7X0MPDi',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+
+</script>
+
+              </div>
+            
           
         </div>
         
       </div>
-
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://fei0810.github.io/images/avatar.png?v=1573146595094" class="no-responsive avatar">
-    <div class="text-muted">记录所思所学所想，包括但不限于数据科学/生物信息/经济学/生产力工具等等。</div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://fei0810.github.io/post/hello-gridea">Hello Gridea</a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://fei0810.github.io/tag/hk572w5Wa" class="badge secondary">
-          Gridea
-        </a>
-      
-    </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://fei0810.github.io/atom.xml" target="_blank">RSS</a>
-  </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> 我的 <a href="https://t.zsxq.com/UjiEaYZ"target="_blank">知识星球</a>
 </div>
-
-
     </div>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script type="application/javascript">
-
-AOS.init();
-
-hljs.initHighlightingOnLoad()
-
-</script>
-
-
-
-
-  </body>
+  </div>
+  <script>
+    Prism.highlightAll()
+  </script>
+</body>
 </html>
