@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>VScode 系列 1：提升 R 和 Python 使用体验 | 思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学所想<br>" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1573182223128">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1573190701491">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -27,7 +27,7 @@
 
   </head>
   <body>
-    <div class="site-nav no-cover">
+    <div class="site-nav has-cover">
       <div class="head">
   <div class="inner">
     <a class="site-name" href="https://kaopubear.top/">
@@ -67,7 +67,11 @@
   </div>
 </div>
     </div>
-    <article role="main" class="hentry ">
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png" data-width="900" data-height="423" style="background-image:url(https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png); height: 80vw;">
+          <h1 class="post-title">VScode 系列 1：提升 R 和 Python 使用体验</h1>
+        </div>
       
       <h1 class="entry-title" itemprop="headline">VScode 系列 1：提升 R 和 Python 使用体验</h1>
       <div class="entry-meta">
@@ -77,8 +81,7 @@
         </span>
       </div>
       <div class="post-content yue">
-        <figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dd277e8b4360f029.png" alt=""></figure>
-<blockquote>
+        <blockquote>
 <p>已经攒了一系列 VS Code 写作计划和素材，之前也发过几篇基础知识的思维导图（见文末）。不过一直不知道该从哪里开始第一篇文章，如果推荐给身边的人，他们可能最关心的是用 VS Code 日常写简单的 R 和 Python 代码体验如何。那就从这里开始吧。</p>
 <p>本文以 PC 作为安装配置示例，Mac 基本类似且部分内容体验可能更优。</p>
 </blockquote>
@@ -86,6 +89,7 @@
 <p>既然是系列文章的开篇，姑且对主题按下不表先介绍一下 VS Code。</p>
 <p><a href="https://code.visualstudio.com/">VS Code</a> 的全称是 Visual Studio Code，官方给他的定义是官方定义是<strong>一个免费的、开源的跨平台编辑器</strong>。相对于各种 IDE 而言，编辑器则相对更轻量，更侧重于文件或者文件夹而非宏大的项目。</p>
 <!--more-->
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dd277e8b4360f029.png" alt=""></figure>
 <p>2011 年底，微软从 IBM 请 《设计模式》的作者同时也是 <a href="https://www.eclipse.org/">Eclipse</a> 掌舵人之一的 Erich Gamma 来开发一款优雅的在线开发工具（后来的 Manaco Editor），2015 年他把这款在线工具移植到了桌面平台，也就有了如今 VS Code 。师承 Eclipse 同时又吸取 Eclipse 的教训，他们决定核心只做一个高性能的轻量级编辑器，个性化功能交给插件系统来完成且要把插件系统运行在主进程之外。同时，VS Code 希望让开发者在编辑器里拥有 IDE 类似的开发体验，比如对源代码的智能理解、图形化调试工具和版本管理等等。总之，就是在 IDE 和编辑器中找到一个比较理想的平衡。</p>
 <p>在很多人的印象中，微软一直是一个站在开源世界对立面，靠专利官司和垄断挣钱的公司，但其实微软近几年一直是 GitHub 贡献开源代码最活跃的公司，活跃到现在已经把 GitHub 收购了（黑人问号脸）。而在所有微软的开源项目中，star 最高的 repo 就是 VS Code 编辑器。VS Code 以 MIT 协议开源，所有的开发过程和反馈渠道完全在 GitHub 开放，同时 VS Code 提供了统一的 Language Server Protocol 和 Code Debugging Protocol API，所有语言的开发和都能够通过实现两个 API 在 VS Code 上得到类似 IDE 的开发和调试体验。</p>
 <p>如果你是一个 R 语言用户，RStudio 一定是首选 IDE，如果你是一个 Python 用户，Pycharm 则是大多数人的编辑器。但如果你平时既要用点 R，也要用点 Python，偶尔感觉这些 IDE 有点臃肿或者不想在两个 IDE 中反复切换，那么 VS Code 是一个不错的选择。</p>
@@ -276,7 +280,7 @@ var dsqjs = new DisqusJS(options)
     <footer class="footer">
   <div class="main">
     <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1573182223128" alt="思考问题的熊">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1573190701491" alt="思考问题的熊">
     </a>
     <div class="footer__social">
       
