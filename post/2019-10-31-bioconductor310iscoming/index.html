@@ -1,0 +1,245 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bioconductor 3.10正式发布 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+<link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Bioconductor 3.10正式发布 | 思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91022805-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="site-nav has-cover">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://kaopubear.top/">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="info_nav">
+      
+        
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+        
+          <a href="/post/project">项目</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    </div>
+    <article role="main" class="hentry has-cover">
+      
+        <div class="entry-cover js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150132.jpg" data-width="900" data-height="423" style="background-image:url(https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150132.jpg); height: 80vw;">
+          <h1 class="post-title">Bioconductor 3.10正式发布</h1>
+        </div>
+      
+      <h1 class="entry-title" itemprop="headline">Bioconductor 3.10正式发布</h1>
+      <div class="entry-meta">
+        <time class="updated" datetime="2019-10-31 14:46:22">2019-10-31</time>
+        <span class="author vcard">
+          7 min read
+        </span>
+      </div>
+      <div class="post-content yue">
+        <p>10月30日，Bioconductor 3.10 正式发布，该版本的bioc共包括了 1822 个软件包，384 个实验数据包，952 个注释包和 27 个工作流程，基于 R 3.6.1。</p>
+<p>其中，新的软件包有93个，新的数据包15个，新的注释包2个，大量的旧包都进行了一波更新。</p>
+<p>接下来推荐几个值得关注的最新软件包，以及一些经典包的重要更新。</p>
+<h2 id="新加入的-bioc-包">新加入的 bioc 包</h2>
+<p>在3.10版本中新加入的 bioc 包，我个人比较感兴趣的有如下几个。</p>
+<h3 id="alps">ALPS</h3>
+<p>ALPS: AnaLysis routines for ePigenomicS data 一个最新的表观数据（ChIP-seq, ATAC-seq 等）可视化工具包，帮助你绘制高质量的发表级数据。下图是一个可以展示的内容概览。</p>
+<p>输入数据是一个包含有 bigwig 源文件位置信息的 data table。再结合其它一些相关 R 包的处理结果可以展示各种类型的信息，例如计算基因组的富集区域供后续进行  PCA 和聚类的分析；绘制不同样品之间的富集差异；绘制基因浏览器或者IGV类似的 track 等等。同时也可以对基因组区域进行注释和绘制motif。</p>
+<p>作者也强调，这个包中的大多数图都可以利用 ggplot2 的一套系统进行二次定制。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191031104453.png" alt=""></figure>
+<h3 id="methcp-methrix">MethCP &amp; Methrix</h3>
+<p>在分析甲基化数据的时候比较关注的一个信息叫做 differentially methylated region (DMR) 差异甲基化区域，类似于转录组分析中的差异表达基因。 大多数已有的一些工具（其实也没有很多）针对的都是两组数据，而 MethCP 除了支持常规的两组比较外，也可以处理多种条件的同时比较，例如时序数据。</p>
+<p>需要说明的是，MethCP 本身使用 bsseq 这个包加载原始数据。</p>
+<p>目前甲基化的数据上游分析产生的基本都会是一个超大的 bedgraph 文件，一般性能的电脑基本是处理不了的。Methrix 这个工具包主要的设计目的就是处理这种大型的甲基化 bedgraph 文件。</p>
+<p>在读入文件的同时，还可以利用参考基因组填补确实的CpG信息，并且创建甲基化矩阵。后续可以在矩阵的基础上进行一系列过滤和提取操作，并进行可视化展示。当然也可以把这个矩阵结果转换为bsseq数据包支持的格式，然后再使用 MethCP 这个包进行分析。</p>
+<h3 id="knowseq">Knowseq</h3>
+<p>一个据介绍是可以直接完成从原始数据下载到完成所有常规分析的工具包。下图是主要分析流程。</p>
+<p>在原始数据下载比对这个步骤中，其可以调用预编译好的 Bowtie2, Kallisto 和 salmon 的工具。首先可以利用<code>downloadPublicSeries(c(&quot;GSE74251&quot;))</code> 下载GEO中的数据信息，然后使用<code>read.csv(&quot;ReferenceFiles/GSE74251.csv&quot;)</code> 读取文件中的数据信息，接下来就可以使用 <code>rawAlignment</code> 这个命令来进行序列比对了。</p>
+<p>在进行 Biomarkers identification 的步骤时，可以进行质控和去除 batch effect 等操作，差异分析之后可以结合机器学习方法进行分类和基因筛选。</p>
+<p>最后针对差异进行可已经常用的各种富集分析，包括 GO pathway 和 相关疾病。</p>
+<p>（从个人经验来说，这种大而全的包质量一般不会特别好，但是可能还是会有一些人喜欢。）</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191031122809.png" alt=""></figure>
+<h3 id="apalyzer">APAlyzer</h3>
+<p>在转录翻译的过程中，mRNA 会在尾巴处添加一些 ployA，这个A可是有讲究的，长短位置的不同都会都 mRNA 的稳定性带来各种各样的影响，于是有一个研究方向就是 APA (alternative polyadenylation)。</p>
+<p>这方面研究相对权威的新泽西州罗格斯癌症研究所 Bin Tian 实验室针对人类中以后的可信 PolyA 位点信息，开发了一个使用转录组数据分析 APA 的工具包 APAlyzer。当前的版本支持检测UTR区域和内含子区域的APA，并利用编码区进行表达分析。</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191031125357.png" alt=""></figure>
+<h2 id="有重要更新的r包">有重要更新的R包</h2>
+<p>大量的已有工具包在 3.10 版本中进行了更新，这里挑选几个大家比较熟悉的进行简要介绍。</p>
+<h3 id="chipseeker">ChIPseeker</h3>
+<p>ChIPseeker 是 Y 叔开发的一个对 genomic region 进行各种注释可视化展示的工具包。其中有一个图比较典型，如下所示，就是把 upsetplot 嵌入 vennpie。这个图在实现效果前前后后经历过几次改变，但是在这个包中的实现方法一直没有升级，近期这个图在使用过程中偶尔会出现一些问题，例如只显示饼图不显示upsetplot等，然后Y叔就把这个实现方法给升级了。</p>
+<p>用Y叔的原话说就是</p>
+<blockquote>
+<p>于是我就把 ChIPseeker::upsetplo t重新给实现了，利用了 ggimage + ggplotify，代码长度变成原来的1/3，而且不会出现上面的这些问题。</p>
+</blockquote>
+<pre><code class="language-R">library(ChIPseeker)
+library(TxDb.Hsapiens.UCSC.hg19.knownGene)
+txdb &lt;- TxDb.Hsapiens.UCSC.hg19.knownGene
+library(clusterProfiler)
+files &lt;- getSampleFiles()
+print(files)
+
+peakAnno &lt;- annotatePeak(files[[4]], tssRegion=c(-3000, 3000),
+                         TxDb=txdb)
+upsetplot(peakAnno, vennpie=T)
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191031130704.png" alt=""></figure>
+<h3 id="deseq2">DESeq2</h3>
+<p>之前写过一篇文章介绍 <a href="https://kaopubear.top/2019-09-17-fasterdeseq2/">船新版本 DESeq2 处理大量样本速度显著提升</a>，现在这个版本的 DESeq2 也随着bioc的升级而正式升级。</p>
+<p>在之前的文章中，已经比较详细的写了为什么在处理大量样本时速度会有急速提升。在升级说明中则写的比较含蓄</p>
+<blockquote>
+<p>speeds up DESeq2 for large sample sizes (n &gt; 100) by at least an order of magnitude. In fact the speed is now linear with number of samples whereas previously DESeq2 would scale quadratically.</p>
+</blockquote>
+<h3 id="ensemblvep">ensemblVEP</h3>
+<p>调用  Ensembl Variant Effect Predictor 的 perl API 进行突变注释分析的 R 包 ensemblVEP  现在支持了 Ensembl release 97/98。似乎没啥可说，但是还是挺重要的。因为每一次 Ensembl 的更新，在一些物种上都会有比较大的升级。</p>
+<h3 id="isoformswitchanalyzer">IsoformSwitchAnalyzeR</h3>
+<p>IsoformSwitchAnalyzeR 是一个可以鉴定，注释和可视化可变剪切和转录本转换的工具包。在3.10中进行了大量的升级，多数函数都有改变。</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191031133447.png" alt=""></figure>
+<h3 id="maftools">maftools</h3>
+<p>maftools 是分析和展示 Mutation Annotation Format (MAF) 文件的工具包，在不少文章中都可以这个包绘制的图。在这次更新中，maftools 增加了 survGroup, mafSurvGroup 两个函数，用来预测和生存相关的基因以及基因集。另外，Signature analysis 分析步骤也有很多调整。</p>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191031133715.png" alt=""></figure>
+<p>其它具体的更新信息，可以参考<a href="https://www.bioconductor.org/news/bioc_3_10_release/">官方说明</a>。</p>
+<h2 id="如何升级">如何升级</h2>
+<p>查看当前版本：</p>
+<pre><code class="language-R">library(BiocManager)
+</code></pre>
+<p>应该会展示如下信息</p>
+<pre><code>Bioconductor version 3.9 (BiocManager 1.30.4), ?BiocManager::install
+for help
+</code></pre>
+<p>绝大多数情况下升级只需要执行如下命令：</p>
+<pre><code class="language-R">BiocManager::install(version = &quot;3.10&quot;)
+</code></pre>
+<p>通过指定版本号之后，所有可以更新的 R 包都会更新到 3.10 版本。如果你安装的 R 包比较多，提示需要更新一两百个 R 包都是很正常的。祝好~</p>
+<hr>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+
+      </div>
+      <div class="entry-block">
+        <div class="entry-tags">
+          
+            <a href="https://kaopubear.top//tag/UrqlObNL0t">
+              R
+            </a>
+          
+        </div>
+      </div>
+    </article>
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>前一篇</h3>
+          <a href="https://kaopubear.top//post/2019-12-02-mycloud">
+            <strong>我目前的云存储方法</strong>
+          </a>
+        </div>
+      </section>
+    
+    
+      <section class="post-section prev-post">
+        <div class="inner">
+          <h3>后一篇</h3>
+          <a href="https://kaopubear.top//post/2019-10-29-macos15user">
+            <strong>macOS 10.15 安装R包</strong>
+          </a>
+        </div>
+      </section>
+    
+
+    
+
+    <footer class="footer">
+  <div class="main">
+    <a href="https://kaopubear.top/">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+    </p>
+    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://kaopubear.top//media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
+  </body>
+</html>

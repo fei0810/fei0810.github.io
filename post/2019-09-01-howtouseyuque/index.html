@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>如何使用语雀快速发表自己的博客 | 思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1574871042524">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -81,116 +81,151 @@
       <div class="entry-meta">
         <time class="updated" datetime="2019-09-01 15:41:32">2019-09-01</time>
         <span class="author vcard">
-          9 min read
+          15 min read
         </span>
       </div>
       <div class="post-content yue">
-        <h2 id="写在前面">写在前面</h2>
-<p>生信圈子很多人在用的「简书」最近一段时间凉凉了。朋友圈一片哀嚎，大家纷纷表示恐慌，不知道该去哪里安放自己的创作欲望。</p>
-<p>动手能力强的朋友计划动手搭建自己的博客，类似于已经更新了快三年的「<a href="https://kaopubear.top/">思考问题的熊</a>」以及最近势头很生猛的「<a href="http://xuzhougeng.top/">洲更</a>」。</p>
-<p>还有一些人暂时没有自己搭建博客的计划，只是希望能找到一个适合写作和分享的地方，在这里推荐一下「语雀」。如果你想要一个可以<strong>有二级域名</strong>，<strong>支持 markdown，自带图床，可以私藏可以公开分享，可以点赞评论同时还不要钱</strong>的写作平台，语雀可能是最好的选择。</p>
-<!--more-->
+        <h2 id="拥有个人博客的几种途径">拥有个人博客的几种途径</h2>
+<p>在越来越多的人已经没有耐心读完 140 字微博（micro-blog），短视频逐渐占据人们更多注意力的今天，博客（blog）——这一上个时代的产物——似乎正在被我们渐渐遗忘。</p>
+<p>可是无论时间怎么变化，文字本身的力量都不会衰退。总有一部分人喜欢用文字记录学习和生活，希望用文字向公众传达思考和想法。而拥有一个自己的博客（写作平台），依旧是承载这些信息的最好选择。</p>
+<!-- more -->
+<p>目前，可供选择的写作平台大致有如下几种类型：</p>
+<ul>
+<li>强社交和推荐性质的平台，以简书为代表</li>
+<li>有一定写作能力要求的平台，以少数派为代表</li>
+<li>强依托第三方生态的平台，以微信公众号为代表</li>
+<li>有一定技术门槛的平台，以各种自建博客为代表</li>
+</ul>
+<p>根据写作目的不同，你可以有侧重的选择不同平台。例如，想要借助微信的流量，那运营公众号就是最佳选择；想拥有高度可定制的个人站点，那使用各类静态博客系统进行自建是必经之路；如果想在更专业的平台上进行分享交流，如少数派 Matrix 就是努力的方向。</p>
+<p>但这些平台或多或少都存在抑制我们写作热情的不足。例如，强社交推荐属性的平台总会「硬塞」给你根本不感兴趣的文章（广告）；强依托第三方生态的平台总是要让你不得不适应各种奇奇怪怪的规则；自建站点又需要有些写作之外的动手能力和钻研劲头。</p>
+<p>如果你只希望找到一个尽可能简单且适合写作分享的平台，接下来要介绍的工具——语雀或许是不错的选择。</p>
+<p>如果你希望找到一个可以<strong>定制访问路径、支持 Markdown 且写作体验优秀、自带图床、可以私密或公开分享、自带评论功能、支持批量导入导出同时还免费</strong>的写作分享平台，语雀可能是现阶段为数不多的选择。</p>
 <h2 id="语雀是什么">语雀是什么</h2>
-<p>关于写东西的工具，你可能知道类似于印象笔记或者有道云之类的各种笔记，可能也知道类似于腾讯文档这样的在线平台。但是可能还没听说过「语雀」。</p>
-<p>关于语雀是什么，在这里仅仅摘抄一点<a href="https://www.yuque.com/yuque/help/about">官方的介绍</a>。更加相信的可以直接阅读原文。</p>
+<p>关于语雀是什么，首先摘录一点 <a href="https://www.yuque.com/yuque/help/about">官方介绍</a>。</p>
 <blockquote>
-<p><strong>「语雀」是一个「专业的云端知识库」</strong>，孵化自 <a href="https://www.antfin.com/">蚂蚁金服</a> ，是 <a href="https://www.yuque.com/yubo/explore/tcaywl">体验科技</a> 理念下的一款创新产品，已是10万阿里员工进行文档编写、知识沉淀的标配。</p>
-<p>语雀诞生伊始，只是希望能给工程师提供一个好用的工具用来写技术文档，达成「用Markdown写文档」这个小目标。但在产品研发的过程中，我们发现其实身边的每个人、每个团队、每个组织都有很多知识，但一直以来缺少一个好用的工具让这些知识不只是留在每个人的大脑或电脑里，还可以被记录、分享和交流。</p>
+<p><strong>「语雀」是一个「专业的云端知识库」</strong>，孵化自蚂蚁金服，是体验科技理念下的一款创新产品，已是 10 万阿里员工进行文档编写、知识沉淀的标配。</p>
+<p>语雀诞生伊始，只是希望能给工程师提供一个好用的工具用来写技术文档，达成「用 Markdown 写文档」这个小目标。但在产品研发的过程中，我们发现其实身边的每个人、每个团队、每个组织都有很多知识，但一直以来缺少一个好用的工具让这些知识不只是留在每个人的大脑或电脑里，还可以被记录、分享和交流。</p>
 </blockquote>
-<p>类似于「腾讯文档」，「语雀」也是背靠巨头起家，来自于阿里巴巴的蚂蚁金服团队，目前已经从公司内部推向了所有人。和笔记以及在线文档的定位不同，「语雀」的主打定位是「知识库」和「团队」。</p>
-<p>「语雀」的个人主页称之为「工作台」，如下图所示，基本可以看到他支持的全部功能。你写的文章可以以单一的「文档」形式存在，也可以隶属于你的一个「知识库」，同时也可以隶属于一个「团队」。</p>
-<p>另外，「协作」和「讨论」可以让你和其他用户建立沟通，而「收藏」则是可以让你跟进别人优秀的公开「知识库」或者「文章」，「关注」则是让你可以关注那些有些的文档分享者。</p>
-<p>如果类比成熟悉的概念，这里的收藏关注其实都和简书没有什么差别。但是协作则是简书这种平台所欠缺的。</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190829153922.png" alt=""></figure>
+<p>类似于腾讯文档，语雀也是背靠巨头，起家于阿里巴巴的蚂蚁金服团队，且已从公司内部面向大众开放。和一些定位于个人笔记以及在线文档的工具不同，语雀的主打定位是「知识库」和「团队」。</p>
+<p>注册之后，你会发现「语雀」的个人主页称之为「工作台」，如下图所示，基本上左侧栏就是它支持的全部功能。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171635301_21610.png" alt=""></figure>
+<p>语雀的「主页」</p>
+<p>这些功能因为使用场景不同可以有各种解读，在这里我仅从个人写作分享平台的角度说一下自己的理解。</p>
+<p>写好的文章可以直接以「文档」形式查看，也可以让它隶属于某个「知识库」或某个「团队」，这三者代表了文章的组织方式和层次。</p>
+<p>「协作」和「讨论」则可以帮你和其他作者或读者建立一个沟通机制，不妨理解为一篇文章具有的社交属性；而「关注」和「收藏」则可以让你跟进其他优秀的公开「知识库」和「文章」。</p>
 <h2 id="何为知识库">何为知识库</h2>
-<p>所谓的知识库，其实就是可以存放整理各类型知识的一个集合。在语雀中提供了如下几种类型的知识库。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164425.png" alt=""></figure>
+<p>所谓知识库，我的使用体验就是<strong>可以存放整理各类型文件的集合</strong>。在语雀中提供了如下几种类型。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171634630_19320.png" alt=""></figure>
+<p>知识库类型</p>
 <h3 id="文档">文档</h3>
-<p>文档是最基本的一种知识库形式。</p>
-<p>其本质可以理解为一本书。这本书可以分章，分节，有完善的目录功能支持。他可以是一个产品手册，可以是一个技术文档，也可以是一个专栏，甚至真的可以是是一本书，比如我曾经写过的《<a href="https://www.yuque.com/kaopubear/kaoyan">靠谱学长说：聊聊考研复习这件事</a>》</p>
+<p>文档是最基本的知识库形式。其本质可理解为具有关联的文章合集。可以分章分节，有完善的目录功能。它可以是产品手册、技术文档，也可以是一本书，比如我把自己几年前部署在 Gitbook 的一本书《<a href="https://www.yuque.com/kaopubear/kaoyan">靠谱学长说：聊聊考研复习这件事</a>》搬了过来，最大的好处是国内访问速度明显提升。</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171634162_26417.png" alt=""></figure>
+<p>左为语雀右为 Gitbook</p>
 <h3 id="专栏">专栏</h3>
-<p>所谓专栏，其实就是下文将要介绍的博客。你可以把它理解为「文章的合集」。</p>
-<p>和常见的博客概念不同，这个「专栏」可以隶属于一个个人或者一个团队，每篇文章都可以是不同的作者。</p>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164429.png" alt=""></figure>
-<p>至于画板和表格类型的数据库，和这篇文章的主题关联不大，暂时就先不介绍了。</p>
+<p>所谓专栏，就是下文将要介绍的「个人博客」，可以把它理解为没有强关联的文章合集。在最新版的语雀中，因为其它类型知识库形式的扩充，专栏知识库已经和上文提到的文档知识库统一合并为文档知识库。如果想要新建专栏知识库，一方面你可以通过「从模板新建」选择「博客专栏」，另一方面也可以在知识库的高级设置中修改类型。如下图所示：</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171633611_29154.png" alt=""></figure>
+<p>切换知识库类型</p>
+<p>和常见的博客概念不同，「专栏」可以隶属于个人或团队，换言之，如果定位为一个团队专栏，那每篇文章都可以有不同的作者。</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171633246_15585.png" alt=""></figure>
 <h2 id="如何把语雀变成博客">如何把语雀变成博客</h2>
-<p>所以博客，无非就是同时满足如下几个需求：</p>
+<p>所谓个人博客，在我理解首先需要同时满足个人、博客和交流三个基本需求：</p>
 <ul>
-<li>有一个独立的网址，最好是能加入个性化域名</li>
-<li>在里面可以写各种各样类型的文章并进行公开发表</li>
-<li>有评论功能可以和读者进行沟通</li>
+<li>支持包含个性化名字的固定访问地址（个人属性）</li>
+<li>可以写各种类型文章并公开分享（博客属性）</li>
+<li>有点赞评论功能可以和读者沟通（交流属性）</li>
 </ul>
-<p>如果还有更高阶的需求，那可能就是如下几点：</p>
+<p>如果还有更高阶的需求，或许是：</p>
 <ul>
-<li>有自己的图床，方便上传</li>
-<li>有很好的编辑体验</li>
-<li>支持多种内容的上传以及展示，例如视频和数学公式</li>
-<li>有完整的使用说明，开发者能够持续维护和更新</li>
+<li>自带图床及较好的图片管理功能</li>
+<li>文档编辑器功能丰富及较好的使用体验</li>
+<li>支持多种类型内容展示如视频和数学公式</li>
+<li>有详细的官方文档且有持续维护和更新</li>
 </ul>
-<p>以上这些「语雀」都可以满足，甚至很多地方可以带来意想不到的惊喜。</p>
-<h3 id="独立二级域名">独立二级域名</h3>
-<p>语雀允许你对自己的主页和每个知识库设置有辨识度域名，而不是像简书那样给你一串冰冷冷的随机字符。</p>
+<p>使用了一段时间后，我发现以上这些需求语雀都可以满足，有些地方还有意想不到的惊喜。</p>
+<h3 id="独立且固定的访问地址">独立且固定的访问地址</h3>
+<p>语雀允许你对自己的主页和每个知识库设置有辨识度的个性化访问地址，而不是像少数派（忍不住吐槽一下）等多数平台那样给你一串冰冷的随机字符。</p>
 <p>在账户管理页面，你可以设置个人路径。</p>
-<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164434.png" alt=""></figure>
-<p>针对一个知识库，你可以设置独立的下一级名称。</p>
-<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164438.png" alt=""></figure>
-<h3 id="特别优秀的编辑器">特别优秀的编辑器</h3>
-<p>语雀的文档编辑器是一个现代编辑器该有的样子。支持标题、字体、表格、列表、上传图片、表格、代码片段等常用功能，<a href="https://www.yuque.com/yuque/help/dive-into-yuque-editor#nte1yh">支持 Markdown 常用快捷指令</a>。**所见即所得，让你写得顺手。**特别详细的介绍你可以查看<a href="https://www.yuque.com/yuque/help/dive-into-yuque-editor">官方说明</a>，这里我只是写几个让我感动的地方。</p>
-<p>首先，可以展示和上传你能想到的所有东西。包括但不限于<strong>数学公式，思维导图，流程图，各种本地文件。甚至你还可以直接插入本地视频或者B站的视频。</strong></p>
-<p>而且插入方式特别人性化 <code>ctrl+/</code> 直接调取插入选项。</p>
-<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164443.png" alt=""></figure>
-<p>然后是编辑器支持多种种插入图片的方式，总有一种满足你的编写习惯。例如：</p>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171632796_25108.png" alt=""></figure>
+<p>设置个人路径</p>
+<p>针对一个知识库，还可以设置独立的下一级地址。</p>
+<h3 id="足够好用的编辑器">足够好用的编辑器</h3>
+<p>语雀的文档编辑器是一个现代文本编辑器该有的样子。支持多级标题、字体、表格、列表、上传图片、代码片段等常用功能，<a href="https://www.yuque.com/yuque/help/dive-into-yuque-editor#nte1yh">支持 Markdown 常用快捷指令</a>。所见即所得，写的顺手。详细的介绍可以自行查看 <a href="https://www.yuque.com/yuque/help/dive-into-yuque-editor">官方说明</a>，以下只提写几个在实际使用中让我略感惊喜的细节。</p>
+<p><strong>文章中可以上传并展示我目前能想到的绝大多数内容。</strong></p>
+<p>如下图所示，文本编辑器支持的插入内容分为一般插入和嵌入两类。熟悉 Notion 的朋友应该对嵌入（Embed）这个操作并不陌生。</p>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171632450_21397.png" alt=""></figure>
+<p>支持插入多种格式内容</p>
+<p>支持的内容主要有数学公式，思维导图，流程图和各种类型本地文件等，还可以直接插入本地视频或者哔哩哔哩与优酷视频。点击工具条左侧的「插入」或者直接在文档段落首行输入 / 都可以调取卡片控件。</p>
+<p>下图是在文章中展示思维导图的两种形式，可以直接插入可编辑的思维导图（样式单一），也可以直接嵌入 Xmind 原文件然后进行自动解析。</p>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171631789_27760.png" alt=""></figure>
+<p>两种形式展示思维导图</p>
+<p><strong>编辑器支持多种图片插入方式且管理方便。</strong></p>
+<p>插入图片的方式有如下三种：</p>
 <ul>
-<li>直接系统层级的复制粘贴</li>
-<li>直接从桌面拖拽到页面</li>
-<li>从顶部 toolbar 插入</li>
+<li>系统层级的复制粘贴</li>
+<li>桌面拖拽到网页</li>
+<li>顶部 toolbar 插入</li>
 </ul>
-<p>上传好的图片可以任意调节大小，甚至支持插入跳转链接。别人只需要点击一下图片，就可以调转到你指定的地方。</p>
-<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164447.png" alt=""></figure>
-<p>关于很多人关心的markdown功能。语雀支持绝大部分的 markdown 快捷输入方式，通过这些快捷输入方式，我们可以不用鼠标完成文档的编辑。</p>
-<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164452.gif" alt=""></figure>
-<p><strong>如果只有一个词概括编辑体验那就是：顺滑</strong></p>
-<h3 id="公开发表分享">公开发表分享</h3>
-<p>如果你把一个「文档」或者一个「专栏」，本身设置为<strong>互联网可见。</strong> 那么里面更新的内容本身就是公开的，所有人只要知道连接或者域名，就可以去访问。</p>
-<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164505.png" alt=""></figure>
-<p>另外，你还可以设置知识库里的内容是否可以被搜索引擎收录。如果是博客的话，打开这个选项，可以帮助别人更加方便的搜索到你的文章。</p>
-<figure data-type="image" tabindex="10"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164509.png" alt=""></figure>
-<p>对于一些私密的文章，你甚至可以设置密码，只让一部分人看到。</p>
-<h3 id="优化阅读体验">优化阅读体验</h3>
-<p>针对专栏的单篇文章，在发布时可以进行多种设置。如下图所示，出了封面和摘要之外，还可以修改成和文章相关的路径。同时，也可以对单篇内容进行权限设置。</p>
-<figure data-type="image" tabindex="11"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164513.png" alt=""></figure>
+<p>在图片管理方面，上传后的图片可以任意调节大小，同时支持图片指定跳转链接。读者只需要点一下图片就可以跳转到指定地址。</p>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171631322_17084.png" alt=""></figure>
+<p>图片管理</p>
+<p>关于在任何一个编辑器中都经久不衰的 Markdown 话题，语雀支持绝大部分 Markdown 快捷输入方式从而让我们可以轻松完成文档的编辑。和众多主流编辑器类似，所见即所得的实现方式。</p>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171629142_3245.gif" alt=""></figure>
+<p>Markdown 效果</p>
+<p>当然，如果和 <strong>All in One</strong> 的 Notion 相比，在一些细节和特殊内容的插入上可能语雀还略有不足，但针对大部分人会用到的大部分功能而言，它可以称得上是一个足够优秀的文本编辑器。</p>
+<h3 id="公开发表与分享">公开发表与分享</h3>
+<p>在设置部分，如果把一个「文档」或者一个「专栏」本身设置为互联网可见， 那么其中更新的文章就会自动公开，知道地址即可访问。当然，如果有些文章并不想公开，仍可以对单篇文章设置为仅自己可见。</p>
+<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171623692_3831.png" alt=""></figure>
+<p>设置可见范围</p>
+<p>另外，你还可以设置知识库里的内容是否可被搜索引擎收录。如果作为博客使用，打开这个选项可以帮助别人更加方便的检索到你的文章。</p>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171623338_16902.png" alt=""></figure>
+<p>设置搜索引擎收录</p>
+<p>优化阅读体验</p>
+<p>针对单篇文章，在发布时可以进行多种设置。如下图所示，除去封面和摘要之外还可以修改访问路径并设置单篇文献权限。</p>
+<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171622887_17268.png" alt=""></figure>
+<p>优化阅读体验</p>
 <h3 id="协作和评论">协作和评论</h3>
-<p>「语雀」差别与大多数纯博客平台的一点，就是类似于「腾讯文档」和「石墨」的协作功能。除了通过分享链接完成知识库分享，也可以通过添加协作人员完成知识的协作。被添加的人员可以分为可编辑、只读权限。</p>
-<p>在每一篇文章的下面，都可以进行评论，你也可以对具体的评论进行回复。</p>
-<figure data-type="image" tabindex="12"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164519.png" alt=""></figure>
-<h3 id="完善的官方支持">完善的官方支持</h3>
-<p>背靠大厂，以及官方的重视。语雀目前有非常完善的<a href="https://www.yuque.com/yuque/help">官方文档</a>。日常碰到的问题，通过留言等形式，也会很快得到回复。</p>
-<p>另外，看下图可以感受一下开发迭代的速度。</p>
-<figure data-type="image" tabindex="13"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164525.png" alt=""></figure>
-<h2 id="其它几个特点">其它几个特点</h2>
-<h3 id="如何搜索">如何搜索</h3>
-<p>还在苦恼简书那种尴尬的搜索方式吗？</p>
-<p>语雀的搜索功能也非常人性化，支持多种粒度的搜索。当你在任意界面的搜索框输入内容时，它会提醒你搜索范围。比如你可以搜索当前知识库，或者搜索当前团队，甚至是只搜索和你相关的内容。</p>
-<figure data-type="image" tabindex="14"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164529.png" alt=""></figure>
-<h3 id="快速的多格式导入">快速的多格式导入</h3>
-<p>在一个文档的编辑页面，复制 Markdown 格式文本。在阅读页面，右上角「更多」里面可以找到「查看 Markdown」。</p>
-<p>不管你之前写文档是用 Word、Markdown、Pages、WPS 还是 Confluence、GitBook……都可以顺滑地迁移到语雀文档！其中 Markdown 可以直接支持标准的latex公式。我的《<a href="https://www.yuque.com/kaopubear/kaoyan">靠谱学长说：聊聊考研复习这件事</a>》就是通过gitbook 实现整本书导入的。</p>
-<figure data-type="image" tabindex="15"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901164533.png" alt=""></figure>
-<h3 id="团队功能">团队功能</h3>
-<p>在语雀的官方介绍中，团队可以是一帮人、一件事情、或者一个项目。甚至也可以和你实际组织结构进行挂钩，如某个部门、某个公益组织，比如这是语雀官方团队：<a href="https://yuque.com/yuque">https://yuque.com/yuque</a>。在一个团队中，可以有清晰的职责和权限，大家协作分工的效率不必一些专业的工具逊色。</p>
-<h2 id="现阶段问题">现阶段问题</h2>
-<p>如果你不想仅仅把语雀当做一个博客，那么完全使用语雀你还需要注意目前存在的几个主要问题。</p>
+<p>语雀区别于多数纯博客或写作平台的一点，就是类似「腾讯文档」和「石墨」的协作属性（这也是语雀的主要定位）。每一篇文章，如果需要你都可以通过添加协作者的方式进行文章协作。因为这一功能不是本文介绍的重点，就不再展开。在实际使用过程中，我的协作体验还是不错的。</p>
+<p>在自建博客的日子里，我经常会在各种各样评论插件中闪转腾挪，今天这个停止维护了就得切换下一个，明天这个国内访问速度不理想了又要切换下一个。语雀发布的每一篇文章下读者都可以进行评论，你也可以对具体评论进行回复，而评论和回复的码字体验与编辑文章没什么差别，从这一点看语雀还真是省了不少心。</p>
+<h3 id="官方支持与迭代">官方支持与迭代</h3>
+<p>背靠大厂再加上官方的重视（目前来看），语雀有相对完善的 <a href="https://www.yuque.com/yuque/help">官方文档</a>。日常碰到各种问题通过留言等形式也会很快得到回复。下面的截图是部分我通过文档评论向官方反馈 Gitbook 导入 bug 的过程。</p>
+<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171622342_27303.png" alt=""></figure>
+<p>沟通和反馈 bug</p>
+<p>通过下图则可以感受一下开发迭代速度。</p>
+<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171621893_12354.png" alt=""></figure>
+<p>更新速度</p>
+<h2 id="重度写作者关注的问题">重度写作者关注的问题</h2>
+<p>对于重度写作者而言，通常还会更多的关注其它一些细节问题，比如搜索、历史版本，导入导出以及内部跳转等等。针对这些问题，从我的使用体验来看语雀完成的都还不错。以下仅取两例。</p>
+<h3 id="如何进行搜索">如何进行搜索</h3>
+<p>文章写多了，如何快速找到自己曾经写过的内容就成了一个问题。对于目前还没有文档标签系统的语雀而言，搜索是唯一的方法。</p>
+<p>语雀的搜索功能支持多种粒度。当你在任意界面的搜索框输入内容时它会提醒搜索范围。如可以搜索当前知识库，或者搜索当前团队，亦或者只搜索和你相关的内容。</p>
+<figure data-type="image" tabindex="16"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171621323_6358.png" alt=""></figure>
+<p>搜索粒度</p>
+<h3 id="方便的多格式导入">方便的多格式导入</h3>
+<p>针对单篇文章，在文档编辑页面可以直接复制 Markdown 格式文本。在阅读页面，右上角「更多」里面还可以找到「查看 Markdown」。</p>
+<p>针对多篇文章，不管之前写文章用的是 Word、Markdown、Pages、WPS 还是 Confluence 或者 Gitbook，它们都可以顺利地迁移到语雀文档。其中 Markdown 可以直接支持标准的 Latex 公式。</p>
+<figure data-type="image" tabindex="17"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171620855_20912.png" alt=""></figure>
+<p>支持导入的文本格式</p>
+<p>开发者和读者视角</p>
+<p>针对开发者而言，语雀本身提供了基本够用的 <a href="https://www.yuque.com/yuque/developer">API 借口和 OAuth 应用</a>，目前已经有一些第三方开发者针对语雀开发了本地文档管理工具和接入服务等等。例如少数派读者和作者们都比较熟悉的Markdown 写作工具 MWeb 就支持直接把本地文章发布到语雀。</p>
+<p>如果想要把语雀作为个人博客平台使用，除了从写作者视角来考虑之外，它本身的实际阅读体验也是需要关注的重点。和 Gitbook 这类专业的平台相比，语雀在阅读状态下还无法提供针对字体或者背景的修改，当然和各种静态博客系统相比，它也不支持主题的自由定制。</p>
+<p>在桌面端，阅读过程中可以配合一些第三方的浏览器插件使用。在移动端，虽然是来自阿里系的工具，但语雀团队目前提供的解决方案是微信小程序，因此在这个国民应用里分享语雀的文章还算方便。针对长文，在手机上阅读时可以方便的进行章节跳转。</p>
+<figure data-type="image" tabindex="18"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171620406_10140.png" alt=""></figure>
+<p>手机端阅读体验</p>
+<h2 id="现阶段存在的不足">现阶段存在的不足</h2>
+<p>写到这里，关于如何把语雀打造成一个入门级的个人博客就介绍的差不多了。说完优势和特点还需要再讲讲使用过程中我感觉仍然不顺手或者不满意的地方。</p>
+<p>首先，从前文的官方定义来看语雀并非一个专业的博客系统，只是在使用过程中它具有的诸如自定义路径的一些特性，让我感觉语雀具有成为个人博客平台的可能，然后就顺势做了一些摸索和尝试。从优势的层面来讲，无需复杂的设置部署，基本需求和高阶功能丰富，容易上手；换言之，自然也就存在不提供丰富定制化设置这样的问题。因此，它并不适用于非常追求个性化的技术达人，WordPress 和各类自建博客系统依旧是这类人群的优先选择。</p>
+<p>其次，如果你不仅仅把语雀当做个人博客，还想把它真正当成「个人知识库」，在使用过程中还需要注意目前存在的其它几个短板。例如：</p>
 <ol>
-<li>移动端目前只有微信小程序，功能比较简单</li>
-<li>桌面端主要是网页版</li>
-<li>默认阅读模式，使用编辑按钮才会进入编辑状态</li>
+<li>移动端：目前只有微信小程序且只有部分基础功能</li>
+<li>桌面端：目前还没有独立软件只有网页版可以使用，即没有什么「离线使用」的可能</li>
+<li>文档管理：对于习惯了 LTF ( list tag filter ) 体系的人来说，目前语雀中的文档还没有标签系统。内容一多，管理起来略显吃力。</li>
+<li>会员及价格：虽然在文章开头，我提到了作为个人博客语雀可以免费使用，但这并不意味着可以免费无限制使用。就在近期，语雀推出了会员服务，价格为 99 元 / 年（首年 59 元）。普通用户在知识库数量，上传流量和协作人数等方面均有所限制，不过好在基础功能并没有进行区分。</li>
 </ol>
-<p>好了，就安利到这里，祝使用愉快</p>
-<hr>
-<figure data-type="image" tabindex="16"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
-<p><strong>本文作者</strong>：思考问题的熊</p>
-<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="17"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<p>上述的问题有些已经在官方下一步开发和完善的计划之中，但是没有明确的时间表供我们参考。值得注意的一点是，在最新的会员权益中官方提及到即将推出付费阅读功能——作者可以对原创知识库开启付费阅读全文模式。对比微信公众平台至今尚未推出的付费订阅功能，我们似乎可以感知到一点点语雀后续发展的思路和野心。</p>
+<p>附上一张语雀作为个人博客平台使用的体验优劣对比表，希望有助于你进行选择。</p>
+<figure data-type="image" tabindex="19"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191206171618266_710.png" alt=""></figure>
+<p>优劣对比</p>
+<p>如果有写作热情且不想太折腾的你暂时还没找到一个可以作为个人博客的平台，语雀是一个值得尝试的选择。</p>
 
       </div>
       <div class="entry-block">
@@ -225,34 +260,11 @@
     
 
     
-      
-
-      
-        <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
-<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
-
-<div id="disqus_thread"></div>
-
-<script>
-
-var options = {
-  shortname: 'kaopubear',
-  apikey: 'ZTxzLeKnbhQM2j9DHZOfef5P1tW485IAAXVSrZdWXvSXu67BxcUkp4JN2MY1g2Mz',
-}
-if ('https://disqus.skk.moe/disqus/') {
-  options.api = 'https://disqus.skk.moe/disqus/'
-}
-var dsqjs = new DisqusJS(options)
-
-</script>
-
-      
-    
 
     <footer class="footer">
   <div class="main">
     <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1574871042524" alt="思考问题的熊">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
     </a>
     <div class="footer__social">
       
