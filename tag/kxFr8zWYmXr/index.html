@@ -1,536 +1,391 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>经济学 | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<script src="https://kaopubear.top//media/script.js"></script>
 
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://kaopubear.top/">
-  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
-  </a>
-  <h1 class="site-title">
-    思考问题的熊
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://kaopubear.top/">思考问题的熊</a>
   </h1>
-  <p class="site-description">
-    很高兴和你相遇<br>这里正在记录我的所思所学
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu">
-          项目
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
   </div>
 </div>
-
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# 经济学
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
-        <h2 class="post-title">《小岛经济学》告诉我们的</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-06-06
-        </span>
-        <span>
-          11 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/SoFzwZsYls" class="post-tag">
-            # 读书
-          </a>
-        
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
-        
-      </div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
       
-        <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="他说的对还是不对">他说的对还是不对</h2>
-<p>每一门学科都存在很多分支，研究同一个问题会有不同的解决方法，比如在生命科学领域要证明某个理论可以使用生物化学，分子生物的方法也可以使用生物信息学的方法，虽然研究的思路不同但目的相同。</p>
-<p>而经济学做为一门社会科学和物理化学不同。通常物理化学（包括一部分生物学）是有明确的手段来验证一个结果是对或者不对的。做为经济学的门外汉，依我个人粗浅的理解：对于常见的物理化学问题而言，一个结论对还是不对我们通常可以（或者终究可以）去验证；而经济学往往是在既定事实的情况下进行一种总结和归纳，一种理论在已有事实的前提下提炼，如果遇到了新情况不能解释就会有另外一套理论产生。同一个问题在不同经济学派系看来可能有完全不同的解决方法。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-21-econote15">
-        <h2 class="post-title">经济学周记 15-权利的保护</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-21
-        </span>
-        <span>
-          6 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
+          <a href="/" class="nav-link">首页</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-10-21-econote15" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="产权的兴起">产权的兴起</h2>
-<ul>
-<li>人类社会需要产权安排
-<ul>
-<li>外部性；人口的集聚</li>
-<li>权利的安排带来的好处足够大，才会关心怎样界定产权，行使产权</li>
-</ul>
-</li>
-<li>产权兴起动力之一：外部性
-<ul>
-<li>地理位置：打猎区域，三文鱼产权界定</li>
-<li>牛仔与铁丝网，美国西南部</li>
-</ul>
-</li>
-<li>产权兴起动力之二：人口集聚
-<ul>
-<li>铁路公司申请建立黄石公园</li>
-<li>人与人之间越来越紧密联系</li>
-<li>陌生人之间需要进行协调</li>
-</ul>
-</li>
-<li>人与人之间为了争夺猎物，产生了产权安排的需求</li>
-<li>人与人的集聚，陌生人之间的合作，产生了对产权和制度安排的需要</li>
-</ul>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-21-econote14">
-        <h2 class="post-title">经济学周记 14-价格辨析</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-21
-        </span>
-        <span>
-          5 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
+          <a href="/archives" class="nav-link">归档</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-10-21-econote14" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="权利有别于能力">权利有别于能力</h2>
-<ul>
-<li>权利有别于权力：权利是文明的产物</li>
-<li>权利的定义：权利是要由社会来保障实行的，是别人对你的认可，不是你自己认为有就有，是别人认为你有、别人愿意出来保护你行使的，那才叫权利。这是权利的特征，这是人类社会跟动物社会区别的地方。</li>
-<li>能力有别于权利
-<ul>
-<li>能力，Might</li>
-<li>权利，Right。</li>
-<li>在动物世界里面，你看到的只有能力，没有权利</li>
-<li>能力取决于自己能够占有多少，而权利取决于别人、社会的其他人愿意给你多少。</li>
-</ul>
-</li>
-</ul>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-21-econote13">
-        <h2 class="post-title">经济学周记 13-价格教益</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-21
-        </span>
-        <span>
-          6 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
+          <a href="/tags" class="nav-link">标签</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-10-21-econote13" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="房价上涨好不好">房价上涨好不好</h2>
-<ul>
-<li>无论房价涨跌都不应该人为管制
-<ul>
-<li>北京的限购政策</li>
-<li>价格是现实的一个反映。反映的现实是多方面的</li>
-<li>仅仅按住价格，并不能改变价格所反映背后的现实</li>
-<li>好比你管不住温度，却非要去管温度计一样荒唐</li>
-</ul>
-</li>
-<li>房价上涨的正面因素
-<ul>
-<li>大城市房价上涨的原因是聚集：房子以外是更好的服务</li>
-<li>对大城市抱怨最多的就是生活在里面的人</li>
-<li>对美国人而言穷人和富人的区别在于位置：好的位置带来不同的人，经历和机会；重要的不是你是谁，而是你跟谁在一起。</li>
-<li>不要以为你非得有天大的本事，才能够在大城市里面立足</li>
-<li>人与人之间讲究的，不是你个人的本事有多大，而是你的本事跟别人的本事能不能相匹配，你们之间能不能够互相服务</li>
-</ul>
-</li>
-<li>人口集聚提高大城市的经济效率
-<ul>
-<li>城市化的进程还没有结束</li>
-<li>住房的需求就还会增加</li>
-<li>日本的 GDP 基本都来自三个大城市</li>
-</ul>
-</li>
-<li>房价上涨的负面因素
-<ul>
-<li>交易不灵活不频繁</li>
-<li>房屋容积率的限制太大</li>
-</ul>
-</li>
-</ul>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-20-econote12">
-        <h2 class="post-title">经济学周记 12-价格管制</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-20
-        </span>
-        <span>
-          5 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
+          <a href="/post/about" class="nav-link">关于</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-10-20-econote12" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="春运火车票价还不够高">春运火车票价还不够高</h2>
-<p>不承认火车票是商品属于鸵鸟心态：不管是否承认，火车票就是品，经济规律就会起作用。</p>
-<p>春节回家不是刚需：看似刚需的原因是交通成本近年来下降。</p>
-<p>黄牛党可以为社会节省无谓的损失</p>
-<ul>
-<li>黄牛为什么不把价格抬得再高一点</li>
-<li>之所以有黄牛就是因为价格不够高，进而展开价格意外的竞争——排队<br>
-人追求利润最大化——减少无谓损失（排队的时间）</li>
-<li>实名制让火车票价格更贵</li>
-<li>春节运力不可能做到毫不吃力</li>
-</ul>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-20-econote11">
-        <h2 class="post-title">经济学周记 10-价格进阶</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-20
-        </span>
-        <span>
-          4 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
+          <a href="/post/resource" class="nav-link">资料</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-10-20-econote11" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="世界上有哪些竞争规则">世界上有哪些竞争规则</h2>
-<ul>
-<li>暴力是非常重要和常见地竞争规则
-<ul>
-<li>失败的时候人们会谴责</li>
-<li>成功的时候会膜拜</li>
-<li>今天大量的经济资源和壁垒都是由国家机器在背后支撑</li>
-</ul>
-</li>
-<li>靠智力高低竞争资源：考试是一个重要的竞争方式</li>
-<li>以论资排辈界定产权</li>
-<li>按照社会身份分配财产：职业；官位</li>
-<li>按照劳动时间：先到先得与随机分配</li>
-<li>按需分配与价高者得</li>
-<li>规则不同禀赋不同的人机会不一样</li>
-</ul>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-10-econote10">
-        <h2 class="post-title">经济学周记 10-价格初探</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-10
-        </span>
-        <span>
-          5 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
+          <a href="/post/project" class="nav-link">项目</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-10-10-econote10" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="经济是否可预测">经济是否可预测</h2>
-<p><strong>正方：可以对经济进行预测分析</strong></p>
-<ul>
-<li>来源于物理</li>
-<li>拉普拉斯假说</li>
-<li>测不准原理，原子预测随机</li>
-</ul>
-<p><strong>反方：人类社会，经济发展不可预测</strong></p>
-<ul>
-<li>人际之间的效用不可比较
-<ul>
-<li>每个人对不同商品有不同的偏好和个人估值</li>
-<li>个人的偏好无法横向比较<br>
-每个人对物品的效用可以比较，但是两个人之间不可以比较</li>
-<li>个人和企业有高度计划，但是社会无计划<br>
-对于整个社会各自的目标都不同</li>
-<li>计划经济不知道社会的总目标</li>
-</ul>
-</li>
-<li>数据不可得
-<ul>
-<li>个人不知道兴趣的真正排序</li>
-<li>凭什么告诉你</li>
-<li>别人可能误导你（测不准原理）：人口普查，统计的结果随着人们的预期而变化</li>
-<li>人会对自身的预测本身作出新的反应<br>
-预测什么会流行就会倒过来影响什么会流行</li>
-</ul>
-</li>
-<li>数据无法集中</li>
-<li>奖惩很难恰如其分</li>
-</ul>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-10-econote9">
-        <h2 class="post-title">经济学周记 9-需求定律（2）</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-10
-        </span>
-        <span>
-          6 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
-        
-      </div>
-      
-        <a href="https://kaopubear.top//post/2017-10-10-econote9" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="需求第二定律">需求第二定律</h2>
-<p><strong>定义</strong>：需求对价格的弹性，和价格变化之后流逝的时间长度成正比。随着时间的增强，需求对价格的弹性增加</p>
-<p><strong>需求的价格弹性</strong></p>
-<p>需求对价格的弹性就是需求量的变化百分比除以价格变化的百分比。（每当价格变化百分之一，需求量会变化百分之几）</p>
-<figure data-type="image" tabindex="1"><img src="https://img.mubu.com/document_image/5c6419aa-a264-4ab9-9015-48507b003b7d.jpg" alt="img"></figure>
-<p>例如 价格变 2，需求量变 5，弹性是 2.5</p>
-<figure data-type="image" tabindex="2"><img src="https://img.mubu.com/document_image/b0d15619-83d6-4eb3-894d-e2e2e1c2db2c.jpg" alt="img"></figure>
-<ul>
-<li>弹性大于 1：奢侈品</li>
-<li>弹性小于 1：必需品</li>
-<li>弹性永远为负，谈绝对值</li>
-</ul>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-10-08-econote8">
-        <h2 class="post-title">经济学周记 8-需求定律（1）</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-10-09
-        </span>
-        <span>
-          8 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="post-tag">
-            # 经济学
-          </a>
-        
-      </div>
-      
-        <a href="https://kaopubear.top//post/2017-10-08-econote8" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="个人主义的主观价值论">个人主义的主观价值论</h2>
-<p>需求的特点：你想要的东西别人也想要，有一个层层递进的规律。</p>
-<p><strong>个人估值的多层含义（personal worth）</strong></p>
-<p>一个人对一件商品的个人估值，是他为了得到这件商品所愿意支付的其他商品的最高数量。</p>
-<p>只有个人才有行动能力，集体不能决定，集体不会感受，不会思考，不会评估。所有价值与估值都起源于个人，完全主观，价值是人赋予的。个人行动都是可观察可记录的，不是单纯的愿望。人对于美和舒适的判断在特定的社会和时期可以评判和记录。</p>
-
-      </div>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-  
-    <a href="https://kaopubear.top//tag/kxFr8zWYmXr//page/2/" class="next-page">下一页</a>
-  
-</div>
-
-        <div class="site-footer">
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
-  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
-      </div>
     </div>
-  </body>
+    <div class="lg:flex">
+      
+        
+          <a href="https://github.com/fei0810" class="block lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+            <div>GitHub</div>
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://kaopubear.top//atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3">
+  <div class="mt-6 lg:mt-10 border-b border-gray-400">
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix" class="hover:underline">《小岛经济学》告诉我们的</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/SoFzwZsYls" class="hover:underline hover:text-gray-900">读书</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-06-06</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>11 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg" alt="《小岛经济学》告诉我们的">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-21-econote15" class="hover:underline">经济学周记 15-权利的保护</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-21</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>6 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-21-econote15">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png" alt="经济学周记 15-权利的保护">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-21-econote14" class="hover:underline">经济学周记 14-价格辨析</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-21</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>5 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-21-econote14">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" alt="经济学周记 14-价格辨析">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-21-econote13" class="hover:underline">经济学周记 13-价格教益</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-21</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>6 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-21-econote13">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" alt="经济学周记 13-价格教益">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-20-econote12" class="hover:underline">经济学周记 12-价格管制</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-20</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>5 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-20-econote12">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png" alt="经济学周记 12-价格管制">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-20-econote11" class="hover:underline">经济学周记 10-价格进阶</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-20</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>4 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-20-econote11">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png" alt="经济学周记 10-价格进阶">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-10-econote10" class="hover:underline">经济学周记 10-价格初探</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-10</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>5 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-10-econote10">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png" alt="经济学周记 10-价格初探">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-10-econote9" class="hover:underline">经济学周记 9-需求定律（2）</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-10</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>6 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-10-econote9">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png" alt="经济学周记 9-需求定律（2）">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-10-08-econote8" class="hover:underline">经济学周记 8-需求定律（1）</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="hover:underline hover:text-gray-900">经济学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-10-09</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>8 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-10-08-econote8">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png" alt="经济学周记 8-需求定律（1）">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+  </div>
+  <div class="mt-6 flex justify-between">
+    
+    
+      <a href="https://kaopubear.top//tag/kxFr8zWYmXr//page/2/" class="pb-px text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" class="fill-current text-gray-900" /></svg>
+      </a>
+    
+  </div>
+</div>
+        <div class="w-full md:w-1/3 md:pl-8">
+          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">当前标签</div>
+          <div>
+            <h1 class="text-2xl">经济学</h1>
+          </div>
+        </div>
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+</body>
 </html>

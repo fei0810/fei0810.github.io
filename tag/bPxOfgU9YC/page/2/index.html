@@ -1,487 +1,409 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>数据科学 | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<script src="https://kaopubear.top//media/script.js"></script>
 
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://kaopubear.top/">
-  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
-  </a>
-  <h1 class="site-title">
-    思考问题的熊
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://kaopubear.top/">思考问题的熊</a>
   </h1>
-  <p class="site-description">
-    很高兴和你相遇<br>这里正在记录我的所思所学
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu">
-          项目
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
   </div>
 </div>
-
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# 数据科学
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-12-12-rtidyverse">
-        <h2 class="post-title">多快好省用 R 处理数据</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-12-12
-        </span>
-        <span>
-          10 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/UrqlObNL0t" class="post-tag">
-            # R
-          </a>
-        
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-      </div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
       
-        <a href="https://kaopubear.top//post/2018-12-12-rtidyverse" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png')">
-        </a>
+        
+          <a href="/" class="nav-link">首页</a>
+        
       
-      <div class="post-abstract">
-        <blockquote>
-<p>很早之前我一直都是使用命令行来处理软，cut,sed 再 grep 再加上终极 awk 基本上就可以随意的按照需求处理各种软件跑出来的文本文件了，再后来就要开始学习 python，python 学的怎么样了呢？呵呵。</p>
-</blockquote>
-<blockquote>
-<p>虽然做过统计学课的助教，上课的时候用的也是 R 语言，但是博客里并没有几篇 R 相关的文章。印象中一篇是 <a href="http://kaopubear.top/2017-03-02-RIntroductionForNewbie.html">给初学者的 R 语言介绍</a>（写这篇文章当时是为了激发一点学生学习 R 语言的热情），另一篇是 <a href="http://kaopubear.top/2017-09-28-rbasicknowladge.html">R 必备基础知识</a>（写这篇文章当时是因为在写 R 与统计学基础系列文章，就不得不总结一些 R 语言的基础知识）。</p>
-</blockquote>
-<blockquote>
-<p>说实话，我本身对 R 还是非常喜欢和欣赏的，但是日常的使用需求并不高。就拿最基本的文本处理来说，基本上都可以在 shell 中进行随心所欲地增删改成，处理成很多 R 相关软件需要的文本格式，用需要的 R 包跑一两个命令就可以了。但是目前已经有点厌倦了这样的生活，我后期打算有机会的话用 R shiny 写一点网页工具给大家娱乐，也打算精进一下 R 的画图技能。这里就 have to 用 R 去做一些数据处理，于是就有了这样一系列文章。这篇是关于如何用 R 多快好省的进行数据处理。另外，说句题外话，从我这几天的实际处理数据情况来看，R 有些工作做起来，还是太慢了，也可能是我的业务不够娴熟吧。</p>
-</blockquote>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-12-11-rbasic">
-        <h2 class="post-title">R 语言必备基础知识</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-12-11
-        </span>
-        <span>
-          9 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/UrqlObNL0t" class="post-tag">
-            # R
-          </a>
+          <a href="/archives" class="nav-link">归档</a>
         
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-      </div>
       
-        <a href="https://kaopubear.top//post/2018-12-11-rbasic" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png')">
-        </a>
+        
+          <a href="/tags" class="nav-link">标签</a>
+        
       
-      <div class="post-abstract">
-        <blockquote>
-<p>写着写着 R 与统计基础莫名其妙地又写开 R 基础了，一起写吧。</p>
-</blockquote>
-<h2 id="r-编程基础">R 编程基础</h2>
-<h3 id="算数运算">算数运算</h3>
-<p>常用的<code>+ - * \ ^</code> 可以直接在 console 中计算</p>
-<h3 id="计算函数">计算函数</h3>
-<p>常用的<code>log2(x) log10(x) exp(x) sin(x) tan(x) abs(x) sqrt(x)</code> 也可以直接计算</p>
-<h3 id="变量赋值">变量赋值</h3>
-<p><code>a &lt;- 3;a &lt;- &quot;b&quot;</code>赋值符号是<code>&lt;-</code>, 使用 ls() 可以显示当前已经创建的对象</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-04-02-anewsafedns">
-        <h2 class="post-title">DNS 的一个新选择</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-04-02
-        </span>
-        <span>
-          5 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
+          <a href="/post/about" class="nav-link">关于</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2018-04-02-anewsafedns" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-113f5d4d22a7197d.png')">
-        </a>
+        
+          <a href="/post/resource" class="nav-link">资料</a>
+        
       
-      <div class="post-abstract">
-        <h2 id="什么是-dns">什么是 DNS</h2>
-<p>网域名称系统（英文：Domain Name System，缩写：DNS）是将域名和 IP 地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。通过这个系统我们可以将一个域名对应到其真实的 IP 地址。例如 kaopubear.top 的域名是人类可读的，但是机器不能识别，我们必须找到其 IP 才可以。这里的 DNS 就像是一个通讯录，我们把名字输入进去，返回一个固定的手机可识别的电话号码然后拨号。<br>
-几乎互联网上的一切活动均由一个 DNS 请求开始。DNS 是互联网的目录。点击每一个链接发每一封邮件时，设备所要做的第一件事都是询问这个目录看能在哪里找到这项内容。</p>
-<h2 id="好用的-dns-有什么标准">好用的 DNS 有什么标准</h2>
-<p>很简单：快速安全，无劫持，能解析到。</p>
-<p>但是如果你用到了一个坑爹的 DNS，那问题远比你想象的严重。大多数人都是使用运营商自动分配的 DNS，但有时候你会发现自己的网页出现了一些莫名其妙的低俗广告，或者有些网站就是打不开。这就很可能你的 DNS 给你的域名解析了一个假的 IP 地址，或者对你的 DNS 进行了劫持插入了运营商想让你看到的东西，比如广告。</p>
-<p>也就是说，如果想，DNS 可以决定哪些域名给你解析，哪些域名不给你解析，哪些给你解析错。 ISP 和一些有需要的人都能看到你访问的每个网站和使用的每个应用，如果他们想，DNS 提供商可以出售你的使用信息给别人。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-03-06-rintro2sibs">
-        <h2 class="post-title">给初学者的 R 语言介绍</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-03-06
-        </span>
-        <span>
-          16 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/UrqlObNL0t" class="post-tag">
-            # R
-          </a>
+          <a href="/post/project" class="nav-link">项目</a>
         
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-03-06-rintro2sibs" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="几点说明">几点说明：</h2>
-<ol>
-<li>
-<p>文档由 <strong>R Markdown</strong>[^1] 写成。</p>
-</li>
-<li>
-<p>下文是我暂时能想到的一些内容，水平有限，供大家了解，大牛小神都可以出门右拐不用看哈。</p>
-</li>
-<li>
-<p><strong>写作初衷</strong>：目前在水中科院上海分院这边生物统计学助教，本文及后续一段时间里的 R 相关内容主要是为了供这门课的同学参考，同时也是自我总结的过程。</p>
-</li>
-</ol>
-<hr>
-<h2 id="数据科学重要性">数据科学重要性</h2>
-<p>摩尔定律 [^2] 告诉我们计算机的计算能力每两年就会翻一倍，这使得数以百万计的计算机生成了大规模数据集。</p>
-<p>海量的数据如何处理成了各行各业都需要面对和解决的问题；如何从海量信息中提取有效信息并总结出一般性的规律也值得我们去思考。</p>
-<p>数据驱动下产生的这门学科，被我们称为数据科学（Data science），其中涉及到数据的收集、处理、分析和呈现四大方面。</p>
-<p>2012 年，哈佛商业评论将** Data Scientist **定义为 21 世纪最性感的职业 <a href="%E6%9C%89%E5%9B%BE%E6%9C%89%E7%9C%9F%E7%9B%B8">^3</a>。</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d3264a2fd559c58e.png" alt=""></figure>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-03-05-TheMasterAlgorithm7">
-        <h2 class="post-title">『终极算法』摘抄笔记-贝叶斯学派</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-03-05
-        </span>
-        <span>
-          14 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-          <a href="https://kaopubear.top//tag/CgpgIuLt1nJ" class="post-tag">
-            # 算法
-          </a>
-        
-      </div>
-      
-        <a href="https://kaopubear.top//post/2018-03-05-TheMasterAlgorithm7" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="贝叶斯定理">贝叶斯定理</h2>
-<p>对于贝叶斯学派来说，学习“仅仅是”贝叶斯定理的另外一个运用，将所有模型当作假设，将数据作为论据：随着你看到的数据越来越多，有些模型会变得越来越有可能性，而有些则相反，直到理想的模型渐渐突出，成为最终的胜者。</p>
-<p>假设你半夜在一个陌生的星球上醒来。虽然你能看到的只是繁星闪烁的天空，你有理由相信太阳会在某个时间点升起，因为多数星球会自传并绕着自己的太阳转。所以你估计相应的概率应该会大于 1/2（比如说 2/3）。我们将其称为太阳会升起来的“<strong>先验概率</strong>”，因为这发生在看到任何证据之前。<strong>“先验概率”的基础并不是数过去这个星球上太阳升起的次数，因为过去你没有看到；它反映的是对于将要发生的事情，你优先相信的东西，这建立在你掌握的宇宙常识之上</strong>。但现在星星开始渐渐暗淡，所以你对于太阳会升起的信心越来越强，这建立于你在地球上生存的经历之上。你的这种信心源自“<strong>后验概率</strong>”，因为这个概率是<strong>在看到一些证据后得出的。天空开始渐渐变亮，后验概率又变得更大了</strong>。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm6">
-        <h2 class="post-title">『终极算法』摘抄笔记-联结学派</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-02-25
-        </span>
-        <span>
-          14 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-          <a href="https://kaopubear.top//tag/CgpgIuLt1nJ" class="post-tag">
-            # 算法
-          </a>
-        
-      </div>
-      
-        <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm6" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="赫布律">赫布律</h2>
-<blockquote>
-<p>“当 A 细胞的轴突和 B 细胞足够近，并且重复或不断地对其放电时，A、B 中的一个细胞或者两个细胞都会经历生长过程或者代谢改变，这样 A 细胞（作为对 B 细胞放电的细胞之一）的效率就会得到提高。”  1949 年《行为的组织》</p>
-</blockquote>
-<p>这段话经常被转述成“<strong>一起放电的神经元也会被串连在一起</strong>”。</p>
-<p>赫布理论解释了神经元如何组成联接，从而形成记忆印痕（英语：engram(neuropsychology)）。赫布理论阐明了细胞集群（Cell Assemblies）的形态和功能：“两个神经元或者神经元系统，如果总是同时兴奋，就会形成一种‘组合’，其中一个神经元的兴奋会促进另一个的兴奋。如果一个神经元持续激活另一个神经元，前者的轴突将会生长出突触小体（如果已有，则会继续长大）和后者的胞体相连接。”</p>
-<p>高尔顿·威拉德·奥尔波特根据自联想 (auto-association) 的思路，进一步提出了关于细胞集群的作用，以及它们在形成记忆痕迹中的角色：</p>
-<blockquote>
-<p>如果系统的输入会导致同样的模式重复出现，那么组成这个模式的元素之间的相互关联性将会大大增强。这意味着，其中任何一个元素都会倾向于触发同组的其他元素，同时（以减少权重的方式）抑制组外其他不相关元素。另一个角度来看，这个模式作为一个整体实现了“自联想”。我们可以把一个学习了（自联想）的模式称为记忆痕迹。</p>
-</blockquote>
-<p>通常认为，从整体的角度来看，赫布学习是神经网络形成记忆痕迹的首要基础。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm5">
-        <h2 class="post-title">『终极算法』摘抄笔记-贝叶斯学派</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-02-25
-        </span>
-        <span>
-          14 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-          <a href="https://kaopubear.top//tag/CgpgIuLt1nJ" class="post-tag">
-            # 算法
-          </a>
-        
-      </div>
-      
-        <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm5" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="贝叶斯定理">贝叶斯定理</h2>
-<p>对于贝叶斯学派来说，学习“仅仅是”贝叶斯定理的另外一个运用，将所有模型当作假设，将数据作为论据：随着你看到的数据越来越多，有些模型会变得越来越有可能性，而有些则相反，直到理想的模型渐渐突出，成为最终的胜者。</p>
-<p>假设你半夜在一个陌生的星球上醒来。虽然你能看到的只是繁星闪烁的天空，你有理由相信太阳会在某个时间点升起，因为多数星球会自传并绕着自己的太阳转。所以你估计相应的概率应该会大于 1/2（比如说 2/3）。我们将其称为太阳会升起来的“<strong>先验概率</strong>”，因为这发生在看到任何证据之前。<strong>“先验概率”的基础并不是数过去这个星球上太阳升起的次数，因为过去你没有看到；它反映的是对于将要发生的事情，你优先相信的东西，这建立在你掌握的宇宙常识之上</strong>。但现在星星开始渐渐暗淡，所以你对于太阳会升起的信心越来越强，这建立于你在地球上生存的经历之上。你的这种信心源自“<strong>后验概率</strong>”，因为这个概率是<strong>在看到一些证据后得出的。天空开始渐渐变亮，后验概率又变得更大了</strong>。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4">
-        <h2 class="post-title">『终极算法』摘抄笔记-符号学派</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-02-17
-        </span>
-        <span>
-          14 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-          <a href="https://kaopubear.top//tag/CgpgIuLt1nJ" class="post-tag">
-            # 算法
-          </a>
-        
-      </div>
-      
-        <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-aeb12c400111f4d4.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="理性主义和经验主义">理性主义和经验主义</h2>
-<p>理性主义者认为，感官会欺骗人，而逻辑推理是通往知识的唯一可靠的道路。经验主义者认为所有推理都是不可靠的，知识必须来源于观察及实验。理性主义者喜欢在迈出第一步前，就提前规划好一切。经验主义者喜欢尝试新事物，然后看看结果会怎样。</p>
-<p>柏拉图是早期的理性主义者，而亚里士多德是早期的经验主义者。关于这个问题的辩论，真正开始于启蒙运动时期，每方有三位伟大的思想家：笛卡儿、斯宾诺莎、莱布尼茨是理性主义的代表，洛克、贝克莱、休谟则是经验主义的代表。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3">
-        <h2 class="post-title">『终极算法』摘抄笔记-五大算法概述</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-02-17
-        </span>
-        <span>
-          3 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
-            # 数据科学
-          </a>
-        
-          <a href="https://kaopubear.top//tag/CgpgIuLt1nJ" class="post-tag">
-            # 算法
-          </a>
-        
-      </div>
-      
-        <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="符号学派">符号学派</h2>
-<p>所有的信息都可以简化为操作符号，就像数学家那样，为了解方程，会用其他表达式来代替本来的表达式。符号学者明白你不能从零开始学习：除了数据，你还需要一些原始的知识。他们已经弄明白如何把先前存在的知识并入学习中，如何结合动态的知识来解决新问题。他们的主算法是逆向演绎，逆向演绎致力于弄明白为了使演绎进展顺利哪些知识被省略了，然后弄明白是什么让主算法变得越来越综合。</p>
-<h2 id="连结学派">连结学派</h2>
-<p>学习就是大脑所做的事情，因此我们要做的就是对大脑进行逆向演绎。大脑通过调整神经元之间连接的强度来进行学习，关键问题是找到哪些连接导致了误差，以及如何纠正这些误差。联结学派的主算法是反向传播学习算法，该算法将系统的输出与想要的结果相比较，然后连续一层一层地改变神经元之间的连接，目的是为了使输出的东西接近想要的东西。</p>
-
-      </div>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-    <a href="https://kaopubear.top//tag/bPxOfgU9YC/" class="prev-page">上一页</a>
-  
-  
-    <a href="https://kaopubear.top//tag/bPxOfgU9YC//page/3/" class="next-page">下一页</a>
-  
-</div>
-
-        <div class="site-footer">
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
-  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
-      </div>
     </div>
-  </body>
+    <div class="lg:flex">
+      
+        
+          <a href="https://github.com/fei0810" class="block lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+            <div>GitHub</div>
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://kaopubear.top//atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3">
+  <div class="mt-6 lg:mt-10 border-b border-gray-400">
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-12-12-rtidyverse" class="hover:underline">多快好省用 R 处理数据</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-12-12</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>10 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-12-12-rtidyverse">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" alt="多快好省用 R 处理数据">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-12-11-rbasic" class="hover:underline">R 语言必备基础知识</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-12-11</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>9 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-12-11-rbasic">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png" alt="R 语言必备基础知识">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-04-02-anewsafedns" class="hover:underline">DNS 的一个新选择</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-04-02</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>5 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-04-02-anewsafedns">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-113f5d4d22a7197d.png" alt="DNS 的一个新选择">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-03-06-rintro2sibs" class="hover:underline">给初学者的 R 语言介绍</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-03-06</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>16 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-03-06-rintro2sibs">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png" alt="给初学者的 R 语言介绍">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-03-05-TheMasterAlgorithm7" class="hover:underline">『终极算法』摘抄笔记-贝叶斯学派</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-03-05</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>14 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-03-05-TheMasterAlgorithm7">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg" alt="『终极算法』摘抄笔记-贝叶斯学派">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm6" class="hover:underline">『终极算法』摘抄笔记-联结学派</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-02-25</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>14 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm6">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" alt="『终极算法』摘抄笔记-联结学派">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm5" class="hover:underline">『终极算法』摘抄笔记-贝叶斯学派</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-02-25</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>14 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm5">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg" alt="『终极算法』摘抄笔记-贝叶斯学派">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4" class="hover:underline">『终极算法』摘抄笔记-符号学派</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-02-17</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>14 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-aeb12c400111f4d4.jpg" alt="『终极算法』摘抄笔记-符号学派">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3" class="hover:underline">『终极算法』摘抄笔记-五大算法概述</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-02-17</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>3 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png" alt="『终极算法』摘抄笔记-五大算法概述">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+  </div>
+  <div class="mt-6 flex justify-between">
+    
+      <a href="https://kaopubear.top//tag/bPxOfgU9YC/" class="pb-px text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" class="fill-current text-gray-900" /></svg>
+      </a>
+    
+    
+      <a href="https://kaopubear.top//tag/bPxOfgU9YC//page/3/" class="pb-px text-gray-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" class="fill-current text-gray-900" /></svg>
+      </a>
+    
+  </div>
+</div>
+        <div class="w-full md:w-1/3 md:pl-8">
+          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">当前标签</div>
+          <div>
+            <h1 class="text-2xl">数据科学</h1>
+          </div>
+        </div>
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+</body>
 </html>

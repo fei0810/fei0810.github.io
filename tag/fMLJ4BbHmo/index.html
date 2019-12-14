@@ -1,341 +1,300 @@
-<html>
-  <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>VScode | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<script src="https://kaopubear.top//media/script.js"></script>
 
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-  </head>
-  <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://kaopubear.top/">
-  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
-  </a>
-  <h1 class="site-title">
-    思考问题的熊
+</head>
+<body>
+  <div class="antialiased">
+    <div class="max-w-5xl mx-auto px-6 md:px-8">
+      <div class="flex justify-between items-center mt-10">
+  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
+    <a href="https://kaopubear.top/">思考问题的熊</a>
   </h1>
-  <p class="site-description">
-    很高兴和你相遇<br>这里正在记录我的所思所学
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu">
-          项目
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+  <div class="block lg:hidden" id="thumb-menu">
+    <button id="thumb-open" type="button" class="block">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
+    </button>
+    <button id="thumb-close" type="button" class="hidden">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
+    </button>
   </div>
 </div>
-
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# VScode
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
-        <h2 class="post-title">VScode入门学习路径</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-09-11
-        </span>
-        <span>
-          18 min read
-        </span>
-        
-          <a href="https://kaopubear.top//tag/2mze5gMZQM" class="post-tag">
-            # 效率
-          </a>
-        
-          <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="post-tag">
-            # VScode
-          </a>
-        
-      </div>
+<div id="nav-list" class="lg:block hidden">
+  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
+    <div class="lg:flex -mb-px">
       
-        <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        <h2 id="相关内容简述">相关内容简述</h2>
-<p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
-<p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2019-03-10-webvscode">
-        <h2 class="post-title">Coder：进击的服务器 Web 版 VSCode</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-03-10
-        </span>
-        <span>
-          5 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="post-tag">
-            # VScode
-          </a>
+          <a href="/" class="nav-link">首页</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2019-03-10-webvscode" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>自从用上 VS Code 之后，断断续续写过几篇文章。比如：</p>
-<ul>
-<li><a href="http://kaopubear.top/2017-09-15-vscode1/">VS Code 使用初体验</a></li>
-<li><a href="http://kaopubear.top/2017-09-20-vscode2/">VS Code 常用快捷键</a></li>
-<li><a href="http://kaopubear.top/2018-09-20-vscode-note1-4/">VS Code 思维导图学习笔记</a></li>
-<li><a href="http://kaopubear.top/2018-10-28-userpythoninvscode/">VS Code 系列 1：提升 R 和 Python 使用体验</a></li>
-</ul>
-<p>在这个过程中，各种牛 X 的插件让我感觉 VS Code 就要统治世界了。比如 PDF 阅读器插件，Excel 查看插件，有了这些东西在一个工作目录下基本不用开其它的软件，直接在 VS Code 中全部搞定。除了这些还有不少「不正经」插件，比如提醒 <a href="https://github.com/deepred5/daily-anime">番剧更新的插件</a>，<a href="https://github.com/nondanee/vsc-netease-music">播放音乐的插件</a> 还有 <a href="https://github.com/my-soul/read-vscode-e">看电子书的插件</a>。真是神奇：)</p>
-<p>同时我也写过怎么让 <a href="http://kaopubear.top/2019-01-19-sshserver2pc/">本地 PC 和服务器可以更顺畅链接</a> 的问题，在这个文章里没有提到 VS Code，但是用它提供的 terminal 可以替代 Xshell。</p>
-<p>最近发现了一个开源软件真的是让本地 PC 和服务器可以更顺畅链接而且非常之简单，可以说从某个层面基本解决了数据分析环境的问题。无论你使用 PC 还是用 mac，无论用笔记本还是平板，只要有网能打开浏览器的设备都可以愉快地在服务器上写代码做分析。之所以能愉快地写就是因为它的使用体验和 VS Code 完全相同。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
-        <h2 class="post-title">VScode 系列 1：提升 R 和 Python 使用体验</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-10-28
-        </span>
-        <span>
-          14 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="post-tag">
-            # VScode
-          </a>
+          <a href="/archives" class="nav-link">归档</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <blockquote>
-<p>已经攒了一系列 VS Code 写作计划和素材，之前也发过几篇基础知识的思维导图（见文末）。不过一直不知道该从哪里开始第一篇文章，如果推荐给身边的人，他们可能最关心的是用 VS Code 日常写简单的 R 和 Python 代码体验如何。那就从这里开始吧。</p>
-<p>本文以 PC 作为安装配置示例，Mac 基本类似且部分内容体验可能更优。</p>
-</blockquote>
-<h2 id="为什么是-vs-code">为什么是 VS Code</h2>
-<p>既然是系列文章的开篇，姑且对主题按下不表先介绍一下 VS Code。</p>
-<p><a href="https://code.visualstudio.com/">VS Code</a> 的全称是 Visual Studio Code，官方给他的定义是官方定义是<strong>一个免费的、开源的跨平台编辑器</strong>。相对于各种 IDE 而言，编辑器则相对更轻量，更侧重于文件或者文件夹而非宏大的项目。</p>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
-        <h2 class="post-title">VScode 学习记 1-4</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-09-20
-        </span>
-        <span>
-          3 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="post-tag">
-            # VScode
-          </a>
+          <a href="/tags" class="nav-link">标签</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <blockquote>
-<p>使用 VSCode 作为自己的主力编辑器已经有一年的时间，但是总感觉没有很系统的了解过日常的这个工具，也就不知道自己的使用是否高效。最近再跟极客时间上的一个 VS Code 付费连载，那就顺便把它好好安排一下，记录一些学习笔记。学习记录将主要分为两种形式，偏文字的部分会整理为思维导图，偏代码的部分会整理为文章。</p>
-</blockquote>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-09-20-vscode2">
-        <h2 class="post-title">vs code 常用快捷键</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-09-20
-        </span>
-        <span>
-          7 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="post-tag">
-            # VScode
-          </a>
+          <a href="/post/about" class="nav-link">关于</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-09-20-vscode2" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-ee81af2f45c48ea8.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <blockquote>
-<p>挺早之前写过一个 <a href="http://kaopubear.top/2017/02/11/2017-02-11-Shortcuts/">常用快捷键的集合备忘录</a>，里面包括 win10，印象笔记，Google 浏览器，XShell 以及 sublime text3。如今主力编辑器已经从 sublime text3 换到了 vs code。那就再整理一份 vs code 常用快捷键，希望尽快用熟练提高效率。</p>
-</blockquote>
-<p>首先摆出原件。</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b382f9240998b07a.png" alt=""></figure>
-
-      </div>
-    </article>
-  
-    <article class="post">
-      <a href="https://kaopubear.top//post/2017-09-15-vscode1">
-        <h2 class="post-title">VScode 使用初体验</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2017-09-15
-        </span>
-        <span>
-          4 min read
-        </span>
         
-          <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="post-tag">
-            # VScode
-          </a>
+          <a href="/post/resource" class="nav-link">资料</a>
         
-      </div>
       
-        <a href="https://kaopubear.top//post/2017-09-15-vscode1" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png')">
-        </a>
+        
+          <a href="/post/project" class="nav-link">项目</a>
+        
       
-      <div class="post-abstract">
-        <h2 id="什么是-vs-code">什么是 vs code</h2>
-<p>巨硬主导的开源文本编辑器项目，如果你不知道它，一定也听说过 sublime 或者 atom , 最起码也听说过 Notepad++。</p>
-<h2 id="为什么要用-vs-上-code">为什么要用 vs 上 code</h2>
-<p>用了两年的 sublime text 3, 忘了是谁在我一开始用的时候给我提供了一个注册码，以至于我都忘了这货不是一个开源软件。直到几天前突然提示我更新，要知道 sublime text 3 的 beta 版已经持续了好几年。我一激动就点了更新然后……就一直提醒我要不要买。问了问身边的其他人也早已经慢慢从 sublime 转向了其他的阵营，再加上 sublime 用的却是不太顺心，我也就有了换一个编辑器的想法。</p>
-<p>目前大家用的最多的三款编辑器分别是 sublime、atom 和 vs code。于是我用两天时间重点体验了 atom 和 vscode, 进行了几项比较之后决定投入 vs code 的怀抱。</p>
-
-      </div>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-  
-</div>
-
-        <div class="site-footer">
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
-  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
-
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
-
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
-      </div>
     </div>
-  </body>
+    <div class="lg:flex">
+      
+        
+          <a href="https://github.com/fei0810" class="block lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+            <div>GitHub</div>
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+      <a href="https://kaopubear.top//atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
+        <div>RSS</div>
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
+        <div class="w-full md:w-2/3">
+  <div class="mt-6 lg:mt-10 border-b border-gray-400">
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode" class="hover:underline">VScode入门学习路径</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/2mze5gMZQM" class="hover:underline hover:text-gray-900">效率</a>
+                  
+                
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2019-09-11</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>18 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg" alt="VScode入门学习路径">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2019-03-10-webvscode" class="hover:underline">Coder：进击的服务器 Web 版 VSCode</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="hover:underline hover:text-gray-900">VScode</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2019-03-10</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>5 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2019-03-10-webvscode">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" alt="Coder：进击的服务器 Web 版 VSCode">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode" class="hover:underline">VScode 系列 1：提升 R 和 Python 使用体验</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="hover:underline hover:text-gray-900">VScode</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-10-28</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>14 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png" alt="VScode 系列 1：提升 R 和 Python 使用体验">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4" class="hover:underline">VScode 学习记 1-4</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="hover:underline hover:text-gray-900">VScode</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2018-09-20</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>3 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" alt="VScode 学习记 1-4">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-09-20-vscode2" class="hover:underline">vs code 常用快捷键</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="hover:underline hover:text-gray-900">VScode</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-09-20</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>7 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-09-20-vscode2">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-ee81af2f45c48ea8.png" alt="vs code 常用快捷键">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
+        <div class="md:flex items-center justify-between">
+          <div>
+            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
+              <a href="https://kaopubear.top//post/2017-09-15-vscode1" class="hover:underline">VScode 使用初体验</a>
+            </h3>
+            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
+                
+                  
+                    <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="hover:underline hover:text-gray-900">VScode</a>
+                  
+                
+              
+              <div class="mx-2 text-gray-500">•</div>
+              <div>2017-09-15</div>
+              <div class="mx-2 text-gray-500">•</div>
+              <div>4 min read</div>
+            </div>
+          </div>
+          
+            <div class="md:pl-2 mt-4 md:mt-0">
+              <a href="https://kaopubear.top//post/2017-09-15-vscode1">
+                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png" alt="VScode 使用初体验">
+              </a>
+            </div>
+          
+        </div>
+      </div>
+    
+  </div>
+  <div class="mt-6 flex justify-between">
+    
+    
+  </div>
+</div>
+        <div class="w-full md:w-1/3 md:pl-8">
+          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">当前标签</div>
+          <div>
+            <h1 class="text-2xl">VScode</h1>
+          </div>
+        </div>
+      </div>
+      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</div>
+    </div>
+  </div>
+</body>
 </html>
