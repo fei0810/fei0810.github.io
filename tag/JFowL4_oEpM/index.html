@@ -1,142 +1,145 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>markdown | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: markdown</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2017-09-22-katex">
-                  <h2 class="post-title">KaTeX常用公式整理</h2>
-                </a>
-                <div class="post-date">
-                  2017-09-22
-                </div>
-                <div class="post-abstract">
-                  <p>前几天写了<a href="http://kaopubear.top/2017/09/19/2017-09-19-UseMathJaxinHexo/">一篇博客</a> 记录了在博客中插入数学公式的心路历程，折腾半天最后用的插件支持的JavaScript库是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>KaTeX</mtext></mrow><annotation encoding="application/x-tex">\KaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">K</span><span class="mspace" style="margin-right:-0.17em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>。关于这个库的信息，可以查看其<a href="https://github.com/Khan/KaTeX">GitHub主页</a>，开发者是<strong>khan academy</strong>，就是大家熟知的可汗学院。在主页上他们直接对标MathJax，复杂公式的渲染速度直接把对方秒成渣渣，另外，KaTeX的排版布局完全基于标准的<strong>Donald Knuth’s TeX</strong>。</p>
+        <div class="current-tag-container">
+            <h2 class="title">
+                标签：# markdown
+            </h2> 
+        </div>
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2017-09-22-katex">
+        <h2 class="post-title">KaTeX常用公式整理</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2017-09-22
+        </span>
+        <span>
+          7 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/JFowL4_oEpM" class="post-tag">
+            # markdown
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2017-09-22-katex" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-89dc98e187c7e7d6.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>前几天写了<a href="http://kaopubear.top/2017/09/19/2017-09-19-UseMathJaxinHexo/">一篇博客</a> 记录了在博客中插入数学公式的心路历程，折腾半天最后用的插件支持的JavaScript库是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext>KaTeX</mtext></mrow><annotation encoding="application/x-tex">\KaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">K</span><span class="mspace" style="margin-right:-0.17em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord text"><span class="mord textrm sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord text"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span>。关于这个库的信息，可以查看其<a href="https://github.com/Khan/KaTeX">GitHub主页</a>，开发者是<strong>khan academy</strong>，就是大家熟知的可汗学院。在主页上他们直接对标MathJax，复杂公式的渲染速度直接把对方秒成渣渣，另外，KaTeX的排版布局完全基于标准的<strong>Donald Knuth’s TeX</strong>。</p>
 <p>这里简要记录一些平时使用比较多的语法和公式，KaTeX支持的全部公式，可以在其<a href="https://khan.github.io/KaTeX/function-support.html">官网</a>查看。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2017-09-22-katex">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-89dc98e187c7e7d6.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo">
-                  <h2 class="post-title">在博客中展示数学公式</h2>
-                </a>
-                <div class="post-date">
-                  2017-09-19
-                </div>
-                <div class="post-abstract">
-                  <blockquote>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo">
+        <h2 class="post-title">在博客中展示数学公式</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2017-09-19
+        </span>
+        <span>
+          8 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/JFowL4_oEpM" class="post-tag">
+            # markdown
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5b6e2f593a020aba.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <blockquote>
 <p>最近写的一系列文章中需要时不时插入一些数学公式，也就不得不接触一些 LaTeX 相关内容，另外由于要发到博客上，还需要让博客能够正确解析 LaTeX 语法。</p>
 </blockquote>
 <h2 id="hexo-插入数学公式起步">Hexo 插入数学公式起步</h2>
@@ -148,70 +151,94 @@
 </code></pre>
 <p>只需要在主题下的配置文件<code>_config.yml</code>中启用相关设置即可</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5b6e2f593a020aba.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2017-02-04-trymarkdown">
-                  <h2 class="post-title">关于 Markdown 你应该知道的</h2>
-                </a>
-                <div class="post-date">
-                  2017-02-04
-                </div>
-                <div class="post-abstract">
-                  <h2 id="写在前面写作原因">写在前面（写作原因）</h2>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2017-02-04-trymarkdown">
+        <h2 class="post-title">关于 Markdown 你应该知道的</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2017-02-04
+        </span>
+        <span>
+          9 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/JFowL4_oEpM" class="post-tag">
+            # markdown
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2017-02-04-trymarkdown" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <h2 id="写在前面写作原因">写在前面（写作原因）</h2>
 <p>Markdown 近两年太火了，以至于 MAC 端 Markdown 编辑器基本上一个月就能新出一款。很多人对 Markdown 依旧没有多少了解，这主要体现在两方面：</p>
 <p>一方面有些人觉得 Markdown 是万能的：一看别人推荐什么工具自己就跟着用，一上来就学各种所谓语法；或者自己还没体会一个东西的精髓就到处给别人推荐，别人不用他还生气。</p>
 <p>另一方面有些人觉得 Markdown 是万万不能的：一部分选择固守自己的舒适区域（比如 word），不愿意接触，认为学习难度大；另一部分用着更高级的 LaTeX 等其他工具觉得 Markdown 太 low，用着丢人。</p>
 <p>为了让上述两部分人不本末倒置，能够先脱离那些基本的语法，从一个不同的视角去了解 Markdown，所以简单写一些东西。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2017-02-04-trymarkdown">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
+      </div>
+    </article>
+  
+</div>
 
-          <div class="pagination-container">
+        <div class="pagination-container">
   
   
 </div>
 
-        </div>
-      </div>
-    </div>
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  hljs.initHighlightingOnLoad()
 
-<script type="application/javascript">
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-AOS.init();
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
 
-hljs.initHighlightingOnLoad()
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

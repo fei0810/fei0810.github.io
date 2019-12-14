@@ -1,418 +1,396 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
-<title>文章归档 | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
+    
+        
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2019</h2>
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-12-14-haotouseimagehosting">
-                      <h2 class="post-title">
-                        如何简快好省的使用图床
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-12-12-3goodweb">
-                      <h2 class="post-title">
-                        这三个网站让我摸鱼都从容了
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-12-02-mycloud">
-                      <h2 class="post-title">
-                        我目前的云存储方法
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-10-31-bioconductor310iscoming">
-                      <h2 class="post-title">
-                        Bioconductor 3.10正式发布
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-10-29-macos15user">
-                      <h2 class="post-title">
-                        macOS 10.15 安装R包
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-10-26">
-                      <h2 class="post-title">
-                        数据库网站 API 知多少
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis">
-                      <h2 class="post-title">
-                        转录组表达分析知识图谱
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-09-17-fasterdeseq2">
-                      <h2 class="post-title">
-                        船新版本 DESeq2 处理大量样本速度显著提升
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
-                      <h2 class="post-title">
-                        Zotero入门学习路径
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
-                      <h2 class="post-title">
-                        VScode入门学习路径
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-09-10-howtolearntools">
-                      <h2 class="post-title">
-                        当我谈工具的时候我在谈什么
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
-                      <h2 class="post-title">
-                        如何使用语雀快速发表自己的博客
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-08-15-biotools-web">
-                      <h2 class="post-title">
-                        biotools 综合性生物信息工具资源网站
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-08-13-emojifont-debug">
-                      <h2 class="post-title">
-                        听说你也有 emojifont 的字体使用困惑
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum">
-                      <h2 class="post-title">
-                        首届生物信息人才发展论坛背后的故事
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-07-30-learnusemac1">
-                      <h2 class="post-title">
-                        上手 MacBook Pro 基础操作和配置
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-07-05-mypresentationlist">
-                      <h2 class="post-title">
-                        我的私人学术报告准备清单
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic">
-                      <h2 class="post-title">
-                        csvtk命令行版极简dplyr
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-06-22-weeklypaper">
-                      <h2 class="post-title">
-                        每周文献-190622-ATAC-seq和转录本从头组装新方法
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-06-19-datamashmanual">
-                      <h2 class="post-title">
-                        linux极简统计分析工具datamash教程
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-06-12-mambabeta">
-                      <h2 class="post-title">
-                        极速安装软件的升级版 conda
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-06-06-weeklypaper">
-                      <h2 class="post-title">
-                        每周文献-190606-多篇结构变异和转录组分析方法文章
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-06-05-usebiorxiv">
-                      <h2 class="post-title">
-                        随时随地跟踪最新热点文献
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-06-03-uniq-big-file">
-                      <h2 class="post-title">
-                        大文本另类去重多种解法
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-05-24-searchbiocinr">
-                      <h2 class="post-title">
-                        如何快速找到自己需要的 R 包
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-05-19-searchtips4you">
-                      <h2 class="post-title">
-                        给你的高效搜索小技巧
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2019-05-17-linuxparallelbasic">
-                      <h2 class="post-title">
-                        小议 linux 并行方法
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
-
-          <div class="pagination-container">
+<div class="archives-container">
   
-  
-    <a href="https://kaopubear.top//archives/page/2/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+    <h2 class="year">2019</h2>
+    
+      
+        <a href="https://kaopubear.top//post/2019-12-14-haotouseimagehosting" class="post">
+          <h2 class="post-title">
+            如何简快好省的使用图床
+          </h2>
+          <div class="time">2019-12-14</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-12-12-3goodweb" class="post">
+          <h2 class="post-title">
+            这三个网站让我摸鱼都从容了
+          </h2>
+          <div class="time">2019-12-12</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-12-02-mycloud" class="post">
+          <h2 class="post-title">
+            我目前的云存储方法
+          </h2>
+          <div class="time">2019-12-02</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-10-31-bioconductor310iscoming" class="post">
+          <h2 class="post-title">
+            Bioconductor 3.10正式发布
+          </h2>
+          <div class="time">2019-10-31</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-10-29-macos15user" class="post">
+          <h2 class="post-title">
+            macOS 10.15 安装R包
+          </h2>
+          <div class="time">2019-10-29</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-10-26" class="post">
+          <h2 class="post-title">
+            数据库网站 API 知多少
+          </h2>
+          <div class="time">2019-10-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis" class="post">
+          <h2 class="post-title">
+            转录组表达分析知识图谱
+          </h2>
+          <div class="time">2019-10-11</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-09-17-fasterdeseq2" class="post">
+          <h2 class="post-title">
+            船新版本 DESeq2 处理大量样本速度显著提升
+          </h2>
+          <div class="time">2019-09-17</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-09-11-howtolearnzotero" class="post">
+          <h2 class="post-title">
+            Zotero入门学习路径
+          </h2>
+          <div class="time">2019-09-11</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode" class="post">
+          <h2 class="post-title">
+            VScode入门学习路径
+          </h2>
+          <div class="time">2019-09-11</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-09-10-howtolearntools" class="post">
+          <h2 class="post-title">
+            当我谈工具的时候我在谈什么
+          </h2>
+          <div class="time">2019-09-10</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-09-01-howtouseyuque" class="post">
+          <h2 class="post-title">
+            如何使用语雀快速发表自己的博客
+          </h2>
+          <div class="time">2019-09-01</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-08-15-biotools-web" class="post">
+          <h2 class="post-title">
+            biotools 综合性生物信息工具资源网站
+          </h2>
+          <div class="time">2019-08-15</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-08-13-emojifont-debug" class="post">
+          <h2 class="post-title">
+            听说你也有 emojifont 的字体使用困惑
+          </h2>
+          <div class="time">2019-08-13</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum" class="post">
+          <h2 class="post-title">
+            首届生物信息人才发展论坛背后的故事
+          </h2>
+          <div class="time">2019-08-07</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-07-30-learnusemac1" class="post">
+          <h2 class="post-title">
+            上手 MacBook Pro 基础操作和配置
+          </h2>
+          <div class="time">2019-07-30</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-07-05-mypresentationlist" class="post">
+          <h2 class="post-title">
+            我的私人学术报告准备清单
+          </h2>
+          <div class="time">2019-07-05</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic" class="post">
+          <h2 class="post-title">
+            csvtk命令行版极简dplyr
+          </h2>
+          <div class="time">2019-06-28</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-06-22-weeklypaper" class="post">
+          <h2 class="post-title">
+            每周文献-190622-ATAC-seq和转录本从头组装新方法
+          </h2>
+          <div class="time">2019-06-22</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-06-19-datamashmanual" class="post">
+          <h2 class="post-title">
+            linux极简统计分析工具datamash教程
+          </h2>
+          <div class="time">2019-06-19</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-06-12-mambabeta" class="post">
+          <h2 class="post-title">
+            极速安装软件的升级版 conda
+          </h2>
+          <div class="time">2019-06-12</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-06-06-weeklypaper" class="post">
+          <h2 class="post-title">
+            每周文献-190606-多篇结构变异和转录组分析方法文章
+          </h2>
+          <div class="time">2019-06-06</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-06-05-usebiorxiv" class="post">
+          <h2 class="post-title">
+            随时随地跟踪最新热点文献
+          </h2>
+          <div class="time">2019-06-05</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-06-03-uniq-big-file" class="post">
+          <h2 class="post-title">
+            大文本另类去重多种解法
+          </h2>
+          <div class="time">2019-06-03</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-05-24-searchbiocinr" class="post">
+          <h2 class="post-title">
+            如何快速找到自己需要的 R 包
+          </h2>
+          <div class="time">2019-05-24</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-05-19-searchtips4you" class="post">
+          <h2 class="post-title">
+            给你的高效搜索小技巧
+          </h2>
+          <div class="time">2019-05-19</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2019-05-17-linuxparallelbasic" class="post">
+          <h2 class="post-title">
+            小议 linux 并行方法
+          </h2>
+          <div class="time">2019-05-17</div>
+        </a>
+      
+    
   
 </div>
 
-        </div>
-      </div>
-    </div>
+    
+        <div class="pagination-container">
+  
+  
+    <a href="https://kaopubear.top//archives/page/2/" class="next-page">下一页</a>
+  
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-<script type="application/javascript">
+<script>
+  hljs.initHighlightingOnLoad()
 
-AOS.init();
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-hljs.initHighlightingOnLoad()
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

@@ -1,117 +1,115 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>R 语言可视化之案例 | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">R 语言可视化之案例</h2>
-            <div class="post-date">2018-12-13</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              R 语言可视化之案例
+            </h2>
+            <div class="post-info">
+              <span>
+                2018-12-13
+              </span>
+              <span>
+                9 min read
+              </span>
+              
+                <a href="https://kaopubear.top//tag/UrqlObNL0t" class="post-tag">
+                  # R
+                </a>
+              
+                <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
+                  # 数据科学
+                </a>
+              
+            </div>
             
-              <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png')">
-              </div>
+              <img class="post-feature-image" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" alt="">
             
-            <div class="post-content">
-              <h2 id="qplot-使用">qplot 使用</h2>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="qplot-使用">qplot 使用</h2>
 <p>导入所需数据格式为 data.frame</p>
 <pre><code class="language-R">data(mtcars)
 df &lt;- mtcars[, c(&quot;mpg&quot;, &quot;cyl&quot;, &quot;wt&quot;)]
@@ -422,58 +420,114 @@ p+labs(title=&quot;Tooth length per dose&quot;, x=&quot;Dose (mg)&quot;, y = &qu
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
 <figure data-type="image" tabindex="26"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#qplot-%E4%BD%BF%E7%94%A8">qplot 使用</a>
+<ul>
+<li><a href="#scatter-plots-%E6%95%A3%E7%82%B9%E5%9B%BE">Scatter plots 散点图</a></li>
+<li><a href="#boxplot-violin-plot">boxplot violin plot</a></li>
+<li><a href="#histogram-density-plot">histogram density plot</a></li>
+</ul>
+</li>
+<li><a href="#ggplot2-box-plot">ggplot2 box plot</a>
+<ul>
+<li><a href="#%E6%94%B9%E5%8F%98%E7%BA%BF%E9%A2%9C%E8%89%B2">改变线颜色</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E7%AE%B1%E9%A2%9C%E8%89%B2">改变箱颜色</a></li>
+<li><a href="#%E5%A4%9A%E7%BB%84%E5%B1%95%E7%A4%BA">多组展示</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6">定制</a></li>
+</ul>
+</li>
+<li><a href="#violin-plots">violin plots</a>
+<ul>
+<li><a href="#%E6%98%BE%E7%A4%BA%E8%8C%83%E5%9B%B4">显示范围</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E9%87%8F">添加描述统计量</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2">修改颜色</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6-2">定制</a></li>
+</ul>
+</li>
+<li><a href="#histogram-%E7%9B%B4%E6%96%B9%E5%9B%BE">histogram 直方图</a>
+<ul>
+<li><a href="#%E5%9F%BA%E7%A1%80">基础</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2%E5%B9%B6%E5%88%86%E7%BB%84">修改颜色并分组</a></li>
+<li><a href="#%E5%A1%AB%E5%85%85">填充</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6-3">定制</a></li>
+</ul>
+</li>
+<li><a href="#desnsity-plot">desnsity plot</a></li>
+<li><a href="#scatter-plots">scatter plots</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0-error-bar">添加 Error bar</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://kaopubear.top//tag/UrqlObNL0t" class="tag">
-                    R
-                  </a>
-                
-                  <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="tag">
-                    数据科学
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://kaopubear.top//post/2018-12-12-rtidyverse">
-                  <h3 class="post-title">
-                    多快好省用 R 处理数据
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-
-          </div>
-
+          </article>
         </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kaopubear.top//post/2018-12-12-rtidyverse">
+              <h3 class="post-title">
+                多快好省用 R 处理数据
+              </h3>
+            </a>
+          </div>
+        
 
-<script type="application/javascript">
+        
 
-AOS.init();
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-hljs.initHighlightingOnLoad()
+<script>
+  hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

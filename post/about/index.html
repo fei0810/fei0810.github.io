@@ -1,114 +1,105 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>关于 | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">关于</h2>
-            <div class="post-date">2019-01-25</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-01-25
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
             
-            <div class="post-content">
-              <blockquote>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
 <p>欢迎来到我的博客，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="关于我">🐻关于我</h2>
@@ -167,37 +158,77 @@
 <hr>
 <p><strong>说明</strong>：如果你是因为考研而找到这个博客，所有考研相关内容已经整理成册并全部开源，如有需要请直接到 <a href="https://book.kaopubear.top/">GitBook</a> 或者<a href="https://www.yuque.com/kaopubear/kaoyan">语雀</a>(国内读者)在线阅读《靠谱学长说-聊聊考研复习这件事》</p>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%88%91">🐻关于我</a></li>
+<li><a href="#%E9%83%A8%E5%88%86%E7%BB%8F%E5%8E%86">🎉 部分经历</a></li>
+<li><a href="#%E9%83%A8%E5%88%86%E6%96%87%E7%AB%A0%E9%9D%9E%E4%B8%93%E4%B8%9A%E7%9B%B8%E5%85%B3">📝 部分文章(非专业相关)</a></li>
+<li><a href="#%E5%AD%A6%E6%9C%AF%E7%A0%94%E7%A9%B6%E4%B8%93%E4%B8%9A%E7%9B%B8%E5%85%B3">📄 学术研究(专业相关)</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2">🏠 关于博客</a></li>
+<li><a href="#%E6%8E%A8%E8%8D%90%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F">📪 推荐联系方式</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
-            
-            
-
-            
-
-          </div>
-
+          </article>
         </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        
 
-<script type="application/javascript">
+        
 
-AOS.init();
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-hljs.initHighlightingOnLoad()
+<script>
+  hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

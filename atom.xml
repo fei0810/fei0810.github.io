@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2019-12-14T07:29:34.785Z</updated>
+    <updated>2019-12-14T07:44:15.962Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
     <link rel="self" href="https://kaopubear.top//atom.xml"/>
@@ -32,18 +32,10 @@
         <summary type="html"><![CDATA[<blockquote>
 <p>如果你问我每天什么时候效率最高，我想可能是摸鱼的时候。高效摸鱼有很多技巧，关键之一就是不能在浑水里摸鱼。一定要去正确的地方，清楚的看到鱼在哪里，一摸一个准。</p>
 </blockquote>
-<h2 id="查-man-page-从未如此简单">查 man page 从未如此简单</h2>
-<p>自从知道了这个网页工具，无论是查还是读 linux man page 都变得异常简单。而且，这个网站还可以直接解析复杂命令行。</p>
-<p>man page 是学习 linux 最强大的手册，很多自以为烂熟于心的命令如果有空能读读 man page 一定会有意想不到的收获。但是 linux 的各种 man page 实在是太多了且阅读体验不好。</p>
-<p>这个网站叫做 <strong>mankier</strong>，开发者说做这个网站的目的就是 tries to make reading and man pages as convenient as possible.</p>
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>如果你问我每天什么时候效率最高，我想可能是摸鱼的时候。高效摸鱼有很多技巧，关键之一就是不能在浑水里摸鱼。一定要去正确的地方，清楚的看到鱼在哪里，一摸一个准。</p>
 </blockquote>
-<h2 id="查-man-page-从未如此简单">查 man page 从未如此简单</h2>
-<p>自从知道了这个网页工具，无论是查还是读 linux man page 都变得异常简单。而且，这个网站还可以直接解析复杂命令行。</p>
-<p>man page 是学习 linux 最强大的手册，很多自以为烂熟于心的命令如果有空能读读 man page 一定会有意想不到的收获。但是 linux 的各种 man page 实在是太多了且阅读体验不好。</p>
-<p>这个网站叫做 <strong>mankier</strong>，开发者说做这个网站的目的就是 tries to make reading and man pages as convenient as possible.</p>
 ]]></content>
     </entry>
     <entry>
@@ -60,13 +52,6 @@
 <li>腾讯微云：不冲会员下载速度略好于百度云，但是可用空间只用10G</li>
 </ul>
 </li>
-<li>国际大厂
-<ul>
-<li>Google Drive：使用体验好易于协作，和国外用户使用方便，国内需要特殊操作</li>
-<li>OneDrive：如果在用 office 365 附赠 1T 空间，无需特殊操作即可使用</li>
-<li>iCloud：虽然 iCloud 只是苹果自己的云服务，但对于苹果全家桶的用户来说使用体验是最好的</li>
-</ul>
-</li>
 </ul>
 ]]></summary>
         <content type="html"><![CDATA[<h2 id="云存储选择及我的使用感受">云存储选择及我的使用感受</h2>
@@ -75,13 +60,6 @@
 <ul>
 <li>百度云盘：国内使用度最高，适合保存各种盗版资源，不充会员约等于没法用</li>
 <li>腾讯微云：不冲会员下载速度略好于百度云，但是可用空间只用10G</li>
-</ul>
-</li>
-<li>国际大厂
-<ul>
-<li>Google Drive：使用体验好易于协作，和国外用户使用方便，国内需要特殊操作</li>
-<li>OneDrive：如果在用 office 365 附赠 1T 空间，无需特殊操作即可使用</li>
-<li>iCloud：虽然 iCloud 只是苹果自己的云服务，但对于苹果全家桶的用户来说使用体验是最好的</li>
 </ul>
 </li>
 </ul>

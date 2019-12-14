@@ -1,420 +1,398 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
-<title>文章归档 | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
+    
+        
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2017</h2>
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion">
-                      <h2 class="post-title">
-                        如何让别人回答你的问题
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-03-15-ToSadPeaple">
-                      <h2 class="post-title">
-                        给犹豫的你
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-03-10-HowToReadPaper">
-                      <h2 class="post-title">
-                        如何阅读科学文献
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-02-25-WhatWouldYouTellYourYoungerSelf">
-                      <h2 class="post-title">
-                        过来人，想对年轻的自己说些什么？
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
-                      <h2 class="post-title">
-                        数据科学家的成长之路 [译]
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-02-11-Shortcuts">
-                      <h2 class="post-title">
-                        不可不知的快捷键
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle">
-                      <h2 class="post-title">
-                        如何使用 Google
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-02-04-trymarkdown">
-                      <h2 class="post-title">
-                        关于 Markdown 你应该知道的
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-31-kaoyanfushi">
-                      <h2 class="post-title">
-                        关于考研复试你该了解的
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-30-EnglishToolsios">
-                      <h2 class="post-title">
-                        非功利性英语学习工具推荐_iOS 版
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr20">
-                      <h2 class="post-title">
-                        致考研人 20：我过去的 2015
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr19">
-                      <h2 class="post-title">
-                        致考研人 19：关于调剂
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr18">
-                      <h2 class="post-title">
-                        致考研人 18：写在考研结束后
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr17">
-                      <h2 class="post-title">
-                        致考研人17：考前提醒
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr16">
-                      <h2 class="post-title">
-                        致考研人 16：剩下 20 天，Inner Peace
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr15">
-                      <h2 class="post-title">
-                        致考研人 15：最后三个月该如何度过
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr14">
-                      <h2 class="post-title">
-                        致考研人 14：政治复习的七问七答
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr13">
-                      <h2 class="post-title">
-                        致考研人 13：英语作文备考经验
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr12">
-                      <h2 class="post-title">
-                        致考研人 12：比较危险的三类考研人
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr11">
-                      <h2 class="post-title">
-                        致考研人 11：我的电话采访文字稿
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr10">
-                      <h2 class="post-title">
-                        致考研人 10：政治复习经验
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr9">
-                      <h2 class="post-title">
-                        致考研人 9：具体的复习建议
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr8">
-                      <h2 class="post-title">
-                        致考研人 8：夏令营那点事
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-26-tokyr7">
-                      <h2 class="post-title">
-                        致考研人 7：四六级那点事
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-25-tokyr6">
-                      <h2 class="post-title">
-                        致考研人 6：写在开学之前（关于困惑和迷茫）
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-25-tokyr5">
-                      <h2 class="post-title">
-                        致考研人 5：写在新年之前（关于行动和幻想）
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-01-25-tokyr4">
-                      <h2 class="post-title">
-                        致考研人 4：关于保研
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
-
-          <div class="pagination-container">
+<div class="archives-container">
   
-    <a href="https://kaopubear.top//archives/page/5/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//archives/page/7/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+    <h2 class="year">2017</h2>
+    
+      
+        <a href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion" class="post">
+          <h2 class="post-title">
+            如何让别人回答你的问题
+          </h2>
+          <div class="time">2017-04-03</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-03-15-ToSadPeaple" class="post">
+          <h2 class="post-title">
+            给犹豫的你
+          </h2>
+          <div class="time">2017-03-15</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-03-10-HowToReadPaper" class="post">
+          <h2 class="post-title">
+            如何阅读科学文献
+          </h2>
+          <div class="time">2017-03-10</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-02-25-WhatWouldYouTellYourYoungerSelf" class="post">
+          <h2 class="post-title">
+            过来人，想对年轻的自己说些什么？
+          </h2>
+          <div class="time">2017-02-25</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist" class="post">
+          <h2 class="post-title">
+            数据科学家的成长之路 [译]
+          </h2>
+          <div class="time">2017-02-22</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-02-11-Shortcuts" class="post">
+          <h2 class="post-title">
+            不可不知的快捷键
+          </h2>
+          <div class="time">2017-02-11</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle" class="post">
+          <h2 class="post-title">
+            如何使用 Google
+          </h2>
+          <div class="time">2017-02-09</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-02-04-trymarkdown" class="post">
+          <h2 class="post-title">
+            关于 Markdown 你应该知道的
+          </h2>
+          <div class="time">2017-02-04</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-31-kaoyanfushi" class="post">
+          <h2 class="post-title">
+            关于考研复试你该了解的
+          </h2>
+          <div class="time">2017-01-31</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-30-EnglishToolsios" class="post">
+          <h2 class="post-title">
+            非功利性英语学习工具推荐_iOS 版
+          </h2>
+          <div class="time">2017-01-30</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr20" class="post">
+          <h2 class="post-title">
+            致考研人 20：我过去的 2015
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr19" class="post">
+          <h2 class="post-title">
+            致考研人 19：关于调剂
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr18" class="post">
+          <h2 class="post-title">
+            致考研人 18：写在考研结束后
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr17" class="post">
+          <h2 class="post-title">
+            致考研人17：考前提醒
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr16" class="post">
+          <h2 class="post-title">
+            致考研人 16：剩下 20 天，Inner Peace
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr15" class="post">
+          <h2 class="post-title">
+            致考研人 15：最后三个月该如何度过
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr14" class="post">
+          <h2 class="post-title">
+            致考研人 14：政治复习的七问七答
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr13" class="post">
+          <h2 class="post-title">
+            致考研人 13：英语作文备考经验
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr12" class="post">
+          <h2 class="post-title">
+            致考研人 12：比较危险的三类考研人
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr11" class="post">
+          <h2 class="post-title">
+            致考研人 11：我的电话采访文字稿
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr10" class="post">
+          <h2 class="post-title">
+            致考研人 10：政治复习经验
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr9" class="post">
+          <h2 class="post-title">
+            致考研人 9：具体的复习建议
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr8" class="post">
+          <h2 class="post-title">
+            致考研人 8：夏令营那点事
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-26-tokyr7" class="post">
+          <h2 class="post-title">
+            致考研人 7：四六级那点事
+          </h2>
+          <div class="time">2017-01-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-25-tokyr6" class="post">
+          <h2 class="post-title">
+            致考研人 6：写在开学之前（关于困惑和迷茫）
+          </h2>
+          <div class="time">2017-01-25</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-25-tokyr5" class="post">
+          <h2 class="post-title">
+            致考研人 5：写在新年之前（关于行动和幻想）
+          </h2>
+          <div class="time">2017-01-25</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-01-25-tokyr4" class="post">
+          <h2 class="post-title">
+            致考研人 4：关于保研
+          </h2>
+          <div class="time">2017-01-25</div>
+        </a>
+      
+    
   
 </div>
 
-        </div>
-      </div>
-    </div>
+    
+        <div class="pagination-container">
+  
+    <a href="https://kaopubear.top//archives/page/5/" class="prev-page">上一页</a>
+  
+  
+    <a href="https://kaopubear.top//archives/page/7/" class="next-page">下一页</a>
+  
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-<script type="application/javascript">
+<script>
+  hljs.initHighlightingOnLoad()
 
-AOS.init();
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-hljs.initHighlightingOnLoad()
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

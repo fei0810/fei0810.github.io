@@ -1,117 +1,115 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>csvtk命令行版极简dplyr | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">csvtk命令行版极简dplyr</h2>
-            <div class="post-date">2019-06-28</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              csvtk命令行版极简dplyr
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-06-28
+              </span>
+              <span>
+                11 min read
+              </span>
+              
+                <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
+                  # 数据科学
+                </a>
+              
+                <a href="https://kaopubear.top//tag/v0Xcy0jQaT" class="post-tag">
+                  # linux
+                </a>
+              
+            </div>
             
-              <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png')">
-              </div>
+              <img class="post-feature-image" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" alt="">
             
-            <div class="post-content">
-              <h2 id="写在前面">写在前面</h2>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="写在前面">写在前面</h2>
 <blockquote>
 <p>什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。</p>
 </blockquote>
@@ -298,58 +296,102 @@ csvtk -t plot box grouped_data.tsv.gz -g &quot;Group&quot; -f &quot;GC Content&q
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
 <figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2">写在前面</a></li>
+<li><a href="#csvtk-%E7%89%B9%E7%82%B9">csvtk 特点</a></li>
+<li><a href="#csvtk-%E4%BB%8B%E7%BB%8D">csvtk 介绍</a>
+<ul>
+<li><a href="#%E6%96%87%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%B1%BB">文本信息类</a></li>
+<li><a href="#%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96%E7%B1%BB">格式转化类</a></li>
+<li><a href="#%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C%E7%B1%BB">集合操作类</a></li>
+<li><a href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E7%B1%BB">文本编辑类</a></li>
+<li><a href="#%E7%94%BB%E5%9B%BE">画图</a></li>
+</ul>
+</li>
+<li><a href="#csvtk-%E7%A4%BA%E4%BE%8B">csvtk 示例</a>
+<ul>
+<li><a href="#%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E9%87%8F">描述统计量</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E5%8F%98%E6%BC%82%E4%BA%AE">一键变漂亮</a></li>
+<li><a href="#%E6%97%A0%E9%9C%80%E6%8E%92%E5%BA%8F%E5%BF%AB%E9%80%9F%E5%8E%BB%E9%87%8D">无需排序快速去重</a></li>
+<li><a href="#%E5%A4%8D%E6%9D%82%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89%E6%95%B0%E6%8D%AE">复杂条件筛选数据</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%88%97">快速添加新列</a></li>
+<li><a href="#%E5%8D%95%E8%A1%8C%E5%91%BD%E4%BB%A4%E5%BF%AB%E9%80%9F%E5%87%BA%E5%9B%BE">单行命令快速出图</a></li>
+</ul>
+</li>
+<li><a href="#one-more-thing">one more thing</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="tag">
-                    数据科学
-                  </a>
-                
-                  <a href="https://kaopubear.top//tag/v0Xcy0jQaT" class="tag">
-                    linux
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://kaopubear.top//post/2019-06-22-weeklypaper">
-                  <h3 class="post-title">
-                    每周文献-190622-ATAC-seq和转录本从头组装新方法
-                  </h3>
-                </a>
-              </div>
-            
-
-            
-
-          </div>
-
+          </article>
         </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://kaopubear.top//post/2019-06-22-weeklypaper">
+              <h3 class="post-title">
+                每周文献-190622-ATAC-seq和转录本从头组装新方法
+              </h3>
+            </a>
+          </div>
+        
 
-<script type="application/javascript">
+        
 
-AOS.init();
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-hljs.initHighlightingOnLoad()
+<script>
+  hljs.initHighlightingOnLoad()
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

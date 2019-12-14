@@ -1,420 +1,398 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
-<title>文章归档 | 思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
+    
+        
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h2 class="year" data-aos="fade-in" data-aos-delay="500">2018</h2>
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-12-08-weeklypaper">
-                      <h2 class="post-title">
-                        每周文献-181208-DNA 甲基化和几个工具
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-11-30-weeklypaper">
-                      <h2 class="post-title">
-                        每周文献-181130-lncRNA
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou">
-                      <h2 class="post-title">
-                        优秀到不能被忽视 读书笔记
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-11-10-areyourlightson">
-                      <h2 class="post-title">
-                        你的灯亮着么 读书笔记
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
-                      <h2 class="post-title">
-                        VScode 系列 1：提升 R 和 Python 使用体验
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-09-27-sequence66">
-                      <h2 class="post-title">
-                        66 种测序数据分析方法和流程
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
-                      <h2 class="post-title">
-                        VScode 学习记 1-4
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
-                      <h2 class="post-title">
-                        SRA 数据下载自救指南
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata">
-                      <h2 class="post-title">
-                        转录组时间序列数据小结
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-08-15-bioinfohistory">
-                      <h2 class="post-title">
-                        生物信息学简史
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-08-11-longxing-bioinfo-hic">
-                      <h2 class="post-title">
-                        3D 基因组与生物信息
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-08-05-ecluseevernote">
-                      <h2 class="post-title">
-                        一位印象大使的印象笔记使用心得
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-07-09-chineseuser">
-                      <h2 class="post-title">
-                        R 安装升级后的若干规定动作
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
-                      <h2 class="post-title">
-                        《小岛经济学》告诉我们的
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-06-03-awk2">
-                      <h2 class="post-title">
-                        awk 入门与进阶 part2—模式动作输出与输入
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-06-01-awk1">
-                      <h2 class="post-title">
-                        awk 入门与进阶 part1—快速入门
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-04-27-updateRinWindows">
-                      <h2 class="post-title">
-                        R 的安装配置与升级
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-04-20-vim10tips">
-                      <h2 class="post-title">
-                        vim 操作应知应会 10 点
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-04-11-rescueyouslide">
-                      <h2 class="post-title">
-                        如何拯救你，我的 PPT
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-04-02-anewsafedns">
-                      <h2 class="post-title">
-                        DNS 的一个新选择
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-03-11-howtouseevernote">
-                      <h2 class="post-title">
-                        高效使用云笔记的 5 个问题和 10 个关键
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2017-03-06-rintro2sibs">
-                      <h2 class="post-title">
-                        给初学者的 R 语言介绍
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-03-05-TheMasterAlgorithm7">
-                      <h2 class="post-title">
-                        『终极算法』摘抄笔记-贝叶斯学派
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-02-26-easylifeeasylearn">
-                      <h2 class="post-title">
-                        2018，不妨从“丢”开始
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm6">
-                      <h2 class="post-title">
-                        『终极算法』摘抄笔记-联结学派
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm5">
-                      <h2 class="post-title">
-                        『终极算法』摘抄笔记-贝叶斯学派
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4">
-                      <h2 class="post-title">
-                        『终极算法』摘抄笔记-符号学派
-                      </h2>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
-
-          <div class="pagination-container">
+<div class="archives-container">
   
-    <a href="https://kaopubear.top//archives/page/2/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//archives/page/4/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+    <h2 class="year">2018</h2>
+    
+      
+        <a href="https://kaopubear.top//post/2018-12-08-weeklypaper" class="post">
+          <h2 class="post-title">
+            每周文献-181208-DNA 甲基化和几个工具
+          </h2>
+          <div class="time">2018-12-08</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-11-30-weeklypaper" class="post">
+          <h2 class="post-title">
+            每周文献-181130-lncRNA
+          </h2>
+          <div class="time">2018-11-30</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou" class="post">
+          <h2 class="post-title">
+            优秀到不能被忽视 读书笔记
+          </h2>
+          <div class="time">2018-11-13</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-11-10-areyourlightson" class="post">
+          <h2 class="post-title">
+            你的灯亮着么 读书笔记
+          </h2>
+          <div class="time">2018-11-10</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode" class="post">
+          <h2 class="post-title">
+            VScode 系列 1：提升 R 和 Python 使用体验
+          </h2>
+          <div class="time">2018-10-28</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-09-27-sequence66" class="post">
+          <h2 class="post-title">
+            66 种测序数据分析方法和流程
+          </h2>
+          <div class="time">2018-09-27</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4" class="post">
+          <h2 class="post-title">
+            VScode 学习记 1-4
+          </h2>
+          <div class="time">2018-09-20</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-09-19-downloadsrafast" class="post">
+          <h2 class="post-title">
+            SRA 数据下载自救指南
+          </h2>
+          <div class="time">2018-09-19</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata" class="post">
+          <h2 class="post-title">
+            转录组时间序列数据小结
+          </h2>
+          <div class="time">2018-08-29</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-08-15-bioinfohistory" class="post">
+          <h2 class="post-title">
+            生物信息学简史
+          </h2>
+          <div class="time">2018-08-15</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-08-11-longxing-bioinfo-hic" class="post">
+          <h2 class="post-title">
+            3D 基因组与生物信息
+          </h2>
+          <div class="time">2018-08-11</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-08-05-ecluseevernote" class="post">
+          <h2 class="post-title">
+            一位印象大使的印象笔记使用心得
+          </h2>
+          <div class="time">2018-08-06</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-07-09-chineseuser" class="post">
+          <h2 class="post-title">
+            R 安装升级后的若干规定动作
+          </h2>
+          <div class="time">2018-07-09</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix" class="post">
+          <h2 class="post-title">
+            《小岛经济学》告诉我们的
+          </h2>
+          <div class="time">2018-06-06</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-06-03-awk2" class="post">
+          <h2 class="post-title">
+            awk 入门与进阶 part2—模式动作输出与输入
+          </h2>
+          <div class="time">2018-06-03</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-06-01-awk1" class="post">
+          <h2 class="post-title">
+            awk 入门与进阶 part1—快速入门
+          </h2>
+          <div class="time">2018-06-01</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-04-27-updateRinWindows" class="post">
+          <h2 class="post-title">
+            R 的安装配置与升级
+          </h2>
+          <div class="time">2018-04-27</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-04-20-vim10tips" class="post">
+          <h2 class="post-title">
+            vim 操作应知应会 10 点
+          </h2>
+          <div class="time">2018-04-20</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-04-11-rescueyouslide" class="post">
+          <h2 class="post-title">
+            如何拯救你，我的 PPT
+          </h2>
+          <div class="time">2018-04-11</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-04-02-anewsafedns" class="post">
+          <h2 class="post-title">
+            DNS 的一个新选择
+          </h2>
+          <div class="time">2018-04-02</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-03-11-howtouseevernote" class="post">
+          <h2 class="post-title">
+            高效使用云笔记的 5 个问题和 10 个关键
+          </h2>
+          <div class="time">2018-03-11</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2017-03-06-rintro2sibs" class="post">
+          <h2 class="post-title">
+            给初学者的 R 语言介绍
+          </h2>
+          <div class="time">2018-03-06</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-03-05-TheMasterAlgorithm7" class="post">
+          <h2 class="post-title">
+            『终极算法』摘抄笔记-贝叶斯学派
+          </h2>
+          <div class="time">2018-03-05</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-02-26-easylifeeasylearn" class="post">
+          <h2 class="post-title">
+            2018，不妨从“丢”开始
+          </h2>
+          <div class="time">2018-02-26</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm6" class="post">
+          <h2 class="post-title">
+            『终极算法』摘抄笔记-联结学派
+          </h2>
+          <div class="time">2018-02-25</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm5" class="post">
+          <h2 class="post-title">
+            『终极算法』摘抄笔记-贝叶斯学派
+          </h2>
+          <div class="time">2018-02-25</div>
+        </a>
+      
+    
+      
+        <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4" class="post">
+          <h2 class="post-title">
+            『终极算法』摘抄笔记-符号学派
+          </h2>
+          <div class="time">2018-02-17</div>
+        </a>
+      
+    
   
 </div>
 
-        </div>
-      </div>
-    </div>
+    
+        <div class="pagination-container">
+  
+    <a href="https://kaopubear.top//archives/page/2/" class="prev-page">上一页</a>
+  
+  
+    <a href="https://kaopubear.top//archives/page/4/" class="next-page">下一页</a>
+  
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-<script type="application/javascript">
+<script>
+  hljs.initHighlightingOnLoad()
 
-AOS.init();
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-hljs.initHighlightingOnLoad()
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>

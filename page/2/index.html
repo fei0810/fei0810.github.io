@@ -1,342 +1,412 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576309192768">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308415693">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://kaopubear.top/">
-        <img src="https://kaopubear.top//images/avatar.png?v=1576308415693" class="site-logo">
-        <h1 class="site-title">思考问题的熊</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://kaopubear.top/">
+  <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576309192768" alt="">
+  </a>
+  <h1 class="site-title">
+    思考问题的熊
+  </h1>
+  <p class="site-description">
+    很高兴和你相遇<br>这里正在记录我的所思所学
+  </p>
+  <div class="menu-container">
+    
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <a href="/" class="menu">
+          首页
+        </a>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
+    
       
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
+        <a href="/archives" class="menu">
+          归档
+        </a>
       
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
+    
       
-        
-          <a href="/post/resource" class="site-nav">
-            资料
-          </a>
-        
+        <a href="/tags" class="menu">
+          标签
+        </a>
       
-        
-          <a href="/post/project" class="site-nav">
-            项目
-          </a>
-        
+    
       
-    </div>
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu">
+          项目
+        </a>
+      
+    
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
+  <div class="social-container">
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
+    
       
-        
-      
-    </div>
-    <div class="site-description">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    <div class="site-footer">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-    </div>
+    
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
-                  <h2 class="post-title">VScode入门学习路径</h2>
-                </a>
-                <div class="post-date">
-                  2019-09-11
-                </div>
-                <div class="post-abstract">
-                  <h2 id="相关内容简述">相关内容简述</h2>
+    
+        <div class="post-container">
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
+        <h2 class="post-title">VScode入门学习路径</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-11
+        </span>
+        <span>
+          18 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/2mze5gMZQM" class="post-tag">
+            # 效率
+          </a>
+        
+          <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="post-tag">
+            # VScode
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <h2 id="相关内容简述">相关内容简述</h2>
 <p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
 <p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-09-10-howtolearntools">
-                  <h2 class="post-title">当我谈工具的时候我在谈什么</h2>
-                </a>
-                <div class="post-date">
-                  2019-09-10
-                </div>
-                <div class="post-abstract">
-                  <h1 id="好工具那么多你知道如何学吗">好工具那么多，你知道如何学吗</h1>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-09-10-howtolearntools">
+        <h2 class="post-title">当我谈工具的时候我在谈什么</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-10
+        </span>
+        <span>
+          8 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/2mze5gMZQM" class="post-tag">
+            # 效率
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-09-10-howtolearntools" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <h1 id="好工具那么多你知道如何学吗">好工具那么多，你知道如何学吗</h1>
 <p>比知道一个工具更重要的是想明白如何学习一个工具。**比如为了以 VS code 为例进行说明，我甚至在今天上午直接写了一个 VS code 插件。**是的，写了一个插件，不是用了一个插件。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-09-10-howtolearntools">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
-                  <h2 class="post-title">如何使用语雀快速发表自己的博客</h2>
-                </a>
-                <div class="post-date">
-                  2019-09-01
-                </div>
-                <div class="post-abstract">
-                  <h2 id="拥有个人博客的几种途径">拥有个人博客的几种途径</h2>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
+        <h2 class="post-title">如何使用语雀快速发表自己的博客</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-09-01
+        </span>
+        <span>
+          15 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/2IWlJgErkt" class="post-tag">
+            # 日常
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-09-01-howtouseyuque" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <h2 id="拥有个人博客的几种途径">拥有个人博客的几种途径</h2>
 <p>在越来越多的人已经没有耐心读完 140 字微博（micro-blog），短视频逐渐占据人们更多注意力的今天，博客（blog）——这一上个时代的产物——似乎正在被我们渐渐遗忘。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-08-15-biotools-web">
-                  <h2 class="post-title">biotools 综合性生物信息工具资源网站</h2>
-                </a>
-                <div class="post-date">
-                  2019-08-15
-                </div>
-                <div class="post-abstract">
-                  <p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-08-15-biotools-web">
+        <h2 class="post-title">biotools 综合性生物信息工具资源网站</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-08-15
+        </span>
+        <span>
+          5 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/DvI6ypPftI" class="post-tag">
+            # 生物信息
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-08-15-biotools-web" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-08-15-biotools-web">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-08-13-emojifont-debug">
-                  <h2 class="post-title">听说你也有 emojifont 的字体使用困惑</h2>
-                </a>
-                <div class="post-date">
-                  2019-08-13
-                </div>
-                <div class="post-abstract">
-                  <h2 id="问题复现">问题复现</h2>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-08-13-emojifont-debug">
+        <h2 class="post-title">听说你也有 emojifont 的字体使用困惑</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-08-13
+        </span>
+        <span>
+          5 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/UrqlObNL0t" class="post-tag">
+            # R
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-08-13-emojifont-debug" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <h2 id="问题复现">问题复现</h2>
 <blockquote>
 <p>Y 叔有一个神包，能够在 ggplot 图层里随心所欲的添加各种 emoji，然而很多人在使用的时候却不能「随心所欲」，经常一行函数输进去一张白板输出来。最近在我的星球里也有人提到这个问题，作为一个无趣的人我虽然之前没有实际使用过这个有趣的包，但是今天要被迫营业了。</p>
 </blockquote>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-08-13-emojifont-debug">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum">
-                  <h2 class="post-title">首届生物信息人才发展论坛背后的故事</h2>
-                </a>
-                <div class="post-date">
-                  2019-08-07
-                </div>
-                <div class="post-abstract">
-                  <p>第一届生物信息人才发展论坛落幕已经半月有余，算上前前后后的准备周期，在大家眼中一个「小而美」的论坛其实陆陆续续持续了一个多月的时间。</p>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum">
+        <h2 class="post-title">首届生物信息人才发展论坛背后的故事</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-08-07
+        </span>
+        <span>
+          12 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/DvI6ypPftI" class="post-tag">
+            # 生物信息
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>第一届生物信息人才发展论坛落幕已经半月有余，算上前前后后的准备周期，在大家眼中一个「小而美」的论坛其实陆陆续续持续了一个多月的时间。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-08-07-thefirstbiotraineeforum">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-07-30-learnusemac1">
-                  <h2 class="post-title">上手 MacBook Pro 基础操作和配置</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-30
-                </div>
-                <div class="post-abstract">
-                  <p>这个月，我成为了一名Mac用户。macOS诞生于1984年，经历了35年的发展之后，其在全球操作系统市场中的份额已经不到10%。</p>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-07-30-learnusemac1">
+        <h2 class="post-title">上手 MacBook Pro 基础操作和配置</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-07-30
+        </span>
+        <span>
+          7 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/OLsY4LEszq" class="post-tag">
+            # macOS
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-07-30-learnusemac1" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>这个月，我成为了一名Mac用户。macOS诞生于1984年，经历了35年的发展之后，其在全球操作系统市场中的份额已经不到10%。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-07-30-learnusemac1">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-07-05-mypresentationlist">
-                  <h2 class="post-title">我的私人学术报告准备清单</h2>
-                </a>
-                <div class="post-date">
-                  2019-07-05
-                </div>
-                <div class="post-abstract">
-                  <p>做学生和做研究的一个重要工作是把自己在做的东西告诉别人，通常是通过各种报告完成的，上到各种高大上的会议，下到组里几个人的小组会。我本身没有什么高大上会议的经历，但是几年下来各种各样的小组会也讲了不少。导师和同门都时常会给出一些建议和意见，逐渐就有了一套个人的「学术报告准备清单」。各种报告都会反复对照这份清单来准备。其中关于<a href="https://sspai.com/post/55525">幻灯片的制作心得</a>之前已经写过一篇文章，算是「技」。这篇文章主要写这份报告准备清单中「术」的部分，希望对你有所帮助。</p>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-07-05-mypresentationlist">
+        <h2 class="post-title">我的私人学术报告准备清单</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-07-05
+        </span>
+        <span>
+          7 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/2IWlJgErkt" class="post-tag">
+            # 日常
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-07-05-mypresentationlist" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190705140744.jpg')">
+        </a>
+      
+      <div class="post-abstract">
+        <p>做学生和做研究的一个重要工作是把自己在做的东西告诉别人，通常是通过各种报告完成的，上到各种高大上的会议，下到组里几个人的小组会。我本身没有什么高大上会议的经历，但是几年下来各种各样的小组会也讲了不少。导师和同门都时常会给出一些建议和意见，逐渐就有了一套个人的「学术报告准备清单」。各种报告都会反复对照这份清单来准备。其中关于<a href="https://sspai.com/post/55525">幻灯片的制作心得</a>之前已经写过一篇文章，算是「技」。这篇文章主要写这份报告准备清单中「术」的部分，希望对你有所帮助。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-07-05-mypresentationlist">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190705140744.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic">
-                  <h2 class="post-title">csvtk命令行版极简dplyr</h2>
-                </a>
-                <div class="post-date">
-                  2019-06-28
-                </div>
-                <div class="post-abstract">
-                  <h2 id="写在前面">写在前面</h2>
+      </div>
+    </article>
+  
+    <article class="post">
+      <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic">
+        <h2 class="post-title">csvtk命令行版极简dplyr</h2>
+      </a>
+      <div class="post-info">
+        <span>
+          2019-06-28
+        </span>
+        <span>
+          11 min read
+        </span>
+        
+          <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="post-tag">
+            # 数据科学
+          </a>
+        
+          <a href="https://kaopubear.top//tag/v0Xcy0jQaT" class="post-tag">
+            # linux
+          </a>
+        
+      </div>
+      
+        <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic" class="post-feature-image" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png')">
+        </a>
+      
+      <div class="post-abstract">
+        <h2 id="写在前面">写在前面</h2>
 <blockquote>
 <p>什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。</p>
 </blockquote>
 <p>之前写 <a href="https://kaopubear.top/2019-06-19-datamashmanual/">datamash 的使用教程</a>，收到了一位读者的私信，内容如上。</p>
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://kaopubear.top//post/2019-06-28-csvtkbasic">
-                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png')">
-                  </div>
-                </a>
-              
-            </article>
-          
-
-          <div class="pagination-container">
-  
-    <a href="https://kaopubear.top//" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//page/3/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
+      </div>
+    </article>
   
 </div>
 
-        </div>
-      </div>
-    </div>
+    
+        <div class="pagination-container">
+  
+    <a href="https://kaopubear.top//" class="prev-page">上一页</a>
+  
+  
+    <a href="https://kaopubear.top//page/3/" class="next-page">下一页</a>
+  
+</div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+        <div class="site-footer">
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | 
+  <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+</div>
 
-<script type="application/javascript">
+<script>
+  hljs.initHighlightingOnLoad()
 
-AOS.init();
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
 
-hljs.initHighlightingOnLoad()
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
 
 </script>
 
-
-
-
+      </div>
+    </div>
   </body>
 </html>
