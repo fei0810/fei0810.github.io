@@ -1,210 +1,309 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>文献 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 文献</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 文献</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-12-23-weeklypaper">
+                  <h2 class="post-title">每周文献-181223-单细胞单分子表观</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-23
+                </div>
+                <div class="post-abstract">
+                  <h2 id="单细胞及单分子在表观的应用">单细胞及单分子在表观的应用</h2>
+<p><strong>文献题目</strong>：Single-cell and single-molecule epigenomics to uncover genome regulation at unprecedented resolution</p>
+<p><strong>DOI(url):</strong> https://doi.org/10.1038/s41588-018-0290-x</p>
+<p><strong>发表日期：</strong> 2018 Dec 17</p>
+<h3 id="关键点">关键点</h3>
+<p>这篇综述介绍了单细胞和单分子表观基因组学正在以前所未有的分辨率揭示基因组调控的各种机制。作者重点介绍了变革技术中的一部分，并讨论了它们如何被用于识别新的基因调控模式</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-12-23-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-12-19-biolitmap">
+                  <h2 class="post-title">生物信息发文章哪家强</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-19
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>如果想在生物信息学专业杂志上发一篇不用做任何具体生物信息分析的文章，应该怎么做？最近发表在  <strong>Bioinformatics</strong> 的一篇文章或许可以给你一点思路。</p>
+</blockquote>
+<p>随着生物信息的发展，生物信息学相关的文章近 10 年呈现大量增加的趋势。世间万物皆可比较，你有没有想过，生物信息发文章哪家强。（山东技校找蓝翔？）</p>
+<h2 id="一句话介绍">一句话介绍</h2>
+<p><a href="http://socialanalytics.bsc.es/biolitmap/">BIOLITMAP</a> ：一个基于地理位置，允许按照年份、杂志和主题轻松筛选查看生物信息学文章发表情况的网站。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-12-19-biolitmap">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-12-16-weeklypaper">
+                  <h2 class="post-title">每周文献-181216-lncRNA差异分析流程测评</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-16
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献信息">文献信息</h2>
+<p>**标题：**Differential gene <strong>expression</strong> analysis tools exhibit substandard performance for long non-coding RNA-sequencing data</p>
+<p><strong>DOI(url):</strong> https://doi.org/10.1186/s13059-018-1466-5</p>
+<p>**发表日期：**24 July 2018</p>
+<p><strong>关键词：</strong> lncRNA,  Differential gene expression, RNA-seq, differential expression</p>
+<h2 id="文献概述">文献概述</h2>
+<p>这篇文章详细的分析了不同标准化和差异分析方法在 lncRNA 分析中的差别。一共使用了25个分析流程，主要关注点是 lncRNA  和一些低表达 mRNA。使用15种指标来评估差异基因的分析方法和标准化方法，一共使用了 6 中不同 RNA-seq 数据集，同时还提供了一个 shiny 网页可视化工具用来展示这些分析结果。按道理类似类型的文章应该达不到这个水平的杂志，lncRNA 分析方法的测评能够发到 Genome Biology 上也是牛，想必定有过人之处。</p>
+<p>简单说最后的结论是使用 limma 和 SAMSeq 分析lncRNA 或者表达量很低的mRNA 效果要稍微好些，值得注意的是，为了获得至少 50％ 的 sensitivity，在实际环境（如临床癌症研究）中研究表达水平时需要超过80个样本（what ?）。测试使用的大约一半的方法显示出过多的假阳性，非常不可靠。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-12-16-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-12-08-weeklypaper">
+                  <h2 class="post-title">每周文献-181208-DNA 甲基化和几个工具</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-08
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献信息">文献信息</h2>
+<p><strong>标题：</strong> A DNA methylation reader complex that enhances gene transcription</p>
+<p><strong>DOI(url):</strong> 10.1126/science.aar7854</p>
+<p><strong>发表日期：</strong> 07 Dec 2018</p>
+<p><strong>关键词：</strong> DNA methylation; reader complex; SUVH1 and SUVH3; activate</p>
+<h2 id="文献概述">文献概述</h2>
+<p>emmm , 挺长时间没有植物甲基化的文章发表在 science 上了，文章的通讯作者是美国科学院院士。</p>
+<p>DNA 甲基化（DNA methylation）是最早发现的表观修饰遗传标记。DNA 甲基化在调控基因表达、维持染色质结构、基因印记以及胚胎发育等生物学过程中发挥着重大的作用。在真核生物中，DNA 甲基化通常标记转座元件。在植物中，RNA 介导的 DNA 甲基化（RNA-directed DNA methylation, RdDM）是一种重要的甲基化途径，植物中有三种甲基化形式 CG、CHG、CHH。CG 由 DNA 甲基化转移酶 MET1 维持，在植物中 DNMT1 的同源蛋白；植物特异的 CMT3 结合 H3k9me2 促进 CHG 甲基化；CHH 由 DRM2 及 CMT2 维持。转座子的插入可以对邻近的基因在转录水平产生影响，启动子的甲基化通常来说会抑制这些基因的表达，但也存在 DNA 甲基化促进基因表达的例外情况。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-12-08-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-11-30-weeklypaper">
+                  <h2 class="post-title">每周文献-181130-lncRNA</h2>
+                </a>
+                <div class="post-date">
+                  2018-11-30
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献信息">文献信息</h2>
+<p><strong>标题</strong>：Global identification of Arabidopsis lncRNAs reveals the regulation of MAF4 by a natural antisense RNA</p>
+<p><strong>DOI(url)</strong>: 10.1038/s41467-018-07500-7</p>
+<p><strong>发表日期</strong>：29 November 2018</p>
+<p><strong>关键词</strong>：lncRNA, H3K4me3, natural antisense transcripts, concordantly expressed</p>
+<h2 id="文献概述">文献概述</h2>
+<ul>
+<li>鉴定了 6510 个 lncRNA ，其中包括 4050 个 NAT-lncRNA 以及 2460 个 lincRNA</li>
+<li>在不同组织或逆境处理条件下，很多 NAT-lncRNA 与邻近蛋白编码基因的表达呈现正相关趋势。</li>
+<li>通过人工 miRNA 沉默部分 NAT-lncRNA 表达可导致邻近蛋白编码基因表达下降，表明 NAT-lncRNA 可正向调控邻近基因的表达。</li>
+<li>拟南芥成花抑制基因 MADS AFFECTING FLOWERING4(MAF4) 基因位点有一个 NAT-lncRNA，MAS。</li>
+<li>MAS 受冷处理诱导并在转录水平激活 MAF4 表达，抑制拟南芥过早开花。MAS 对 MAF4 的激活依赖于一类参与组蛋白 H3K4me3 修饰的 COMPASS-like 复合体。</li>
+<li>MAS 与复合体中的一个核心蛋白组分 WDR5a 结合并辅助该复合体招募到 MAF4 基因位点，促进 H3K4me3 修饰，从而促进 MAF4 表达。</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-11-30-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-03-10-HowToReadPaper">
+                  <h2 class="post-title">如何阅读科学文献</h2>
+                </a>
+                <div class="post-date">
+                  2017-03-10
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p><a href="http://www.sciencemag.org/careers/2016/01/how-read-scientific-paper?utm_campaign=email-news-latest&amp;et_rid=83827530&amp;et_cid=226858">原文</a> 来自《Science》杂志</p>
+<p>原作者：Adam Ruben</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb2222d8aee77f0f.png" alt="img"></figure>
+<p>从来没有什么事能像阅读科学期刊里的文章一样让你感觉自己如此愚蠢。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-03-10-HowToReadPaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" href="https://kaopubear.top//post/2018-12-23-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-12-23-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2018-12-23 14:37:43">2018-12-23</time>
-        </div>
-        <h2>每周文献-181223-单细胞单分子表观</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//tag/EqrCpMmApu/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" href="https://kaopubear.top//post/2018-12-19-biolitmap" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-12-19-biolitmap">
-        <div class="item-meta">
-          <time datetime="2018-12-19 14:42:35">2018-12-19</time>
-        </div>
-        <h2>生物信息发文章哪家强</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png" href="https://kaopubear.top//post/2018-12-16-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-12-16-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2018-12-16 18:22:25">2018-12-16</time>
-        </div>
-        <h2>每周文献-181216-lncRNA差异分析流程测评</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png" href="https://kaopubear.top//post/2018-12-08-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-12-08-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2018-12-08 20:13:37">2018-12-08</time>
-        </div>
-        <h2>每周文献-181208-DNA 甲基化和几个工具</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg" href="https://kaopubear.top//post/2018-11-30-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-11-30-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2018-11-30 16:49:35">2018-11-30</time>
-        </div>
-        <h2>每周文献-181130-lncRNA</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top//post/2017-03-10-HowToReadPaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-03-10-HowToReadPaper">
-        <div class="item-meta">
-          <time datetime="2017-03-10 22:53:34">2017-03-10</time>
-        </div>
-        <h2>如何阅读科学文献</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-    <a href="https://kaopubear.top//tag/EqrCpMmApu/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

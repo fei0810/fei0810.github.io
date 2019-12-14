@@ -1,208 +1,289 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>RNA-seq | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> RNA-seq</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: RNA-seq</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis">
+                  <h2 class="post-title">转录组表达分析知识图谱</h2>
+                </a>
+                <div class="post-date">
+                  2019-10-11
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文章信息">文章信息</h2>
+<p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis">
+                  <div class="feature-container" style="background-image: url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191011194155.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-09-17-fasterdeseq2">
+                  <h2 class="post-title">船新版本 DESeq2 处理大量样本速度显著提升</h2>
+                </a>
+                <div class="post-date">
+                  2019-09-17
+                </div>
+                <div class="post-abstract">
+                  <h2 id="太长不看版本">太长不看版本</h2>
+<p>DESeq 最新版本（v1.25.9）针对大样本分析的速度和之前相比有了质的飞越，果子老师的 1215 个 TCGA 样本差异分析时间从 1200 分钟缩短到单线程 20 分钟，使用多线程的情况下最快 6 分钟搞定。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-09-17-fasterdeseq2">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-05-07-stringtiegenetpm">
+                  <h2 class="post-title">解决 Stringtie 基因重复定量的意外收获</h2>
+                </a>
+                <div class="post-date">
+                  2019-05-07
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>Bioinformatics was like a box of chocolates.  You never konw what you're gonna get ——阿飞正传</p>
+</blockquote>
+<h2 id="铺垫">铺垫</h2>
+<p>由于自己之前一直不喜欢用 cufflinks，所以后面的 stringtie 也是能不用就不用，偶尔用下也都是浅尝辄止。因为 stringtie 可以直接拿到基因的 TPM 值，比 RSEM 需要单独构建一次索引的操作省力些，所以最近自己注释了些基因就用它对十几个样本跑了一波基因定量的常规操作。心想做个表达矩阵进行下游分析，结果偶买噶，每个定量结果的行数（基因数）竟然都不一样。同一个注释文件定量出了不同的结果，检查一下原始基因数，发现有的定量结果行数要比实际基因数多 7 个，有的要多 5 个，还不尽相同。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-05-07-stringtiegenetpm">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse">
+                  <h2 class="post-title">RNAseq 必读综述和在线教程</h2>
+                </a>
+                <div class="post-date">
+                  2019-02-23
+                </div>
+                <div class="post-abstract">
+                  <p>最近读到一篇 <a href="https://homolog.us/blogs/rnaseq/2019/02/21/online-tutorials-RNAseq/">博文</a>，介绍了学习 RNAseq 数据分析非常推荐的两篇综述和七个在线教程并发表了相关评论。本文将进行简要整理并对相关评论内容进行大致翻译，供国内读者参考。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092319.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
+                  <h2 class="post-title">SRA 数据下载自救指南</h2>
+                </a>
+                <div class="post-date">
+                  2018-09-19
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>还在羡慕海峡那边的朋友下载 SRA 快到飞起？还在难过用 wget 下载数据经常下载不完整？用了官方的下载工具还是慢的不行？这里有一个 SRA 下载自救尝试指南供你参考。</p>
+</blockquote>
+<h2 id="需要用到两个工具">需要用到两个工具</h2>
+<ul>
+<li>SRA Toolkit</li>
+<li>IBM aspera 高速文件传输工具</li>
+</ul>
+<p><strong>因为这是一篇极简自救指南，所以一切都不解释，直接给出链接，不明白的自行学习（爱学不学）。</strong></p>
+<p>SRA Toolkit 网址：https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc</p>
+<p>aspera 网址：https://support.asperasoft.com/hc/en-us</p>
+<p>aspera 官方对于下载 NCBI 数据的说明</p>
+<p><a href="https://support.asperasoft.com/hc/en-us/articles/216125898-Downloading-data-from-NCBI-via-the-command-line">https://support.asperasoft.com/hc/en-us/articles/216125898-Downloading-data-from-NCBI-via-the-command-line</a></p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata">
+                  <h2 class="post-title">转录组时间序列数据小结</h2>
+                </a>
+                <div class="post-date">
+                  2018-08-29
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>针对转录组数据，平时分析中最常见两组之间的比较，比如不同处理或者不同突变体。面对这样的数据用用 DESeq2 或者 edgeR 基本就差不多。如果样本量或者不同条件很多的话可以还做 WGCNA 的分析。但是生物体的生长发育和时间这个维度有着非常密切的关系。如果碰上了一组和时间有关系的数据可以怎么处理呢？</p>
+</blockquote>
+<h2 id="时序分析">时序分析</h2>
+<p>所谓时序分析 (time series analysis) 在 data science 中是非常重要的一个方向。对大多数商业行为而言如果能够通过已有不同时间数据来进行预测就有可能大大提高自己的胜率。通常时间序列数据会包括趋势部分和不规则部分， 我们需要做的就是剔除不规则部分然后找到趋势所在，再进行预测。在预测过程中通常可以采用移动平均法、局部加权回归法、指数平滑法和自回归整合移动平均等方法。</p>
+<h2 id="生物学时序分析">生物学时序分析</h2>
+<p>生物学的时间相关数据本身预测属性和商业数据相比要弱很多。一种是单一条件的纯时间序列，主要看不同基因的表达模式，根据相似的表达谱将基因归为多个类有助于找到功能相似的基因。另一种情况是含有对照和处理的时间序列，需要再考察不同条件的差异基因。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191011194155.jpg" href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191011194155.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis">
-        <div class="item-meta">
-          <time datetime="2019-10-11 19:31:43">2019-10-11</time>
-        </div>
-        <h2>转录组表达分析知识图谱</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg" href="https://kaopubear.top//post/2019-09-17-fasterdeseq2" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-09-17-fasterdeseq2">
-        <div class="item-meta">
-          <time datetime="2019-09-17 20:15:31">2019-09-17</time>
-        </div>
-        <h2>船新版本 DESeq2 处理大量样本速度显著提升</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" href="https://kaopubear.top//post/2019-05-07-stringtiegenetpm" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-05-07-stringtiegenetpm">
-        <div class="item-meta">
-          <time datetime="2019-05-07 17:56:59">2019-05-07</time>
-        </div>
-        <h2>解决 Stringtie 基因重复定量的意外收获</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092319.png" href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092319.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse">
-        <div class="item-meta">
-          <time datetime="2019-02-23 15:42:51">2019-02-23</time>
-        </div>
-        <h2>RNAseq 必读综述和在线教程</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png" href="https://kaopubear.top//post/2018-09-19-downloadsrafast" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
-        <div class="item-meta">
-          <time datetime="2018-09-19 10:45:21">2018-09-19</time>
-        </div>
-        <h2>SRA 数据下载自救指南</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png" href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata">
-        <div class="item-meta">
-          <time datetime="2018-08-29 10:46:17">2018-08-29</time>
-        </div>
-        <h2>转录组时间序列数据小结</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

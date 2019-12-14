@@ -1,210 +1,302 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>R | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> R</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: R</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-01-RandStatistics5">
+                  <h2 class="post-title">统计学基础与 R-5</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-01
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="单双样本均值分析">单双样本均值分析</h2>
+<p>根据数据组数的不同，均值比较可以分为单样本、双样本和多样本。本节首先介绍单样本和双样本。</p>
+<h3 id="假设检验一般步骤">假设检验一般步骤</h3>
+<p>谈具体的假设检验之前首先介绍假设检验的一般步骤。</p>
+<ol>
+<li><strong>确定假设</strong></li>
+</ol>
+<p><strong>原假设</strong> (null hypothesis, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>) 指需要检验的假设，只要当我们有足够的证据时才能否定。在某种意义上与原假设相反的的假设被称为<strong>备择假设</strong>（alternative hypothesis，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）。</p>
+<p>假设检验是无法给出绝对证明的，我们只能在假定原假设为真的情况下通过假设检验来判断结果是否可信。如果结果极不可能发生，则拒绝原假设，进而接受备择假设。</p>
+<p>根据接受假设和真实情况之间的关系，会有四种可能发生。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-01-RandStatistics5">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-28-RandStatistics4">
+                  <h2 class="post-title">统计学基础与 R-4</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-28
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="第四节-相关性分析">第四节 相关性分析</h2>
+<p>本节提到的相关性分析和后面会提到的 t-test, ANOVA 以及回归分析等被称为参数检验，这些检验在进行时我们常默认数据符合一定前提条件，如符合正态分布和方差相等等。当样本数量大于 30 时，根据中心极限定理，我们通常认为数据符合正态分布；在进行 t-test 和 ANOVA 分析时，还需要满足样本方差相等。</p>
+<p>在进行各种检验之前需要初步检验数据是否符合某种检验的前提条件，如果不符合则应该考虑使用非参数检验或其他方法。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-28-RandStatistics4">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-63bab4fdd6d4f072.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-27-RandStatistics3">
+                  <h2 class="post-title">统计学基础与 R-3</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-27
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="第三节-估计">第三节 估计</h2>
+<p>在通常的试验中我们获得的信息总是来自样本，想要知道总体的参数，只能通过已有样本参数进行估计。</p>
+<p>样本均值是总体均值的点估计，通常样本均值用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.63056em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.63056em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">x</span></span><span style="top:-3.55056em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span>表示，总体均值用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">μ</span></span></span></span>表示。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-27-RandStatistics3">
+                  <div class="feature-container" style="background-image: url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
+                  <h2 class="post-title">统计学基础与 R-2</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-18
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="概率相关内容">概率相关内容</h2>
+<p>统计学中大量内容源于概率，学习统计学也就必须要了解一些概率中的基本概念，其中尤为重要的是条件概率，以及延伸出的贝叶斯定理（也许是最牛也是最难充分掌握的内容）。</p>
+<h3 id="几个概念">几个概念</h3>
+<p>**样本空间 (sample space) **是所有可能结果的一个集合，**事件 (event) <strong>则是样本空间中所有感兴趣结果的一个子集。某事件的</strong>概率 (probability) **是该事件在无限次试验次数中的相对频率。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
+                  <h2 class="post-title">统计学基础与 R-1</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-16
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="描述性统计量">描述性统计量</h2>
+<p>为了解决某个问题，我们通常会观察一组和该问题相关的样本，利用总体中的部分样本来推断总体的情况进而得到相关结论。在通过样本推断总体前，首先需用对已有样本数据进行简单的评估和描述，针对这一需求也就引出了<strong>描述统计量</strong>这一概念。进行描述性统计时，我们最关注数据两个层面的问题：数据的集中趋势和变异分散性。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
+                  <h2 class="post-title">数据科学家的成长之路 [译]</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-22
+                </div>
+                <div class="post-abstract">
+                  <h1 id="数据科学家的成长之路">数据科学家的成长之路</h1>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608125838.png" alt=""></figure>
+<blockquote>
+<p>可能是最全面的数据科学入门文章，文中有大量资料和相关链接。<br>
+英文原文地址：<a href="http://blog.yhat.com/posts/become-a-data-scientist.html">Becoming a Data Scientist</a></p>
+</blockquote>
+<h2 id="数据科学技能">数据科学技能</h2>
+<p>数据科学家每天都会用到很多综合技能，其中的许多技能都是在工作或者其他时间自学的。他们并不需要具备某种特定的文凭，而是来自不同的背景。</p>
+<p>本文讨论的所有技能都可以自学。我们为此准备了一些资源让你可以沿着这条路走下去。而你则可以把这篇文章看成是数据科学家的培养指南。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png" href="https://kaopubear.top//post/2017-10-01-RandStatistics5" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-01-RandStatistics5">
-        <div class="item-meta">
-          <time datetime="2017-10-01 22:24:13">2017-10-01</time>
-        </div>
-        <h2>统计学基础与 R-5</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//tag/UrqlObNL0t//page/2/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-63bab4fdd6d4f072.png" href="https://kaopubear.top//post/2017-09-28-RandStatistics4" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-63bab4fdd6d4f072.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-28-RandStatistics4">
-        <div class="item-meta">
-          <time datetime="2017-09-28 22:26:14">2017-09-28</time>
-        </div>
-        <h2>统计学基础与 R-4</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png" href="https://kaopubear.top//post/2017-09-27-RandStatistics3" style="background-image:url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-27-RandStatistics3">
-        <div class="item-meta">
-          <time datetime="2017-09-27 22:26:01">2017-09-27</time>
-        </div>
-        <h2>统计学基础与 R-3</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png" href="https://kaopubear.top//post/2017-09-18-RandStatistics2" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
-        <div class="item-meta">
-          <time datetime="2017-09-18 16:21:00">2017-09-18</time>
-        </div>
-        <h2>统计学基础与 R-2</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png" href="https://kaopubear.top//post/2017-09-16-RandStatistics1" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
-        <div class="item-meta">
-          <time datetime="2017-09-16 20:29:17">2017-09-16</time>
-        </div>
-        <h2>统计学基础与 R-1</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
-        <div class="item-meta">
-          <time datetime="2017-02-22 09:04:51">2017-02-22</time>
-        </div>
-        <h2>数据科学家的成长之路 [译]</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-    <a href="https://kaopubear.top//tag/UrqlObNL0t//page/2/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

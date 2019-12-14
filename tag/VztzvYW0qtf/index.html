@@ -1,172 +1,234 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>印象笔记 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 印象笔记</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 印象笔记</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-01-28-evernote-templates">
+                  <h2 class="post-title">给你的印象笔记模板使用心得</h2>
+                </a>
+                <div class="post-date">
+                  2019-01-28
+                </div>
+                <div class="post-abstract">
+                  <p><strong>说明</strong>：本文首发于<strong>少数派</strong>。可在 <a href="https://sspai.com/post/52701">少数派官网</a> 阅读完整版本。</p>
+<blockquote>
+<p><strong>目录</strong></p>
+<ul>
+<li>为什么要使用模板</li>
+<li>好用的官方模板</li>
+<li>我的私人模板</li>
+<li>模板相关使用技巧</li>
+</ul>
+</blockquote>
+<h2 id="为什么要使用模板">为什么要使用模板</h2>
+<blockquote>
+<p>一个优秀的程序员会把「DRY」作为自身的行为准则，即 <strong>Don't repeat yourself</strong>。同样，一个高效的记录者也不应把同样的内容反复重复记录，而是需要学会借助模板的力量。</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-01-28-evernote-templates">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092543.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-08-05-ecluseevernote">
+                  <h2 class="post-title">一位印象大使的印象笔记使用心得</h2>
+                </a>
+                <div class="post-date">
+                  2018-08-06
+                </div>
+                <div class="post-abstract">
+                  <h2 id="无纸化的尝试与优势">无纸化的尝试与优势</h2>
+<p>在大学，每到考试周我的书包里就会多出不少笔记本，但因为自己从小写字潦草经常会出现第二天认不出前一天记了什么的尴尬场景，在准备考研的阶段我还不幸有过笔记丢失的悲惨经历。<strong>写字太乱加上笔记本买买丢丢</strong>，是我最初产生把纸质笔记转变为电子笔记的原因。另外，纸笔形式更适合<strong>短期高强度</strong>的记录，高中大学之后类似于考试周之类的场景愈发减少。</p>
+<p>对于一部分人来说，笔尖划过纸面的感觉是他们舍弃不掉的，不过现在屏幕和纸笔的体验其实已经越来越接近，如 kindle 之于纸质书，iPad pro 配上手写笔之于传统纸笔。</p>
+<p>你可以回忆下自己三天前在笔记本上记录过什么，或者回忆下上一个笔记本写过什么。传统的纸笔记录本身存在一个不可逾越的<strong>物理界限</strong>，<strong>即不同笔记本之间的必然分离</strong>。你不可能拥有一个无限厚的笔记本，也很难把所有笔记本都随身携带。而无纸化可以满足你随时记录和同步的需求，它让笔记之间，笔记本之间不再存在物理界限，这是无纸化相对于传统纸笔而言最大的优势。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-08-05-ecluseevernote">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-bacd4f947902dcdc.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-03-11-howtouseevernote">
+                  <h2 class="post-title">高效使用云笔记的 5 个问题和 10 个关键</h2>
+                </a>
+                <div class="post-date">
+                  2018-03-11
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>问题 1：为什么使用云笔记<br>
+问题 2：如何选择云笔记产品<br>
+问题 3：云笔记中该记录什么<br>
+问题 4：如何对信息进行分类<br>
+问题 5：如何建立个人知识体系<br>
+关键 1：善用搜索功能<br>
+关键 2：office 文档图片深度搜索<br>
+关键 3：学会添加笔记内部链接<br>
+关键 4：一键保存微信聊天记录<br>
+关键 5：笔记本自由排序<br>
+关键 6：迂回支持 markdown<br>
+关键 7：凌乱网页简化格式<br>
+关键 8：保证笔记及私密内容安全<br>
+关键 9：充分利用专属印象邮箱<br>
+关键 10：建立个人电子档案</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-03-11-howtouseevernote">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092543.png" href="https://kaopubear.top//post/2019-01-28-evernote-templates" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092543.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-01-28-evernote-templates">
-        <div class="item-meta">
-          <time datetime="2019-01-28 15:41:42">2019-01-28</time>
-        </div>
-        <h2>给你的印象笔记模板使用心得</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-bacd4f947902dcdc.png" href="https://kaopubear.top//post/2018-08-05-ecluseevernote" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-bacd4f947902dcdc.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-08-05-ecluseevernote">
-        <div class="item-meta">
-          <time datetime="2018-08-06 10:42:08">2018-08-06</time>
-        </div>
-        <h2>一位印象大使的印象笔记使用心得</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png" href="https://kaopubear.top//post/2018-03-11-howtouseevernote" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-03-11-howtouseevernote">
-        <div class="item-meta">
-          <time datetime="2018-03-11 20:47:23">2018-03-11</time>
-        </div>
-        <h2>高效使用云笔记的 5 个问题和 10 个关键</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

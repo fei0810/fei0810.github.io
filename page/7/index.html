@@ -1,255 +1,397 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
           
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-12-08-weeklypaper">
+                  <h2 class="post-title">每周文献-181208-DNA 甲基化和几个工具</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-08
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献信息">文献信息</h2>
+<p><strong>标题：</strong> A DNA methylation reader complex that enhances gene transcription</p>
+<p><strong>DOI(url):</strong> 10.1126/science.aar7854</p>
+<p><strong>发表日期：</strong> 07 Dec 2018</p>
+<p><strong>关键词：</strong> DNA methylation; reader complex; SUVH1 and SUVH3; activate</p>
+<h2 id="文献概述">文献概述</h2>
+<p>emmm , 挺长时间没有植物甲基化的文章发表在 science 上了，文章的通讯作者是美国科学院院士。</p>
+<p>DNA 甲基化（DNA methylation）是最早发现的表观修饰遗传标记。DNA 甲基化在调控基因表达、维持染色质结构、基因印记以及胚胎发育等生物学过程中发挥着重大的作用。在真核生物中，DNA 甲基化通常标记转座元件。在植物中，RNA 介导的 DNA 甲基化（RNA-directed DNA methylation, RdDM）是一种重要的甲基化途径，植物中有三种甲基化形式 CG、CHG、CHH。CG 由 DNA 甲基化转移酶 MET1 维持，在植物中 DNMT1 的同源蛋白；植物特异的 CMT3 结合 H3k9me2 促进 CHG 甲基化；CHH 由 DRM2 及 CMT2 维持。转座子的插入可以对邻近的基因在转录水平产生影响，启动子的甲基化通常来说会抑制这些基因的表达，但也存在 DNA 甲基化促进基因表达的例外情况。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-12-08-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png')">
+                  </div>
+                </a>
+              
+            </article>
           
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-11-30-weeklypaper">
+                  <h2 class="post-title">每周文献-181130-lncRNA</h2>
+                </a>
+                <div class="post-date">
+                  2018-11-30
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献信息">文献信息</h2>
+<p><strong>标题</strong>：Global identification of Arabidopsis lncRNAs reveals the regulation of MAF4 by a natural antisense RNA</p>
+<p><strong>DOI(url)</strong>: 10.1038/s41467-018-07500-7</p>
+<p><strong>发表日期</strong>：29 November 2018</p>
+<p><strong>关键词</strong>：lncRNA, H3K4me3, natural antisense transcripts, concordantly expressed</p>
+<h2 id="文献概述">文献概述</h2>
+<ul>
+<li>鉴定了 6510 个 lncRNA ，其中包括 4050 个 NAT-lncRNA 以及 2460 个 lincRNA</li>
+<li>在不同组织或逆境处理条件下，很多 NAT-lncRNA 与邻近蛋白编码基因的表达呈现正相关趋势。</li>
+<li>通过人工 miRNA 沉默部分 NAT-lncRNA 表达可导致邻近蛋白编码基因表达下降，表明 NAT-lncRNA 可正向调控邻近基因的表达。</li>
+<li>拟南芥成花抑制基因 MADS AFFECTING FLOWERING4(MAF4) 基因位点有一个 NAT-lncRNA，MAS。</li>
+<li>MAS 受冷处理诱导并在转录水平激活 MAF4 表达，抑制拟南芥过早开花。MAS 对 MAF4 的激活依赖于一类参与组蛋白 H3K4me3 修饰的 COMPASS-like 复合体。</li>
+<li>MAS 与复合体中的一个核心蛋白组分 WDR5a 结合并辅助该复合体招募到 MAF4 基因位点，促进 H3K4me3 修饰，从而促进 MAF4 表达。</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-11-30-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou">
+                  <h2 class="post-title">优秀到不能被忽视 读书笔记</h2>
+                </a>
+                <div class="post-date">
+                  2018-11-13
+                </div>
+                <div class="post-abstract">
+                  <h2 id="基本信息">基本信息</h2>
+<ul>
+<li>原作名：So Good They Can't Ignore You</li>
+<li>作者：卡尔·纽波特</li>
+<li>页数：226</li>
+<li>整理：思考问题的熊</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4005c5dcec9161cb.jpg" alt=""></figure>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-11-10-areyourlightson">
+                  <h2 class="post-title">你的灯亮着么 读书笔记</h2>
+                </a>
+                <div class="post-date">
+                  2018-11-10
+                </div>
+                <div class="post-abstract">
+                  <h2 id="基本信息">基本信息</h2>
+<ul>
+<li>原作名：Are Your Lights On? How to Figure Out what the Problem Really is</li>
+<li>作者：唐纳德·高斯；杰拉尔德·温伯格</li>
+<li>主要内容：如何能更好的解决问题，通过 20 个故事讲 6 个道理</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9c7115dd760fdb49.jpg" alt=""></figure>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-11-10-areyourlightson">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
+                  <h2 class="post-title">VScode 系列 1：提升 R 和 Python 使用体验</h2>
+                </a>
+                <div class="post-date">
+                  2018-10-28
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>已经攒了一系列 VS Code 写作计划和素材，之前也发过几篇基础知识的思维导图（见文末）。不过一直不知道该从哪里开始第一篇文章，如果推荐给身边的人，他们可能最关心的是用 VS Code 日常写简单的 R 和 Python 代码体验如何。那就从这里开始吧。</p>
+<p>本文以 PC 作为安装配置示例，Mac 基本类似且部分内容体验可能更优。</p>
+</blockquote>
+<h2 id="为什么是-vs-code">为什么是 VS Code</h2>
+<p>既然是系列文章的开篇，姑且对主题按下不表先介绍一下 VS Code。</p>
+<p><a href="https://code.visualstudio.com/">VS Code</a> 的全称是 Visual Studio Code，官方给他的定义是官方定义是<strong>一个免费的、开源的跨平台编辑器</strong>。相对于各种 IDE 而言，编辑器则相对更轻量，更侧重于文件或者文件夹而非宏大的项目。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-09-27-sequence66">
+                  <h2 class="post-title">66 种测序数据分析方法和流程</h2>
+                </a>
+                <div class="post-date">
+                  2018-09-27
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>写在前面：看了标题进来的老铁，这里不可能在一篇文章里写好 66 个 pipeline 给你，实际上我就是给你推荐一个网站。</p>
+</blockquote>
+<p>闲着乱看的时候发现在** bioinformatics** 上发表了一篇文章** SequencEnG: an Interactive Knowledge Base of Sequencing Techniques**，再一看 Abstract，写道</p>
+<blockquote>
+<p>Next-generation sequencing (NGS) techniques are revolutionizing biomedical research by providing powerful methods for generating genomic and epigenomic profiles. The rapid progress is posing an acute challenge to students and researchers to stay acquainted with the numerous available methods. <strong>We have developed an interactive online educational resource called SequencEnG (acronym for Sequencing Techniques Engine for Genomics) to provide a tree-structured knowledge base of 66 different sequencing techniques and step-by-step NGS data analysis pipelines comparing popular tools</strong></p>
+</blockquote>
+<p>艾玛，原来现在已经有至少 66 种不同测序技术了？ 掰着手指想了想，知道的做过的撑死也超不过一双手啊。这 66 种测序技术都是啥，于是点开了 <a href="http://education.knoweng.org/sequenceng/">这篇文章的网站</a> 想探探路。嗯，果然很多没听说过：)</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-09-27-sequence66">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
+                  <h2 class="post-title">VScode 学习记 1-4</h2>
+                </a>
+                <div class="post-date">
+                  2018-09-20
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>使用 VSCode 作为自己的主力编辑器已经有一年的时间，但是总感觉没有很系统的了解过日常的这个工具，也就不知道自己的使用是否高效。最近再跟极客时间上的一个 VS Code 付费连载，那就顺便把它好好安排一下，记录一些学习笔记。学习记录将主要分为两种形式，偏文字的部分会整理为思维导图，偏代码的部分会整理为文章。</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
+                  <h2 class="post-title">SRA 数据下载自救指南</h2>
+                </a>
+                <div class="post-date">
+                  2018-09-19
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>还在羡慕海峡那边的朋友下载 SRA 快到飞起？还在难过用 wget 下载数据经常下载不完整？用了官方的下载工具还是慢的不行？这里有一个 SRA 下载自救尝试指南供你参考。</p>
+</blockquote>
+<h2 id="需要用到两个工具">需要用到两个工具</h2>
+<ul>
+<li>SRA Toolkit</li>
+<li>IBM aspera 高速文件传输工具</li>
+</ul>
+<p><strong>因为这是一篇极简自救指南，所以一切都不解释，直接给出链接，不明白的自行学习（爱学不学）。</strong></p>
+<p>SRA Toolkit 网址：https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc</p>
+<p>aspera 网址：https://support.asperasoft.com/hc/en-us</p>
+<p>aspera 官方对于下载 NCBI 数据的说明</p>
+<p><a href="https://support.asperasoft.com/hc/en-us/articles/216125898-Downloading-data-from-NCBI-via-the-command-line">https://support.asperasoft.com/hc/en-us/articles/216125898-Downloading-data-from-NCBI-via-the-command-line</a></p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata">
+                  <h2 class="post-title">转录组时间序列数据小结</h2>
+                </a>
+                <div class="post-date">
+                  2018-08-29
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>针对转录组数据，平时分析中最常见两组之间的比较，比如不同处理或者不同突变体。面对这样的数据用用 DESeq2 或者 edgeR 基本就差不多。如果样本量或者不同条件很多的话可以还做 WGCNA 的分析。但是生物体的生长发育和时间这个维度有着非常密切的关系。如果碰上了一组和时间有关系的数据可以怎么处理呢？</p>
+</blockquote>
+<h2 id="时序分析">时序分析</h2>
+<p>所谓时序分析 (time series analysis) 在 data science 中是非常重要的一个方向。对大多数商业行为而言如果能够通过已有不同时间数据来进行预测就有可能大大提高自己的胜率。通常时间序列数据会包括趋势部分和不规则部分， 我们需要做的就是剔除不规则部分然后找到趋势所在，再进行预测。在预测过程中通常可以采用移动平均法、局部加权回归法、指数平滑法和自回归整合移动平均等方法。</p>
+<h2 id="生物学时序分析">生物学时序分析</h2>
+<p>生物学的时间相关数据本身预测属性和商业数据相比要弱很多。一种是单一条件的纯时间序列，主要看不同基因的表达模式，根据相似的表达谱将基因归为多个类有助于找到功能相似的基因。另一种情况是含有对照和处理的时间序列，需要再考察不同条件的差异基因。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png" href="https://kaopubear.top//post/2018-12-08-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-12-08-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2018-12-08 20:13:37">2018-12-08</time>
-        </div>
-        <h2>每周文献-181208-DNA 甲基化和几个工具</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/6/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg" href="https://kaopubear.top//post/2018-11-30-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-11-30-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2018-11-30 16:49:35">2018-11-30</time>
-        </div>
-        <h2>每周文献-181130-lncRNA</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png" href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou">
-        <div class="item-meta">
-          <time datetime="2018-11-13 10:43:47">2018-11-13</time>
-        </div>
-        <h2>优秀到不能被忽视 读书笔记</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png" href="https://kaopubear.top//post/2018-11-10-areyourlightson" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-11-10-areyourlightson">
-        <div class="item-meta">
-          <time datetime="2018-11-10 10:43:23">2018-11-10</time>
-        </div>
-        <h2>你的灯亮着么 读书笔记</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png" href="https://kaopubear.top//post/2018-10-28-userpythoninvscode" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
-        <div class="item-meta">
-          <time datetime="2018-10-28 21:40:26">2018-10-28</time>
-        </div>
-        <h2>VScode 系列 1：提升 R 和 Python 使用体验</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png" href="https://kaopubear.top//post/2018-09-27-sequence66" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-09-27-sequence66">
-        <div class="item-meta">
-          <time datetime="2018-09-27 10:44:43">2018-09-27</time>
-        </div>
-        <h2>66 种测序数据分析方法和流程</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" href="https://kaopubear.top//post/2018-09-20-vscode-note1-4" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
-        <div class="item-meta">
-          <time datetime="2018-09-20 16:30:32">2018-09-20</time>
-        </div>
-        <h2>VScode 学习记 1-4</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png" href="https://kaopubear.top//post/2018-09-19-downloadsrafast" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
-        <div class="item-meta">
-          <time datetime="2018-09-19 10:45:21">2018-09-19</time>
-        </div>
-        <h2>SRA 数据下载自救指南</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png" href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-08-25-rnaseqtimedata">
-        <div class="item-meta">
-          <time datetime="2018-08-29 10:46:17">2018-08-29</time>
-        </div>
-        <h2>转录组时间序列数据小结</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/8/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top//page/6/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//page/8/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
+        </div>
       </div>
     </div>
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

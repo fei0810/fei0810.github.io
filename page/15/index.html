@@ -1,255 +1,439 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
           
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-18-longxing-bioinfo-tf">
+                  <h2 class="post-title">转录调控与生物信息</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-18
+                </div>
+                <div class="post-abstract">
+                  <h2 id="cis-regulatory-motifs">cis-regulatory motifs</h2>
+<h3 id="转录调控">转录调控</h3>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a26326baa2031fb8.jpg" alt="img"></figure>
+<ul>
+<li>Transcription start site (TSS)</li>
+<li>Transcription factor binding sites (TFBS)</li>
+<li>Cis-regulatory module (CRM) 有多个 TF 在一起</li>
+<li>Proximal promoter and distal enhancer 近端的启动子远端的增强子</li>
+</ul>
+<p>在人中，有 300 个 TF 结合在核心启动子区域；有 1500 个结合在基因其他区域，可以调节一系列基因</p>
+<p>图示</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-85acad960c29db7c.jpg" alt="img"></figure>
+<ul>
+<li>其中的 insulator 可以阻隔 enhancer 起作用</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-18-longxing-bioinfo-tf">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a26326baa2031fb8.jpg')">
+                  </div>
+                </a>
+              
+            </article>
           
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic">
+                  <h2 class="post-title">表观遗传与生物信息</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-17
+                </div>
+                <div class="post-abstract">
+                  <h2 id="不同层次的表观">不同层次的表观</h2>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-354dda16cd5cdf70.jpg" alt="img"></figure>
+<ul>
+<li>Broadly, features at different levels of chromatin organization are generally associated with inactive (off) or active (on) transcription.</li>
+<li>From the top, genomic DNA is methylated(Me) on cytosine bases in specific contexts and is packaged into nucleosomes, which vary in histone composition and histone modifications (for example, histone H3 lysine 9 trimethylation (H3K9me3)); these features constitute the primary layer of chromatinstructure.</li>
+<li>Here, different histone modifications are indicated by coloured dots and histone variants such as H2A.Z are brown.</li>
+<li>DNA in chromatin may remain accessible to DNA-binding proteins such as transcription factors (TFs) and RNA polymerase II (RNAPII)or may be further compacted.</li>
+<li>Chromatin can also organize into higher-order structuressuch as nuclear lamina-associated domains and transcription factories.</li>
+<li>DOI:10.1038/nrg2905</li>
+</ul>
+<h2 id="表观实例">表观实例</h2>
+<p>基因印迹</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a618faca55fcf197.jpg" alt="img"></figure>
+<h2 id="表观遗传定义">表观遗传定义</h2>
+<ul>
+<li>A mitotically or meiotically heritable state of different gene activity and expression (phenotype) that is independent of differences in DNA sequence (genotype) – based on Conrad Waddington, 1942</li>
+<li>The sum of the alterations to the chromatin template that collectively establish and propagate different patterns of gene expression (transcription) and silencing from the same genome.</li>
+<li>Epigenetic changes influence the phenotype without altering the genotype.</li>
+<li>While epigenetics often refers to the study of single genes or sets of genes, epigenomics refers to more global analyses of epigenetic changes across the entire genome.</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic">
+                  <div class="feature-container" style="background-image: url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-16-longxing-bioinfo-markov">
+                  <h2 class="post-title">马尔科夫模型</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-16
+                </div>
+                <div class="post-abstract">
+                  <h2 id="马尔科夫是谁">马尔科夫是谁</h2>
+<p>马尔科夫是一位俄国的数学家，他最为人所知的是他在随机过程方面的研究。他早期研究的重点是数论而在 1900 年之后他所研究的重点转向了概率论。他研究的成果颇丰以至于在他 1905 年正式退休之后他仍然在教授课程直至去世。</p>
+<p>在他的研究中，马尔科夫成功地拓展了大数定理以及中心极限定理，并将其应用于由独立随机变量组成的特定序列中，如今这也被称为马尔可夫链。</p>
+<p>马尔可夫链被广泛的运用于物理学，经济学，统计学，生物学等方面。两个最著名的应用是布朗运动以及随机漫步。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-16-longxing-bioinfo-markov">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-633baeeaf52df79a.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-15-longxing-bioinfo-mlinbioinfo">
+                  <h2 class="post-title">机器学习在生物信息学中的应用</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-15
+                </div>
+                <div class="post-abstract">
+                  <h2 id="recap">recap</h2>
+<h3 id="machine-learning-methods">Machine learning methods</h3>
+<p>general-purpose approaches to learn functional relationships from data without the need to define them a priori</p>
+<h3 id="advantage">Advantage</h3>
+<p>derive predictive models without the need for strong assumptions about underlying mechanisms, which are frequently unknown or insufficiently defined (especially for genomic data)</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-15-longxing-bioinfo-mlinbioinfo">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c9e3a48658e8d2f2.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-14-longxing-bioinfo-blastmore">
+                  <h2 class="post-title">序列比对其他相关问题</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-14
+                </div>
+                <div class="post-abstract">
+                  <h2 id="全局比对-global-alignment">全局比对 Global Alignment</h2>
+<p>由芝加哥的 Needleman 和 Wunsch 两位于上个世纪 70 年代初提出，常被称之为 Needleman-Wunsch 算法。算法针对用户指定的打分函数，确定性地找出两条序列间的最优比对。</p>
+<p>Needle-Wunsch 算法对两条序列所有残基进行全局比对的局限性。</p>
+<ul>
+<li>功能相关的蛋白之间虽然可能在整体序列上相差甚远， 却常常会具有相同的功能域</li>
+<li>序列片段能够独立发挥特定的生物学功能，却在不同蛋白之间相当保守</li>
+<li>仅靠全局比对的算法无法发现这样的片段</li>
+<li>内含子的发现使得在做核酸水平的序列比对时必须要正确处理内含子导致的大片段的差异</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-14-longxing-bioinfo-blastmore">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d77ac044d4b6743f.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-13-longxing-bioinfo-blast">
+                  <h2 class="post-title">序列比对与动态规划</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-13
+                </div>
+                <div class="post-abstract">
+                  <h2 id="生物信息的思考方式">生物信息的思考方式</h2>
+<p>biological question</p>
+<ul>
+<li>生物学问题</li>
+<li>有什么意义</li>
+</ul>
+<p>data</p>
+<ul>
+<li>输入数据是什么</li>
+<li>哪些可接受的数据格式 A</li>
+</ul>
+<p>model</p>
+<ul>
+<li>如何用计算的方法解决</li>
+<li>什么是数据的 model</li>
+</ul>
+<p>algorithm</p>
+<ul>
+<li>算法是什么</li>
+<li>效率如何，有哪些局限性</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-13-longxing-bioinfo-blast">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a7dd74dd237e40f.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-12-longxing-bioinfo-cluster">
+                  <h2 class="post-title">cluster SV 和 CV 相关算法</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-12
+                </div>
+                <div class="post-abstract">
+                  <h2 id="cluster">cluster</h2>
+<h3 id="为什么关注聚类">为什么关注聚类</h3>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-05e9145f8a2ba682.jpg" alt="img"></figure>
+<h3 id="k-means">k-means</h3>
+<p>原理</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-015c80f265f3b62f.jpg" alt="img"></figure>
+<p>相关内容</p>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-154ce232c0206f47.jpg" alt="img"></figure>
+<ul>
+<li>
+<p>Start with suitable choices of K cluster mean-vectors. Then iterate the following two steps：</p>
+</li>
+<li>
+<p>For each object, find the closest mean vector and assign the the object to the corresponding cluster.</p>
+</li>
+<li>
+<p>For each cluster, update its mean vector according to the current assignments.</p>
+</li>
+<li>
+<p>Convergence is easy stop when cluster assignment no longer changes</p>
+</li>
+<li>
+<p>The choice of initial values is more difficult</p>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-12-longxing-bioinfo-cluster">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-05e9145f8a2ba682.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-05-05-HowToLearn">
+                  <h2 class="post-title">究竟应该如何学习</h2>
+                </a>
+                <div class="post-date">
+                  2017-05-05
+                </div>
+                <div class="post-abstract">
+                  <p><em>说明：本文涉及两本书和一个视频</em></p>
+<ul>
+<li>
+<p>TED 视频 :<a href="http://ed.ted.com/on/Imq14bHp">The First 20 Hours: How to Learn Anything （Josh Kaufman）</a></p>
+</li>
+<li>
+<p>两本书：<br>
+ <img src="https://img.mubu.com/document_image/a35a83f1-fe4e-429c-98a7-a35d21f89b11.jpg" alt="The First 20 Hours: How to Learn Anything "><br>
+<img src="https://img.mubu.com/document_image/0261185c-832d-4a22-b7c8-4c4355e65413.jpg" alt="刻意练习 如何从新手到大师"></p>
+</li>
+</ul>
+<hr>
+<h2 id="学习的两种策略">学习的两种策略</h2>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-05-05-HowToLearn">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-04-25-HowToTalk">
+                  <h2 class="post-title">如何发言更自信</h2>
+                </a>
+                <div class="post-date">
+                  2017-04-25
+                </div>
+                <div class="post-abstract">
+                  <figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6383e21eefafa788.jpg" alt="题图"></figure>
+<p>上周末在个人公众账号推送的文章《一个月过去，世界发生了什么》中有这么一段内容：</p>
+<blockquote>
+<p>转博成绩谈不上多好但也不坏，能让十几个做功能研究的 PI 听我扯上半个小时的生物信息和网站开发，每个人还能听得认真（老板原话是“他们全程都没有人看手机啊”）问得尽兴，已经知足。两年硕士过去，即将开始（争取）为期三年的博士生活，不大不小值得纪念一下。</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-04-25-HowToTalk">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a26326baa2031fb8.jpg" href="https://kaopubear.top//post/2017-08-18-longxing-bioinfo-tf" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a26326baa2031fb8.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-18-longxing-bioinfo-tf">
-        <div class="item-meta">
-          <time datetime="2017-08-18 08:02:30">2017-08-18</time>
-        </div>
-        <h2>转录调控与生物信息</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/14/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg" href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic" style="background-image:url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic">
-        <div class="item-meta">
-          <time datetime="2017-08-17 08:02:09">2017-08-17</time>
-        </div>
-        <h2>表观遗传与生物信息</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-633baeeaf52df79a.jpg" href="https://kaopubear.top//post/2017-08-16-longxing-bioinfo-markov" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-633baeeaf52df79a.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-16-longxing-bioinfo-markov">
-        <div class="item-meta">
-          <time datetime="2017-08-16 08:00:48">2017-08-16</time>
-        </div>
-        <h2>马尔科夫模型</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c9e3a48658e8d2f2.jpg" href="https://kaopubear.top//post/2017-08-15-longxing-bioinfo-mlinbioinfo" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c9e3a48658e8d2f2.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-15-longxing-bioinfo-mlinbioinfo">
-        <div class="item-meta">
-          <time datetime="2017-08-15 07:59:56">2017-08-15</time>
-        </div>
-        <h2>机器学习在生物信息学中的应用</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d77ac044d4b6743f.jpg" href="https://kaopubear.top//post/2017-08-14-longxing-bioinfo-blastmore" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d77ac044d4b6743f.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-14-longxing-bioinfo-blastmore">
-        <div class="item-meta">
-          <time datetime="2017-08-14 07:59:28">2017-08-14</time>
-        </div>
-        <h2>序列比对其他相关问题</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a7dd74dd237e40f.jpg" href="https://kaopubear.top//post/2017-08-13-longxing-bioinfo-blast" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a7dd74dd237e40f.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-13-longxing-bioinfo-blast">
-        <div class="item-meta">
-          <time datetime="2017-08-13 07:59:18">2017-08-13</time>
-        </div>
-        <h2>序列比对与动态规划</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-05e9145f8a2ba682.jpg" href="https://kaopubear.top//post/2017-08-12-longxing-bioinfo-cluster" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-05e9145f8a2ba682.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-12-longxing-bioinfo-cluster">
-        <div class="item-meta">
-          <time datetime="2017-08-12 07:55:22">2017-08-12</time>
-        </div>
-        <h2>cluster SV 和 CV 相关算法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png" href="https://kaopubear.top//post/2017-05-05-HowToLearn" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-05-05-HowToLearn">
-        <div class="item-meta">
-          <time datetime="2017-05-05 14:07:06">2017-05-05</time>
-        </div>
-        <h2>究竟应该如何学习</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png" href="https://kaopubear.top//post/2017-04-25-HowToTalk" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-04-25-HowToTalk">
-        <div class="item-meta">
-          <time datetime="2017-04-25 13:04:45">2017-04-25</time>
-        </div>
-        <h2>如何发言更自信</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/16/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top//page/14/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//page/16/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
+        </div>
       </div>
     </div>
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

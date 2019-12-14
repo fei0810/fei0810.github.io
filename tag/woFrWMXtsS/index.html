@@ -1,160 +1,196 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>debug | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> debug</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: debug</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-04-06-debug-shiny-basic">
+                  <h2 class="post-title">关于 Shiny 调试你应该知道的</h2>
+                </a>
+                <div class="post-date">
+                  2019-04-06
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not true.</p>
+<p>—Norm Matloff</p>
+</blockquote>
+<p>第一次接触网页开发是两三年前的事，那时我曾经问过计划带我入门前端的前辈：入门前端的标准是什么。他当时用一种极平和的语气和我说：学会 dubug。几年后的今天我即便也写过一点网页工具，但还是依然没能入门。反思一下：一是 JavaScript 学的不好，二就是不敢说自己有多少 debug 的能力。</p>
+<p>遂放弃。</p>
+<p>最近因为需要又要涉及一点网页工具开发，同时因为需求整体和 R 交互比较多于是决定用 R 的 Shiny 来搞一搞。</p>
+<p>写了一个多星期我感觉 Shiny 确实解决了不熟悉前后端交互的人写网页的大多数问题，但如何 debug 的门槛还是摆在那里。比如前几天一个高手和我吐槽写 Shiny 时不知道改了什么突然不能正确运行了，更糟心的是还没有任何报错信息。当然，后来经过讨论发现其实并非没有报错信息，只是那时他没有找到而已。</p>
+<p>这篇文章就结合最近学习的一点资料，大致聊聊在 Shiny 中 debug 的一些方法。</p>
+<p><strong>Shiny debug 主要有三个步骤，分别是调试 (Debugging)，追踪(Tracing) 和错误处理(Error handling)</strong>。</p>
+<p>-<strong>Debugging</strong>: 所谓的调试就是猜，然后在你认为可能有错误的地方设置一个断点，再执行接下来每个语句的时候就都可以检查程序当时所在的状态。<br>
+-<strong>Tracing</strong>：可以在运行程序的时候收集程序运行产生的信息而无需暂停程序，在诊断系统性问题时因为我们无法频繁的中断使用这一方式就比较合适。<br>
+-<strong>Error handling</strong>: 在客户端和服务器端找到错误的来源并确定原因。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-04-06-debug-shiny-basic">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-01-15-igvdebug">
+                  <h2 class="post-title">IGV 哐当就不能用了，我的 debug 思路</h2>
+                </a>
+                <div class="post-date">
+                  2019-01-15
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>不知道是哪一次更新，不知道是因为更新了什么，PC 上的 IGV 突然就不能用了。不能用了，怎么办。文章记录了我的 debug 过程以及一点思考。</p>
+</blockquote>
+<p>最近一个多月有一件事情一直萦绕在心头，今天算是初步解决了，记录一下。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-01-15-igvdebug">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png" href="https://kaopubear.top//post/2019-04-06-debug-shiny-basic" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-04-06-debug-shiny-basic">
-        <div class="item-meta">
-          <time datetime="2019-04-06 07:09:48">2019-04-06</time>
-        </div>
-        <h2>关于 Shiny 调试你应该知道的</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png" href="https://kaopubear.top//post/2019-01-15-igvdebug" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-01-15-igvdebug">
-        <div class="item-meta">
-          <time datetime="2019-01-15 21:36:04">2019-01-15</time>
-        </div>
-        <h2>IGV 哐当就不能用了，我的 debug 思路</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

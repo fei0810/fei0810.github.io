@@ -1,255 +1,420 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
           
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion">
+                  <h2 class="post-title">如何让别人回答你的问题</h2>
+                </a>
+                <div class="post-date">
+                  2017-04-03
+                </div>
+                <div class="post-abstract">
+                  <p>虽说是硕博连读，但还得有一个转博的流程。昨天才交了转博材料，后面几天紧接着要转博预答辩和正式答辩，所以每天都忙得很。<br>
+趁着小假期回答一个最近在公众号后台出镜率很高的问题。</p>
+<blockquote>
+<p>你为什么不回答我的问题？</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-ee25e33517c498ec.png" alt=""></figure>
+<h2 id="引子">引子</h2>
+<p>不知道你有没有过这样的经历。</p>
+<blockquote>
+<p>小时候无意中做了一件事情结果受到了老师或者其他人的表扬，在以后很长一段时间中，为了对得起这份夸奖你不得不一直重复做这件事。</p>
+</blockquote>
+<p>从<strong>当事人</strong>的角度用一个词概括也许是所谓的“<strong>偶像包袱</strong>”；<br>
+从<strong>围观者</strong>的角度用一个词概括可能是所谓的“<strong>道德绑架</strong>”。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png')">
+                  </div>
+                </a>
+              
+            </article>
           
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-03-15-ToSadPeaple">
+                  <h2 class="post-title">给犹豫的你</h2>
+                </a>
+                <div class="post-date">
+                  2017-03-15
+                </div>
+                <div class="post-abstract">
+                  <p>这是一个放弃的季节，空气里弥漫着不安的味道。</p>
+<p>最近一段时间不少人有了放弃考研的念头。</p>
+<p>考研这一年时间从大多数人的经验来看会有三个主要的迷茫期。</p>
+<p>一是寒假前后，考哪不知道，考啥不知道，怎么复习不知道；二是七月左右，别人比你看得多看得快，自己看不进去；三是考试前一个月，发现自己什么都不会了，阅读越错越多，数学算不对数。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-03-15-ToSadPeaple">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-03-10-HowToReadPaper">
+                  <h2 class="post-title">如何阅读科学文献</h2>
+                </a>
+                <div class="post-date">
+                  2017-03-10
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p><a href="http://www.sciencemag.org/careers/2016/01/how-read-scientific-paper?utm_campaign=email-news-latest&amp;et_rid=83827530&amp;et_cid=226858">原文</a> 来自《Science》杂志</p>
+<p>原作者：Adam Ruben</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb2222d8aee77f0f.png" alt="img"></figure>
+<p>从来没有什么事能像阅读科学期刊里的文章一样让你感觉自己如此愚蠢。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-03-10-HowToReadPaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-25-WhatWouldYouTellYourYoungerSelf">
+                  <h2 class="post-title">过来人，想对年轻的自己说些什么？</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-25
+                </div>
+                <div class="post-abstract">
+                  <h1 id="过来人想对年轻的自己说点什么">过来人，想对年轻的自己说点什么</h1>
+<p>最新一期的 <strong>CELL</strong>[^1] 杂志发表了 <a href="http://www.cell.com/cell/fulltext/S0092-8674(17)30194-0">这样一篇文章</a>，文章开头说到：</p>
+<blockquote>
+<p>Looking back at the time spent in graduate school and postdoctoral training can be illuminating. We asked postdoctoral researchers to tell us what kind of advice they would give to their younger selves.</p>
+</blockquote>
+<p>他们采访了 11 位已经（或者即将）开始自己独立科研生涯的博后，问他们<strong>回顾过去想对年轻时候的自己说些什么</strong>。</p>
+<p>不少内容让人读完确感 illuminating，在这里挑一部分记录和分享。（<em>说句题外话，原文中有每个博后的照片，不少男博后确实发际线都很高</em>）</p>
+<p><strong>首先列出这 11 个人给的 title</strong></p>
+<ul>
+<li><strong>Expand Your Bubble</strong></li>
+<li>The Long Journey Bringing Knowledge Home</li>
+<li>Not Easy but Well Worth It</li>
+<li><strong>Take Every Chance to Better Yourself</strong></li>
+<li>Cut Yourself Some Slack</li>
+<li>Trust Your Gut and Be Independent</li>
+<li>Keep on Persevering</li>
+<li><strong>It Takes a Village</strong></li>
+<li>Use Your Time Strategically</li>
+<li><strong>Find Your Passion, Maximize Your Returns</strong></li>
+<li><strong>Explore the Big Picture</strong></li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-25-WhatWouldYouTellYourYoungerSelf">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5f42d5aed652b7d9.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
+                  <h2 class="post-title">数据科学家的成长之路 [译]</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-22
+                </div>
+                <div class="post-abstract">
+                  <h1 id="数据科学家的成长之路">数据科学家的成长之路</h1>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608125838.png" alt=""></figure>
+<blockquote>
+<p>可能是最全面的数据科学入门文章，文中有大量资料和相关链接。<br>
+英文原文地址：<a href="http://blog.yhat.com/posts/become-a-data-scientist.html">Becoming a Data Scientist</a></p>
+</blockquote>
+<h2 id="数据科学技能">数据科学技能</h2>
+<p>数据科学家每天都会用到很多综合技能，其中的许多技能都是在工作或者其他时间自学的。他们并不需要具备某种特定的文凭，而是来自不同的背景。</p>
+<p>本文讨论的所有技能都可以自学。我们为此准备了一些资源让你可以沿着这条路走下去。而你则可以把这篇文章看成是数据科学家的培养指南。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-11-Shortcuts">
+                  <h2 class="post-title">不可不知的快捷键</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-11
+                </div>
+                <div class="post-abstract">
+                  <figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c1660c5926b17003.jpg" alt="HHKB Pro2 键盘（来自官网）"></figure>
+<h2 id="整理的原因">整理的原因</h2>
+<h3 id="提高键盘上的工作效率">提高键盘上的工作效率</h3>
+<ul>
+<li>
+<p>一个入门级别的机械键盘</p>
+</li>
+<li>
+<p>习惯使用常用工具的各种快捷键</p>
+</li>
+</ul>
+<h3 id="挽救小拇指不变型">挽救小拇指不变型</h3>
+<ul>
+<li>
+<p>更换 Capslock 和 Control 的映射关系</p>
+</li>
+<li>
+<p>更换原因看完下面的快捷键设置就晓得</p>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-11-Shortcuts">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle">
+                  <h2 class="post-title">如何使用 Google</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-09
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>在上一篇文章 <a href="http://kaopubear.top/2017/02/04/2017-02-04-trymarkdown/"><strong>关于 Markdown，你应该知道的</strong></a> 最后，我写了这么一句话</p>
+<blockquote>
+<p>如果你决定开始用一个东西，你还会担心学不会么？</p>
+</blockquote>
+<p>从我个人目前有限的经历来看，我想学的东西还没有学不会的。<strong>学不会的要么是不想学要么是用不到。</strong></p>
+<p>写文章至今，不断有人问我如何学一个东西。比如问我如何备考，如何学英语；上了研究生，有人问我如何上手做实验，如何入门生信。</p>
+<p>我的回答：<strong>你只要想学，只要用起来，方法自然就有了，因为自己会去找会摸索。</strong></p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-04-trymarkdown">
+                  <h2 class="post-title">关于 Markdown 你应该知道的</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-04
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面写作原因">写在前面（写作原因）</h2>
+<p>Markdown 近两年太火了，以至于 MAC 端 Markdown 编辑器基本上一个月就能新出一款。很多人对 Markdown 依旧没有多少了解，这主要体现在两方面：</p>
+<p>一方面有些人觉得 Markdown 是万能的：一看别人推荐什么工具自己就跟着用，一上来就学各种所谓语法；或者自己还没体会一个东西的精髓就到处给别人推荐，别人不用他还生气。</p>
+<p>另一方面有些人觉得 Markdown 是万万不能的：一部分选择固守自己的舒适区域（比如 word），不愿意接触，认为学习难度大；另一部分用着更高级的 LaTeX 等其他工具觉得 Markdown 太 low，用着丢人。</p>
+<p>为了让上述两部分人不本末倒置，能够先脱离那些基本的语法，从一个不同的视角去了解 Markdown，所以简单写一些东西。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-04-trymarkdown">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-31-kaoyanfushi">
+                  <h2 class="post-title">关于考研复试你该了解的</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-31
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>对于通过初试的 16 考研人而言，从三月中旬开始就要陆续到报考院校参加复试。<br>
+最近有很多人问我研究生考试复试时有哪些注意事项，这里做一些提示。</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3a39fa0fd1f59b33.png" alt="考研复试"></figure>
+<p>####复试前</p>
+<ul>
+<li>和复试内容无关的部分</li>
+</ul>
+<p>我们相（jia）信（ding）绝大多数院校的复试招生工作都是公平公正的，但这也不意味着你可以等复试那天到了直接去复试就可以。<br>
+<strong>如果</strong>你是理工科类的考生，条件允许的话，你可以提前联系自己中意的老师，看看是否可以过去实习或者完成毕业设计。<br>
+<strong>如果</strong>在实习过程中表现良好进而得到老师的认可，那你复试时通过的可能性无形会增加（对于导师在复试中没什么发言权的学校这一点不成立，对于有众多老师面试且绝对公平的学校这一点不成立）。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-31-kaoyanfushi">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3824437be225f743.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion">
-        <div class="item-meta">
-          <time datetime="2017-04-03 09:01:09">2017-04-03</time>
-        </div>
-        <h2>如何让别人回答你的问题</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/15/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top//post/2017-03-15-ToSadPeaple" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-03-15-ToSadPeaple">
-        <div class="item-meta">
-          <time datetime="2017-03-15 08:58:09">2017-03-15</time>
-        </div>
-        <h2>给犹豫的你</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top//post/2017-03-10-HowToReadPaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-03-10-HowToReadPaper">
-        <div class="item-meta">
-          <time datetime="2017-03-10 22:53:34">2017-03-10</time>
-        </div>
-        <h2>如何阅读科学文献</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5f42d5aed652b7d9.png" href="https://kaopubear.top//post/2017-02-25-WhatWouldYouTellYourYoungerSelf" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5f42d5aed652b7d9.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-25-WhatWouldYouTellYourYoungerSelf">
-        <div class="item-meta">
-          <time datetime="2017-02-25 14:08:24">2017-02-25</time>
-        </div>
-        <h2>过来人，想对年轻的自己说些什么？</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
-        <div class="item-meta">
-          <time datetime="2017-02-22 09:04:51">2017-02-22</time>
-        </div>
-        <h2>数据科学家的成长之路 [译]</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top//post/2017-02-11-Shortcuts" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-11-Shortcuts">
-        <div class="item-meta">
-          <time datetime="2017-02-11 15:44:26">2017-02-11</time>
-        </div>
-        <h2>不可不知的快捷键</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png" href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle">
-        <div class="item-meta">
-          <time datetime="2017-02-09 09:28:11">2017-02-09</time>
-        </div>
-        <h2>如何使用 Google</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png" href="https://kaopubear.top//post/2017-02-04-trymarkdown" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-04-trymarkdown">
-        <div class="item-meta">
-          <time datetime="2017-02-04 21:22:38">2017-02-04</time>
-        </div>
-        <h2>关于 Markdown 你应该知道的</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3824437be225f743.png" href="https://kaopubear.top//post/2017-01-31-kaoyanfushi" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3824437be225f743.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-31-kaoyanfushi">
-        <div class="item-meta">
-          <time datetime="2017-01-31 18:36:28">2017-01-31</time>
-        </div>
-        <h2>关于考研复试你该了解的</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/17/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top//page/15/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//page/17/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
+        </div>
       </div>
     </div>
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

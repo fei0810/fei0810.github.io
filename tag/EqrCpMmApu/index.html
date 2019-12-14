@@ -1,246 +1,369 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>文献 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 文献</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 文献</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
+                  <h2 class="post-title">Zotero入门学习路径</h2>
+                </a>
+                <div class="post-date">
+                  2019-09-11
+                </div>
+                <div class="post-abstract">
+                  <h2 id="相关内容简述">相关内容简述</h2>
+<p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
+<p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-06-22-weeklypaper">
+                  <h2 class="post-title">每周文献-190622-ATAC-seq和转录本从头组装新方法</h2>
+                </a>
+                <div class="post-date">
+                  2019-06-22
+                </div>
+                <div class="post-abstract">
+                  <h2 id="hmmratac-a-hidden-markov-modeler-for-atac-seq">HMMRATAC: a Hidden Markov ModeleR for ATAC-seq</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.1093/nar/gkz533</p>
+<p><strong>杂志</strong>：Nucleic Acids Research</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-06-22-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003855.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-06-06-weeklypaper">
+                  <h2 class="post-title">每周文献-190606-多篇结构变异和转录组分析方法文章</h2>
+                </a>
+                <div class="post-date">
+                  2019-06-06
+                </div>
+                <div class="post-abstract">
+                  <h2 id="alignment-and-mapping-methodology-influence-transcript-abundance-estimation">Alignment and mapping methodology influence transcript abundance estimation</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.1101/657874</p>
+<p><strong>发表日期</strong>：June 03, 2019</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-06-06-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-06-05-usebiorxiv">
+                  <h2 class="post-title">随时随地跟踪最新热点文献</h2>
+                </a>
+                <div class="post-date">
+                  2019-06-05
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>本文的图表及主要内容均来自 <a href="https://doi.org/10.7554/eLife.45133.001">Meta-Research: Tracking the popularity and outcomes of all bioRxiv preprints</a> 和 <a href="https://doi.org/10.1371/journal.pbio.3000269">Rxivist.org: Sorting biology preprints using social media and readership metrics</a> 两篇文献，一篇发表在elife一篇发表在plos biology，如果有兴趣不妨直接阅读原文。</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-06-05-usebiorxiv">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605212729.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-04-19-weeklypaper">
+                  <h2 class="post-title">每周文献-190419-植物单细胞BAM重比对以及假基因研究</h2>
+                </a>
+                <div class="post-date">
+                  2019-04-19
+                </div>
+                <div class="post-abstract">
+                  <h2 id="a-single-cell-rna-sequencing-profiles-the-developmental-landscape-of-arabidopsis-root">A Single-Cell RNA Sequencing Profiles the Developmental Landscape of Arabidopsis Root</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.1016/j.molp.2019.04.004</p>
+<p><strong>发表日期</strong>：April 17, 2019</p>
+<h3 id="关键点">关键点</h3>
+<p>国内首篇植物相关单细胞文章，两个一作还都很熟。</p>
+<h3 id="参考意义">参考意义</h3>
+<p>植物单细胞的阶段要开启了，今天提到的这篇文章是国内首篇，也是世界范围内的第四篇植物单细胞文章。除此之外，还有几篇已经在 bioRxiv 上上线了，不过还没有正式发表。这些文章都不约而同选择了植物中研究最广的模式之物拟南芥，而且全部研究的是根尖。后面在发展就要看看其它组织和物种的情况了。</p>
+<p>如果一个东西在植物里已经出现要快速增长的趋势，那么它在人和动物里应该也就已经相对比较成熟了。此时，即便暂时还用不到，但是相关的技术和方法就需要留意和学习起来。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-04-19-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-04-11-weeklypaper">
+                  <h2 class="post-title">每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化</h2>
+                </a>
+                <div class="post-date">
+                  2019-04-11
+                </div>
+                <div class="post-abstract">
+                  <h2 id="antisense-lncrna-transcription-mediates-dna-demethylation-to-drive-stochastic-protocadherin-α-promoter-choice">Antisense lncRNA Transcription Mediates DNA Demethylation to Drive Stochastic Protocadherin α Promoter Choice</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.1016/j.cell.2019.03.008</p>
+<p><strong>发表日期</strong>：4 April 2019</p>
+<h3 id="关键点">关键点</h3>
+<p>反义 lncRNA 转录可以影响 DNA 甲基化，进而改变染色体结构促进增强子与启动子结合，调控基因表达。</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002036.png" alt=""></figure>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-04-11-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-03-30-weeklypaper">
+                  <h2 class="post-title">每周文献-190330-DTU分析及转录组denovo拼接解析等</h2>
+                </a>
+                <div class="post-date">
+                  2019-03-30
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献题目-relative-abundance-of-transcripts-rats-identifying-differential-isoform-abundance-from-rna-seq">文献题目 Relative Abundance of Transcripts (RATs): Identifying differential isoform abundance from RNA-seq</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.12688/f1000research.17916.1</p>
+<p><strong>发表日期</strong>：24 Feb 2019</p>
+<h3 id="关键点">关键点</h3>
+<p>差异表达中比较少见的一种方式</p>
+<h3 id="参考意义">参考意义</h3>
+<p>在 F1000Research 发表的这篇文章介绍了一个利用 alignment-free RNA-seq quantifications 结果进行差异分析的工具，主要是用来对转录本进行差异定量分析。在日常的分析中我们进行差异分析最常见的是对差异基因进行定量分析，这里没有考虑到每个基因内部转录本的情况。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-03-30-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-03-22-weeklypaper">
+                  <h2 class="post-title">每周文献-190322-DNA甲基化分析工具及silencers鉴定</h2>
+                </a>
+                <div class="post-date">
+                  2019-03-22
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献题目rnbeads-20-comprehensive-analysis-of-dna-methylation-data">文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data</h2>
+<p>**DOI(url)😗*https://doi.org/10.1186/s13059-019-1664-9</p>
+<p>**发表日期：**14 March 2019</p>
+<h3 id="关键点">关键点</h3>
+<p>DNA 甲基化全功能分析 R 包 RnBeads 2.0 更新。</p>
+<h3 id="参考意义">参考意义</h3>
+<p>DNA 甲基化是一种被广泛研究的表观遗传标记，其在发育和疾病中具有重要作用。最近甲基化分析工具 RnBeads 在 bioconductor 上更新了其 2.0 版本。它可以分析目前诸多种类的甲基化数据，并且可以完成目前甲基化分析相关所有主流内容。<br>
+本次升级主要是在输入数据、分析方法、交互界面以及计算效率上进行了提升。软件官方地址为 https://rnbeads.org/index.html 可以进行进一步了解。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-03-22-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-01-10-reading10rules">
+                  <h2 class="post-title">研究生培养阅读习惯的十条法则</h2>
+                </a>
+                <div class="post-date">
+                  2019-01-10
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>最近在 PLoS Comput Biol 上发表了一篇文章，作者对于研究生应该如何培养良好的阅读习惯给出了 10 条建议。简单整理供自己和大家参考。</p>
+</blockquote>
+<h2 id="法则-1养成每天阅读的习惯">法则 1：养成每天阅读的习惯</h2>
+<p>可以利用通勤时间，或者用白天几个零碎的时间。要相对仔细的阅读一篇论文而不是非常粗略的或者紧张的浏览一下。</p>
+<h2 id="法则-2仔细阅读建立对主题的全面理解">法则 2：仔细阅读建立对主题的全面理解</h2>
+<p>你的将来一定会比现在更忙，所以没什么捷径，仔细阅读文章将为你提供有关你学科中的概念，方法，结果，潜在意义和含义等内容。一旦你具备了关于某个主题的良好背景知识，就可以开始更有选择性地阅读那些填补了特定空白或满足自己好奇心的论文部分。但是良好的背景知识需要很长时间才能建立起来，在你的职业生涯早期做好功课以便以后可以节省时间。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-01-10-reading10rules">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg" href="https://kaopubear.top//post/2019-09-11-howtolearnzotero" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
-        <div class="item-meta">
-          <time datetime="2019-09-11 18:17:37">2019-09-11</time>
-        </div>
-        <h2>Zotero入门学习路径</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003855.png" href="https://kaopubear.top//post/2019-06-22-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003855.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-06-22-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2019-06-22 10:48:36">2019-06-22</time>
-        </div>
-        <h2>每周文献-190622-ATAC-seq和转录本从头组装新方法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg" href="https://kaopubear.top//post/2019-06-06-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-06-06-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2019-06-06 13:37:19">2019-06-06</time>
-        </div>
-        <h2>每周文献-190606-多篇结构变异和转录组分析方法文章</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605212729.png" href="https://kaopubear.top//post/2019-06-05-usebiorxiv" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605212729.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-06-05-usebiorxiv">
-        <div class="item-meta">
-          <time datetime="2019-06-05 21:10:50">2019-06-05</time>
-        </div>
-        <h2>随时随地跟踪最新热点文献</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" href="https://kaopubear.top//post/2019-04-19-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-04-19-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2019-04-19 10:46:43">2019-04-19</time>
-        </div>
-        <h2>每周文献-190419-植物单细胞BAM重比对以及假基因研究</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png" href="https://kaopubear.top//post/2019-04-11-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-04-11-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2019-04-11 22:08:25">2019-04-11</time>
-        </div>
-        <h2>每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png" href="https://kaopubear.top//post/2019-03-30-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-03-30-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2019-03-30 23:54:56">2019-03-30</time>
-        </div>
-        <h2>每周文献-190330-DTU分析及转录组denovo拼接解析等</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" href="https://kaopubear.top//post/2019-03-22-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-03-22-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2019-03-22 16:41:16">2019-03-22</time>
-        </div>
-        <h2>每周文献-190322-DNA甲基化分析工具及silencers鉴定</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png" href="https://kaopubear.top//post/2019-01-10-reading10rules" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-01-10-reading10rules">
-        <div class="item-meta">
-          <time datetime="2019-01-10 09:37:18">2019-01-10</time>
-        </div>
-        <h2>研究生培养阅读习惯的十条法则</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//tag/EqrCpMmApu//page/2/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        <div class="navigation">
-  
-  
-    <a href="https://kaopubear.top//tag/EqrCpMmApu//page/2/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

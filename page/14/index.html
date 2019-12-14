@@ -1,255 +1,435 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
           
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo">
+                  <h2 class="post-title">在博客中展示数学公式</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-19
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>最近写的一系列文章中需要时不时插入一些数学公式，也就不得不接触一些 LaTeX 相关内容，另外由于要发到博客上，还需要让博客能够正确解析 LaTeX 语法。</p>
+</blockquote>
+<h2 id="hexo-插入数学公式起步">Hexo 插入数学公式起步</h2>
+<p>Hexo 博客框架默然使用的 Markdown 解析插件是 <a href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>, 我同时使用了 <a href="http://theme-next.iissnan.com/">Next</a> 主题。</p>
+<p>首先要说明的是，Hexo 默认 Markdown 是不支持 LaTeX 语法的，但是，Next 的主题默认已经支持 <a href="https://www.mathjax.org/">MathJax</a>，也就是说不需要再在网页的 header 中引入如下代码：</p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;
+  src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+</code></pre>
+<p>只需要在主题下的配置文件<code>_config.yml</code>中启用相关设置即可</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5b6e2f593a020aba.png')">
+                  </div>
+                </a>
+              
+            </article>
           
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
+                  <h2 class="post-title">统计学基础与 R-2</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-18
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="概率相关内容">概率相关内容</h2>
+<p>统计学中大量内容源于概率，学习统计学也就必须要了解一些概率中的基本概念，其中尤为重要的是条件概率，以及延伸出的贝叶斯定理（也许是最牛也是最难充分掌握的内容）。</p>
+<h3 id="几个概念">几个概念</h3>
+<p>**样本空间 (sample space) **是所有可能结果的一个集合，**事件 (event) <strong>则是样本空间中所有感兴趣结果的一个子集。某事件的</strong>概率 (probability) **是该事件在无限次试验次数中的相对频率。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
+                  <h2 class="post-title">统计学基础与 R-1</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-16
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="描述性统计量">描述性统计量</h2>
+<p>为了解决某个问题，我们通常会观察一组和该问题相关的样本，利用总体中的部分样本来推断总体的情况进而得到相关结论。在通过样本推断总体前，首先需用对已有样本数据进行简单的评估和描述，针对这一需求也就引出了<strong>描述统计量</strong>这一概念。进行描述性统计时，我们最关注数据两个层面的问题：数据的集中趋势和变异分散性。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-15-vscode1">
+                  <h2 class="post-title">VScode 使用初体验</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-15
+                </div>
+                <div class="post-abstract">
+                  <h2 id="什么是-vs-code">什么是 vs code</h2>
+<p>巨硬主导的开源文本编辑器项目，如果你不知道它，一定也听说过 sublime 或者 atom , 最起码也听说过 Notepad++。</p>
+<h2 id="为什么要用-vs-上-code">为什么要用 vs 上 code</h2>
+<p>用了两年的 sublime text 3, 忘了是谁在我一开始用的时候给我提供了一个注册码，以至于我都忘了这货不是一个开源软件。直到几天前突然提示我更新，要知道 sublime text 3 的 beta 版已经持续了好几年。我一激动就点了更新然后……就一直提醒我要不要买。问了问身边的其他人也早已经慢慢从 sublime 转向了其他的阵营，再加上 sublime 用的却是不太顺心，我也就有了换一个编辑器的想法。</p>
+<p>目前大家用的最多的三款编辑器分别是 sublime、atom 和 vs code。于是我用两天时间重点体验了 atom 和 vscode, 进行了几项比较之后决定投入 vs code 的怀抱。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-15-vscode1">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-14-LinuxCommandLine4">
+                  <h2 class="post-title">Linux Command Line 学习笔记4</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-14
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>说明；写 <strong>Linux Command Line 学习笔记</strong>系列文章本意只是记录自己学习 <strong>《Linux Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的原版书，所以有些地方中英混杂。更详细地学习建议去阅读原书即可。</p>
+</blockquote>
+<h2 id="the-environment">The Environment</h2>
+<ul>
+<li>
+<p>shell 会话中维护着大量的信息称为环境</p>
+</li>
+<li>
+<p>查看环境变量<br>
+<code>printenv</code> 或者 <code>printenv USER</code><br>
+<code>set |less</code> 按照字母顺序显示<br>
+<code>echo $HOME</code></p>
+</li>
+<li>
+<p>别名不能用上述方法查看<br>
+<code>alias</code></p>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-14-LinuxCommandLine4">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-10-LinuxCommandLine3">
+                  <h2 class="post-title">Linux Command Line 学习笔记3</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-10
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>说明；写<strong>Linux Command Line 学习笔记</strong>系列文章本意<strong>只是</strong>记录自己学习 <strong>《Linux  Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的是原版书，所以很多地方中英混杂。更详细地学习建议去阅读原书即可。</p>
+</blockquote>
+<h2 id="advanced-keyboard-tricks">Advanced Keyboard Tricks</h2>
+<ul>
+<li>
+<p>建议调换大写键和ctrl的映射关系</p>
+</li>
+<li>
+<p>光标瞬间移动</p>
+<pre><code>Ctrl-a 移动光标到行首
+Ctrl-e 移动光标到行尾
+Ctrl-f 光标前移一个字符；和右箭头作用一样
+Ctrl-b 光标后移一个字符；和左箭头作用一样
+Alt-f 光标前移一个字
+Alt-b 光标后移一个字
+Ctrl-l 清空屏幕
+</code></pre>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-10-LinuxCommandLine3">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine2">
+                  <h2 class="post-title">Linux Command Line 学习笔记 2</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-09
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>说明；写<strong>Linux Command Line 学习笔记</strong>系列文章本意<strong>只是</strong>记录自己学习 <strong>《Linux  Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的是原版书，所以很多地方中英混杂。更详细地学习建议去阅读原书即可。</p>
+</blockquote>
+<h2 id="working-with-commands">Working With Commands</h2>
+<ul>
+<li>
+<p>查看命令类型 <code>type</code></p>
+<p>命令有四种可能的形式：</p>
+<ol>
+<li>可执行程序，可以编译成二进制文件，诸如用 C 和 C++ 语言写成的程序，也可以是由脚本语言写成的程序，比如说 shell，perl，python 等等</li>
+<li>内建于 shell 自身的命令，如 ls</li>
+<li>shell 函数</li>
+<li>命令别名</li>
+</ol>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine2">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c7a457f3cb2c42c8.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine1">
+                  <h2 class="post-title">Linux Command Line 学习笔记 1</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-09
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>说明；写 <strong>Linux Command Line 学习笔记</strong>系列文章本意<strong>只是</strong>记录自己学习 <strong>《Linux  Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的是原版书，所以很多地方中英混杂。更详细地学习建议去阅读原书即可。</p>
+</blockquote>
+<p>关于为什么应该学习 linux 或者说 ubuntn，因为 ubuntn 的中文名字叫做“有盼头”，学了它，你才真正有可能成为计算机的主人，才可能自由地使用你的电脑。</p>
+<p>所谓自由，解释如下：</p>
+<blockquote>
+<p>Freedom is the power to decide what your computer does, and the only way to have this freedom is to know what your computer is doing. Freedom is a computer that is without secrets, one where everything can be known if you care enough to find out.</p>
+</blockquote>
+<p>关于为什么要学习命令行操作而非使用图形界面，解释如下：</p>
+<blockquote>
+<p>graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible<br>
+图形用户界面让简单的任务更容易完成，而命令行界面使完成复杂的任务成为可能。</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine1">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a452acc5d5b43ff0.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-08-LearnDocker1">
+                  <h2 class="post-title">Docker 学习笔记 I</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-08
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>越来越无法忍受目前用的几台服务器各种软件配置都不一致，无法做到随时无障碍切换，于是决定学点 Docker。</p>
+</blockquote>
+<h2 id="什么是-docker">什么是 docker</h2>
+<p>Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护</p>
+<ul>
+<li>传统虚拟化</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://img.mubu.com/document_image/78b6e134-f29b-45e2-9bdf-7b813c0cc492.jpg" alt="img"></figure>
+<blockquote>
+<p>虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程</p>
+</blockquote>
+<ul>
+<li>docker</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://img.mubu.com/document_image/cd2749aa-b3d3-4da8-b7ff-59cfa089aba2.jpg" alt="img"></figure>
+<blockquote>
+<p>容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-08-LearnDocker1">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-244f341451b72f98.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5b6e2f593a020aba.png" href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5b6e2f593a020aba.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-19-UseMathJaxinHexo">
-        <div class="item-meta">
-          <time datetime="2017-09-19 09:39:04">2017-09-19</time>
-        </div>
-        <h2>在博客中展示数学公式</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/13/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png" href="https://kaopubear.top//post/2017-09-18-RandStatistics2" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
-        <div class="item-meta">
-          <time datetime="2017-09-18 16:21:00">2017-09-18</time>
-        </div>
-        <h2>统计学基础与 R-2</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png" href="https://kaopubear.top//post/2017-09-16-RandStatistics1" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
-        <div class="item-meta">
-          <time datetime="2017-09-16 20:29:17">2017-09-16</time>
-        </div>
-        <h2>统计学基础与 R-1</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png" href="https://kaopubear.top//post/2017-09-15-vscode1" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-15-vscode1">
-        <div class="item-meta">
-          <time datetime="2017-09-15 20:11:42">2017-09-15</time>
-        </div>
-        <h2>VScode 使用初体验</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png" href="https://kaopubear.top//post/2017-09-14-LinuxCommandLine4" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-14-LinuxCommandLine4">
-        <div class="item-meta">
-          <time datetime="2017-09-14 12:11:02">2017-09-14</time>
-        </div>
-        <h2>Linux Command Line 学习笔记4</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png" href="https://kaopubear.top//post/2017-09-10-LinuxCommandLine3" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-10-LinuxCommandLine3">
-        <div class="item-meta">
-          <time datetime="2017-09-10 17:48:49">2017-09-10</time>
-        </div>
-        <h2>Linux Command Line 学习笔记3</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c7a457f3cb2c42c8.png" href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine2" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c7a457f3cb2c42c8.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine2">
-        <div class="item-meta">
-          <time datetime="2017-09-09 20:18:06">2017-09-09</time>
-        </div>
-        <h2>Linux Command Line 学习笔记 2</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a452acc5d5b43ff0.png" href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine1" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a452acc5d5b43ff0.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-09-LinuxCommandLine1">
-        <div class="item-meta">
-          <time datetime="2017-09-09 20:17:51">2017-09-09</time>
-        </div>
-        <h2>Linux Command Line 学习笔记 1</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-244f341451b72f98.png" href="https://kaopubear.top//post/2017-09-08-LearnDocker1" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-244f341451b72f98.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-08-LearnDocker1">
-        <div class="item-meta">
-          <time datetime="2017-09-08 10:07:09">2017-09-08</time>
-        </div>
-        <h2>Docker 学习笔记 I</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/15/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top//page/13/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//page/15/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
+        </div>
       </div>
     </div>
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

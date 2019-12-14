@@ -1,246 +1,396 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>日常 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 日常</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 日常</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
+                  <h2 class="post-title">如何使用语雀快速发表自己的博客</h2>
+                </a>
+                <div class="post-date">
+                  2019-09-01
+                </div>
+                <div class="post-abstract">
+                  <h2 id="拥有个人博客的几种途径">拥有个人博客的几种途径</h2>
+<p>在越来越多的人已经没有耐心读完 140 字微博（micro-blog），短视频逐渐占据人们更多注意力的今天，博客（blog）——这一上个时代的产物——似乎正在被我们渐渐遗忘。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-07-05-mypresentationlist">
+                  <h2 class="post-title">我的私人学术报告准备清单</h2>
+                </a>
+                <div class="post-date">
+                  2019-07-05
+                </div>
+                <div class="post-abstract">
+                  <p>做学生和做研究的一个重要工作是把自己在做的东西告诉别人，通常是通过各种报告完成的，上到各种高大上的会议，下到组里几个人的小组会。我本身没有什么高大上会议的经历，但是几年下来各种各样的小组会也讲了不少。导师和同门都时常会给出一些建议和意见，逐渐就有了一套个人的「学术报告准备清单」。各种报告都会反复对照这份清单来准备。其中关于<a href="https://sspai.com/post/55525">幻灯片的制作心得</a>之前已经写过一篇文章，算是「技」。这篇文章主要写这份报告准备清单中「术」的部分，希望对你有所帮助。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-07-05-mypresentationlist">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190705140744.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-12-29-my2018">
+                  <h2 class="post-title">2018，思考问题的熊</h2>
+                </a>
+                <div class="post-date">
+                  2018-12-29
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>2018 说走就走，还是得记录一下。</p>
+</blockquote>
+<h2 id="码字">码字</h2>
+<h3 id="我的博客"><a href="http://kaopubear.top">我的博客</a></h3>
+<p>以下数据来自于 <a href="https://www.google.com/analytics/">Google Analytics</a>，我对比了几个统计渠道的数据，虽然有些渠道的统计量更高，但是看着都没有 Google Analytics 的合理和靠谱。</p>
+<p>写博客一年多的时间，共有 9,113 个独立 IP 访问过网站，共进行了 15,000 次会话（用户在网站保持活动状态的时间段，如果用户在离开网站后 30 分钟内返回则之后活动仍将被计为初次会话的一部分）, 平局会话时长 2 分 57 秒，累计时长 750 小时。也就是说有接近一万人在我的博客共计度过了 31 天时间，是不是可以理解为我这一年其实有 13 个月？</p>
+<p>如果要评选出最忠实的读者和最投入的读者，其中有 5 个人有效会话数超过了 100 次，最忠实读者有效会话数竟然达到了** 382 <strong>次，说实话我写文章的时候会登陆一下博客也做不到如此 频率，共有 22 人次会话超过了 1 小时，其中一位以</strong> 2 小时 28 分**的阅读时间拔得头筹，很想知道 TA 那一天经历了什么。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-12-29-my2018">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-04-11-rescueyouslide">
+                  <h2 class="post-title">如何拯救你，我的 PPT</h2>
+                </a>
+                <div class="post-date">
+                  2018-04-11
+                </div>
+                <div class="post-abstract">
+                  <h2 id="审美的重要性">审美的重要性</h2>
+<p>美究竟有没有一个标准这里不敢讨论。但是在长期的实践当中，人们大体总结出了一些形式美的规律，比如平衡、对称、对比、统一、变化以及黄金分割等。</p>
+<p>做好 PPT 的前提其实在于能否分辨基本的丑和美。提高审美最好的方式是多去看美的东西。这里给大家推荐两个网站，学习累了可以浏览浏览。</p>
+<ul>
+<li>https://design-milk.com/</li>
+<li>https://ifworlddesignguide.com/design-excellence</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-04-11-rescueyouslide">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-935054735c7fbc24.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-03-11-howtouseevernote">
+                  <h2 class="post-title">高效使用云笔记的 5 个问题和 10 个关键</h2>
+                </a>
+                <div class="post-date">
+                  2018-03-11
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>问题 1：为什么使用云笔记<br>
+问题 2：如何选择云笔记产品<br>
+问题 3：云笔记中该记录什么<br>
+问题 4：如何对信息进行分类<br>
+问题 5：如何建立个人知识体系<br>
+关键 1：善用搜索功能<br>
+关键 2：office 文档图片深度搜索<br>
+关键 3：学会添加笔记内部链接<br>
+关键 4：一键保存微信聊天记录<br>
+关键 5：笔记本自由排序<br>
+关键 6：迂回支持 markdown<br>
+关键 7：凌乱网页简化格式<br>
+关键 8：保证笔记及私密内容安全<br>
+关键 9：充分利用专属印象邮箱<br>
+关键 10：建立个人电子档案</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-03-11-howtouseevernote">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-02-26-easylifeeasylearn">
+                  <h2 class="post-title">2018，不妨从“丢”开始</h2>
+                </a>
+                <div class="post-date">
+                  2018-02-26
+                </div>
+                <div class="post-abstract">
+                  <h2 id="丢并不简单">“丢”并不简单</h2>
+<p>所谓“丢”，high level 的说法就是：<strong>断舍离</strong></p>
+<p>在《断舍离》这本书的序言中，作者提到过如下一段话：</p>
+<blockquote>
+<p>断舍离和单纯的扫除、收拾不一样，并不是以“很可惜啊”、“还能用吗”、“不能用了吗”为考虑的重点，而是要自问“这个东西适合自己吗”。换句话说，断舍离的主角并不是物品，而是自己。**这是一种以“物品和自己的关系性”为核心，取舍选择物品的技术。**你要做到的思考方式并不是“这东西还能使，所以要留下来”，而是“我要用，所以它很必要”。**主语永远都是自己，而时间轴永远都是现在。现在自己不需要的东西就必须放手，只选择必要的物品。**通过这个过程，你可以从看得见的世界走向看不见的世界，最终实现对自己的深刻、彻底的了解，并接纳最真实的自己。</p>
+</blockquote>
+<p>所谓“断”是断绝想要进入自己家的不需要的东西；所谓“舍”是舍弃家里到处泛滥的破烂。通过不断重复“断”和“舍”，最后到达“离”的状态：脱离对物品的执念，处于游刃有余的自在的空间。</p>
+<p>所谓断舍离是透过整理物品了解自己，整理内心，让生活舒适。针对物品而言，我们需要做的事情包括不用性价比做为依据来购买物品而是根据自己是否需要；家里一年也没穿过一次的衣服该扔就要扔掉或者捐掉；逐渐舍弃对物质（品）的 过度依赖，让自己拥有可以自由支配的空间和时间。</p>
+<h2 id="学习中的断舍离">学习中的断舍离</h2>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-02-26-easylifeeasylearn">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2bf689213f53171e.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-15-whykeepwriting">
+                  <h2 class="post-title">为什么要写作</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-15
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>本文为生信技能树约稿，关于为什么要写作，为什么要坚持写。</p>
+</blockquote>
+<h2 id="我写作的经历">我写作的经历</h2>
+<hr>
+<p>最早和健明认识的契机就是因为写作，那个时候给他看了两样东西：</p>
+<ul>
+<li>8 篇 Circos 作图学习笔记</li>
+<li>自己写的书《靠谱学长说》(https://book.kaopubear.top/)</li>
+</ul>
+<p>称为书其实就是 2014 年底到 2015 年底大概一年时间我个人所写和考研相关的文章合集。</p>
+<p>一年时间写了 200,000 字，那本合集里有 20 篇致考研人系列文章，11 篇答研友问性质的随笔，50 篇英语新闻学习笔记。仅仅是我自己的百度云加密分享链接已经显示浏览下载超过了 10,000 次，还不算其它的转发借 (chao) 鉴 (xi) 以及在 GitBook 开源之后的访问。如果你恰好是 14 年之后的考研人，真还不排除听说过“一只思考问题的熊”或者“靠谱学长说”的可能。</p>
+<p>读研之后开始接触生物信息，写作重心也慢慢从自己的公众号转移到了技术型博客 (http://kaopubear.top)。目前博客已有（在更）的内容有统计学基础与 R 系列文章，Linux 学习系列文章，生物信息基础知识系列文章以及日常的各种实践心得和笔记。</p>
+<p>总之，写作这个事从大学开始就没再停下。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-15-whykeepwriting">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion">
+                  <h2 class="post-title">如何让别人回答你的问题</h2>
+                </a>
+                <div class="post-date">
+                  2017-04-03
+                </div>
+                <div class="post-abstract">
+                  <p>虽说是硕博连读，但还得有一个转博的流程。昨天才交了转博材料，后面几天紧接着要转博预答辩和正式答辩，所以每天都忙得很。<br>
+趁着小假期回答一个最近在公众号后台出镜率很高的问题。</p>
+<blockquote>
+<p>你为什么不回答我的问题？</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-ee25e33517c498ec.png" alt=""></figure>
+<h2 id="引子">引子</h2>
+<p>不知道你有没有过这样的经历。</p>
+<blockquote>
+<p>小时候无意中做了一件事情结果受到了老师或者其他人的表扬，在以后很长一段时间中，为了对得起这份夸奖你不得不一直重复做这件事。</p>
+</blockquote>
+<p>从<strong>当事人</strong>的角度用一个词概括也许是所谓的“<strong>偶像包袱</strong>”；<br>
+从<strong>围观者</strong>的角度用一个词概括可能是所谓的“<strong>道德绑架</strong>”。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-26-tokyr20">
+                  <h2 class="post-title">致考研人 20：我过去的 2015</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-26
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>写下这篇文章的标题时，我知道 2015 年的事情该告一段落，2016 年的奋斗又要开始了；当我看着正在整理的第三版《靠谱学长说》时，我告诉自己这篇文章别写太长。<br>
+因为回忆这个东西，你只需要留个线头露在外面，没必要偏得给它织件毛衣。以后自己再翻看这篇文章的时候能想起自己这一年大概都经历了什么，足够。</p>
+<p>这篇文章是“致 16 考研人”系列的最后一篇，但也可能是你看到的第一篇。如果说这一年来笔耕不辍的意义在哪里，我不在乎它究竟帮助了别人多少（<em>因为这要看机缘巧合</em>）， 更重要的是我比以往更能看清自己。如果说这一年来和考研人分享点点滴滴的意义在哪里，我想是感受到了彼此信任的力量，这种彼此间信任最大的好处是可以让人更加自信，咦，我也是这么想的，他能做到那我没理由不可以啊。虽然很多人说因为我他们或多或少地发生了一些改变，但是我一直以为这与我无关。如果一定要扯上一点儿关系，最多就是我说出了一些他们本来想说的话，而之后他们顺势做出了一些本来就想改变的改变。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-26-tokyr20">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png" href="https://kaopubear.top//post/2019-09-01-howtouseyuque" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-09-01-howtouseyuque">
-        <div class="item-meta">
-          <time datetime="2019-09-01 15:41:32">2019-09-01</time>
-        </div>
-        <h2>如何使用语雀快速发表自己的博客</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190705140744.jpg" href="https://kaopubear.top//post/2019-07-05-mypresentationlist" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190705140744.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-07-05-mypresentationlist">
-        <div class="item-meta">
-          <time datetime="2019-07-05 13:59:26">2019-07-05</time>
-        </div>
-        <h2>我的私人学术报告准备清单</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png" href="https://kaopubear.top//post/2018-12-29-my2018" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-12-29-my2018">
-        <div class="item-meta">
-          <time datetime="2018-12-29 12:01:29">2018-12-29</time>
-        </div>
-        <h2>2018，思考问题的熊</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-935054735c7fbc24.png" href="https://kaopubear.top//post/2018-04-11-rescueyouslide" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-935054735c7fbc24.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-04-11-rescueyouslide">
-        <div class="item-meta">
-          <time datetime="2018-04-11 21:13:49">2018-04-11</time>
-        </div>
-        <h2>如何拯救你，我的 PPT</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png" href="https://kaopubear.top//post/2018-03-11-howtouseevernote" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-03-11-howtouseevernote">
-        <div class="item-meta">
-          <time datetime="2018-03-11 20:47:23">2018-03-11</time>
-        </div>
-        <h2>高效使用云笔记的 5 个问题和 10 个关键</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2bf689213f53171e.png" href="https://kaopubear.top//post/2018-02-26-easylifeeasylearn" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2bf689213f53171e.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-02-26-easylifeeasylearn">
-        <div class="item-meta">
-          <time datetime="2018-02-26 22:11:14">2018-02-26</time>
-        </div>
-        <h2>2018，不妨从“丢”开始</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png" href="https://kaopubear.top//post/2017-10-15-whykeepwriting" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-15-whykeepwriting">
-        <div class="item-meta">
-          <time datetime="2017-10-15 13:27:49">2017-10-15</time>
-        </div>
-        <h2>为什么要写作</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-04-03-HowToAskQuestion">
-        <div class="item-meta">
-          <time datetime="2017-04-03 09:01:09">2017-04-03</time>
-        </div>
-        <h2>如何让别人回答你的问题</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg" href="https://kaopubear.top//post/2017-01-26-tokyr20" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-26-tokyr20">
-        <div class="item-meta">
-          <time datetime="2017-01-26 12:43:37">2017-01-26</time>
-        </div>
-        <h2>致考研人 20：我过去的 2015</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//tag/2IWlJgErkt//page/2/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        <div class="navigation">
-  
-  
-    <a href="https://kaopubear.top//tag/2IWlJgErkt//page/2/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

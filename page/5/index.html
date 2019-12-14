@@ -1,255 +1,381 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
           
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-03-14-learnanewtool">
+                  <h2 class="post-title">学习新工具的思路</h2>
+                </a>
+                <div class="post-date">
+                  2019-03-14
+                </div>
+                <div class="post-abstract">
+                  <p>有两件事情，第一是前几天看到一个朋友分享了自己 <a href="https://www.jianshu.com/p/1fd4de1ba0b5">学习生物信息工具的经验</a>，借着这个机会刚好反思了一下自己过去几年是如何做的；第二是最近有人问了我一个问题：“使用 tophat 比对完的转录组数据 bam 文件想用 RNA-SeQC 来质控，但是这个软件好像没人维护了”（竟然还在用 tophat）。那这次就聊聊如何学习一个新的工具。</p>
+<h2 id="学会提炼需求">学会提炼需求</h2>
+<p>学习新工具有两种途径，一种是按需搜索一种是被动获取。被动获取还好，就是一般最新的杂志发表了什么平台推荐了什么就看什么。如果是按需搜索需要首先明白自己的需求是什么。</p>
+<p>举一个最简单的例子，如果你使用一个转录组拼接工具提示内存不够了不能正确运行。这个时候你的需求是什么，很自然会想到去找一款需要消耗内存更少的软件。然后找了另外两个软件，一测试一个效果非常不好另一个压根自己不会安装。卒。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-03-14-learnanewtool">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png')">
+                  </div>
+                </a>
+              
+            </article>
           
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-03-10-webvscode">
+                  <h2 class="post-title">Coder：进击的服务器 Web 版 VSCode</h2>
+                </a>
+                <div class="post-date">
+                  2019-03-10
+                </div>
+                <div class="post-abstract">
+                  <p>自从用上 VS Code 之后，断断续续写过几篇文章。比如：</p>
+<ul>
+<li><a href="http://kaopubear.top/2017-09-15-vscode1/">VS Code 使用初体验</a></li>
+<li><a href="http://kaopubear.top/2017-09-20-vscode2/">VS Code 常用快捷键</a></li>
+<li><a href="http://kaopubear.top/2018-09-20-vscode-note1-4/">VS Code 思维导图学习笔记</a></li>
+<li><a href="http://kaopubear.top/2018-10-28-userpythoninvscode/">VS Code 系列 1：提升 R 和 Python 使用体验</a></li>
+</ul>
+<p>在这个过程中，各种牛 X 的插件让我感觉 VS Code 就要统治世界了。比如 PDF 阅读器插件，Excel 查看插件，有了这些东西在一个工作目录下基本不用开其它的软件，直接在 VS Code 中全部搞定。除了这些还有不少「不正经」插件，比如提醒 <a href="https://github.com/deepred5/daily-anime">番剧更新的插件</a>，<a href="https://github.com/nondanee/vsc-netease-music">播放音乐的插件</a> 还有 <a href="https://github.com/my-soul/read-vscode-e">看电子书的插件</a>。真是神奇：)</p>
+<p>同时我也写过怎么让 <a href="http://kaopubear.top/2019-01-19-sshserver2pc/">本地 PC 和服务器可以更顺畅链接</a> 的问题，在这个文章里没有提到 VS Code，但是用它提供的 terminal 可以替代 Xshell。</p>
+<p>最近发现了一个开源软件真的是让本地 PC 和服务器可以更顺畅链接而且非常之简单，可以说从某个层面基本解决了数据分析环境的问题。无论你使用 PC 还是用 mac，无论用笔记本还是平板，只要有网能打开浏览器的设备都可以愉快地在服务器上写代码做分析。之所以能愉快地写就是因为它的使用体验和 VS Code 完全相同。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-03-10-webvscode">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-03-03-bedopsandbedtools">
+                  <h2 class="post-title">用 bedtools 和 bedops 对 bed 文件进行各种运算</h2>
+                </a>
+                <div class="post-date">
+                  2019-03-03
+                </div>
+                <div class="post-abstract">
+                  <h2 id="bedtools-的傲人光环">bedtools 的傲人光环</h2>
+<p>如果让你说出日常在进行生物数据分析时，做的最多的事情是什么，我想不管你是什么方向，「不停地转换格式」应该能排进日常前三。如果再问用的最多的工具是什么，想必一定也是和「不停地转换格式」相关的工具。在这些工具里有几个叫 XXtools 的非常出名，其中 samtools 和 bcftools 我们这次暂且不提，它们都是出自大神 LiHeng 之手。另一个能脱口而出的恐怕就是 bedtools 了，这个工具最初发表在 Bioinformatics 的文章，谷歌学术显示自 2010 年以来已经有了 6600 多次引用。当年这篇文章的第一作者 Quinlan ，如今已经是 UNIVERSITY OF UTAH 很厉害的 PI，它的课题组先后开发了一些列优秀的生物信息工具。当然，他们的故事今天也暂且不提（那位朋友问了，你今天到底要说啥，且看下文）。</p>
+<p>6600 多次引用（其实现在很多文章用了它已经不引用了）让 bedtools 在 bed 相关格式文本处理领域一家独大。我经常半开玩笑地说 50% 高通量数据后期分析概括一下都是各种位置之间的纠缠，因为但凡分析有参考基因组的数据就会把所有信息都铆定到参考基因组这个坐标系中（如果没有基因组那就拼一个），这也是为什么 bedtools 从一推出就如此受欢迎。在生物信息这个领域，一个软件是不是会被大量使用，最重要的是它是否真的有用然后再加上一点点出现的时机和运气。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-03-03-bedopsandbedtools">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse">
+                  <h2 class="post-title">RNAseq 必读综述和在线教程</h2>
+                </a>
+                <div class="post-date">
+                  2019-02-23
+                </div>
+                <div class="post-abstract">
+                  <p>最近读到一篇 <a href="https://homolog.us/blogs/rnaseq/2019/02/21/online-tutorials-RNAseq/">博文</a>，介绍了学习 RNAseq 数据分析非常推荐的两篇综述和七个在线教程并发表了相关评论。本文将进行简要整理并对相关评论内容进行大致翻译，供国内读者参考。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092319.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-02-11-linux-remove-blank">
+                  <h2 class="post-title">linux 去除文本中的空行</h2>
+                </a>
+                <div class="post-date">
+                  2019-02-11
+                </div>
+                <div class="post-abstract">
+                  <ul>
+<li><code>sed</code></li>
+<li><code>grep</code></li>
+<li><code>tr</code></li>
+<li><code>awk</code></li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-02-11-linux-remove-blank">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092507.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-01-28-evernote-templates">
+                  <h2 class="post-title">给你的印象笔记模板使用心得</h2>
+                </a>
+                <div class="post-date">
+                  2019-01-28
+                </div>
+                <div class="post-abstract">
+                  <p><strong>说明</strong>：本文首发于<strong>少数派</strong>。可在 <a href="https://sspai.com/post/52701">少数派官网</a> 阅读完整版本。</p>
+<blockquote>
+<p><strong>目录</strong></p>
+<ul>
+<li>为什么要使用模板</li>
+<li>好用的官方模板</li>
+<li>我的私人模板</li>
+<li>模板相关使用技巧</li>
+</ul>
+</blockquote>
+<h2 id="为什么要使用模板">为什么要使用模板</h2>
+<blockquote>
+<p>一个优秀的程序员会把「DRY」作为自身的行为准则，即 <strong>Don't repeat yourself</strong>。同样，一个高效的记录者也不应把同样的内容反复重复记录，而是需要学会借助模板的力量。</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-01-28-evernote-templates">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092543.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-01-19-sshserver2pc">
+                  <h2 class="post-title">服务器和 Windows 本地电脑无缝衔接</h2>
+                </a>
+                <div class="post-date">
+                  2019-01-19
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>服务器和 Windows 本地电脑经常需要反复上传下载文件，对于初级用户来说通常会建议其下载类似于 winscp 之类的软件。但是这类高频操作有没有无需借助其它软件更方便的方法呢？</p>
+</blockquote>
+<p>本教程使用前提：</p>
+<ol>
+<li>Windows 系统为 win10 且已经可以正常使用 Ubuntu 子系统</li>
+<li>安装有 Xshell 这类可以用来链接服务器的工具</li>
+<li>最好安装有 vs code 本地编辑器</li>
+<li>所有测试是在内网之间进行且本地电脑为网线连接有固定 IP 地址</li>
+</ol>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-01-19-sshserver2pc">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092648.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-01-15-igvdebug">
+                  <h2 class="post-title">IGV 哐当就不能用了，我的 debug 思路</h2>
+                </a>
+                <div class="post-date">
+                  2019-01-15
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>不知道是哪一次更新，不知道是因为更新了什么，PC 上的 IGV 突然就不能用了。不能用了，怎么办。文章记录了我的 debug 过程以及一点思考。</p>
+</blockquote>
+<p>最近一个多月有一件事情一直萦绕在心头，今天算是初步解决了，记录一下。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-01-15-igvdebug">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-01-10-reading10rules">
+                  <h2 class="post-title">研究生培养阅读习惯的十条法则</h2>
+                </a>
+                <div class="post-date">
+                  2019-01-10
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>最近在 PLoS Comput Biol 上发表了一篇文章，作者对于研究生应该如何培养良好的阅读习惯给出了 10 条建议。简单整理供自己和大家参考。</p>
+</blockquote>
+<h2 id="法则-1养成每天阅读的习惯">法则 1：养成每天阅读的习惯</h2>
+<p>可以利用通勤时间，或者用白天几个零碎的时间。要相对仔细的阅读一篇论文而不是非常粗略的或者紧张的浏览一下。</p>
+<h2 id="法则-2仔细阅读建立对主题的全面理解">法则 2：仔细阅读建立对主题的全面理解</h2>
+<p>你的将来一定会比现在更忙，所以没什么捷径，仔细阅读文章将为你提供有关你学科中的概念，方法，结果，潜在意义和含义等内容。一旦你具备了关于某个主题的良好背景知识，就可以开始更有选择性地阅读那些填补了特定空白或满足自己好奇心的论文部分。但是良好的背景知识需要很长时间才能建立起来，在你的职业生涯早期做好功课以便以后可以节省时间。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-01-10-reading10rules">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png" href="https://kaopubear.top//post/2019-03-14-learnanewtool" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-03-14-learnanewtool">
-        <div class="item-meta">
-          <time datetime="2019-03-14 20:55:03">2019-03-14</time>
-        </div>
-        <h2>学习新工具的思路</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/4/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" href="https://kaopubear.top//post/2019-03-10-webvscode" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-03-10-webvscode">
-        <div class="item-meta">
-          <time datetime="2019-03-10 18:33:11">2019-03-10</time>
-        </div>
-        <h2>Coder：进击的服务器 Web 版 VSCode</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png" href="https://kaopubear.top//post/2019-03-03-bedopsandbedtools" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-03-03-bedopsandbedtools">
-        <div class="item-meta">
-          <time datetime="2019-03-03 17:36:26">2019-03-03</time>
-        </div>
-        <h2>用 bedtools 和 bedops 对 bed 文件进行各种运算</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092319.png" href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092319.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-02-23-rnaseqreviewandcourse">
-        <div class="item-meta">
-          <time datetime="2019-02-23 15:42:51">2019-02-23</time>
-        </div>
-        <h2>RNAseq 必读综述和在线教程</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092507.png" href="https://kaopubear.top//post/2019-02-11-linux-remove-blank" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092507.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-02-11-linux-remove-blank">
-        <div class="item-meta">
-          <time datetime="2019-02-11 15:40:54">2019-02-11</time>
-        </div>
-        <h2>linux 去除文本中的空行</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092543.png" href="https://kaopubear.top//post/2019-01-28-evernote-templates" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092543.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-01-28-evernote-templates">
-        <div class="item-meta">
-          <time datetime="2019-01-28 15:41:42">2019-01-28</time>
-        </div>
-        <h2>给你的印象笔记模板使用心得</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092648.png" href="https://kaopubear.top//post/2019-01-19-sshserver2pc" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092648.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-01-19-sshserver2pc">
-        <div class="item-meta">
-          <time datetime="2019-01-19 15:42:25">2019-01-19</time>
-        </div>
-        <h2>服务器和 Windows 本地电脑无缝衔接</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png" href="https://kaopubear.top//post/2019-01-15-igvdebug" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-01-15-igvdebug">
-        <div class="item-meta">
-          <time datetime="2019-01-15 21:36:04">2019-01-15</time>
-        </div>
-        <h2>IGV 哐当就不能用了，我的 debug 思路</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png" href="https://kaopubear.top//post/2019-01-10-reading10rules" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-01-10-reading10rules">
-        <div class="item-meta">
-          <time datetime="2019-01-10 09:37:18">2019-01-10</time>
-        </div>
-        <h2>研究生培养阅读习惯的十条法则</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//page/6/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top//page/4/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//page/6/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
+        </div>
       </div>
     </div>
 
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

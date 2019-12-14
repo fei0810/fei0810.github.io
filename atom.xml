@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2019-12-14T07:13:19.758Z</updated>
+    <updated>2019-12-14T07:25:26.890Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
     <link rel="self" href="https://kaopubear.top//atom.xml"/>
@@ -93,6 +93,14 @@
         <link href="https://kaopubear.top//post/2019-10-31-bioconductor310iscoming">
         </link>
         <updated>2019-10-31T06:46:22.000Z</updated>
+        <summary type="html"><![CDATA[<p>10月30日，Bioconductor 3.10 正式发布，该版本的bioc共包括了 1822 个软件包，384 个实验数据包，952 个注释包和 27 个工作流程，基于 R 3.6.1。</p>
+<p>其中，新的软件包有93个，新的数据包15个，新的注释包2个，大量的旧包都进行了一波更新。</p>
+<p>接下来推荐几个值得关注的最新软件包，以及一些经典包的重要更新。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>10月30日，Bioconductor 3.10 正式发布，该版本的bioc共包括了 1822 个软件包，384 个实验数据包，952 个注释包和 27 个工作流程，基于 R 3.6.1。</p>
+<p>其中，新的软件包有93个，新的数据包15个，新的注释包2个，大量的旧包都进行了一波更新。</p>
+<p>接下来推荐几个值得关注的最新软件包，以及一些经典包的重要更新。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[macOS 10.15 安装R包]]></title>
@@ -128,11 +136,9 @@
         <updated>2019-10-11T11:31:43.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
 <p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
-<p>Annual Review 系列杂志的综述应该说是综述界的老大哥。最近在 Annual Review of Biomedical Data Science 发表了「另」一篇 RNA-Seq 相关的重磅综述。之所以说是另一篇，因为同期在 Nature Reviews Genetics 发表过一篇看名字就非常霸气的综述：RNA sequencing: the teenage years 。</p>
 ]]></summary>
         <content type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
 <p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
-<p>Annual Review 系列杂志的综述应该说是综述界的老大哥。最近在 Annual Review of Biomedical Data Science 发表了「另」一篇 RNA-Seq 相关的重磅综述。之所以说是另一篇，因为同期在 Nature Reviews Genetics 发表过一篇看名字就非常霸气的综述：RNA sequencing: the teenage years 。</p>
 ]]></content>
     </entry>
     <entry>
@@ -157,12 +163,10 @@
         <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
 <p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
 <p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
-<p>目前常用的文献管理工具有很多，比较有代表性的如下几个：</p>
 ]]></summary>
         <content type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
 <p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
 <p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
-<p>目前常用的文献管理工具有很多，比较有代表性的如下几个：</p>
 ]]></content>
     </entry>
     <entry>
@@ -174,14 +178,10 @@
         <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
 <p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
 <p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
-<p>提到代码编辑器，可能了解生信技能树或者听过生信技能树课程的小伙伴第一反应都会是Notepad++，这款代码编辑器最早发布于2003年，并且一致更新至今非常经典。因为使用惯性和轻量的特点，这款代码编辑器依旧很受欢迎。</p>
-<p>但是在2019年的今天，有更多好用的代码编辑器可以向你推荐。目前比较受大家欢迎且用户量较大的代码编辑器主要用三个，分别是VS code、Atom 和 Sublime text 。</p>
 ]]></summary>
         <content type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
 <p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
 <p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
-<p>提到代码编辑器，可能了解生信技能树或者听过生信技能树课程的小伙伴第一反应都会是Notepad++，这款代码编辑器最早发布于2003年，并且一致更新至今非常经典。因为使用惯性和轻量的特点，这款代码编辑器依旧很受欢迎。</p>
-<p>但是在2019年的今天，有更多好用的代码编辑器可以向你推荐。目前比较受大家欢迎且用户量较大的代码编辑器主要用三个，分别是VS code、Atom 和 Sublime text 。</p>
 ]]></content>
     </entry>
 </feed>

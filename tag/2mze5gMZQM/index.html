@@ -1,232 +1,360 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>效率 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 效率</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 效率</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-12-14-haotouseimagehosting">
+                  <h2 class="post-title">如何简快好省的使用图床</h2>
+                </a>
+                <div class="post-date">
+                  2019-12-14
+                </div>
+                <div class="post-abstract">
+                  <p>首先说明一点，因为本文的读者中可能单独使用 macOS 的为少数，所以下文介绍的所有工具尽量满足双平台通用（Windows 和 macOS）。</p>
+<p>它们不一定是在 macOS 的最佳选择，如果你仅使用 macOS，文章中提到的思路和工具仅供参考。如果你同时在使用 PC 和 Mac，那么这是我目前摸索出来的比较满意的双平台通用方案，希望对你有所帮助。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-12-14-haotouseimagehosting">
+                  <div class="feature-container" style="background-image: url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214141945.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-12-02-mycloud">
+                  <h2 class="post-title">我目前的云存储方法</h2>
+                </a>
+                <div class="post-date">
+                  2019-12-02
+                </div>
+                <div class="post-abstract">
+                  <h2 id="云存储选择及我的使用感受">云存储选择及我的使用感受</h2>
+<ul>
+<li>国内大厂
+<ul>
+<li>百度云盘：国内使用度最高，适合保存各种盗版资源，不充会员约等于没法用</li>
+<li>腾讯微云：不冲会员下载速度略好于百度云，但是可用空间只用10G</li>
+</ul>
+</li>
+<li>国际大厂
+<ul>
+<li>Google Drive：使用体验好易于协作，和国外用户使用方便，国内需要特殊操作</li>
+<li>OneDrive：如果在用 office 365 附赠 1T 空间，无需特殊操作即可使用</li>
+<li>iCloud：虽然 iCloud 只是苹果自己的云服务，但对于苹果全家桶的用户来说使用体验是最好的</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-12-02-mycloud">
+                  <div class="feature-container" style="background-image: url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214143938.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
+                  <h2 class="post-title">Zotero入门学习路径</h2>
+                </a>
+                <div class="post-date">
+                  2019-09-11
+                </div>
+                <div class="post-abstract">
+                  <h2 id="相关内容简述">相关内容简述</h2>
+<p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
+<p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
+                  <h2 class="post-title">VScode入门学习路径</h2>
+                </a>
+                <div class="post-date">
+                  2019-09-11
+                </div>
+                <div class="post-abstract">
+                  <h2 id="相关内容简述">相关内容简述</h2>
+<p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
+<p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-09-10-howtolearntools">
+                  <h2 class="post-title">当我谈工具的时候我在谈什么</h2>
+                </a>
+                <div class="post-date">
+                  2019-09-10
+                </div>
+                <div class="post-abstract">
+                  <h1 id="好工具那么多你知道如何学吗">好工具那么多，你知道如何学吗</h1>
+<p>比知道一个工具更重要的是想明白如何学习一个工具。**比如为了以 VS code 为例进行说明，我甚至在今天上午直接写了一个 VS code 插件。**是的，写了一个插件，不是用了一个插件。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-09-10-howtolearntools">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-05-19-searchtips4you">
+                  <h2 class="post-title">给你的高效搜索小技巧</h2>
+                </a>
+                <div class="post-date">
+                  2019-05-19
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>本文提到的内容多余绝大多数人来说是没有必要的，因为你可以能一天也不会有几次搜索，但是对于一个如我这般常年「面向搜索编程」的人来说。一天搜索 30 次，每次节约 10 秒，就是 5 分钟，一年就是 30 个小时。</p>
+</blockquote>
+<h2 id="高级搜索">高级搜索</h2>
+<blockquote>
+<p>以 Google 搜索语法为例</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-05-19-searchtips4you">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-11-Shortcuts">
+                  <h2 class="post-title">不可不知的快捷键</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-11
+                </div>
+                <div class="post-abstract">
+                  <figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c1660c5926b17003.jpg" alt="HHKB Pro2 键盘（来自官网）"></figure>
+<h2 id="整理的原因">整理的原因</h2>
+<h3 id="提高键盘上的工作效率">提高键盘上的工作效率</h3>
+<ul>
+<li>
+<p>一个入门级别的机械键盘</p>
+</li>
+<li>
+<p>习惯使用常用工具的各种快捷键</p>
+</li>
+</ul>
+<h3 id="挽救小拇指不变型">挽救小拇指不变型</h3>
+<ul>
+<li>
+<p>更换 Capslock 和 Control 的映射关系</p>
+</li>
+<li>
+<p>更换原因看完下面的快捷键设置就晓得</p>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-11-Shortcuts">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle">
+                  <h2 class="post-title">如何使用 Google</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-09
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>在上一篇文章 <a href="http://kaopubear.top/2017/02/04/2017-02-04-trymarkdown/"><strong>关于 Markdown，你应该知道的</strong></a> 最后，我写了这么一句话</p>
+<blockquote>
+<p>如果你决定开始用一个东西，你还会担心学不会么？</p>
+</blockquote>
+<p>从我个人目前有限的经历来看，我想学的东西还没有学不会的。<strong>学不会的要么是不想学要么是用不到。</strong></p>
+<p>写文章至今，不断有人问我如何学一个东西。比如问我如何备考，如何学英语；上了研究生，有人问我如何上手做实验，如何入门生信。</p>
+<p>我的回答：<strong>你只要想学，只要用起来，方法自然就有了，因为自己会去找会摸索。</strong></p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214141945.png" href="https://kaopubear.top//post/2019-12-14-haotouseimagehosting" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214141945.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-12-14-haotouseimagehosting">
-        <div class="item-meta">
-          <time datetime="2019-12-14 14:03:11">2019-12-14</time>
-        </div>
-        <h2>如何简快好省的使用图床</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214143938.jpg" href="https://kaopubear.top//post/2019-12-02-mycloud" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214143938.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-12-02-mycloud">
-        <div class="item-meta">
-          <time datetime="2019-12-02 14:33:18">2019-12-02</time>
-        </div>
-        <h2>我目前的云存储方法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg" href="https://kaopubear.top//post/2019-09-11-howtolearnzotero" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
-        <div class="item-meta">
-          <time datetime="2019-09-11 18:17:37">2019-09-11</time>
-        </div>
-        <h2>Zotero入门学习路径</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg" href="https://kaopubear.top//post/2019-09-11-howtolearnvscode" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
-        <div class="item-meta">
-          <time datetime="2019-09-11 18:14:31">2019-09-11</time>
-        </div>
-        <h2>VScode入门学习路径</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg" href="https://kaopubear.top//post/2019-09-10-howtolearntools" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-09-10-howtolearntools">
-        <div class="item-meta">
-          <time datetime="2019-09-10 18:08:00">2019-09-10</time>
-        </div>
-        <h2>当我谈工具的时候我在谈什么</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png" href="https://kaopubear.top//post/2019-05-19-searchtips4you" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-05-19-searchtips4you">
-        <div class="item-meta">
-          <time datetime="2019-05-19 10:14:53">2019-05-19</time>
-        </div>
-        <h2>给你的高效搜索小技巧</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top//post/2017-02-11-Shortcuts" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-11-Shortcuts">
-        <div class="item-meta">
-          <time datetime="2017-02-11 15:44:26">2017-02-11</time>
-        </div>
-        <h2>不可不知的快捷键</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png" href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-09-howtosearchingoogle">
-        <div class="item-meta">
-          <time datetime="2017-02-09 09:28:11">2017-02-09</time>
-        </div>
-        <h2>如何使用 Google</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

@@ -1,172 +1,235 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>表观遗传 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 表观遗传</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 表观遗传</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-03-22-weeklypaper">
+                  <h2 class="post-title">每周文献-190322-DNA甲基化分析工具及silencers鉴定</h2>
+                </a>
+                <div class="post-date">
+                  2019-03-22
+                </div>
+                <div class="post-abstract">
+                  <h2 id="文献题目rnbeads-20-comprehensive-analysis-of-dna-methylation-data">文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data</h2>
+<p>**DOI(url)😗*https://doi.org/10.1186/s13059-019-1664-9</p>
+<p>**发表日期：**14 March 2019</p>
+<h3 id="关键点">关键点</h3>
+<p>DNA 甲基化全功能分析 R 包 RnBeads 2.0 更新。</p>
+<h3 id="参考意义">参考意义</h3>
+<p>DNA 甲基化是一种被广泛研究的表观遗传标记，其在发育和疾病中具有重要作用。最近甲基化分析工具 RnBeads 在 bioconductor 上更新了其 2.0 版本。它可以分析目前诸多种类的甲基化数据，并且可以完成目前甲基化分析相关所有主流内容。<br>
+本次升级主要是在输入数据、分析方法、交互界面以及计算效率上进行了提升。软件官方地址为 https://rnbeads.org/index.html 可以进行进一步了解。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-03-22-weeklypaper">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-09-27-sequence66">
+                  <h2 class="post-title">66 种测序数据分析方法和流程</h2>
+                </a>
+                <div class="post-date">
+                  2018-09-27
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>写在前面：看了标题进来的老铁，这里不可能在一篇文章里写好 66 个 pipeline 给你，实际上我就是给你推荐一个网站。</p>
+</blockquote>
+<p>闲着乱看的时候发现在** bioinformatics** 上发表了一篇文章** SequencEnG: an Interactive Knowledge Base of Sequencing Techniques**，再一看 Abstract，写道</p>
+<blockquote>
+<p>Next-generation sequencing (NGS) techniques are revolutionizing biomedical research by providing powerful methods for generating genomic and epigenomic profiles. The rapid progress is posing an acute challenge to students and researchers to stay acquainted with the numerous available methods. <strong>We have developed an interactive online educational resource called SequencEnG (acronym for Sequencing Techniques Engine for Genomics) to provide a tree-structured knowledge base of 66 different sequencing techniques and step-by-step NGS data analysis pipelines comparing popular tools</strong></p>
+</blockquote>
+<p>艾玛，原来现在已经有至少 66 种不同测序技术了？ 掰着手指想了想，知道的做过的撑死也超不过一双手啊。这 66 种测序技术都是啥，于是点开了 <a href="http://education.knoweng.org/sequenceng/">这篇文章的网站</a> 想探探路。嗯，果然很多没听说过：)</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-09-27-sequence66">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic">
+                  <h2 class="post-title">表观遗传与生物信息</h2>
+                </a>
+                <div class="post-date">
+                  2017-08-17
+                </div>
+                <div class="post-abstract">
+                  <h2 id="不同层次的表观">不同层次的表观</h2>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-354dda16cd5cdf70.jpg" alt="img"></figure>
+<ul>
+<li>Broadly, features at different levels of chromatin organization are generally associated with inactive (off) or active (on) transcription.</li>
+<li>From the top, genomic DNA is methylated(Me) on cytosine bases in specific contexts and is packaged into nucleosomes, which vary in histone composition and histone modifications (for example, histone H3 lysine 9 trimethylation (H3K9me3)); these features constitute the primary layer of chromatinstructure.</li>
+<li>Here, different histone modifications are indicated by coloured dots and histone variants such as H2A.Z are brown.</li>
+<li>DNA in chromatin may remain accessible to DNA-binding proteins such as transcription factors (TFs) and RNA polymerase II (RNAPII)or may be further compacted.</li>
+<li>Chromatin can also organize into higher-order structuressuch as nuclear lamina-associated domains and transcription factories.</li>
+<li>DOI:10.1038/nrg2905</li>
+</ul>
+<h2 id="表观实例">表观实例</h2>
+<p>基因印迹</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a618faca55fcf197.jpg" alt="img"></figure>
+<h2 id="表观遗传定义">表观遗传定义</h2>
+<ul>
+<li>A mitotically or meiotically heritable state of different gene activity and expression (phenotype) that is independent of differences in DNA sequence (genotype) – based on Conrad Waddington, 1942</li>
+<li>The sum of the alterations to the chromatin template that collectively establish and propagate different patterns of gene expression (transcription) and silencing from the same genome.</li>
+<li>Epigenetic changes influence the phenotype without altering the genotype.</li>
+<li>While epigenetics often refers to the study of single genes or sets of genes, epigenomics refers to more global analyses of epigenetic changes across the entire genome.</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic">
+                  <div class="feature-container" style="background-image: url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" href="https://kaopubear.top//post/2019-03-22-weeklypaper" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-03-22-weeklypaper">
-        <div class="item-meta">
-          <time datetime="2019-03-22 16:41:16">2019-03-22</time>
-        </div>
-        <h2>每周文献-190322-DNA甲基化分析工具及silencers鉴定</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png" href="https://kaopubear.top//post/2018-09-27-sequence66" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-09-27-sequence66">
-        <div class="item-meta">
-          <time datetime="2018-09-27 10:44:43">2018-09-27</time>
-        </div>
-        <h2>66 种测序数据分析方法和流程</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg" href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic" style="background-image:url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-08-17-longxing-bioinfo-epigenetic">
-        <div class="item-meta">
-          <time datetime="2017-08-17 08:02:09">2017-08-17</time>
-        </div>
-        <h2>表观遗传与生物信息</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

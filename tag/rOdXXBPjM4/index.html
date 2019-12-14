@@ -1,160 +1,209 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>Python | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> Python</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: Python</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-06-03-uniq-big-file">
+                  <h2 class="post-title">大文本另类去重多种解法</h2>
+                </a>
+                <div class="post-date">
+                  2019-06-03
+                </div>
+                <div class="post-abstract">
+                  <p>今天分析数据的时候刚好碰到一个小问题，因为本身文件较大一开始想不出比较好的解决方法，睡个午觉醒来突然有了灵感，自认为目前解决的还算巧妙。</p>
+<h3 id="问题">问题</h3>
+<p>一个 3 列 3,741,430 行的文本（行数比较多），第一列是字符，第二列是字符，第三列是数值，tab 分割。数据格式如下：</p>
+<pre><code class="language-shell">A23    B66    1234
+C56    D34    2334
+B66    A23    1234
+D34    C56    2334
+E78    F88    1234
+</code></pre>
+<p>这个文本虽然是3,741,430 行，但是其有效信息只有一半。因为<code>A23 B66 1234</code> 和 <code>B66 A23 1234</code>  只是第二列和第一列互换了下位置。</p>
+<h3 id="需求">需求</h3>
+<p>如何尽可能快的处理这个 3 列 3,741,430 行的文本，当某一行的第一列和另一行的第二列相同同时它的第二列又和那一行的第一列相同时，就只保留这两行中的一行即可（具体留哪行没有要求）。简单说就是如下的4行只保留2行：</p>
+<pre><code class="language-shell">A23    B66    1234
+C56    D34    2334
+B66    A23    1234 # 同第一行
+D34    C56    2334 # 同第二行
+</code></pre>
+<p>要修改为</p>
+<pre><code class="language-shell">A23    B66    1234
+D34    C56    2334
+</code></pre>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-06-03-uniq-big-file">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
+                  <h2 class="post-title">数据科学家的成长之路 [译]</h2>
+                </a>
+                <div class="post-date">
+                  2017-02-22
+                </div>
+                <div class="post-abstract">
+                  <h1 id="数据科学家的成长之路">数据科学家的成长之路</h1>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608125838.png" alt=""></figure>
+<blockquote>
+<p>可能是最全面的数据科学入门文章，文中有大量资料和相关链接。<br>
+英文原文地址：<a href="http://blog.yhat.com/posts/become-a-data-scientist.html">Becoming a Data Scientist</a></p>
+</blockquote>
+<h2 id="数据科学技能">数据科学技能</h2>
+<p>数据科学家每天都会用到很多综合技能，其中的许多技能都是在工作或者其他时间自学的。他们并不需要具备某种特定的文凭，而是来自不同的背景。</p>
+<p>本文讨论的所有技能都可以自学。我们为此准备了一些资源让你可以沿着这条路走下去。而你则可以把这篇文章看成是数据科学家的培养指南。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top//post/2019-06-03-uniq-big-file" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-06-03-uniq-big-file">
-        <div class="item-meta">
-          <time datetime="2019-06-03 08:40:15">2019-06-03</time>
-        </div>
-        <h2>大文本另类去重多种解法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
-        <div class="item-meta">
-          <time datetime="2017-02-22 09:04:51">2017-02-22</time>
-        </div>
-        <h2>数据科学家的成长之路 [译]</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

@@ -1,208 +1,292 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>VScode | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> VScode</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: VScode</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
+                  <h2 class="post-title">VScode入门学习路径</h2>
+                </a>
+                <div class="post-date">
+                  2019-09-11
+                </div>
+                <div class="post-abstract">
+                  <h2 id="相关内容简述">相关内容简述</h2>
+<p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
+<p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-03-10-webvscode">
+                  <h2 class="post-title">Coder：进击的服务器 Web 版 VSCode</h2>
+                </a>
+                <div class="post-date">
+                  2019-03-10
+                </div>
+                <div class="post-abstract">
+                  <p>自从用上 VS Code 之后，断断续续写过几篇文章。比如：</p>
+<ul>
+<li><a href="http://kaopubear.top/2017-09-15-vscode1/">VS Code 使用初体验</a></li>
+<li><a href="http://kaopubear.top/2017-09-20-vscode2/">VS Code 常用快捷键</a></li>
+<li><a href="http://kaopubear.top/2018-09-20-vscode-note1-4/">VS Code 思维导图学习笔记</a></li>
+<li><a href="http://kaopubear.top/2018-10-28-userpythoninvscode/">VS Code 系列 1：提升 R 和 Python 使用体验</a></li>
+</ul>
+<p>在这个过程中，各种牛 X 的插件让我感觉 VS Code 就要统治世界了。比如 PDF 阅读器插件，Excel 查看插件，有了这些东西在一个工作目录下基本不用开其它的软件，直接在 VS Code 中全部搞定。除了这些还有不少「不正经」插件，比如提醒 <a href="https://github.com/deepred5/daily-anime">番剧更新的插件</a>，<a href="https://github.com/nondanee/vsc-netease-music">播放音乐的插件</a> 还有 <a href="https://github.com/my-soul/read-vscode-e">看电子书的插件</a>。真是神奇：)</p>
+<p>同时我也写过怎么让 <a href="http://kaopubear.top/2019-01-19-sshserver2pc/">本地 PC 和服务器可以更顺畅链接</a> 的问题，在这个文章里没有提到 VS Code，但是用它提供的 terminal 可以替代 Xshell。</p>
+<p>最近发现了一个开源软件真的是让本地 PC 和服务器可以更顺畅链接而且非常之简单，可以说从某个层面基本解决了数据分析环境的问题。无论你使用 PC 还是用 mac，无论用笔记本还是平板，只要有网能打开浏览器的设备都可以愉快地在服务器上写代码做分析。之所以能愉快地写就是因为它的使用体验和 VS Code 完全相同。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-03-10-webvscode">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
+                  <h2 class="post-title">VScode 系列 1：提升 R 和 Python 使用体验</h2>
+                </a>
+                <div class="post-date">
+                  2018-10-28
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>已经攒了一系列 VS Code 写作计划和素材，之前也发过几篇基础知识的思维导图（见文末）。不过一直不知道该从哪里开始第一篇文章，如果推荐给身边的人，他们可能最关心的是用 VS Code 日常写简单的 R 和 Python 代码体验如何。那就从这里开始吧。</p>
+<p>本文以 PC 作为安装配置示例，Mac 基本类似且部分内容体验可能更优。</p>
+</blockquote>
+<h2 id="为什么是-vs-code">为什么是 VS Code</h2>
+<p>既然是系列文章的开篇，姑且对主题按下不表先介绍一下 VS Code。</p>
+<p><a href="https://code.visualstudio.com/">VS Code</a> 的全称是 Visual Studio Code，官方给他的定义是官方定义是<strong>一个免费的、开源的跨平台编辑器</strong>。相对于各种 IDE 而言，编辑器则相对更轻量，更侧重于文件或者文件夹而非宏大的项目。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
+                  <h2 class="post-title">VScode 学习记 1-4</h2>
+                </a>
+                <div class="post-date">
+                  2018-09-20
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>使用 VSCode 作为自己的主力编辑器已经有一年的时间，但是总感觉没有很系统的了解过日常的这个工具，也就不知道自己的使用是否高效。最近再跟极客时间上的一个 VS Code 付费连载，那就顺便把它好好安排一下，记录一些学习笔记。学习记录将主要分为两种形式，偏文字的部分会整理为思维导图，偏代码的部分会整理为文章。</p>
+</blockquote>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-20-vscode2">
+                  <h2 class="post-title">vs code 常用快捷键</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-20
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>挺早之前写过一个 <a href="http://kaopubear.top/2017/02/11/2017-02-11-Shortcuts/">常用快捷键的集合备忘录</a>，里面包括 win10，印象笔记，Google 浏览器，XShell 以及 sublime text3。如今主力编辑器已经从 sublime text3 换到了 vs code。那就再整理一份 vs code 常用快捷键，希望尽快用熟练提高效率。</p>
+</blockquote>
+<p>首先摆出原件。</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b382f9240998b07a.png" alt=""></figure>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-20-vscode2">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-ee81af2f45c48ea8.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-09-15-vscode1">
+                  <h2 class="post-title">VScode 使用初体验</h2>
+                </a>
+                <div class="post-date">
+                  2017-09-15
+                </div>
+                <div class="post-abstract">
+                  <h2 id="什么是-vs-code">什么是 vs code</h2>
+<p>巨硬主导的开源文本编辑器项目，如果你不知道它，一定也听说过 sublime 或者 atom , 最起码也听说过 Notepad++。</p>
+<h2 id="为什么要用-vs-上-code">为什么要用 vs 上 code</h2>
+<p>用了两年的 sublime text 3, 忘了是谁在我一开始用的时候给我提供了一个注册码，以至于我都忘了这货不是一个开源软件。直到几天前突然提示我更新，要知道 sublime text 3 的 beta 版已经持续了好几年。我一激动就点了更新然后……就一直提醒我要不要买。问了问身边的其他人也早已经慢慢从 sublime 转向了其他的阵营，再加上 sublime 用的却是不太顺心，我也就有了换一个编辑器的想法。</p>
+<p>目前大家用的最多的三款编辑器分别是 sublime、atom 和 vs code。于是我用两天时间重点体验了 atom 和 vscode, 进行了几项比较之后决定投入 vs code 的怀抱。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-09-15-vscode1">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg" href="https://kaopubear.top//post/2019-09-11-howtolearnvscode" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-09-11-howtolearnvscode">
-        <div class="item-meta">
-          <time datetime="2019-09-11 18:14:31">2019-09-11</time>
-        </div>
-        <h2>VScode入门学习路径</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" href="https://kaopubear.top//post/2019-03-10-webvscode" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-03-10-webvscode">
-        <div class="item-meta">
-          <time datetime="2019-03-10 18:33:11">2019-03-10</time>
-        </div>
-        <h2>Coder：进击的服务器 Web 版 VSCode</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png" href="https://kaopubear.top//post/2018-10-28-userpythoninvscode" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-10-28-userpythoninvscode">
-        <div class="item-meta">
-          <time datetime="2018-10-28 21:40:26">2018-10-28</time>
-        </div>
-        <h2>VScode 系列 1：提升 R 和 Python 使用体验</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" href="https://kaopubear.top//post/2018-09-20-vscode-note1-4" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-09-20-vscode-note1-4">
-        <div class="item-meta">
-          <time datetime="2018-09-20 16:30:32">2018-09-20</time>
-        </div>
-        <h2>VScode 学习记 1-4</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-ee81af2f45c48ea8.png" href="https://kaopubear.top//post/2017-09-20-vscode2" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-ee81af2f45c48ea8.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-20-vscode2">
-        <div class="item-meta">
-          <time datetime="2017-09-20 21:29:58">2017-09-20</time>
-        </div>
-        <h2>vs code 常用快捷键</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png" href="https://kaopubear.top//post/2017-09-15-vscode1" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9bbed80700f0e003.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-09-15-vscode1">
-        <div class="item-meta">
-          <time datetime="2017-09-15 20:11:42">2017-09-15</time>
-        </div>
-        <h2>VScode 使用初体验</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

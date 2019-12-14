@@ -1,248 +1,373 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>考研 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 考研</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 考研</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-26-tokyr12">
+                  <h2 class="post-title">致考研人 12：比较危险的三类考研人</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-26
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>以下内容只针对考研人，只代表我个人看法。如果批评不自由，则赞美无意义。我不太会说好话，只能看到一些问题。下面是最近发现普遍存在的三类患者。如果你幸运的是其中一个，呵呵</p>
+<h2 id="资料搜集症患者">资料搜集症患者</h2>
+<p>我现在基本上每周都会和大家分享一些外刊， 除了经济学人还有卫报、泰晤士报和纽约客等等。经常会有人说“学长你真牛 X，这个东西我找了很久啊”或者问我“学长你这个东西是哪来的啊我怎么找不到。“其实，一开始分享这些东西我是拒绝的，因为我觉得这些东西对你们没什么卵用或者说绝大多数人并不知道怎么用，但是我实在不忍心看你们在搜集资源的道路上越走越远、越走越偏，不得不开始做这么一件事情。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-26-tokyr12">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-26-tokyr11">
+                  <h2 class="post-title">致考研人 11：我的电话采访文字稿</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-26
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>今天下午本来打算潜心写论文，后来接到了一家日报记者的电话说想进行一个电话采访。<br>
+其实一开始我是拒绝的，因为你不能说采访就采访，我得想一下说什么，我不愿意采访之后那些记者加很多特技。后来记者告诉我一定不会删减我的回答内容，所以我就愉（wang）快 (le) 地 (xie) 答 (lun) 应 (wen) 了。<br>
+以下为此次电话采访的文字稿，大家可以看看。<br>
+问了挺多问题，如果有一两个问题看完解决了你的痛点那就是纯属走运，如果看完觉得没啥意思也纯属活该。毕竟记者问什么我也决定不了。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-26-tokyr11">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-26-tokyr10">
+                  <h2 class="post-title">致考研人 10：政治复习经验</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-26
+                </div>
+                <div class="post-abstract">
+                  <h2 id="政治考什么">政治考什么</h2>
+<p><strong>考研政治大纲内容如下：</strong><br>
+思想政治理论考试涵盖马克思主义基本原理概论、毛泽东思想和中国特色社会主义理论体系概论、中国近现代史纲要、思想道德修养与法律基础、形势与政策、当代世界经济与政治等高等学校思想政治理论课课程。（<em>注意：我们通常说考研政治考五门课，指的就是以上五门，多数时候我们分别简称为马原、毛中特、史纲、思修法基、形策政经</em>）</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-26-tokyr10">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000144.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-26-tokyr9">
+                  <h2 class="post-title">致考研人 9：具体的复习建议</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-26
+                </div>
+                <div class="post-abstract">
+                  <blockquote>
+<p>今天我们按照时间段来谈一谈复习规划</p>
+</blockquote>
+<h2 id="四月开始复习的一些建议">四月开始复习的一些建议</h2>
+<p>翻了下 <strong>《致考研人》</strong> 的前几篇文章发现已经是 1 月份的事情了。今天是 2015 年 4 月 7 号，不知不觉 2 个多月过去，也怪自己当时说了一句<strong>不同的时间有不同的复习安排</strong>，这些天就不断有人问我现在开始的话应该怎么复习。可以预见的是，6 月 9 月这几个时间点也会有人问我同样的问题。</p>
+<p>所以抽时间写这么一篇小文，按照时间的跨度说一些复习安排的建议。至于具体的复习思路和方法，比如做真题还是拟题，要不要报辅导班，怎么精读文章之类的问题一概不再赘述，有疑问的可以去查看我的微博（<em>一只思考问题的熊</em>）里的置顶微博，里面涉及的很多问题都解释的比较清楚。</p>
+<p>进入四月刚刚打算复习的人不用太着急。如果能按部就班的用正确的复习方法坚持下来是绝对来得及的，另外我下面提到的所有和时间段有关的内容都是针对大多数人而言，以供参考。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-26-tokyr9">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-26-tokyr8">
+                  <h2 class="post-title">致考研人 8：夏令营那点事</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-26
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>转眼间就要到四月，各个招生单位的夏令营活动又将要开始。<br>
+这两个月以来一直有考研人问我关于夏令营的事情。<br>
+今天抽出时间和大家聊聊关于夏令营的问题。</p>
+<h2 id="什么是夏令营">什么是夏令营</h2>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-26-tokyr8">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-26-tokyr7">
+                  <h2 class="post-title">致考研人 7：四六级那点事</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-26
+                </div>
+                <div class="post-abstract">
+                  <p>这两天四六级出成绩，毫无意外的，不少人和我说</p>
+<blockquote>
+<p>“我六级还没过，对考研没信心了。”<br>
+“我四级还没过，是不是没法考研了？”<br>
+“你说我考了三次六级还没过，是不是在学习英语上先天就有缺陷？”</p>
+</blockquote>
+<p>操心如我，再把四六级和考研英语的问题说一下。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-26-tokyr7">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-25-tokyr6">
+                  <h2 class="post-title">致考研人 6：写在开学之前（关于困惑和迷茫）</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-25
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>开始之前先说一点题外话，我发现在微博上只要我说个什么自己的小故事或者和你们扯几句，这浏览量就蹭蹭的往上升，每天发的那些干货，还真没多少人搭理我。<br>
+各位不要不在意这种现象，我说个小故事。之前我听一个老师的课时，他说：“每年我的基础班全国能有十几万考生听，到了强化就剩几万了，到了冲刺就没剩下多少人。成功的学生其实就是那些坚持到最后的人。”</p>
+<h2 id="关于困惑和迷茫">关于困惑和迷茫</h2>
+<p>今天是 2 月 27 号，上午有人跟我感叹“好快啊学长，再过 3 天就到 3 月了！”我当时是真想说一句“（你连一个月多少天都活糊涂了）你要是这么准备考研，肯定是重在参与。”</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-25-tokyr6">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-25-tokyr5">
+                  <h2 class="post-title">致考研人 5：写在新年之前（关于行动和幻想）</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-25
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<p>继<strong>致 16 考研人</strong>系列的前四篇文章之后，打算再写篇稍微长点的文章，和过去的一年道个别，也给和大家一起成长的 2015 个头。</p>
+<p>今天是除夕，作为一名考研党不知道你是不是已经进入了过年模式。昨天在微信公众账号里做了一个只有两道题的小调查，截止到写这篇文章时，一共有 99 个人参与了调查。第一道题关于整体复习进度，其中犹豫报考哪所学校的人有 13 个，正在搜集资料中的有 19 个，已经开始复习但是效果不理想的有 59 个，每天有固定时间复习且有一定效果的有 8 个。第二道题关于英语复习进度，其中整理资料的有 16 个，已经开始背单词但没什么效果的有 45 个，每天有固定时间背单词且有一定效果的有 27 个，已经开始做早年真题的有 11 个。<br>
+把结果公布在这里目的只有一个，请对号入座你自己是哪一类人。</p>
+<h2 id="为什么已经开始复习却感觉没效果">为什么已经开始复习却感觉没效果</h2>
+<p>先给大家说一个可能很多人都存在但却没有意识到的问题。<br>
+为什么已经开始复习了却感觉没有效果？（关于决定、幻想和计划）</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-25-tokyr5">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-01-25-tokyr4">
+                  <h2 class="post-title">致考研人 4：关于保研</h2>
+                </a>
+                <div class="post-date">
+                  2017-01-25
+                </div>
+                <div class="post-abstract">
+                  <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>这篇文章是拜托我的学霸同学所写，她今年（2015 年）拿到了本校（非 985 非 211) 的保研名额并且顺利保送至自己心仪已久的北京林业大学（211）的重点专业。希望这篇文章能为在保研问题上有疑问的同学提供一些帮助。<br>
+以下为文章正文。</p>
+</blockquote>
+<h2 id="文章正文">文章正文</h2>
+<p>浩浩荡荡的考研刚刚过去，对于我这个保研党来说有着说不出的感觉，不知道自己是幸运还是遗憾。最近有个热心的靠谱学长找我写一写关于保研的文章，一时不知道从何说起，对于保研我也是从 2014 年九月份才开始了解，所以只能说是总结小小心得，希望对想要保研的学弟学妹们有所帮助。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-01-25-tokyr4">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png" href="https://kaopubear.top//post/2017-01-26-tokyr12" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-26-tokyr12">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:30:13">2017-01-26</time>
-        </div>
-        <h2>致考研人 12：比较危险的三类考研人</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//tag/QDJwk9EcZyr/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" href="https://kaopubear.top//post/2017-01-26-tokyr11" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-26-tokyr11">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:24:48">2017-01-26</time>
-        </div>
-        <h2>致考研人 11：我的电话采访文字稿</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000144.png" href="https://kaopubear.top//post/2017-01-26-tokyr10" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000144.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-26-tokyr10">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:18:47">2017-01-26</time>
-        </div>
-        <h2>致考研人 10：政治复习经验</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png" href="https://kaopubear.top//post/2017-01-26-tokyr9" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-26-tokyr9">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:03:08">2017-01-26</time>
-        </div>
-        <h2>致考研人 9：具体的复习建议</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png" href="https://kaopubear.top//post/2017-01-26-tokyr8" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-26-tokyr8">
-        <div class="item-meta">
-          <time datetime="2017-01-26 10:53:13">2017-01-26</time>
-        </div>
-        <h2>致考研人 8：夏令营那点事</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" href="https://kaopubear.top//post/2017-01-26-tokyr7" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-26-tokyr7">
-        <div class="item-meta">
-          <time datetime="2017-01-26 10:44:22">2017-01-26</time>
-        </div>
-        <h2>致考研人 7：四六级那点事</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" href="https://kaopubear.top//post/2017-01-25-tokyr6" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-25-tokyr6">
-        <div class="item-meta">
-          <time datetime="2017-01-25 15:35:45">2017-01-25</time>
-        </div>
-        <h2>致考研人 6：写在开学之前（关于困惑和迷茫）</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png" href="https://kaopubear.top//post/2017-01-25-tokyr5" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-25-tokyr5">
-        <div class="item-meta">
-          <time datetime="2017-01-25 15:28:11">2017-01-25</time>
-        </div>
-        <h2>致考研人 5：写在新年之前（关于行动和幻想）</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png" href="https://kaopubear.top//post/2017-01-25-tokyr4" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-01-25-tokyr4">
-        <div class="item-meta">
-          <time datetime="2017-01-25 15:17:40">2017-01-25</time>
-        </div>
-        <h2>致考研人 4：关于保研</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//tag/QDJwk9EcZyr//page/3/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        <div class="navigation">
-  
-    <a href="https://kaopubear.top//tag/QDJwk9EcZyr/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top//tag/QDJwk9EcZyr//page/3/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

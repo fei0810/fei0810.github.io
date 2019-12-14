@@ -1,208 +1,304 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>读书 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 读书</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 读书</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2019-05-03-keyquestion">
+                  <h2 class="post-title">「关键提问」读书笔记</h2>
+                </a>
+                <div class="post-date">
+                  2019-05-03
+                </div>
+                <div class="post-abstract">
+                  <h2 id="基本信息">基本信息</h2>
+<ul>
+<li>原作名：Wait, What?: And Life's Other Essential Questions</li>
+<li>作者：詹姆斯 ·E. 瑞安 (James E. Ryan)</li>
+<li>页数：177</li>
+<li>整理：思考问题的熊</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000606.png" alt=""></figure>
+<p>劳动节这几天抽空读完了一本书，这里做简要整理和记录。「关键提问」的作者是哈佛大学教育研究生院的第十一任院长詹姆斯 ·E. 瑞安，他本人是一个非常优秀的法学家和教育家，全书框架来自其 <a href="https://youtu.be/bW0NguMGIbE">2016 年在哈佛大学发表的毕业演讲</a>，点击前面的链接可以看到 5 分钟的精华版。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2019-05-03-keyquestion">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou">
+                  <h2 class="post-title">优秀到不能被忽视 读书笔记</h2>
+                </a>
+                <div class="post-date">
+                  2018-11-13
+                </div>
+                <div class="post-abstract">
+                  <h2 id="基本信息">基本信息</h2>
+<ul>
+<li>原作名：So Good They Can't Ignore You</li>
+<li>作者：卡尔·纽波特</li>
+<li>页数：226</li>
+<li>整理：思考问题的熊</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4005c5dcec9161cb.jpg" alt=""></figure>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-11-10-areyourlightson">
+                  <h2 class="post-title">你的灯亮着么 读书笔记</h2>
+                </a>
+                <div class="post-date">
+                  2018-11-10
+                </div>
+                <div class="post-abstract">
+                  <h2 id="基本信息">基本信息</h2>
+<ul>
+<li>原作名：Are Your Lights On? How to Figure Out what the Problem Really is</li>
+<li>作者：唐纳德·高斯；杰拉尔德·温伯格</li>
+<li>主要内容：如何能更好的解决问题，通过 20 个故事讲 6 个道理</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-9c7115dd760fdb49.jpg" alt=""></figure>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-11-10-areyourlightson">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
+                  <h2 class="post-title">《小岛经济学》告诉我们的</h2>
+                </a>
+                <div class="post-date">
+                  2018-06-06
+                </div>
+                <div class="post-abstract">
+                  <h2 id="他说的对还是不对">他说的对还是不对</h2>
+<p>每一门学科都存在很多分支，研究同一个问题会有不同的解决方法，比如在生命科学领域要证明某个理论可以使用生物化学，分子生物的方法也可以使用生物信息学的方法，虽然研究的思路不同但目的相同。</p>
+<p>而经济学做为一门社会科学和物理化学不同。通常物理化学（包括一部分生物学）是有明确的手段来验证一个结果是对或者不对的。做为经济学的门外汉，依我个人粗浅的理解：对于常见的物理化学问题而言，一个结论对还是不对我们通常可以（或者终究可以）去验证；而经济学往往是在既定事实的情况下进行一种总结和归纳，一种理论在已有事实的前提下提炼，如果遇到了新情况不能解释就会有另外一套理论产生。同一个问题在不同经济学派系看来可能有完全不同的解决方法。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-02-13-thegene-book">
+                  <h2 class="post-title">贯穿你我一生的基因之谜</h2>
+                </a>
+                <div class="post-date">
+                  2018-02-13
+                </div>
+                <div class="post-abstract">
+                  <h2 id="无处不在的基因">无处不在的基因</h2>
+<p>选一个心情不错的时间，打开手中叫做「唾液采集器」的小管子吐进一些唾液，再把它寄给一家公司。几天后你就会收到一份复杂而详细的报告，这份报告里将记录你和上百项健康风险、几十项遗传性疾病是否有关，甚至还会帮你寻根溯源，告诉你有多少少数民族或东南亚的祖先。没错，得到这些结果需要的仅仅是你那 1ml 唾液加上口袋里的两三百块钱，而这项业务就是近两年国内愈发火爆的「消费级基因检测」。目前来看，基因检测似乎是帮你从根源上判断自己是否属于一个「少数派」略显极客的不错选择。</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d60fc674c1056edc.png" alt="基因检测项目 (WeGene 官网）"></figure>
+<p>2017 年 12 月 28 日，我国正式启动为期四年的「中国十万人基因组计划」，这是我国在人类基因组研究领域实施的首个国字号项目。在这之前，美国于 2016 年开始自己的精准医疗计划（Precision Medicine Initiative），其中有 1.3 亿美元预算用作 <a href="https://allofus.nih.gov/">百万基因组计划</a> 。如果再向前追溯，英国早在 2012 年就启动了  <a href="https://www.genomicsengland.co.uk/the-100000-genomes-project/">10 万人基因组项目</a> 。</p>
+<p>如果你是一个非常关注自我健康或者对新技术保持敏感的人，应该对上述基因检测的场景并不陌生或者它已经真切地在你身上发生过；如果你是一个爱看财经和科技新闻的人，国际诸如 <a href="https://www.23andme.com/">23andMe</a> 、国内诸如华大基因、贝瑞合康这类已经进入 A 股的基因产业相关公司也会时不时霸占你的头条。即便你不在上述两类人之列，每天只「关心粮食和蔬菜，希望面朝大海春暖花开」，也一定逃不掉转基因这个话题。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-02-13-thegene-book">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-05-05-HowToLearn">
+                  <h2 class="post-title">究竟应该如何学习</h2>
+                </a>
+                <div class="post-date">
+                  2017-05-05
+                </div>
+                <div class="post-abstract">
+                  <p><em>说明：本文涉及两本书和一个视频</em></p>
+<ul>
+<li>
+<p>TED 视频 :<a href="http://ed.ted.com/on/Imq14bHp">The First 20 Hours: How to Learn Anything （Josh Kaufman）</a></p>
+</li>
+<li>
+<p>两本书：<br>
+ <img src="https://img.mubu.com/document_image/a35a83f1-fe4e-429c-98a7-a35d21f89b11.jpg" alt="The First 20 Hours: How to Learn Anything "><br>
+<img src="https://img.mubu.com/document_image/0261185c-832d-4a22-b7c8-4c4355e65413.jpg" alt="刻意练习 如何从新手到大师"></p>
+</li>
+</ul>
+<hr>
+<h2 id="学习的两种策略">学习的两种策略</h2>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-05-05-HowToLearn">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" href="https://kaopubear.top//post/2019-05-03-keyquestion" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2019-05-03-keyquestion">
-        <div class="item-meta">
-          <time datetime="2019-05-03 18:02:29">2019-05-03</time>
-        </div>
-        <h2>「关键提问」读书笔记</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png" href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-11-13-sogoogtheycantignoreyou">
-        <div class="item-meta">
-          <time datetime="2018-11-13 10:43:47">2018-11-13</time>
-        </div>
-        <h2>优秀到不能被忽视 读书笔记</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png" href="https://kaopubear.top//post/2018-11-10-areyourlightson" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-11-10-areyourlightson">
-        <div class="item-meta">
-          <time datetime="2018-11-10 10:43:23">2018-11-10</time>
-        </div>
-        <h2>你的灯亮着么 读书笔记</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg" href="https://kaopubear.top//post/2018-06-06-readingnotexdjix" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
-        <div class="item-meta">
-          <time datetime="2018-06-06 18:48:27">2018-06-06</time>
-        </div>
-        <h2>《小岛经济学》告诉我们的</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png" href="https://kaopubear.top//post/2018-02-13-thegene-book" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-02-13-thegene-book">
-        <div class="item-meta">
-          <time datetime="2018-02-13 15:15:01">2018-02-13</time>
-        </div>
-        <h2>贯穿你我一生的基因之谜</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png" href="https://kaopubear.top//post/2017-05-05-HowToLearn" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-05-05-HowToLearn">
-        <div class="item-meta">
-          <time datetime="2017-05-05 14:07:06">2017-05-05</time>
-        </div>
-        <h2>究竟应该如何学习</h2>
-      </a>
-    </div>
   
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>

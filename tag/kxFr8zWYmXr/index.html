@@ -1,246 +1,469 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576307591351">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+    <meta charset="utf-8" >
+
+<title>经济学 | 思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576308317609">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-91022805-1');
-</script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 
   </head>
   <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://kaopubear.top/">
+        <img src="https://kaopubear.top//images/avatar.png?v=1576308317609" class="site-logo">
+        <h1 class="site-title">思考问题的熊</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
-    </button>
-    <nav class="info_nav">
+    </div>
+    <div>
       
         
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
+          <a href="/" class="site-nav">
+            首页
+          </a>
         
       
         
-          <a href="/post/about">关于</a>
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
         
       
         
-          <a href="/post/resource">资料</a>
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
         
       
         
-          <a href="/post/project">项目</a>
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
         
       
-    </nav>
+        
+          <a href="/post/resource" class="site-nav">
+            资料
+          </a>
+        
+      
+        
+          <a href="/post/project" class="site-nav">
+            项目
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      很高兴和你相遇<br>这里正在记录我的所思所学
+    </div>
+    <div class="site-footer">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a> | <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 经济学</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 经济学</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
+                  <h2 class="post-title">《小岛经济学》告诉我们的</h2>
+                </a>
+                <div class="post-date">
+                  2018-06-06
+                </div>
+                <div class="post-abstract">
+                  <h2 id="他说的对还是不对">他说的对还是不对</h2>
+<p>每一门学科都存在很多分支，研究同一个问题会有不同的解决方法，比如在生命科学领域要证明某个理论可以使用生物化学，分子生物的方法也可以使用生物信息学的方法，虽然研究的思路不同但目的相同。</p>
+<p>而经济学做为一门社会科学和物理化学不同。通常物理化学（包括一部分生物学）是有明确的手段来验证一个结果是对或者不对的。做为经济学的门外汉，依我个人粗浅的理解：对于常见的物理化学问题而言，一个结论对还是不对我们通常可以（或者终究可以）去验证；而经济学往往是在既定事实的情况下进行一种总结和归纳，一种理论在已有事实的前提下提炼，如果遇到了新情况不能解释就会有另外一套理论产生。同一个问题在不同经济学派系看来可能有完全不同的解决方法。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-21-econote15">
+                  <h2 class="post-title">经济学周记 15-权利的保护</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-21
+                </div>
+                <div class="post-abstract">
+                  <h2 id="产权的兴起">产权的兴起</h2>
+<ul>
+<li>人类社会需要产权安排
+<ul>
+<li>外部性；人口的集聚</li>
+<li>权利的安排带来的好处足够大，才会关心怎样界定产权，行使产权</li>
+</ul>
+</li>
+<li>产权兴起动力之一：外部性
+<ul>
+<li>地理位置：打猎区域，三文鱼产权界定</li>
+<li>牛仔与铁丝网，美国西南部</li>
+</ul>
+</li>
+<li>产权兴起动力之二：人口集聚
+<ul>
+<li>铁路公司申请建立黄石公园</li>
+<li>人与人之间越来越紧密联系</li>
+<li>陌生人之间需要进行协调</li>
+</ul>
+</li>
+<li>人与人之间为了争夺猎物，产生了产权安排的需求</li>
+<li>人与人的集聚，陌生人之间的合作，产生了对产权和制度安排的需要</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-21-econote15">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-21-econote14">
+                  <h2 class="post-title">经济学周记 14-价格辨析</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-21
+                </div>
+                <div class="post-abstract">
+                  <h2 id="权利有别于能力">权利有别于能力</h2>
+<ul>
+<li>权利有别于权力：权利是文明的产物</li>
+<li>权利的定义：权利是要由社会来保障实行的，是别人对你的认可，不是你自己认为有就有，是别人认为你有、别人愿意出来保护你行使的，那才叫权利。这是权利的特征，这是人类社会跟动物社会区别的地方。</li>
+<li>能力有别于权利
+<ul>
+<li>能力，Might</li>
+<li>权利，Right。</li>
+<li>在动物世界里面，你看到的只有能力，没有权利</li>
+<li>能力取决于自己能够占有多少，而权利取决于别人、社会的其他人愿意给你多少。</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-21-econote14">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-21-econote13">
+                  <h2 class="post-title">经济学周记 13-价格教益</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-21
+                </div>
+                <div class="post-abstract">
+                  <h2 id="房价上涨好不好">房价上涨好不好</h2>
+<ul>
+<li>无论房价涨跌都不应该人为管制
+<ul>
+<li>北京的限购政策</li>
+<li>价格是现实的一个反映。反映的现实是多方面的</li>
+<li>仅仅按住价格，并不能改变价格所反映背后的现实</li>
+<li>好比你管不住温度，却非要去管温度计一样荒唐</li>
+</ul>
+</li>
+<li>房价上涨的正面因素
+<ul>
+<li>大城市房价上涨的原因是聚集：房子以外是更好的服务</li>
+<li>对大城市抱怨最多的就是生活在里面的人</li>
+<li>对美国人而言穷人和富人的区别在于位置：好的位置带来不同的人，经历和机会；重要的不是你是谁，而是你跟谁在一起。</li>
+<li>不要以为你非得有天大的本事，才能够在大城市里面立足</li>
+<li>人与人之间讲究的，不是你个人的本事有多大，而是你的本事跟别人的本事能不能相匹配，你们之间能不能够互相服务</li>
+</ul>
+</li>
+<li>人口集聚提高大城市的经济效率
+<ul>
+<li>城市化的进程还没有结束</li>
+<li>住房的需求就还会增加</li>
+<li>日本的 GDP 基本都来自三个大城市</li>
+</ul>
+</li>
+<li>房价上涨的负面因素
+<ul>
+<li>交易不灵活不频繁</li>
+<li>房屋容积率的限制太大</li>
+</ul>
+</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-21-econote13">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-20-econote12">
+                  <h2 class="post-title">经济学周记 12-价格管制</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-20
+                </div>
+                <div class="post-abstract">
+                  <h2 id="春运火车票价还不够高">春运火车票价还不够高</h2>
+<p>不承认火车票是商品属于鸵鸟心态：不管是否承认，火车票就是品，经济规律就会起作用。</p>
+<p>春节回家不是刚需：看似刚需的原因是交通成本近年来下降。</p>
+<p>黄牛党可以为社会节省无谓的损失</p>
+<ul>
+<li>黄牛为什么不把价格抬得再高一点</li>
+<li>之所以有黄牛就是因为价格不够高，进而展开价格意外的竞争——排队<br>
+人追求利润最大化——减少无谓损失（排队的时间）</li>
+<li>实名制让火车票价格更贵</li>
+<li>春节运力不可能做到毫不吃力</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-20-econote12">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-20-econote11">
+                  <h2 class="post-title">经济学周记 10-价格进阶</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-20
+                </div>
+                <div class="post-abstract">
+                  <h2 id="世界上有哪些竞争规则">世界上有哪些竞争规则</h2>
+<ul>
+<li>暴力是非常重要和常见地竞争规则
+<ul>
+<li>失败的时候人们会谴责</li>
+<li>成功的时候会膜拜</li>
+<li>今天大量的经济资源和壁垒都是由国家机器在背后支撑</li>
+</ul>
+</li>
+<li>靠智力高低竞争资源：考试是一个重要的竞争方式</li>
+<li>以论资排辈界定产权</li>
+<li>按照社会身份分配财产：职业；官位</li>
+<li>按照劳动时间：先到先得与随机分配</li>
+<li>按需分配与价高者得</li>
+<li>规则不同禀赋不同的人机会不一样</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-20-econote11">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-10-econote10">
+                  <h2 class="post-title">经济学周记 10-价格初探</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-10
+                </div>
+                <div class="post-abstract">
+                  <h2 id="经济是否可预测">经济是否可预测</h2>
+<p><strong>正方：可以对经济进行预测分析</strong></p>
+<ul>
+<li>来源于物理</li>
+<li>拉普拉斯假说</li>
+<li>测不准原理，原子预测随机</li>
+</ul>
+<p><strong>反方：人类社会，经济发展不可预测</strong></p>
+<ul>
+<li>人际之间的效用不可比较
+<ul>
+<li>每个人对不同商品有不同的偏好和个人估值</li>
+<li>个人的偏好无法横向比较<br>
+每个人对物品的效用可以比较，但是两个人之间不可以比较</li>
+<li>个人和企业有高度计划，但是社会无计划<br>
+对于整个社会各自的目标都不同</li>
+<li>计划经济不知道社会的总目标</li>
+</ul>
+</li>
+<li>数据不可得
+<ul>
+<li>个人不知道兴趣的真正排序</li>
+<li>凭什么告诉你</li>
+<li>别人可能误导你（测不准原理）：人口普查，统计的结果随着人们的预期而变化</li>
+<li>人会对自身的预测本身作出新的反应<br>
+预测什么会流行就会倒过来影响什么会流行</li>
+</ul>
+</li>
+<li>数据无法集中</li>
+<li>奖惩很难恰如其分</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-10-econote10">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-10-econote9">
+                  <h2 class="post-title">经济学周记 9-需求定律（2）</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-10
+                </div>
+                <div class="post-abstract">
+                  <h2 id="需求第二定律">需求第二定律</h2>
+<p><strong>定义</strong>：需求对价格的弹性，和价格变化之后流逝的时间长度成正比。随着时间的增强，需求对价格的弹性增加</p>
+<p><strong>需求的价格弹性</strong></p>
+<p>需求对价格的弹性就是需求量的变化百分比除以价格变化的百分比。（每当价格变化百分之一，需求量会变化百分之几）</p>
+<figure data-type="image" tabindex="1"><img src="https://img.mubu.com/document_image/5c6419aa-a264-4ab9-9015-48507b003b7d.jpg" alt="img"></figure>
+<p>例如 价格变 2，需求量变 5，弹性是 2.5</p>
+<figure data-type="image" tabindex="2"><img src="https://img.mubu.com/document_image/b0d15619-83d6-4eb3-894d-e2e2e1c2db2c.jpg" alt="img"></figure>
+<ul>
+<li>弹性大于 1：奢侈品</li>
+<li>弹性小于 1：必需品</li>
+<li>弹性永远为负，谈绝对值</li>
+</ul>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-10-econote9">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://kaopubear.top//post/2017-10-08-econote8">
+                  <h2 class="post-title">经济学周记 8-需求定律（1）</h2>
+                </a>
+                <div class="post-date">
+                  2017-10-09
+                </div>
+                <div class="post-abstract">
+                  <h2 id="个人主义的主观价值论">个人主义的主观价值论</h2>
+<p>需求的特点：你想要的东西别人也想要，有一个层层递进的规律。</p>
+<p><strong>个人估值的多层含义（personal worth）</strong></p>
+<p>一个人对一件商品的个人估值，是他为了得到这件商品所愿意支付的其他商品的最高数量。</p>
+<p>只有个人才有行动能力，集体不能决定，集体不会感受，不会思考，不会评估。所有价值与估值都起源于个人，完全主观，价值是人赋予的。个人行动都是可观察可记录的，不是单纯的愿望。人对于美和舒适的判断在特定的社会和时期可以评判和记录。</p>
+
+                </div>
+              </div>
+              
+                <a class="right" href="https://kaopubear.top//post/2017-10-08-econote8">
+                  <div class="feature-container" style="background-image: url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png')">
+                  </div>
+                </a>
+              
+            </article>
+          
+
+          <div class="pagination-container">
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg" href="https://kaopubear.top//post/2018-06-06-readingnotexdjix" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2018-06-06-readingnotexdjix">
-        <div class="item-meta">
-          <time datetime="2018-06-06 18:48:27">2018-06-06</time>
-        </div>
-        <h2>《小岛经济学》告诉我们的</h2>
-      </a>
-    </div>
   
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png" href="https://kaopubear.top//post/2017-10-21-econote15" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-21-econote15">
-        <div class="item-meta">
-          <time datetime="2017-10-21 13:42:38">2017-10-21</time>
-        </div>
-        <h2>经济学周记 15-权利的保护</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" href="https://kaopubear.top//post/2017-10-21-econote14" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-21-econote14">
-        <div class="item-meta">
-          <time datetime="2017-10-21 13:42:35">2017-10-21</time>
-        </div>
-        <h2>经济学周记 14-价格辨析</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" href="https://kaopubear.top//post/2017-10-21-econote13" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-21-econote13">
-        <div class="item-meta">
-          <time datetime="2017-10-21 13:42:32">2017-10-21</time>
-        </div>
-        <h2>经济学周记 13-价格教益</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png" href="https://kaopubear.top//post/2017-10-20-econote12" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-20-econote12">
-        <div class="item-meta">
-          <time datetime="2017-10-20 13:42:29">2017-10-20</time>
-        </div>
-        <h2>经济学周记 12-价格管制</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png" href="https://kaopubear.top//post/2017-10-20-econote11" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-20-econote11">
-        <div class="item-meta">
-          <time datetime="2017-10-20 13:42:25">2017-10-20</time>
-        </div>
-        <h2>经济学周记 10-价格进阶</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png" href="https://kaopubear.top//post/2017-10-10-econote10" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-10-econote10">
-        <div class="item-meta">
-          <time datetime="2017-10-10 19:13:35">2017-10-10</time>
-        </div>
-        <h2>经济学周记 10-价格初探</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png" href="https://kaopubear.top//post/2017-10-10-econote9" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-10-econote9">
-        <div class="item-meta">
-          <time datetime="2017-10-10 19:13:31">2017-10-10</time>
-        </div>
-        <h2>经济学周记 9-需求定律（2）</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png" href="https://kaopubear.top//post/2017-10-08-econote8" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top//post/2017-10-08-econote8">
-        <div class="item-meta">
-          <time datetime="2017-10-09 16:49:39">2017-10-09</time>
-        </div>
-        <h2>经济学周记 8-需求定律（1）</h2>
-      </a>
-    </div>
+    <a href="https://kaopubear.top//tag/kxFr8zWYmXr//page/2/" class="next">下一页 <i class="icon-arrow-ios-forward-outline"></i></a>
   
 </div>
 
-        <div class="navigation">
-  
-  
-    <a href="https://kaopubear.top//tag/kxFr8zWYmXr//page/2/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
+        </div>
       </div>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1576307591351" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
-</footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
+
+
+
 
   </body>
 </html>
