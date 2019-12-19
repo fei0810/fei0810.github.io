@@ -120,48 +120,128 @@
 </div>
       <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
         <div class="w-full md:w-2/3 mt-6">
-          <h1 class="text-4xl">致考研人 6：写在开学之前（关于困惑和迷茫）</h1>
+          <h1 class="text-4xl">眼见不为实：为什么29不等于29</h1>
           
-            <img class="max-w-full mt-6 rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" alt="">
+            <img class="max-w-full mt-6 rounded-sm" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191219190924.jpg" alt="">
           
           <div class="mt-6 lg:mt-10 post-content">
-            <h2 id="写在前面">写在前面</h2>
-<p>开始之前先说一点题外话，我发现在微博上只要我说个什么自己的小故事或者和你们扯几句，这浏览量就蹭蹭的往上升，每天发的那些干货，还真没多少人搭理我。<br>
-各位不要不在意这种现象，我说个小故事。之前我听一个老师的课时，他说：“每年我的基础班全国能有十几万考生听，到了强化就剩几万了，到了冲刺就没剩下多少人。成功的学生其实就是那些坚持到最后的人。”</p>
-<h2 id="关于困惑和迷茫">关于困惑和迷茫</h2>
-<p>今天是 2 月 27 号，上午有人跟我感叹“好快啊学长，再过 3 天就到 3 月了！”我当时是真想说一句“（你连一个月多少天都活糊涂了）你要是这么准备考研，肯定是重在参与。”</p>
+            <p>浮点数计算和比较的坑</p>
 <!-- more -->
-<p>这些天你们应该就陆陆续续的返校准备开学。寒假不管长短就这么溜走了，现在回头想想放假前你自己的那些豪言壮语是不是觉得自己根本就是猴子请来的逗比？</p>
-<p>以我个人的经历和其他学姐学长的经验来看，每年的这个时候考研人应该会遇到考研周期的第一个迷茫期。一部分迷茫自己要考什么学校；一部分人迷茫自己要不要跨专业；大部分人是回到学校，看到身边有那么一两个考研的同学已经开始复习，于是自己心里内疚惶恐可是又懒得动。（你觉得这类人奇葩么？但你仔细想想，心里着急可就是不行动，这种情况是不是发生在你自己的身上？）</p>
-<p>关于选学校和专业的问题，我之前是用“教你找男女朋友”这事来解释过，如果想看可以翻一翻我 2 月 6 号发的长微博。</p>
-<p>另外，针对“心里光想却不行动”的情况，我前几天写过一篇文章**《致考研人 5：写在新年之前》**</p>
-<p>今天我还被问到了这样三个问题：</p>
+<h2 id="29怎么会不等于29">29怎么会不等于29</h2>
+<p>今天有一个小伙伴给我发来了一个截图如下。</p>
+<figure data-type="image" tabindex="1"><img src="https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1576751338_20191219164320989_2169.png" alt=""></figure>
+<p>我下意识的说了一句：0.58*50不等于29。</p>
+<figure data-type="image" tabindex="2"><img src="https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1576751338_20191219164226685_19202.png" alt=""></figure>
+<p>感概，有时候，眼见也不一定为实。这就是一个浮点运算导致的「算不准」问题。</p>
+<p>在历史上，其实已经有过类似因为浮点运算导致的事故。</p>
+<p>1994 年，英特尔的奔腾微处理器芯片的浮点计算单元出现了一个 Bug。在某些情况下，浮点除法并不能返回正确的结果。例如 4195835.0/3145727.0 产生的是 1.33374 而不是 1.33382。虽然这个 Bug 可能对绝大多数人没有影响，但是市面上 500 万左右流通的芯片都存在该缺陷，随着整个事件的发酵，最终这个 Bug 给 intel 造成了 4.75 亿美元的损失。这次事件也被称为「Pentium FDIV bug」而载入了 Bug 史册。</p>
+<figure data-type="image" tabindex="3"><img src="https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1576751339_20191219181708436_24813.png" alt=""></figure>
+<h2 id="r-语言中的实际示例">R 语言中的实际示例</h2>
+<p>我们分别在 R 中计算 0.58*50，0.29*100，然后让他们和 29 互相比一比。</p>
+<pre><code class="language-R">(a=29)
+(b=0.58*50)
+(c=0.29*100)
+a==c
+a==b
+b==c
+</code></pre>
+<p>结果如下所示：</p>
+<pre><code>&gt; (a=29)
+[1] 29
+&gt; (b=0.58*50)
+[1] 29
+&gt; (c=0.29*100)
+[1] 29
+&gt; a==c
+[1] FALSE
+&gt; b==c
+[1] TRUE
+&gt; a==b
+[1] FALSE
+</code></pre>
+<p>我们看到屏幕上显示的 a ,  b和 c 都是29，但是如果用<code>==</code>进行一下比较，发现<code>0.58*50</code>和<code>0.29*100</code>竟然都不等于29。嗯，很迷。</p>
+<p>浮点数的精度和计算问题，在任何编程语言里都类似。</p>
+<p>浮点数在计算机中不能以任意精读存储，都会有一个准确性的限制，通过有限的连续字符来保存浮点数。</p>
+<p>目前常见的浮点格式包括：单精度，双精度和扩展双精度。他们的准确性从前到后依次提高，其中单精度可以用于一般计算，双精度用于科学计算。在 R 中就是采用了双精度来对浮点数进行保存。如下所示：</p>
+<pre><code class="language-R">&gt; (d &lt;- 10)
+[1] 10
+&gt; class(d)
+[1] &quot;numeric&quot;
+&gt; typeof(d)
+[1] &quot;double&quot;
+</code></pre>
+<p>我们让 d 等于 10，通过 <code>class</code> 可以看出它是一个数值型变量，如果用 <code>typeof</code> 查看，就会发现他的存储模式(storage mode)是一个双精度浮点型数字。</p>
+<p>这里又涉及到了存储模式和类型的问题。在R中<code>class</code>返回的是一个对象的高级类，而<code>typeof</code>返回的是对象的内部低级类。如果用<code>calss</code>查看一个数据框，其返回结果就是他的类(calss)为数据框，如果使用<code>typeof</code>查看，返回的结果就是内部类型为列表，如下所示。（嗯，想起了果子老师课上讲的，data.frame 就是一种特殊的 list）</p>
+<pre><code class="language-R">&gt; class(iris)
+[1] &quot;data.frame&quot;
+&gt; typeof(iris)
+[1] &quot;list&quot;
+</code></pre>
+<p>继续回来说浮点数的比较。因为精度问题，在R语言中使用 <code>==</code> 进行浮点数的比较是非常危险的。</p>
+<p>就像文章开头的例子，此时假设你有一个 if 语句，想进行一下结果的判断。如果判断条件是 0.29*100 == 29，就会返回 F。因为 0.29*100 的实际值在计算机中比 29 要小一些。当你使用 <code>as.interger</code>去处理的时候，结果为28。</p>
+<pre><code class="language-R">&gt; as.integer(0.29*100)
+[1] 28
+</code></pre>
+<p>这也就是为什么<code>rep(1,29)</code>有29个数字，但是<code>rep(1,0.29*100)</code>有28个数字。</p>
+<h2 id="如何避免浮点数计算的坑">如何避免浮点数计算的坑</h2>
+<p>如何解决这个问题呢？在 R 语言中有一个函数叫做 <code>all.equal</code>，虽然名字是 equal，但是他其实是 almost equal。</p>
+<p>这让我不禁想到了一款果子和洲更（当然还有我）都在用全面屏 Almost 手机。</p>
+<figure data-type="image" tabindex="4"><img src="https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1576751339_20191219173451718_5218.png" alt=""></figure>
+<p><code>all.equal()</code> 的功能是 Test If Two Objects Are (Nearly) Equal。也就是它可以略微忍受两个对象之间有一丢丢差别。如下所示：</p>
+<pre><code class="language-R">&gt; (a=29)
+[1] 29
+&gt; (b=0.58*50)
+[1] 29
+&gt; (c=0.29*100)
+[1] 29
+&gt; a==b
+[1] FALSE
+&gt; all.equal(a,b)
+[1] TRUE
+&gt; a==c
+[1] FALSE
+&gt; all.equal(a,c)
+[1] TRUE
+</code></pre>
+<p>你可能会问，这个一丢丢究竟是多少呢？</p>
+<p>通过帮助文档，我们可以发现这个一丢丢实际是<code>tolerance = sqrt(.Machine$double.eps)</code>。如果实际运行一下会发现<code>.Machine$double.eps</code> 等于2.220446e-16，那么<code>sqrt(.Machine$double.eps)</code>就是 1.490116e-08。</p>
+<p>这里的<code>.Machine</code>是一个存储了 R 正在运行机器的数值特性的变量，其中包括了最小正浮点数（double.eps)。因此，以后想进行类似的比较，记得使用<code>all.equal()</code>。另外，多说一句，在 if 判断中不要直接使用它，而是写成 <code>isTRUE(all.equal(....))</code> 。</p>
+<p>回到最开始的问题，如果确实需要 <code>rep(1,rep(1,0.29*100))</code>返回 29 个数字，就可能需要用到取整。</p>
+<p>在 R 中有3种常见的取整，分别是：</p>
 <ul>
-<li>“你说怎么样就算下定决心了”</li>
-<li>“你说我是不是考不上想考的学校”</li>
-<li>“学长，你说复试我该准备点啥”</li>
+<li>向下取整：<code>floor()</code></li>
+<li>向上取整：<code>ceiling()</code></li>
+<li>四舍五入：<code>round()</code></li>
 </ul>
-<p>如果你是我，你说这三个问题我该怎么回答。<br>
-三者看似没关系，但就目前这个阶段来看，其共性就是“幻想”。整天很忙的活在自己想象的生活中，要么想着自己考不上之后的悲惨人生，要么想着自己顺利通过初试的光明坦途，要么就是一只在想自己到底想没想好（有点拗口~）。<br>
-我的建议很简单，还是那句话，拿起书踏下心真的开始做点什么，哪怕是每天用 20 分钟时间看看我分享的内容然后整理整理笔记。无论什么看似简单的事情，只要坚持一段时间都会有很大的改观。举个通俗的例子，你连着睡上一个月（睡觉多简单）什么也别干，估计就能进化成一只可爱的考拉。</p>
-<p>希望你们记住，大多数人都不是靠拼智商取胜的，只有少部分人可以靠智商碾压对手，而且针对绝大数人来说根本就轮不到拼天赋得地步。<br>
-一个人如果最后没有做成一件事，我能想到的只有两个理由：<strong>要么他不够努力，要么他努力的方法不对</strong>。所以对你们而言，最重要的是摸索出一个适合自己的正确复习方法然后坚持下去。</p>
-<p>开学以后，大部分人都开始复习了，在这里我还有两个特别重要的提醒！</p>
-<ol>
-<li>人都有这么一个心理，总是喜欢做能让自己体会到成就感的事情。换句话说，很可能你某一门课之前学的越好，你就越不自觉得花更多的时间在这门课上。再换句话说，很多时候你不是因为喜欢一件事情而把它做好，而是因为你发现自己能做好才喜欢。<br>
-对于复习而言，复习初期你一定不能逃避，越是心里没底的越是不会的越要迎难而上。我有一门专业课，一共有 4 本参考书，每本都是 600 多页。你知道看第一遍的时候我有多么绝望无助么？可是咬牙挺过来，生活原来这么美好！当然，在复习的后期如何平衡各科的时间就是后话了，到时候我们再谈。</li>
-<li>人还有这么一个心理，总是喜欢拿身边的人和自己比较。就是表面不说也会背地里偷偷地打听别人的复习进度。我觉得研友、同学之间相互多交流多沟通完全没有问题，但是你一定要摆正自己的心态。所谓摆正自己的心态是指，看到别人复习的慢不狂喜，看到别人复习的快不慌张。</li>
-</ol>
-<p>现在，让我们一起背一遍：<strong>“不以快喜不以慢悲”</strong>。</p>
-<p>如果别人英语真题做的快，你别慌，可能他根本不懂什么叫做精读。等他做完一遍真题，你就上去这么问他，“听说你真题都做完啦？好厉害呀！我昨天做了一遍没读懂，你给我分析分析文章结构，讲讲这几个单词怎么用吧”。看他崩溃不崩溃……</p>
-<p>如果没人数学复习的很慢，你都做完全书了他还没做完课后习题。你可以和他说：“来，我课本都看完了，你哪些题有问题咱们交流一下，或者你有什么定理不明白我给你讲讲”，他问完，你看看自己崩溃不崩溃……</p>
-<p>如果你对总体的复习或者英语的具体复习方法还没有什么头绪，可以参考我已经写好的几篇文章，没准就会对你有些启发。</p>
-<p>16 <strong>考研人，让我们一起在靠谱的路上越走越远，加油！</strong></p>
+<p>此外还有一种不常用的「向0看齐」取整方法<code>trunc()</code>。</p>
+<p>他们的差别如下：</p>
+<pre><code class="language-R">&gt; ( x1 &lt;- seq(-2, 4, by = .5) )
+ [1] -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5  4.0
+&gt; floor(x1)
+ [1] -2 -2 -1 -1  0  0  1  1  2  2  3  3  4
+&gt; ceiling(x1)
+ [1] -2 -1 -1  0  0  1  1  2  2  3  3  4  4
+&gt; round(x1)
+ [1] -2 -2 -1  0  0  0  1  2  2  2  3  4  4
+&gt; trunc(x1)
+ [1] -2 -1 -1  0  0  0  1  1  2  2  3  3  4
+
+</code></pre>
+<p>因此通过<code>rep(1,round(0.58*50))</code>就可以得到和<code>rep(1,29)</code>一致的结果了。</p>
+<p>写到这里并没有结束，因为如果用 python 算一下，就会发现 0.58*100 真的不等于 58。感觉R语言的对于浮点运算结果的展示还是有点问题？同时，0.58 和 0.59 还是不一样。</p>
+<pre><code>&gt;&gt;&gt; 0.58*100
+57.99999999999999
+&gt;&gt;&gt; 0.59*100
+59.0
+&gt;&gt;&gt; 0.57*100
+56.99999999999999
+&gt;&gt;&gt; 0.56*100
+56.00000000000001
+</code></pre>
+<p>看来，要知其所以然，还得再仔细学习一下浮点精度和计算的实质。</p>
 <hr>
-<figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
-<p><strong>本文作者</strong>：思考问题的熊</p>
-<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<p>参考资料：<br>
+<a href="https://cran.r-project.org/doc/FAQ/R-FAQ.html#Why-doesn_0027t-R-think-these-numbers-are-equal_003f">R FAQ 7.31</a></p>
 
           </div>
           
@@ -170,364 +250,22 @@
           <div class="w-full md:w-1/3">
             <div class="mt-6 md:pl-8">
               <h4 class="text-base font-thin text-gray-700 mb-2">发布时间</h4>
-              <div class="text-lg mb-6">2017-01-25</div>
+              <div class="text-lg mb-6">2019-12-19</div>
               <h4 class="text-base font-thin text-gray-700 mb-2">标签</h4>
               <div class="mb-6">
                 
-                  <a href="https://kaopubear.top//tag/Rn3TD5Cpatn" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">思考</a>
+                  <a href="https://kaopubear.top//tag/1BY38A9TE" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">编程</a>
                 
-                  <a href="https://kaopubear.top//tag/QDJwk9EcZyr" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">考研</a>
+                  <a href="https://kaopubear.top//tag/UrqlObNL0t" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">R</a>
                 
               </div>
               <h4 class="text-base font-thin text-gray-700 mb-2">阅读时间</h4>
-              <div class="text-lg mb-6">6 min read</div>
+              <div class="text-lg mb-6">7 min read</div>
               <h4 class="text-base font-thin text-gray-700 mb-2">相关阅读</h4>
               <div class="border-b border-gray-400">
                 
 
   
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
-
-  
-    
-      
-    
-      
-    
-  
 
   
     
@@ -542,7 +280,7 @@
       
         
         <div class="border-t border-gray-400 py-6">
-          <a href="https://kaopubear.top//post/2019-01-15-igvdebug" class="text-lg hover:underline my-2 inline-block">IGV 哐当就不能用了，我的 debug 思路</a>
+          <a href="https://kaopubear.top//post/2019-12-12-3goodweb" class="text-lg hover:underline my-2 inline-block">这三个网站让我摸鱼都从容了</a>
         </div>
       
     
@@ -563,18 +301,279 @@
       
     
       
+        
+        <div class="border-t border-gray-400 py-6">
+          <a href="https://kaopubear.top//post/2019-10-31-bioconductor310iscoming" class="text-lg hover:underline my-2 inline-block">Bioconductor 3.10正式发布</a>
+        </div>
+      
     
   
 
   
+    
+      
     
       
         
         <div class="border-t border-gray-400 py-6">
-          <a href="https://kaopubear.top//post/2018-12-29-my2018" class="text-lg hover:underline my-2 inline-block">2018，思考问题的熊</a>
+          <a href="https://kaopubear.top//post/2019-10-29-macos15user" class="text-lg hover:underline my-2 inline-block">macOS 10.15 安装R包</a>
         </div>
       
     
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
       
     
   
@@ -710,10 +709,69 @@
   
     
       
-        
-        <div class="border-t border-gray-400 py-6">
-          <a href="https://kaopubear.top//post/2018-08-15-bioinfohistory" class="text-lg hover:underline my-2 inline-block">生物信息学简史</a>
-        </div>
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
       
     
       
@@ -1480,6 +1538,28 @@
     
   
 
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
+  
+
+  
+    
+      
+    
+      
+    
   
 
   
