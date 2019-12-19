@@ -1,405 +1,465 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title></title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<script src="https://kaopubear.top//media/script.js"></script>
+<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91022805-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            很高兴和你相遇<br>这里正在记录我的所思所学
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 1s">
+          项目
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="text-lg text-gray-700 mb-8">
+          <i class="remixicon-bookmark-line"></i> 数据科学
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2019-12-12-3goodweb" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214142752.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2019-12-12-3goodweb">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">这三个网站让我摸鱼都从容了</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <blockquote>
+<p>如果你问我每天什么时候效率最高，我想可能是摸鱼的时候。高效摸鱼有很多技巧，关键之一就是不能在浑水里摸鱼。一定要去正确的地方，清楚的看到鱼在哪里，一摸一个准。</p>
+</blockquote>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2019-12-12 / 3 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2019-10-26" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150555.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2019-10-26">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">数据库网站 API 知多少</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="api">API</h2>
+<p>API 这个词在大多数人看来可能和 CNS 差不多，前者天天听说就是用不上，后者天天读就是发不了。</p>
+<p>不过，通过今天的一个简短介绍，今后 API 这个东西你就用上了，因为在文章最后我将会展示一个最最基础且高频的 API 使用示例。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2019-10-26 / 8 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">csvtk命令行版极简dplyr</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。</p>
+</blockquote>
+<p>之前写 <a href="https://kaopubear.top/2019-06-19-datamashmanual/">datamash 的使用教程</a>，收到了一位读者的私信，内容如上。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2019-06-28 / 11 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2019-06-19-datamashmanual" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2019-06-19-datamashmanual">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">linux极简统计分析工具datamash教程</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="引子">引子</h2>
+<p>之前写 awk 教程的时候，曾经提到过一些对文本中行列进行某些计算统计的需求，例如使用数组分类求和。一些基本需求 awk 都可以实现，但是写起来稍显复杂。在 R 中使用 <strong>dplyr</strong> 或者基础函数 <code>aggregate()</code> 可以方便的进行分组操作，如果能在 linux 中使用更加简洁的单行命令针对数值和字符进行一些基本运算就省去了在 R 终端操作的时间。这篇文章介绍一个 linux 中能满足这类需求的工具 <strong>GNU datamash</strong>。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2019-06-19 / 18 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2019-04-18-weneedgoodquestion" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001559.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2019-04-18-weneedgoodquestion">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">数据分析需要更好的问题</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h1 id="设计思维和更好的问题">设计思维和更好的问题</h1>
+<p>这篇文章的主要内容来自 Roger Peng 最近的一篇博客 <a href="https://simplystatistics.org/2019/04/17/tukey-design-thinking-and-better-questions/">Tukey, Design Thinking, and Better Questions</a>。读了之后有些启发便做简单记录。</p>
+<p>John Tukey 是美国的数据学，快速傅里叶变换发明人。它在 1962 年发表过一篇题为 <a href="https://projecteuclid.org/euclid.aoms/1177704711">“The Future of Data Analysis”</a> 的论文，其中有一句非常著名的话。</p>
+<blockquote>
+<p>Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise.</p>
+</blockquote>
+<p>Tukey 将数据分析的前三个阶段定义为如下三步：</p>
+<ol>
+<li>识别一个问题 Recognition of problem</li>
+<li>使用一个方法 One technique used</li>
+<li>使用大量其他方式 Competing techniques used</li>
+</ol>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2019-04-18 / 4 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2019-04-04-facet-ggplot2" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606085631.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2019-04-04-facet-ggplot2">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">用漫威数据学习 ggplot2 facet</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <blockquote>
+<p>本文主要内容翻译整理自：<a href="http://www.zevross.com/blog/2019/04/02/easy-multi-panel-plots-in-r-using-facet_wrap-and-facet_grid-from-ggplot2/">Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2</a>，部分代码有修改。</p>
+</blockquote>
+<p>ggplot2 一个非常强大的功能就是进行  multi-panel plots 的呈现，也就是我们常说的分面（facet）。通过使用 facet_wrap() 或者 facet_grid() 这样的函数我们就可以很方面的将单一的一个图变为多个相关的图。本文将通过一个具体的数据示例帮助你理解 ggplot2 分面的不同方法以及参数。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2019-04-04 / 10 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2019-01-02-howtowritedocumentation" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606093026.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2019-01-02-howtowritedocumentation">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">关于文档，还没人告诉你的那点事</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <blockquote>
+<p>学习一个新的工具或者软件，首选方法是阅读开发者写的软件文档，因为 TA 最清楚怎么回事；其次是阅读最新的英文相关使用讨论或者介绍，因为中文的很多资料往往滞后；再次才是阅读中文相关介绍，而且一定要谨慎参考认真判断。评判一个工具好坏的标准之一也是其文档是否写的足够「好」。</p>
+<p>因此无论是开发者还是用户，文档都至关重要。那到底好的文档需要包含哪些内容或者应该如何写出一个尽量好的文档呢？最近看到一篇英文博客：<a href="https://www.divio.com/blog/documentation/">What nobody tells you about documentation</a> ，以下为尽量保留作者原意的不完全翻译版本供你参考。</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606093042.png" alt=""></figure>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2019-01-02 / 17 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-12-13-rggplot" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-12-13-rggplot">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">R 语言可视化之原理概述篇</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="整体介绍">整体介绍</h2>
+<blockquote>
+<p>一张统计图形就是从数据到几何对象 (geometric object, 缩写为 geom, 包括点、线、条形等）的图形属性 (aesthetic attributes, 缩写为 aes, 包括颜色、形状、大小等）的一个映射。此外，图形中还可能包含数据的统计变换 (statistical transformation, 缩写为 stats), 最后绘制在某个特定的坐标系 (coordinate system,  缩写为 coord) 中，而分面 (facet, 指将绘图窗口划分为若干个子窗口）则可以用来生成数据中不同子集的图形。</p>
+</blockquote>
+<h3 id="要素">要素</h3>
+<ul>
+<li>数据 (data)</li>
+<li>映射 (mapping): 建立数据与图形元素的关系</li>
+<li>几何对象 (geom)：对数据的渲染和展示</li>
+<li>统计变换 (stats)</li>
+<li>标度 (scale)</li>
+<li>坐标系 (coord)</li>
+<li>分面 (facet)</li>
+<li>主题 (theme)</li>
+</ul>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-12-13 / 10 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-12-14-rggplotexample" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-12-14-rggplotexample">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">R 语言可视化之案例</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="qplot-使用">qplot 使用</h2>
+<p>导入所需数据格式为 data.frame</p>
+<pre><code class="language-R">data(mtcars)
+df &lt;- mtcars[, c(&quot;mpg&quot;, &quot;cyl&quot;, &quot;wt&quot;)]
+head(df)
+</code></pre>
+<p>qplot() 基本用法</p>
+<pre><code class="language-R">qplot(x, y=NULL, data, geom=&quot;auto&quot;,
+      xlim = c(NA, NA), ylim =c(NA, NA))
+
+# geom 画什么图；main 题目；xlab,ylab xy 轴标签
+# color 颜色；size 点大小；shape 点形状
+</code></pre>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-12-13 / 9 min read</div>
+    </div>
+  </section>
+
+        <div class="pagination-container animated fadeIn">
   
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+  
+    <a href="https://kaopubear.top//tag/bPxOfgU9YC//page/2/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
 
-</head>
-<body>
-  <div class="antialiased">
-    <div class="max-w-5xl mx-auto px-6 md:px-8">
-      <div class="flex justify-between items-center mt-10">
-  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
-    <a href="https://kaopubear.top/">思考问题的熊</a>
-  </h1>
-  <div class="block lg:hidden" id="thumb-menu">
-    <button id="thumb-open" type="button" class="block">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
-    </button>
-    <button id="thumb-close" type="button" class="hidden">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
-    </button>
-  </div>
-</div>
-<div id="nav-list" class="lg:block hidden">
-  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
-    <div class="lg:flex -mb-px">
-      
-        
-          <a href="/" class="nav-link">首页</a>
-        
-      
-        
-          <a href="/archives" class="nav-link">归档</a>
-        
-      
-        
-          <a href="/tags" class="nav-link">标签</a>
-        
-      
-        
-          <a href="/post/about" class="nav-link">关于</a>
-        
-      
-        
-          <a href="/post/resource" class="nav-link">资料</a>
-        
-      
-        
-          <a href="/post/project" class="nav-link">项目</a>
-        
-      
+      </div>
     </div>
-    <div class="lg:flex">
-      
-        
-          <a href="https://github.com/fei0810" class="block lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-            <div>GitHub</div>
-            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      <a href="https://kaopubear.top//atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-        <div>RSS</div>
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-      </a>
-    </div>
-  </div>
-</div>
-      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
-        <div class="w-full md:w-2/3">
-  <div class="mt-6 lg:mt-10 border-b border-gray-400">
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2019-12-12-3goodweb" class="hover:underline">这三个网站让我摸鱼都从容了</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/1BY38A9TE" class="hover:underline hover:text-gray-900">编程</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-12-12</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>3 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2019-12-12-3goodweb">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214142752.png" alt="这三个网站让我摸鱼都从容了">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2019-10-26" class="hover:underline">数据库网站 API 知多少</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/1BY38A9TE" class="hover:underline hover:text-gray-900">编程</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-10-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>8 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2019-10-26">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150555.png" alt="数据库网站 API 知多少">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic" class="hover:underline">csvtk命令行版极简dplyr</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-06-28</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>11 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2019-06-28-csvtkbasic">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" alt="csvtk命令行版极简dplyr">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2019-06-19-datamashmanual" class="hover:underline">linux极简统计分析工具datamash教程</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-06-19</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>18 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2019-06-19-datamashmanual">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png" alt="linux极简统计分析工具datamash教程">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2019-04-18-weneedgoodquestion" class="hover:underline">数据分析需要更好的问题</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-04-18</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>4 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2019-04-18-weneedgoodquestion">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001559.png" alt="数据分析需要更好的问题">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2019-04-04-facet-ggplot2" class="hover:underline">用漫威数据学习 ggplot2 facet</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-04-04</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>10 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2019-04-04-facet-ggplot2">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606085631.png" alt="用漫威数据学习 ggplot2 facet">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2019-01-02-howtowritedocumentation" class="hover:underline">关于文档，还没人告诉你的那点事</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2019-01-02</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>17 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2019-01-02-howtowritedocumentation">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606093026.png" alt="关于文档，还没人告诉你的那点事">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-12-13-rggplot" class="hover:underline">R 语言可视化之原理概述篇</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-12-13</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>10 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-12-13-rggplot">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png" alt="R 语言可视化之原理概述篇">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-12-14-rggplotexample" class="hover:underline">R 语言可视化之案例</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-12-13</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>9 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-12-14-rggplotexample">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" alt="R 语言可视化之案例">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-  </div>
-  <div class="mt-6 flex justify-between">
-    
-    
-      <a href="https://kaopubear.top//tag/bPxOfgU9YC//page/2/" class="pb-px text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" class="fill-current text-gray-900" /></svg>
-      </a>
-    
-  </div>
-</div>
-        <div class="w-full md:w-1/3 md:pl-8">
-          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">当前标签</div>
-          <div>
-            <h1 class="text-2xl">数据科学</h1>
-          </div>
-        </div>
-      </div>
-      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-</div>
-    </div>
-  </div>
-</body>
+
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>

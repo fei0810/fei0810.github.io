@@ -1,359 +1,414 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title></title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<script src="https://kaopubear.top//media/script.js"></script>
+<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91022805-1');
+</script>
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            很高兴和你相遇<br>这里正在记录我的所思所学
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 1s">
+          项目
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="text-lg text-gray-700 mb-8">
+          <i class="remixicon-bookmark-line"></i> R
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-10-01-RandStatistics6" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-7c244168867174f2.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-10-01-RandStatistics6">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-6</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="第六节-多样本均值分析">第六节 多样本均值分析</h2>
+<p>在上一节讨论了单样本和双样本均值比较的几种情况，但是很多实验不仅仅有两组样本。进行多组样本之间的均值比较就需要进行<strong>单因素方差分析</strong> (one-way analysis of variancd) 和<strong>双因素方差分析</strong> (two-way analysis of variancd)</p>
+<h3 id="one-way-anova">one-way ANOVA</h3>
+<p>在单因素方差分析模型中样本的组数是任意的但是要求样本之间相互独立，每一组的观测值符合正态分布的同时方差相等，目的是比较每个组的均值。原假设是各组间均值相等（观察的差异有随机误差构成），备择假设是至少有一组和其他组均值不同。数据的变异通常来自于组内部的变异和组间真是变异，其中组内变异一方面由个体差异导致，一方面由实验误差导致，而组间变异则是由不同的处理（因子）导致。如果通过计算，非系统性的变异（组内误差）远大于由不同处理造成的变异（组间变异）如下图 b 所示，则接受原假设，反之则拒绝原假设，如下图 a 所示。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-10-01 / 12 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-10-01-RandStatistics5" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-10-01-RandStatistics5">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-5</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="单双样本均值分析">单双样本均值分析</h2>
+<p>根据数据组数的不同，均值比较可以分为单样本、双样本和多样本。本节首先介绍单样本和双样本。</p>
+<h3 id="假设检验一般步骤">假设检验一般步骤</h3>
+<p>谈具体的假设检验之前首先介绍假设检验的一般步骤。</p>
+<ol>
+<li><strong>确定假设</strong></li>
+</ol>
+<p><strong>原假设</strong> (null hypothesis, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>) 指需要检验的假设，只要当我们有足够的证据时才能否定。在某种意义上与原假设相反的的假设被称为<strong>备择假设</strong>（alternative hypothesis，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.08125em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）。</p>
+<p>假设检验是无法给出绝对证明的，我们只能在假定原假设为真的情况下通过假设检验来判断结果是否可信。如果结果极不可能发生，则拒绝原假设，进而接受备择假设。</p>
+<p>根据接受假设和真实情况之间的关系，会有四种可能发生。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-10-01 / 11 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-09-28-RandStatistics4" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-63bab4fdd6d4f072.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-09-28-RandStatistics4">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-4</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="第四节-相关性分析">第四节 相关性分析</h2>
+<p>本节提到的相关性分析和后面会提到的 t-test, ANOVA 以及回归分析等被称为参数检验，这些检验在进行时我们常默认数据符合一定前提条件，如符合正态分布和方差相等等。当样本数量大于 30 时，根据中心极限定理，我们通常认为数据符合正态分布；在进行 t-test 和 ANOVA 分析时，还需要满足样本方差相等。</p>
+<p>在进行各种检验之前需要初步检验数据是否符合某种检验的前提条件，如果不符合则应该考虑使用非参数检验或其他方法。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-09-28 / 5 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-09-27-RandStatistics3" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-09-27-RandStatistics3">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-3</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="第三节-估计">第三节 估计</h2>
+<p>在通常的试验中我们获得的信息总是来自样本，想要知道总体的参数，只能通过已有样本参数进行估计。</p>
+<p>样本均值是总体均值的点估计，通常样本均值用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>x</mi><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.63056em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.63056em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">x</span></span><span style="top:-3.55056em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span></span></span></span>表示，总体均值用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">μ</span></span></span></span>表示。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-09-27 / 2 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-09-18-RandStatistics2" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-2</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="概率相关内容">概率相关内容</h2>
+<p>统计学中大量内容源于概率，学习统计学也就必须要了解一些概率中的基本概念，其中尤为重要的是条件概率，以及延伸出的贝叶斯定理（也许是最牛也是最难充分掌握的内容）。</p>
+<h3 id="几个概念">几个概念</h3>
+<p>**样本空间 (sample space) **是所有可能结果的一个集合，**事件 (event) <strong>则是样本空间中所有感兴趣结果的一个子集。某事件的</strong>概率 (probability) **是该事件在无限次试验次数中的相对频率。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-09-18 / 11 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-09-16-RandStatistics1" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-1</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<h2 id="描述性统计量">描述性统计量</h2>
+<p>为了解决某个问题，我们通常会观察一组和该问题相关的样本，利用总体中的部分样本来推断总体的情况进而得到相关结论。在通过样本推断总体前，首先需用对已有样本数据进行简单的评估和描述，针对这一需求也就引出了<strong>描述统计量</strong>这一概念。进行描述性统计时，我们最关注数据两个层面的问题：数据的集中趋势和变异分散性。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-09-16 / 7 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">数据科学家的成长之路 [译]</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h1 id="数据科学家的成长之路">数据科学家的成长之路</h1>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608125838.png" alt=""></figure>
+<blockquote>
+<p>可能是最全面的数据科学入门文章，文中有大量资料和相关链接。<br>
+英文原文地址：<a href="http://blog.yhat.com/posts/become-a-data-scientist.html">Becoming a Data Scientist</a></p>
+</blockquote>
+<h2 id="数据科学技能">数据科学技能</h2>
+<p>数据科学家每天都会用到很多综合技能，其中的许多技能都是在工作或者其他时间自学的。他们并不需要具备某种特定的文凭，而是来自不同的背景。</p>
+<p>本文讨论的所有技能都可以自学。我们为此准备了一些资源让你可以沿着这条路走下去。而你则可以把这篇文章看成是数据科学家的培养指南。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-02-22 / 23 min read</div>
+    </div>
+  </section>
+
+        <div class="pagination-container animated fadeIn">
   
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+    <a href="https://kaopubear.top//tag/UrqlObNL0t//page/2/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+</div>
 
-</head>
-<body>
-  <div class="antialiased">
-    <div class="max-w-5xl mx-auto px-6 md:px-8">
-      <div class="flex justify-between items-center mt-10">
-  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
-    <a href="https://kaopubear.top/">思考问题的熊</a>
-  </h1>
-  <div class="block lg:hidden" id="thumb-menu">
-    <button id="thumb-open" type="button" class="block">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
-    </button>
-    <button id="thumb-close" type="button" class="hidden">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
-    </button>
-  </div>
-</div>
-<div id="nav-list" class="lg:block hidden">
-  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
-    <div class="lg:flex -mb-px">
-      
-        
-          <a href="/" class="nav-link">首页</a>
-        
-      
-        
-          <a href="/archives" class="nav-link">归档</a>
-        
-      
-        
-          <a href="/tags" class="nav-link">标签</a>
-        
-      
-        
-          <a href="/post/about" class="nav-link">关于</a>
-        
-      
-        
-          <a href="/post/resource" class="nav-link">资料</a>
-        
-      
-        
-          <a href="/post/project" class="nav-link">项目</a>
-        
-      
+      </div>
     </div>
-    <div class="lg:flex">
-      
-        
-          <a href="https://github.com/fei0810" class="block lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-            <div>GitHub</div>
-            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      <a href="https://kaopubear.top//atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-        <div>RSS</div>
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-      </a>
-    </div>
-  </div>
-</div>
-      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
-        <div class="w-full md:w-2/3">
-  <div class="mt-6 lg:mt-10 border-b border-gray-400">
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-10-01-RandStatistics6" class="hover:underline">统计学基础与 R-6</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-10-01</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>12 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-10-01-RandStatistics6">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-7c244168867174f2.png" alt="统计学基础与 R-6">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-10-01-RandStatistics5" class="hover:underline">统计学基础与 R-5</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-10-01</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>11 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-10-01-RandStatistics5">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png" alt="统计学基础与 R-5">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-09-28-RandStatistics4" class="hover:underline">统计学基础与 R-4</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-09-28</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>5 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-09-28-RandStatistics4">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-63bab4fdd6d4f072.png" alt="统计学基础与 R-4">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-09-27-RandStatistics3" class="hover:underline">统计学基础与 R-3</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-09-27</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-09-27-RandStatistics3">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b8c7502ca487d092.png" alt="统计学基础与 R-3">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-09-18-RandStatistics2" class="hover:underline">统计学基础与 R-2</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-09-18</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>11 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-09-18-RandStatistics2">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dfb3990e7db2d0da.png" alt="统计学基础与 R-2">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-09-16-RandStatistics1" class="hover:underline">统计学基础与 R-1</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-09-16</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>7 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-09-16-RandStatistics1">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png" alt="统计学基础与 R-1">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist" class="hover:underline">数据科学家的成长之路 [译]</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/UrqlObNL0t" class="hover:underline hover:text-gray-900">R</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-02-22</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>23 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-02-22-BecomingADataScientist">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" alt="数据科学家的成长之路 [译]">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-  </div>
-  <div class="mt-6 flex justify-between">
-    
-      <a href="https://kaopubear.top//tag/UrqlObNL0t//page/2/" class="pb-px text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" class="fill-current text-gray-900" /></svg>
-      </a>
-    
-    
-  </div>
-</div>
-        <div class="w-full md:w-1/3 md:pl-8">
-          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">当前标签</div>
-          <div>
-            <h1 class="text-2xl">R</h1>
-          </div>
-        </div>
-      </div>
-      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-</div>
-    </div>
-  </div>
-</body>
+
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>

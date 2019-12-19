@@ -1,462 +1,463 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title></title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<script src="https://kaopubear.top//media/script.js"></script>
+<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91022805-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            很高兴和你相遇<br>这里正在记录我的所思所学
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 1s">
+          项目
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="latest-article text-lg text-gray-700 mb-8">
+          <i class="remixicon-article-line"></i>
+          最新文章
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-aeb12c400111f4d4.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">『终极算法』摘抄笔记-符号学派</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="理性主义和经验主义">理性主义和经验主义</h2>
+<p>理性主义者认为，感官会欺骗人，而逻辑推理是通往知识的唯一可靠的道路。经验主义者认为所有推理都是不可靠的，知识必须来源于观察及实验。理性主义者喜欢在迈出第一步前，就提前规划好一切。经验主义者喜欢尝试新事物，然后看看结果会怎样。</p>
+<p>柏拉图是早期的理性主义者，而亚里士多德是早期的经验主义者。关于这个问题的辩论，真正开始于启蒙运动时期，每方有三位伟大的思想家：笛卡儿、斯宾诺莎、莱布尼茨是理性主义的代表，洛克、贝克莱、休谟则是经验主义的代表。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-02-17 / 14 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">『终极算法』摘抄笔记-五大算法概述</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="符号学派">符号学派</h2>
+<p>所有的信息都可以简化为操作符号，就像数学家那样，为了解方程，会用其他表达式来代替本来的表达式。符号学者明白你不能从零开始学习：除了数据，你还需要一些原始的知识。他们已经弄明白如何把先前存在的知识并入学习中，如何结合动态的知识来解决新问题。他们的主算法是逆向演绎，逆向演绎致力于弄明白为了使演绎进展顺利哪些知识被省略了，然后弄明白是什么让主算法变得越来越综合。</p>
+<h2 id="连结学派">连结学派</h2>
+<p>学习就是大脑所做的事情，因此我们要做的就是对大脑进行逆向演绎。大脑通过调整神经元之间连接的强度来进行学习，关键问题是找到哪些连接导致了误差，以及如何纠正这些误差。联结学派的主算法是反向传播学习算法，该算法将系统的输出与想要的结果相比较，然后连续一层一层地改变神经元之间的连接，目的是为了使输出的东西接近想要的东西。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-02-17 / 3 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm2" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fee365c777e0e2b9.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm2">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">『终极算法』摘抄笔记-算法和机器学习概述</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="什么是算法">什么是算法</h2>
+<p><strong>算法就是一系列指令，告诉计算机该做什么</strong>。计算机是由几十亿个微小开关（称为晶体管）组成的，而算法能在一秒内打开并关闭这些开关几十亿次。</p>
+<p>最简单的算法是触动开关。一个晶体管的状态就是一个比特信息：如果开关打开，信息就是 1；如果开关关闭，信息就是 0。</p>
+<p>第二简单的算法是：<strong>把两个比特结合起来</strong>。克劳德·香农以“信息论之父”而为人所知，他第一个意识到晶体管的活动就是在运算，因为晶体管开了又关，是对其他晶体管的回应。</p>
+<p>如果 A 晶体管只有在 B 和 C 晶体管都打开时才打开，那么这时它就是在做小型的逻辑运算。如果 A 晶体管在 B 和 C 晶体管其中一个打开时才打开，就是另外一种小型逻辑运算。如果 A 晶体管在 B 晶体管任何关闭的时候打开，或者反过来，这又是第三种运算。<strong>所有算法，无论多复杂，都能分解为这三种逻辑运算：且，或，非。</strong></p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-02-17 / 10 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm1" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-bc3c46a1618b0cd2.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm1">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">『终极算法』摘抄笔记-是否存在终极算法</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>## 同样的算法做不同的事情</p>
+<p><strong>朴素贝叶斯算法</strong>是一个可以用短方程来表达的学习算法。只要提供患者病历的数据库，包括病人症状、检查结果，或者他们是否有什么特殊情况，朴素贝叶斯算法就可在一秒之内做出诊断，而且往往比那些花几年在医学院学习的医生还要强。该算法还可应用于学习垃圾邮件过滤器，乍一看这和医疗诊断毫无关系。</p>
+<p><strong>最近邻算法</strong>的用途十分广泛，从笔迹识别到控制机器人手，以及推荐你可能喜欢的书籍或者电影。</p>
+<p><strong>决策树学习算法</strong>也同样擅长决定你的信用卡申请是否应被通过、寻找 DNA 中的绞接点，以及下棋时指导下一步该怎么走。</p>
+<p>在机器学习领域，如果提供适当的数据来让机器学习，那么相同的算法既可以处理信用卡申请，也可以下棋。实际上大量的机器学习应用仅仅由几个算法来负责。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-02-17 / 10 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-02-13-thegene-book" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-02-13-thegene-book">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">贯穿你我一生的基因之谜</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="无处不在的基因">无处不在的基因</h2>
+<p>选一个心情不错的时间，打开手中叫做「唾液采集器」的小管子吐进一些唾液，再把它寄给一家公司。几天后你就会收到一份复杂而详细的报告，这份报告里将记录你和上百项健康风险、几十项遗传性疾病是否有关，甚至还会帮你寻根溯源，告诉你有多少少数民族或东南亚的祖先。没错，得到这些结果需要的仅仅是你那 1ml 唾液加上口袋里的两三百块钱，而这项业务就是近两年国内愈发火爆的「消费级基因检测」。目前来看，基因检测似乎是帮你从根源上判断自己是否属于一个「少数派」略显极客的不错选择。</p>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d60fc674c1056edc.png" alt="基因检测项目 (WeGene 官网）"></figure>
+<p>2017 年 12 月 28 日，我国正式启动为期四年的「中国十万人基因组计划」，这是我国在人类基因组研究领域实施的首个国字号项目。在这之前，美国于 2016 年开始自己的精准医疗计划（Precision Medicine Initiative），其中有 1.3 亿美元预算用作 <a href="https://allofus.nih.gov/">百万基因组计划</a> 。如果再向前追溯，英国早在 2012 年就启动了  <a href="https://www.genomicsengland.co.uk/the-100000-genomes-project/">10 万人基因组项目</a> 。</p>
+<p>如果你是一个非常关注自我健康或者对新技术保持敏感的人，应该对上述基因检测的场景并不陌生或者它已经真切地在你身上发生过；如果你是一个爱看财经和科技新闻的人，国际诸如 <a href="https://www.23andme.com/">23andMe</a> 、国内诸如华大基因、贝瑞合康这类已经进入 A 股的基因产业相关公司也会时不时霸占你的头条。即便你不在上述两类人之列，每天只「关心粮食和蔬菜，希望面朝大海春暖花开」，也一定逃不掉转基因这个话题。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-02-13 / 21 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-01-18-justseeProbability" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-23079571ffd30e1b.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-01-18-justseeProbability">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">窥概率</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>概率论代表一种看待世界的方式，关注的焦点是可能性。**对随机事件发生的可能性进行规范的数学描述是概率论的公理化过程。**概率的公理化结构体现出的是对概率本质的认识。</p>
+<h2 id="贝叶斯定理">贝叶斯定理</h2>
+<p>从科学研究的方法论来看，贝叶斯定理提供了一种全新的逻辑。它根据观测结果寻找合理的假设，或者说根据观测数据寻找最佳的理论解释，其关注的焦点在于<strong>后验概率</strong>。<br>
+在贝叶斯学派眼中，概率描述的是随机事件的可信程度。如果手机里的天气预报应用给出明天下雨的概率是 85%，这就不能从频率的角度来解释，而是意味着明天下雨这个事件的可信度是 85%。</p>
+<p><strong>频率学派</strong>认为假设是客观存在且不会改变的，即存在固定的先验分布，只是作为观察者的我们无从知晓。因而在计算具体事件的概率时，要先确定概率分布的类型和参数，以此为基础进行概率推演。</p>
+<p>相比之下，<strong>贝叶斯</strong>学派则认为固定的先验分布是不存在的，参数本身也是随机数。换言之，<strong>假设本身取决于观察结果</strong>，是不确定并且可以修正的。数据的作用就是对假设做出不断的修正，使观察者对概率的主观认识更加接近客观实际。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-01-18 / 6 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-01-06-bayesian" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ab572707ebbe72a.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-01-06-bayesian">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">先验后验和贝叶斯</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="随机并不随机">随机并不随机</h2>
+<p>设想一个转盘游戏有红黑两种，且颜色各占一半。现在请你写下自己的预测结果。如果你配合可以此刻直接写到评论区，再来看文章后续内容。</p>
+<p>首先要说的一点是，转盘是否公平，你心里其实已经预先有了答案。</p>
+<p>曾有大量人参与过这一实验，5 次转动转轮产生的红、黑（R/B）颜色序列，一共有 32 种可能。由于每次转动转轮之后小球停在红色或黑色区域的概率相同，因此上述 32 种序列出现的概率也相同。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-01-06 / 9 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2018-01-05-pvalue" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c254aab681ac913c.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2018-01-05-pvalue">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">关于 P 值的几点问题</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <blockquote>
+<p>关于假设检验中的 P 值相关的文章和批评实在太多了。最近看大一本书中有提到了 P 值的部分，简单做个整理。</p>
+</blockquote>
+<h2 id="可能性极小和基本不可能有天壤之别">可能性极小和基本不可能有天壤之别</h2>
+<p>P 值的诞生伴随着假设检验，人们经常会把“可能性极小”理解成“基本不可能”，而且，“基本”一词的影响力越来越小，最终淡出人们的考虑范围。</p>
+<p>但是，“不可能”与“可能性极小”是不同的概念，两者的意思相去甚远。不可能的事情绝不会发生，而可能性极小的事件并不少见。这就意味着我们在根据可能性极小的观察结果进行推理时，由于受到归为不可能法的影响，会产生一种不可靠的逻辑立场。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2018-01-05 / 7 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-12-27-ladytasttea1" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-33496a060f7a76a8.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-12-27-ladytasttea1">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计世界的那些八卦 1</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <blockquote>
+<p>《女士品茶》读书笔记</p>
+</blockquote>
+<blockquote>
+<p>最近整理前一段时间看过的书，想了想先从《女士品茶》开始，正如这本书的自序所言，全书没有关于概率统计的抽象概念，但是却介绍了一些概率统计在各个领域的应用。这几篇系列文章将依托于《女士品茶》这本书，对概率统计世界的那些八卦做一些梳理。</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608125516.png" alt=""></figure>
+<h2 id="随机性-概率和统计">随机性 概率和统计</h2>
+<p>随机性，概率和统计这三个名词经常会同时出现，以至于很多人都会把它们混为一谈，其实这三个数学概念有着巨大的区别。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-12-28 / 8 min read</div>
+    </div>
+  </section>
+
+        <div class="read-more">
+          
+            <a href="https://kaopubear.top//page/11/" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">
+              阅读更多
+              <i class="remixicon-arrow-right-line"></i>
+            </a>
+          
+        </div>
+        <div class="index-page">
+          <div class="pagination-container animated fadeIn">
   
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+    <a href="https://kaopubear.top//page/9/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://kaopubear.top//page/11/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
 
-</head>
-<body>
-  <div class="antialiased">
-    <div class="max-w-5xl mx-auto px-6 md:px-8">
-      <div class="flex justify-between items-center mt-10">
-  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
-    <a href="https://kaopubear.top/">思考问题的熊</a>
-  </h1>
-  <div class="block lg:hidden" id="thumb-menu">
-    <button id="thumb-open" type="button" class="block">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
-    </button>
-    <button id="thumb-close" type="button" class="hidden">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
-    </button>
-  </div>
-</div>
-<div id="nav-list" class="lg:block hidden">
-  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
-    <div class="lg:flex -mb-px">
-      
-        
-          <a href="/" class="nav-link">首页</a>
-        
-      
-        
-          <a href="/archives" class="nav-link">归档</a>
-        
-      
-        
-          <a href="/tags" class="nav-link">标签</a>
-        
-      
-        
-          <a href="/post/about" class="nav-link">关于</a>
-        
-      
-        
-          <a href="/post/resource" class="nav-link">资料</a>
-        
-      
-        
-          <a href="/post/project" class="nav-link">项目</a>
-        
-      
+        </div>
+      </div>
     </div>
-    <div class="lg:flex">
-      
-        
-          <a href="https://github.com/fei0810" class="block lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-            <div>GitHub</div>
-            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      <a href="https://kaopubear.top//atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-        <div>RSS</div>
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-      </a>
-    </div>
-  </div>
-</div>
-      
-      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
-        <div class="w-full md:w-2/3">
-  <div class="mt-6 lg:mt-10 border-b border-gray-400">
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4" class="hover:underline">『终极算法』摘抄笔记-符号学派</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-02-17</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>14 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm4">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-aeb12c400111f4d4.jpg" alt="『终极算法』摘抄笔记-符号学派">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3" class="hover:underline">『终极算法』摘抄笔记-五大算法概述</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-02-17</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>3 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm3">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png" alt="『终极算法』摘抄笔记-五大算法概述">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm2" class="hover:underline">『终极算法』摘抄笔记-算法和机器学习概述</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-02-17</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>10 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm2">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fee365c777e0e2b9.jpg" alt="『终极算法』摘抄笔记-算法和机器学习概述">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm1" class="hover:underline">『终极算法』摘抄笔记-是否存在终极算法</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="hover:underline hover:text-gray-900">数据科学</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-02-17</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>10 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-02-17-TheMasterAlgorithm1">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-bc3c46a1618b0cd2.jpg" alt="『终极算法』摘抄笔记-是否存在终极算法">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-02-13-thegene-book" class="hover:underline">贯穿你我一生的基因之谜</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/DvI6ypPftI" class="hover:underline hover:text-gray-900">生物信息</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-02-13</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>21 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-02-13-thegene-book">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png" alt="贯穿你我一生的基因之谜">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-01-18-justseeProbability" class="hover:underline">窥概率</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Ud1JPVbW1rU" class="hover:underline hover:text-gray-900">统计</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-01-18</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>6 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-01-18-justseeProbability">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-23079571ffd30e1b.png" alt="窥概率">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-01-06-bayesian" class="hover:underline">先验后验和贝叶斯</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Ud1JPVbW1rU" class="hover:underline hover:text-gray-900">统计</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-01-06</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>9 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-01-06-bayesian">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ab572707ebbe72a.png" alt="先验后验和贝叶斯">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2018-01-05-pvalue" class="hover:underline">关于 P 值的几点问题</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Ud1JPVbW1rU" class="hover:underline hover:text-gray-900">统计</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2018-01-05</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>7 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2018-01-05-pvalue">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c254aab681ac913c.png" alt="关于 P 值的几点问题">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-12-27-ladytasttea1" class="hover:underline">统计世界的那些八卦 1</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Ud1JPVbW1rU" class="hover:underline hover:text-gray-900">统计</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-12-28</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>8 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-12-27-ladytasttea1">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-33496a060f7a76a8.png" alt="统计世界的那些八卦 1">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-  </div>
-  <div class="mt-6 flex justify-between">
-    
-      <a href="https://kaopubear.top//page/9/" class="pb-px text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" class="fill-current text-gray-900" /></svg>
-      </a>
-    
-    
-      <a href="https://kaopubear.top//page/11/" class="pb-px text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" class="fill-current text-gray-900" /></svg>
-      </a>
-    
-  </div>
-</div>
-        <div class="w-full md:w-1/3 md:pl-8">
-          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">标签云</div>
-          <div>
-            
-              <a href="https://kaopubear.top//tag/1BY38A9TE" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">编程</a>
-            
-              <a href="https://kaopubear.top//tag/UrqlObNL0t" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">R</a>
-            
-              <a href="https://kaopubear.top//tag/2mze5gMZQM" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">效率</a>
-            
-              <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">数据科学</a>
-            
-              <a href="https://kaopubear.top//tag/p7M9e5leM" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">RNA-seq</a>
-            
-              <a href="https://kaopubear.top//tag/DvI6ypPftI" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">生物信息</a>
-            
-              <a href="https://kaopubear.top//tag/EqrCpMmApu" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">文献</a>
-            
-              <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">VScode</a>
-            
-              <a href="https://kaopubear.top//tag/2IWlJgErkt" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">日常</a>
-            
-              <a href="https://kaopubear.top//tag/OLsY4LEszq" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">macOS</a>
-            
-              <a href="https://kaopubear.top//tag/v0Xcy0jQaT" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">linux</a>
-            
-              <a href="https://kaopubear.top//tag/pc7Sk2WlTJ" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">conda</a>
-            
-              <a href="https://kaopubear.top//tag/rOdXXBPjM4" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">Python</a>
-            
-              <a href="https://kaopubear.top//tag/l9yyfXVUxu" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">google</a>
-            
-              <a href="https://kaopubear.top//tag/SoFzwZsYls" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">读书</a>
-            
-              <a href="https://kaopubear.top//tag/nVbnso_EhL" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">shiny</a>
-            
-              <a href="https://kaopubear.top//tag/woFrWMXtsS" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">debug</a>
-            
-              <a href="https://kaopubear.top//tag/haFk19Ljigu" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">ggplot2</a>
-            
-              <a href="https://kaopubear.top//tag/MoSquIwnNqz" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">表观遗传</a>
-            
-              <a href="https://kaopubear.top//tag/VztzvYW0qtf" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">印象笔记</a>
-            
-              <a href="https://kaopubear.top//tag/Rn3TD5Cpatn" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">思考</a>
-            
-              <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">经济学</a>
-            
-              <a href="https://kaopubear.top//tag/CgpgIuLt1nJ" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">算法</a>
-            
-              <a href="https://kaopubear.top//tag/Ud1JPVbW1rU" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">统计</a>
-            
-              <a href="https://kaopubear.top//tag/JFowL4_oEpM" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">markdown</a>
-            
-              <a href="https://kaopubear.top//tag/GzsCQRADtBW" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">Docker</a>
-            
-              <a href="https://kaopubear.top//tag/P4GLM7-KRkk" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">机器学习</a>
-            
-              <a href="https://kaopubear.top//tag/QDJwk9EcZyr" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">考研</a>
-            
-              <a href="https://kaopubear.top//tag/_plfY8IQ43A" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">英语</a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-</div>
-    </div>
-  </div>
-</body>
+
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>

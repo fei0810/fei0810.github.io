@@ -1,464 +1,466 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title></title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<script src="https://kaopubear.top//media/script.js"></script>
+<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-91022805-1');
+</script>
+
+
+  </head>
+  <body>
+    <div class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            很高兴和你相遇<br>这里正在记录我的所思所学
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="remixicon-github-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 1s">
+          项目
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="latest-article text-lg text-gray-700 mb-8">
+          <i class="remixicon-article-line"></i>
+          最新文章
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-31-kaoyanfushi" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3824437be225f743.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-31-kaoyanfushi">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">关于考研复试你该了解的</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <blockquote>
+<p>对于通过初试的 16 考研人而言，从三月中旬开始就要陆续到报考院校参加复试。<br>
+最近有很多人问我研究生考试复试时有哪些注意事项，这里做一些提示。</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3a39fa0fd1f59b33.png" alt="考研复试"></figure>
+<p>####复试前</p>
+<ul>
+<li>和复试内容无关的部分</li>
+</ul>
+<p>我们相（jia）信（ding）绝大多数院校的复试招生工作都是公平公正的，但这也不意味着你可以等复试那天到了直接去复试就可以。<br>
+<strong>如果</strong>你是理工科类的考生，条件允许的话，你可以提前联系自己中意的老师，看看是否可以过去实习或者完成毕业设计。<br>
+<strong>如果</strong>在实习过程中表现良好进而得到老师的认可，那你复试时通过的可能性无形会增加（对于导师在复试中没什么发言权的学校这一点不成立，对于有众多老师面试且绝对公平的学校这一点不成立）。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-31 / 5 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-30-EnglishToolsios" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3fdceadd7a38f3dd.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-30-EnglishToolsios">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">非功利性英语学习工具推荐_iOS 版</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <p>一年前（<em>2016 年 2 月</em>），我曾经在简书发表过一篇文章 <a href="http://www.jianshu.com/p/0724c80bef3f#">《如何用英语打开一扇门 ——我的非功利英语学习法》</a>，里面比较详细又浅显地介绍了我对英语学习的一些理解，并介绍了一些所谓的“非功利性”英语学习工具。</p>
+<blockquote>
+<p>非功利的英语学习是指你暂时没有要应对某一具体英语考试的需求，仅是希望利用一些业余（零碎）时间学习英语。<br>
+这里的“非功利”并不等同于“无目的”，如果做一件事情没有目的就很难有做下去的动力。所以你不要说自己是为了学英语而学英语。<br>
+<strong>这种非功利的英语学习，其最大的目的就是给自己打开一扇门，可以去看看外面的世界，而这种目的是长期的也是有巨大吸引力的。</strong></p>
+</blockquote>
+<p>文章发布之后，获得了不少英语学习爱好者的喜欢和评论。</p>
+<p>当时写文章的时候用的是 <strong>Android</strong> 系统手机，所以介绍的工具都是基于 Android 系统来的。现在接近一年时间过去了，自己日常主力机也从 Android 变成了** iOS <strong>系统；另外自己日常的英语学习工具也经历了</strong>精简<strong>和</strong>升级**。所以，趁着过年休假再简单写些东西，给大家介绍几个目前我的手机和 iPad 里日常用到的英语学习工具。欢迎交流。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-30 / 9 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr20" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr20">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 20：我过去的 2015</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>写下这篇文章的标题时，我知道 2015 年的事情该告一段落，2016 年的奋斗又要开始了；当我看着正在整理的第三版《靠谱学长说》时，我告诉自己这篇文章别写太长。<br>
+因为回忆这个东西，你只需要留个线头露在外面，没必要偏得给它织件毛衣。以后自己再翻看这篇文章的时候能想起自己这一年大概都经历了什么，足够。</p>
+<p>这篇文章是“致 16 考研人”系列的最后一篇，但也可能是你看到的第一篇。如果说这一年来笔耕不辍的意义在哪里，我不在乎它究竟帮助了别人多少（<em>因为这要看机缘巧合</em>）， 更重要的是我比以往更能看清自己。如果说这一年来和考研人分享点点滴滴的意义在哪里，我想是感受到了彼此信任的力量，这种彼此间信任最大的好处是可以让人更加自信，咦，我也是这么想的，他能做到那我没理由不可以啊。虽然很多人说因为我他们或多或少地发生了一些改变，但是我一直以为这与我无关。如果一定要扯上一点儿关系，最多就是我说出了一些他们本来想说的话，而之后他们顺势做出了一些本来就想改变的改变。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 12 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr19" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr19">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 19：关于调剂</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>关于调剂和二战方面的问题，说实话我个人没有经验可谈，本打算保持安静的。因为你没经历过的事情有什么资格指指点点呢？<br>
+但是自 16 考研人考试结束之后，就总有人会问什么时候说说调剂和二战。关于调剂的问题，我身边有人经历过而且我也关注过一些，于是就有了这篇文章；关于二战，我身边二战的同学并不多，如果大家很想了解的话建议不妨咨询一下身边有二战经历的师兄师姐，我就不再专门就二战的问题胡扯了。</p>
+</blockquote>
+<p>这篇文章是我邀请一位靠谱并且有成功调剂经历的师姐所写，她报考一所 985 高校差几分，但顺利调剂到了另一所 985。只是前者在北京后者不再北京。</p>
+<p>就大家比较关心的问题，我向她进行了咨询。出于对原作者的尊重，我并未进行删改，只是把一点点自己的观点加在了文章的括号中。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 7 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr18" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155524.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr18">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 18：写在考研结束后</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>虽然明天我就有一门期末考试，还是没忍住陪了大伙两天。看到不少&quot;名师&quot;已经在为明年打广告，这是现实，而我却还是想和你说点什么。这篇小文送给你和你身边的研友，今后我们继续一起靠谱。加油。我去复习了，让我静静。以下为正文。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 8 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr17" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr17">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人17：考前提醒</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>本来计划最后五天每天发布一点考前提醒，一来是保持自己微博和微信的活跃度，二来是保持自己微博和微信的活跃度，三来是保持自己微博和微信的活跃度。我深感自己作为一个八千多粉丝的博主，每天刷微博煮鸡汤的频率过低，以至于除去早期的内容，这一年才发了不到一千条微博。<br>
+但考虑到去年考前十来天自己都处在断网状态，现在反而每天吊人胃口实在过意不去，干脆把能想到的考前提醒都写出来。你要是觉得不踏实，我不反对每天看一遍。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 7 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr16" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr16">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 16：剩下 20 天，Inner Peace</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>这篇小文无意于告诉你如何 20 天提高 50 分，而是想告诉你这 20 天如何过得踏实。<br>
+去年复习最后一个月我基本处于断网状态，如果现在你还能看到这篇小文，我希望你认真看的同时也尽量少受外界干扰。</p>
+<h2 id="正文">正文</h2>
+<p>10 个月、7 个月、5 个月、100 天、50 天，这些数字里面可能就有你的考研复习时间。<br>
+<strong>现在我们不回忆之前的日子你如何度过，只希望你把剩下这 20 天过好。</strong></p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 8 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr15" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr15">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 15：最后三个月该如何度过</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="写在前面">写在前面</h2>
+<p>本来想把标题写成《最后 97 天该如何度过》，但是具体到若干天的倒计时方法让人听起来略感残酷，还是改为三个月稍微温和一些。一开始没有写这篇小文的计划，想以两条微博代之。</p>
+<p>‌‌‌但微博发出后，有一些小伙伴在评论中对我提出了一些质疑和建议，认为问我还**“来不来得及”**的同学只是希望从我这里得到鼓励，如果我不说些好话他们就会消极复习，进而很可能考研失败……</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 13 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr14" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-01-26-tokyr14">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 14：政治复习的七问七答</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="政治报不报班">政治报不报班</h2>
+<p>**答：**我在政治复习的文章里写过，这里再简单说一下。<br>
+我想你问过的学姐学长肯定都告诉你政治是最好得分的，那么怎么高效率的复习就是一个很关键的问题。我去年没有报政治班，一是不想报一个视频班和人们挤在一起看大屏幕，二十不想浪费我的时间（固定时间坐在一个屋子里面听政治）。<br>
+但是政治涉及的科目和内容既多又杂，如果自己光恳书有时候又容易走神，似乎又需要一个人给你讲讲马原的那些原理，帮你串串史纲和毛中特的考点。于是我就发现了王一珉老师，政治复习的过程中听了他全部免费的考研基础强化和冲刺课程。<br>
+之所以跟着一个老师，也是出于效率的考虑。考研辅导机构政治多数是一个老师负责一门课程，每个人都觉的自己讲的内容重要。这么一来你跟着五个老师，在整个政治上投入的时间自然会无形增加（对这一问题，你也可以选择对这些课程有选择的听）。而跟着一个老师他能做到比较好的详略得当。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 7 min read</div>
+    </div>
+  </section>
+
+        <div class="read-more">
+          
+            <a href="https://kaopubear.top//page/18/" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">
+              阅读更多
+              <i class="remixicon-arrow-right-line"></i>
+            </a>
+          
+        </div>
+        <div class="index-page">
+          <div class="pagination-container animated fadeIn">
   
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+    <a href="https://kaopubear.top//page/16/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://kaopubear.top//page/18/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
 
-</head>
-<body>
-  <div class="antialiased">
-    <div class="max-w-5xl mx-auto px-6 md:px-8">
-      <div class="flex justify-between items-center mt-10">
-  <h1 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-900 font-medium md:font-normal leading-none">
-    <a href="https://kaopubear.top/">思考问题的熊</a>
-  </h1>
-  <div class="block lg:hidden" id="thumb-menu">
-    <button id="thumb-open" type="button" class="block">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6H22V7H2V6ZM2 12H22V13H2V12ZM22 18H2V19H22V18Z" class="fill-current text-gray-900"></path></svg>
-    </button>
-    <button id="thumb-close" type="button" class="hidden">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4L20 20M20 4L4 20" class="" stroke="#1A202C"></path></svg>
-    </button>
-  </div>
-</div>
-<div id="nav-list" class="lg:block hidden">
-  <div class="w-full block lg:flex lg:justify-between lg:border-b lg:border-gray-400 mt-10 text-gray-700 font-medium lg:text-lg">
-    <div class="lg:flex -mb-px">
-      
-        
-          <a href="/" class="nav-link">首页</a>
-        
-      
-        
-          <a href="/archives" class="nav-link">归档</a>
-        
-      
-        
-          <a href="/tags" class="nav-link">标签</a>
-        
-      
-        
-          <a href="/post/about" class="nav-link">关于</a>
-        
-      
-        
-          <a href="/post/resource" class="nav-link">资料</a>
-        
-      
-        
-          <a href="/post/project" class="nav-link">项目</a>
-        
-      
+        </div>
+      </div>
     </div>
-    <div class="lg:flex">
-      
-        
-          <a href="https://github.com/fei0810" class="block lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-            <div>GitHub</div>
-            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-          </a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      <a href="https://kaopubear.top//atom.xml" class="block mt-6 lg:mt-0 lg:ml-8 flex align-center hover:text-gray-900" target="_blank">
-        <div>RSS</div>
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-1 -mt-px"><path d="M16.5 13V18.5H6.5V8.5H12" stroke="#4A5568"></path> <path d="M10 15L18.5 6.5" stroke="#4A5568"></path> <path d="M14 6.5H18.5V11" stroke="#4A5568"></path></svg>
-      </a>
-    </div>
-  </div>
-</div>
-      
-      <div class="mb-20 md:flex mt-10 lg:mt-6 md:border-t md:border-gray-400 md:pt-2 lg:border-t-0 lg:pt-0">
-        <div class="w-full md:w-2/3">
-  <div class="mt-6 lg:mt-10 border-b border-gray-400">
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-31-kaoyanfushi" class="hover:underline">关于考研复试你该了解的</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/QDJwk9EcZyr" class="hover:underline hover:text-gray-900">考研</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-31</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>5 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-31-kaoyanfushi">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3824437be225f743.png" alt="关于考研复试你该了解的">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-30-EnglishToolsios" class="hover:underline">非功利性英语学习工具推荐_iOS 版</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/_plfY8IQ43A" class="hover:underline hover:text-gray-900">英语</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-30</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>9 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-30-EnglishToolsios">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3fdceadd7a38f3dd.png" alt="非功利性英语学习工具推荐_iOS 版">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr20" class="hover:underline">致考研人 20：我过去的 2015</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/2IWlJgErkt" class="hover:underline hover:text-gray-900">日常</a>
-                  
-                
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>12 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr20">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg" alt="致考研人 20：我过去的 2015">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr19" class="hover:underline">致考研人 19：关于调剂</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/QDJwk9EcZyr" class="hover:underline hover:text-gray-900">考研</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>7 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr19">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png" alt="致考研人 19：关于调剂">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr18" class="hover:underline">致考研人 18：写在考研结束后</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Rn3TD5Cpatn" class="hover:underline hover:text-gray-900">思考</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>8 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr18">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155524.jpg" alt="致考研人 18：写在考研结束后">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr17" class="hover:underline">致考研人17：考前提醒</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Rn3TD5Cpatn" class="hover:underline hover:text-gray-900">思考</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>7 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr17">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg" alt="致考研人17：考前提醒">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr16" class="hover:underline">致考研人 16：剩下 20 天，Inner Peace</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Rn3TD5Cpatn" class="hover:underline hover:text-gray-900">思考</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>8 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr16">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg" alt="致考研人 16：剩下 20 天，Inner Peace">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr15" class="hover:underline">致考研人 15：最后三个月该如何度过</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/Rn3TD5Cpatn" class="hover:underline hover:text-gray-900">思考</a>
-                  
-                
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>13 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr15">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" alt="致考研人 15：最后三个月该如何度过">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-      <div class="border-t border-gray-400 py-6 sm:py-8 lg:py-10">
-        <div class="md:flex items-center justify-between">
-          <div>
-            <h3 class="text-gray-900 sm:text-lg lg:text-xl">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr14" class="hover:underline">致考研人 14：政治复习的七问七答</a>
-            </h3>
-            <div class="flex flex-wrap text-gray-700 text-sm sm:text-base lg:text-lg mt-2 sm:mt-3 lg:mt-3">
-                
-                  
-                    <a href="https://kaopubear.top//tag/QDJwk9EcZyr" class="hover:underline hover:text-gray-900">考研</a>
-                  
-                
-              
-              <div class="mx-2 text-gray-500">•</div>
-              <div>2017-01-26</div>
-              <div class="mx-2 text-gray-500">•</div>
-              <div>7 min read</div>
-            </div>
-          </div>
-          
-            <div class="md:pl-2 mt-4 md:mt-0">
-              <a href="https://kaopubear.top//post/2017-01-26-tokyr14">
-                <img class="h-32 md:w-40 w-full object-cover rounded-sm" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg" alt="致考研人 14：政治复习的七问七答">
-              </a>
-            </div>
-          
-        </div>
-      </div>
-    
-  </div>
-  <div class="mt-6 flex justify-between">
-    
-      <a href="https://kaopubear.top//page/16/" class="pb-px text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z" class="fill-current text-gray-900" /></svg>
-      </a>
-    
-    
-      <a href="https://kaopubear.top//page/18/" class="pb-px text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" class="fill-current text-gray-900" /></svg>
-      </a>
-    
-  </div>
-</div>
-        <div class="w-full md:w-1/3 md:pl-8">
-          <div class="text-base font-thin text-gray-700 mb-2 mt-6 md:mt-8">标签云</div>
-          <div>
-            
-              <a href="https://kaopubear.top//tag/1BY38A9TE" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">编程</a>
-            
-              <a href="https://kaopubear.top//tag/UrqlObNL0t" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">R</a>
-            
-              <a href="https://kaopubear.top//tag/2mze5gMZQM" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">效率</a>
-            
-              <a href="https://kaopubear.top//tag/bPxOfgU9YC" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">数据科学</a>
-            
-              <a href="https://kaopubear.top//tag/p7M9e5leM" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">RNA-seq</a>
-            
-              <a href="https://kaopubear.top//tag/DvI6ypPftI" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">生物信息</a>
-            
-              <a href="https://kaopubear.top//tag/EqrCpMmApu" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">文献</a>
-            
-              <a href="https://kaopubear.top//tag/fMLJ4BbHmo" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">VScode</a>
-            
-              <a href="https://kaopubear.top//tag/2IWlJgErkt" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">日常</a>
-            
-              <a href="https://kaopubear.top//tag/OLsY4LEszq" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">macOS</a>
-            
-              <a href="https://kaopubear.top//tag/v0Xcy0jQaT" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">linux</a>
-            
-              <a href="https://kaopubear.top//tag/pc7Sk2WlTJ" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">conda</a>
-            
-              <a href="https://kaopubear.top//tag/rOdXXBPjM4" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">Python</a>
-            
-              <a href="https://kaopubear.top//tag/l9yyfXVUxu" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">google</a>
-            
-              <a href="https://kaopubear.top//tag/SoFzwZsYls" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">读书</a>
-            
-              <a href="https://kaopubear.top//tag/nVbnso_EhL" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">shiny</a>
-            
-              <a href="https://kaopubear.top//tag/woFrWMXtsS" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">debug</a>
-            
-              <a href="https://kaopubear.top//tag/haFk19Ljigu" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">ggplot2</a>
-            
-              <a href="https://kaopubear.top//tag/MoSquIwnNqz" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">表观遗传</a>
-            
-              <a href="https://kaopubear.top//tag/VztzvYW0qtf" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">印象笔记</a>
-            
-              <a href="https://kaopubear.top//tag/Rn3TD5Cpatn" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">思考</a>
-            
-              <a href="https://kaopubear.top//tag/kxFr8zWYmXr" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">经济学</a>
-            
-              <a href="https://kaopubear.top//tag/CgpgIuLt1nJ" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">算法</a>
-            
-              <a href="https://kaopubear.top//tag/Ud1JPVbW1rU" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">统计</a>
-            
-              <a href="https://kaopubear.top//tag/JFowL4_oEpM" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">markdown</a>
-            
-              <a href="https://kaopubear.top//tag/GzsCQRADtBW" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">Docker</a>
-            
-              <a href="https://kaopubear.top//tag/P4GLM7-KRkk" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">机器学习</a>
-            
-              <a href="https://kaopubear.top//tag/QDJwk9EcZyr" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">考研</a>
-            
-              <a href="https://kaopubear.top//tag/_plfY8IQ43A" class="py-1 px-4 border-gray-300 border text-sm inline-block text-gray-700 hover:text-gray-900 rounded mr-2 mb-2">英语</a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="footer border-gray-400 border-t pt-6 mt-6 sm:mt-8 md:mt-10 mb-20 text-gray-700 text-sm sm:text-base lg:text-lg">
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-</div>
-    </div>
-  </div>
-</body>
+
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>
