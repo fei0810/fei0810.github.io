@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -137,10 +137,10 @@
         
         <div class="post-content yue">
           <p>有两件事情，第一是前几天看到一个朋友分享了自己 <a href="https://www.jianshu.com/p/1fd4de1ba0b5">学习生物信息工具的经验</a>，借着这个机会刚好反思了一下自己过去几年是如何做的；第二是最近有人问了我一个问题：“使用 tophat 比对完的转录组数据 bam 文件想用 RNA-SeQC 来质控，但是这个软件好像没人维护了”（竟然还在用 tophat）。那这次就聊聊如何学习一个新的工具。</p>
+<!--more-->
 <h2 id="学会提炼需求">学会提炼需求</h2>
 <p>学习新工具有两种途径，一种是按需搜索一种是被动获取。被动获取还好，就是一般最新的杂志发表了什么平台推荐了什么就看什么。如果是按需搜索需要首先明白自己的需求是什么。</p>
 <p>举一个最简单的例子，如果你使用一个转录组拼接工具提示内存不够了不能正确运行。这个时候你的需求是什么，很自然会想到去找一款需要消耗内存更少的软件。然后找了另外两个软件，一测试一个效果非常不好另一个压根自己不会安装。卒。</p>
-<!--more-->
 <p>但如果换个角度分析一下自己的需求，你要做的可能是想办法去除 input 文件中那些只带了冗余信息的 reads，进而减小拼接工具所需要的内存。</p>
 <p><strong>做一件事情，总有前因后果。遇到问题除了盯住眼前的一点点内容，还要尽可能往前看一看向后想一想。</strong></p>
 <h2 id="搜索工具">搜索工具</h2>
@@ -177,7 +177,7 @@
 <figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
 
         </div>
 
@@ -212,6 +212,32 @@
           
         </div>
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '77b0e0937753a24c7510',
+    clientSecret: 'd312ec269767c6310a14f017359734b75a4dc4fc',
+    repo: 'fei0810.github.io',
+    owner: 'fei0810',
+    admin: ['fei0810'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
       </div>

@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -139,7 +139,7 @@
           2019-06-22 / 11 min read
         </div>
         
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003855.png" alt="">
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003855.png" alt="">
         
         <div class="post-content yue">
           <h2 id="hmmratac-a-hidden-markov-modeler-for-atac-seq">HMMRATAC: a Hidden Markov ModeleR for ATAC-seq</h2>
@@ -152,14 +152,14 @@
 <h3 id="参考意义">参考意义</h3>
 <p>ATAC-seq 作为一种定位染色质开放区域的手段目前应用已经非常广泛了，因为相对易于操作目前也应用到了单细胞领域。但是目前关于ATAC-seq的流程绝大多数都是按照 ChIP-seq 流程来处理的，call peak 方法十有八九使用的都是 MACS。</p>
 <p>ATAC-seq 利用了 Tn5 转座酶优先插入nucleosome-free regions（NFR）的特性，但是 Tn5 也有可能插入相邻核小体之间的连接区，此时其 DNA fragement 会更长（超过150bp）而且和相邻核小体的个数相关。针对双端测序数据，我们可以根据比对后的位置或插入长度来推断它们的片段长度。如果将 nucleosome free 和 mononucleosome 片段长都和频率的关系图展示出来，可以看出两者的分布不同。</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003250.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003250.png" alt=""></figure>
 <p>目前还没有工具可以同时考虑 ATAC-seq 中的 NFR 和核小体信息。而本文作者开发的分析工具 HMMRATAC 则采用了「分解和整合」的思路，首先把一套数据首先分解为来自于NFR 和核小体区域的不同覆盖信号层，然后在隐马尔可夫模型中学习开放染色质区域信号层之间的关系，并用于预测开放染色质。下图是一个整体的分析流程。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003328.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003328.png" alt=""></figure>
 <p>在文章中作者将这个工具和 MACS2 与 F-seq 进行了比较，HMMRATAC 在大多数测试中表现优于前两者。这个软件本身使用 Java 来实现的，目前作者也提到其处理速度相对较慢，是后续优化的一个重点。</p>
 <p>软件地址：https://github.com/LiuLabUB/HMMRATAC</p>
 <h3 id="相关内容">相关内容</h3>
 <p>顺式调控元件与反式作用因子相互作用组成了真核生物转录调控过程，这一过程与染色质核小体的动态定位相关，调控因子的结合需要裸露的无核小体的 DNA 区域，即开放的染色质位点（open chromatin）。从全基因组水平定位开放染色质位点有助于发掘基因组调控元件，进而研究基因表达调控机制。</p>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003855.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003855.png" alt=""></figure>
 <p>目前使用最多的两种方法是 DNase-seq 和 ATAC-seq。</p>
 <p>DNaseⅠ 超敏感位点 (DNase I hypersensitive sites, DHs) 测序使用限制性内切酶（DNase I）对样品进行了片段化处理。染色质开放区域的反式作用因子的结合将导致这些区域缺少核小体结构，染色质裸露、结构疏松，易于与 DNaseⅠ 结合并发生剪切 , 从而表现出对 DNaseⅠ 的高度敏感性。包括启动子、增强子、绝缘子和抑制因子等在内的多种基因调控元件均与 DHs 紧密关联。</p>
 <p>转座子虽然对于裸露 DNA 表现出随机插入的特性，但对于染色质而言应同样表现出偏好转座的特点，即优先在开放染色质区插入染色质。转座酶可接近性 (assay for transposase accessible chromatin, ATAC) 测序就是利用了这个特性。相比于 DHs 测序，ATAT 测序操作简单快捷，检测灵敏度高，实验重复性好的特点。细胞核起始量 DHs 测序是 ATAC 测序的 3~5 个数量级。</p>
@@ -171,7 +171,7 @@
 <p>计算方法基准分析的综述指南</p>
 <h3 id="参考意义-2">参考意义</h3>
 <p>作为一个生物信息「调包侠」，我们平时在分析数据的时候经常会面临一个问题，这几种计算方法我究竟选哪一个？根据不完全统计，目前用来分析单细胞RNA-seq的方法已经有400多种了，这里就带来了一个问题，选择不同的方法通常会带来不同甚至是很不同的结果，我们该如何选择。这篇文章作者总结了进行高质量基准分析（computational method benchmarking）的关键指南和建议。下图为指南内容的概括。</p>
-<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003631.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003631.png" alt=""></figure>
 <p>这上面十点要注意的指南中，首先是定义分析的目的和范围，比如有一类基准分析是有开发者本身使用的，他们的目的是证明自己方法的优势；也有通过系统比较一系列方法进行中立性评价分析的。中立的基准测试应该尽可能全面，同时测试也应该充分和原开发者沟通以便在最佳性能的前提下进行测试。在任何情况下都应该避免因为特别关注某一种方法带来的偏差。而针对新方法优点的评价应该仔细设计评价的标准，一个常见的问题是使用竞争方法的默认参数，然后不停的调整自己方法的参数。</p>
 <p>关于上述10个原则对于一个优秀基准的“多么重要”，以及与每个原则相关的关键和潜在问题，作者总结了如下一个表格；</p>
 <table>
@@ -256,9 +256,9 @@
 <p>除了P值还应该做点什么</p>
 <h3 id="参考意义-3">参考意义</h3>
 <p>这篇文章介绍了应该如何分析两组数据是否有显著性差异，除了 P 值，我们还应该展示些什么。</p>
-<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190623003700.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003700.png" alt=""></figure>
 <p>如上图所示，用星号标记的条形图仅显示均值和误差，掩盖了具体的观察值，箱形图同样不显示复杂属性（例如，双峰）和单个观察值。另外，条形图和箱形图都是只展示最终的P值计算结果但是没有展示 <a href="https://en.wikipedia.org/wiki/Null_distribution">null 分布</a>（H0 时样本的分布）本身。另外，可以使用每个数据具体的点图来展示数据。当然更好的方法就是使用坐着推荐的图 e。也就是采用估算统计的方法对数据进行展示（Estimation statistics），它使用熟悉的统计概念：均值，均值差（两个不同组中的平均值之间的绝对差异）和误差线。侧重于关注实验的效应值 ，而不是由P值产生的错误二分法。从图 e 可以看出其首先将所有数据点都以swarmplot的形式呈现，并且尽量展示原数据的分布。同时添加一个独立但是和原始坐标轴对应的坐标轴显示均值差和效应值。</p>
-<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190624104252.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190624104252.png" alt=""></figure>
 <h3 id="相关内容-3">相关内容</h3>
 <p>R 包地址：https://github.com/ACCLAB/dabestr</p>
 <h2 id="translig-a-de-novo-transcriptome-assembler-that-uses-line-graph-iteration">TransLiG: a de novo transcriptome assembler that uses line graph iteration</h2>
@@ -270,13 +270,13 @@
 <h3 id="参考意义-4">参考意义</h3>
 <p>TransLiG 是第一个通过phasing和收缩路径将双端测序信息和测序深度信息整合到从头组装的方法。通过评估，TransLiG 比已有的转录本从头组装工具在 accuracy  computing resources 都有很大的优势。</p>
 <p>使用 6 种比对方法在三种真实数据集中分析灵敏度 sensitivity</p>
-<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190624104310.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190624104310.png" alt=""></figure>
 <p>使用 6 种比对方法在三种真实数据集中分析精确度 precision</p>
-<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190624104417.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190624104417.png" alt=""></figure>
 <p>比较CPU time</p>
-<figure data-type="image" tabindex="9"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190624104335.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190624104335.png" alt=""></figure>
 <p>比较 RAM 使用情况</p>
-<figure data-type="image" tabindex="10"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190624104341.png" alt=""></figure>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190624104341.png" alt=""></figure>
 <p>作者也分析了TransLiG 具有优势的几个原因：</p>
 <ul>
 <li>Firstly, TransLiG constructs more accurate splicing graphs by reconnecting fragmented graphs via iterating different lengths of smaller k-mers.</li>
@@ -294,7 +294,7 @@ https://zenodo.org/record/2576226</p>
 <figure data-type="image" tabindex="11"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="12"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
 
         </div>
 
@@ -329,6 +329,32 @@ https://zenodo.org/record/2576226</p>
           
         </div>
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '77b0e0937753a24c7510',
+    clientSecret: 'd312ec269767c6310a14f017359734b75a4dc4fc',
+    repo: 'fei0810.github.io',
+    owner: 'fei0810',
+    admin: ['fei0810'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
       </div>

@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -144,14 +144,6 @@
         <blockquote>
 <p>想要做数据分析，一个配置说的过去的服务器必不可少，在自己的笔记本跑数据总有一些说不出的痛。如果能把实验室配备的高性能服务器搬回宿舍，就可以在宿舍里愉快地工作了。</p>
 </blockquote>
-<p>达成这一愿望一共只需要四步：</p>
-<ul>
-<li>下班后趁机潜入机房</li>
-<li>拔掉服务器电源，对服务器进行简单拆解</li>
-<li>低调地将服务器各零件搬回宿舍</li>
-<li>在宿舍对服务器进行组装并调试</li>
-</ul>
-<p>以上步骤实施过程中，如果出现意外概不负责！</p>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-12-21 / 5 min read</div>
@@ -159,6 +151,26 @@
   </section>
 
   <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top//post/2017-12-12-variant3annotation" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top//post/2017-12-12-variant3annotation">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">variant分析阶段小结3-对变异进行注释</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
+        <h2 id="variant-annotation">variant annotation</h2>
+<p>通过上面几步内容，我们找到了一些可信度相对高的突变位置，接下来一个很重要的内容就是对这些突变位点进行注释和功能预测。注释目前常用的工具有两种，一个是snpEFF，另一个是annovar。注释的思路也可以分为两类，一类是按照基因注释，另一类是按照位置注释。</p>
+
+      </div>
+      <div class="text-gray-400 text-sm font-light">2017-12-12 / 19 min read</div>
+    </div>
+  </section>
+
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
     
       <a href="https://kaopubear.top//post/2017-10-22-shellscript1" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
         <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b4f7314fa5a884ea.png'">
@@ -172,19 +184,13 @@
       <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="基本介绍">基本介绍</h2>
 <p>shell 脚本通常是一个以 shebang 起始的文本文件</p>
-<p><code>#!/bin/bash</code></p>
-<p>其中<code>#!</code>位于解释器路径之前。<code>/bin/bash</code>是 Bash 的解释器命令路径。</p>
-<p>还有一种常见的写法是<code>#!/bin/bash -ex</code>这里的<code>-e</code> 类似于在第二行写<code>set -e</code>其意义是<code>Exit immediately if a command exits with a non-zero status.</code> ；而<code>-x</code> 的意思是<code>Print commands and their arguments as they are executed.</code></p>
-<h3 id="终端打印">终端打印</h3>
-<p><strong>echo</strong></p>
-<p>echo 加或者不加单双引号都可以打印 echo 后面的内容，默认情况下 echo 在每次调用后会添加一个换行符。</p>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-22 / 12 min read</div>
     </div>
   </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
     
       <a href="https://kaopubear.top//post/2017-10-21-econote15" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
         <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png'">
@@ -197,36 +203,13 @@
       </a>
       <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="产权的兴起">产权的兴起</h2>
-<ul>
-<li>人类社会需要产权安排
-<ul>
-<li>外部性；人口的集聚</li>
-<li>权利的安排带来的好处足够大，才会关心怎样界定产权，行使产权</li>
-</ul>
-</li>
-<li>产权兴起动力之一：外部性
-<ul>
-<li>地理位置：打猎区域，三文鱼产权界定</li>
-<li>牛仔与铁丝网，美国西南部</li>
-</ul>
-</li>
-<li>产权兴起动力之二：人口集聚
-<ul>
-<li>铁路公司申请建立黄石公园</li>
-<li>人与人之间越来越紧密联系</li>
-<li>陌生人之间需要进行协调</li>
-</ul>
-</li>
-<li>人与人之间为了争夺猎物，产生了产权安排的需求</li>
-<li>人与人的集聚，陌生人之间的合作，产生了对产权和制度安排的需要</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-21 / 6 min read</div>
     </div>
   </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
     
       <a href="https://kaopubear.top//post/2017-10-21-econote14" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
         <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png'">
@@ -239,25 +222,13 @@
       </a>
       <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="权利有别于能力">权利有别于能力</h2>
-<ul>
-<li>权利有别于权力：权利是文明的产物</li>
-<li>权利的定义：权利是要由社会来保障实行的，是别人对你的认可，不是你自己认为有就有，是别人认为你有、别人愿意出来保护你行使的，那才叫权利。这是权利的特征，这是人类社会跟动物社会区别的地方。</li>
-<li>能力有别于权利
-<ul>
-<li>能力，Might</li>
-<li>权利，Right。</li>
-<li>在动物世界里面，你看到的只有能力，没有权利</li>
-<li>能力取决于自己能够占有多少，而权利取决于别人、社会的其他人愿意给你多少。</li>
-</ul>
-</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-21 / 5 min read</div>
     </div>
   </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
     
       <a href="https://kaopubear.top//post/2017-10-21-econote13" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
         <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png'">
@@ -270,45 +241,13 @@
       </a>
       <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="房价上涨好不好">房价上涨好不好</h2>
-<ul>
-<li>无论房价涨跌都不应该人为管制
-<ul>
-<li>北京的限购政策</li>
-<li>价格是现实的一个反映。反映的现实是多方面的</li>
-<li>仅仅按住价格，并不能改变价格所反映背后的现实</li>
-<li>好比你管不住温度，却非要去管温度计一样荒唐</li>
-</ul>
-</li>
-<li>房价上涨的正面因素
-<ul>
-<li>大城市房价上涨的原因是聚集：房子以外是更好的服务</li>
-<li>对大城市抱怨最多的就是生活在里面的人</li>
-<li>对美国人而言穷人和富人的区别在于位置：好的位置带来不同的人，经历和机会；重要的不是你是谁，而是你跟谁在一起。</li>
-<li>不要以为你非得有天大的本事，才能够在大城市里面立足</li>
-<li>人与人之间讲究的，不是你个人的本事有多大，而是你的本事跟别人的本事能不能相匹配，你们之间能不能够互相服务</li>
-</ul>
-</li>
-<li>人口集聚提高大城市的经济效率
-<ul>
-<li>城市化的进程还没有结束</li>
-<li>住房的需求就还会增加</li>
-<li>日本的 GDP 基本都来自三个大城市</li>
-</ul>
-</li>
-<li>房价上涨的负面因素
-<ul>
-<li>交易不灵活不频繁</li>
-<li>房屋容积率的限制太大</li>
-</ul>
-</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-21 / 6 min read</div>
     </div>
   </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
     
       <a href="https://kaopubear.top//post/2017-10-20-econote12" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
         <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png'">
@@ -321,23 +260,13 @@
       </a>
       <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="春运火车票价还不够高">春运火车票价还不够高</h2>
-<p>不承认火车票是商品属于鸵鸟心态：不管是否承认，火车票就是品，经济规律就会起作用。</p>
-<p>春节回家不是刚需：看似刚需的原因是交通成本近年来下降。</p>
-<p>黄牛党可以为社会节省无谓的损失</p>
-<ul>
-<li>黄牛为什么不把价格抬得再高一点</li>
-<li>之所以有黄牛就是因为价格不够高，进而展开价格意外的竞争——排队<br>
-人追求利润最大化——减少无谓损失（排队的时间）</li>
-<li>实名制让火车票价格更贵</li>
-<li>春节运力不可能做到毫不吃力</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-20 / 5 min read</div>
     </div>
   </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
     
       <a href="https://kaopubear.top//post/2017-10-20-econote11" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
         <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png'">
@@ -350,28 +279,13 @@
       </a>
       <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="世界上有哪些竞争规则">世界上有哪些竞争规则</h2>
-<ul>
-<li>暴力是非常重要和常见地竞争规则
-<ul>
-<li>失败的时候人们会谴责</li>
-<li>成功的时候会膜拜</li>
-<li>今天大量的经济资源和壁垒都是由国家机器在背后支撑</li>
-</ul>
-</li>
-<li>靠智力高低竞争资源：考试是一个重要的竞争方式</li>
-<li>以论资排辈界定产权</li>
-<li>按照社会身份分配财产：职业；官位</li>
-<li>按照劳动时间：先到先得与随机分配</li>
-<li>按需分配与价高者得</li>
-<li>规则不同禀赋不同的人机会不一样</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-20 / 4 min read</div>
     </div>
   </section>
 
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
     
       <a href="https://kaopubear.top//post/2017-10-15-whykeepwriting" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
         <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png'">
@@ -387,68 +301,9 @@
 <p>本文为生信技能树约稿，关于为什么要写作，为什么要坚持写。</p>
 </blockquote>
 <h2 id="我写作的经历">我写作的经历</h2>
-<hr>
-<p>最早和健明认识的契机就是因为写作，那个时候给他看了两样东西：</p>
-<ul>
-<li>8 篇 Circos 作图学习笔记</li>
-<li>自己写的书《靠谱学长说》(https://book.kaopubear.top/)</li>
-</ul>
-<p>称为书其实就是 2014 年底到 2015 年底大概一年时间我个人所写和考研相关的文章合集。</p>
-<p>一年时间写了 200,000 字，那本合集里有 20 篇致考研人系列文章，11 篇答研友问性质的随笔，50 篇英语新闻学习笔记。仅仅是我自己的百度云加密分享链接已经显示浏览下载超过了 10,000 次，还不算其它的转发借 (chao) 鉴 (xi) 以及在 GitBook 开源之后的访问。如果你恰好是 14 年之后的考研人，真还不排除听说过“一只思考问题的熊”或者“靠谱学长说”的可能。</p>
-<p>读研之后开始接触生物信息，写作重心也慢慢从自己的公众号转移到了技术型博客 (http://kaopubear.top)。目前博客已有（在更）的内容有统计学基础与 R 系列文章，Linux 学习系列文章，生物信息基础知识系列文章以及日常的各种实践心得和笔记。</p>
-<p>总之，写作这个事从大学开始就没再停下。</p>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-15 / 8 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top//post/2017-10-10-econote10" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-fbc669bda0d310b4.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top//post/2017-10-10-econote10">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">经济学周记 10-价格初探</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="经济是否可预测">经济是否可预测</h2>
-<p><strong>正方：可以对经济进行预测分析</strong></p>
-<ul>
-<li>来源于物理</li>
-<li>拉普拉斯假说</li>
-<li>测不准原理，原子预测随机</li>
-</ul>
-<p><strong>反方：人类社会，经济发展不可预测</strong></p>
-<ul>
-<li>人际之间的效用不可比较
-<ul>
-<li>每个人对不同商品有不同的偏好和个人估值</li>
-<li>个人的偏好无法横向比较<br>
-每个人对物品的效用可以比较，但是两个人之间不可以比较</li>
-<li>个人和企业有高度计划，但是社会无计划<br>
-对于整个社会各自的目标都不同</li>
-<li>计划经济不知道社会的总目标</li>
-</ul>
-</li>
-<li>数据不可得
-<ul>
-<li>个人不知道兴趣的真正排序</li>
-<li>凭什么告诉你</li>
-<li>别人可能误导你（测不准原理）：人口普查，统计的结果随着人们的预期而变化</li>
-<li>人会对自身的预测本身作出新的反应<br>
-预测什么会流行就会倒过来影响什么会流行</li>
-</ul>
-</li>
-<li>数据无法集中</li>
-<li>奖惩很难恰如其分</li>
-</ul>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-10-10 / 5 min read</div>
     </div>
   </section>
 

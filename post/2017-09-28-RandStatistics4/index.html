@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -125,10 +125,10 @@
         <div class="post-content yue">
           <h2 id="写在前面">写在前面</h2>
 <p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<!--more-->
 <h2 id="第四节-相关性分析">第四节 相关性分析</h2>
 <p>本节提到的相关性分析和后面会提到的 t-test, ANOVA 以及回归分析等被称为参数检验，这些检验在进行时我们常默认数据符合一定前提条件，如符合正态分布和方差相等等。当样本数量大于 30 时，根据中心极限定理，我们通常认为数据符合正态分布；在进行 t-test 和 ANOVA 分析时，还需要满足样本方差相等。</p>
 <p>在进行各种检验之前需要初步检验数据是否符合某种检验的前提条件，如果不符合则应该考虑使用非参数检验或其他方法。</p>
-<!--more-->
 <h3 id="正态分布评估">正态分布评估</h3>
 <p>在评估数据集是否符合正态分布时通常会采用** Shapiro-Wilk’s test <strong>和</strong>图示 (Q-Q plot) **结合的方法。使用 Q-Q plot(quantile-quantile plot) 的结果较直观，使用 Shapiro-Wilk’s test 显著性检验的方法更准确（相对而言）。</p>
 <p>Shapiro-Wilk’s test 结果受样本量的影响非常大，当样本量很大时即便数据符合正态分布也容易出现 p 值很小进而拒绝原假设的情况（该检验原假设是样本来自于正态分布）。样本量很小时即便真实数据不 s 是来自正态分布，也可能接受原假设。</p>
@@ -164,9 +164,9 @@ library(ggpubr)
 ggqqplot(z)
 
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4da7c71e080a6051.png" alt=""></figure>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-10a1b4a666a7639c.png" alt=""></figure>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-070396a40b05c2c7.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-4da7c71e080a6051.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-10a1b4a666a7639c.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-070396a40b05c2c7.png" alt=""></figure>
 <h3 id="相关性分析">相关性分析</h3>
 <p>**Pearson **相关系数、**Spearman **相关系数、**Kendall **相关系数都可以用来表示变量之间的相关性，一般情况使用 pearson 相关系数更多，如果明确样本不符合正态分布可以使用 kendall 或者 spearman 相关系数。这三种相关系数都可以通过<code>cor()</code>函数来进行计算，下面通过 R 已有数据集 cars，查看汽车车速和刹车距离之间的相关性。</p>
 <p>pearson 相关系数计算公式</p>
@@ -192,9 +192,9 @@ ggscatter(cars,x=&quot;speed&quot;, y=&quot;dist&quot;,\
 add = &quot;reg.line&quot;, conf.int = T,cor.coef = T)
 
 </code></pre>
-<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0a73ed3d2cebf25a.png" alt=""></figure>
-<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-54c56f6836e2f6cb.png" alt=""></figure>
-<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ced85e93c079709.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-0a73ed3d2cebf25a.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-54c56f6836e2f6cb.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-1ced85e93c079709.png" alt=""></figure>
 <h3 id="pearson-相关性检验">Pearson 相关性检验</h3>
 <p>前面我们只是计算了两个变量之间的相关性，还应该对相关进行显著性检验。原假设为变量之间没有相关性，使用函数为<code>cor.test()</code></p>
 <pre><code class="language-r">cor.test(cars$speed,cars$dist,\
@@ -206,7 +206,7 @@ alternative = &quot;two.side&quot;, method = &quot;pearson&quot;)
 <figure data-type="image" tabindex="7"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
 
         </div>
 
@@ -249,6 +249,32 @@ alternative = &quot;two.side&quot;, method = &quot;pearson&quot;)
           
         </div>
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '77b0e0937753a24c7510',
+    clientSecret: 'd312ec269767c6310a14f017359734b75a4dc4fc',
+    repo: 'fei0810.github.io',
+    owner: 'fei0810',
+    admin: ['fei0810'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
       </div>

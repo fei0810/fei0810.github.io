@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -123,10 +123,10 @@
         <div class="post-content yue">
           <h2 id="什么是算法">什么是算法</h2>
 <p><strong>算法就是一系列指令，告诉计算机该做什么</strong>。计算机是由几十亿个微小开关（称为晶体管）组成的，而算法能在一秒内打开并关闭这些开关几十亿次。</p>
+<!--more-->
 <p>最简单的算法是触动开关。一个晶体管的状态就是一个比特信息：如果开关打开，信息就是 1；如果开关关闭，信息就是 0。</p>
 <p>第二简单的算法是：<strong>把两个比特结合起来</strong>。克劳德·香农以“信息论之父”而为人所知，他第一个意识到晶体管的活动就是在运算，因为晶体管开了又关，是对其他晶体管的回应。</p>
 <p>如果 A 晶体管只有在 B 和 C 晶体管都打开时才打开，那么这时它就是在做小型的逻辑运算。如果 A 晶体管在 B 和 C 晶体管其中一个打开时才打开，就是另外一种小型逻辑运算。如果 A 晶体管在 B 晶体管任何关闭的时候打开，或者反过来，这又是第三种运算。<strong>所有算法，无论多复杂，都能分解为这三种逻辑运算：且，或，非。</strong></p>
-<!--more-->
 <p>一种算法不仅是简单的一套指令，这些指令必须精确且不能模糊，这样计算机才能够执行。我们平时用到的菜谱就不能称之为算法。</p>
 <p><strong>算法是一套严格的标准</strong>。人们常说，你没法真正了解某样东西，直到你能用一种算法来将其表达出来（理查德·费曼曾说，“如果我无法创造某样东西，那么也就无法理解它”）。</p>
 <p>设计算法这个过程充满陷阱，什么事都不能想当然。如果你的一些构建已经出错，就得找其他方法。设计算法最重要的一点就是用一种计算机能理解的语言来将算法记录下来，接下来对其进行纠错：找出每个误差并修正，直到计算机能够运行程序。</p>
@@ -177,7 +177,7 @@
 <figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
 
         </div>
 
@@ -216,6 +216,32 @@
           
         </div>
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '77b0e0937753a24c7510',
+    clientSecret: 'd312ec269767c6310a14f017359734b75a4dc4fc',
+    repo: 'fei0810.github.io',
+    owner: 'fei0810',
+    admin: ['fei0810'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
       </div>

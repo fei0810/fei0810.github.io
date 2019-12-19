@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -143,14 +143,6 @@
         <blockquote>
 <p>想要做数据分析，一个配置说的过去的服务器必不可少，在自己的笔记本跑数据总有一些说不出的痛。如果能把实验室配备的高性能服务器搬回宿舍，就可以在宿舍里愉快地工作了。</p>
 </blockquote>
-<p>达成这一愿望一共只需要四步：</p>
-<ul>
-<li>下班后趁机潜入机房</li>
-<li>拔掉服务器电源，对服务器进行简单拆解</li>
-<li>低调地将服务器各零件搬回宿舍</li>
-<li>在宿舍对服务器进行组装并调试</li>
-</ul>
-<p>以上步骤实施过程中，如果出现意外概不负责！</p>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-12-21 / 5 min read</div>
@@ -171,12 +163,6 @@
       <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="基本介绍">基本介绍</h2>
 <p>shell 脚本通常是一个以 shebang 起始的文本文件</p>
-<p><code>#!/bin/bash</code></p>
-<p>其中<code>#!</code>位于解释器路径之前。<code>/bin/bash</code>是 Bash 的解释器命令路径。</p>
-<p>还有一种常见的写法是<code>#!/bin/bash -ex</code>这里的<code>-e</code> 类似于在第二行写<code>set -e</code>其意义是<code>Exit immediately if a command exits with a non-zero status.</code> ；而<code>-x</code> 的意思是<code>Print commands and their arguments as they are executed.</code></p>
-<h3 id="终端打印">终端打印</h3>
-<p><strong>echo</strong></p>
-<p>echo 加或者不加单双引号都可以打印 echo 后面的内容，默认情况下 echo 在每次调用后会添加一个换行符。</p>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-10-22 / 12 min read</div>
@@ -198,8 +184,6 @@
         <blockquote>
 <p>说明；写 <strong>Linux Command Line 学习笔记</strong> 系列文章本意只是记录自己学习 <strong>《Linux Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的原版书，所以有些地方中英混杂。更详细地学习建议去阅读原书即可。</p>
 </blockquote>
-<h2 id="searching-for-files-文件查找">Searching For Files 文件查找</h2>
-<p>linux 倡导所谓的一切皆文件，那我们怎么在系统中查找到自己想要的文件呢。</p>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-09-22 / 6 min read</div>
@@ -221,22 +205,6 @@
         <blockquote>
 <p>说明；写 <strong>Linux Command Line 学习笔记</strong>系列文章本意只是记录自己学习 <strong>《Linux Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的原版书，所以有些地方中英混杂。更详细地学习建议去阅读原书即可。</p>
 </blockquote>
-<h2 id="the-environment">The Environment</h2>
-<ul>
-<li>
-<p>shell 会话中维护着大量的信息称为环境</p>
-</li>
-<li>
-<p>查看环境变量<br>
-<code>printenv</code> 或者 <code>printenv USER</code><br>
-<code>set |less</code> 按照字母顺序显示<br>
-<code>echo $HOME</code></p>
-</li>
-<li>
-<p>别名不能用上述方法查看<br>
-<code>alias</code></p>
-</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-09-14 / 7 min read</div>
@@ -258,23 +226,6 @@
         <blockquote>
 <p>说明；写<strong>Linux Command Line 学习笔记</strong>系列文章本意<strong>只是</strong>记录自己学习 <strong>《Linux  Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的是原版书，所以很多地方中英混杂。更详细地学习建议去阅读原书即可。</p>
 </blockquote>
-<h2 id="advanced-keyboard-tricks">Advanced Keyboard Tricks</h2>
-<ul>
-<li>
-<p>建议调换大写键和ctrl的映射关系</p>
-</li>
-<li>
-<p>光标瞬间移动</p>
-<pre><code>Ctrl-a 移动光标到行首
-Ctrl-e 移动光标到行尾
-Ctrl-f 光标前移一个字符；和右箭头作用一样
-Ctrl-b 光标后移一个字符；和左箭头作用一样
-Alt-f 光标前移一个字
-Alt-b 光标后移一个字
-Ctrl-l 清空屏幕
-</code></pre>
-</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-09-10 / 8 min read</div>
@@ -296,19 +247,6 @@ Ctrl-l 清空屏幕
         <blockquote>
 <p>说明；写<strong>Linux Command Line 学习笔记</strong>系列文章本意<strong>只是</strong>记录自己学习 <strong>《Linux  Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的是原版书，所以很多地方中英混杂。更详细地学习建议去阅读原书即可。</p>
 </blockquote>
-<h2 id="working-with-commands">Working With Commands</h2>
-<ul>
-<li>
-<p>查看命令类型 <code>type</code></p>
-<p>命令有四种可能的形式：</p>
-<ol>
-<li>可执行程序，可以编译成二进制文件，诸如用 C 和 C++ 语言写成的程序，也可以是由脚本语言写成的程序，比如说 shell，perl，python 等等</li>
-<li>内建于 shell 自身的命令，如 ls</li>
-<li>shell 函数</li>
-<li>命令别名</li>
-</ol>
-</li>
-</ul>
 
       </div>
       <div class="text-gray-400 text-sm font-light">2017-09-09 / 10 min read</div>
@@ -329,16 +267,6 @@ Ctrl-l 清空屏幕
       <div class="post-abstract text-gray-700 font-light my-4">
         <blockquote>
 <p>说明；写 <strong>Linux Command Line 学习笔记</strong>系列文章本意<strong>只是</strong>记录自己学习 <strong>《Linux  Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的是原版书，所以很多地方中英混杂。更详细地学习建议去阅读原书即可。</p>
-</blockquote>
-<p>关于为什么应该学习 linux 或者说 ubuntn，因为 ubuntn 的中文名字叫做“有盼头”，学了它，你才真正有可能成为计算机的主人，才可能自由地使用你的电脑。</p>
-<p>所谓自由，解释如下：</p>
-<blockquote>
-<p>Freedom is the power to decide what your computer does, and the only way to have this freedom is to know what your computer is doing. Freedom is a computer that is without secrets, one where everything can be known if you care enough to find out.</p>
-</blockquote>
-<p>关于为什么要学习命令行操作而非使用图形界面，解释如下：</p>
-<blockquote>
-<p>graphical user interfaces make easy tasks easy, while command line interfaces make difficult tasks possible<br>
-图形用户界面让简单的任务更容易完成，而命令行界面使完成复杂的任务成为可能。</p>
 </blockquote>
 
       </div>

@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -124,9 +124,9 @@
         <div class="post-content yue">
           <h2 id="写在前面">写在前面</h2>
 <p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
+<!--more-->
 <h2 id="描述性统计量">描述性统计量</h2>
 <p>为了解决某个问题，我们通常会观察一组和该问题相关的样本，利用总体中的部分样本来推断总体的情况进而得到相关结论。在通过样本推断总体前，首先需用对已有样本数据进行简单的评估和描述，针对这一需求也就引出了<strong>描述统计量</strong>这一概念。进行描述性统计时，我们最关注数据两个层面的问题：数据的集中趋势和变异分散性。</p>
-<!--more-->
 <h3 id="数据的集中趋势">数据的集中趋势</h3>
 <p>面对少则几十多则上千个数字，第一步通常是观察平均水平。下面介绍三个计算数据平均水平的概念：分别是均值 (mean)、中位数 (median) 和众数 (mode)。</p>
 <p><strong>均值</strong>：所有观察值的和除以观察的个数。算数平均是最自然和常用的测度，其问题在于对异常值 (outliers) 非常敏感。有极端值存在时，均值不能代表样本的绝大多数情况。</p>
@@ -166,23 +166,23 @@ boxplot(iris$Sepal.Length)
 
 # 使用箱线图展示某一列数据的分布情况
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-83710dc3bce4e961.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-83710dc3bce4e961.png" alt=""></figure>
 <pre><code class="language-r">hist(iris$Sepal.Length)
 
 # 使用直方图展示某一列数据的分布情况
 
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-078cba25e1f4b3f1.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-078cba25e1f4b3f1.png" alt=""></figure>
 <pre><code class="language-r">plot(ecdf(iris$Sepal.Length))
 
 # 绘制简单的累积分布函数图展示某一列数据分布情况
 </code></pre>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d34a056f4fe477d3.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d34a056f4fe477d3.png" alt=""></figure>
 <hr>
 <figure data-type="image" tabindex="4"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
 
         </div>
 
@@ -225,6 +225,32 @@ boxplot(iris$Sepal.Length)
           
         </div>
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '77b0e0937753a24c7510',
+    clientSecret: 'd312ec269767c6310a14f017359734b75a4dc4fc',
+    repo: 'fei0810.github.io',
+    owner: 'fei0810',
+    admin: ['fei0810'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
       </div>

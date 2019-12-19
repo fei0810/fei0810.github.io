@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576755582215">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576760678039">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576755582215" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576760678039" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -155,19 +155,19 @@
           <blockquote>
 <p>前几天看到 <em>Briefings in bioinformatics</em> 发了一篇 <a href="https://doi.org/10.1093/bib/bby063">文章</a> 介绍生物信息学发展历史。个人有两个感慨，一是这样的文章也可以发表（不禁想给自己的博客投稿），二是感慨生物信息学发展之快。对整篇文章进行了粗糙的翻译整理，供大家了解。</p>
 </blockquote>
+<!--more-->
 <h2 id="起源1950-1970">起源：1950-1970</h2>
 <p>20 世纪 50 年代早期，DNA 的历史地位还没有被建立，那个时候人们普遍认为蛋白质才是遗传信息的载体。直到 1952 年的噬菌体感染实验，人们才第一次证明 DNA 是真正的遗传物质。因为这个历史原因，生物信息学在 DNA 中的应用要落后于蛋白质研究将近 20 年时间。</p>
-<!--more-->
 <h3 id="生物信息从蛋白质研究开始">生物信息从蛋白质研究开始</h3>
 <p>50 年代后期，人们得到了胰岛素的蛋白质序列，这一成就激励人们去开发获得蛋白质序列更有效的方法。Edman 降解法就是其中之一，肽链的第一个 N-末端氨基酸用异硫氰酸苯酯（PITC）标记，然后通过降低 pH 来进行切割。通过重复该过程，一次一个 N-末端氨基酸进而可以确定肽序列。</p>
-<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124523.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124523.png" alt=""></figure>
 <h3 id="第一位生物信息学家">第一位生物信息学家</h3>
 <p>Margaret Dayhoff（1925-1983）是一位美国物理化学家，他开创了计算方法在生物化学领域的应用。Dayhoff 对这一领域的贡献非常重要，NCBI 前主任 David J. Lipman 称她为”生物信息学的母亲和父亲” 。1960 年，她成为国家生物医学资源基金会的副主任。与 Robert S. Ledley  一起开发出了第一个生物信息学软件：<strong>COMPORTEIN</strong> , 用于使用 Edman 测序数据确定蛋白质的一级结构，使用 fortran 语言开发并运行在打孔卡上，完全运行在这个软件运行在 IBM 7090 大型机上，如下图 A 所示。</p>
-<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124549.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124549.png" alt=""></figure>
 <p>在 COMPROTEIN 软件中，输入和输出氨基酸序列以三个字母的缩写表示（例如赖氨酸的 Lys，丝氨酸的 Ser）。为了简化蛋白质序列数据的处理，Dayhoff 后来开发了目前仍在使用的单字母氨基酸代码。这个单字母代码最初用于 Dayhoff 和 Eck 的 1965 年<em>蛋白质序列和结构图谱</em>，而它是有史以来第一个生物序列数据库。第一版包含 65 种蛋白质序列，其中大部分是少数蛋白质的种间变异。</p>
 <h3 id="计算机算法的出现">计算机算法的出现</h3>
 <p>1970 年，Needleman 和 Wunsch 开发了第一个成对蛋白质序列比对的动态编程算法，80 年代早期，做为 Needleman-Wunsch 算法的推广，第一个多序列比对（MSA）算法首次公布，但是这个算法并没有太大的价值，因为其时间复杂度是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>L</mi><mi>N</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(L^N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913309999999998em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8413309999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，L 代表序列长度，N 代表序列数量。找到最佳比对的时间与序列长度的序列数量次幂成正比。</p>
-<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124559.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124559.png" alt=""></figure>
 <p>多序列比对第一个真正成熟的算法由 Da-Fei Feng 和 Russell F. Doolitle 于 1987 年开发，流行的 MSA 软件 CLUSTAL 开发于 1988 年，作为 Feng-Doolittle 算法的简化至今仍在使用和维护。</p>
 <p>##蛋白质到 DNA: 1970-1980</p>
 <p>1968 年，64 个密码子都被解析出来，DNA 成为可读信息后要求我们能都快速获得 DNA 序列。</p>
@@ -191,10 +191,10 @@
 <p>基因克隆和 PCR 现在常用于 DNA 文库制备，这对于获得序列数据至关重要。20 世纪 70 年代后期 DNA 测序的出现，以及增强的 DNA 操作技术，已经产生了越来越多的可用序列数据。与此同时，20 世纪 80 年代，人们开始越来越多地使用计算机和相关生物信息学软件。</p>
 <h3 id="使用计算机和专用软件">使用计算机和专用软件</h3>
 <p>在 20 世纪 70 年代之前， 所谓的“小型计算机”仍然相当于一台小型家用冰箱的尺寸和重量（如下图所示），而且还不包括终端和存储单元。这样的体积限制使得个人或小型工作组的计算机购置变得异常繁琐。而且使用起来也异常的不友好。</p>
-<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124614.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124614.png" alt=""></figure>
 <p>第一波即用微型计算机于 1977 年进入消费市场。这一波浪潮出现的首批计算机包括三种型号：Commodore PET，Apple II 和 Tandy TRS-80，在比试，它们代表着体积小，价格低廉和用户友好。这三种计算机都具有一个内置的 BASIC 解释器，这 对于非程序员而言是一种简单的语言。</p>
 <p>生物学计算机软件亦开始迅速发展。1984 年，威斯康星大学遗传学计算机课题组 (Genetics Computer Group) 发表了与他们同名的“GCG”软件合集。GCG 软件包是包括 33 个命令行工具的集合，可以用于操作 DNA，RNA 或蛋白质序列。要记住，这是为序列分析开发的第一个软件集合。</p>
-<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124621.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124621.png" alt=""></figure>
 <h3 id="生物信息学和自由软件运动">生物信息学和自由软件运动</h3>
 <p>1985 年，Richard Stallman 发表了 GNU 宣言，概述了他创建名为 GNU（基于 Unix）免费操作系统的动机。这一运动后来成长为自由软件基金会 ( Free Software Foundation )，该基金会倡导”用户可以自由运行，复制，分发，研究，改变和改进软件”的理念。 Stallman 倡导的自由软件哲学是生物信息学的若干倡议的核心，其它的倡议还包括如欧洲分子生物学开放软件套件，其发展始于 1996 年，作为自由和开放源码用来替代 GCG。</p>
 <p>最重要的是，在此期间欧洲分子生物学实验室（EMBL），GenBank 和日本 DNA 数据库（DDBJ）开始联合起来（1986 年 EMBL 和 GenBank 加入，1987 年 DDBJ 加入）。为了规范化数据格式定义了报告核苷酸序列的最简信息，并促进数据库之间数据共享。</p>
@@ -210,9 +210,9 @@
 <h3 id="基因组学时代的黎明">基因组学时代的黎明</h3>
 <p>首个全基因组测序项目是 1995 年由遗传学家 J. Craig Venter 领导的对流感嗜血杆菌进行的测序，然而正如我们所知道的那样，开始基因组时代的真正转折点是人类基因组在 21 世纪初的正式公布。</p>
 <p>人类基因组计划于 1991 年由美国国立卫生研究院（NIH）发起，13 年内耗费 27 亿美元。1998 年，Celera Genomics（一家由 Venter 运营的生物技术公司）领导了一项竞争性私人形式的人类基因组测序组装项目。最终 Celera 支持的该计划用 NIH 项目花费的十分之一成功完成人类基因组进行了测序和组装。两者成本之间的 10 倍差异主要是由于不同的实验策略和 Celera 项目使用了部分 NIH 的数据。</p>
-<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124645.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124645.png" alt=""></figure>
 <p>尽管科学界正在经历一段非常激动的时期，但全基因组测序仍需要数百万美元和数年才能完成，甚至对于细菌基因组也是如此。相比之下，如今进行一个人类基因组测序只需花费 1000 美元和不到一周的时间。这种巨大的差异并不令人惊讶，那时即使存在各种文库制备方案，但测序的 reads 仍然要使用 Sanger 毛细管测序仪产生（如下图所示）。最大的测序量也不过是每个 run 产生 96 个长度 800 bp 的 reads，这比二代测序仪要低几个数量级。对人类基因组进行测序（3.0 Gbp）需要大约 40 000 个 runs 才能得到一倍的覆盖率。</p>
-<figure data-type="image" tabindex="7"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124649.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124649.png" alt=""></figure>
 <p>除了费力的实验程序外，科学家还必须设计专门的软件来应对这种前所未有的数据量。几个早先基于 Perl 的软件就是在 20 世纪 90 年代中后期开发用于组装全基因组测序 reads 的，比如：PHRAP，Celera Assembler，TIGR Assembler，MIRA，EULER 等等。</p>
 <p>基因组学时代的早期，20 世纪 90 年代初出现全球化的信息网络扮演者另一个重要角色。正是通过这个网络，NIH 资助的人类基因组测序项目可以公开其数据。很快，这个网络将在科学界无处不在，特别是在数据和软件共享方面。</p>
 <h3 id="生物信息学在线">生物信息学在线</h3>
@@ -228,7 +228,7 @@
 <p>事实上现在有太多的工具以至于很难选择究竟应该用什么。如果这种趋势持续下去，不同团队比较彼此研究结果和重复其他研究组的结果将变得越来越困难。此外，转换到更新和（或）不同的生物信息学工具也都需要额外的培训和测试，这使得研究人员通常不愿放弃他们熟悉的软件。因此必须通过降低计算时间或显着提高质量的结果来证明新工具值得掌握。不过随着公共数据库中存储的生物数据的指数级增加，可用工具的数量增加也相形见绌。</p>
 <h3 id="生物大数据">生物大数据</h3>
 <p>自 2008 年以来，摩尔定律不再是 DNA 测序成本的准确预测因子，因为它们在大规模并行测序技术（https://www.genome.gov/sequencingcosts/）到来后下降了几个数量级。这导致公共数据库（如 GenBank 和 WGS ）中的序列呈指数增长（如下图所示），引发了人们对大数据问题的进一步关注。事实上，科学界现在已经产生了超过 exabyte（10 的 18 次方）的数据。</p>
-<figure data-type="image" tabindex="8"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190608124655.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608124655.png" alt=""></figure>
 <h3 id="高性能生物信息学和协作计算">高性能生物信息学和协作计算</h3>
 <p>生物信息学项目的繁荣加上数据量呈指数增长需要资助机构逐渐适应。对于绝大多数科学研究，生物信息学项目当然也需要资源。虽然在某些情况下简单的台式机就足够了，但一些项目需要更加强大、昂贵且需要特殊专业知识的基础设施。一些政府资助的专门从事高性能计算的资源已经出现，例如：</p>
 <ul>
@@ -270,7 +270,7 @@
 <figure data-type="image" tabindex="9"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="10"><img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
 
         </div>
 
@@ -305,6 +305,32 @@
           
         </div>
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '77b0e0937753a24c7510',
+    clientSecret: 'd312ec269767c6310a14f017359734b75a4dc4fc',
+    repo: 'fei0810.github.io',
+    owner: 'fei0810',
+    admin: ['fei0810'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
       </div>
