@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576761989053">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576818720715">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576761989053" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576818720715" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -87,20 +87,20 @@
       
     
       
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
           资料
         </a>
       
     
       
-        <a href="/post/project" class="menu" style="animation-delay: 1s">
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
           项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
         </a>
       
     
@@ -128,7 +128,7 @@
 <p>在上一节讨论了单样本和双样本均值比较的几种情况，但是很多实验不仅仅有两组样本。进行多组样本之间的均值比较就需要进行<strong>单因素方差分析</strong> (one-way analysis of variancd) 和<strong>双因素方差分析</strong> (two-way analysis of variancd)</p>
 <h3 id="one-way-anova">one-way ANOVA</h3>
 <p>在单因素方差分析模型中样本的组数是任意的但是要求样本之间相互独立，每一组的观测值符合正态分布的同时方差相等，目的是比较每个组的均值。原假设是各组间均值相等（观察的差异有随机误差构成），备择假设是至少有一组和其他组均值不同。数据的变异通常来自于组内部的变异和组间真是变异，其中组内变异一方面由个体差异导致，一方面由实验误差导致，而组间变异则是由不同的处理（因子）导致。如果通过计算，非系统性的变异（组内误差）远大于由不同处理造成的变异（组间变异）如下图 b 所示，则接受原假设，反之则拒绝原假设，如下图 a 所示。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-c1544d981ad74c85.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-c1544d981ad74c85.png" alt="" loading="lazy"></figure>
 <p>其中组间平均平方和=组间 MS=BetweenSS/(k-1)，k-1 为组间自由度，组内平局平方和=组内 MS=WithinSS/(n-k)，n-k 为组内自由度，显著性检验建立在组间平均平方和与组内平均平方和的比值上，且该比值为 F 分布，自由度为 k-1, n-k。</p>
 <p>具体到 R 中，使用 R 中的 PlantGrowth 数据集举例。该数据有两个实验组和一个对照组，数据的整体情况上文已经统计过，下面通过 box plot 进行形象化展示（使用前文提到过的 ggpubr 包）。</p>
 <pre><code class="language-r">library(ggpubr)
@@ -143,8 +143,8 @@ ggline(PlantGrowth, x = &quot;group&quot;, y = &quot;weight&quot;,
        ylab = &quot;Weight&quot;, xlab = &quot;Treatment&quot;)
 
 </code></pre>
-<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-5ab69a78ac24f29b.png" alt=""></figure>
-<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-9ebb1f38e5ad97ac.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-5ab69a78ac24f29b.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-9ebb1f38e5ad97ac.png" alt="" loading="lazy"></figure>
 <p>检测正态分布和<strong>方差齐性</strong></p>
 <pre><code class="language-r">#检验方差齐性方法一
 bartlett.test(weight ~ group, data=PlantGrowth)
@@ -220,7 +220,7 @@ summary(pg.aov)
 
 plot(TukeyHSD(pg.aov))
 </code></pre>
-<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d59cdb3d5e020ad9.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d59cdb3d5e020ad9.png" alt="" loading="lazy"></figure>
 <ol start="3">
 <li><strong>multcomp 包 glht()</strong></li>
 </ol>
@@ -326,10 +326,10 @@ ggboxplot(tg, x = &quot;dose&quot;, y = &quot;len&quot;, color = &quot;supp&quot
 ggboxplot(tg, x = &quot;supp&quot;, y = &quot;len&quot;, color = &quot;dose&quot;,
           palette = c(&quot;#2072b8&quot;, &quot;#ff6a38&quot;, &quot;#1e993b&quot;))
 </code></pre>
-<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-fba01dae89920f56.png" alt=""></figure>
-<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-3f967750b0beac55.png" alt=""></figure>
-<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-8166ba12fdedf936.png" alt=""></figure>
-<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-bfceb02cbec57a08.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-fba01dae89920f56.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-3f967750b0beac55.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-8166ba12fdedf936.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-bfceb02cbec57a08.png" alt="" loading="lazy"></figure>
 <p>如果想要进行任意两组之间的比较还可以使用下面几种方法：</p>
 <pre><code class="language-r">TukeyHSD(tg.aov)
 
@@ -397,23 +397,23 @@ pairwise.t.test(tg$len,tg$dose)
 </code></pre>
 <p>如果不满足正态分布，则需要使用非参数检验** Kruskal-Wallis test**，<code>kruskal.test()</code>和<code>pairwise.wilcox.test()</code>。</p>
 <hr>
-<figure data-type="image" tabindex="9"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/UrqlObNL0t">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/UrqlObNL0t">
             <span class="flex-auto">R</span>
           </a>
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/bPxOfgU9YC">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/bPxOfgU9YC">
             <span class="flex-auto">数据科学</span>
           </a>
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/Ud1JPVbW1rU">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/Ud1JPVbW1rU">
             <span class="flex-auto">统计</span>
           </a>
         
@@ -422,7 +422,7 @@ pairwise.t.test(tg$len,tg$dose)
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://kaopubear.top//post/2017-10-02-RandStatistics7">
+              <a href="https://kaopubear.top/post/2017-10-02-RandStatistics7">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   统计学基础与 R-7
@@ -433,7 +433,7 @@ pairwise.t.test(tg$len,tg$dose)
 
           
             <div class="next-post">
-              <a href="https://kaopubear.top//post/2017-10-01-RandStatistics5">
+              <a href="https://kaopubear.top/post/2017-10-01-RandStatistics5">
                 <h3 class="post-title">
                   统计学基础与 R-5
                   <i class="remixicon-arrow-right-line"></i>

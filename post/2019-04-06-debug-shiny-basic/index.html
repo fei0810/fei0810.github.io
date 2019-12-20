@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576761989053">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576818720715">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576761989053" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576818720715" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -108,20 +108,20 @@
       
     
       
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
           资料
         </a>
       
     
       
-        <a href="/post/project" class="menu" style="animation-delay: 1s">
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
           项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
         </a>
       
     
@@ -163,37 +163,37 @@
 <p>静静地陪你走了好远好远，连眼睛红了都没有发现。</p>
 </blockquote>
 <p>如果你知道哪一行的代码有错（这话本身就像 bug）或者猜测很可能是哪里不对，就可以直接在所在行设置一个断点。Rstudio 只需在行号左边点一下鼠标就会出现红点提示标记成功。开始运行 Shiny 程序后会在断点处停止执行，然后就可以开始逐步执​​行进行代码调试了。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002519.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002519.png" alt="" loading="lazy"></figure>
 <p>如上图所示，我们在 40 和 41 行设置了两个断点，现在点击 <code>Run App</code>，代码运行会在 40 行处停下，绿色的箭头指向 41 行，并且在 console 中会有 browse 输出，如下图所示</p>
-<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002554.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002554.png" alt="" loading="lazy"></figure>
 <p>这个时候我们可以方便的查看环境中已有的变量，例如这里已经运行完毕的 <code>x</code> 变量。如果想继续运行，可以点击 console 里 <strong>continue</strong>，程序又会向下运行。</p>
-<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002554.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002554.png" alt="" loading="lazy"></figure>
 <p>现在环境中存在 x 和 bin 两个变量，同时在 console 的 <code>browse[2]&gt;</code> 处你可以进行正常的 R 操作，例如查看变量内容或者做个加法运算，甚至你可以修改当前存在环境中的变量（当然不推荐这么操作）。</p>
-<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003103.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003103.png" alt="" loading="lazy"></figure>
 <p>说到缺点，目前 breakpoints 只可以在 Rstudio IDE 中使用，而且只能用于 <code>ShinyServer</code> 函数中；另外如果代码很长显然不停的断点也很烦，同时它只能显示发生了什么但是无法告诉你为什么有些事情没有发生。</p>
 <p><strong>小结如下：</strong></p>
-<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003133.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003133.png" alt="" loading="lazy"></figure>
 <h3 id="browser-命令">browser() 命令</h3>
 <p>其实从上面 console 的截图也可以看到，断点就是执行了一次类 <code>browser()</code> 操作。但和断点不同的是，<code>browser()</code> 本身可以被写到任何地方。写法如下图所示：</p>
-<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003221.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003221.png" alt="" loading="lazy"></figure>
 <p>甚至你还可以把 <code>browser()</code> 写进判断语句中，只在某些特定的情况下执行。例如下图所示，在 input 中的 bins 小于 40 时候程序会正常的执行，当大于 40 时才会自动停下，然后你就可以在调试器中查看具体的变量等信息。</p>
-<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003238.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003238.png" alt="" loading="lazy"></figure>
 <p><strong>小结如下</strong></p>
-<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003312.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003312.png" alt="" loading="lazy"></figure>
 <h2 id="tracing-追踪">Tracing 追踪</h2>
 <p>在许多情况下通过暂停执行来找问题比较困难，相反需要我们在程序运行时观察系统。对于 Shiny 的程序尤其如此，因为他不像 R 脚本那样线性运行。</p>
 <h3 id="showcase-mode">Showcase Mode</h3>
 <p>Shiny 在启动时，<code>runAPP()</code> 有一个选项默认是读取配置文件中的设置，它就是 <code>display.mode</code>。如果我们设置为 <code>display.mode=&quot;showcase&quot;</code>，在 Showcase 模式下，代码将与应用程序一起显示，并且程序的 server 端代码在执行时会出现黄色的闪烁进行提醒。这一功能对于可视化哪些部分代码正在执行非常有用。</p>
-<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003326.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003326.png" alt="" loading="lazy"></figure>
 <p>如果想要默认开启这一功能，可以在该 Shiny 目录下创建一个 <code>DESCRIPTION</code> 文件并写入如下内容：</p>
 <pre><code>DisplayMode: Showcase
 Type: Shiny
 </code></pre>
 <p><strong>小结如下</strong></p>
-<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003412.png" alt=""></figure>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003412.png" alt="" loading="lazy"></figure>
 <h3 id="reactive-log">Reactive Log</h3>
 <p>在 Shiny 中经常会用到响应对象，当开启 Reactive Log 之后，程序运行时除了可以告诉你正在执行哪些响应之外，日志还可以帮助你可视化展示响应对象之间的依赖关系。在开启一个新的 R session 时首先配置 <code>options(Shiny.reactlog=TRUE)</code>，然后在 Shiny app 中通过 Ctrl + F3 就可以启动可视化的 Reactive Log 文件，也可以在运行 Shiny 后使用 <code>showReactLog</code>  查看。详细信息可以在 <a href="http://Shiny.rstudio.com/reference/Shiny/latest/showReactLog.html">官方文档</a> 了解。</p>
-<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003418.png" alt=""></figure>
+<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003418.png" alt="" loading="lazy"></figure>
 <h3 id="打印-tracing">打印 tracing</h3>
 <p>在各种编程语言中，一个万变不离其宗的调试技巧就是不停的输出。在 PHP 里面是不停的 <code>echo</code>，在 R 里可以不停的 <code>cat</code>。使用 <code>cat</code> 可以帮助你在不终止程序的情况下查看变量值。在 Shiny 中，最好的方式是打印标准错误(<code>stderr()</code>)。</p>
 <pre><code class="language-R"># generate bins based on input$bins from ui.R
@@ -202,14 +202,14 @@ bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
 cat(file=stderr(), &quot;drawing histogram with&quot;, input$bins, &quot;bins&quot;, &quot;\n&quot;)
 </code></pre>
 <p>进行上述修改后，运行 Shiny 每次调整 input 都会在 console 中打印输出。如下图所示</p>
-<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003424.png" alt=""></figure>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003424.png" alt="" loading="lazy"></figure>
 <p><strong>小结如下</strong></p>
-<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003537.png" alt=""></figure>
+<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003537.png" alt="" loading="lazy"></figure>
 <h3 id="shiny-server-进行-tracing">Shiny Server 进行 tracing</h3>
 <p>如果你的程序运行在 server 端而非本地，每次 Shiny 程序运行都会生成 log 文件，默认的路径是 <code>/var/log/Shiny-server/*.log</code>，而这一位置是可以在配置文件中通过 <code>log_dir</code> 进行修改的。如果程序运行没有出现问题，每次 Shiny 运行结束后文件会自动删除，如果报错了则会一直存在于 log 目录等你去宠幸。log 文件的命名格式为 <code>&lt;application directory name&gt;-YYYMMDD-HHmmss-&lt;port number or socket ID&gt;.log</code> 。</p>
 <h3 id="客户端和服务器端-tracing">客户端和服务器端 Tracing</h3>
 <p>一个 Shiny 程序包括 client (浏览器) 和 server (R 进程) 两部分。这两者通过 <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">websocket</a>连接，websocket 接收来自客户端的状态，例如输入控件新的赋值，同时发布来自服务器端的状态更改，例如新的输出。在一些比较复杂的情况下，你可以通过打开 trace 来跟踪 JSON 格式的 websocket 内容。</p>
-<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003545.png" alt=""></figure>
+<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003545.png" alt="" loading="lazy"></figure>
 <p>如上图所示，在输出内容中，<code>SEND</code> 表示从浏览器发送到 R session 的数据；<code>RECV</code> 表示从 R session 发送到浏览器的数据。</p>
 <blockquote>
 <p>这一部分目前还没有实际用到，理解到位了可以再写一些。</p>
@@ -218,28 +218,28 @@ cat(file=stderr(), &quot;drawing histogram with&quot;, input$bins, &quot;bins&qu
 <p>跑程序最怕看到的就是报错，但是真要有问题了最希望看到的就是明确的报错。</p>
 <h3 id="r-报错">R 报错</h3>
 <p>在 Shiny 中大多数报错信息都是由 R 引起的，在 0.13.0 之后的 Shiny 版本中已经有了比较直观的报错形式，会直接给出哪里的程序出现了错误。这里首先人为引入一个报错，当 input 大于 40 的时候停止程序并且抛出 <code>too many bins</code> 的报错信息。</p>
-<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003556.png" alt=""></figure>
+<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003556.png" alt="" loading="lazy"></figure>
 <p>运行程序后调整输入如果错误，可以观察 console 的输出内容：</p>
-<figure data-type="image" tabindex="16"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003602.png" alt=""></figure>
+<figure data-type="image" tabindex="16"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003602.png" alt="" loading="lazy"></figure>
 <p>首先直接观察颜色不同的部分，直接告诉我们 <code>app.R</code> 的 <code>43</code> 行代码出现了问题。在报错部分，每一行内容前都有一个数字，例如 1，82，165 和 167，其表示的是在调用栈 (<a href="https://en.wikipedia.org/wiki/Call_stack">call stack</a>) 中的索引，可以看到这个例子中有接近 170 个调用栈。</p>
 <h3 id="javascript-errors">JavaScript errors</h3>
 <p>目前 Shiny 有很多第三方 JavaScript 组件，有时如果使用上面几种方式都没有定位到错误相关问题或者没有看到报错信息，很可能是 JavaScript 中发生错误导致程序出现了 bug。毕竟 Shiny 是个网页应用，各种和用户的交互少不了 JavaScript 的使用。</p>
 <p>要进行 JavaScript 的调试在 Rstudio 就不灵了。如果你是通过 Rstudio 打开了一个单独 Shiny 页面，可以通过右键单击 Shiny 页面，选择 <code>Inspect element</code> 进入 JavaScript console；如果你的 Shiny 页面是<strong>open in browser</strong>，也就是在浏览器中打开的，可以直接通过 <code>F12</code> 进入开发者模式打开 JavaScript console 。</p>
-<figure data-type="image" tabindex="17"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003706.png" alt=""></figure>
+<figure data-type="image" tabindex="17"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003706.png" alt="" loading="lazy"></figure>
 <p>在 Shiny 中 UI 的每个部分都会有一个 id 参数，这个 id 对应的参数在浏览器中解析之后就是对应着 HTML 标签中的 id。在 HTML 中，这个 id 是必须唯一（区别于 name）。因此，在 Shiny 的 ui 中每一个 id 参数也必须唯一。解析效果如下图所示：</p>
-<figure data-type="image" tabindex="18"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003715.png" alt=""></figure>
+<figure data-type="image" tabindex="18"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003715.png" alt="" loading="lazy"></figure>
 <p>如果你不小心在 UI 中写入了两个一样的 id，在上图中就有两个标签的 id 都是 a，程序运行后在 Rstudio 并不会抛出什么错误，但是在 Shiny 页面端的各种操作就进行不了。如果不在开发者模式下进行调试只能通过各种方法在 Rstudio 进行测试，但是如果打开 JavaScript 的 console，就会看到其实已经给出了明确的报错信息。</p>
-<figure data-type="image" tabindex="19"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003720.png" alt=""></figure>
+<figure data-type="image" tabindex="19"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003720.png" alt="" loading="lazy"></figure>
 <p>当然，Chrome 开发者工具的用法是在太多，这也是我在文章开头提到的自己入门不了前端的原因之一。如果在你的 Shiny 中用到了大量 JavaScript 相关内容，或者需要定制很多 CSS 相关的内容，可以学习一下官方的<a href="https://developers.google.com/web/tools/chrome-devtools/?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3">开发者工具文档</a>。</p>
 <p>至此，也就简单的写完了 R Shiny debug 的三个主要步骤，其中提到的每一个用法在实际使用中都需要进一步深入学习。当然，每一个方法用到的频率也各有不同，可以根据个人的实际情况进行后续的练习。</p>
 <h2 id="one-more-thingshinyjs">One more thing：shinyjs</h2>
 <p>写到这里本来文章就可以结束了，但是似乎总有哪里不对。</p>
 <p>为什么在 Rstudio 的 console 里就不能查看 JavaScript 的 log 信息。要知道 Rstudio GUI 本身使用的就是 <a href="https://www.qt.io/">QT</a> 框架，其中的很多部分都可以理解为一个网页。从维基百科或者它自己的说明中都可以看出这一点。</p>
-<figure data-type="image" tabindex="20"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003829.png" alt=""></figure>
+<figure data-type="image" tabindex="20"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003829.png" alt="" loading="lazy"></figure>
 <p>不信的话你也可以在 Rstuido 的每个 pane 里右击然后选择 <code>Inspect element</code> 看看会出现什么，比如在 Console 中右击</p>
-<figure data-type="image" tabindex="21"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003834.png" alt=""></figure>
+<figure data-type="image" tabindex="21"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003834.png" alt="" loading="lazy"></figure>
 <p>你会看到下面图所示的内容</p>
-<figure data-type="image" tabindex="22"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003849.png" alt=""></figure>
+<figure data-type="image" tabindex="22"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003849.png" alt="" loading="lazy"></figure>
 <p>既然如此，没有理由不去解决这个不方便的问题。其实在 R 中有一个专门为 Shiny 提高 JavaScript 使用体验开发的 R 包，叫做 <a href="https://deanattali.com/shinyjs/overview">shinyjs</a>。这个包的存在让 Shiny 使用 JavaScript 变得强大和高效了很多。其中针对调试有两个专门的函数。</p>
 <h3 id="showlog">showLog</h3>
 <blockquote>
@@ -271,7 +271,7 @@ if (interactive()) {
 }
 </code></pre>
 <p>运行后通过点击 button ，就可以把 <code>R.Vsrsion()</code> 的信息输出到 JavaScript console 中，如下图所示：</p>
-<h2 id=""><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003912.png" alt=""></h2>
+<h2 id=""><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003912.png" alt="" loading="lazy"></h2>
 <p>嗯，先写到这里吧。</p>
 <p>我的学习材料</p>
 <ul>
@@ -281,24 +281,24 @@ if (interactive()) {
 <li><a href="https://deanattali.com/shinyjs/">shinyjs</a></li>
 </ul>
 <hr>
-<figure data-type="image" tabindex="23"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<figure data-type="image" tabindex="23"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名 - 非商业性使用 - 禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="24"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
-<figure data-type="image" tabindex="25"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-ef1e74963ce110a5.jpg" alt="加入靠谱熊基地，和大家一起交流"></figure>
+<figure data-type="image" tabindex="24"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-ef1e74963ce110a5.jpg" alt="加入靠谱熊基地，和大家一起交流" loading="lazy"></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/UrqlObNL0t">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/UrqlObNL0t">
             <span class="flex-auto">R</span>
           </a>
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/nVbnso_EhL">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/nVbnso_EhL">
             <span class="flex-auto">shiny</span>
           </a>
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/woFrWMXtsS">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/woFrWMXtsS">
             <span class="flex-auto">debug</span>
           </a>
         
@@ -307,7 +307,7 @@ if (interactive()) {
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://kaopubear.top//post/2019-04-11-weeklypaper">
+              <a href="https://kaopubear.top/post/2019-04-11-weeklypaper">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化
@@ -318,7 +318,7 @@ if (interactive()) {
 
           
             <div class="next-post">
-              <a href="https://kaopubear.top//post/2019-04-04-facet-ggplot2">
+              <a href="https://kaopubear.top/post/2019-04-04-facet-ggplot2">
                 <h3 class="post-title">
                   用漫威数据学习 ggplot2 facet
                   <i class="remixicon-arrow-right-line"></i>

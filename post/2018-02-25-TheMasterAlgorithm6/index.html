@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576761989053">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576818720715">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576761989053" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576818720715" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -86,20 +86,20 @@
       
     
       
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
           资料
         </a>
       
     
       
-        <a href="/post/project" class="menu" style="animation-delay: 1s">
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
           项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
         </a>
       
     
@@ -137,11 +137,11 @@
 <p>感知机是生物神经细胞的简单抽象。神经细胞结构大致可分为：树突、突触、细胞体及轴突。单个神经细胞可被视为一种只有两种状态的机器——激动时为‘是’，而未激动时为‘否’。神经细胞的状态取决于从其它的神经细胞收到的输入信号量，及突触的强度（抑制或加强）。当信号量总和超过了某个阈值时，细胞体就会激动，产生电脉冲。电脉冲沿着轴突并通过突触传递到其它神经元。为了模拟神经细胞行为，与之对应的感知机基础概念被提出，如权量（突触）、偏置（阈值）及激活函数（细胞体）。</p>
 <p>在人工神经网络领域中，感知机也被指为单层的人工神经网络，以区别于较复杂的多层感知机（Multilayer Perceptron）。作为一种线性分类器，（单层）感知机可说是最简单的前向人工神经网络形式。尽管结构简单，感知机能够学习并解决相当复杂的问题。感知机主要的本质缺陷是它不能处理线性不可分问题。</p>
 <p>在感知器中，一个正权值代表一个兴奋性连接，一个负权值代表一个抑制性连接。如果其输入量的加权和高于界限值，那么会输出 1；如果加权和小于界限值，那么输入 0。通过改变权值和界限值，我们可以改变感知器计算的函数。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d1170d731827e926.jpg" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d1170d731827e926.jpg" alt="" loading="lazy"></figure>
 <p>输入量的权值越高，相应的突触也会越强。细胞体把所有加权输入量加起来，轴突使结果变成一个阶跃函数。图中代表轴突的框表明了阶跃函数的图像：0 代表输入量的低值，当输入量到达界限值时，会突然变成 1。假设感知器有两个持续输入量 x 和 y（换句话说，x 和 y 可以是任何数值，不仅仅是 0 和 1），那么每个例子都可以由平面上的一个点来表示，而正面例子（例如，感知器中输出量为 1）和负面例子（输出量为 0）之间的界线就是一条直线。</p>
 <p>感知器根据所有输入量的权值进行判断，即少数服从多数，通过调整输入量的权值来改进准确性。感知器的缺陷在于感知机不能解决简单的异或（XOR）等线性不可分问题。</p>
 <h2 id="s-形曲线">S 形曲线</h2>
-<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-f66011aeb6efc135.jpg" alt="世界上最重要的曲线"></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-f66011aeb6efc135.jpg" alt="世界上最重要的曲线" loading="lazy"></figure>
 <p>S 形曲线是世界上最重要的曲线。首先输出量随着输入量缓慢增长，如此缓慢，似乎保持不变。接着它开始变化得很快，然后变得更快，之后越来越慢，直到几乎保持不变为止。</p>
 <p>S 形曲线是所有种类相变的形状：电子应用领域自旋反转的概率、铁的磁化、将少量记忆写到硬盘上、细胞中离子通道的打开、冰块融化、水蒸发、早期宇宙的膨胀扩张、进化中的间断平衡、科学中的范式转移、新技术的传播、离开多民族社区的白人大迁徙、谣言、流行病、革命、帝国的没落等。</p>
 <p>当你没法调好淋浴的温度时（开始水很冷，然后很快又变得很热），都是 S 形曲线的错。你做爆米花时，看看 S 形曲线的进度：一开始什么也没发生，几粒玉米爆开，又有一把爆开，很多玉米突然像烟花一样爆开，更多的玉米爆开，最后你就可以吃爆米花了。你肌肉的每个动作都遵循 S 形曲线：先是缓慢移动，然后快速移动，最后又缓慢移动。</p>
@@ -182,19 +182,19 @@
 <p><em>参考资料</em><br>
 https://www.jiqizhixin.com/articles/2016-11-25-3</p>
 <hr>
-<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/bPxOfgU9YC">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/bPxOfgU9YC">
             <span class="flex-auto">数据科学</span>
           </a>
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/CgpgIuLt1nJ">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/CgpgIuLt1nJ">
             <span class="flex-auto">算法</span>
           </a>
         
@@ -203,7 +203,7 @@ https://www.jiqizhixin.com/articles/2016-11-25-3</p>
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://kaopubear.top//post/2018-02-26-easylifeeasylearn">
+              <a href="https://kaopubear.top/post/2018-02-26-easylifeeasylearn">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   2018，不妨从“丢”开始
@@ -214,7 +214,7 @@ https://www.jiqizhixin.com/articles/2016-11-25-3</p>
 
           
             <div class="next-post">
-              <a href="https://kaopubear.top//post/2018-02-25-TheMasterAlgorithm5">
+              <a href="https://kaopubear.top/post/2018-02-25-TheMasterAlgorithm5">
                 <h3 class="post-title">
                   『终极算法』摘抄笔记-贝叶斯学派
                   <i class="remixicon-arrow-right-line"></i>

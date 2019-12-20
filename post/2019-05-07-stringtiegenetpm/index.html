@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576761989053">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576818720715">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576761989053" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576818720715" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -84,20 +84,20 @@
       
     
       
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
           资料
         </a>
       
     
       
-        <a href="/post/project" class="menu" style="animation-delay: 1s">
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
           项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
         </a>
       
     
@@ -126,7 +126,7 @@
 <p>由于自己之前一直不喜欢用 cufflinks，所以后面的 stringtie 也是能不用就不用，偶尔用下也都是浅尝辄止。因为 stringtie 可以直接拿到基因的 TPM 值，比 RSEM 需要单独构建一次索引的操作省力些，所以最近自己注释了些基因就用它对十几个样本跑了一波基因定量的常规操作。心想做个表达矩阵进行下游分析，结果偶买噶，每个定量结果的行数（基因数）竟然都不一样。同一个注释文件定量出了不同的结果，检查一下原始基因数，发现有的定量结果行数要比实际基因数多 7 个，有的要多 5 个，还不尽相同。</p>
 <h2 id="尝试">尝试</h2>
 <p>遇事不怕事，先看看多出来了什么基因，我发现有八九个基因竟然会重复出现在定量结果中。回到注释文件里看这些基因为什么作妖，随便看了 3 个发现一个规律。这些基因对应的转录本 ID 并不是连续的（因为上游分析时我过滤掉了一些不符合自己要求的转录本），如下截图所示，gff 删掉了 2 和 3，结果在定量时出现了两个相同的 ID 。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606000250.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606000250.png" alt="" loading="lazy"></figure>
 <p>如此这般，难道是 stringtie 不能识别不连续 ID 转录本的基因？暗自感觉这个 bug 无语的同时动手把那几个命名有 gap 的转录本 ID 重命名为连续，又测试了一次还是重复出现了这个问题。看来并不是 ID 不连续造成的，肯定还有一些背后的原因。</p>
 <p>再一次仔细观察这些不连续的转录本信息，<code>CS.104750</code> 在最后的表达定量中出现了两次，且一个基因给出的位置坐标是在转录本 1 和 4 上（18509027-18513961），另一个基因位置是在 4-8 上（18574381-18579343）。如果是通过 ID 来拆分转录本应该是转录本 1 独立为一个基因，其它转录本独立为一个基因。这里似乎是按照位置进行了区分，因为转录本 1、4 和另外 5-8 之间没有位置上的重叠，所有被分为了两个基因。在检查其它几个重复出现的基因，都符合我这个猜想。</p>
 <p>好了，现在另一个问题是，如果是没有重叠区域的转录本会被按照独立的基因单独统计，那为什么不同的样本重复的基因数量并不一样呢？到底 stringtie 是怎么一个定量逻辑，到这里靠猜就解决不了问题了，只能去找原始文献和源代码。</p>
@@ -306,19 +306,19 @@ $ grep ChrC *.sam| awk -F &quot;\t&quot; '{ if(($4 &gt;= 7967 &amp;&amp; $4 &lt;
 <p>在最后的总结中，作者又提到了一个观察到的现象：一个基因在不同的样本中定量的结果都为 0 ，但是有一些样本中这个基因被拆分为二，另外一些样本则没有。他认为这可能就是开发者提到的是否存在一些 reads 比对的问题，于是他又检查了不同样本中这个基因所在位置区间的比对情况，果然和开发者提到的内容相符。</p>
 <h2 id="反思">反思</h2>
 <p>写到这里，忍不住在 GitHub 上评论了一下，虽然 issue 已经关闭了。</p>
-<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606000354.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606000354.png" alt="" loading="lazy"></figure>
 <p>这次 debug 我最先猜测到的还是问题的表象，然后通过一些后续的分析找到了可能的问题。在看到上面这个完整的 issue 后，我深切地感受到了什么是一个优秀的提问，他可以指引被提问对象说出关键的信息，并且循序渐进的做出需要的补充内容。如果没有提问者详细的描述和认真的思考，可能这个问题不知道还要经历多少个来回才能被讨论清楚。</p>
 <p>经历了这么一番波折，我对这个工具的喜欢竟然增加了一点，接下来就是再仔细看看文章和代码。也许，这就是为什么人总是会对伤害过自己的人和事念念不完。Bioinformatics was like a box of chocolates.  You never konw what you're gonna get ——阿飞正传</p>
 <hr>
-<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名 - 非商业性使用 - 禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/p7M9e5leM">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/p7M9e5leM">
             <span class="flex-auto">RNA-seq</span>
           </a>
         
@@ -327,7 +327,7 @@ $ grep ChrC *.sam| awk -F &quot;\t&quot; '{ if(($4 &gt;= 7967 &amp;&amp; $4 &lt;
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://kaopubear.top//post/2019-05-17-linuxparallelbasic">
+              <a href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   小议 linux 并行方法
@@ -338,7 +338,7 @@ $ grep ChrC *.sam| awk -F &quot;\t&quot; '{ if(($4 &gt;= 7967 &amp;&amp; $4 &lt;
 
           
             <div class="next-post">
-              <a href="https://kaopubear.top//post/2019-05-03-keyquestion">
+              <a href="https://kaopubear.top/post/2019-05-03-keyquestion">
                 <h3 class="post-title">
                   「关键提问」读书笔记
                   <i class="remixicon-arrow-right-line"></i>

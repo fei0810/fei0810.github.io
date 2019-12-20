@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2019-12-19T13:26:32.152Z</updated>
+    <updated>2019-12-20T05:12:13.508Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
-    <link rel="self" href="https://kaopubear.top//atom.xml"/>
+    <link rel="self" href="https://kaopubear.top/atom.xml"/>
     <subtitle>很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学</subtitle>
-    <logo>https://kaopubear.top//images/avatar.png</logo>
-    <icon>https://kaopubear.top//favicon.ico</icon>
+    <logo>https://kaopubear.top/images/avatar.png</logo>
+    <icon>https://kaopubear.top/favicon.ico</icon>
     <rights>All rights reserved 2019, 思考问题的熊</rights>
     <entry>
         <title type="html"><![CDATA[眼见不为实：为什么29不等于29]]></title>
-        <id>https://kaopubear.top//post/2019-12-19-rfloat</id>
-        <link href="https://kaopubear.top//post/2019-12-19-rfloat">
+        <id>https://kaopubear.top/post/2019-12-19-rfloat</id>
+        <link href="https://kaopubear.top/post/2019-12-19-rfloat">
         </link>
         <updated>2019-12-19T11:06:04.000Z</updated>
         <summary type="html"><![CDATA[<p>浮点数计算和比较的坑</p>
@@ -23,8 +23,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[如何简快好省的使用图床]]></title>
-        <id>https://kaopubear.top//post/2019-12-14-haotouseimagehosting</id>
-        <link href="https://kaopubear.top//post/2019-12-14-haotouseimagehosting">
+        <id>https://kaopubear.top/post/2019-12-14-haotouseimagehosting</id>
+        <link href="https://kaopubear.top/post/2019-12-14-haotouseimagehosting">
         </link>
         <updated>2019-12-14T06:03:11.000Z</updated>
         <summary type="html"><![CDATA[<p>首先说明一点，因为本文的读者中可能单独使用 macOS 的为少数，所以下文介绍的所有工具尽量满足双平台通用（Windows 和 macOS）。</p>
@@ -36,8 +36,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[这三个网站让我摸鱼都从容了]]></title>
-        <id>https://kaopubear.top//post/2019-12-12-3goodweb</id>
-        <link href="https://kaopubear.top//post/2019-12-12-3goodweb">
+        <id>https://kaopubear.top/post/2019-12-12-3goodweb</id>
+        <link href="https://kaopubear.top/post/2019-12-12-3goodweb">
         </link>
         <updated>2019-12-12T06:23:23.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -51,8 +51,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[我目前的云存储方法]]></title>
-        <id>https://kaopubear.top//post/2019-12-02-mycloud</id>
-        <link href="https://kaopubear.top//post/2019-12-02-mycloud">
+        <id>https://kaopubear.top/post/2019-12-02-mycloud</id>
+        <link href="https://kaopubear.top/post/2019-12-02-mycloud">
         </link>
         <updated>2019-12-02T06:33:18.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="云存储选择及我的使用感受">云存储选择及我的使用感受</h2>
@@ -78,8 +78,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Bioconductor 3.10正式发布]]></title>
-        <id>https://kaopubear.top//post/2019-10-31-bioconductor310iscoming</id>
-        <link href="https://kaopubear.top//post/2019-10-31-bioconductor310iscoming">
+        <id>https://kaopubear.top/post/2019-10-31-bioconductor310iscoming</id>
+        <link href="https://kaopubear.top/post/2019-10-31-bioconductor310iscoming">
         </link>
         <updated>2019-10-31T06:46:22.000Z</updated>
         <summary type="html"><![CDATA[<p>10月30日，Bioconductor 3.10 正式发布，该版本的bioc共包括了 1822 个软件包，384 个实验数据包，952 个注释包和 27 个工作流程，基于 R 3.6.1。</p>
@@ -93,8 +93,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[macOS 10.15 安装R包]]></title>
-        <id>https://kaopubear.top//post/2019-10-29-macos15user</id>
-        <link href="https://kaopubear.top//post/2019-10-29-macos15user">
+        <id>https://kaopubear.top/post/2019-10-29-macos15user</id>
+        <link href="https://kaopubear.top/post/2019-10-29-macos15user">
         </link>
         <updated>2019-10-29T06:41:32.000Z</updated>
         <summary type="html"><![CDATA[<p>早先升级 macOS10.15 电脑 SMC 出了一些问题，试了一些方法都没有解决，无奈只能继续升级到public beta 版本。</p>
@@ -104,8 +104,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[数据库网站 API 知多少]]></title>
-        <id>https://kaopubear.top//post/2019-10-26-apibasic</id>
-        <link href="https://kaopubear.top//post/2019-10-26-apibasic">
+        <id>https://kaopubear.top/post/2019-10-26-apibasic</id>
+        <link href="https://kaopubear.top/post/2019-10-26-apibasic">
         </link>
         <updated>2019-10-26T06:51:37.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="api">API</h2>
@@ -119,8 +119,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[转录组表达分析知识图谱]]></title>
-        <id>https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis</id>
-        <link href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis">
+        <id>https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis</id>
+        <link href="https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis">
         </link>
         <updated>2019-10-11T11:31:43.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
@@ -132,8 +132,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[船新版本 DESeq2 处理大量样本速度显著提升]]></title>
-        <id>https://kaopubear.top//post/2019-09-17-fasterdeseq2</id>
-        <link href="https://kaopubear.top//post/2019-09-17-fasterdeseq2">
+        <id>https://kaopubear.top/post/2019-09-17-fasterdeseq2</id>
+        <link href="https://kaopubear.top/post/2019-09-17-fasterdeseq2">
         </link>
         <updated>2019-09-17T12:15:31.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="太长不看版本">太长不看版本</h2>
@@ -145,8 +145,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Zotero入门学习路径]]></title>
-        <id>https://kaopubear.top//post/2019-09-11-howtolearnzotero</id>
-        <link href="https://kaopubear.top//post/2019-09-11-howtolearnzotero">
+        <id>https://kaopubear.top/post/2019-09-11-howtolearnzotero</id>
+        <link href="https://kaopubear.top/post/2019-09-11-howtolearnzotero">
         </link>
         <updated>2019-09-11T10:17:37.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>

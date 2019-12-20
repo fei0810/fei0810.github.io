@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576761989053">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576818720715">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576761989053" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576818720715" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -97,20 +97,20 @@
       
     
       
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
           资料
         </a>
       
     
       
-        <a href="/post/project" class="menu" style="animation-delay: 1s">
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
           项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
         </a>
       
     
@@ -138,7 +138,7 @@
 <p>所谓 API(Application Programming Interface) 就是应用程序接口。这个应用程序可以类比于手机和电脑，这个接口就类似于数据线，如果我们想用数据线把东西在两个设备之前传输，就需要两者可以接受彼此的传输协议。</p>
 <p>对一个应用程序来说，如果你想快速的和它交换数据，也需要采用应用程序可以识别的规则。对于一些成熟的应用程序和网站来说，通常都会提供自己的一套API供开发者友好的使用，一方面可以大大扩展应用程序的生态环境，另一方面也可以避免暴力的爬虫。</p>
 <p>我们通过下图的「印象笔记 API」为例，如果你使用过印象笔记（Evernote）的话，会发现大量第三方应用都可以支持绑定印象笔记账户进行各种创建笔记推送笔记等操作。这里不是印象笔记去适配第三方应用，而是它提供了一个完善的 API，可以供其他开发者来使用。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025131718.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025131718.png" alt="" loading="lazy"></figure>
 <h3 id="rest-api">REST API</h3>
 <p>API 之后还有一个概念是 REST API。 REST(Representational State Transfer) 的中文翻译一般是「表现层状态转化」（这也太抽象了吧），这个架构是 Roy Thomas Fielding 在2000年的毕业论文里提到的，他同时还是HTTP协议（1.0版和1.1版）的主要设计者、Apache服务器软件的作者之一、Apache基金会的第一任主席。</p>
 <p>关于究竟什么是「<a href="https://en.wikipedia.org/wiki/Representational_state_transfe">表现层状态转化</a>」这里就跳过了，因为不跳过你也不会看（我也解释不清楚）。只需要了解，符合 REST 设计风格的 Web API 称为 RESTful API，有如下几个要点：</p>
@@ -151,19 +151,19 @@
 <h3 id="ncbi">NCBI</h3>
 <p>NCBI 是啥就不介绍了，如果太多的功能没用过 PubMed 应该怎么也用过。在 NCBI 的开发文档中，有一个部分专门是讲 API 的。</p>
 <p><a href="https://www.ncbi.nlm.nih.gov/home/develop/api/">NCBI 提供的 API</a> 如下图所示，如果需要可以去看看。</p>
-<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025132036.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025132036.png" alt="" loading="lazy"></figure>
 <h3 id="embl-ebi">EMBL-EBI</h3>
 <p>EMBL-EBI 来自于欧洲，里面有很多很多数据库都是我们日常会使用的，只是你可以还不知道它们和 EBI 有关系的，例如存放了大量基因组及相关数据的 Ensembl ，包括大量蛋白序列和功能信息的数据库 UniPort，当然还有还有不逊色与 pubmed 的文献数据库 Europe PMC。</p>
 <p>从个人的使用体验来说，一般能用EBI的时候我就尽量会绕过NCBI，因为整个一系列网站用起来都要更舒服些，文档查起来更顺手些，对一些有进阶需求的开发者会更友好些（如果你有二次开发的需求，经过对比不难理解我的感受）。</p>
 <p>目前 EBI 比较知名的几个数据库都有很不错的 RESTful API 支持。</p>
 <p>其中 Ensembl 支持 21 个 POST 和 98 个 GET 操作，可以在<a href="https://rest.ensembl.org/">官方说明</a>中查看；<a href="https://www.ebi.ac.uk/proteins/api/doc/index.html">Uniport 数据库</a> 和 <a href="http://europepmc.org/RestfulWebService">Europe PMC</a> 也有大量的操作支持。通过这些 API 你就可以接触到数据库中有的所有信息和  33 million 的文献。另外，EBI 还有一个 <a href="https://www.ebi.ac.uk/QuickGO/api/index.html">QuickGO</a> 的网站也支持 RESTful API 。</p>
 <p>他们的 API 完善到直接在 <a href="http://europepmc.org/abstract/MED/30976793">NAR 发了一篇文章</a>。</p>
-<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025172836.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025172836.png" alt="" loading="lazy"></figure>
 <p>可用的数据库和工具如下</p>
-<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025173044.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025173044.png" alt="" loading="lazy"></figure>
 <h2 id="使用-api">使用 API</h2>
 <p>这里以 Ensembl 的一个基础 API 为例对使用方法进行简单的演示。如果我们在 Ensembl 的网站上查看一个基因，会是如下页面。在左侧我况圈出来的是和这个基因相关的所有信息，其中99%的信息都可以通过 API 获取到。</p>
-<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025174653.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025174653.png" alt="" loading="lazy"></figure>
 <h3 id="查看单基因信息">查看单基因信息</h3>
 <p>这里以最基础的单基因信息查询作为示例。Ensembl 的 RUSTful API 支持使用各种语言实现，既可以在 Unix 操作系统中使用 curl 和 wget 命令，也可以使用 python java perl 和 R 语言来操作。</p>
 <p>如果要是用 wget 来查询一个基因的话，查询规则示例是<code>http://rest.ensembl.org/lookup/id/AT4G34410?expand=1'</code>。其实这就是一个简单的我们都能理解的「网址」，其中 id 后面是我们要查询的基因id，问号后面可以添加任意支持的参数。另外，还需要 header 信息<code>'Content-type:application/json'</code> 来指定获取的资源类型。</p>
@@ -174,7 +174,7 @@
 <pre><code class="language-sh">wget -q --header='Content-type:application/json' 'http://rest.ensembl.org/lookup/id/AT4G34410?expand=1'  -O - | jq '.' -
 </code></pre>
 <p>通过 jq 这个命令，可以让输出变成标准的 json 格式。输出截图如下：</p>
-<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025181847.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025181847.png" alt="" loading="lazy"></figure>
 <p>为了更方面的处理 json 内容和进行后一步的分析，我们可以移步到 R 中，看看如何使用。</p>
 <p>要在 R 使用 RUSTful API 并进行后续的 json 文件处理，首先需要加载两个包，<code>httr</code> 用来调取 GET 和 POST 等命令，<code>jsonlite</code> 用来处理 json 格式的文件。</p>
 <p>httr 会把 GET 的结果保存为一个 response 类型的对象，其中包括了 url，状态码以及header等各种各样的信息，jsonlite 可以帮助我们根据需求提取 json 里的内容并输出为 list 对象。</p>
@@ -194,13 +194,13 @@ r &lt;- GET(paste(server, ext, sep = &quot;&quot;), content_type(&quot;applicati
 stop_for_status(r)
 </code></pre>
 <p>到这里其实查询的步骤已经文章，对象 r 的结构如下：</p>
-<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025184102.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025184102.png" alt="" loading="lazy"></figure>
 <p>接下来就是首先把这个对象中的内容转换为json然后在转换为table即可，命令非常简单。</p>
 <pre><code class="language-r">list &lt;- fromJSON(toJSON(content(r)))
 tb &lt;- do.call(rbind,list)
 </code></pre>
 <p>得到的table内容如下</p>
-<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025185136.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025185136.png" alt="" loading="lazy"></figure>
 <p>如果需要稍微优雅一些，可以改写为一个函数，如果需要一次查找多个基因，可以使用 POST 方法。</p>
 <p>你可能会好奇使用 API 的优势在哪里。</p>
 <p>如果只是查找一个基因，API 的优势并不明显，如果只是偶尔查找几个基因，API 的优势也不明显。那什么使用就有优势了呢，类比于「印象笔记」以及和它相关的使用了「印象笔记 API」的第三方应用，不知道会不会给你一些启发。话不能说的太透，点到为止，更多的应用场景我们以后有机会再聊。</p>
@@ -213,16 +213,16 @@ tb &lt;- do.call(rbind,list)
 <hr>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/1BY38A9TE">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/1BY38A9TE">
             <span class="flex-auto">编程</span>
           </a>
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/bPxOfgU9YC">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/bPxOfgU9YC">
             <span class="flex-auto">数据科学</span>
           </a>
         
@@ -231,7 +231,7 @@ tb &lt;- do.call(rbind,list)
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://kaopubear.top//post/2019-10-29-macos15user">
+              <a href="https://kaopubear.top/post/2019-10-29-macos15user">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   macOS 10.15 安装R包
@@ -242,7 +242,7 @@ tb &lt;- do.call(rbind,list)
 
           
             <div class="next-post">
-              <a href="https://kaopubear.top//post/2019-10-11-rnaseqexpressionanalysis">
+              <a href="https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis">
                 <h3 class="post-title">
                   转录组表达分析知识图谱
                   <i class="remixicon-arrow-right-line"></i>

@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576761989053">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576818720715">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576761989053" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576818720715" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -98,20 +98,20 @@
       
     
       
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
           资料
         </a>
       
     
       
-        <a href="/post/project" class="menu" style="animation-delay: 1s">
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
           项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
         </a>
       
     
@@ -147,7 +147,7 @@
 <li>Comparative analysis of differential gene expression tools for RNA sequencing time course data</li>
 </ol>
 <p>在这两篇文章中还是提到了一些工具，但其中有一些用到 matlab（这软件贵啊），有一些年久失修或者不维护或者和最新 R 版本不兼容，筛筛捡捡能用的且文章里认为还不错的也就剩下三四个。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-592afdc63985fa01.jpg" alt="tools"></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-592afdc63985fa01.jpg" alt="tools" loading="lazy"></figure>
 <h3 id="主要模型">主要模型</h3>
 <ul>
 <li>负二项分布 NB</li>
@@ -225,7 +225,7 @@ for (i in seq(8,16,2)) {
 <li>找到显著差异</li>
 <li>获得显著基因集</li>
 </ul>
-<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-acb418df035abe8c.jpg" alt="mas"></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-acb418df035abe8c.jpg" alt="mas" loading="lazy"></figure>
 <p>有两点内容需要注意：对于无对照的单一时序数据处理方法；以及处理转录数据时的特殊参数。因为这个包不会对数据进行标准化，所以应该提前做好，使用 DESeq2 即可。</p>
 <p>另外，在实际分析的时候可能会出现 <code>glm.fit: algorithm did not converge</code> 的警告。这是由于进行 logistic 回归时，依照极大似然估计原则进行迭代求解回归系数，glm 函数默认最大迭代次数是 25，当数据不太好时 25 次迭代可能还不收敛，一方面可以增大迭代次数。但当增大迭代次数仍然不收敛就需要对数据进行异常值检验等进一步处理。通常把一些表达量极低或者极高的基因删除掉，这个问题就可以解决。</p>
 <h3 id="impulsede2">ImpulseDE2</h3>
@@ -250,15 +250,15 @@ https://laranikalranalytics.blogspot.com/2018/07/time-series-analysis-with-docum
 https://www.displayr.com/smoothing-time-series-data/?utm_medium=Feed&amp;utm_source=Syndication<br>
 https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-modeling/</p>
 <hr>
-<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/p7M9e5leM">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/p7M9e5leM">
             <span class="flex-auto">RNA-seq</span>
           </a>
         
@@ -267,7 +267,7 @@ https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-model
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://kaopubear.top//post/2018-09-19-downloadsrafast">
+              <a href="https://kaopubear.top/post/2018-09-19-downloadsrafast">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   SRA 数据下载自救指南
@@ -278,7 +278,7 @@ https://www.analyticsvidhya.com/blog/2015/12/complete-tutorial-time-series-model
 
           
             <div class="next-post">
-              <a href="https://kaopubear.top//post/2018-08-15-bioinfohistory">
+              <a href="https://kaopubear.top/post/2018-08-15-bioinfohistory">
                 <h3 class="post-title">
                   生物信息学简史
                   <i class="remixicon-arrow-right-line"></i>

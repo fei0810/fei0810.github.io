@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576761989053">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1576818720715">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576761989053" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1576818720715" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -100,20 +100,20 @@
       
     
       
-        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
-          关于
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.8s">
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
           资料
         </a>
       
     
       
-        <a href="/post/project" class="menu" style="animation-delay: 1s">
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
           项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
         </a>
       
     
@@ -144,7 +144,7 @@
 <h2 id="为什么是-vs-code">为什么是 VS Code</h2>
 <p>既然是系列文章的开篇，姑且对主题按下不表先介绍一下 VS Code。</p>
 <p><a href="https://code.visualstudio.com/">VS Code</a> 的全称是 Visual Studio Code，官方给他的定义是官方定义是<strong>一个免费的、开源的跨平台编辑器</strong>。相对于各种 IDE 而言，编辑器则相对更轻量，更侧重于文件或者文件夹而非宏大的项目。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-dd277e8b4360f029.png" alt=""></figure>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-dd277e8b4360f029.png" alt="" loading="lazy"></figure>
 <p>2011 年底，微软从 IBM 请 《设计模式》的作者同时也是 <a href="https://www.eclipse.org/">Eclipse</a> 掌舵人之一的 Erich Gamma 来开发一款优雅的在线开发工具（后来的 Manaco Editor），2015 年他把这款在线工具移植到了桌面平台，也就有了如今 VS Code 。师承 Eclipse 同时又吸取 Eclipse 的教训，他们决定核心只做一个高性能的轻量级编辑器，个性化功能交给插件系统来完成且要把插件系统运行在主进程之外。同时，VS Code 希望让开发者在编辑器里拥有 IDE 类似的开发体验，比如对源代码的智能理解、图形化调试工具和版本管理等等。总之，就是在 IDE 和编辑器中找到一个比较理想的平衡。</p>
 <p>在很多人的印象中，微软一直是一个站在开源世界对立面，靠专利官司和垄断挣钱的公司，但其实微软近几年一直是 GitHub 贡献开源代码最活跃的公司，活跃到现在已经把 GitHub 收购了（黑人问号脸）。而在所有微软的开源项目中，star 最高的 repo 就是 VS Code 编辑器。VS Code 以 MIT 协议开源，所有的开发过程和反馈渠道完全在 GitHub 开放，同时 VS Code 提供了统一的 Language Server Protocol 和 Code Debugging Protocol API，所有语言的开发和都能够通过实现两个 API 在 VS Code 上得到类似 IDE 的开发和调试体验。</p>
 <p>如果你是一个 R 语言用户，RStudio 一定是首选 IDE，如果你是一个 Python 用户，Pycharm 则是大多数人的编辑器。但如果你平时既要用点 R，也要用点 Python，偶尔感觉这些 IDE 有点臃肿或者不想在两个 IDE 中反复切换，那么 VS Code 是一个不错的选择。</p>
@@ -169,7 +169,7 @@
 <p><code>install.packages(&quot;languageserver&quot;)</code>，只有安装了这个包才能实现 R 和 编辑器的同步。</p>
 <p><strong>在 VS Code 中设置正确的 R 路径</strong></p>
 <p>打开设置界面，在搜索框中输入 <code>r.rterm</code>，找到 Rterm:Windows ，在编辑栏中输入你的 R 可执行文件位置。如果是默认安装的 R 3.5.1 版本，位置应该是<code>C:\Program Files\R\R-3.5.1\bin\x64\R.exe</code></p>
-<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-35a909d9de8b60f9.png" alt=""></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-35a909d9de8b60f9.png" alt="" loading="lazy"></figure>
 <p><strong>在 VS Code 中设置正确的 R LSP 路径</strong></p>
 <p>和上面的方法相同，只不过这次搜索<code>r.rpath.lsp</code>，目录和你的<code>r.rtrem.windows</code> 一致即可。</p>
 <p>完成上面几项设置，接下来使用<code>ctrl+shist+p</code> 调出命令面板，然后输入<code>reload</code>，<strong>选择 Reload Window 执行</strong> ，重启 VS Code 即可。</p>
@@ -180,7 +180,7 @@
 <ul>
 <li>在上文中你应该已经成功使用 anaconda 在你的电脑里装好了 Python，现在打开<code>Anaconda Prompt</code>，也就是 anaconda 自带的命令行工具。</li>
 </ul>
-<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-7dd5b5073e77463d.png" alt=""></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-7dd5b5073e77463d.png" alt="" loading="lazy"></figure>
 <ul>
 <li>输入<code>pip install -U rtichoke</code> 安装 rtichoke</li>
 <li>安装完成后输入<code>rtichoke</code>测试是否调用成功</li>
@@ -195,42 +195,42 @@
 <ul>
 <li>鼠标放在一个函数上自动出现函数功能和使用方法</li>
 </ul>
-<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-fa266c03d2ff4bcf.png" alt=""></figure>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-fa266c03d2ff4bcf.png" alt="" loading="lazy"></figure>
 <ul>
 <li>鼠标放在一个内置数据集自动出现数据集介绍</li>
 </ul>
-<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-96c5445f7b5c8fba.png" alt=""></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-96c5445f7b5c8fba.png" alt="" loading="lazy"></figure>
 <ul>
 <li>鼠标放在一个 R 包上自动出现 R 包介绍</li>
 </ul>
-<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-bad241daf74178ba.png" alt=""></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-bad241daf74178ba.png" alt="" loading="lazy"></figure>
 <ul>
 <li>输入部分函数自动提示</li>
 </ul>
-<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-62a8b794a303a940.png" alt=""></figure>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-62a8b794a303a940.png" alt="" loading="lazy"></figure>
 <ul>
 <li>鼠标在函数括号里自动出现参数提示</li>
 </ul>
-<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-019fc3c44813030c.png" alt=""></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-019fc3c44813030c.png" alt="" loading="lazy"></figure>
 <ul>
 <li>选中部分代码，按一次<code>ctrl+enter</code> 自动进入集成终端，也就是 rtichoke</li>
 </ul>
-<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-f2dae8960a5d938b.png" alt=""></figure>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-f2dae8960a5d938b.png" alt="" loading="lazy"></figure>
 <ul>
 <li>再按一次<code>ctrl+enter</code> 自动执行代码并输出结果</li>
 </ul>
-<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-1926c19dc0f032e5.png" alt=""></figure>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-1926c19dc0f032e5.png" alt="" loading="lazy"></figure>
 <p>如果想调用 View 等外部输出也是可以的，比如<code>View(tmp2)</code> 会弹出一个 R 默认终端的独立显示框，比如测试代码最后是<code>print</code> 一个 plotly 的绘图结果，那么它会自动调用你的默认浏览器进行输出。</p>
-<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-7a1ac288f100b27d.png" alt=""></figure>
+<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-7a1ac288f100b27d.png" alt="" loading="lazy"></figure>
 <h2 id="自定义-r-必备快捷键">自定义 R 必备快捷键</h2>
 <p>如果你是一个老实的 R 语言用户，那么一定不会用 <code>=</code> 代替 <code>&lt;-</code>，但是 <code>&lt;-</code> 需要按两下键盘而且这两个键位置还挺远，更难过的是因为你用了语法提示如果你在<code>&lt;-</code> 两端没有加上空格它还会给你出现「大破浪」下划线恶心你。在 RStudio 中你可以使用 <code>alt + -</code> 一气呵成输入这四个符号<code>&lt;-</code>，在 VS Code 中必须也可以。</p>
 <p>打开 Keyboard Shortcuts （快捷键是 <code>ctrl+k ctrl+s</code>)，在搜索框中搜索<code>alt+s</code>，这个时候你会看到这个快捷键已经被绑定了（别慌），点开 json 文件我们去给这个快捷键设置不同情境下新的含义。</p>
-<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-33a547445bc2716c.png" alt=""></figure>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-33a547445bc2716c.png" alt="" loading="lazy"></figure>
 <p>点开快捷键配置文件之后不要管左边的内容，直接去右边设置就好，配置方法如图（至于为什么这么写，后面会写专门的快捷键相关文章）。从此以后在 R 或者 Rmd 文件里<code>alt+-</code>就变成了和 RStudio 一样的快捷键。</p>
-<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-8eb31d1671ff1b7a.png" alt=""></figure>
+<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-8eb31d1671ff1b7a.png" alt="" loading="lazy"></figure>
 <h2 id="配置-python-插件">配置 Python 插件</h2>
 <p>如果把 R 的配置搞定，Python 的配置就显得很简单了。想愉快地使用 Python 只需要安装一个 <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python</a> 插件即可。</p>
-<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-ec8dd6a58833cfcc.png" alt=""></figure>
+<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-ec8dd6a58833cfcc.png" alt="" loading="lazy"></figure>
 <p>接下来设置默认的 Python 路径，如果是用 anaconda 默认安装路径应该是<code>C:\Users\yourname\Anaconda3\python.exe</code> ，这时使用的是默认 Python 解释器；与 R 同理，如果你想使用 anaconda 中的 ipython 那么可以把路径设置为 <code>C:\Users\yourname\Anaconda3\Scripts\ipython.exe</code>。</p>
 <h2 id="错误提示和格式化">错误提示和格式化</h2>
 <h3 id="安装和配置">安装和配置</h3>
@@ -242,7 +242,7 @@
 </code></pre>
 <h3 id="查看错误和修改">查看错误和修改</h3>
 <p>在集中终端的 PROBLEMS 可以查看代码中存在的问题。如下图所示，错误报告中会提示问题，错误编号和所在行数位置，点击某一个具体的问题后编辑器就会自动定位到相应的行数。</p>
-<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-75bfea992b39160e.png" alt=""></figure>
+<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-75bfea992b39160e.png" alt="" loading="lazy"></figure>
 <h3 id="禁止对某些文件进行检查">禁止对某些文件进行检查</h3>
 <p>从上面的截图可以发现，我一个文件中竟然有 915 处问题，看来我这个智商基本就告别 Python 了。如果为了自我麻痹，我可以在设置中关闭代码检查，但真实情况是这个文件并不是一个真正的 Python 脚本，我只是想借用 Python 的语法高亮而已。</p>
 <p>针对这种情况，我们可以选择单独对某一类（后缀）文件排除语法检查。比如我用 Python 语法高亮的这类非 Python 文件后缀通常我会被我命名为 <code>snakefile</code> ，那就可以进行如下设置：</p>
@@ -270,15 +270,15 @@
 <p>在文章开始，我说「本文以 PC 作为安装配置示例，Mac 基本类似且部分内容体验可能更优」，现在就表达一下这个小小的遗憾。随着 win10 的升级，Windows 已经可以安装自己的 Ubuntu 系统 「Windows Subsystem for Linux」，但是系统自带的 bash 那叫一个丑陋和难用。由于 VS Code 在集成终端上下了不少功夫，其实我一直都把它当成我的简洁版「XShell」来使用，体验也非常好。如果你想试试，只需要在配置文件中把<code>terminal.integrated.shell.windows</code> 由默认的<code>C:\\Windows\\System32\\cmd.exe</code> 改为<code>C:\\Windows\\System32\\bash.exe</code>，这个具体内容以后再写。但是如果 <a href="https://github.com/Microsoft/vscode-python/issues/67">在这个 bash 里调试 Python  是会出问题的</a>，修改起来即便能姑且使用也是拆了东墙补西墙。我暂时的解决方法是在预览版的 VS Code 中修改了默认的 terminal，在稳定版里还用 cmd.exe。</p>
 <p>VS Code 基础知识思维导图见上一篇博客。</p>
 <hr>
-<figure data-type="image" tabindex="16"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt=""></figure>
+<figure data-type="image" tabindex="16"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
 <p><strong>本文作者</strong>：思考问题的熊</p>
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
-<figure data-type="image" tabindex="17"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通"></figure>
+<figure data-type="image" tabindex="17"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
         </div>
 
         
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top//tag/fMLJ4BbHmo">
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/fMLJ4BbHmo">
             <span class="flex-auto">VScode</span>
           </a>
         
@@ -287,7 +287,7 @@
         <div class="flex justify-between py-8">
           
             <div class="prev-post">
-              <a href="https://kaopubear.top//post/2018-11-10-areyourlightson">
+              <a href="https://kaopubear.top/post/2018-11-10-areyourlightson">
                 <h3 class="post-title">
                   <i class="remixicon-arrow-left-line"></i>
                   你的灯亮着么 读书笔记
@@ -298,7 +298,7 @@
 
           
             <div class="next-post">
-              <a href="https://kaopubear.top//post/2018-09-27-sequence66">
+              <a href="https://kaopubear.top/post/2018-09-27-sequence66">
                 <h3 class="post-title">
                   66 种测序数据分析方法和流程
                   <i class="remixicon-arrow-right-line"></i>
