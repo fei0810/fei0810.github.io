@@ -2,14 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2019-12-20T05:12:13.508Z</updated>
+    <updated>2020-01-02T10:59:07.089Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
     <link rel="self" href="https://kaopubear.top/atom.xml"/>
     <subtitle>很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学</subtitle>
     <logo>https://kaopubear.top/images/avatar.png</logo>
     <icon>https://kaopubear.top/favicon.ico</icon>
-    <rights>All rights reserved 2019, 思考问题的熊</rights>
+    <rights>All rights reserved 2020, 思考问题的熊</rights>
+    <entry>
+        <title type="html"><![CDATA[给一年前自己的一封信-2019]]></title>
+        <id>https://kaopubear.top/post/2020-01-02-2019summary</id>
+        <link href="https://kaopubear.top/post/2020-01-02-2019summary">
+        </link>
+        <updated>2020-01-02T10:55:09.000Z</updated>
+        <summary type="html"><![CDATA[<p>思考问题的熊，你好。</p>
+<p>见字如面。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>思考问题的熊，你好。</p>
+<p>见字如面。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[眼见不为实：为什么29不等于29]]></title>
         <id>https://kaopubear.top/post/2019-12-19-rfloat</id>
@@ -141,21 +154,6 @@
 ]]></summary>
         <content type="html"><![CDATA[<h2 id="太长不看版本">太长不看版本</h2>
 <p>DESeq 最新版本（v1.25.9）针对大样本分析的速度和之前相比有了质的飞越，果子老师的 1215 个 TCGA 样本差异分析时间从 1200 分钟缩短到单线程 20 分钟，使用多线程的情况下最快 6 分钟搞定。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zotero入门学习路径]]></title>
-        <id>https://kaopubear.top/post/2019-09-11-howtolearnzotero</id>
-        <link href="https://kaopubear.top/post/2019-09-11-howtolearnzotero">
-        </link>
-        <updated>2019-09-11T10:17:37.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
-<p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
-<p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="相关内容简述">相关内容简述</h2>
-<p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
-<p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
 ]]></content>
     </entry>
 </feed>
