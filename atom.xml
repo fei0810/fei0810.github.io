@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2020-01-10T16:24:22.041Z</updated>
+    <updated>2020-01-10T16:28:41.396Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
     <link rel="self" href="https://kaopubear.top/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://kaopubear.top/images/avatar.png</logo>
     <icon>https://kaopubear.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 思考问题的熊</rights>
+    <entry>
+        <title type="html"><![CDATA[人究竟怎样才算来过又怎样才算离开]]></title>
+        <id>https://kaopubear.top/post/2020-01-11-rememberyouzjl</id>
+        <link href="https://kaopubear.top/post/2020-01-11-rememberyouzjl">
+        </link>
+        <updated>2020-01-10T16:24:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>一个人，究竟怎样才算来过，究竟怎样才算离开？</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>一个人，究竟怎样才算来过，究竟怎样才算离开？</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用 VSCode 愉快地进行远程 R 开发]]></title>
         <id>https://kaopubear.top/post/2020-01-08-remotevscoder</id>
@@ -139,19 +150,6 @@
         <content type="html"><![CDATA[<h2 id="api">API</h2>
 <p>API 这个词在大多数人看来可能和 CNS 差不多，前者天天听说就是用不上，后者天天读就是发不了。</p>
 <p>不过，通过今天的一个简短介绍，今后 API 这个东西你就用上了，因为在文章最后我将会展示一个最最基础且高频的 API 使用示例。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[转录组表达分析知识图谱]]></title>
-        <id>https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis</id>
-        <link href="https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis">
-        </link>
-        <updated>2019-10-11T11:31:43.000Z</updated>
-        <summary type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
-<p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
-]]></summary>
-        <content type="html"><![CDATA[<h2 id="文章信息">文章信息</h2>
-<p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
 ]]></content>
     </entry>
 </feed>
