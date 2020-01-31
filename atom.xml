@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2020-01-19T02:07:11.844Z</updated>
+    <updated>2020-01-31T10:03:31.419Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
     <link rel="self" href="https://kaopubear.top/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://kaopubear.top/images/avatar.png</logo>
     <icon>https://kaopubear.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 思考问题的熊</rights>
+    <entry>
+        <title type="html"><![CDATA[特殊时期假期返程实录]]></title>
+        <id>https://kaopubear.top/post/2020-01-31-returnschool</id>
+        <link href="https://kaopubear.top/post/2020-01-31-returnschool">
+        </link>
+        <updated>2020-01-31T10:01:24.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>这些天虽然发生了很多事情，全国不少地方都封城或者各种停运，但我今天还是按照原计划返回了上海，接下来将是按照规定的两周居家自行观察。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>这些天虽然发生了很多事情，全国不少地方都封城或者各种停运，但我今天还是按照原计划返回了上海，接下来将是按照规定的两周居家自行观察。</p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[学习素材共享小组V2.0]]></title>
         <id>https://kaopubear.top/post/2020-01-19-refgroup2020</id>
@@ -135,17 +150,6 @@
         <content type="html"><![CDATA[<p>10月30日，Bioconductor 3.10 正式发布，该版本的bioc共包括了 1822 个软件包，384 个实验数据包，952 个注释包和 27 个工作流程，基于 R 3.6.1。</p>
 <p>其中，新的软件包有93个，新的数据包15个，新的注释包2个，大量的旧包都进行了一波更新。</p>
 <p>接下来推荐几个值得关注的最新软件包，以及一些经典包的重要更新。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[macOS 10.15 安装R包]]></title>
-        <id>https://kaopubear.top/post/2019-10-29-macos15user</id>
-        <link href="https://kaopubear.top/post/2019-10-29-macos15user">
-        </link>
-        <updated>2019-10-29T06:41:32.000Z</updated>
-        <summary type="html"><![CDATA[<p>早先升级 macOS10.15 电脑 SMC 出了一些问题，试了一些方法都没有解决，无奈只能继续升级到public beta 版本。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>早先升级 macOS10.15 电脑 SMC 出了一些问题，试了一些方法都没有解决，无奈只能继续升级到public beta 版本。</p>
 ]]></content>
     </entry>
 </feed>
