@@ -1,507 +1,341 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1580465005059">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-  gtag('config', 'UA-91022805-1');
-</script>
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-
-  </head>
-  <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1580465005059" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
-      </div>
-      
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            很高兴和你相遇<br>这里正在记录我的所思所学
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-          </div>
-        </div>
-      
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
     </div>
   </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
+      </a>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
+      </a>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
-          项目
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a></div>
-    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-archive-line"></i> 文章归档
-        </h2>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-
-        <div class="archives-container">
-          
-            <h2 class="text-gray-600 py-4 animated fadeIn">
-              <i class="remixicon-map-pin-time-line"></i>
-              2018
-            </h2>
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-19-biolitmap" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    生物信息发文章哪家强
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-19</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-19-biolitmap" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                生物信息发文章哪家强
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-16-weeklypaper" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    每周文献-181216-lncRNA差异分析流程测评
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-16</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-16-weeklypaper" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                每周文献-181216-lncRNA差异分析流程测评
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-14-usetrello" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    任务协作管理工具 Trello 使用简介
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-14</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-14-usetrello" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                任务协作管理工具 Trello 使用简介
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-13-rggplot" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 语言可视化之原理概述篇
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-13</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-13-rggplot" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                R 语言可视化之原理概述篇
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-14-rggplotexample" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 语言可视化之案例
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-13</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-14-rggplotexample" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                R 语言可视化之案例
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-12-rtidyverse" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    多快好省用 R 处理数据
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-12</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-12-rtidyverse" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                多快好省用 R 处理数据
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-11-rbasic" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 语言必备基础知识
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-11</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-11-rbasic" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                R 语言必备基础知识
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-12-08-weeklypaper" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    每周文献-181208-DNA 甲基化和几个工具
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-08</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-12-08-weeklypaper" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                每周文献-181208-DNA 甲基化和几个工具
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-11-30-weeklypaper" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    每周文献-181130-lncRNA
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-11-30</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-11-30-weeklypaper" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                每周文献-181130-lncRNA
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-11-13-sogoogtheycantignoreyou" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    优秀到不能被忽视 读书笔记
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-11-13</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-11-13-sogoogtheycantignoreyou" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                优秀到不能被忽视 读书笔记
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-11-10-areyourlightson" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    你的灯亮着么 读书笔记
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-11-10</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-11-10-areyourlightson" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                你的灯亮着么 读书笔记
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-10-28-userpythoninvscode" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    VScode 系列 1：提升 R 和 Python 使用体验
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-10-28</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-10-28-userpythoninvscode" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                VScode 系列 1：提升 R 和 Python 使用体验
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-09-27-sequence66" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    66 种测序数据分析方法和流程
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-09-27</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-09-27-sequence66" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                66 种测序数据分析方法和流程
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-09-20-vscode-note1-4" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    VScode 学习记 1-4
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-09-20</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-09-20-vscode-note1-4" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                VScode 学习记 1-4
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-09-19-downloadsrafast" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    SRA 数据下载自救指南
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-09-19</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-09-19-downloadsrafast" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                SRA 数据下载自救指南
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-08-25-rnaseqtimedata" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    转录组时间序列数据小结
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-29</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-08-25-rnaseqtimedata" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                转录组时间序列数据小结
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-08-15-bioinfohistory" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    生物信息学简史
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-15</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-08-15-bioinfohistory" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                生物信息学简史
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    3D 基因组与生物信息
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-11</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                3D 基因组与生物信息
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-08-05-ecluseevernote" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    一位印象大使的印象笔记使用心得
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-06</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-08-05-ecluseevernote" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                一位印象大使的印象笔记使用心得
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-07-09-chineseuser" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 安装升级后的若干规定动作
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-07-09</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-07-09-chineseuser" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                R 安装升级后的若干规定动作
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-06-06-readingnotexdjix" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    《小岛经济学》告诉我们的
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-06-06</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-06-06-readingnotexdjix" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                《小岛经济学》告诉我们的
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-06-03-awk2" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    awk 入门与进阶 part2—模式动作输出与输入
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-06-03</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-06-03-awk2" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                awk 入门与进阶 part2—模式动作输出与输入
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-06-01-awk1" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    awk 入门与进阶 part1—快速入门
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-06-01</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-06-01-awk1" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                awk 入门与进阶 part1—快速入门
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-04-27-updateRinWindows" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 的安装配置与升级
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-27</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-04-27-updateRinWindows" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                R 的安装配置与升级
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-04-20-vim10tips" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    vim 操作应知应会 10 点
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-20</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-04-20-vim10tips" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                vim 操作应知应会 10 点
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-04-11-rescueyouslide" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    如何拯救你，我的 PPT
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-11</div>
-              
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-04-11-rescueyouslide" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                如何拯救你，我的 PPT
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
             
-              
-                <a href="https://kaopubear.top/post/2018-04-02-anewsafedns" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    DNS 的一个新选择
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-02</div>
-              
-            
-          
-        </div>
-
-        <div>
-          <div class="pagination-container animated fadeIn">
-  
-    <a href="https://kaopubear.top/archives/page/2/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top/archives/page/4/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-
-        </div>
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2018-04-02-anewsafedns" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                DNS 的一个新选择
+              </a>
+            </div>
+          </div>
+        
       </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://kaopubear.top/archives/page/2/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://kaopubear.top/archives/page/4/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
     </div>
-
-    <script src="https://kaopubear.top//media/prism.js"></script>  
-<script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
-</script>
-  
-  </body>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>
