@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2020-02-07T05:46:02.662Z</updated>
+    <updated>2020-02-07T06:01:41.796Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
     <link rel="self" href="https://kaopubear.top/atom.xml"/>
@@ -37,6 +37,21 @@
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>本文首发于「<a href="https://sspai.com/post/58708">少数派</a>」</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[跨平台协作，让飞书实时接收语雀更新提醒]]></title>
+        <id>https://kaopubear.top/post/2020-02-01-larkandyuque</id>
+        <link href="https://kaopubear.top/post/2020-02-01-larkandyuque">
+        </link>
+        <updated>2020-02-01T05:59:33.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>本文首发于「<a href="https://sspai.com/post/58650">少数派</a>」</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>本文首发于「<a href="https://sspai.com/post/58650">少数派</a>」</p>
 </blockquote>
 ]]></content>
     </entry>
@@ -131,19 +146,6 @@
         <summary type="html"><![CDATA[<p>2019年底（其实也就是半个多月之前）听了 renkun 大神在上海 R 会议的一个分享，分享主题是「Rstudio vs VSCode」，然后他紧接着又写了两篇使用 VSCode 进行 R 开发的博客。仔细了解之后，感觉自己有救了。</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>2019年底（其实也就是半个多月之前）听了 renkun 大神在上海 R 会议的一个分享，分享主题是「Rstudio vs VSCode」，然后他紧接着又写了两篇使用 VSCode 进行 R 开发的博客。仔细了解之后，感觉自己有救了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[给一年前自己的一封信-2019]]></title>
-        <id>https://kaopubear.top/post/2020-01-02-201-summary</id>
-        <link href="https://kaopubear.top/post/2020-01-02-201-summary">
-        </link>
-        <updated>2020-01-02T10:55:09.000Z</updated>
-        <summary type="html"><![CDATA[<p>思考问题的熊，你好。</p>
-<p>见字如面。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>思考问题的熊，你好。</p>
-<p>见字如面。</p>
 ]]></content>
     </entry>
 </feed>
