@@ -1,99 +1,162 @@
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>思考问题的熊</title>
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学<br>欢迎加入 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">靠谱熊基地</a>" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1581053720061">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>在家复工，学生党如何使用学术资源 - 思考问题的熊</title>
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="在家复工，学生党如何使用学术资源 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <meta name="description" content="
-本文首发于「少数派」
+  gtag('config', 'UA-91022805-1');
+</script>
 
 
-「战疫」尚未结束，各大高校和科研院所的开学时间一改再改，目前多数院校的返校时间点是 2 月 17 日，还有一些已经改为了 2 月底。就在 2 月 3 日，教育部给全国大学生写了一封信，信中提到：
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1581053720061" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%90%88%E7%90%86%E4%BD%BF%E7%94%A8%E9%AB%98%E6%A0%A1%E8%AE%A2%E9%98%85%E8%B5%84%E6%BA%90">合理使用高校订阅资源</a>
+<ul>
+<li><a href="#%E5%9F%BA%E4%BA%8E-vpn-%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%BB%9C">基于 VPN 访问校园网络</a></li>
+<li><a href="#%E5%9F%BA%E4%BA%8E-carsi-%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE">基于 CARSI 进行访问</a></li>
+<li><a href="#%E5%9F%BA%E4%BA%8E%E9%82%AE%E7%AE%B1%E7%99%BB%E9%99%86%E4%B8%93%E7%94%A8%E7%BD%91%E7%AB%99">基于邮箱登陆专用网站</a></li>
+</ul>
+</li>
+<li><a href="#%E6%89%80%E5%9C%A8%E5%9C%B0%E5%8C%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%AD%89%E7%9B%B8%E5%85%B3%E5%B9%B3%E5%8F%B0">所在地区图书馆等相关平台</a>
+<ul>
+<li><a href="#%E4%B8%8A%E6%B5%B7%E5%B8%82%E5%9B%BE%E4%B9%A6%E9%A6%86">上海市图书馆</a></li>
+<li><a href="#%E4%B8%8A%E6%B5%B7%E7%A0%94%E5%8F%91%E5%85%AC%E5%85%B1%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0">上海研发公共服务平台</a></li>
+<li><a href="#%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%9B%BE%E4%B9%A6%E9%A6%86">深圳市图书馆</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B5%84%E6%BA%90%E6%8F%90%E4%BE%9B%E5%95%86%E5%85%8D%E8%B4%B9%E5%BC%80%E6%94%BE">资源提供商免费开放</a>
+<ul>
+<li><a href="#wiley-%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87">Wiley 冠状病毒相关论文</a></li>
+<li><a href="#elsevier-%E6%96%B0%E5%9E%8B%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E4%BF%A1%E6%81%AF%E4%B8%AD%E5%BF%83">Elsevier 新型冠状病毒信息中心</a></li>
+<li><a href="#%E4%B8%AD%E5%9B%BD%E7%9F%A5%E7%BD%91">中国知网</a></li>
+<li><a href="#%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E5%87%BA%E7%89%88%E7%A4%BE">清华大学出版社</a></li>
+<li><a href="#%E5%85%B6%E5%AE%83">其它</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%80%E6%94%BE%E8%8E%B7%E5%8F%96%E6%9C%9F%E5%88%8A">开放获取期刊</a>
+<ul>
+<li><a href="#doaj">DOAJ</a></li>
+<li><a href="#plos">PLOS</a></li>
+<li><a href="#biomed-central">BioMed Central</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A2%84%E5%8D%B0%E6%9C%AC%E5%8F%91%E5%B8%83%E5%B9%B3%E5%8F%B0">预印本发布平台</a>
+<ul>
+<li><a href="#arxiv">arXiv</a></li>
+<li><a href="#%E7%94%9F%E7%89%A9%E7%B1%BB%E9%A2%84%E5%8D%B0%E6%9C%AC%E6%95%B4%E5%90%88%E5%B9%B3%E5%8F%B0-rxivist">生物类预印本整合平台 Rxivist</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E5%AE%83%E5%B7%A5%E5%85%B7%E5%92%8C%E6%B8%A0%E9%81%93">其它工具和渠道</a>
+<ul>
+<li><a href="#pubmed-%E5%92%8C-europe-pmc">PubMed 和 Europe PMC</a></li>
+<li><a href="#kopernio">Kopernio</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%AE%A4%E4%B8%BB%E9%A1%B5%E5%92%8C-researchgate">实验室主页和 ResearchGate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-做“修行者”，..." />
-  <meta property="og:title" content="在家复工，学生党如何使用学术资源 - 思考问题的熊">
-  <meta property="og:description" content="
-本文首发于「少数派」
-
-
-「战疫」尚未结束，各大高校和科研院所的开学时间一改再改，目前多数院校的返校时间点是 2 月 17 日，还有一些已经改为了 2 月底。就在 2 月 3 日，教育部给全国大学生写了一封信，信中提到：
-
-做“修行者”，..." />
-  <meta property="og:type" content="articles">
-  <meta property="og:url" content="https://kaopubear.top/post/2020-02-05-searchpaper" />
-  <meta property="og:image" content="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200207125701.png">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:width" content="1200">
-  <meta name="twitter:title" content="在家复工，学生党如何使用学术资源 - 思考问题的熊">
-  <meta name="twitter:description" content="
-本文首发于「少数派」
-
-
-「战疫」尚未结束，各大高校和科研院所的开学时间一改再改，目前多数院校的返校时间点是 2 月 17 日，还有一些已经改为了 2 月底。就在 2 月 3 日，教育部给全国大学生写了一封信，信中提到：
-
-做“修行者”，...">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://kaopubear.top/post/2020-02-05-searchpaper">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
- 
-  
-    <link rel="stylesheet" href="https://kaopubear.top//media/css/prism-atom-dark.css">
-  
-
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-  
-</head>
-
-<body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
-    <a href="https://kaopubear.top/" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
-      思考问题的熊
-    </a>
-    <div class="max-w-4xl w-full mx-auto">
-      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
-        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
-          在家复工，学生党如何使用学术资源
-        </h1>
-        
-          <img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200207125701.png" alt="在家复工，学生党如何使用学术资源" class="block w-full mb-8">
-        
-        <div class="mb-8 flex flex-wrap">
-          <div class="text-gray-400 text-sm mr-4">2020-02-05 · 14 min read</div>
-          
-            <a href="https://kaopubear.top/tag/tg-VHYKad" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
-              <i class="ri-hashtag"></i>
-              工具
-            </a>
-          
-            <a href="https://kaopubear.top/tag/EqrCpMmApu" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
-              <i class="ri-hashtag"></i>
-              文献
-            </a>
-          
+          </div>
         </div>
-        <div class="markdown mb-8" v-pre>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
+          项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">在家复工，学生党如何使用学术资源</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-02-05 / 14 min read
+        </div>
+        
+          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200207125701.png" alt="">
+        
+        <div class="post-content yue">
           <blockquote>
 <p>本文首发于「<a href="https://sspai.com/post/58708">少数派</a>」</p>
 </blockquote>
@@ -211,271 +274,145 @@
 <p>至于 ResearchGate，可以将其理解为学术圈的低配版 Facebook，根据官方介绍目前已经有超过 15 万来自世界各地的科研人员用它共享，探索和讨论各自的研究。很多实验室和科研工作者通过它分享自己研究成果的同时也会顺便把原文一并上传。如果你发现文章是不可公开访问的状态还可以直接给作者留言，通常他们都会把文章分享给你。</p>
 
         </div>
-        <!-- Share to Twitter, Weibo, Telegram -->
-        <div class="flex items-center">
-          <div class="mr-4 flex items-center">
-            <i class="ri-share-forward-line text-gray-500"></i>
-          </div>
-          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
-            <i class="ri-twitter-line"></i>
-          </div>
-          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
-            <i class="ri-weibo-line"></i>
-          </div>
-          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
-            <i class="ri-telegram-line"></i>
-          </div>
-        </div>
-      </div>
 
-      
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/tg-VHYKad">
+            <span class="flex-auto">工具</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/EqrCpMmApu">
+            <span class="flex-auto">文献</span>
+          </a>
+        
 
-      
-        <div id="vlaine-comment"></div>
-<script type="application/javascript" src="https://unpkg.com/valine"></script>
-<script type="application/javascript">
-  new Valine({
-    el: '#vlaine-comment',
-    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
-    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
-    pageSize: 10,
-    notify: true,
-    avatar: 'mp',
-    verify: true,
-    placeholder: '不妨评论交流',
-    visitor: true,
-    highlight: true,
-    recordIP: true,
-  })
-</script>
-      
 
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-</footer>
-    </div>
-
-    <!-- TOC Container -->
-    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
-      <i class="ri-file-list-line"></i>
-    </div>
-
-    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
-      <div class="flex mb-4 justify-end">
-        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
-          <i class="ri-close-line text-lg"></i>
-        </div>
-      </div>
-      <div class="post-toc-container">
-        <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%90%88%E7%90%86%E4%BD%BF%E7%94%A8%E9%AB%98%E6%A0%A1%E8%AE%A2%E9%98%85%E8%B5%84%E6%BA%90">合理使用高校订阅资源</a>
-<ul>
-<li><a href="#%E5%9F%BA%E4%BA%8E-vpn-%E8%AE%BF%E9%97%AE%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%BB%9C">基于 VPN 访问校园网络</a></li>
-<li><a href="#%E5%9F%BA%E4%BA%8E-carsi-%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE">基于 CARSI 进行访问</a></li>
-<li><a href="#%E5%9F%BA%E4%BA%8E%E9%82%AE%E7%AE%B1%E7%99%BB%E9%99%86%E4%B8%93%E7%94%A8%E7%BD%91%E7%AB%99">基于邮箱登陆专用网站</a></li>
-</ul>
-</li>
-<li><a href="#%E6%89%80%E5%9C%A8%E5%9C%B0%E5%8C%BA%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%AD%89%E7%9B%B8%E5%85%B3%E5%B9%B3%E5%8F%B0">所在地区图书馆等相关平台</a>
-<ul>
-<li><a href="#%E4%B8%8A%E6%B5%B7%E5%B8%82%E5%9B%BE%E4%B9%A6%E9%A6%86">上海市图书馆</a></li>
-<li><a href="#%E4%B8%8A%E6%B5%B7%E7%A0%94%E5%8F%91%E5%85%AC%E5%85%B1%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0">上海研发公共服务平台</a></li>
-<li><a href="#%E6%B7%B1%E5%9C%B3%E5%B8%82%E5%9B%BE%E4%B9%A6%E9%A6%86">深圳市图书馆</a></li>
-</ul>
-</li>
-<li><a href="#%E8%B5%84%E6%BA%90%E6%8F%90%E4%BE%9B%E5%95%86%E5%85%8D%E8%B4%B9%E5%BC%80%E6%94%BE">资源提供商免费开放</a>
-<ul>
-<li><a href="#wiley-%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87">Wiley 冠状病毒相关论文</a></li>
-<li><a href="#elsevier-%E6%96%B0%E5%9E%8B%E5%86%A0%E7%8A%B6%E7%97%85%E6%AF%92%E4%BF%A1%E6%81%AF%E4%B8%AD%E5%BF%83">Elsevier 新型冠状病毒信息中心</a></li>
-<li><a href="#%E4%B8%AD%E5%9B%BD%E7%9F%A5%E7%BD%91">中国知网</a></li>
-<li><a href="#%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E5%87%BA%E7%89%88%E7%A4%BE">清华大学出版社</a></li>
-<li><a href="#%E5%85%B6%E5%AE%83">其它</a></li>
-</ul>
-</li>
-<li><a href="#%E5%BC%80%E6%94%BE%E8%8E%B7%E5%8F%96%E6%9C%9F%E5%88%8A">开放获取期刊</a>
-<ul>
-<li><a href="#doaj">DOAJ</a></li>
-<li><a href="#plos">PLOS</a></li>
-<li><a href="#biomed-central">BioMed Central</a></li>
-</ul>
-</li>
-<li><a href="#%E9%A2%84%E5%8D%B0%E6%9C%AC%E5%8F%91%E5%B8%83%E5%B9%B3%E5%8F%B0">预印本发布平台</a>
-<ul>
-<li><a href="#arxiv">arXiv</a></li>
-<li><a href="#%E7%94%9F%E7%89%A9%E7%B1%BB%E9%A2%84%E5%8D%B0%E6%9C%AC%E6%95%B4%E5%90%88%E5%B9%B3%E5%8F%B0-rxivist">生物类预印本整合平台 Rxivist</a></li>
-</ul>
-</li>
-<li><a href="#%E5%85%B6%E5%AE%83%E5%B7%A5%E5%85%B7%E5%92%8C%E6%B8%A0%E9%81%93">其它工具和渠道</a>
-<ul>
-<li><a href="#pubmed-%E5%92%8C-europe-pmc">PubMed 和 Europe PMC</a></li>
-<li><a href="#kopernio">Kopernio</a></li>
-<li><a href="#%E5%AE%9E%E9%AA%8C%E5%AE%A4%E4%B8%BB%E9%A1%B5%E5%92%8C-researchgate">实验室主页和 ResearchGate</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-      </div>
-    </div>
-
-    <!-- Back to top -->
-    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
-      <i class="ri-arrow-up-line"></i>
-    </div>
-  </div>
-
-  <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-  <!-- Background of PhotoSwipe. 
-        It's a separate element as animating opacity is faster than rgba(). -->
-  <div class="pswp__bg">
-  </div>
-  <!-- Slides wrapper with overflow:hidden. -->
-  <div class="pswp__scroll-wrap">
-    <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-    <div class="pswp__container">
-      <div class="pswp__item">
-      </div>
-      <div class="pswp__item">
-      </div>
-      <div class="pswp__item">
-      </div>
-    </div>
-    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-    <div class="pswp__ui pswp__ui--hidden">
-      <div class="pswp__top-bar">
-        <!--  Controls are self-explanatory. Order can be changed. -->
-        <div class="pswp__counter">
-        </div>
-        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-        <!-- element will get class pswp__preloader--active when preloader is running -->
-        <div class="pswp__preloader">
-          <div class="pswp__preloader__icn">
-            <div class="pswp__preloader__cut">
-              <div class="pswp__preloader__donut">
-              </div>
+        <div class="flex justify-between py-8">
+          
+            <div class="prev-post">
+              <a href="https://kaopubear.top/post/2020-01-06-7mooc">
+                <h3 class="post-title">
+                  <i class="remixicon-arrow-left-line"></i>
+                  停课不停学 推荐 7 门有趣实用的线上课程
+                </h3>
+              </a>
             </div>
-          </div>
+          
+
+          
+            <div class="next-post">
+              <a href="https://kaopubear.top/post/2020-01-31-returnschool">
+                <h3 class="post-title">
+                  特殊时期假期返程实录
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
         </div>
-      </div>
-      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-        <div class="pswp__share-tooltip">
-        </div>
-      </div>
-      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-      </button>
-      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-      </button>
-      <div class="pswp__caption">
-        <div class="pswp__caption__center">
-        </div>
+
+        
+
       </div>
     </div>
-  </div>
-</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://kaopubear.top//media/scripts/main.js"></script>
-  
-  <!-- Code Highlight -->
-  
-    <script src="https://kaopubear.top//media/prism.js"></script>
-    <script>
-      Prism.highlightAll()
-    </script>
-  
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
 
-  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
-  <script>
-    //拿到预览框架，也就是上面的html代码
-    var pswpElement = document.querySelectorAll('.pswp')[0];
-    //定义图片数组变量
-    var imgitems;
-    /**
-    * 用于显示预览界面
-    * @param index 图片数组下标
-    */
-    function viewImg(index) {
-      //其它选项这里不做过多阐述，详情见官网
-      var pswpoptions = {
-        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
-        bgOpacity: 0.7, // 背景透明度，0-1
-        maxSpreadZoom: 3, // 缩放级别，不要太大
-      };
-      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
-      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
-      gallery.init()
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
     }
-    /**
-    * 用于添加图片点击事件
-    * @param img 图片元素
-    * @param index 所属下标（在imgitems中的位置）
-    */
-    function addImgClick(img, index) {
-      img.onclick = function() {
-        viewImg(index)
-      }
-    }
-    /**
-    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
-    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
-    * 异步加载图片可在图片元素创建完成后调用此方法
-    */
-    function initImg() {
-      //重置图片数组
-      imgitems = [];
-      //查找class:markdown 下的所有img元素并遍历
-      var imgs = document.querySelectorAll('.markdown img');
-      for (var i = 0; i < imgs.length; i++) {
-        var img = imgs[i];
-        //本站相册初始为loading图片，真实图片放在data-src
-        var ds = img.getAttribute("data-src");
-        //创建image对象，用于获取图片宽高
-        var imgtemp = new Image();
-        //判断是否存在data-src
-        if (ds != null && ds.length > 0) {
-          imgtemp.src = ds
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
         } else {
-          imgtemp.src = img.src
+          link.classList.remove("current");    
         }
-        //判断是否存在缓存
-        if (imgtemp.complete) {
-          var imgobj = {
-            "src": imgtemp.src,
-            "w": imgtemp.width,
-            "h": imgtemp.height,
-          };
-          imgitems[i] = imgobj;
-          addImgClick(img, i);
-        } else {
-          console.log('进来了2')
-          imgtemp.index = i;
-          imgtemp.img = img;
-          imgtemp.onload = function() {
-            var imgobj = {
-              "src": this.src,
-              "w": this.width,
-              "h": this.height,
-            };
-            //不要使用push，因为onload前后顺序会不同
-            imgitems[this.index] = imgobj
-            //添加点击事件
-            addImgClick(this.img, this.index);
-          }
-        }
+      } else {
+        link.classList.add("current");
       }
+    } else {
+      link.classList.remove("current");
     }
-    //初始化
-    initImg();
-  </script>
-</body>
+  });
+});
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>
