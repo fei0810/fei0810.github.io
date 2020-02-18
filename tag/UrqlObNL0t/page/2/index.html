@@ -4,14 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1581055293966">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582005512555">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
@@ -26,443 +27,236 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1581055293966" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+    <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://kaopubear.top/">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            很高兴和你相遇<br>这里正在记录我的所思所学
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-qq-line"></i>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
-          项目
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
-    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> R
-        </h2>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-12-13-rggplot" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png'">
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+        
+          <a href="/post/project">项目</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> R</h1>
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-12-13-rggplot">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">R 语言可视化之原理概述篇</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="整体介绍">整体介绍</h2>
-<blockquote>
-<p>一张统计图形就是从数据到几何对象 (geometric object, 缩写为 geom, 包括点、线、条形等）的图形属性 (aesthetic attributes, 缩写为 aes, 包括颜色、形状、大小等）的一个映射。此外，图形中还可能包含数据的统计变换 (statistical transformation, 缩写为 stats), 最后绘制在某个特定的坐标系 (coordinate system,  缩写为 coord) 中，而分面 (facet, 指将绘图窗口划分为若干个子窗口）则可以用来生成数据中不同子集的图形。</p>
-</blockquote>
-
       </div>
-      <div class="text-gray-400 text-sm font-light">2018-12-13 / 10 min read</div>
     </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-12-14-rggplotexample" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-12-14-rggplotexample">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">R 语言可视化之案例</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="qplot-使用">qplot 使用</h2>
-<p>导入所需数据格式为 data.frame</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-12-13 / 9 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-12-12-rtidyverse" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-12-12-rtidyverse">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">多快好省用 R 处理数据</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <blockquote>
-<p>很早之前我一直都是使用命令行来处理软，cut,sed 再 grep 再加上终极 awk 基本上就可以随意的按照需求处理各种软件跑出来的文本文件了，再后来就要开始学习 python，python 学的怎么样了呢？呵呵。</p>
-</blockquote>
-<blockquote>
-<p>虽然做过统计学课的助教，上课的时候用的也是 R 语言，但是博客里并没有几篇 R 相关的文章。印象中一篇是 <a href="http://kaopubear.top/2017-03-02-RIntroductionForNewbie.html">给初学者的 R 语言介绍</a>（写这篇文章当时是为了激发一点学生学习 R 语言的热情），另一篇是 <a href="http://kaopubear.top/2017-09-28-rbasicknowladge.html">R 必备基础知识</a>（写这篇文章当时是因为在写 R 与统计学基础系列文章，就不得不总结一些 R 语言的基础知识）。</p>
-</blockquote>
-<blockquote>
-<p>说实话，我本身对 R 还是非常喜欢和欣赏的，但是日常的使用需求并不高。就拿最基本的文本处理来说，基本上都可以在 shell 中进行随心所欲地增删改成，处理成很多 R 相关软件需要的文本格式，用需要的 R 包跑一两个命令就可以了。但是目前已经有点厌倦了这样的生活，我后期打算有机会的话用 R shiny 写一点网页工具给大家娱乐，也打算精进一下 R 的画图技能。这里就 have to 用 R 去做一些数据处理，于是就有了这样一系列文章。这篇是关于如何用 R 多快好省的进行数据处理。另外，说句题外话，从我这几天的实际处理数据情况来看，R 有些工作做起来，还是太慢了，也可能是我的业务不够娴熟吧。</p>
-</blockquote>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-12-12 / 10 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-12-11-rbasic" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-12-11-rbasic">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">R 语言必备基础知识</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <blockquote>
-<p>写着写着 R 与统计基础莫名其妙地又写开 R 基础了，一起写吧。</p>
-</blockquote>
-<h2 id="r-编程基础">R 编程基础</h2>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-12-11 / 9 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-07-09-chineseuser" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-07-09-chineseuser">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">R 安装升级后的若干规定动作</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="两个地址">两个地址</h2>
-<p>R cran 镜像地址 <a href="https://cran.r-project.org/mirrors.html">https://cran.r-project.org/mirrors.html</a></p>
-<p>bioconductor  mirror 地址 <a href="https://www.bioconductor.org/about/mirrors/">https://www.bioconductor.org/about/mirrors/</a></p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-07-09 / 4 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-04-27-updateRinWindows" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-04-27-updateRinWindows">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">R 的安装配置与升级</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>这几天 R 语言升级到了 3.5 的版本，终于在小数点后面一位有了变化。关于新版本可以这这篇博客中查看 <a href="https://www.r-statistics.com/2018/04/r-3-5-0-is-released-major-release-with-many-new-features/">R 3.5.0 is released! (major release with many new features)</a> 。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-04-27 / 4 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-03-06-rintro2sibs" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-03-06-rintro2sibs">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">给初学者的 R 语言介绍</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="几点说明">几点说明：</h2>
-<ol>
-<li>文档由 <strong>R Markdown</strong>[^1] 写成。</li>
-</ol>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-03-06 / 16 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-10-03-RandStatistics8" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6097f4d4059e69d5.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-10-03-RandStatistics8">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-8</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="写在前面">写在前面</h2>
-<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-10-03 / 9 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-10-02-RandStatistics7" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-67576ab98a814605.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-10-02-RandStatistics7">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-7</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="写在前面">写在前面</h2>
-<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-10-02 / 6 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${9 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-10-01-RandStatistics6" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-7c244168867174f2.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-10-01-RandStatistics6">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">统计学基础与 R-6</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="写在前面">写在前面</h2>
-<p>入门生物信息，所有人都绕不开统计基础知识和相关实现方式。本章我们将简要介绍统计学相关基础知识以及如何使用 R 语言进行简单地计算和分析。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-10-01 / 12 min read</div>
-    </div>
-  </section>
-
-        <div class="pagination-container animated fadeIn">
+    <div class="main">
+      <div class="inner">
+        <div class="items">
   
-    <a href="https://kaopubear.top/tag/UrqlObNL0t" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png" href="https://kaopubear.top/post/2018-12-13-rggplot/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-13-rggplot/">
+        <div class="item-meta">
+          <time datetime="2018-12-13 18:30:51">2018-12-13</time>
+        </div>
+        <h2>R 语言可视化之原理概述篇</h2>
+      </a>
+    </div>
   
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" href="https://kaopubear.top/post/2018-12-14-rggplotexample/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-14-rggplotexample/">
+        <div class="item-meta">
+          <time datetime="2018-12-13 18:30:51">2018-12-13</time>
+        </div>
+        <h2>R 语言可视化之案例</h2>
+      </a>
+    </div>
   
-    <a href="https://kaopubear.top/tag/UrqlObNL0t/page/3/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" href="https://kaopubear.top/post/2018-12-12-rtidyverse/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-12-rtidyverse/">
+        <div class="item-meta">
+          <time datetime="2018-12-12 18:30:34">2018-12-12</time>
+        </div>
+        <h2>多快好省用 R 处理数据</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png" href="https://kaopubear.top/post/2018-12-11-rbasic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-11-rbasic/">
+        <div class="item-meta">
+          <time datetime="2018-12-11 18:30:19">2018-12-11</time>
+        </div>
+        <h2>R 语言必备基础知识</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2018-07-09-chineseuser/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-07-09-chineseuser/">
+        <div class="item-meta">
+          <time datetime="2018-07-09 13:02:38">2018-07-09</time>
+        </div>
+        <h2>R 安装升级后的若干规定动作</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" href="https://kaopubear.top/post/2018-04-27-updateRinWindows/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-04-27-updateRinWindows/">
+        <div class="item-meta">
+          <time datetime="2018-04-27 13:29:31">2018-04-27</time>
+        </div>
+        <h2>R 的安装配置与升级</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png" href="https://kaopubear.top/post/2017-03-06-rintro2sibs/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-03-06-rintro2sibs/">
+        <div class="item-meta">
+          <time datetime="2018-03-06 17:03:55">2018-03-06</time>
+        </div>
+        <h2>给初学者的 R 语言介绍</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6097f4d4059e69d5.png" href="https://kaopubear.top/post/2017-10-03-RandStatistics8/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6097f4d4059e69d5.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-10-03-RandStatistics8/">
+        <div class="item-meta">
+          <time datetime="2017-10-03 10:26:54">2017-10-03</time>
+        </div>
+        <h2>统计学基础与 R-8</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-67576ab98a814605.png" href="https://kaopubear.top/post/2017-10-02-RandStatistics7/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-67576ab98a814605.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-10-02-RandStatistics7/">
+        <div class="item-meta">
+          <time datetime="2017-10-02 12:24:26">2017-10-02</time>
+        </div>
+        <h2>统计学基础与 R-7</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-7c244168867174f2.png" href="https://kaopubear.top/post/2017-10-01-RandStatistics6/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-7c244168867174f2.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-10-01-RandStatistics6/">
+        <div class="item-meta">
+          <time datetime="2017-10-01 22:24:20">2017-10-01</time>
+        </div>
+        <h2>统计学基础与 R-6</h2>
+      </a>
+    </div>
   
 </div>
 
+        <div class="navigation">
+  
+    <a href="https://kaopubear.top/tag/UrqlObNL0t"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://kaopubear.top/tag/UrqlObNL0t/page/3/">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
       </div>
     </div>
+    <footer class="footer">
+  <div class="main">
+    <a href="https://kaopubear.top/">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582005512555" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
+    </p>
+    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script src="https://kaopubear.top//media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>

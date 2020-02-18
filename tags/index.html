@@ -4,14 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1581055293966">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582005512555">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
@@ -26,378 +27,293 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1581055293966" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+    <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://kaopubear.top/">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            很高兴和你相遇<br>这里正在记录我的所思所学
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-qq-line"></i>
-                </a>
-              
-            
-          </div>
+        
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+        
+          <a href="/post/project">项目</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 目前共计 31 个标签</h1>
         </div>
-      
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
-          项目
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
-    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-2-line"></i> 标签云
-        </h2>
-        <div class="tags-container">
+    <div class="main">
+      <div class="inner">
+        <div class="tags">
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/tg-VHYKad" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-              <span class="flex-auto">工具</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">7</span>
+            <a class="tag" href="https://kaopubear.top/tag/tg-VHYKad/">
+              <div class="tag-name">工具</div>
+              <div class="tag-count">7</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/2IWlJgErkt" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-              <span class="flex-auto">日常</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">13</span>
+            <a class="tag" href="https://kaopubear.top/tag/2IWlJgErkt/">
+              <div class="tag-name">日常</div>
+              <div class="tag-count">13</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/SoFzwZsYls" :style="{ 'animation-delay': `${2 * 0.2}s` }">
-              <span class="flex-auto">读书</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">7</span>
+            <a class="tag" href="https://kaopubear.top/tag/SoFzwZsYls/">
+              <div class="tag-name">读书</div>
+              <div class="tag-count">7</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/EqrCpMmApu" :style="{ 'animation-delay': `${3 * 0.2}s` }">
-              <span class="flex-auto">文献</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">16</span>
+            <a class="tag" href="https://kaopubear.top/tag/EqrCpMmApu/">
+              <div class="tag-name">文献</div>
+              <div class="tag-count">16</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/2mze5gMZQM" :style="{ 'animation-delay': `${4 * 0.2}s` }">
-              <span class="flex-auto">效率</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">13</span>
+            <a class="tag" href="https://kaopubear.top/tag/2mze5gMZQM/">
+              <div class="tag-name">效率</div>
+              <div class="tag-count">13</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/Rn3TD5Cpatn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
-              <span class="flex-auto">思考</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">20</span>
+            <a class="tag" href="https://kaopubear.top/tag/Rn3TD5Cpatn/">
+              <div class="tag-name">思考</div>
+              <div class="tag-count">20</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/DvI6ypPftI" :style="{ 'animation-delay': `${6 * 0.2}s` }">
-              <span class="flex-auto">生物信息</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">18</span>
+            <a class="tag" href="https://kaopubear.top/tag/DvI6ypPftI/">
+              <div class="tag-name">生物信息</div>
+              <div class="tag-count">18</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/1BY38A9TE" :style="{ 'animation-delay': `${7 * 0.2}s` }">
-              <span class="flex-auto">编程</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">4</span>
+            <a class="tag" href="https://kaopubear.top/tag/1BY38A9TE/">
+              <div class="tag-name">编程</div>
+              <div class="tag-count">4</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/UrqlObNL0t" :style="{ 'animation-delay': `${8 * 0.2}s` }">
-              <span class="flex-auto">R</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">26</span>
+            <a class="tag" href="https://kaopubear.top/tag/UrqlObNL0t/">
+              <div class="tag-name">R</div>
+              <div class="tag-count">26</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/fMLJ4BbHmo" :style="{ 'animation-delay': `${9 * 0.2}s` }">
-              <span class="flex-auto">VScode</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">7</span>
+            <a class="tag" href="https://kaopubear.top/tag/fMLJ4BbHmo/">
+              <div class="tag-name">VScode</div>
+              <div class="tag-count">7</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/bPxOfgU9YC" :style="{ 'animation-delay': `${10 * 0.2}s` }">
-              <span class="flex-auto">数据科学</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">30</span>
+            <a class="tag" href="https://kaopubear.top/tag/bPxOfgU9YC/">
+              <div class="tag-name">数据科学</div>
+              <div class="tag-count">30</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/p7M9e5leM" :style="{ 'animation-delay': `${11 * 0.2}s` }">
-              <span class="flex-auto">RNA-seq</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">6</span>
+            <a class="tag" href="https://kaopubear.top/tag/p7M9e5leM/">
+              <div class="tag-name">RNA-seq</div>
+              <div class="tag-count">6</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/OLsY4LEszq" :style="{ 'animation-delay': `${12 * 0.2}s` }">
-              <span class="flex-auto">macOS</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            <a class="tag" href="https://kaopubear.top/tag/OLsY4LEszq/">
+              <div class="tag-name">macOS</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/v0Xcy0jQaT" :style="{ 'animation-delay': `${13 * 0.2}s` }">
-              <span class="flex-auto">linux</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">16</span>
+            <a class="tag" href="https://kaopubear.top/tag/v0Xcy0jQaT/">
+              <div class="tag-name">linux</div>
+              <div class="tag-count">16</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/pc7Sk2WlTJ" :style="{ 'animation-delay': `${14 * 0.2}s` }">
-              <span class="flex-auto">conda</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            <a class="tag" href="https://kaopubear.top/tag/pc7Sk2WlTJ/">
+              <div class="tag-name">conda</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/rOdXXBPjM4" :style="{ 'animation-delay': `${15 * 0.2}s` }">
-              <span class="flex-auto">Python</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">2</span>
+            <a class="tag" href="https://kaopubear.top/tag/rOdXXBPjM4/">
+              <div class="tag-name">Python</div>
+              <div class="tag-count">2</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/l9yyfXVUxu" :style="{ 'animation-delay': `${16 * 0.2}s` }">
-              <span class="flex-auto">google</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">2</span>
+            <a class="tag" href="https://kaopubear.top/tag/l9yyfXVUxu/">
+              <div class="tag-name">google</div>
+              <div class="tag-count">2</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/nVbnso_EhL" :style="{ 'animation-delay': `${17 * 0.2}s` }">
-              <span class="flex-auto">shiny</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            <a class="tag" href="https://kaopubear.top/tag/nVbnso_EhL/">
+              <div class="tag-name">shiny</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/woFrWMXtsS" :style="{ 'animation-delay': `${18 * 0.2}s` }">
-              <span class="flex-auto">debug</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">2</span>
+            <a class="tag" href="https://kaopubear.top/tag/woFrWMXtsS/">
+              <div class="tag-name">debug</div>
+              <div class="tag-count">2</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/haFk19Ljigu" :style="{ 'animation-delay': `${19 * 0.2}s` }">
-              <span class="flex-auto">ggplot2</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            <a class="tag" href="https://kaopubear.top/tag/haFk19Ljigu/">
+              <div class="tag-name">ggplot2</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/MoSquIwnNqz" :style="{ 'animation-delay': `${20 * 0.2}s` }">
-              <span class="flex-auto">表观遗传</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">3</span>
+            <a class="tag" href="https://kaopubear.top/tag/MoSquIwnNqz/">
+              <div class="tag-name">表观遗传</div>
+              <div class="tag-count">3</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/VztzvYW0qtf" :style="{ 'animation-delay': `${21 * 0.2}s` }">
-              <span class="flex-auto">印象笔记</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">3</span>
+            <a class="tag" href="https://kaopubear.top/tag/VztzvYW0qtf/">
+              <div class="tag-name">印象笔记</div>
+              <div class="tag-count">3</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/kxFr8zWYmXr" :style="{ 'animation-delay': `${22 * 0.2}s` }">
-              <span class="flex-auto">经济学</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">16</span>
+            <a class="tag" href="https://kaopubear.top/tag/kxFr8zWYmXr/">
+              <div class="tag-name">经济学</div>
+              <div class="tag-count">16</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/CgpgIuLt1nJ" :style="{ 'animation-delay': `${23 * 0.2}s` }">
-              <span class="flex-auto">算法</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">7</span>
+            <a class="tag" href="https://kaopubear.top/tag/CgpgIuLt1nJ/">
+              <div class="tag-name">算法</div>
+              <div class="tag-count">7</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/Ud1JPVbW1rU" :style="{ 'animation-delay': `${24 * 0.2}s` }">
-              <span class="flex-auto">统计</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">12</span>
+            <a class="tag" href="https://kaopubear.top/tag/Ud1JPVbW1rU/">
+              <div class="tag-name">统计</div>
+              <div class="tag-count">12</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/mkBKj9w8D8E" :style="{ 'animation-delay': `${25 * 0.2}s` }">
-              <span class="flex-auto">variant</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            <a class="tag" href="https://kaopubear.top/tag/mkBKj9w8D8E/">
+              <div class="tag-name">variant</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/JFowL4_oEpM" :style="{ 'animation-delay': `${26 * 0.2}s` }">
-              <span class="flex-auto">markdown</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">3</span>
+            <a class="tag" href="https://kaopubear.top/tag/JFowL4_oEpM/">
+              <div class="tag-name">markdown</div>
+              <div class="tag-count">3</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/GzsCQRADtBW" :style="{ 'animation-delay': `${27 * 0.2}s` }">
-              <span class="flex-auto">Docker</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            <a class="tag" href="https://kaopubear.top/tag/GzsCQRADtBW/">
+              <div class="tag-name">Docker</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/P4GLM7-KRkk" :style="{ 'animation-delay': `${28 * 0.2}s` }">
-              <span class="flex-auto">机器学习</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">1</span>
+            <a class="tag" href="https://kaopubear.top/tag/P4GLM7-KRkk/">
+              <div class="tag-name">机器学习</div>
+              <div class="tag-count">1</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/QDJwk9EcZyr" :style="{ 'animation-delay': `${29 * 0.2}s` }">
-              <span class="flex-auto">考研</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">21</span>
+            <a class="tag" href="https://kaopubear.top/tag/QDJwk9EcZyr/">
+              <div class="tag-name">考研</div>
+              <div class="tag-count">21</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
-            <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/_plfY8IQ43A" :style="{ 'animation-delay': `${30 * 0.2}s` }">
-              <span class="flex-auto">英语</span>
-              <span class="flex rounded-full bg-gray-200 px-2 py-1 text-xs ml-1">4</span>
+            <a class="tag" href="https://kaopubear.top/tag/_plfY8IQ43A/">
+              <div class="tag-name">英语</div>
+              <div class="tag-count">4</div>
+              <i class="remixicon-price-tag-3-line icon"></i>
             </a>
           
         </div>
       </div>
     </div>
+    <footer class="footer">
+  <div class="main">
+    <a href="https://kaopubear.top/">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582005512555" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
+    </p>
+    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script src="https://kaopubear.top//media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>

@@ -4,14 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1581055293966">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582005512555">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
@@ -26,513 +27,476 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1581055293966" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+    <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://kaopubear.top/">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            很高兴和你相遇<br>这里正在记录我的所思所学
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-qq-line"></i>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
-          项目
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
-    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-archive-line"></i> 文章归档
-        </h2>
         
-
-        <div class="archives-container">
-          
-            <h2 class="text-gray-600 py-4 animated fadeIn">
-              <i class="remixicon-map-pin-time-line"></i>
-              2018
-            </h2>
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-19-biolitmap" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    生物信息发文章哪家强
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-19</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-16-weeklypaper" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    每周文献-181216-lncRNA差异分析流程测评
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-16</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-14-usetrello" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    任务协作管理工具 Trello 使用简介
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-14</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-13-rggplot" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 语言可视化之原理概述篇
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-13</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-14-rggplotexample" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 语言可视化之案例
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-13</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-12-rtidyverse" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    多快好省用 R 处理数据
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-12</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-11-rbasic" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 语言必备基础知识
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-11</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-12-08-weeklypaper" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    每周文献-181208-DNA 甲基化和几个工具
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-12-08</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-11-30-weeklypaper" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    每周文献-181130-lncRNA
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-11-30</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-11-13-sogoogtheycantignoreyou" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    优秀到不能被忽视 读书笔记
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-11-13</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-11-10-areyourlightson" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    你的灯亮着么 读书笔记
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-11-10</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-10-28-userpythoninvscode" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    VScode 系列 1：提升 R 和 Python 使用体验
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-10-28</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-09-27-sequence66" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    66 种测序数据分析方法和流程
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-09-27</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-09-20-vscode-note1-4" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    VScode 学习记 1-4
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-09-20</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-09-19-downloadsrafast" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    SRA 数据下载自救指南
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-09-19</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-08-25-rnaseqtimedata" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    转录组时间序列数据小结
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-29</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-08-15-bioinfohistory" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    生物信息学简史
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-15</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    3D 基因组与生物信息
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-11</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-08-05-ecluseevernote" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    一位印象大使的印象笔记使用心得
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-08-06</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-07-09-chineseuser" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 安装升级后的若干规定动作
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-07-09</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-06-06-readingnotexdjix" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    《小岛经济学》告诉我们的
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-06-06</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-06-03-awk2" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    awk 入门与进阶 part2—模式动作输出与输入
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-06-03</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-06-01-awk1" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    awk 入门与进阶 part1—快速入门
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-06-01</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-04-27-updateRinWindows" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    R 的安装配置与升级
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-27</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-04-20-vim10tips" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    vim 操作应知应会 10 点
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-20</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-04-11-rescueyouslide" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    如何拯救你，我的 PPT
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-11</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-04-02-anewsafedns" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    DNS 的一个新选择
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-04-02</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-03-11-howtouseevernote" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    高效使用云笔记的 5 个问题和 10 个关键
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-03-11</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2017-03-06-rintro2sibs" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    给初学者的 R 语言介绍
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-03-06</div>
-              
-            
-              
-                <a href="https://kaopubear.top/post/2018-03-05-TheMasterAlgorithm7" class="post">
-                  <h2 class="inline-block font-bold text-lg post-title animated fadeIn">
-                    『终极算法』摘抄笔记-贝叶斯学派
-                  </h2>
-                </a>
-                <div class="text-sm font-light mt-3 mb-6 text-gray-400 animated fadeInDown" style="animation-delay: 0.4s">2018-03-05</div>
-              
-            
-          
-        </div>
-
-        <div>
-          <div class="pagination-container animated fadeIn">
-  
-    <a href="https://kaopubear.top/archives/page/2/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top/archives/page/4/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+        
+          <a href="/post/project">项目</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+    </nav>
+  </div>
 </div>
-
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          <h1 class="info_title"><i class="remixicon-archive-line"></i> 目前共计 182 篇创作</h1>
         </div>
       </div>
     </div>
-
-    <script src="https://kaopubear.top//media/prism.js"></script>  
-<script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
-</script>
+    <div class="main">
+      <div class="inner">
+        <div class="items">
   
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" href="https://kaopubear.top/post/2018-12-19-biolitmap/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-19-biolitmap/">
+        <div class="item-meta">
+          <time datetime="2018-12-19 14:42:35">2018-12-19</time>
+        </div>
+        <h2>生物信息发文章哪家强</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png" href="https://kaopubear.top/post/2018-12-16-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-16-weeklypaper/">
+        <div class="item-meta">
+          <time datetime="2018-12-16 18:22:25">2018-12-16</time>
+        </div>
+        <h2>每周文献-181216-lncRNA差异分析流程测评</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200118114522.png" href="https://kaopubear.top/post/2018-12-14-usetrello/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200118114522.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-14-usetrello/">
+        <div class="item-meta">
+          <time datetime="2018-12-14 11:42:34">2018-12-14</time>
+        </div>
+        <h2>任务协作管理工具 Trello 使用简介</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png" href="https://kaopubear.top/post/2018-12-13-rggplot/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-13-rggplot/">
+        <div class="item-meta">
+          <time datetime="2018-12-13 18:30:51">2018-12-13</time>
+        </div>
+        <h2>R 语言可视化之原理概述篇</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" href="https://kaopubear.top/post/2018-12-14-rggplotexample/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-14-rggplotexample/">
+        <div class="item-meta">
+          <time datetime="2018-12-13 18:30:51">2018-12-13</time>
+        </div>
+        <h2>R 语言可视化之案例</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" href="https://kaopubear.top/post/2018-12-12-rtidyverse/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-12-rtidyverse/">
+        <div class="item-meta">
+          <time datetime="2018-12-12 18:30:34">2018-12-12</time>
+        </div>
+        <h2>多快好省用 R 处理数据</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png" href="https://kaopubear.top/post/2018-12-11-rbasic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-11-rbasic/">
+        <div class="item-meta">
+          <time datetime="2018-12-11 18:30:19">2018-12-11</time>
+        </div>
+        <h2>R 语言必备基础知识</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png" href="https://kaopubear.top/post/2018-12-08-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-12-08-weeklypaper/">
+        <div class="item-meta">
+          <time datetime="2018-12-08 20:13:37">2018-12-08</time>
+        </div>
+        <h2>每周文献-181208-DNA 甲基化和几个工具</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg" href="https://kaopubear.top/post/2018-11-30-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-11-30-weeklypaper/">
+        <div class="item-meta">
+          <time datetime="2018-11-30 16:49:35">2018-11-30</time>
+        </div>
+        <h2>每周文献-181130-lncRNA</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png" href="https://kaopubear.top/post/2018-11-13-sogoogtheycantignoreyou/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-11-13-sogoogtheycantignoreyou/">
+        <div class="item-meta">
+          <time datetime="2018-11-13 10:43:47">2018-11-13</time>
+        </div>
+        <h2>优秀到不能被忽视 读书笔记</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png" href="https://kaopubear.top/post/2018-11-10-areyourlightson/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-07a866e5aed03b85.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-11-10-areyourlightson/">
+        <div class="item-meta">
+          <time datetime="2018-11-10 10:43:23">2018-11-10</time>
+        </div>
+        <h2>你的灯亮着么 读书笔记</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png" href="https://kaopubear.top/post/2018-10-28-userpythoninvscode/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-10-28-userpythoninvscode/">
+        <div class="item-meta">
+          <time datetime="2018-10-28 21:40:26">2018-10-28</time>
+        </div>
+        <h2>VScode 系列 1：提升 R 和 Python 使用体验</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png" href="https://kaopubear.top/post/2018-09-27-sequence66/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-09-27-sequence66/">
+        <div class="item-meta">
+          <time datetime="2018-09-27 10:44:43">2018-09-27</time>
+        </div>
+        <h2>66 种测序数据分析方法和流程</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" href="https://kaopubear.top/post/2018-09-20-vscode-note1-4/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-09-20-vscode-note1-4/">
+        <div class="item-meta">
+          <time datetime="2018-09-20 16:30:32">2018-09-20</time>
+        </div>
+        <h2>VScode 学习记 1-4</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png" href="https://kaopubear.top/post/2018-09-19-downloadsrafast/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-09-19-downloadsrafast/">
+        <div class="item-meta">
+          <time datetime="2018-09-19 10:45:21">2018-09-19</time>
+        </div>
+        <h2>SRA 数据下载自救指南</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png" href="https://kaopubear.top/post/2018-08-25-rnaseqtimedata/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-08-25-rnaseqtimedata/">
+        <div class="item-meta">
+          <time datetime="2018-08-29 10:46:17">2018-08-29</time>
+        </div>
+        <h2>转录组时间序列数据小结</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-64b6d50ab3a44838.png" href="https://kaopubear.top/post/2018-08-15-bioinfohistory/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-64b6d50ab3a44838.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-08-15-bioinfohistory/">
+        <div class="item-meta">
+          <time datetime="2018-08-15 19:22:06">2018-08-15</time>
+        </div>
+        <h2>生物信息学简史</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-828599c54149be5d.jpg" href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-828599c54149be5d.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic/">
+        <div class="item-meta">
+          <time datetime="2018-08-11 07:52:02">2018-08-11</time>
+        </div>
+        <h2>3D 基因组与生物信息</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-bacd4f947902dcdc.png" href="https://kaopubear.top/post/2018-08-05-ecluseevernote/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-bacd4f947902dcdc.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-08-05-ecluseevernote/">
+        <div class="item-meta">
+          <time datetime="2018-08-06 10:42:08">2018-08-06</time>
+        </div>
+        <h2>一位印象大使的印象笔记使用心得</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2018-07-09-chineseuser/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-07-09-chineseuser/">
+        <div class="item-meta">
+          <time datetime="2018-07-09 13:02:38">2018-07-09</time>
+        </div>
+        <h2>R 安装升级后的若干规定动作</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg" href="https://kaopubear.top/post/2018-06-06-readingnotexdjix/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-008aea13909d31c4.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-06-06-readingnotexdjix/">
+        <div class="item-meta">
+          <time datetime="2018-06-06 18:48:27">2018-06-06</time>
+        </div>
+        <h2>《小岛经济学》告诉我们的</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2018-06-03-awk2/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-06-03-awk2/">
+        <div class="item-meta">
+          <time datetime="2018-06-03 18:50:11">2018-06-03</time>
+        </div>
+        <h2>awk 入门与进阶 part2—模式动作输出与输入</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" href="https://kaopubear.top/post/2018-06-01-awk1/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-06-01-awk1/">
+        <div class="item-meta">
+          <time datetime="2018-06-01 18:49:07">2018-06-01</time>
+        </div>
+        <h2>awk 入门与进阶 part1—快速入门</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" href="https://kaopubear.top/post/2018-04-27-updateRinWindows/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-04-27-updateRinWindows/">
+        <div class="item-meta">
+          <time datetime="2018-04-27 13:29:31">2018-04-27</time>
+        </div>
+        <h2>R 的安装配置与升级</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-994de011ea5daa85.png" href="https://kaopubear.top/post/2018-04-20-vim10tips/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-994de011ea5daa85.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-04-20-vim10tips/">
+        <div class="item-meta">
+          <time datetime="2018-04-20 18:54:20">2018-04-20</time>
+        </div>
+        <h2>vim 操作应知应会 10 点</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-935054735c7fbc24.png" href="https://kaopubear.top/post/2018-04-11-rescueyouslide/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-935054735c7fbc24.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-04-11-rescueyouslide/">
+        <div class="item-meta">
+          <time datetime="2018-04-11 21:13:49">2018-04-11</time>
+        </div>
+        <h2>如何拯救你，我的 PPT</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-113f5d4d22a7197d.png" href="https://kaopubear.top/post/2018-04-02-anewsafedns/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-113f5d4d22a7197d.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-04-02-anewsafedns/">
+        <div class="item-meta">
+          <time datetime="2018-04-02 22:37:17">2018-04-02</time>
+        </div>
+        <h2>DNS 的一个新选择</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png" href="https://kaopubear.top/post/2018-03-11-howtouseevernote/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-03-11-howtouseevernote/">
+        <div class="item-meta">
+          <time datetime="2018-03-11 20:47:23">2018-03-11</time>
+        </div>
+        <h2>高效使用云笔记的 5 个问题和 10 个关键</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png" href="https://kaopubear.top/post/2017-03-06-rintro2sibs/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-03-06-rintro2sibs/">
+        <div class="item-meta">
+          <time datetime="2018-03-06 17:03:55">2018-03-06</time>
+        </div>
+        <h2>给初学者的 R 语言介绍</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg" href="https://kaopubear.top/post/2018-03-05-TheMasterAlgorithm7/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-03-05-TheMasterAlgorithm7/">
+        <div class="item-meta">
+          <time datetime="2018-03-05 20:50:48">2018-03-05</time>
+        </div>
+        <h2>『终极算法』摘抄笔记-贝叶斯学派</h2>
+      </a>
+    </div>
+  
+</div>
+
+        <div class="navigation">
+  
+    <a href="https://kaopubear.top/archives/page/2/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://kaopubear.top/archives/page/4/">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="main">
+    <a href="https://kaopubear.top/">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582005512555" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
+    </p>
+    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://kaopubear.top//media/prism.js"></script>
+<script>
+  Prism.highlightAll()
+</script>
+
   </body>
 </html>

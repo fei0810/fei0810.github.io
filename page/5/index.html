@@ -4,14 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1581055293966">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582005512555">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
@@ -26,455 +27,243 @@
 
   </head>
   <body>
-    <div class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1581055293966" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+    <div class="">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://kaopubear.top/">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            很高兴和你相遇<br>这里正在记录我的所思所学
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-qq-line"></i>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
-          项目
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
-    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="latest-article text-lg text-gray-700 mb-8">
-          <i class="remixicon-article-line"></i>
-          最新文章
-        </h2>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-05-03-keyquestion" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-05-03-keyquestion">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">「关键提问」读书笔记</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="基本信息">基本信息</h2>
-<ul>
-<li>原作名：Wait, What?: And Life's Other Essential Questions</li>
-<li>作者：詹姆斯 ·E. 瑞安 (James E. Ryan)</li>
-<li>页数：177</li>
-<li>整理：思考问题的熊</li>
-</ul>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-05-03 / 6 min read</div>
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+        
+          <a href="/post/project">项目</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
     </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-04-19-weeklypaper" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-04-19-weeklypaper">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-190419-植物单细胞BAM重比对以及假基因研究</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="a-single-cell-rna-sequencing-profiles-the-developmental-landscape-of-arabidopsis-root">A Single-Cell RNA Sequencing Profiles the Developmental Landscape of Arabidopsis Root</h2>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-04-19 / 8 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606001559.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">数据分析需要更好的问题</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h1 id="设计思维和更好的问题">设计思维和更好的问题</h1>
-<p>这篇文章的主要内容来自 Roger Peng 最近的一篇博客 <a href="https://simplystatistics.org/2019/04/17/tukey-design-thinking-and-better-questions/">Tukey, Design Thinking, and Better Questions</a>。读了之后有些启发便做简单记录。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-04-18 / 4 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-04-11-weeklypaper" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-04-11-weeklypaper">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="antisense-lncrna-transcription-mediates-dna-demethylation-to-drive-stochastic-protocadherin-α-promoter-choice">Antisense lncRNA Transcription Mediates DNA Demethylation to Drive Stochastic Protocadherin α Promoter Choice</h2>
-<p><strong>DOI(url)</strong>: https://doi.org/10.1016/j.cell.2019.03.008</p>
-<p><strong>发表日期</strong>：4 April 2019</p>
-<h3 id="关键点">关键点</h3>
-<p>反义 lncRNA 转录可以影响 DNA 甲基化，进而改变染色体结构促进增强子与启动子结合，调控基因表达。</p>
-<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002036.png" alt="" loading="lazy"></figure>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-04-11 / 11 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">关于 Shiny 调试你应该知道的</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <blockquote>
-<p>Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not true.</p>
-<p>—Norm Matloff</p>
-</blockquote>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-04-06 / 12 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-04-04-facet-ggplot2" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-04-04-facet-ggplot2">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">用漫威数据学习 ggplot2 facet</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <blockquote>
-<p>本文主要内容翻译整理自：<a href="http://www.zevross.com/blog/2019/04/02/easy-multi-panel-plots-in-r-using-facet_wrap-and-facet_grid-from-ggplot2/">Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2</a>，部分代码有修改。</p>
-</blockquote>
-<p>ggplot2 一个非常强大的功能就是进行  multi-panel plots 的呈现，也就是我们常说的分面（facet）。通过使用 facet_wrap() 或者 facet_grid() 这样的函数我们就可以很方面的将单一的一个图变为多个相关的图。本文将通过一个具体的数据示例帮助你理解 ggplot2 分面的不同方法以及参数。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-04-04 / 10 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-03-30-weeklypaper" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-03-30-weeklypaper">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-190330-DTU分析及转录组denovo拼接解析等</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="文献题目-relative-abundance-of-transcripts-rats-identifying-differential-isoform-abundance-from-rna-seq">文献题目 Relative Abundance of Transcripts (RATs): Identifying differential isoform abundance from RNA-seq</h2>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-03-30 / 6 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-03-22-weeklypaper" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-03-22-weeklypaper">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-190322-DNA甲基化分析工具及silencers鉴定</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="文献题目rnbeads-20-comprehensive-analysis-of-dna-methylation-data">文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data</h2>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-03-22 / 5 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-03-14-learnanewtool" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-03-14-learnanewtool">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">学习新工具的思路</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>有两件事情，第一是前几天看到一个朋友分享了自己 <a href="https://www.jianshu.com/p/1fd4de1ba0b5">学习生物信息工具的经验</a>，借着这个机会刚好反思了一下自己过去几年是如何做的；第二是最近有人问了我一个问题：“使用 tophat 比对完的转录组数据 bam 文件想用 RNA-SeQC 来质控，但是这个软件好像没人维护了”（竟然还在用 tophat）。那这次就聊聊如何学习一个新的工具。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-03-14 / 8 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${9 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-03-10-webvscode" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606091914.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-03-10-webvscode">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Coder：进击的服务器 Web 版 VSCode</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>自从用上 VS Code 之后，断断续续写过几篇文章。比如：</p>
-<ul>
-<li><a href="http://kaopubear.top/2017-09-15-vscode1/">VS Code 使用初体验</a></li>
-<li><a href="http://kaopubear.top/2017-09-20-vscode2/">VS Code 常用快捷键</a></li>
-<li><a href="http://kaopubear.top/2018-09-20-vscode-note1-4/">VS Code 思维导图学习笔记</a></li>
-<li><a href="http://kaopubear.top/2018-10-28-userpythoninvscode/">VS Code 系列 1：提升 R 和 Python 使用体验</a></li>
-</ul>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-03-10 / 5 min read</div>
-    </div>
-  </section>
-
-        <div class="read-more">
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
           
-            <a href="https://kaopubear.top/page/6/" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">
-              阅读更多
-              <i class="remixicon-arrow-right-line"></i>
-            </a>
+            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
           
         </div>
-        <div class="index-page">
-          <div class="pagination-container animated fadeIn">
+      </div>
+    </div>
+    <div class="main">
+      <div class="inner">
+        <div class="items">
   
-    <a href="https://kaopubear.top/page/4/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" href="https://kaopubear.top/post/2019-05-03-keyquestion/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-05-03-keyquestion/">
+        <div class="item-meta">
+          <time datetime="2019-05-03 18:02:29">2019-05-03</time>
+        </div>
+        <h2>「关键提问」读书笔记</h2>
+      </a>
+    </div>
   
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" href="https://kaopubear.top/post/2019-04-19-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-04-19-weeklypaper/">
+        <div class="item-meta">
+          <time datetime="2019-04-19 10:46:43">2019-04-19</time>
+        </div>
+        <h2>每周文献-190419-植物单细胞BAM重比对以及假基因研究</h2>
+      </a>
+    </div>
   
-    <a href="https://kaopubear.top/page/6/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606001559.png" href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606001559.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion/">
+        <div class="item-meta">
+          <time datetime="2019-04-18 10:46:23">2019-04-18</time>
+        </div>
+        <h2>数据分析需要更好的问题</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png" href="https://kaopubear.top/post/2019-04-11-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-04-11-weeklypaper/">
+        <div class="item-meta">
+          <time datetime="2019-04-11 22:08:25">2019-04-11</time>
+        </div>
+        <h2>每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png" href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/">
+        <div class="item-meta">
+          <time datetime="2019-04-06 07:09:48">2019-04-06</time>
+        </div>
+        <h2>关于 Shiny 调试你应该知道的</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png" href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/">
+        <div class="item-meta">
+          <time datetime="2019-04-04 13:05:19">2019-04-04</time>
+        </div>
+        <h2>用漫威数据学习 ggplot2 facet</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png" href="https://kaopubear.top/post/2019-03-30-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-03-30-weeklypaper/">
+        <div class="item-meta">
+          <time datetime="2019-03-30 23:54:56">2019-03-30</time>
+        </div>
+        <h2>每周文献-190330-DTU分析及转录组denovo拼接解析等</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" href="https://kaopubear.top/post/2019-03-22-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-03-22-weeklypaper/">
+        <div class="item-meta">
+          <time datetime="2019-03-22 16:41:16">2019-03-22</time>
+        </div>
+        <h2>每周文献-190322-DNA甲基化分析工具及silencers鉴定</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png" href="https://kaopubear.top/post/2019-03-14-learnanewtool/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-03-14-learnanewtool/">
+        <div class="item-meta">
+          <time datetime="2019-03-14 20:55:03">2019-03-14</time>
+        </div>
+        <h2>学习新工具的思路</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606091914.png" href="https://kaopubear.top/post/2019-03-10-webvscode/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606091914.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-03-10-webvscode/">
+        <div class="item-meta">
+          <time datetime="2019-03-10 18:33:11">2019-03-10</time>
+        </div>
+        <h2>Coder：进击的服务器 Web 版 VSCode</h2>
+      </a>
+    </div>
   
 </div>
 
-        </div>
+        
+          <div class="navigation">
+  
+    <a href="https://kaopubear.top/page/4/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://kaopubear.top/page/6/">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
+        
       </div>
     </div>
 
-    <script src="https://kaopubear.top//media/prism.js"></script>  
+    <footer class="footer">
+  <div class="main">
+    <a href="https://kaopubear.top/">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582005512555" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
+    </p>
+    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://kaopubear.top//media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>

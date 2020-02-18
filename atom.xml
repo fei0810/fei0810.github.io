@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kaopubear.top/</id>
     <title>思考问题的熊</title>
-    <updated>2020-02-07T06:01:41.796Z</updated>
+    <updated>2020-02-18T05:59:27.906Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kaopubear.top/"/>
     <link rel="self" href="https://kaopubear.top/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 思考问题的熊</rights>
     <entry>
         <title type="html"><![CDATA[停课不停学 推荐 7 门有趣实用的线上课程]]></title>
-        <id>https://kaopubear.top/post/2020-01-06-7mooc</id>
-        <link href="https://kaopubear.top/post/2020-01-06-7mooc">
+        <id>https://kaopubear.top/post/2020-01-06-7mooc/</id>
+        <link href="https://kaopubear.top/post/2020-01-06-7mooc/">
         </link>
         <updated>2020-02-06T05:13:01.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -27,8 +27,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[在家复工，学生党如何使用学术资源]]></title>
-        <id>https://kaopubear.top/post/2020-02-05-searchpaper</id>
-        <link href="https://kaopubear.top/post/2020-02-05-searchpaper">
+        <id>https://kaopubear.top/post/2020-02-05-searchpaper/</id>
+        <link href="https://kaopubear.top/post/2020-02-05-searchpaper/">
         </link>
         <updated>2020-02-05T05:10:07.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -42,8 +42,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[跨平台协作，让飞书实时接收语雀更新提醒]]></title>
-        <id>https://kaopubear.top/post/2020-02-01-larkandyuque</id>
-        <link href="https://kaopubear.top/post/2020-02-01-larkandyuque">
+        <id>https://kaopubear.top/post/2020-02-01-larkandyuque/</id>
+        <link href="https://kaopubear.top/post/2020-02-01-larkandyuque/">
         </link>
         <updated>2020-02-01T05:59:33.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -57,8 +57,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[特殊时期假期返程实录]]></title>
-        <id>https://kaopubear.top/post/2020-01-31-returnschool</id>
-        <link href="https://kaopubear.top/post/2020-01-31-returnschool">
+        <id>https://kaopubear.top/post/2020-01-31-returnschool/</id>
+        <link href="https://kaopubear.top/post/2020-01-31-returnschool/">
         </link>
         <updated>2020-01-31T10:01:24.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -72,8 +72,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[需要远程办公，不妨用 Trello 进行组织和协作]]></title>
-        <id>https://kaopubear.top/post/2020-01-29-trellowithothers</id>
-        <link href="https://kaopubear.top/post/2020-01-29-trellowithothers">
+        <id>https://kaopubear.top/post/2020-01-29-trellowithothers/</id>
+        <link href="https://kaopubear.top/post/2020-01-29-trellowithothers/">
         </link>
         <updated>2020-01-29T05:05:45.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -87,8 +87,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[学习素材共享小组V2.0]]></title>
-        <id>https://kaopubear.top/post/2020-01-19-refgroup2020</id>
-        <link href="https://kaopubear.top/post/2020-01-19-refgroup2020">
+        <id>https://kaopubear.top/post/2020-01-19-refgroup2020/</id>
+        <link href="https://kaopubear.top/post/2020-01-19-refgroup2020/">
         </link>
         <updated>2020-01-19T01:52:32.000Z</updated>
         <summary type="html"><![CDATA[<p>是的，你可能会好奇什么是学习素材共享小组，以及1.0版本去哪里了。</p>
@@ -98,8 +98,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Trello 看板内容太多，飞书表格帮你自动整理]]></title>
-        <id>https://kaopubear.top/post/2020-01-16-trelloandlark</id>
-        <link href="https://kaopubear.top/post/2020-01-16-trelloandlark">
+        <id>https://kaopubear.top/post/2020-01-16-trelloandlark/</id>
+        <link href="https://kaopubear.top/post/2020-01-16-trelloandlark/">
         </link>
         <updated>2020-01-16T05:01:26.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -113,8 +113,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[把飞书融入日常学习流程：一个人的飞书也挺好]]></title>
-        <id>https://kaopubear.top/post/2020-01-15-oneselflark</id>
-        <link href="https://kaopubear.top/post/2020-01-15-oneselflark">
+        <id>https://kaopubear.top/post/2020-01-15-oneselflark/</id>
+        <link href="https://kaopubear.top/post/2020-01-15-oneselflark/">
         </link>
         <updated>2020-01-15T04:47:04.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -128,8 +128,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[人究竟怎样才算来过又怎样才算离开]]></title>
-        <id>https://kaopubear.top/post/2020-01-11-rememberyouzjl</id>
-        <link href="https://kaopubear.top/post/2020-01-11-rememberyouzjl">
+        <id>https://kaopubear.top/post/2020-01-11-rememberyouzjl/</id>
+        <link href="https://kaopubear.top/post/2020-01-11-rememberyouzjl/">
         </link>
         <updated>2020-01-10T16:24:48.000Z</updated>
         <summary type="html"><![CDATA[<p>一个人，究竟怎样才算来过，究竟怎样才算离开？</p>
@@ -139,8 +139,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[使用 VSCode 愉快地进行远程 R 开发]]></title>
-        <id>https://kaopubear.top/post/2020-01-08-remotevscoder</id>
-        <link href="https://kaopubear.top/post/2020-01-08-remotevscoder">
+        <id>https://kaopubear.top/post/2020-01-08-remotevscoder/</id>
+        <link href="https://kaopubear.top/post/2020-01-08-remotevscoder/">
         </link>
         <updated>2020-01-08T01:45:36.000Z</updated>
         <summary type="html"><![CDATA[<p>2019年底（其实也就是半个多月之前）听了 renkun 大神在上海 R 会议的一个分享，分享主题是「Rstudio vs VSCode」，然后他紧接着又写了两篇使用 VSCode 进行 R 开发的博客。仔细了解之后，感觉自己有救了。</p>

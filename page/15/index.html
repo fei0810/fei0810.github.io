@@ -4,14 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1581055293966">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582005512555">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
@@ -26,438 +27,243 @@
 
   </head>
   <body>
-    <div class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1581055293966" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+    <div class="">
+      <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://kaopubear.top/">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            很高兴和你相遇<br>这里正在记录我的所思所学
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-qq-line"></i>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
-          项目
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
-    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="latest-article text-lg text-gray-700 mb-8">
-          <i class="remixicon-article-line"></i>
-          最新文章
-        </h2>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-18-longxing-bioinfo-tf" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-a26326baa2031fb8.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-18-longxing-bioinfo-tf">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">转录调控与生物信息</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="cis-regulatory-motifs">cis-regulatory motifs</h2>
-<h3 id="转录调控">转录调控</h3>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-08-18 / 11 min read</div>
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+        
+          <a href="/post/project">项目</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
     </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-17-longxing-bioinfo-epigenetic" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-17-longxing-bioinfo-epigenetic">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">表观遗传与生物信息</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="不同层次的表观">不同层次的表观</h2>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-08-17 / 6 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-16-longxing-bioinfo-markov" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-633baeeaf52df79a.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-16-longxing-bioinfo-markov">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">马尔科夫模型</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="马尔科夫是谁">马尔科夫是谁</h2>
-<p>马尔科夫是一位俄国的数学家，他最为人所知的是他在随机过程方面的研究。他早期研究的重点是数论而在 1900 年之后他所研究的重点转向了概率论。他研究的成果颇丰以至于在他 1905 年正式退休之后他仍然在教授课程直至去世。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-08-16 / 9 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-15-longxing-bioinfo-mlinbioinfo" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-c9e3a48658e8d2f2.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-15-longxing-bioinfo-mlinbioinfo">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">机器学习在生物信息学中的应用</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="recap">recap</h2>
-<h3 id="machine-learning-methods">Machine learning methods</h3>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-08-15 / 5 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-14-longxing-bioinfo-blastmore" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d77ac044d4b6743f.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-14-longxing-bioinfo-blastmore">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">序列比对其他相关问题</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="全局比对-global-alignment">全局比对 Global Alignment</h2>
-<p>由芝加哥的 Needleman 和 Wunsch 两位于上个世纪 70 年代初提出，常被称之为 Needleman-Wunsch 算法。算法针对用户指定的打分函数，确定性地找出两条序列间的最优比对。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-08-14 / 6 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-13-longxing-bioinfo-blast" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-8a7dd74dd237e40f.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-13-longxing-bioinfo-blast">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">序列比对与动态规划</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="生物信息的思考方式">生物信息的思考方式</h2>
-<p>biological question</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-08-13 / 3 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-12-longxing-bioinfo-cluster" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-05e9145f8a2ba682.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-12-longxing-bioinfo-cluster">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">cluster SV 和 CV 相关算法</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="cluster">cluster</h2>
-<h3 id="为什么关注聚类">为什么关注聚类</h3>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-08-12 / 2 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-05-05-HowToLearn" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-05-05-HowToLearn">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">究竟应该如何学习</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p><em>说明：本文涉及两本书和一个视频</em></p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-05-05 / 10 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-04-25-HowToTalk" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-04-25-HowToTalk">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">如何发言更自信</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>上周末在个人公众账号推送的文章《一个月过去，世界发生了什么》中有这么一段内容：</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-04-25 / 6 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${9 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">如何让别人回答你的问题</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>虽说是硕博连读，但还得有一个转博的流程。昨天才交了转博材料，后面几天紧接着要转博预答辩和正式答辩，所以每天都忙得很。<br>
-趁着小假期回答一个最近在公众号后台出镜率很高的问题。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2017-04-03 / 9 min read</div>
-    </div>
-  </section>
-
-        <div class="read-more">
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
           
-            <a href="https://kaopubear.top/page/16/" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">
-              阅读更多
-              <i class="remixicon-arrow-right-line"></i>
-            </a>
+            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
           
         </div>
-        <div class="index-page">
-          <div class="pagination-container animated fadeIn">
+      </div>
+    </div>
+    <div class="main">
+      <div class="inner">
+        <div class="items">
   
-    <a href="https://kaopubear.top/page/14/" class="page-btn"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-a26326baa2031fb8.jpg" href="https://kaopubear.top/post/2017-08-18-longxing-bioinfo-tf/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-a26326baa2031fb8.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-18-longxing-bioinfo-tf/">
+        <div class="item-meta">
+          <time datetime="2017-08-18 08:02:30">2017-08-18</time>
+        </div>
+        <h2>转录调控与生物信息</h2>
+      </a>
+    </div>
   
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg" href="https://kaopubear.top/post/2017-08-17-longxing-bioinfo-epigenetic/" style="background-image:url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-38231516d4752d09.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-17-longxing-bioinfo-epigenetic/">
+        <div class="item-meta">
+          <time datetime="2017-08-17 08:02:09">2017-08-17</time>
+        </div>
+        <h2>表观遗传与生物信息</h2>
+      </a>
+    </div>
   
-    <a href="https://kaopubear.top/page/16/" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-633baeeaf52df79a.jpg" href="https://kaopubear.top/post/2017-08-16-longxing-bioinfo-markov/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-633baeeaf52df79a.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-16-longxing-bioinfo-markov/">
+        <div class="item-meta">
+          <time datetime="2017-08-16 08:00:48">2017-08-16</time>
+        </div>
+        <h2>马尔科夫模型</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-c9e3a48658e8d2f2.jpg" href="https://kaopubear.top/post/2017-08-15-longxing-bioinfo-mlinbioinfo/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-c9e3a48658e8d2f2.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-15-longxing-bioinfo-mlinbioinfo/">
+        <div class="item-meta">
+          <time datetime="2017-08-15 07:59:56">2017-08-15</time>
+        </div>
+        <h2>机器学习在生物信息学中的应用</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d77ac044d4b6743f.jpg" href="https://kaopubear.top/post/2017-08-14-longxing-bioinfo-blastmore/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d77ac044d4b6743f.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-14-longxing-bioinfo-blastmore/">
+        <div class="item-meta">
+          <time datetime="2017-08-14 07:59:28">2017-08-14</time>
+        </div>
+        <h2>序列比对其他相关问题</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-8a7dd74dd237e40f.jpg" href="https://kaopubear.top/post/2017-08-13-longxing-bioinfo-blast/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-8a7dd74dd237e40f.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-13-longxing-bioinfo-blast/">
+        <div class="item-meta">
+          <time datetime="2017-08-13 07:59:18">2017-08-13</time>
+        </div>
+        <h2>序列比对与动态规划</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-05e9145f8a2ba682.jpg" href="https://kaopubear.top/post/2017-08-12-longxing-bioinfo-cluster/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-05e9145f8a2ba682.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-12-longxing-bioinfo-cluster/">
+        <div class="item-meta">
+          <time datetime="2017-08-12 07:55:22">2017-08-12</time>
+        </div>
+        <h2>cluster SV 和 CV 相关算法</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png" href="https://kaopubear.top/post/2017-05-05-HowToLearn/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-05-05-HowToLearn/">
+        <div class="item-meta">
+          <time datetime="2017-05-05 14:07:06">2017-05-05</time>
+        </div>
+        <h2>究竟应该如何学习</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png" href="https://kaopubear.top/post/2017-04-25-HowToTalk/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-04-25-HowToTalk/">
+        <div class="item-meta">
+          <time datetime="2017-04-25 13:04:45">2017-04-25</time>
+        </div>
+        <h2>如何发言更自信</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/">
+        <div class="item-meta">
+          <time datetime="2017-04-03 09:01:09">2017-04-03</time>
+        </div>
+        <h2>如何让别人回答你的问题</h2>
+      </a>
+    </div>
   
 </div>
 
-        </div>
+        
+          <div class="navigation">
+  
+    <a href="https://kaopubear.top/page/14/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://kaopubear.top/page/16/">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
+        
       </div>
     </div>
 
-    <script src="https://kaopubear.top//media/prism.js"></script>  
+    <footer class="footer">
+  <div class="main">
+    <a href="https://kaopubear.top/">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582005512555" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
+    </p>
+    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  </div>
+</footer>
+
+<script src="https://kaopubear.top//media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>

@@ -4,14 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1581055293966">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582005512555">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
@@ -26,425 +27,234 @@
 
   </head>
   <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
-  <div class="lg:sticky top-0">
-    <div class="sidebar-content">
-      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
-        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
-        <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1581055293966" alt="">
-        </a>
-        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+    <div class="head">
+  <div class="inner">
+    <a class="site-name" href="https://kaopubear.top/">
+        <span>思考问题的熊</span>
+    </a>
+    <label class="burger" for="burger"></label>
+    <input id="burger" type="checkbox">
+    <button class="burger">
+      <div>
+        <span></span>
+        <span></span>
       </div>
+    </button>
+    <nav class="info_nav">
       
-        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
-          <p class="my-4 text-gray-600 font-light hidden lg:block">
-            很高兴和你相遇<br>这里正在记录我的所思所学
-          </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-github-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-zhihu-line"></i>
-                </a>
-              
-            
-              
-            
-              
-                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-telegram-line"></i>
-                </a>
-              
-            
-              
-            
-              
-            
-              
-            
-              
-                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
-                  <i class="remixicon-qq-line"></i>
-                </a>
-              
-            
-          </div>
-        </div>
-      
-    </div>
-  </div>
-</div>
-
-<div class="menu-container">
-  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
-  <div>
-    
-      
-        <a href="/" class="menu" style="animation-delay: 0s">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu" style="animation-delay: 0.2s">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu" style="animation-delay: 0.4s">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
-          资料
-        </a>
-      
-    
-      
-        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
-          项目
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu" style="animation-delay: 1s">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
-    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
-  </div>
-</div>
-<div class="mask" onclick="closeMenu()">
-</div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> 生物信息
-        </h2>
         
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2020-01-19-refgroup2020" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200119100126.jpg'">
+          <a href="/">首页</a>
+        
+      
+        
+          <a href="/archives">归档</a>
+        
+      
+        
+          <a href="/tags">标签</a>
+        
+      
+        
+          <a href="/post/resource">资料</a>
+        
+      
+        
+          <a href="/post/project">项目</a>
+        
+      
+        
+          <a href="/post/about">关于</a>
+        
+      
+    </nav>
+  </div>
+</div>
+    <div class="info _site">
+      <div class="inner">
+        <div class="info_main">
+          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 生物信息</h1>
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2020-01-19-refgroup2020">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">学习素材共享小组V2.0</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>是的，你可能会好奇什么是学习素材共享小组，以及1.0版本去哪里了。</p>
-
       </div>
-      <div class="text-gray-400 text-sm font-light">2020-01-19 / 5 min read</div>
     </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191011194155.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">转录组表达分析知识图谱</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="文章信息">文章信息</h2>
-<p>Van den Berge, Koen, Katharina M. Hembach, Charlotte Soneson, Simone Tiberi, Lieven Clement, Michael I. Love, Rob Patro, and Mark D. Robinson. 2019. “RNA Sequencing Data: Hitchhiker’s Guide to Expression Analysis.” Annual Review of Biomedical Data Science 2 (1): 139–73. https://doi.org/10.1146/annurev-biodatasci-072018-021255.</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-10-11 / 6 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">船新版本 DESeq2 处理大量样本速度显著提升</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="太长不看版本">太长不看版本</h2>
-<p>DESeq 最新版本（v1.25.9）针对大样本分析的速度和之前相比有了质的飞越，果子老师的 1215 个 TCGA 样本差异分析时间从 1200 分钟缩短到单线程 20 分钟，使用多线程的情况下最快 6 分钟搞定。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-09-17 / 14 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-08-15-biotools-web" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-08-15-biotools-web">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">biotools 综合性生物信息工具资源网站</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-08-15 / 5 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">首届生物信息人才发展论坛背后的故事</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>第一届生物信息人才发展论坛落幕已经半月有余，算上前前后后的准备周期，在大家眼中一个「小而美」的论坛其实陆陆续续持续了一个多月的时间。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-08-07 / 12 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-03-14-learnanewtool" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-03-14-learnanewtool">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">学习新工具的思路</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>有两件事情，第一是前几天看到一个朋友分享了自己 <a href="https://www.jianshu.com/p/1fd4de1ba0b5">学习生物信息工具的经验</a>，借着这个机会刚好反思了一下自己过去几年是如何做的；第二是最近有人问了我一个问题：“使用 tophat 比对完的转录组数据 bam 文件想用 RNA-SeQC 来质控，但是这个软件好像没人维护了”（竟然还在用 tophat）。那这次就聊聊如何学习一个新的工具。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-03-14 / 8 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2019-03-03-bedopsandbedtools" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2019-03-03-bedopsandbedtools">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">用 bedtools 和 bedops 对 bed 文件进行各种运算</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="bedtools-的傲人光环">bedtools 的傲人光环</h2>
-<p>如果让你说出日常在进行生物数据分析时，做的最多的事情是什么，我想不管你是什么方向，「不停地转换格式」应该能排进日常前三。如果再问用的最多的工具是什么，想必一定也是和「不停地转换格式」相关的工具。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2019-03-03 / 8 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-09-27-sequence66" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-09-27-sequence66">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">66 种测序数据分析方法和流程</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <blockquote>
-<p>写在前面：看了标题进来的老铁，这里不可能在一篇文章里写好 66 个 pipeline 给你，实际上我就是给你推荐一个网站。</p>
-</blockquote>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-09-27 / 3 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-828599c54149be5d.jpg'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">3D 基因组与生物信息</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="重要的-hi-c-相关文献">重要的 Hi-C 相关文献</h2>
-<p>第一篇 Hi-C 文章： Comprehensive Mapping of Long-Range Interactions Reveals Folding Principles of the Human Genome； DOI: 10.1126/science.1181369</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-08-11 / 4 min read</div>
-    </div>
-  </section>
-
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${9 * 0.2}s` }">
-    
-      <a href="https://kaopubear.top/post/2018-02-13-thegene-book" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png'">
-        </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://kaopubear.top/post/2018-02-13-thegene-book">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">贯穿你我一生的基因之谜</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <h2 id="无处不在的基因">无处不在的基因</h2>
-<p>选一个心情不错的时间，打开手中叫做「唾液采集器」的小管子吐进一些唾液，再把它寄给一家公司。几天后你就会收到一份复杂而详细的报告，这份报告里将记录你和上百项健康风险、几十项遗传性疾病是否有关，甚至还会帮你寻根溯源，告诉你有多少少数民族或东南亚的祖先。</p>
-
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-02-13 / 21 min read</div>
-    </div>
-  </section>
-
-        <div class="pagination-container animated fadeIn">
+    <div class="main">
+      <div class="inner">
+        <div class="items">
   
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200119100126.jpg" href="https://kaopubear.top/post/2020-01-19-refgroup2020/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200119100126.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2020-01-19-refgroup2020/">
+        <div class="item-meta">
+          <time datetime="2020-01-19 09:52:32">2020-01-19</time>
+        </div>
+        <h2>学习素材共享小组V2.0</h2>
+      </a>
+    </div>
   
-    <a href="https://kaopubear.top/tag/DvI6ypPftI/page/2" class="page-btn">下一页 <i class="remixicon-arrow-right-line"></i></a>
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191011194155.jpg" href="https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191011194155.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-10-11-rnaseqexpressionanalysis/">
+        <div class="item-meta">
+          <time datetime="2019-10-11 19:31:43">2019-10-11</time>
+        </div>
+        <h2>转录组表达分析知识图谱</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg" href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/">
+        <div class="item-meta">
+          <time datetime="2019-09-17 20:15:31">2019-09-17</time>
+        </div>
+        <h2>船新版本 DESeq2 处理大量样本速度显著提升</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg" href="https://kaopubear.top/post/2019-08-15-biotools-web/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-08-15-biotools-web/">
+        <div class="item-meta">
+          <time datetime="2019-08-15 15:48:30">2019-08-15</time>
+        </div>
+        <h2>biotools 综合性生物信息工具资源网站</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg" href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum/">
+        <div class="item-meta">
+          <time datetime="2019-08-07 13:55:17">2019-08-07</time>
+        </div>
+        <h2>首届生物信息人才发展论坛背后的故事</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png" href="https://kaopubear.top/post/2019-03-14-learnanewtool/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-03-14-learnanewtool/">
+        <div class="item-meta">
+          <time datetime="2019-03-14 20:55:03">2019-03-14</time>
+        </div>
+        <h2>学习新工具的思路</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png" href="https://kaopubear.top/post/2019-03-03-bedopsandbedtools/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2019-03-03-bedopsandbedtools/">
+        <div class="item-meta">
+          <time datetime="2019-03-03 17:36:26">2019-03-03</time>
+        </div>
+        <h2>用 bedtools 和 bedops 对 bed 文件进行各种运算</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png" href="https://kaopubear.top/post/2018-09-27-sequence66/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-34308324fdb9ecee.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-09-27-sequence66/">
+        <div class="item-meta">
+          <time datetime="2018-09-27 10:44:43">2018-09-27</time>
+        </div>
+        <h2>66 种测序数据分析方法和流程</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-828599c54149be5d.jpg" href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-828599c54149be5d.jpg');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2017-08-11-longxing-bioinfo-hic/">
+        <div class="item-meta">
+          <time datetime="2018-08-11 07:52:02">2018-08-11</time>
+        </div>
+        <h2>3D 基因组与生物信息</h2>
+      </a>
+    </div>
+  
+    <div class="item Article">
+      
+        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png" href="https://kaopubear.top/post/2018-02-13-thegene-book/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-eb20aea2129e21d3.png');"></a>
+      
+      <a class="item-main" href="https://kaopubear.top/post/2018-02-13-thegene-book/">
+        <div class="item-meta">
+          <time datetime="2018-02-13 15:15:01">2018-02-13</time>
+        </div>
+        <h2>贯穿你我一生的基因之谜</h2>
+      </a>
+    </div>
   
 </div>
 
+        <div class="navigation">
+  
+  
+    <a href="https://kaopubear.top/tag/DvI6ypPftI/page/2">下一页 <i class="remixicon-arrow-right-line"></i></a>
+  
+</div>
       </div>
     </div>
+    <footer class="footer">
+  <div class="main">
+    <a href="https://kaopubear.top/">
+      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582005512555" alt="思考问题的熊">
+    </a>
+    <div class="footer__social">
+      
+        
+          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
+        
+      
+        
+      
+        
+          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <p class="footer__sosumi">
+      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
+    </p>
+    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  </div>
+</footer>
 
-    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script src="https://kaopubear.top//media/prism.js"></script>
 <script>
-
-Prism.highlightAll()
-
-let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
-
-// This should probably be throttled.
-// Especially because it triggers during smooth scrolling.
-// https://lodash.com/docs/4.17.10#throttle
-// You could do like...
-// window.addEventListener("scroll", () => {
-//    _.throttle(doThatStuff, 100);
-// });
-// Only not doing it here to keep this Pen dependency-free.
-
-window.addEventListener("scroll", event => {
-  let fromTop = window.scrollY;
-
-  mainNavLinks.forEach((link, index) => {
-    let section = document.getElementById(decodeURI(link.hash).substring(1));
-    let nextSection = null
-    if (mainNavLinks[index + 1]) {
-      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-    }
-    if (section.offsetTop <= fromTop) {
-      if (nextSection) {
-        if (nextSection.offsetTop > fromTop) {
-          link.classList.add("current");
-        } else {
-          link.classList.remove("current");    
-        }
-      } else {
-        link.classList.add("current");
-      }
-    } else {
-      link.classList.remove("current");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target
-          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
-          lazyImage.classList.remove("lazy")
-          lazyImageObserver.unobserve(lazyImage)
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage)
-    })
-  } else {
-    // Possibly fall back to a more compatible method here
-  }
-});
-
-const menuContainer = document.querySelector('.menu-container')
-const menus = document.querySelectorAll('.menu-container .menu')
-const mask = document.querySelector('.mask')
-const contentWrapper = document.querySelector('.content-wrapper')
-const latestArticle = document.querySelector('.latest-article')
-const readMore = document.querySelector('.read-more')
-const indexPage = document.querySelector('.index-page')
-
-const isHome = location.pathname === '/'
-if (latestArticle) {
-  latestArticle.style.display = isHome ? 'block' : 'none'
-  readMore.style.display = isHome ? 'block' : 'none'
-  indexPage.style.display = isHome ? 'none' : 'block'
-}
-
-const openMenu = () => {
-  menuContainer.classList.add('open')
-  menus.forEach(menu => {
-    menu.classList.add('animated', 'fadeInLeft')
-  })
-  mask.classList.add('open')
-  contentWrapper.classList.add('is-second')
-}
-
-const closeMenu = () => {
-  menuContainer.classList.remove('open')
-  menus.forEach(menu => {
-    menu.classList.remove('animated', 'fadeInLeft')
-  })
-  mask.classList.remove('open')
-  contentWrapper.classList.remove('is-second')
-}
+  Prism.highlightAll()
 </script>
-  
+
   </body>
 </html>
