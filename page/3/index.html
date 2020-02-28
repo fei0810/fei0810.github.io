@@ -1,332 +1,468 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
-<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582900886089">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-</head>
-<body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
+  gtag('config', 'UA-91022805-1');
+</script>
 
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+
+  </head>
+  <body>
+    <div class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1582900886089" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            很高兴和你相遇<br>这里正在记录我的所思所学
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-github-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://twitter.com/kaopubear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-twitter-line"></i>
+                </a>
+              
+            
+              
+            
+              
+                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-zhihu-line"></i>
+                </a>
+              
+            
+              
+            
+              
+                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-telegram-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-qq-line"></i>
+                </a>
+              
+            
+          </div>
+        </div>
+      
     </div>
   </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
-    
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
-    
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
-    
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
-    
-      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        资料
-      </a>
-    
-      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        项目
-      </a>
-    
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
-    
-    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
 </div>
 
-    <div class="max-w-4xl w-full mx-auto pt-32">
-      
-
-      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
-        
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          船新版本 DESeq2 处理大量样本速度显著提升
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
         </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-09-17</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
+          项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="latest-article text-lg text-gray-700 mb-8">
+          <i class="ri-article-line"></i>
+          最新文章
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">船新版本 DESeq2 处理大量样本速度显著提升</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="太长不看版本">太长不看版本</h2>
 <p>DESeq 最新版本（v1.25.9）针对大样本分析的速度和之前相比有了质的飞越，果子老师的 1215 个 TCGA 样本差异分析时间从 1200 分钟缩短到单线程 20 分钟，使用多线程的情况下最快 6 分钟搞定。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-09-17 / 14 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg" alt="船新版本 DESeq2 处理大量样本速度显著提升">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-09-11-howtolearnzotero/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          Zotero入门学习路径
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-09-11</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-09-11-howtolearnzotero/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-09-11-howtolearnzotero/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Zotero入门学习路径</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="相关内容简述">相关内容简述</h2>
 <p>学术文献管理和阅读工具其实主要包括管理和阅读两个需求。</p>
 <p>所谓管理主要有三个层面的需求，一个是方便的把文献放到工具中去，然后可以提取出准确丰富的文献信息；另一个是可以把需要引用的文献方便的在写作工具中插入；第三个就是快速的找到自己想要的文献。阅读的话就是各种高亮和笔记的操作以及管理。同时还有不同平台同步的需求。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-09-11-howtolearnzotero/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-09-11 / 14 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183551.jpg" alt="Zotero入门学习路径">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-09-11-howtolearnvscode/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          VScode入门学习路径
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-09-11</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-09-11-howtolearnvscode/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-09-11-howtolearnvscode/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">VScode入门学习路径</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="相关内容简述">相关内容简述</h2>
 <p>如果你对代码编辑器完全没有任何概念，那么可以把所谓的代码编辑器理解为一个更加适合写代码的地方。</p>
 <p>在word里你可以方便的进行文字的编排，在PowerPoint中你可以方便的进行幻灯片的制作，而一个好用的代码编辑器则可以帮助你更加高效的编写代码脚本。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-09-11-howtolearnvscode/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-09-11 / 18 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183552.jpg" alt="VScode入门学习路径">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-09-10-howtolearntools/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          当我谈工具的时候我在谈什么
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-09-10</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-09-10-howtolearntools/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-09-10-howtolearntools/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">当我谈工具的时候我在谈什么</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h1 id="好工具那么多你知道如何学吗">好工具那么多，你知道如何学吗</h1>
 <p>比知道一个工具更重要的是想明白如何学习一个工具。**比如为了以 VS code 为例进行说明，我甚至在今天上午直接写了一个 VS code 插件。**是的，写了一个插件，不是用了一个插件。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-09-10-howtolearntools/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-09-10 / 8 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg" alt="当我谈工具的时候我在谈什么">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-09-01-howtouseyuque/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          如何使用语雀快速发表自己的博客
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-09-01</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-09-01-howtouseyuque/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-09-01-howtouseyuque/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">如何使用语雀快速发表自己的博客</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="拥有个人博客的几种途径">拥有个人博客的几种途径</h2>
 <p>在越来越多的人已经没有耐心读完 140 字微博（micro-blog），短视频逐渐占据人们更多注意力的今天，博客（blog）——这一上个时代的产物——似乎正在被我们渐渐遗忘。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-09-01-howtouseyuque/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-09-01 / 15 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png" alt="如何使用语雀快速发表自己的博客">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-08-15-biotools-web/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          biotools 综合性生物信息工具资源网站
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-08-15</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-08-15-biotools-web/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-08-15-biotools-web/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">biotools 综合性生物信息工具资源网站</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-08-15-biotools-web/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-08-15 / 5 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg" alt="biotools 综合性生物信息工具资源网站">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          听说你也有 emojifont 的字体使用困惑
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-08-13</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">听说你也有 emojifont 的字体使用困惑</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="问题复现">问题复现</h2>
 <blockquote>
 <p>Y 叔有一个神包，能够在 ggplot 图层里随心所欲的添加各种 emoji，然而很多人在使用的时候却不能「随心所欲」，经常一行函数输进去一张白板输出来。最近在我的星球里也有人提到这个问题，作为一个无趣的人我虽然之前没有实际使用过这个有趣的包，但是今天要被迫营业了。</p>
 </blockquote>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-08-13 / 5 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png" alt="听说你也有 emojifont 的字体使用困惑">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          首届生物信息人才发展论坛背后的故事
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-08-07</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">首届生物信息人才发展论坛背后的故事</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <p>第一届生物信息人才发展论坛落幕已经半月有余，算上前前后后的准备周期，在大家眼中一个「小而美」的论坛其实陆陆续续持续了一个多月的时间。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-08-07-thefirstbiotraineeforum/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-08-07 / 12 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg" alt="首届生物信息人才发展论坛背后的故事">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-07-30-learnusemac1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          上手 MacBook Pro 基础操作和配置
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-07-30</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-07-30-learnusemac1/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-07-30-learnusemac1/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">上手 MacBook Pro 基础操作和配置</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <p>这个月，我成为了一名Mac用户。macOS诞生于1984年，经历了35年的发展之后，其在全球操作系统市场中的份额已经不到10%。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-07-30-learnusemac1/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-07-30 / 7 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg" alt="上手 MacBook Pro 基础操作和配置">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${9 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-07-05-mypresentationlist/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          我的私人学术报告准备清单
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-07-05</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2019-07-05-mypresentationlist/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190705140744.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-07-05-mypresentationlist/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">我的私人学术报告准备清单</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <p>做学生和做研究的一个重要工作是把自己在做的东西告诉别人，通常是通过各种报告完成的，上到各种高大上的会议，下到组里几个人的小组会。我本身没有什么高大上会议的经历，但是几年下来各种各样的小组会也讲了不少。导师和同门都时常会给出一些建议和意见，逐渐就有了一套个人的「学术报告准备清单」。各种报告都会反复对照这份清单来准备。其中关于<a href="https://sspai.com/post/55525">幻灯片的制作心得</a>之前已经写过一篇文章，算是「技」。这篇文章主要写这份报告准备清单中「术」的部分，希望对你有所帮助。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-07-05-mypresentationlist/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-07-05 / 7 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190705140744.jpg" alt="我的私人学术报告准备清单">
-    
-  </div>
+  </section>
+
+        <div class="read-more">
+          
+            <a href="https://kaopubear.top/page/4/" class="animated fadeIn font-extrabold text-gray-700 hover:text-gray-900 more-btn">
+              阅读更多
+              <i class="ri-arrow-right-line"></i>
+            </a>
+          
+        </div>
+        <div class="index-page">
+          <div class="pagination-container animated fadeIn">
   
+    <a href="https://kaopubear.top/page/2/" class="page-btn"><i class="ri-arrow-left-line"></i> 上一页</a>
+  
+  
+    <a href="https://kaopubear.top/page/4/" class="page-btn">下一页 <i class="ri-arrow-right-line"></i></a>
+  
+</div>
+
+        </div>
       </div>
-
-      
-  <div class="my-4 flex justify-between px-4 md:px-0">
-    
-      <a href="https://kaopubear.top/page/2/" class="btn btn-white">
-        <i class="ri-arrow-left-line mr-4"></i>
-        上一页
-      </a>
-    
-    
-      <a href="https://kaopubear.top/page/4/" class="btn btn-white">
-        下一页
-        <i class="ri-arrow-right-line ml-4"></i>
-      </a>
-    
-  </div>
-
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-</footer>
-
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://kaopubear.top//media/scripts/main.js"></script>
-</body>
 
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>

@@ -1,328 +1,455 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
-<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582900886089">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-</head>
-<body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
+  gtag('config', 'UA-91022805-1');
+</script>
 
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1582900886089" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            很高兴和你相遇<br>这里正在记录我的所思所学
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-github-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://twitter.com/kaopubear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-twitter-line"></i>
+                </a>
+              
+            
+              
+            
+              
+                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-zhihu-line"></i>
+                </a>
+              
+            
+              
+            
+              
+                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-telegram-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-qq-line"></i>
+                </a>
+              
+            
+          </div>
+        </div>
+      
     </div>
   </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
-    
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
-    
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
-    
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
-    
-      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        资料
-      </a>
-    
-      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        项目
-      </a>
-    
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
-    
-    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
 </div>
 
-    <div class="max-w-4xl w-full mx-auto pt-32">
-      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
-        <i class="ri-hashtag"></i>
-        思考
-      </h1>
-      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
-        
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          如何让别人回答你的问题
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
         </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-04-03</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
+          项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="text-lg text-gray-700 mb-8">
+          <i class="ri-bookmark-line"></i> 思考
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">如何让别人回答你的问题</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <p>虽说是硕博连读，但还得有一个转博的流程。昨天才交了转博材料，后面几天紧接着要转博预答辩和正式答辩，所以每天都忙得很。<br>
 趁着小假期回答一个最近在公众号后台出镜率很高的问题。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-04-03 / 9 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" alt="如何让别人回答你的问题">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-03-15-ToSadPeaple/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          给犹豫的你
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-03-15</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-03-15-ToSadPeaple/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-03-15-ToSadPeaple/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">给犹豫的你</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <p>这是一个放弃的季节，空气里弥漫着不安的味道。</p>
 <p>最近一段时间不少人有了放弃考研的念头。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-03-15-ToSadPeaple/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-03-15 / 3 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" alt="给犹豫的你">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-02-25-WhatWouldYouTellYourYoungerSelf/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          过来人，想对年轻的自己说些什么？
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-02-25</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-02-25-WhatWouldYouTellYourYoungerSelf/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5f42d5aed652b7d9.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-02-25-WhatWouldYouTellYourYoungerSelf/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">过来人，想对年轻的自己说些什么？</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <p>最新一期的 <strong>CELL</strong>[^1] 杂志发表了 <a href="http://www.cell.com/cell/fulltext/S0092-8674(17)30194-0">这样一篇文章</a>，文章开头说到：</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-02-25-WhatWouldYouTellYourYoungerSelf/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-02-25 / 6 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5f42d5aed652b7d9.png" alt="过来人，想对年轻的自己说些什么？">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-01-26-tokyr20/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          致考研人 20：我过去的 2015
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-01-26</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr20/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr20/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 20：我过去的 2015</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="写在前面">写在前面</h2>
 <p>写下这篇文章的标题时，我知道 2015 年的事情该告一段落，2016 年的奋斗又要开始了；当我看着正在整理的第三版《靠谱学长说》时，我告诉自己这篇文章别写太长。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-01-26-tokyr20/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 12 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg" alt="致考研人 20：我过去的 2015">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-01-26-tokyr18/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          致考研人 18：写在考研结束后
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-01-26</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr18/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155524.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr18/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 18：写在考研结束后</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="写在前面">写在前面</h2>
 <p>虽然明天我就有一门期末考试，还是没忍住陪了大伙两天。看到不少&quot;名师&quot;已经在为明年打广告，这是现实，而我却还是想和你说点什么。这篇小文送给你和你身边的研友，今后我们继续一起靠谱。加油。我去复习了，让我静静。以下为正文。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-01-26-tokyr18/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 8 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155524.jpg" alt="致考研人 18：写在考研结束后">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-01-26-tokyr17/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          致考研人17：考前提醒
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-01-26</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr17/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr17/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人17：考前提醒</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="写在前面">写在前面</h2>
 <p>本来计划最后五天每天发布一点考前提醒，一来是保持自己微博和微信的活跃度，二来是保持自己微博和微信的活跃度，三来是保持自己微博和微信的活跃度。我深感自己作为一个八千多粉丝的博主，每天刷微博煮鸡汤的频率过低，以至于除去早期的内容，这一年才发了不到一千条微博。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-01-26-tokyr17/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 7 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg" alt="致考研人17：考前提醒">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-01-26-tokyr16/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          致考研人 16：剩下 20 天，Inner Peace
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-01-26</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr16/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr16/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 16：剩下 20 天，Inner Peace</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="写在前面">写在前面</h2>
 <p>这篇小文无意于告诉你如何 20 天提高 50 分，而是想告诉你这 20 天如何过得踏实。<br>
 去年复习最后一个月我基本处于断网状态，如果现在你还能看到这篇小文，我希望你认真看的同时也尽量少受外界干扰。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-01-26-tokyr16/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 8 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg" alt="致考研人 16：剩下 20 天，Inner Peace">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${7 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-01-26-tokyr15/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          致考研人 15：最后三个月该如何度过
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-01-26</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr15/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr15/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 15：最后三个月该如何度过</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="写在前面">写在前面</h2>
 <p>本来想把标题写成《最后 97 天该如何度过》，但是具体到若干天的倒计时方法让人听起来略感残酷，还是改为三个月稍微温和一些。一开始没有写这篇小文的计划，想以两条微博代之。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-01-26-tokyr15/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-01-26 / 13 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" alt="致考研人 15：最后三个月该如何度过">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${8 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-01-25-tokyr6/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          致考研人 6：写在开学之前（关于困惑和迷茫）
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-01-25</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-01-25-tokyr6/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-01-25-tokyr6/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 6：写在开学之前（关于困惑和迷茫）</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="写在前面">写在前面</h2>
 <p>开始之前先说一点题外话，我发现在微博上只要我说个什么自己的小故事或者和你们扯几句，这浏览量就蹭蹭的往上升，每天发的那些干货，还真没多少人搭理我。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-01-25-tokyr6/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-01-25 / 6 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" alt="致考研人 6：写在开学之前（关于困惑和迷茫）">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${9 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-01-25-tokyr5/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          致考研人 5：写在新年之前（关于行动和幻想）
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-01-25</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-01-25-tokyr5/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-01-25-tokyr5/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">致考研人 5：写在新年之前（关于行动和幻想）</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="写在前面">写在前面</h2>
 <p>继<strong>致 16 考研人</strong>系列的前四篇文章之后，打算再写篇稍微长点的文章，和过去的一年道个别，也给和大家一起成长的 2015 个头。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-01-25-tokyr5/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-01-25 / 11 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png" alt="致考研人 5：写在新年之前（关于行动和幻想）">
-    
-  </div>
+  </section>
+
+        <div class="pagination-container animated fadeIn">
   
+    <a href="https://kaopubear.top/tag/Rn3TD5Cpatn" class="page-btn"><i class="ri-arrow-left-line"></i> 上一页</a>
+  
+  
+</div>
+
       </div>
-
-      
-  <div class="my-4 flex justify-between px-4 md:px-0">
-    
-      <a href="https://kaopubear.top/tag/Rn3TD5Cpatn" class="btn btn-white">
-        <i class="ri-arrow-left-line mr-4"></i>
-        上一页
-      </a>
-    
-    
-  </div>
-
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-</footer>
-
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://kaopubear.top//media/scripts/main.js"></script>
-</body>
+
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>

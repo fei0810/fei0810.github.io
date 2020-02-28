@@ -1,135 +1,201 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
-<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
+<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582900886089">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-</head>
-<body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
+  gtag('config', 'UA-91022805-1');
+</script>
 
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://kaopubear.top/">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1582900886089" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            很高兴和你相遇<br>这里正在记录我的所思所学
+          </p>
+          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
+            
+              
+                <a href="https://github.com/fei0810" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-github-line"></i>
+                </a>
+              
+            
+              
+                <a href="https://twitter.com/kaopubear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-twitter-line"></i>
+                </a>
+              
+            
+              
+            
+              
+                <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-zhihu-line"></i>
+                </a>
+              
+            
+              
+            
+              
+                <a href="https://t.me/kaopu_bear" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-telegram-line"></i>
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-4 text-xl text-gray-400 font-light hover:text-gray-900">
+                  <i class="ri-qq-line"></i>
+                </a>
+              
+            
+          </div>
+        </div>
+      
     </div>
   </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
-    
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
-    
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
-    
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
-    
-      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        资料
-      </a>
-    
-      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        项目
-      </a>
-    
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
-    
-    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
 </div>
 
-    <div class="max-w-4xl w-full mx-auto pt-32">
-      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
-        <i class="ri-hashtag"></i>
-        文献
-      </h1>
-      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
-        
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+<div class="menu-container">
+  <i class="ri-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2019-01-10-reading10rules/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          研究生培养阅读习惯的十条法则
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
         </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2019-01-10</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/resource" class="menu" style="animation-delay: 0.6000000000000001s">
+          资料
+        </a>
+      
+    
+      
+        <a href="/post/project" class="menu" style="animation-delay: 0.8s">
+          项目
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 1s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
+    <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
+        <h2 class="text-lg text-gray-700 mb-8">
+          <i class="ri-bookmark-line"></i> 文献
+        </h2>
+        
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
+    
+      <a href="https://kaopubear.top/post/2019-01-10-reading10rules/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2019-01-10-reading10rules/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">研究生培养阅读习惯的十条法则</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <blockquote>
 <p>最近在 PLoS Comput Biol 上发表了一篇文章，作者对于研究生应该如何培养良好的阅读习惯给出了 10 条建议。简单整理供自己和大家参考。</p>
 </blockquote>
 
       </div>
-      <a href="https://kaopubear.top/post/2019-01-10-reading10rules/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2019-01-10 / 6 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png" alt="研究生培养阅读习惯的十条法则">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${1 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2018-12-23-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          每周文献-181223-单细胞单分子表观
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-12-23</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2018-12-23-weeklypaper/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2018-12-23-weeklypaper/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-181223-单细胞单分子表观</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="单细胞及单分子在表观的应用">单细胞及单分子在表观的应用</h2>
 <p><strong>文献题目</strong>：Single-cell and single-molecule epigenomics to uncover genome regulation at unprecedented resolution</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2018-12-23-weeklypaper/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2018-12-23 / 5 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" alt="每周文献-181223-单细胞单分子表观">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${2 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2018-12-19-biolitmap/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          生物信息发文章哪家强
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-12-19</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2018-12-19-biolitmap/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2018-12-19-biolitmap/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">生物信息发文章哪家强</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <blockquote>
 <p>如果想在生物信息学专业杂志上发一篇不用做任何具体生物信息分析的文章，应该怎么做？最近发表在  <strong>Bioinformatics</strong> 的一篇文章或许可以给你一点思路。</p>
 </blockquote>
@@ -138,94 +204,82 @@
 <p><a href="http://socialanalytics.bsc.es/biolitmap/">BIOLITMAP</a> ：一个基于地理位置，允许按照年份、杂志和主题轻松筛选查看生物信息学文章发表情况的网站。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2018-12-19-biolitmap/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2018-12-19 / 5 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" alt="生物信息发文章哪家强">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${3 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2018-12-16-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          每周文献-181216-lncRNA差异分析流程测评
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-12-16</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2018-12-16-weeklypaper/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2018-12-16-weeklypaper/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-181216-lncRNA差异分析流程测评</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="文献信息">文献信息</h2>
 <p>**标题：**Differential gene <strong>expression</strong> analysis tools exhibit substandard performance for long non-coding RNA-sequencing data</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2018-12-16-weeklypaper/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2018-12-16 / 6 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png" alt="每周文献-181216-lncRNA差异分析流程测评">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${4 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2018-12-08-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          每周文献-181208-DNA 甲基化和几个工具
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-12-08</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2018-12-08-weeklypaper/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2018-12-08-weeklypaper/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-181208-DNA 甲基化和几个工具</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="文献信息">文献信息</h2>
 <p><strong>标题：</strong> A DNA methylation reader complex that enhances gene transcription</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2018-12-08-weeklypaper/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2018-12-08 / 7 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png" alt="每周文献-181208-DNA 甲基化和几个工具">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${5 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2018-11-30-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          每周文献-181130-lncRNA
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-11-30</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2018-11-30-weeklypaper/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2018-11-30-weeklypaper/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">每周文献-181130-lncRNA</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <h2 id="文献信息">文献信息</h2>
 <p><strong>标题</strong>：Global identification of Arabidopsis lncRNAs reveals the regulation of MAF4 by a natural antisense RNA</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2018-11-30-weeklypaper/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2018-11-30 / 10 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg" alt="每周文献-181130-lncRNA">
-    
-  </div>
+  </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${6 * 0.2}s` }">
     
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2017-03-10-HowToReadPaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          如何阅读科学文献
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2017-03-10</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
+      <a href="https://kaopubear.top/post/2017-03-10-HowToReadPaper/" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
+        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png'">
+        </div>
+      </a>
+    
+    <div class="content">
+      <a href="https://kaopubear.top/post/2017-03-10-HowToReadPaper/">
+        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">如何阅读科学文献</h2>
+      </a>
+      <div class="post-abstract text-gray-700 font-light my-4">
         <blockquote>
 <p><a href="http://www.sciencemag.org/careers/2016/01/how-read-scientific-paper?utm_campaign=email-news-latest&amp;et_rid=83827530&amp;et_cid=226858">原文</a> 来自《Science》杂志</p>
 <p>原作者：Adam Ruben</p>
@@ -234,35 +288,117 @@
 <p>从来没有什么事能像阅读科学期刊里的文章一样让你感觉自己如此愚蠢。</p>
 
       </div>
-      <a href="https://kaopubear.top/post/2017-03-10-HowToReadPaper/" class="btn">
-        Read more
-      </a>
+      <div class="text-gray-400 text-sm font-light">2017-03-10 / 8 min read</div>
     </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" alt="如何阅读科学文献">
-    
-  </div>
+  </section>
+
+        <div class="pagination-container animated fadeIn">
   
+    <a href="https://kaopubear.top/tag/EqrCpMmApu" class="page-btn"><i class="ri-arrow-left-line"></i> 上一页</a>
+  
+  
+</div>
+
       </div>
-
-      
-  <div class="my-4 flex justify-between px-4 md:px-0">
-    
-      <a href="https://kaopubear.top/tag/EqrCpMmApu" class="btn btn-white">
-        <i class="ri-arrow-left-line mr-4"></i>
-        上一页
-      </a>
-    
-    
-  </div>
-
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
-  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-</footer>
-
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://kaopubear.top//media/scripts/main.js"></script>
-</body>
+
+    <script src="https://kaopubear.top//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
 </html>
