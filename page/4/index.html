@@ -1,269 +1,337 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
-          
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" href="https://kaopubear.top/post/2019-06-28-csvtkbasic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-28-csvtkbasic/">
-        <div class="item-meta">
-          <time datetime="2019-06-28 07:06:54">2019-06-28</time>
-        </div>
-        <h2>csvtk命令行版极简dplyr</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003855.png" href="https://kaopubear.top/post/2019-06-22-weeklypaper/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003855.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-22-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2019-06-22 10:48:36">2019-06-22</time>
-        </div>
-        <h2>每周文献-190622-ATAC-seq和转录本从头组装新方法</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png" href="https://kaopubear.top/post/2019-06-19-datamashmanual/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-19-datamashmanual/">
-        <div class="item-meta">
-          <time datetime="2019-06-19 17:35:26">2019-06-19</time>
-        </div>
-        <h2>linux极简统计分析工具datamash教程</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190612143531.png" href="https://kaopubear.top/post/2019-06-12-mambabeta/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190612143531.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-12-mambabeta/">
-        <div class="item-meta">
-          <time datetime="2019-06-12 14:52:18">2019-06-12</time>
-        </div>
-        <h2>极速安装软件的升级版 conda</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg" href="https://kaopubear.top/post/2019-06-06-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-06-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2019-06-06 13:37:19">2019-06-06</time>
-        </div>
-        <h2>每周文献-190606-多篇结构变异和转录组分析方法文章</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605212729.png" href="https://kaopubear.top/post/2019-06-05-usebiorxiv/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605212729.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-05-usebiorxiv/">
-        <div class="item-meta">
-          <time datetime="2019-06-05 21:10:50">2019-06-05</time>
-        </div>
-        <h2>随时随地跟踪最新热点文献</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-03-uniq-big-file/">
-        <div class="item-meta">
-          <time datetime="2019-06-03 08:40:15">2019-06-03</time>
-        </div>
-        <h2>大文本另类去重多种解法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2019-05-24-searchbiocinr/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-05-24-searchbiocinr/">
-        <div class="item-meta">
-          <time datetime="2019-05-24 11:33:05">2019-05-24</time>
-        </div>
-        <h2>如何快速找到自己需要的 R 包</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png" href="https://kaopubear.top/post/2019-05-19-searchtips4you/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-05-19-searchtips4you/">
-        <div class="item-meta">
-          <time datetime="2019-05-19 10:14:53">2019-05-19</time>
-        </div>
-        <h2>给你的高效搜索小技巧</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/">
-        <div class="item-meta">
-          <time datetime="2019-05-17 17:08:14">2019-05-17</time>
-        </div>
-        <h2>小议 linux 并行方法</h2>
-      </a>
-    </div>
-  
-</div>
-
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top/page/3/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top/page/5/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
-      </div>
-    </div>
-
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
     </a>
-    <div class="footer__social">
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
       
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-28-csvtkbasic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          csvtk命令行版极简dplyr
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。</p>
+</blockquote>
+<p>之前写 <a href="https://kaopubear.top/2019-06-19-datamashmanual/">datamash 的使用教程</a>，收到了一位读者的私信，内容如上。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-28-csvtkbasic/" class="btn">
+        Read more
+      </a>
     </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" alt="csvtk命令行版极简dplyr">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-22-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-190622-ATAC-seq和转录本从头组装新方法
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-22</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="hmmratac-a-hidden-markov-modeler-for-atac-seq">HMMRATAC: a Hidden Markov ModeleR for ATAC-seq</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.1093/nar/gkz533</p>
+<p><strong>杂志</strong>：Nucleic Acids Research</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-22-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190623003855.png" alt="每周文献-190622-ATAC-seq和转录本从头组装新方法">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-19-datamashmanual/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          linux极简统计分析工具datamash教程
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="引子">引子</h2>
+<p>之前写 awk 教程的时候，曾经提到过一些对文本中行列进行某些计算统计的需求，例如使用数组分类求和。一些基本需求 awk 都可以实现，但是写起来稍显复杂。在 R 中使用 <strong>dplyr</strong> 或者基础函数 <code>aggregate()</code> 可以方便的进行分组操作，如果能在 linux 中使用更加简洁的单行命令针对数值和字符进行一些基本运算就省去了在 R 终端操作的时间。这篇文章介绍一个 linux 中能满足这类需求的工具 <strong>GNU datamash</strong>。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-19-datamashmanual/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png" alt="linux极简统计分析工具datamash教程">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-12-mambabeta/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          极速安装软件的升级版 conda
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-12</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>喜欢科比的球迷应该熟悉这个词，mamba（曼巴）是科比的绰号，同时曼巴也是眼镜蛇的一种，黑曼巴是世界上移动速度最快的蛇。不过这篇文章里的 mamba 和科比没关系和蛇也没啥关系，说的是一个极速版 conda 。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-12-mambabeta/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190612143531.png" alt="极速安装软件的升级版 conda">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-06-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-190606-多篇结构变异和转录组分析方法文章
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="alignment-and-mapping-methodology-influence-transcript-abundance-estimation">Alignment and mapping methodology influence transcript abundance estimation</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.1101/657874</p>
+<p><strong>发表日期</strong>：June 03, 2019</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-06-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg" alt="每周文献-190606-多篇结构变异和转录组分析方法文章">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-05-usebiorxiv/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          随时随地跟踪最新热点文献
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>本文的图表及主要内容均来自 <a href="https://doi.org/10.7554/eLife.45133.001">Meta-Research: Tracking the popularity and outcomes of all bioRxiv preprints</a> 和 <a href="https://doi.org/10.1371/journal.pbio.3000269">Rxivist.org: Sorting biology preprints using social media and readership metrics</a> 两篇文献，一篇发表在elife一篇发表在plos biology，如果有兴趣不妨直接阅读原文。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-05-usebiorxiv/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605212729.png" alt="随时随地跟踪最新热点文献">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          大文本另类去重多种解法
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>今天分析数据的时候刚好碰到一个小问题，因为本身文件较大一开始想不出比较好的解决方法，睡个午觉醒来突然有了灵感，自认为目前解决的还算巧妙。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="大文本另类去重多种解法">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-05-24-searchbiocinr/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          如何快速找到自己需要的 R 包
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-24</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>Bioconductor 的存在让只用 R 语言完成 (90% 的） 生物信息分析成为了一种可能，也在很大程度上推动了 R 在生物信息领域的应用和发展。目前 Bioconductor 配合 R 3.6 使用升级到了 3.9 版本。一共有 R 包 1741 个。学习生物信息和 R 语言，它是非常好的资源。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-05-24-searchbiocinr/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="如何快速找到自己需要的 R 包">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-05-19-searchtips4you/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          给你的高效搜索小技巧
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>本文提到的内容多余绝大多数人来说是没有必要的，因为你可以能一天也不会有几次搜索，但是对于一个如我这般常年「面向搜索编程」的人来说。一天搜索 30 次，每次节约 10 秒，就是 5 分钟，一年就是 30 个小时。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-05-19-searchtips4you/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png" alt="给你的高效搜索小技巧">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          小议 linux 并行方法
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>─=≡Σ(((つ •̀ω•́) つ 车速飚起来，坐稳扶好</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" alt="小议 linux 并行方法">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://kaopubear.top/page/3/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://kaopubear.top/page/5/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 
-  </body>
 </html>

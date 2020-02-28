@@ -1,260 +1,335 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 思考</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1580464844_20200131180015268_157183707.png" href="https://kaopubear.top/post/2020-01-31-returnschool/" style="background-image:url('https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1580464844_20200131180015268_157183707.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2020-01-31-returnschool/">
-        <div class="item-meta">
-          <time datetime="2020-01-31 18:01:24">2020-01-31</time>
-        </div>
-        <h2>特殊时期假期返程实录</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200111001136.png" href="https://kaopubear.top/post/2020-01-11-rememberyouzjl/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200111001136.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2020-01-11-rememberyouzjl/">
-        <div class="item-meta">
-          <time datetime="2020-01-11 00:24:48">2020-01-11</time>
-        </div>
-        <h2>人究竟怎样才算来过又怎样才算离开</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png" href="https://kaopubear.top/post/2019-01-15-igvdebug/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-01-15-igvdebug/">
-        <div class="item-meta">
-          <time datetime="2019-01-15 21:36:04">2019-01-15</time>
-        </div>
-        <h2>IGV 哐当就不能用了，我的 debug 思路</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png" href="https://kaopubear.top/post/2018-12-29-my2018/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-29-my2018/">
-        <div class="item-meta">
-          <time datetime="2018-12-29 12:01:29">2018-12-29</time>
-        </div>
-        <h2>2018，思考问题的熊</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-64b6d50ab3a44838.png" href="https://kaopubear.top/post/2018-08-15-bioinfohistory/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-64b6d50ab3a44838.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-08-15-bioinfohistory/">
-        <div class="item-meta">
-          <time datetime="2018-08-15 19:22:06">2018-08-15</time>
-        </div>
-        <h2>生物信息学简史</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png" href="https://kaopubear.top/post/2018-03-11-howtouseevernote/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-03-11-howtouseevernote/">
-        <div class="item-meta">
-          <time datetime="2018-03-11 20:47:23">2018-03-11</time>
-        </div>
-        <h2>高效使用云笔记的 5 个问题和 10 个关键</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2bf689213f53171e.png" href="https://kaopubear.top/post/2018-02-26-easylifeeasylearn/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2bf689213f53171e.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-02-26-easylifeeasylearn/">
-        <div class="item-meta">
-          <time datetime="2018-02-26 22:11:14">2018-02-26</time>
-        </div>
-        <h2>2018，不妨从“丢”开始</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png" href="https://kaopubear.top/post/2017-10-15-whykeepwriting/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-15-whykeepwriting/">
-        <div class="item-meta">
-          <time datetime="2017-10-15 13:27:49">2017-10-15</time>
-        </div>
-        <h2>为什么要写作</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png" href="https://kaopubear.top/post/2017-05-05-HowToLearn/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-05-05-HowToLearn/">
-        <div class="item-meta">
-          <time datetime="2017-05-05 14:07:06">2017-05-05</time>
-        </div>
-        <h2>究竟应该如何学习</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png" href="https://kaopubear.top/post/2017-04-25-HowToTalk/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-04-25-HowToTalk/">
-        <div class="item-meta">
-          <time datetime="2017-04-25 13:04:45">2017-04-25</time>
-        </div>
-        <h2>如何发言更自信</h2>
-      </a>
-    </div>
-  
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="navigation">
-  
-  
-    <a href="https://kaopubear.top/tag/Rn3TD5Cpatn/page/2">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        思考
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2020-01-31-returnschool/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          特殊时期假期返程实录
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-01-31</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>这些天虽然发生了很多事情，全国不少地方都封城或者各种停运，但我今天还是按照原计划返回了上海，接下来将是按照规定的两周居家自行观察。</p>
+</blockquote>
+
       </div>
+      <a href="https://kaopubear.top/post/2020-01-31-returnschool/" class="btn">
+        Read more
+      </a>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1580464844_20200131180015268_157183707.png" alt="特殊时期假期返程实录">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2020-01-11-rememberyouzjl/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          人究竟怎样才算来过又怎样才算离开
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-01-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>一个人，究竟怎样才算来过，究竟怎样才算离开？</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2020-01-11-rememberyouzjl/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200111001136.png" alt="人究竟怎样才算来过又怎样才算离开">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-01-15-igvdebug/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          IGV 哐当就不能用了，我的 debug 思路
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-01-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>不知道是哪一次更新，不知道是因为更新了什么，PC 上的 IGV 突然就不能用了。不能用了，怎么办。文章记录了我的 debug 过程以及一点思考。</p>
+</blockquote>
+<p>最近一个多月有一件事情一直萦绕在心头，今天算是初步解决了，记录一下。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-01-15-igvdebug/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092819.png" alt="IGV 哐当就不能用了，我的 debug 思路">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-29-my2018/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          2018，思考问题的熊
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-29</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>2018 说走就走，还是得记录一下。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-29-my2018/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png" alt="2018，思考问题的熊">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-08-15-bioinfohistory/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          生物信息学简史
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-08-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>前几天看到 <em>Briefings in bioinformatics</em> 发了一篇 <a href="https://doi.org/10.1093/bib/bby063">文章</a> 介绍生物信息学发展历史。个人有两个感慨，一是这样的文章也可以发表（不禁想给自己的博客投稿），二是感慨生物信息学发展之快。对整篇文章进行了粗糙的翻译整理，供大家了解。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-08-15-bioinfohistory/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-64b6d50ab3a44838.png" alt="生物信息学简史">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-03-11-howtouseevernote/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          高效使用云笔记的 5 个问题和 10 个关键
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-03-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>问题 1：为什么使用云笔记<br>
+问题 2：如何选择云笔记产品<br>
+问题 3：云笔记中该记录什么<br>
+问题 4：如何对信息进行分类</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-03-11-howtouseevernote/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-659d0250cee99b2b.png" alt="高效使用云笔记的 5 个问题和 10 个关键">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-02-26-easylifeeasylearn/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          2018，不妨从“丢”开始
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-02-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="丢并不简单">“丢”并不简单</h2>
+<p>所谓“丢”，high level 的说法就是：<strong>断舍离</strong></p>
+<p>在《断舍离》这本书的序言中，作者提到过如下一段话：</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-02-26-easylifeeasylearn/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-2bf689213f53171e.png" alt="2018，不妨从“丢”开始">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-15-whykeepwriting/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          为什么要写作
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-15</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>本文为生信技能树约稿，关于为什么要写作，为什么要坚持写。</p>
+</blockquote>
+<h2 id="我写作的经历">我写作的经历</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-15-whykeepwriting/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f10de62c9d2f8cf8.png" alt="为什么要写作">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-05-05-HowToLearn/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          究竟应该如何学习
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-05-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p><em>说明：本文涉及两本书和一个视频</em></p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-05-05-HowToLearn/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-deb3a1a3fc57ae60.png" alt="究竟应该如何学习">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-04-25-HowToTalk/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          如何发言更自信
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-04-25</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>上周末在个人公众账号推送的文章《一个月过去，世界发生了什么》中有这么一段内容：</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-04-25-HowToTalk/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d248dfa2fff58f00.png" alt="如何发言更自信">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+    
+      <a href="https://kaopubear.top/tag/Rn3TD5Cpatn/page/2" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
-
-  </body>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>

@@ -1,186 +1,181 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 英语</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3fdceadd7a38f3dd.png" href="https://kaopubear.top/post/2017-01-30-EnglishToolsios/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3fdceadd7a38f3dd.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-30-EnglishToolsios/">
-        <div class="item-meta">
-          <time datetime="2017-01-30 11:49:02">2017-01-30</time>
-        </div>
-        <h2>非功利性英语学习工具推荐_iOS 版</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2017-01-26-tokyr13/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr13/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:42:10">2017-01-26</time>
-        </div>
-        <h2>致考研人 13：英语作文备考经验</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" href="https://kaopubear.top/post/2017-01-26-tokyr7/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr7/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 10:44:22">2017-01-26</time>
-        </div>
-        <h2>致考研人 7：四六级那点事</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png" href="https://kaopubear.top/post/2017-01-25-tokyr2/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-25-tokyr2/">
-        <div class="item-meta">
-          <time datetime="2017-01-25 13:37:45">2017-01-25</time>
-        </div>
-        <h2>致考研人 2：英语复习心得</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
+      </a>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="navigation">
-  
-  
-</div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        英语
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-01-30-EnglishToolsios/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          非功利性英语学习工具推荐_iOS 版
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-01-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>一年前（<em>2016 年 2 月</em>），我曾经在简书发表过一篇文章 <a href="http://www.jianshu.com/p/0724c80bef3f#">《如何用英语打开一扇门 ——我的非功利英语学习法》</a>，里面比较详细又浅显地介绍了我对英语学习的一些理解，并介绍了一些所谓的“非功利性”英语学习工具。</p>
+
       </div>
+      <a href="https://kaopubear.top/post/2017-01-30-EnglishToolsios/" class="btn">
+        Read more
+      </a>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3fdceadd7a38f3dd.png" alt="非功利性英语学习工具推荐_iOS 版">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-01-26-tokyr13/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          致考研人 13：英语作文备考经验
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-01-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="写在前面">写在前面</h2>
+<p>不管之前着急不着急，进入暑假不少人一下子都慌了起来，有的人高价报班有的人四处求医。就英语而言，多数人已经了解该如何学习历年真题中的阅读部分。今天，我们来谈谈英语作文该如何准备。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr13/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="致考研人 13：英语作文备考经验">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-01-26-tokyr7/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          致考研人 7：四六级那点事
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-01-26</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>这两天四六级出成绩，毫无意外的，不少人和我说</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-01-26-tokyr7/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" alt="致考研人 7：四六级那点事">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-01-25-tokyr2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          致考研人 2：英语复习心得
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-01-25</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="写在前面">写在前面</h2>
+<p>本文将从以下几个层面和你探讨考研英语得复习心得</p>
+<ul>
+<li>考研英语试卷结构</li>
+</ul>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-01-25-tokyr2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png" alt="致考研人 2：英语复习心得">
+    
+  </div>
+  
+      </div>
+
+      
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
-
-  </body>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>

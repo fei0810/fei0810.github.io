@@ -1,269 +1,342 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
-          
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" href="https://kaopubear.top/post/2019-05-07-stringtiegenetpm/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-05-07-stringtiegenetpm/">
-        <div class="item-meta">
-          <time datetime="2019-05-07 17:56:59">2019-05-07</time>
-        </div>
-        <h2>解决 Stringtie 基因重复定量的意外收获</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" href="https://kaopubear.top/post/2019-05-03-keyquestion/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-05-03-keyquestion/">
-        <div class="item-meta">
-          <time datetime="2019-05-03 18:02:29">2019-05-03</time>
-        </div>
-        <h2>「关键提问」读书笔记</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" href="https://kaopubear.top/post/2019-04-19-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-04-19-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2019-04-19 10:46:43">2019-04-19</time>
-        </div>
-        <h2>每周文献-190419-植物单细胞BAM重比对以及假基因研究</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606001559.png" href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606001559.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion/">
-        <div class="item-meta">
-          <time datetime="2019-04-18 10:46:23">2019-04-18</time>
-        </div>
-        <h2>数据分析需要更好的问题</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png" href="https://kaopubear.top/post/2019-04-11-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-04-11-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2019-04-11 22:08:25">2019-04-11</time>
-        </div>
-        <h2>每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png" href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/">
-        <div class="item-meta">
-          <time datetime="2019-04-06 07:09:48">2019-04-06</time>
-        </div>
-        <h2>关于 Shiny 调试你应该知道的</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png" href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/">
-        <div class="item-meta">
-          <time datetime="2019-04-04 13:05:19">2019-04-04</time>
-        </div>
-        <h2>用漫威数据学习 ggplot2 facet</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png" href="https://kaopubear.top/post/2019-03-30-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-03-30-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2019-03-30 23:54:56">2019-03-30</time>
-        </div>
-        <h2>每周文献-190330-DTU分析及转录组denovo拼接解析等</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" href="https://kaopubear.top/post/2019-03-22-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-03-22-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2019-03-22 16:41:16">2019-03-22</time>
-        </div>
-        <h2>每周文献-190322-DNA甲基化分析工具及silencers鉴定</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png" href="https://kaopubear.top/post/2019-03-14-learnanewtool/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-03-14-learnanewtool/">
-        <div class="item-meta">
-          <time datetime="2019-03-14 20:55:03">2019-03-14</time>
-        </div>
-        <h2>学习新工具的思路</h2>
-      </a>
-    </div>
-  
-</div>
-
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top/page/4/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top/page/6/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
-      </div>
-    </div>
-
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
     </a>
-    <div class="footer__social">
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
       
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-05-07-stringtiegenetpm/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          解决 Stringtie 基因重复定量的意外收获
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>Bioinformatics was like a box of chocolates.  You never konw what you're gonna get ——阿飞正传</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-05-07-stringtiegenetpm/" class="btn">
+        Read more
+      </a>
     </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" alt="解决 Stringtie 基因重复定量的意外收获">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-05-03-keyquestion/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          「关键提问」读书笔记
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="基本信息">基本信息</h2>
+<ul>
+<li>原作名：Wait, What?: And Life's Other Essential Questions</li>
+<li>作者：詹姆斯 ·E. 瑞安 (James E. Ryan)</li>
+<li>页数：177</li>
+<li>整理：思考问题的熊</li>
+</ul>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-05-03-keyquestion/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" alt="「关键提问」读书笔记">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-04-19-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-190419-植物单细胞BAM重比对以及假基因研究
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="a-single-cell-rna-sequencing-profiles-the-developmental-landscape-of-arabidopsis-root">A Single-Cell RNA Sequencing Profiles the Developmental Landscape of Arabidopsis Root</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-04-19-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000459.png" alt="每周文献-190419-植物单细胞BAM重比对以及假基因研究">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          数据分析需要更好的问题
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-18</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h1 id="设计思维和更好的问题">设计思维和更好的问题</h1>
+<p>这篇文章的主要内容来自 Roger Peng 最近的一篇博客 <a href="https://simplystatistics.org/2019/04/17/tukey-design-thinking-and-better-questions/">Tukey, Design Thinking, and Better Questions</a>。读了之后有些启发便做简单记录。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-04-18-weneedgoodquestion/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606001559.png" alt="数据分析需要更好的问题">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-04-11-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="antisense-lncrna-transcription-mediates-dna-demethylation-to-drive-stochastic-protocadherin-α-promoter-choice">Antisense lncRNA Transcription Mediates DNA Demethylation to Drive Stochastic Protocadherin α Promoter Choice</h2>
+<p><strong>DOI(url)</strong>: https://doi.org/10.1016/j.cell.2019.03.008</p>
+<p><strong>发表日期</strong>：4 April 2019</p>
+<h3 id="关键点">关键点</h3>
+<p>反义 lncRNA 转录可以影响 DNA 甲基化，进而改变染色体结构促进增强子与启动子结合，调控基因表达。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002036.png" alt="" loading="lazy"></figure>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-04-11-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png" alt="每周文献-190411-lncRNA功能exRNA分析以及DNA甲基化">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          关于 Shiny 调试你应该知道的
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not true.</p>
+<p>—Norm Matloff</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png" alt="关于 Shiny 调试你应该知道的">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          用漫威数据学习 ggplot2 facet
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-04</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>本文主要内容翻译整理自：<a href="http://www.zevross.com/blog/2019/04/02/easy-multi-panel-plots-in-r-using-facet_wrap-and-facet_grid-from-ggplot2/">Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2</a>，部分代码有修改。</p>
+</blockquote>
+<p>ggplot2 一个非常强大的功能就是进行  multi-panel plots 的呈现，也就是我们常说的分面（facet）。通过使用 facet_wrap() 或者 facet_grid() 这样的函数我们就可以很方面的将单一的一个图变为多个相关的图。本文将通过一个具体的数据示例帮助你理解 ggplot2 分面的不同方法以及参数。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png" alt="用漫威数据学习 ggplot2 facet">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-03-30-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-190330-DTU分析及转录组denovo拼接解析等
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-03-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="文献题目-relative-abundance-of-transcripts-rats-identifying-differential-isoform-abundance-from-rna-seq">文献题目 Relative Abundance of Transcripts (RATs): Identifying differential isoform abundance from RNA-seq</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-03-30-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png" alt="每周文献-190330-DTU分析及转录组denovo拼接解析等">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-03-22-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-190322-DNA甲基化分析工具及silencers鉴定
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-03-22</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="文献题目rnbeads-20-comprehensive-analysis-of-dna-methylation-data">文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-03-22-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" alt="每周文献-190322-DNA甲基化分析工具及silencers鉴定">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-03-14-learnanewtool/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          学习新工具的思路
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-03-14</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>有两件事情，第一是前几天看到一个朋友分享了自己 <a href="https://www.jianshu.com/p/1fd4de1ba0b5">学习生物信息工具的经验</a>，借着这个机会刚好反思了一下自己过去几年是如何做的；第二是最近有人问了我一个问题：“使用 tophat 比对完的转录组数据 bam 文件想用 RNA-SeQC 来质控，但是这个软件好像没人维护了”（竟然还在用 tophat）。那这次就聊聊如何学习一个新的工具。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-03-14-learnanewtool/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091517.png" alt="学习新工具的思路">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://kaopubear.top/page/4/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://kaopubear.top/page/6/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 
-  </body>
 </html>

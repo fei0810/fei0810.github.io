@@ -1,212 +1,234 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 经济学</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png" href="https://kaopubear.top/post/2017-10-08-econote6/" style="background-image:url('ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-08-econote6/">
-        <div class="item-meta">
-          <time datetime="2017-10-08 15:47:26">2017-10-08</time>
-        </div>
-        <h2>经济学周记 6-科斯定律</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-43ae79f2f5f6108a.png" href="https://kaopubear.top/post/2017-10-08-econote5/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-43ae79f2f5f6108a.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-08-econote5/">
-        <div class="item-meta">
-          <time datetime="2017-10-08 15:47:22">2017-10-08</time>
-        </div>
-        <h2>经济学周记 5-成本进阶</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d75e1f7fe0c8920d.png" href="https://kaopubear.top/post/2017-10-07-econote4/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d75e1f7fe0c8920d.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-07-econote4/">
-        <div class="item-meta">
-          <time datetime="2017-10-07 21:56:23">2017-10-07</time>
-        </div>
-        <h2>经济学周记 4-成本初探</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f9c98c5e22acd48b.png" href="https://kaopubear.top/post/2017-10-07-econote3/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f9c98c5e22acd48b.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-07-econote3/">
-        <div class="item-meta">
-          <time datetime="2017-10-07 21:56:19">2017-10-07</time>
-        </div>
-        <h2>经济学周记 3-选择与稀缺</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-87b44af3e4b224f6.png" href="https://kaopubear.top/post/2017-10-07-econote2/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-87b44af3e4b224f6.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-07-econote2/">
-        <div class="item-meta">
-          <time datetime="2017-10-07 21:56:15">2017-10-07</time>
-        </div>
-        <h2>经济学周记 2-人的本性</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-48cf21b268b4f5bd.png" href="https://kaopubear.top/post/2017-10-07-econote1/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-48cf21b268b4f5bd.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-07-econote1/">
-        <div class="item-meta">
-          <time datetime="2017-10-07 21:55:05">2017-10-07</time>
-        </div>
-        <h2>经济学周记 1-经济学视角</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="navigation">
-  
-    <a href="https://kaopubear.top/tag/kxFr8zWYmXr"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-</div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        经济学
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-08-econote6/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 6-科斯定律
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="社会成本伤害与被伤害">社会成本：伤害与被伤害</h2>
+<p><strong>实例分析</strong></p>
+
       </div>
+      <a href="https://kaopubear.top/post/2017-10-08-econote6/" class="btn">
+        Read more
+      </a>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="ttps://raw.githubusercontent.com/fei0810/image-host/master/img/177622-8a4e7fb8983e1e52.png" alt="经济学周记 6-科斯定律">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-08-econote5/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 5-成本进阶
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="理解盈利和亏损">理解盈利和亏损</h2>
+<p><strong>凡是盈利都是意外</strong></p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-08-econote5/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-43ae79f2f5f6108a.png" alt="经济学周记 5-成本进阶">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-07-econote4/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 4-成本初探
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="成本">成本</h2>
+<p><strong>成本是放弃了的最大代价</strong></p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-07-econote4/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d75e1f7fe0c8920d.png" alt="经济学周记 4-成本初探">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-07-econote3/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 3-选择与稀缺
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="稀缺">稀缺</h2>
+<p><strong>背景</strong>：理性人和人性自私不能称为经济学的基础</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-07-econote3/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f9c98c5e22acd48b.png" alt="经济学周记 3-选择与稀缺">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-07-econote2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 2-人的本性
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="不确定性进化和经济理论">不确定性，进化和经济理论</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-07-econote2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-87b44af3e4b224f6.png" alt="经济学周记 2-人的本性">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-07-econote1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 1-经济学视角
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-07</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="战俘营里的经济组织">战俘营里的经济组织</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-07-econote1/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-48cf21b268b4f5bd.png" alt="经济学周记 1-经济学视角">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://kaopubear.top/tag/kxFr8zWYmXr" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
-
-  </body>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>

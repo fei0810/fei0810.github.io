@@ -1,260 +1,330 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> R</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear.top//post-images/2020-01-08-remotevscoder.png" href="https://kaopubear.top/post/2020-01-08-remotevscoder/" style="background-image:url('https://kaopubear.top//post-images/2020-01-08-remotevscoder.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2020-01-08-remotevscoder/">
-        <div class="item-meta">
-          <time datetime="2020-01-08 09:45:36">2020-01-08</time>
-        </div>
-        <h2>使用 VSCode 愉快地进行远程 R 开发</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191219190924.jpg" href="https://kaopubear.top/post/2019-12-19-rfloat/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191219190924.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-12-19-rfloat/">
-        <div class="item-meta">
-          <time datetime="2019-12-19 19:06:04">2019-12-19</time>
-        </div>
-        <h2>眼见不为实：为什么29不等于29</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150132.jpg" href="https://kaopubear.top/post/2019-10-31-bioconductor310iscoming/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150132.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-10-31-bioconductor310iscoming/">
-        <div class="item-meta">
-          <time datetime="2019-10-31 14:46:22">2019-10-31</time>
-        </div>
-        <h2>Bioconductor 3.10正式发布</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214144852.jpg" href="https://kaopubear.top/post/2019-10-29-macos15user/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214144852.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-10-29-macos15user/">
-        <div class="item-meta">
-          <time datetime="2019-10-29 14:41:32">2019-10-29</time>
-        </div>
-        <h2>macOS 10.15 安装R包</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg" href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/">
-        <div class="item-meta">
-          <time datetime="2019-09-17 20:15:31">2019-09-17</time>
-        </div>
-        <h2>船新版本 DESeq2 处理大量样本速度显著提升</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png" href="https://kaopubear.top/post/2019-08-13-emojifont-debug/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-08-13-emojifont-debug/">
-        <div class="item-meta">
-          <time datetime="2019-08-13 15:46:25">2019-08-13</time>
-        </div>
-        <h2>听说你也有 emojifont 的字体使用困惑</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-03-uniq-big-file/">
-        <div class="item-meta">
-          <time datetime="2019-06-03 08:40:15">2019-06-03</time>
-        </div>
-        <h2>大文本另类去重多种解法</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2019-05-24-searchbiocinr/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-05-24-searchbiocinr/">
-        <div class="item-meta">
-          <time datetime="2019-05-24 11:33:05">2019-05-24</time>
-        </div>
-        <h2>如何快速找到自己需要的 R 包</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png" href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/">
-        <div class="item-meta">
-          <time datetime="2019-04-06 07:09:48">2019-04-06</time>
-        </div>
-        <h2>关于 Shiny 调试你应该知道的</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png" href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/">
-        <div class="item-meta">
-          <time datetime="2019-04-04 13:05:19">2019-04-04</time>
-        </div>
-        <h2>用漫威数据学习 ggplot2 facet</h2>
-      </a>
-    </div>
-  
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="navigation">
-  
-  
-    <a href="https://kaopubear.top/tag/UrqlObNL0t/page/2">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        R
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2020-01-08-remotevscoder/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          使用 VSCode 愉快地进行远程 R 开发
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2020-01-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>2019年底（其实也就是半个多月之前）听了 renkun 大神在上海 R 会议的一个分享，分享主题是「Rstudio vs VSCode」，然后他紧接着又写了两篇使用 VSCode 进行 R 开发的博客。仔细了解之后，感觉自己有救了。</p>
+
       </div>
+      <a href="https://kaopubear.top/post/2020-01-08-remotevscoder/" class="btn">
+        Read more
+      </a>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear.top//post-images/2020-01-08-remotevscoder.png" alt="使用 VSCode 愉快地进行远程 R 开发">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-12-19-rfloat/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          眼见不为实：为什么29不等于29
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-12-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>浮点数计算和比较的坑</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-12-19-rfloat/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191219190924.jpg" alt="眼见不为实：为什么29不等于29">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-10-31-bioconductor310iscoming/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          Bioconductor 3.10正式发布
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-31</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>10月30日，Bioconductor 3.10 正式发布，该版本的bioc共包括了 1822 个软件包，384 个实验数据包，952 个注释包和 27 个工作流程，基于 R 3.6.1。</p>
+<p>其中，新的软件包有93个，新的数据包15个，新的注释包2个，大量的旧包都进行了一波更新。</p>
+<p>接下来推荐几个值得关注的最新软件包，以及一些经典包的重要更新。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-10-31-bioconductor310iscoming/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150132.jpg" alt="Bioconductor 3.10正式发布">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-10-29-macos15user/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          macOS 10.15 安装R包
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-10-29</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>早先升级 macOS10.15 电脑 SMC 出了一些问题，试了一些方法都没有解决，无奈只能继续升级到public beta 版本。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-10-29-macos15user/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214144852.jpg" alt="macOS 10.15 安装R包">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          船新版本 DESeq2 处理大量样本速度显著提升
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-09-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="太长不看版本">太长不看版本</h2>
+<p>DESeq 最新版本（v1.25.9）针对大样本分析的速度和之前相比有了质的飞越，果子老师的 1215 个 TCGA 样本差异分析时间从 1200 分钟缩短到单线程 20 分钟，使用多线程的情况下最快 6 分钟搞定。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-09-17-fasterdeseq2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190917202442.jpg" alt="船新版本 DESeq2 处理大量样本速度显著提升">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          听说你也有 emojifont 的字体使用困惑
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-08-13</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="问题复现">问题复现</h2>
+<blockquote>
+<p>Y 叔有一个神包，能够在 ggplot 图层里随心所欲的添加各种 emoji，然而很多人在使用的时候却不能「随心所欲」，经常一行函数输进去一张白板输出来。最近在我的星球里也有人提到这个问题，作为一个无趣的人我虽然之前没有实际使用过这个有趣的包，但是今天要被迫营业了。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092031.png" alt="听说你也有 emojifont 的字体使用困惑">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          大文本另类去重多种解法
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>今天分析数据的时候刚好碰到一个小问题，因为本身文件较大一开始想不出比较好的解决方法，睡个午觉醒来突然有了灵感，自认为目前解决的还算巧妙。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="大文本另类去重多种解法">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-05-24-searchbiocinr/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          如何快速找到自己需要的 R 包
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-24</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>Bioconductor 的存在让只用 R 语言完成 (90% 的） 生物信息分析成为了一种可能，也在很大程度上推动了 R 在生物信息领域的应用和发展。目前 Bioconductor 配合 R 3.6 使用升级到了 3.9 版本。一共有 R 包 1741 个。学习生物信息和 R 语言，它是非常好的资源。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-05-24-searchbiocinr/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="如何快速找到自己需要的 R 包">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          关于 Shiny 调试你应该知道的
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not true.</p>
+<p>—Norm Matloff</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-04-06-debug-shiny-basic/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png" alt="关于 Shiny 调试你应该知道的">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          用漫威数据学习 ggplot2 facet
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-04-04</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>本文主要内容翻译整理自：<a href="http://www.zevross.com/blog/2019/04/02/easy-multi-panel-plots-in-r-using-facet_wrap-and-facet_grid-from-ggplot2/">Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2</a>，部分代码有修改。</p>
+</blockquote>
+<p>ggplot2 一个非常强大的功能就是进行  multi-panel plots 的呈现，也就是我们常说的分面（facet）。通过使用 facet_wrap() 或者 facet_grid() 这样的函数我们就可以很方面的将单一的一个图变为多个相关的图。本文将通过一个具体的数据示例帮助你理解 ggplot2 分面的不同方法以及参数。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-04-04-facet-ggplot2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png" alt="用漫威数据学习 ggplot2 facet">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+    
+      <a href="https://kaopubear.top/tag/UrqlObNL0t/page/2" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
-
-  </body>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>

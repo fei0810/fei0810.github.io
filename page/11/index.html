@@ -1,269 +1,334 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
-          
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ab572707ebbe72a.png" href="https://kaopubear.top/post/2018-01-06-bayesian/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ab572707ebbe72a.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-01-06-bayesian/">
-        <div class="item-meta">
-          <time datetime="2018-01-06 11:43:07">2018-01-06</time>
-        </div>
-        <h2>先验后验和贝叶斯</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c254aab681ac913c.png" href="https://kaopubear.top/post/2018-01-05-pvalue/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c254aab681ac913c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-01-05-pvalue/">
-        <div class="item-meta">
-          <time datetime="2018-01-05 11:42:28">2018-01-05</time>
-        </div>
-        <h2>关于 P 值的几点问题</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-33496a060f7a76a8.png" href="https://kaopubear.top/post/2017-12-27-ladytasttea1/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-33496a060f7a76a8.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-12-27-ladytasttea1/">
-        <div class="item-meta">
-          <time datetime="2017-12-28 16:00:12">2017-12-28</time>
-        </div>
-        <h2>统计世界的那些八卦 1</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" href="https://kaopubear.top/post/2017-12-21-frpbasic-md/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-12-21-frpbasic-md/">
-        <div class="item-meta">
-          <time datetime="2017-12-21 22:28:27">2017-12-21</time>
-        </div>
-        <h2>四步实现内网穿透</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" href="https://kaopubear.top/post/2017-12-12-variant3annotation/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-12-12-variant3annotation/">
-        <div class="item-meta">
-          <time datetime="2017-12-12 09:45:22">2017-12-12</time>
-        </div>
-        <h2>variant分析阶段小结3-对变异进行注释</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b4f7314fa5a884ea.png" href="https://kaopubear.top/post/2017-10-22-shellscript1/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b4f7314fa5a884ea.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-22-shellscript1/">
-        <div class="item-meta">
-          <time datetime="2017-10-22 14:44:40">2017-10-22</time>
-        </div>
-        <h2>shell 脚本应知应会</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png" href="https://kaopubear.top/post/2017-10-21-econote15/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-21-econote15/">
-        <div class="item-meta">
-          <time datetime="2017-10-21 13:42:38">2017-10-21</time>
-        </div>
-        <h2>经济学周记 15-权利的保护</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" href="https://kaopubear.top/post/2017-10-21-econote14/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-21-econote14/">
-        <div class="item-meta">
-          <time datetime="2017-10-21 13:42:35">2017-10-21</time>
-        </div>
-        <h2>经济学周记 14-价格辨析</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" href="https://kaopubear.top/post/2017-10-21-econote13/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-21-econote13/">
-        <div class="item-meta">
-          <time datetime="2017-10-21 13:42:32">2017-10-21</time>
-        </div>
-        <h2>经济学周记 13-价格教益</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png" href="https://kaopubear.top/post/2017-10-20-econote12/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-10-20-econote12/">
-        <div class="item-meta">
-          <time datetime="2017-10-20 13:42:29">2017-10-20</time>
-        </div>
-        <h2>经济学周记 12-价格管制</h2>
-      </a>
-    </div>
-  
-</div>
-
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top/page/10/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top/page/12/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
-      </div>
-    </div>
-
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
     </a>
-    <div class="footer__social">
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
       
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-01-06-bayesian/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          先验后验和贝叶斯
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-01-06</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="随机并不随机">随机并不随机</h2>
+<p>设想一个转盘游戏有红黑两种，且颜色各占一半。现在请你写下自己的预测结果。如果你配合可以此刻直接写到评论区，再来看文章后续内容。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-01-06-bayesian/" class="btn">
+        Read more
+      </a>
     </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ab572707ebbe72a.png" alt="先验后验和贝叶斯">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-01-05-pvalue/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          关于 P 值的几点问题
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-01-05</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>关于假设检验中的 P 值相关的文章和批评实在太多了。最近看大一本书中有提到了 P 值的部分，简单做个整理。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-01-05-pvalue/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c254aab681ac913c.png" alt="关于 P 值的几点问题">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-12-27-ladytasttea1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          统计世界的那些八卦 1
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-12-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>《女士品茶》读书笔记</p>
+</blockquote>
+<blockquote>
+<p>最近整理前一段时间看过的书，想了想先从《女士品茶》开始，正如这本书的自序所言，全书没有关于概率统计的抽象概念，但是却介绍了一些概率统计在各个领域的应用。这几篇系列文章将依托于《女士品茶》这本书，对概率统计世界的那些八卦做一些梳理。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-12-27-ladytasttea1/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-33496a060f7a76a8.png" alt="统计世界的那些八卦 1">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-12-21-frpbasic-md/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          四步实现内网穿透
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-12-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>想要做数据分析，一个配置说的过去的服务器必不可少，在自己的笔记本跑数据总有一些说不出的痛。如果能把实验室配备的高性能服务器搬回宿舍，就可以在宿舍里愉快地工作了。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-12-21-frpbasic-md/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" alt="四步实现内网穿透">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-12-12-variant3annotation/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          variant分析阶段小结3-对变异进行注释
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-12-12</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="variant-annotation">variant annotation</h2>
+<p>通过上面几步内容，我们找到了一些可信度相对高的突变位置，接下来一个很重要的内容就是对这些突变位点进行注释和功能预测。注释目前常用的工具有两种，一个是snpEFF，另一个是annovar。注释的思路也可以分为两类，一类是按照基因注释，另一类是按照位置注释。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-12-12-variant3annotation/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" alt="variant分析阶段小结3-对变异进行注释">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-22-shellscript1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          shell 脚本应知应会
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-22</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="基本介绍">基本介绍</h2>
+<p>shell 脚本通常是一个以 shebang 起始的文本文件</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-22-shellscript1/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b4f7314fa5a884ea.png" alt="shell 脚本应知应会">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-21-econote15/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 15-权利的保护
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="产权的兴起">产权的兴起</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-21-econote15/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-6daac0e51f6a02f4.png" alt="经济学周记 15-权利的保护">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-21-econote14/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 14-价格辨析
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="权利有别于能力">权利有别于能力</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-21-econote14/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" alt="经济学周记 14-价格辨析">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-21-econote13/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 13-价格教益
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="房价上涨好不好">房价上涨好不好</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-21-econote13/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61a54f4198e21d89.png" alt="经济学周记 13-价格教益">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-10-20-econote12/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          经济学周记 12-价格管制
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-10-20</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="春运火车票价还不够高">春运火车票价还不够高</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-10-20-econote12/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3f8a4c7d7beeed6c.png" alt="经济学周记 12-价格管制">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://kaopubear.top/page/10/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://kaopubear.top/page/12/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 
-  </body>
 </html>

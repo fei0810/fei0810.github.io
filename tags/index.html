@@ -1,319 +1,296 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
+      </a>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
+      </a>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
+      </a>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
+      </a>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
+      </a>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
+      </a>
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> 目前共计 31 个标签</h1>
-        </div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/tg-VHYKad/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              工具（8）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/EqrCpMmApu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              文献（17）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/2IWlJgErkt/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              日常（14）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/SoFzwZsYls/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              读书（7）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/2mze5gMZQM/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              效率（13）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/Rn3TD5Cpatn/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              思考（20）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/DvI6ypPftI/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              生物信息（18）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/1BY38A9TE/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              编程（4）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/UrqlObNL0t/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              R（26）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/fMLJ4BbHmo/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              VScode（7）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              数据科学（30）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/p7M9e5leM/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              RNA-seq（6）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/OLsY4LEszq/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              macOS（1）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/v0Xcy0jQaT/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              linux（16）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/pc7Sk2WlTJ/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              conda（1）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/rOdXXBPjM4/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              Python（2）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/l9yyfXVUxu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              google（2）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/nVbnso_EhL/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              shiny（1）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/woFrWMXtsS/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              debug（2）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/haFk19Ljigu/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              ggplot2（1）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/MoSquIwnNqz/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              表观遗传（3）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/VztzvYW0qtf/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              印象笔记（3）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/kxFr8zWYmXr/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              经济学（16）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/CgpgIuLt1nJ/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              算法（7）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/Ud1JPVbW1rU/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              统计（12）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/mkBKj9w8D8E/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              variant（1）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/JFowL4_oEpM/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              markdown（3）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/GzsCQRADtBW/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              Docker（1）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/P4GLM7-KRkk/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              机器学习（1）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/QDJwk9EcZyr/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              考研（21）
+            </a>
+          </div>
+        
+          <div class="px-8 pb-5 inline-flex relative overflow-hidden">
+            <a href="https://kaopubear.top/tag/_plfY8IQ43A/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+              <i class="ri-hashtag"></i>
+              英语（4）
+            </a>
+          </div>
+        
       </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="tags">
-          
-            <a class="tag" href="https://kaopubear.top/tag/tg-VHYKad/">
-              <div class="tag-name">工具</div>
-              <div class="tag-count">8</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/EqrCpMmApu/">
-              <div class="tag-name">文献</div>
-              <div class="tag-count">17</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/2IWlJgErkt/">
-              <div class="tag-name">日常</div>
-              <div class="tag-count">14</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/SoFzwZsYls/">
-              <div class="tag-name">读书</div>
-              <div class="tag-count">7</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/2mze5gMZQM/">
-              <div class="tag-name">效率</div>
-              <div class="tag-count">13</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/Rn3TD5Cpatn/">
-              <div class="tag-name">思考</div>
-              <div class="tag-count">20</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/DvI6ypPftI/">
-              <div class="tag-name">生物信息</div>
-              <div class="tag-count">18</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/1BY38A9TE/">
-              <div class="tag-name">编程</div>
-              <div class="tag-count">4</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/UrqlObNL0t/">
-              <div class="tag-name">R</div>
-              <div class="tag-count">26</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/fMLJ4BbHmo/">
-              <div class="tag-name">VScode</div>
-              <div class="tag-count">7</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/bPxOfgU9YC/">
-              <div class="tag-name">数据科学</div>
-              <div class="tag-count">30</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/p7M9e5leM/">
-              <div class="tag-name">RNA-seq</div>
-              <div class="tag-count">6</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/OLsY4LEszq/">
-              <div class="tag-name">macOS</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/v0Xcy0jQaT/">
-              <div class="tag-name">linux</div>
-              <div class="tag-count">16</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/pc7Sk2WlTJ/">
-              <div class="tag-name">conda</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/rOdXXBPjM4/">
-              <div class="tag-name">Python</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/l9yyfXVUxu/">
-              <div class="tag-name">google</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/nVbnso_EhL/">
-              <div class="tag-name">shiny</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/woFrWMXtsS/">
-              <div class="tag-name">debug</div>
-              <div class="tag-count">2</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/haFk19Ljigu/">
-              <div class="tag-name">ggplot2</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/MoSquIwnNqz/">
-              <div class="tag-name">表观遗传</div>
-              <div class="tag-count">3</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/VztzvYW0qtf/">
-              <div class="tag-name">印象笔记</div>
-              <div class="tag-count">3</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/kxFr8zWYmXr/">
-              <div class="tag-name">经济学</div>
-              <div class="tag-count">16</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/CgpgIuLt1nJ/">
-              <div class="tag-name">算法</div>
-              <div class="tag-count">7</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/Ud1JPVbW1rU/">
-              <div class="tag-name">统计</div>
-              <div class="tag-count">12</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/mkBKj9w8D8E/">
-              <div class="tag-name">variant</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/JFowL4_oEpM/">
-              <div class="tag-name">markdown</div>
-              <div class="tag-count">3</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/GzsCQRADtBW/">
-              <div class="tag-name">Docker</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/P4GLM7-KRkk/">
-              <div class="tag-name">机器学习</div>
-              <div class="tag-count">1</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/QDJwk9EcZyr/">
-              <div class="tag-name">考研</div>
-              <div class="tag-count">21</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-            <a class="tag" href="https://kaopubear.top/tag/_plfY8IQ43A/">
-              <div class="tag-name">英语</div>
-              <div class="tag-count">4</div>
-              <i class="remixicon-price-tag-3-line icon"></i>
-            </a>
-          
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
-  </div>
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
-
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
-
-  </body>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>

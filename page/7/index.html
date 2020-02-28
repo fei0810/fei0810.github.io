@@ -1,269 +1,347 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="">
-      <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    </div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          
-            <h1 class="info_title"><i class="remixicon-article-line"></i> 文 章</h1>
-          
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" href="https://kaopubear.top/post/2018-12-23-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-23-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2018-12-23 14:37:43">2018-12-23</time>
-        </div>
-        <h2>每周文献-181223-单细胞单分子表观</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" href="https://kaopubear.top/post/2018-12-19-biolitmap/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-19-biolitmap/">
-        <div class="item-meta">
-          <time datetime="2018-12-19 14:42:35">2018-12-19</time>
-        </div>
-        <h2>生物信息发文章哪家强</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png" href="https://kaopubear.top/post/2018-12-16-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-16-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2018-12-16 18:22:25">2018-12-16</time>
-        </div>
-        <h2>每周文献-181216-lncRNA差异分析流程测评</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200118114522.png" href="https://kaopubear.top/post/2018-12-14-usetrello/" style="background-image:url('https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200118114522.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-14-usetrello/">
-        <div class="item-meta">
-          <time datetime="2018-12-14 11:42:34">2018-12-14</time>
-        </div>
-        <h2>任务协作管理工具 Trello 使用简介</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png" href="https://kaopubear.top/post/2018-12-13-rggplot/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-13-rggplot/">
-        <div class="item-meta">
-          <time datetime="2018-12-13 18:30:51">2018-12-13</time>
-        </div>
-        <h2>R 语言可视化之原理概述篇</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" href="https://kaopubear.top/post/2018-12-14-rggplotexample/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-14-rggplotexample/">
-        <div class="item-meta">
-          <time datetime="2018-12-13 18:30:51">2018-12-13</time>
-        </div>
-        <h2>R 语言可视化之案例</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" href="https://kaopubear.top/post/2018-12-12-rtidyverse/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-12-rtidyverse/">
-        <div class="item-meta">
-          <time datetime="2018-12-12 18:30:34">2018-12-12</time>
-        </div>
-        <h2>多快好省用 R 处理数据</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png" href="https://kaopubear.top/post/2018-12-11-rbasic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-11-rbasic/">
-        <div class="item-meta">
-          <time datetime="2018-12-11 18:30:19">2018-12-11</time>
-        </div>
-        <h2>R 语言必备基础知识</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png" href="https://kaopubear.top/post/2018-12-08-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-12-08-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2018-12-08 20:13:37">2018-12-08</time>
-        </div>
-        <h2>每周文献-181208-DNA 甲基化和几个工具</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg" href="https://kaopubear.top/post/2018-11-30-weeklypaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-11-30-weeklypaper/">
-        <div class="item-meta">
-          <time datetime="2018-11-30 16:49:35">2018-11-30</time>
-        </div>
-        <h2>每周文献-181130-lncRNA</h2>
-      </a>
-    </div>
-  
-</div>
-
-        
-          <div class="navigation">
-  
-    <a href="https://kaopubear.top/page/6/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-    <a href="https://kaopubear.top/page/8/">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
-        
-      </div>
-    </div>
-
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
     </a>
-    <div class="footer__social">
+  </nav>
+</div>
+
+    <div class="max-w-4xl w-full mx-auto pt-32">
       
+
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
         
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-23-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-181223-单细胞单分子表观
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-23</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="单细胞及单分子在表观的应用">单细胞及单分子在表观的应用</h2>
+<p><strong>文献题目</strong>：Single-cell and single-molecule epigenomics to uncover genome regulation at unprecedented resolution</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-23-weeklypaper/" class="btn">
+        Read more
+      </a>
     </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" alt="每周文献-181223-单细胞单分子表观">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-19-biolitmap/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          生物信息发文章哪家强
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>如果想在生物信息学专业杂志上发一篇不用做任何具体生物信息分析的文章，应该怎么做？最近发表在  <strong>Bioinformatics</strong> 的一篇文章或许可以给你一点思路。</p>
+</blockquote>
+<p>随着生物信息的发展，生物信息学相关的文章近 10 年呈现大量增加的趋势。世间万物皆可比较，你有没有想过，生物信息发文章哪家强。（山东技校找蓝翔？）</p>
+<h2 id="一句话介绍">一句话介绍</h2>
+<p><a href="http://socialanalytics.bsc.es/biolitmap/">BIOLITMAP</a> ：一个基于地理位置，允许按照年份、杂志和主题轻松筛选查看生物信息学文章发表情况的网站。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-19-biolitmap/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-4d984291a0611a37.png" alt="生物信息发文章哪家强">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-16-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-181216-lncRNA差异分析流程测评
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-16</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="文献信息">文献信息</h2>
+<p>**标题：**Differential gene <strong>expression</strong> analysis tools exhibit substandard performance for long non-coding RNA-sequencing data</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-16-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png" alt="每周文献-181216-lncRNA差异分析流程测评">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-14-usetrello/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          任务协作管理工具 Trello 使用简介
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-14</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="为什么使用-trello">为什么使用 Trello</h2>
+<p>在和一些小伙伴聊天的过程中，发现大家都有一个类似的困惑。每天听到看到不少好东西都会产生「深究一下」的欲望，但是这些想法和素材要么被忘记了要么就因为时间精力没空继续展开学习。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-14-usetrello/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200118114522.png" alt="任务协作管理工具 Trello 使用简介">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-13-rggplot/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          R 语言可视化之原理概述篇
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-13</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="整体介绍">整体介绍</h2>
+<blockquote>
+<p>一张统计图形就是从数据到几何对象 (geometric object, 缩写为 geom, 包括点、线、条形等）的图形属性 (aesthetic attributes, 缩写为 aes, 包括颜色、形状、大小等）的一个映射。此外，图形中还可能包含数据的统计变换 (statistical transformation, 缩写为 stats), 最后绘制在某个特定的坐标系 (coordinate system,  缩写为 coord) 中，而分面 (facet, 指将绘图窗口划分为若干个子窗口）则可以用来生成数据中不同子集的图形。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-13-rggplot/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-61ca3c0b8b75b47c.png" alt="R 语言可视化之原理概述篇">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-14-rggplotexample/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          R 语言可视化之案例
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-13</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="qplot-使用">qplot 使用</h2>
+<p>导入所需数据格式为 data.frame</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-14-rggplotexample/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" alt="R 语言可视化之案例">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-12-rtidyverse/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          多快好省用 R 处理数据
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-12</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>很早之前我一直都是使用命令行来处理软，cut,sed 再 grep 再加上终极 awk 基本上就可以随意的按照需求处理各种软件跑出来的文本文件了，再后来就要开始学习 python，python 学的怎么样了呢？呵呵。</p>
+</blockquote>
+<blockquote>
+<p>虽然做过统计学课的助教，上课的时候用的也是 R 语言，但是博客里并没有几篇 R 相关的文章。印象中一篇是 <a href="http://kaopubear.top/2017-03-02-RIntroductionForNewbie.html">给初学者的 R 语言介绍</a>（写这篇文章当时是为了激发一点学生学习 R 语言的热情），另一篇是 <a href="http://kaopubear.top/2017-09-28-rbasicknowladge.html">R 必备基础知识</a>（写这篇文章当时是因为在写 R 与统计学基础系列文章，就不得不总结一些 R 语言的基础知识）。</p>
+</blockquote>
+<blockquote>
+<p>说实话，我本身对 R 还是非常喜欢和欣赏的，但是日常的使用需求并不高。就拿最基本的文本处理来说，基本上都可以在 shell 中进行随心所欲地增删改成，处理成很多 R 相关软件需要的文本格式，用需要的 R 包跑一两个命令就可以了。但是目前已经有点厌倦了这样的生活，我后期打算有机会的话用 R shiny 写一点网页工具给大家娱乐，也打算精进一下 R 的画图技能。这里就 have to 用 R 去做一些数据处理，于是就有了这样一系列文章。这篇是关于如何用 R 多快好省的进行数据处理。另外，说句题外话，从我这几天的实际处理数据情况来看，R 有些工作做起来，还是太慢了，也可能是我的业务不够娴熟吧。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-12-rtidyverse/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" alt="多快好省用 R 处理数据">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-11-rbasic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          R 语言必备基础知识
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>写着写着 R 与统计基础莫名其妙地又写开 R 基础了，一起写吧。</p>
+</blockquote>
+<h2 id="r-编程基础">R 编程基础</h2>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-11-rbasic/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-94fbe7c0f2252ca1.png" alt="R 语言必备基础知识">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-08-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-181208-DNA 甲基化和几个工具
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-08</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="文献信息">文献信息</h2>
+<p><strong>标题：</strong> A DNA methylation reader complex that enhances gene transcription</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-08-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-0658aa8a483a7862.png" alt="每周文献-181208-DNA 甲基化和几个工具">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-11-30-weeklypaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          每周文献-181130-lncRNA
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-11-30</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="文献信息">文献信息</h2>
+<p><strong>标题</strong>：Global identification of Arabidopsis lncRNAs reveals the regulation of MAF4 by a natural antisense RNA</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-11-30-weeklypaper/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-d62972652b1aa442.jpg" alt="每周文献-181130-lncRNA">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://kaopubear.top/page/6/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
+      <a href="https://kaopubear.top/page/8/" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 
-  </body>
 </html>

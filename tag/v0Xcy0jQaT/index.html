@@ -1,260 +1,342 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-price-tag-3-line"></i> linux</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" href="https://kaopubear.top/post/2019-06-28-csvtkbasic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-28-csvtkbasic/">
-        <div class="item-meta">
-          <time datetime="2019-06-28 07:06:54">2019-06-28</time>
-        </div>
-        <h2>csvtk命令行版极简dplyr</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png" href="https://kaopubear.top/post/2019-06-19-datamashmanual/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-19-datamashmanual/">
-        <div class="item-meta">
-          <time datetime="2019-06-19 17:35:26">2019-06-19</time>
-        </div>
-        <h2>linux极简统计分析工具datamash教程</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-06-03-uniq-big-file/">
-        <div class="item-meta">
-          <time datetime="2019-06-03 08:40:15">2019-06-03</time>
-        </div>
-        <h2>大文本另类去重多种解法</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/">
-        <div class="item-meta">
-          <time datetime="2019-05-17 17:08:14">2019-05-17</time>
-        </div>
-        <h2>小议 linux 并行方法</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092507.png" href="https://kaopubear.top/post/2019-02-11-linux-remove-blank/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092507.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-02-11-linux-remove-blank/">
-        <div class="item-meta">
-          <time datetime="2019-02-11 15:40:54">2019-02-11</time>
-        </div>
-        <h2>linux 去除文本中的空行</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092648.png" href="https://kaopubear.top/post/2019-01-19-sshserver2pc/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092648.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2019-01-19-sshserver2pc/">
-        <div class="item-meta">
-          <time datetime="2019-01-19 15:42:25">2019-01-19</time>
-        </div>
-        <h2>服务器和 Windows 本地电脑无缝衔接</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2018-06-03-awk2/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-06-03-awk2/">
-        <div class="item-meta">
-          <time datetime="2018-06-03 18:50:11">2018-06-03</time>
-        </div>
-        <h2>awk 入门与进阶 part2—模式动作输出与输入</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" href="https://kaopubear.top/post/2018-06-01-awk1/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-06-01-awk1/">
-        <div class="item-meta">
-          <time datetime="2018-06-01 18:49:07">2018-06-01</time>
-        </div>
-        <h2>awk 入门与进阶 part1—快速入门</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-994de011ea5daa85.png" href="https://kaopubear.top/post/2018-04-20-vim10tips/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-994de011ea5daa85.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2018-04-20-vim10tips/">
-        <div class="item-meta">
-          <time datetime="2018-04-20 18:54:20">2018-04-20</time>
-        </div>
-        <h2>vim 操作应知应会 10 点</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" href="https://kaopubear.top/post/2017-12-21-frpbasic-md/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-12-21-frpbasic-md/">
-        <div class="item-meta">
-          <time datetime="2017-12-21 22:28:27">2017-12-21</time>
-        </div>
-        <h2>四步实现内网穿透</h2>
-      </a>
-    </div>
-  
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="navigation">
-  
-  
-    <a href="https://kaopubear.top/tag/v0Xcy0jQaT/page/2">下一页 <i class="remixicon-arrow-right-line"></i></a>
-  
-</div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <h1 class="text-2xl font-bold pb-8 flex justify-center items-center">
+        <i class="ri-hashtag"></i>
+        linux
+      </h1>
+      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-28-csvtkbasic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          csvtk命令行版极简dplyr
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-28</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。</p>
+</blockquote>
+<p>之前写 <a href="https://kaopubear.top/2019-06-19-datamashmanual/">datamash 的使用教程</a>，收到了一位读者的私信，内容如上。</p>
+
       </div>
+      <a href="https://kaopubear.top/post/2019-06-28-csvtkbasic/" class="btn">
+        Read more
+      </a>
     </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
-      
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" alt="csvtk命令行版极简dplyr">
+    
   </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-19-datamashmanual/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          linux极简统计分析工具datamash教程
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="引子">引子</h2>
+<p>之前写 awk 教程的时候，曾经提到过一些对文本中行列进行某些计算统计的需求，例如使用数组分类求和。一些基本需求 awk 都可以实现，但是写起来稍显复杂。在 R 中使用 <strong>dplyr</strong> 或者基础函数 <code>aggregate()</code> 可以方便的进行分组操作，如果能在 linux 中使用更加简洁的单行命令针对数值和字符进行一些基本运算就省去了在 R 终端操作的时间。这篇文章介绍一个 linux 中能满足这类需求的工具 <strong>GNU datamash</strong>。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-19-datamashmanual/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png" alt="linux极简统计分析工具datamash教程">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          大文本另类去重多种解法
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-06-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>今天分析数据的时候刚好碰到一个小问题，因为本身文件较大一开始想不出比较好的解决方法，睡个午觉醒来突然有了灵感，自认为目前解决的还算巧妙。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-06-03-uniq-big-file/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="大文本另类去重多种解法">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          小议 linux 并行方法
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-05-17</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <p>─=≡Σ(((つ •̀ω•́) つ 车速飚起来，坐稳扶好</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-05-17-linuxparallelbasic/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" alt="小议 linux 并行方法">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-02-11-linux-remove-blank/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          linux 去除文本中的空行
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-02-11</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <ul>
+<li><code>sed</code></li>
+<li><code>grep</code></li>
+<li><code>tr</code></li>
+<li><code>awk</code></li>
+</ul>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-02-11-linux-remove-blank/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092507.png" alt="linux 去除文本中的空行">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2019-01-19-sshserver2pc/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          服务器和 Windows 本地电脑无缝衔接
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2019-01-19</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>服务器和 Windows 本地电脑经常需要反复上传下载文件，对于初级用户来说通常会建议其下载类似于 winscp 之类的软件。但是这类高频操作有没有无需借助其它软件更方便的方法呢？</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2019-01-19-sshserver2pc/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092648.png" alt="服务器和 Windows 本地电脑无缝衔接">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-06-03-awk2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          awk 入门与进阶 part2—模式动作输出与输入
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-06-03</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="模式">模式</h2>
+<h3 id="begin-end">BEGIN END</h3>
+<p>当 awk 从输入读取数据之前，首先执行 BEGIN 的语句；当所有输入数据读取完毕，最后执行 END 的语句。BEGIN 与 END 提供控制初始化与结尾的方式。FS 指定输入行分隔符；OFS 指定输出行分隔符。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-06-03-awk2/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="awk 入门与进阶 part2—模式动作输出与输入">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-06-01-awk1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          awk 入门与进阶 part1—快速入门
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-06-01</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <h2 id="awk-的结构">awk 的结构</h2>
+<p>由一个单独的模式–动作语句 (pattern-action statement) 组成。</p>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-06-01-awk1/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" alt="awk 入门与进阶 part1—快速入门">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-04-20-vim10tips/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          vim 操作应知应会 10 点
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-04-20</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <ul>
+<li>vim 包括 normal 和 insert 两种模式
+<ul>
+<li>normal 模式下所有按键都是功能键</li>
+<li>在 insert 模式下可以正常的输入内容</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-04-20-vim10tips/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-994de011ea5daa85.png" alt="vim 操作应知应会 10 点">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2017-12-21-frpbasic-md/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          四步实现内网穿透
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2017-12-21</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>想要做数据分析，一个配置说的过去的服务器必不可少，在自己的笔记本跑数据总有一些说不出的痛。如果能把实验室配备的高性能服务器搬回宿舍，就可以在宿舍里愉快地工作了。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2017-12-21-frpbasic-md/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-f4bd658618a09704.png" alt="四步实现内网穿透">
+    
+  </div>
+  
+      </div>
+
+      
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+    
+      <a href="https://kaopubear.top/tag/v0Xcy0jQaT/page/2" class="btn btn-white">
+        下一页
+        <i class="ri-arrow-right-line ml-4"></i>
+      </a>
+    
+  </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
 
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
-
-  </body>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>

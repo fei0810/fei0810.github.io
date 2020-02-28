@@ -1,500 +1,363 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>思考问题的熊</title>
-<meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582898991718">
-<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"> -->
+<link rel="stylesheet" href="https://kaopubear.top//media/css/tailwind.css">
 <link rel="stylesheet" href="https://kaopubear.top//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top//atom.xml">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+</head>
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
 
-  gtag('config', 'UA-91022805-1');
-</script>
-
-
-  </head>
-  <body>
-    <div class="head">
-  <div class="inner">
-    <a class="site-name" href="https://kaopubear.top/">
-        <span>思考问题的熊</span>
-    </a>
-    <label class="burger" for="burger"></label>
-    <input id="burger" type="checkbox">
-    <button class="burger">
-      <div>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    <nav class="info_nav">
-      
-        
-          <a href="/">首页</a>
-        
-      
-        
-          <a href="/archives">归档</a>
-        
-      
-        
-          <a href="/tags">标签</a>
-        
-      
-        
-          <a href="/post/resource">资料</a>
-        
-      
-        
-          <a href="/post/project">项目</a>
-        
-      
-        
-          <a href="/post/about">关于</a>
-        
-      
-    </nav>
+    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
+  <div class="flex justify-end px-4">
+    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
   </div>
-</div>
-    <div class="info _site">
-      <div class="inner">
-        <div class="info_main">
-          <h1 class="info_title"><i class="remixicon-archive-line"></i> 目前共计 183 篇创作</h1>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-      <div class="inner">
-        <div class="items">
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/">
-        <div class="item-meta">
-          <time datetime="2017-04-03 09:01:09">2017-04-03</time>
-        </div>
-        <h2>如何让别人回答你的问题</h2>
+  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
+    
+      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        首页
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top/post/2017-03-15-ToSadPeaple/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-03-15-ToSadPeaple/">
-        <div class="item-meta">
-          <time datetime="2017-03-15 08:58:09">2017-03-15</time>
-        </div>
-        <h2>给犹豫的你</h2>
+    
+      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        归档
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top/post/2017-03-10-HowToReadPaper/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-03-10-HowToReadPaper/">
-        <div class="item-meta">
-          <time datetime="2017-03-10 22:53:34">2017-03-10</time>
-        </div>
-        <h2>如何阅读科学文献</h2>
+    
+      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        标签
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5f42d5aed652b7d9.png" href="https://kaopubear.top/post/2017-02-25-WhatWouldYouTellYourYoungerSelf/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-5f42d5aed652b7d9.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-02-25-WhatWouldYouTellYourYoungerSelf/">
-        <div class="item-meta">
-          <time datetime="2017-02-25 14:08:24">2017-02-25</time>
-        </div>
-        <h2>过来人，想对年轻的自己说些什么？</h2>
+    
+      <a href="/post/resource" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        资料
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png" href="https://kaopubear.top/post/2017-02-22-BecomingADataScientist/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-69bd327f80208af2.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-02-22-BecomingADataScientist/">
-        <div class="item-meta">
-          <time datetime="2017-02-22 09:04:51">2017-02-22</time>
-        </div>
-        <h2>数据科学家的成长之路 [译]</h2>
+    
+      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        项目
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png" href="https://kaopubear.top/post/2017-02-11-Shortcuts/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-a9159b81c19939bb.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-02-11-Shortcuts/">
-        <div class="item-meta">
-          <time datetime="2017-02-11 15:44:26">2017-02-11</time>
-        </div>
-        <h2>不可不知的快捷键</h2>
+    
+      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+        关于
       </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png" href="https://kaopubear.top/post/2017-02-09-howtosearchingoogle/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-c563de39060efd69.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-02-09-howtosearchingoogle/">
-        <div class="item-meta">
-          <time datetime="2017-02-09 09:28:11">2017-02-09</time>
-        </div>
-        <h2>如何使用 Google</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png" href="https://kaopubear.top/post/2017-02-04-trymarkdown/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-02-04-trymarkdown/">
-        <div class="item-meta">
-          <time datetime="2017-02-04 21:22:38">2017-02-04</time>
-        </div>
-        <h2>关于 Markdown 你应该知道的</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3824437be225f743.png" href="https://kaopubear.top/post/2017-01-31-kaoyanfushi/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3824437be225f743.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-31-kaoyanfushi/">
-        <div class="item-meta">
-          <time datetime="2017-01-31 18:36:28">2017-01-31</time>
-        </div>
-        <h2>关于考研复试你该了解的</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3fdceadd7a38f3dd.png" href="https://kaopubear.top/post/2017-01-30-EnglishToolsios/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-3fdceadd7a38f3dd.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-30-EnglishToolsios/">
-        <div class="item-meta">
-          <time datetime="2017-01-30 11:49:02">2017-01-30</time>
-        </div>
-        <h2>非功利性英语学习工具推荐_iOS 版</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg" href="https://kaopubear.top/post/2017-01-26-tokyr20/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190913183553.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr20/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 12:43:37">2017-01-26</time>
-        </div>
-        <h2>致考研人 20：我过去的 2015</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png" href="https://kaopubear.top/post/2017-01-26-tokyr19/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190901170823.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr19/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 12:18:01">2017-01-26</time>
-        </div>
-        <h2>致考研人 19：关于调剂</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155524.jpg" href="https://kaopubear.top/post/2017-01-26-tokyr18/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155524.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr18/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 12:14:24">2017-01-26</time>
-        </div>
-        <h2>致考研人 18：写在考研结束后</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg" href="https://kaopubear.top/post/2017-01-26-tokyr17/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140248.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr17/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 12:10:48">2017-01-26</time>
-        </div>
-        <h2>致考研人17：考前提醒</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg" href="https://kaopubear.top/post/2017-01-26-tokyr16/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190808140100.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr16/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:57:23">2017-01-26</time>
-        </div>
-        <h2>致考研人 16：剩下 20 天，Inner Peace</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" href="https://kaopubear.top/post/2017-01-26-tokyr15/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr15/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:56:53">2017-01-26</time>
-        </div>
-        <h2>致考研人 15：最后三个月该如何度过</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg" href="https://kaopubear.top/post/2017-01-26-tokyr14/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134220.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr14/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:46:34">2017-01-26</time>
-        </div>
-        <h2>致考研人 14：政治复习的七问七答</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" href="https://kaopubear.top/post/2017-01-26-tokyr13/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr13/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:42:10">2017-01-26</time>
-        </div>
-        <h2>致考研人 13：英语作文备考经验</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png" href="https://kaopubear.top/post/2017-01-26-tokyr12/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235337.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr12/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:30:13">2017-01-26</time>
-        </div>
-        <h2>致考研人 12：比较危险的三类考研人</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png" href="https://kaopubear.top/post/2017-01-26-tokyr11/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190605235551.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr11/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:24:48">2017-01-26</time>
-        </div>
-        <h2>致考研人 11：我的电话采访文字稿</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000144.png" href="https://kaopubear.top/post/2017-01-26-tokyr10/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606000144.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr10/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:18:47">2017-01-26</time>
-        </div>
-        <h2>致考研人 10：政治复习经验</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png" href="https://kaopubear.top/post/2017-01-26-tokyr9/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606001903.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr9/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 11:03:08">2017-01-26</time>
-        </div>
-        <h2>致考研人 9：具体的复习建议</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png" href="https://kaopubear.top/post/2017-01-26-tokyr8/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606090751.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr8/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 10:53:13">2017-01-26</time>
-        </div>
-        <h2>致考研人 8：夏令营那点事</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" href="https://kaopubear.top/post/2017-01-26-tokyr7/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-26-tokyr7/">
-        <div class="item-meta">
-          <time datetime="2017-01-26 10:44:22">2017-01-26</time>
-        </div>
-        <h2>致考研人 7：四六级那点事</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png" href="https://kaopubear.top/post/2017-01-25-tokyr6/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091914.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-25-tokyr6/">
-        <div class="item-meta">
-          <time datetime="2017-01-25 15:35:45">2017-01-25</time>
-        </div>
-        <h2>致考研人 6：写在开学之前（关于困惑和迷茫）</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png" href="https://kaopubear.top/post/2017-01-25-tokyr5/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606092957.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-25-tokyr5/">
-        <div class="item-meta">
-          <time datetime="2017-01-25 15:28:11">2017-01-25</time>
-        </div>
-        <h2>致考研人 5：写在新年之前（关于行动和幻想）</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png" href="https://kaopubear.top/post/2017-01-25-tokyr4/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606134313.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-25-tokyr4/">
-        <div class="item-meta">
-          <time datetime="2017-01-25 15:17:40">2017-01-25</time>
-        </div>
-        <h2>致考研人 4：关于保研</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png" href="https://kaopubear.top/post/2017-01-25-tokyr3/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-edb8eb425df5ea97.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-25-tokyr3/">
-        <div class="item-meta">
-          <time datetime="2017-01-25 15:11:57">2017-01-25</time>
-        </div>
-        <h2>致考研人 3：如何用好你的手机</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png" href="https://kaopubear.top/post/2017-01-25-tokyr2/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-42d53dc54411eb98.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-25-tokyr2/">
-        <div class="item-meta">
-          <time datetime="2017-01-25 13:37:45">2017-01-25</time>
-        </div>
-        <h2>致考研人 2：英语复习心得</h2>
-      </a>
-    </div>
-  
-    <div class="item Article">
-      
-        <a class="item-image js-cover" data-src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png" href="https://kaopubear.top/post/2017-01-24-tokyr1/" style="background-image:url('https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-745994de898f9cc0.png');"></a>
-      
-      <a class="item-main" href="https://kaopubear.top/post/2017-01-24-tokyr1/">
-        <div class="item-meta">
-          <time datetime="2017-01-24 21:31:21">2017-01-24</time>
-        </div>
-        <h2>致考研人1：我过去一年的考研之路综述篇</h2>
-      </a>
-    </div>
-  
+    
+    <a href="https://kaopubear.top//atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
+      RSS
+    </a>
+  </nav>
 </div>
 
-        <div class="navigation">
-  
-    <a href="https://kaopubear.top/archives/page/5/"><i class="remixicon-arrow-left-line"></i> 上一页</a>
-  
-  
-</div>
+    <div class="max-w-4xl w-full mx-auto pt-32">
+      <div class="py-8 shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-04-03-HowToAskQuestion/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                如何让别人回答你的问题
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-03-15-ToSadPeaple/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                给犹豫的你
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-03-10-HowToReadPaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                如何阅读科学文献
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-02-25-WhatWouldYouTellYourYoungerSelf/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                过来人，想对年轻的自己说些什么？
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-02-22-BecomingADataScientist/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                数据科学家的成长之路 [译]
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-02-11-Shortcuts/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                不可不知的快捷键
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-02-09-howtosearchingoogle/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                如何使用 Google
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-02-04-trymarkdown/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                关于 Markdown 你应该知道的
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-31-kaoyanfushi/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                关于考研复试你该了解的
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-30-EnglishToolsios/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                非功利性英语学习工具推荐_iOS 版
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr20/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 20：我过去的 2015
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr19/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 19：关于调剂
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr18/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 18：写在考研结束后
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr17/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人17：考前提醒
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr16/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 16：剩下 20 天，Inner Peace
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr15/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 15：最后三个月该如何度过
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr14/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 14：政治复习的七问七答
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr13/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 13：英语作文备考经验
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr12/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 12：比较危险的三类考研人
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr11/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 11：我的电话采访文字稿
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr10/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 10：政治复习经验
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr9/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 9：具体的复习建议
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr8/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 8：夏令营那点事
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-26-tokyr7/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 7：四六级那点事
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-25-tokyr6/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 6：写在开学之前（关于困惑和迷茫）
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-25-tokyr5/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 5：写在新年之前（关于行动和幻想）
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-25-tokyr4/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 4：关于保研
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-25-tokyr3/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 3：如何用好你的手机
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-25-tokyr2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人 2：英语复习心得
+              </a>
+            </div>
+          </div>
+        
+          <div class="px-8 pb-5 flex relative overflow-hidden">
+            
+            <div class="flex-1">
+              <a href="https://kaopubear.top/post/2017-01-24-tokyr1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+                致考研人1：我过去一年的考研之路综述篇
+              </a>
+            </div>
+          </div>
+        
       </div>
-    </div>
-    <footer class="footer">
-  <div class="main">
-    <a href="https://kaopubear.top/">
-      <img class="avatar" src="https://kaopubear.top//images/avatar.png?v=1582898991718" alt="思考问题的熊">
-    </a>
-    <div class="footer__social">
+
       
-        
-          <a href="https://github.com/fei0810" target="_blank"><i class="remixicon-github-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-          <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank"><i class="remixicon-zhihu-line"></i></a>
-        
-      
-        
-      
-        
-          <a href="https://t.me/kaopubear" target="_blank"><i class="remixicon-telegram-line"></i></a>
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <p class="footer__sosumi">
-      欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
-    </p>
-    <a class="footer-rss" href="https://kaopubear.top//atom.xml">RSS</a>
+  <div class="my-4 flex justify-between px-4 md:px-0">
+    
+      <a href="https://kaopubear.top/archives/page/5/" class="btn btn-white">
+        <i class="ri-arrow-left-line mr-4"></i>
+        上一页
+      </a>
+    
+    
   </div>
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a>
 </footer>
-
-<script src="https://kaopubear.top//media/prism.js"></script>
-<script>
-  Prism.highlightAll()
-</script>
-
-  </body>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top//media/scripts/main.js"></script>
+</body>
 </html>
