@@ -1,10 +1,11 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
+
+<head>
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582995909938">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1583298409684">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,16 +24,17 @@
 </script>
 
 
-  </head>
-  <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+</head>
+
+<body>
+  <div id="app" class="main px-4 flex flex-col lg:flex-row">
+    <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
   <div class="lg:sticky top-0">
     <div class="sidebar-content">
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1582995909938" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1583298409684" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -101,22 +103,22 @@
     
   </div>
   <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
+    <div class="py-4 text-gray-700">加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a><br ><a href="https://tinyletter.com/kaopubear" target="_blank">邮件订阅博客内容</a></div>
     <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">biotools 综合性生物信息工具资源网站</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2019-08-15 / 5 min read
-        </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg" alt="">
-        
-        <div class="post-content yue">
-          <p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
+    <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+      <h1 class="text-3xl font-bold lg:mt-16">biotools 综合性生物信息工具资源网站</h1>
+      <div class="text-sm text-gray-700 lg:my-8">
+        2019-08-15 / 5 min read
+      </div>
+      
+      <img class="post-feature-image rounded-lg mx-auto my-4" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190815155453.jpg" alt="">
+      
+      <div class="post-content yue">
+        <p>生物信息涉及到的工具方法过于庞杂，很多时候接触到一个新的内容总是不知该去哪里找相关的工具，还有很多时候找到的工具太多又不知道该用哪个。之前写过两篇文章 <a href="https://kaopubear.top/2018-09-27-sequence66/">66 种测序数据分析方法和流程</a> 和 <a href="https://kaopubear.top/2019-05-24-searchbiocinr/">如何快速找到自己需要的 R 包</a>。分别从测序数据类型和 bioconductor 包两个角度介绍如何快速找到自己需要的工具。</p>
 <!-- more -->
 <p>今天是这个系列的最后一篇文章，介绍一个综合性生物信息工具资源网站 <strong>biotools</strong>。以后只要用好这三个工具，就不会害怕生物信息不知道用什么和怎么选工具的问题。</p>
 <p>其实说到这类整合网站，很多人都知道 omictools, 不过它很早之前就已更名为 omicX 并转向商用，每天点上六七次网页之后就会提示付费且价格不菲。现在，有一个同样好用还免费的网站来替代它——biotools。</p>
@@ -157,45 +159,45 @@
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
 <figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
-        </div>
-
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/DvI6ypPftI/">
-            <span class="flex-auto">生物信息</span>
-          </a>
-        
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://kaopubear.top/post/2019-09-01-howtouseyuque/">
-                <h3 class="post-title">
-                  <i class="ri-arrow-left-line"></i>
-                  如何使用语雀快速发表自己的博客
-                </h3>
-              </a>
-            </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/">
-                <h3 class="post-title">
-                  听说你也有 emojifont 的字体使用困惑
-                  <i class="ri-arrow-right-line"></i>
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-
-        
-
       </div>
-    </div>
+      
+      <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 "
+        href="https://kaopubear.top/tag/DvI6ypPftI/">
+        <span class="flex-auto">生物信息</span>
+      </a>
+      
 
-    <script src="https://kaopubear.top//media/prism.js"></script>  
+
+      <div class="flex justify-between py-8">
+        
+        <div class="prev-post">
+          <a href="https://kaopubear.top/post/2019-09-01-howtouseyuque/">
+            <h3 class="post-title">
+              <i class="ri-arrow-left-line"></i>
+              如何使用语雀快速发表自己的博客
+            </h3>
+          </a>
+        </div>
+        
+
+        
+        <div class="next-post">
+          <a href="https://kaopubear.top/post/2019-08-13-emojifont-debug/">
+            <h3 class="post-title">
+              听说你也有 emojifont 的字体使用困惑
+              <i class="ri-arrow-right-line"></i>
+            </h3>
+          </a>
+        </div>
+        
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  <script src="https://kaopubear.top//media/prism.js"></script>  
 <script>
 
 Prism.highlightAll()
@@ -293,5 +295,6 @@ const closeMenu = () => {
 }
 </script>
   
-  </body>
+</body>
+
 </html>

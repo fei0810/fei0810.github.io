@@ -1,10 +1,11 @@
 <html>
-  <head>
-    <meta charset="utf-8" />
+
+<head>
+  <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>思考问题的熊</title>
 <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
-<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1582995909938">
+<link rel="shortcut icon" href="https://kaopubear.top//favicon.ico?v=1583298409684">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -23,16 +24,17 @@
 </script>
 
 
-  </head>
-  <body>
-    <div id="app" class="main px-4 flex flex-col lg:flex-row">
-      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+</head>
+
+<body>
+  <div id="app" class="main px-4 flex flex-col lg:flex-row">
+    <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
   <div class="lg:sticky top-0">
     <div class="sidebar-content">
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="ri-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://kaopubear.top/">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1582995909938" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://kaopubear.top//images/avatar.png?v=1583298409684" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">思考问题的熊</h1>
       </div>
@@ -102,22 +104,22 @@
     
   </div>
   <div class="site-footer">
-    <div class="py-4 text-gray-700">欢迎加入我的 <a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球「靠谱熊基地」</a></div>
+    <div class="py-4 text-gray-700">加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a><br ><a href="https://tinyletter.com/kaopubear" target="_blank">邮件订阅博客内容</a></div>
     <a class="rss" href="https://kaopubear.top//atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">『终极算法』摘抄笔记-贝叶斯学派</h1>
-        <div class="text-sm text-gray-700 lg:my-8">
-          2018-02-25 / 14 min read
-        </div>
-        
-          <img class="post-feature-image rounded-lg mx-auto my-4" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg" alt="">
-        
-        <div class="post-content yue">
-          <h2 id="贝叶斯定理">贝叶斯定理</h2>
+    <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+      <h1 class="text-3xl font-bold lg:mt-16">『终极算法』摘抄笔记-贝叶斯学派</h1>
+      <div class="text-sm text-gray-700 lg:my-8">
+        2018-02-25 / 14 min read
+      </div>
+      
+      <img class="post-feature-image rounded-lg mx-auto my-4" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-dcdae4ae86da2e76.jpg" alt="">
+      
+      <div class="post-content yue">
+        <h2 id="贝叶斯定理">贝叶斯定理</h2>
 <p>对于贝叶斯学派来说，学习“仅仅是”贝叶斯定理的另外一个运用，将所有模型当作假设，将数据作为论据：随着你看到的数据越来越多，有些模型会变得越来越有可能性，而有些则相反，直到理想的模型渐渐突出，成为最终的胜者。</p>
 <!--more-->
 <p>假设你半夜在一个陌生的星球上醒来。虽然你能看到的只是繁星闪烁的天空，你有理由相信太阳会在某个时间点升起，因为多数星球会自传并绕着自己的太阳转。所以你估计相应的概率应该会大于 1/2（比如说 2/3）。我们将其称为太阳会升起来的“<strong>先验概率</strong>”，因为这发生在看到任何证据之前。<strong>“先验概率”的基础并不是数过去这个星球上太阳升起的次数，因为过去你没有看到；它反映的是对于将要发生的事情，你优先相信的东西，这建立在你掌握的宇宙常识之上</strong>。但现在星星开始渐渐暗淡，所以你对于太阳会升起的信心越来越强，这建立于你在地球上生存的经历之上。你的这种信心源自“<strong>后验概率</strong>”，因为这个概率是<strong>在看到一些证据后得出的。天空开始渐渐变亮，后验概率又变得更大了</strong>。</p>
@@ -150,49 +152,50 @@
 <p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
 <figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
 
-        </div>
-
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/bPxOfgU9YC/">
-            <span class="flex-auto">数据科学</span>
-          </a>
-        
-          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://kaopubear.top/tag/CgpgIuLt1nJ/">
-            <span class="flex-auto">算法</span>
-          </a>
-        
-
-
-        <div class="flex justify-between py-8">
-          
-            <div class="prev-post">
-              <a href="https://kaopubear.top/post/2018-02-25-TheMasterAlgorithm6/">
-                <h3 class="post-title">
-                  <i class="ri-arrow-left-line"></i>
-                  『终极算法』摘抄笔记-联结学派
-                </h3>
-              </a>
-            </div>
-          
-
-          
-            <div class="next-post">
-              <a href="https://kaopubear.top/post/2018-02-17-TheMasterAlgorithm4/">
-                <h3 class="post-title">
-                  『终极算法』摘抄笔记-符号学派
-                  <i class="ri-arrow-right-line"></i>
-                </h3>
-              </a>
-            </div>
-          
-        </div>
-
-        
-
       </div>
-    </div>
+      
+      <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 "
+        href="https://kaopubear.top/tag/bPxOfgU9YC/">
+        <span class="flex-auto">数据科学</span>
+      </a>
+      
+      <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 "
+        href="https://kaopubear.top/tag/CgpgIuLt1nJ/">
+        <span class="flex-auto">算法</span>
+      </a>
+      
 
-    <script src="https://kaopubear.top//media/prism.js"></script>  
+
+      <div class="flex justify-between py-8">
+        
+        <div class="prev-post">
+          <a href="https://kaopubear.top/post/2018-02-25-TheMasterAlgorithm6/">
+            <h3 class="post-title">
+              <i class="ri-arrow-left-line"></i>
+              『终极算法』摘抄笔记-联结学派
+            </h3>
+          </a>
+        </div>
+        
+
+        
+        <div class="next-post">
+          <a href="https://kaopubear.top/post/2018-02-17-TheMasterAlgorithm4/">
+            <h3 class="post-title">
+              『终极算法』摘抄笔记-符号学派
+              <i class="ri-arrow-right-line"></i>
+            </h3>
+          </a>
+        </div>
+        
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  <script src="https://kaopubear.top//media/prism.js"></script>  
 <script>
 
 Prism.highlightAll()
@@ -290,5 +293,6 @@ const closeMenu = () => {
 }
 </script>
   
-  </body>
+</body>
+
 </html>
