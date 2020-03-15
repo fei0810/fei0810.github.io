@@ -75,6 +75,36 @@
     
     <div class="flex-1 order-2 md:order-1">
       <h2 class="text-2xl font-semibold mb-4">
+        <a href="https://kaopubear.top/post/2018-12-12-rtidyverse/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
+          多快好省用 R 处理数据
+        </a>
+      </h2>
+      <div class="mb-4 text-xs text-gray-500">2018-12-12</div>
+      <div class="mb-4 text-gray-500 dark:text-gray-300">
+        <blockquote>
+<p>很早之前我一直都是使用命令行来处理软，cut,sed 再 grep 再加上终极 awk 基本上就可以随意的按照需求处理各种软件跑出来的文本文件了，再后来就要开始学习 python，python 学的怎么样了呢？呵呵。</p>
+</blockquote>
+<blockquote>
+<p>虽然做过统计学课的助教，上课的时候用的也是 R 语言，但是博客里并没有几篇 R 相关的文章。印象中一篇是 <a href="http://kaopubear.top/2017-03-02-RIntroductionForNewbie.html">给初学者的 R 语言介绍</a>（写这篇文章当时是为了激发一点学生学习 R 语言的热情），另一篇是 <a href="http://kaopubear.top/2017-09-28-rbasicknowladge.html">R 必备基础知识</a>（写这篇文章当时是因为在写 R 与统计学基础系列文章，就不得不总结一些 R 语言的基础知识）。</p>
+</blockquote>
+<blockquote>
+<p>说实话，我本身对 R 还是非常喜欢和欣赏的，但是日常的使用需求并不高。就拿最基本的文本处理来说，基本上都可以在 shell 中进行随心所欲地增删改成，处理成很多 R 相关软件需要的文本格式，用需要的 R 包跑一两个命令就可以了。但是目前已经有点厌倦了这样的生活，我后期打算有机会的话用 R shiny 写一点网页工具给大家娱乐，也打算精进一下 R 的画图技能。这里就 have to 用 R 去做一些数据处理，于是就有了这样一系列文章。这篇是关于如何用 R 多快好省的进行数据处理。另外，说句题外话，从我这几天的实际处理数据情况来看，R 有些工作做起来，还是太慢了，也可能是我的业务不够娴熟吧。</p>
+</blockquote>
+
+      </div>
+      <a href="https://kaopubear.top/post/2018-12-12-rtidyverse/" class="btn">
+        Read more
+      </a>
+    </div>
+    
+      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-e13642c496761511.png" alt="多快好省用 R 处理数据">
+    
+  </div>
+
+  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
+    
+    <div class="flex-1 order-2 md:order-1">
+      <h2 class="text-2xl font-semibold mb-4">
         <a href="https://kaopubear.top/post/2018-12-11-rbasic/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
           R 语言必备基础知识
         </a>
@@ -291,34 +321,6 @@
     </div>
     
       <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-cb08a9dbc837b77e.png" alt="SRA 数据下载自救指南">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/post/2018-08-25-rnaseqtimedata/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          转录组时间序列数据小结
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2018-08-29</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <blockquote>
-<p>针对转录组数据，平时分析中最常见两组之间的比较，比如不同处理或者不同突变体。面对这样的数据用用 DESeq2 或者 edgeR 基本就差不多。如果样本量或者不同条件很多的话可以还做 WGCNA 的分析。但是生物体的生长发育和时间这个维度有着非常密切的关系。如果碰上了一组和时间有关系的数据可以怎么处理呢？</p>
-</blockquote>
-<h2 id="时序分析">时序分析</h2>
-<p>所谓时序分析 (time series analysis) 在 data science 中是非常重要的一个方向。对大多数商业行为而言如果能够通过已有不同时间数据来进行预测就有可能大大提高自己的胜率。通常时间序列数据会包括趋势部分和不规则部分， 我们需要做的就是剔除不规则部分然后找到趋势所在，再进行预测。在预测过程中通常可以采用移动平均法、局部加权回归法、指数平滑法和自回归整合移动平均等方法。</p>
-<h2 id="生物学时序分析">生物学时序分析</h2>
-<p>生物学的时间相关数据本身预测属性和商业数据相比要弱很多。一种是单一条件的纯时间序列，主要看不同基因的表达模式，根据相似的表达谱将基因归为多个类有助于找到功能相似的基因。另一种情况是含有对照和处理的时间序列，需要再考察不同条件的差异基因。</p>
-
-      </div>
-      <a href="https://kaopubear.top/post/2018-08-25-rnaseqtimedata/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3fab59819210337.png" alt="转录组时间序列数据小结">
     
   </div>
   
