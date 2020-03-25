@@ -1,0 +1,536 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>关于文档，还没人告诉你的那点事 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于文档，还没人告诉你的那点事 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="
+学习一个新的工具或者软件，首选方法是阅读开发者写的软件文档，因为 TA 最清楚怎么回事；其次是阅读最新的英文相关使用讨论或者介绍，因为中文的很多资料往往滞后；再次才是阅读中文相关介绍，而且一定要谨慎参考认真判断。评判一个工具好坏的标准之一..." />
+  <meta property="og:title" content="关于文档，还没人告诉你的那点事 - 思考问题的熊">
+  <meta property="og:description" content="
+学习一个新的工具或者软件，首选方法是阅读开发者写的软件文档，因为 TA 最清楚怎么回事；其次是阅读最新的英文相关使用讨论或者介绍，因为中文的很多资料往往滞后；再次才是阅读中文相关介绍，而且一定要谨慎参考认真判断。评判一个工具好坏的标准之一..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-01-02-howtowritedocumentation/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606093026.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="关于文档，还没人告诉你的那点事 - 思考问题的熊">
+  <meta name="twitter:description" content="
+学习一个新的工具或者软件，首选方法是阅读开发者写的软件文档，因为 TA 最清楚怎么回事；其次是阅读最新的英文相关使用讨论或者介绍，因为中文的很多资料往往滞后；再次才是阅读中文相关介绍，而且一定要谨慎参考认真判断。评判一个工具好坏的标准之一...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-01-02-howtowritedocumentation/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          关于文档，还没人告诉你的那点事
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606093026.png" alt="关于文档，还没人告诉你的那点事" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-01-02 · 17 min read</div>
+          
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              数据科学
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>学习一个新的工具或者软件，首选方法是阅读开发者写的软件文档，因为 TA 最清楚怎么回事；其次是阅读最新的英文相关使用讨论或者介绍，因为中文的很多资料往往滞后；再次才是阅读中文相关介绍，而且一定要谨慎参考认真判断。评判一个工具好坏的标准之一也是其文档是否写的足够「好」。</p>
+</blockquote>
+<!--more-->
+<blockquote>
+<p>因此无论是开发者还是用户，文档都至关重要。那到底好的文档需要包含哪些内容或者应该如何写出一个尽量好的文档呢？最近看到一篇英文博客：<a href="https://www.divio.com/blog/documentation/">What nobody tells you about documentation</a> ，以下为尽量保留作者原意的不完全翻译版本供你参考。</p>
+</blockquote>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606093042.png" alt="" loading="lazy"></figure>
+<h2 id="写在前面">写在前面</h2>
+<p>无论你如何认真地写软件文档，它可能都对你的软件起不到什么帮助，除非你掌握了正确的文档写作方法。为了写好软件文档你需要了解一个秘密：<strong>「文档」不是特指某一个内容，而是有四个</strong>。</p>
+<p>它们是：<em>教程 (tutorials)</em>，<em>操作指南 (how-to guides)</em>，<em>说明 (explanation )</em> 和<em>技术参考 (technical reference)</em>。它们代表了四种不同的目的或功能并且需要用四种不同的方法来写，了解这一点将有助于极大改进大多数软件的文档。</p>
+<p>一个软件有多好并不重要，因为<strong>如果文档不够好，很多人就不想使用它</strong>。</p>
+<p>即使由于某种原因（没有第二选择）别人不得不用，如果没有规范良好的文档，使用者也不会高效地或者按照开发者想要的方式来使用。虽然几乎每个人都明白这一点，每个人也都知道他们需要一个好的文档并且试图创建一个好的文档，但是<strong>大多数人还是失败了</strong>。这并不是因为他们不够努力而是因为没有找到正确的方法。</p>
+<p>接下来我将解释如何使你的文档变得更好，不是更加努力而是通过正确的方式。<strong>所谓正确的方法其实就是更简单的方法</strong>：更容易编写，更容易维护。</p>
+<blockquote>
+<p>The right way is the easier way - easier to write, and easier to maintain.</p>
+</blockquote>
+<p>有一些非常简单的原则可以指导我们进行文档编辑，但似乎又像是一个秘密很少被人们提起和总结。如果你能够将这些原则付诸实践，它就可以使你的文档变的更好，进而使你的项目、产品或团队更成功。</p>
+<h2 id="原则">原则</h2>
+<p>好的文档需要包含并围绕其四个不同的功能进行构建：<em>教程 (tutorials)</em>，<em>操作指南 (how-to guides)</em>，<em>说明 (explanation ) <em>和</em>技术参考 (technical reference)</em>。每一部分都有自身独特的写作模式，使用软件的人在不同的时间不同的情况下会需要这四种不同的文档 。因此，需要围绕它们明确地来构建文档并且必须保持独立和彼此不同。</p>
+<h3 id="教程">教程</h3>
+<ul>
+<li><strong>学习为导向 (learning-oriented)</strong></li>
+<li>可以让新手轻松入门</li>
+<li>可以理解为是一节课</li>
+</ul>
+<p>如果要打个比方，就像教小朋友怎么做饭</p>
+<h3 id="操作指南">操作指南</h3>
+<ul>
+<li><strong>目标为导向 (goal-oriented)</strong></li>
+<li>展示如何解决特定问题</li>
+<li>是一系列步骤</li>
+</ul>
+<p>打个比方就是烹饪书中的一个食谱</p>
+<h3 id="说明">说明</h3>
+<ul>
+<li><strong>理解为导向 (understanding-oriented)</strong></li>
+<li>用来进行解释</li>
+<li>提供各种相关的背景</li>
+</ul>
+<p>打个比方就像是一篇关于烹饪历史的文章</p>
+<h3 id="参考">参考</h3>
+<ul>
+<li><strong>信息为导向 (information-oriented)</strong></li>
+<li>描述一个工具的系统方法</li>
+<li>一定是准确而且完整的</li>
+</ul>
+<p>类比的话，可以参考百科全书中的文章</p>
+<p>以上这种分类可以使开发者和用户明白哪些信息在哪里。它告诉开发者如何写，写什么以及在哪里写，使他们免于浪费大量时间来尝试将想要传达的信息改为其他乱七八糟的形式，因为<strong>这四种文档，每一种只有一个任务</strong>。</p>
+<p>如果这些文档没有明确地展现出自身用处和界限，想要维护一个良好的文档就是非常困难的。每种类型的文档要求都与其他三者不同。你一旦理解了这些结构它就能成为一种非常有用的工具，一方面你可以用它分析自己现有的文档，另一方面可以了解需要采取哪些措施进行改进。</p>
+<hr>
+<h2 id="教程-2">教程</h2>
+<p>教程是让用户通过一系列步骤来完成某个项目的<strong>课程</strong>。它是你的软件所必须具备的，用来向初学者展示他们可以用它实现某些目的。教程完全以<strong>学习为导向</strong>，进一步讲，他们的目标是学习如何使用而不是了解你的项目。</p>
+<p>此时你是一个老师并对学生将要做的操作负责。在你的指导下学生将执行一系列操作以达到目的。什么时候结束和进行哪些操作都取决于你，但决定一个初学者应该做什么非常困难，一方面这些操作和最终的结束点必须有意义，同时对于一个真初学者而言又要可以实现。</p>
+<p>现在想想教孩子做饭的例子。你教孩子做了哪道菜其实并不重要，重要的是让孩子觉得做饭这件事很有乐趣并且有信心，同时还希望自己可以再来一次。通过孩子所做的事情，他将学习烹饪的一些重要事项并且将了解在厨房里使用餐具来处理食物是一种什么感觉。</p>
+<p>使用软件（做饭）是一个「手艺」问题。它的确是知识，但它是一种实践得来的知识。当我们学习一项新的手艺或技能时，我们总是从实践开始。记住，完成教程后学习者应该就能够理解软件本身和其余的那些文档。老实说，大多数软件项目的教程都非常糟糕或者根本不存在教程。教程可以让一个学习者变成你的用户，错误或缺少教程将阻止你的软件获取新用户。不过好的教程很难写，它需要对初学者有用有意义易于参照且够强大。</p>
+<h3 id="如何写出好教程">如何写出好教程</h3>
+<h4 id="允许用户通过实际操作进行学习">允许用户通过实际操作进行学习</h4>
+<p>小时候我们都是通过实践和尝试来学习东西，比如说话或走路。在你的软件教程中学习者需要有事可做，而且他们所做的事情需要涵盖这个工具大量的操作，从最简单的操作开始再到更复杂的。</p>
+<h4 id="让用户走出第一步">让用户走出第一步</h4>
+<p>不管初学者的第一步是复制粘贴，还是不像一个有经验的用户那样操作，或者甚至不是一个“正确的”使用方式，这些都是可以接受的。初学者的教程与最佳实践手册不同，教程的目的是让学习者开始他们的旅程而不是让他们到达目的地。</p>
+<h4 id="确保教程可以运行">确保教程可以运行</h4>
+<p>作为老师你的一个重要工作是激发初学者的信心，有很多途径可以促成这一点，比如友好的语气和富有逻辑性的内容与资料等等。<strong>但最重要的是你要求初学者做的事必须确实可以做到</strong>。学习者需要看到你要求他们采取的操作会产生你答应他们会有的效果。如果学习者的操作产生报错或有了一个意外的结果那教程就等于失败了， 即使这不是你的锅。</p>
+<p>当你的学生和你在一起时你可以现场解决问题；如果他们自己阅读文档你就不到这一点了。所以必须提前防止这种情况发生，emm，这说起来容易做起来难。</p>
+<h4 id="确保用户可以立刻得到结果">确保用户可以立刻得到结果</h4>
+<p>**初学者所做的一切都应该是容易理解的。**如果他在看到结果之前必须做很多步难以理解的操作那就很糟糕了。每一个操作的效果都应立即展示出来，并且明确它与操作之间的联系。教程的每个部分或整个教程的结论必须是有意义的。</p>
+<h4 id="确保你的教程可重复">确保你的教程可重复</h4>
+<p>教程必须能可靠地重复，这其实不容易实现，因为人们使用不同的操作系统，经验水平也不一样。更不要说他们使用的软件或资源很可能在一段时间内会发生变化，比如版本。因此教程需要定期和详细的测试，以确保它们一直有效。</p>
+<h4 id="关注具体步骤而非抽象概念">关注具体步骤而非抽象概念</h4>
+<p>教程需要具体，围绕特定的操作和结果展开。引入抽象的概念通常诱惑巨大，但是所有的学习都是从特定和具体到一般和抽象。</p>
+<h4 id="提供最低限度的必要说明">提供最低限度的必要说明</h4>
+<p>不要解释学习者完成教程不需要知道的任何内容。扩展讨论很重要但它不是教程的作用，在教程中这反而是一个会让学习者分散注意力的绊脚石。只要有最低限度的解释就可以了，你可以链接到文档中其他地方的说明。</p>
+<h4 id="只关注用户需要采取的步骤">只关注用户需要采取的步骤</h4>
+<p>教程只需要专注于学习者手头的任务。也许你的命令有许多其他选项，或者可能有不同的方法来访问某个 API。但是现在你的学习者不需要了解那些就能取得进步。</p>
+<hr>
+<h2 id="操作指南-2">操作指南</h2>
+<p>操作指南使读者了解解决实际问题所需的步骤。它们是食谱，实现特定的目标。例如如何创建 Web 表单，如何绘制三维数据集，如何启用 LDAP 身份验证。</p>
+<p>操作指南完全以<strong>目标为导向</strong>。想想一个食谱就可以，它解决了一个具体问题，我们可以假设用户已经拥有一些基本知识，他仅仅想知道如何实现某些目标。操作指南与教程完全不同，操作指南是对初学者甚至无法提出的那些问题进行的回答。</p>
+<p>在操作指南中我们可以假设用户已经知道如何执行基本操作并使用基本的工具。让我们开心的是，不少软件文档中的操作指南往往做得都还不错。</p>
+<h3 id="如何写出好的操作指南">如何写出好的操作指南</h3>
+<h4 id="提供一系列步骤">提供一系列步骤</h4>
+<p>操作指南必须包含需要按顺序执行的步骤列表（就像教程一样）。你不必从头开始而是应该找到一个合理的起点。操作指南应该可靠，但不需要具有教程那样万无一失的可重复性。</p>
+<h4 id="关注结果">关注结果</h4>
+<p>操作指南必须注重实现目标，其它的都会让用户分析，与教程一样，详细的说明在这里也不合适。</p>
+<h4 id="解决问题">解决问题</h4>
+<p>操作指南必须解决特定的问题，也就是「我如何。..」。这是操作指南与教程不同的地方：当涉及到操作指南时，可以假定读者知道他们应该实现什么但不知道如何实现， 而在教程中你有责任决定学习者需要了解的内容。</p>
+<h4 id="不要解释概念">不要解释概念</h4>
+<p>操作指南不应该进行解释，这里不是讨论的地方，它们只会妨碍用户操作。如果解释很重要请链接到该有的地方。</p>
+<h4 id="允许一些灵活性">允许一些灵活性</h4>
+<p>操作指南应该允许用稍微不同的方式来做同样的事情。它需要足够的灵活性，用户可以看到如何应用于与你描述示例略有不同的场景，或者了解如何使其适应与你假设略有不同的系统或配置。</p>
+<h4 id="该结束就结束">该结束就结束</h4>
+<p>实际的可操作性比完整更有价值。教程需要完整但是操作指南不需要。它们可以在合适的地方开始和结束，也不需要提及所有和主题相关的内容。臃肿的操作指南无法帮助用户快速获得解决方案。</p>
+<h4 id="认真命名标题">认真命名标题</h4>
+<p>操作方法文档的标题应该告诉用户确切的内容并且指明是一个操作指南。比如「如何创建基于类的视图」就是一个好的标题，但是直接叫「基于类的视图」就不好了。</p>
+<hr>
+<h2 id="参考-2">参考</h2>
+<p>参考是工具的技术描述和如何进行操作。</p>
+<p>参考只有一个任务就是描述。它们是由代码决定的，因为描述的是：关键类，函数，API 等等，应该列出函数，字段，属性和方法等内容并列出如何使用它们。</p>
+<p>参考以信息为导向。技术参考可以包含示例来说明用法但它不应该尝试解释基本概念或者如何实现通用的功能。参考资料也应该是切中要害的。用烹饪类比，它可能是一篇关于某种食材的文章，描述了它的来源、化学成分和如何烹饪等等。</p>
+<p>请注意，描述确实包括了如何使用工具的基本描述，比如如何实例化特定类或调用某个方法，或者在将某些东西传递给函数时必须采取的预防措施。然而这仅仅是其作为技术参考功能的一部分而且和操作指南也完全不同。</p>
+<p>对于一些开发人员，参考指南是他们可以想到的唯一文档形式。他们已经了解了自己的软件并且知道如何使用它，所以他们想象其他人可能需要的就仅仅是它的技术信息。参考往往很多软件也写得很好，现在它甚至可以在某种程度上自动生成。</p>
+<h3 id="如何编写好的参考文档">如何编写好的参考文档</h3>
+<h4 id="在代码周围构建文档">在代码周围构建文档</h4>
+<p>为参考文档提供与代码库相同的结构，以便用户可以同时浏览代码和文档。这也将有助于维护人员查看缺少参考文档或需要更新的位置。</p>
+<h4 id="始终如一">始终如一</h4>
+<p>在参考指南中，结构，格式必须一致，与百科全书或字典一致。</p>
+<h4 id="只进行描述">只进行描述</h4>
+<p>技术参考的唯一任务是尽可能清楚和完整地<strong>描述</strong>。其他任何事情（解释，讨论，指导，推测，意见）不仅会分散注意力，而且会使其更难以使用和维护。避免使用参考来指导如何实现某种功能，并且不要对概念或讨论进行解释。如果需要，可以酌情链接到操作指南说明和入门教程中。</p>
+<h4 id="准确">准确</h4>
+<p>这些描述必须准确并保持最新状态。工具与描述之间的任何差异都将不可避免地导致用户误入歧途。</p>
+<hr>
+<h2 id="说明-2">说明</h2>
+<p>说明用来解释、讨论和阐明特定的一个主题，它们拓宽了文档对某一主题的覆盖范围。说明是以理解为导向的。解释同样可以描述为讨论。它可以让你从更广泛的视角，从更高层次甚至从不同角度阐明它。可以想象一个讨论文档是在闲暇时阅读的，而不是在浏览代码时阅读。</p>
+<p>通常这部分文档很少被明确的创建，解释的片段会分散在其他部分中。其实说明和讨论不像看起来那么容易创建 ，它的主题不是由你想要实现的特定任务定义的（操作指南），也不是你希望用户学习的（教程），当然也不是具体的函数定义的（参考材料）。</p>
+<h3 id="如何写出好的说明">如何写出好的说明</h3>
+<h4 id="提供上下文">提供上下文</h4>
+<p>说明通常需要指明背景和上下文，有时候说明还可以解释「为什么是这样」，可能是设计决策，历史原因或者技术限制。</p>
+<h4 id="讨论替代方案和意见">讨论替代方案和意见</h4>
+<p>说明也可以提供一些替代方案或同一问题的多种不同方法，甚至可以考虑并权衡相反的意见。</p>
+<h4 id="勿提供技术参考或指导">勿提供技术参考或指导</h4>
+<p>说明应该做的事情就是文档其他部分没有的东西。告知用户如何做某事并不是说明的任务它也不应该提供技术描述，文档的这些功能在其他部分中已经完成了。</p>
+<hr>
+<h2 id="关于文档结构">关于文档结构</h2>
+<h3 id="为什么分界不明显">为什么分界不明显？</h3>
+<p>上文讨论的文档结构很清楚并且很有效，但通常分界没有那么明显，这是因为文档四象限中每个象限与相邻的都会有一些重叠特征。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606093102.png" alt="" loading="lazy"></figure>
+<p>教程和操作指南是相似的，因为它们都关注描述实际步骤；操作指南与技术参考的交集在于它们是在实际工作和编码时所需要的；参考指南和说明相似是因为它们关注理论知识；最后教程与说明的共同点是它们在我们进行学习时最有用。如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>学习时最有用</th>
+<th>工作时最有用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实际步骤</td>
+<td>教程</td>
+<td>操作指南</td>
+</tr>
+<tr>
+<td>理论知识</td>
+<td>说明</td>
+<td>参考</td>
+</tr>
+</tbody>
+</table>
+<p>鉴于这些重叠，不同类型的文档变得混淆并相互混合也就不足为奇了。虽然很难找到完全使用这四种结构的示例，但是大量的文档都在努力以不同的方式来完成这四个类别的任务。有些项目就完全采用了这种结构，包括 <a href="https://docs.djangoproject.com/en/1.11/#how-the-documentation-is-organized">Django</a>（虽然 <a href="https://docs.djangoproject.com/en/1.8/">在早期版本中没有明确说明</a>）和 <a href="http://docs.django-cms.org/en/release-3.4.x/">django CMS</a>。这两个项目中都证明了这种结构的价值。</p>
+<h3 id="为什么要如此分析">为什么要如此分析</h3>
+<p>本文的文档结构分析基于我多年编写和维护文档的经验并花了很多时间考虑如何改进它。它还基于各种学科的合理整合，例如，教程概念具有教学基础；而且它假定存在一个老师和一个学习者，并把使用软件作为一种「手艺」来看待。</p>
+<h2 id="使你的文档更有用">使你的文档更有用</h2>
+<p>文档维护人员必须解决的最大问题是没有清楚了解他们应该做什么，以至于他们改了又改但发现还是很难令人满意。本文讨论的文档结构通过明确的分工来解决这些问题，基于此制作的文档也更易于编写和维护，同时也更易于使用。</p>
+<p>应该写什么，怎么写，以及把它放在哪里都变得更加清晰。</p>
+<p>总的来说，针对四象限中的每一个文档进行明确的编写有助于软件吸引和留住更多用户同时用户可以更高效地使用，这是软件开发者最想要的东西之一。</p>
+<hr>
+<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2">写在前面</a></li>
+<li><a href="#%E5%8E%9F%E5%88%99">原则</a>
+<ul>
+<li><a href="#%E6%95%99%E7%A8%8B">教程</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97">操作指南</a></li>
+<li><a href="#%E8%AF%B4%E6%98%8E">说明</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%99%E7%A8%8B-2">教程</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E6%95%99%E7%A8%8B">如何写出好教程</a>
+<ul>
+<li><a href="#%E5%85%81%E8%AE%B8%E7%94%A8%E6%88%B7%E9%80%9A%E8%BF%87%E5%AE%9E%E9%99%85%E6%93%8D%E4%BD%9C%E8%BF%9B%E8%A1%8C%E5%AD%A6%E4%B9%A0">允许用户通过实际操作进行学习</a></li>
+<li><a href="#%E8%AE%A9%E7%94%A8%E6%88%B7%E8%B5%B0%E5%87%BA%E7%AC%AC%E4%B8%80%E6%AD%A5">让用户走出第一步</a></li>
+<li><a href="#%E7%A1%AE%E4%BF%9D%E6%95%99%E7%A8%8B%E5%8F%AF%E4%BB%A5%E8%BF%90%E8%A1%8C">确保教程可以运行</a></li>
+<li><a href="#%E7%A1%AE%E4%BF%9D%E7%94%A8%E6%88%B7%E5%8F%AF%E4%BB%A5%E7%AB%8B%E5%88%BB%E5%BE%97%E5%88%B0%E7%BB%93%E6%9E%9C">确保用户可以立刻得到结果</a></li>
+<li><a href="#%E7%A1%AE%E4%BF%9D%E4%BD%A0%E7%9A%84%E6%95%99%E7%A8%8B%E5%8F%AF%E9%87%8D%E5%A4%8D">确保你的教程可重复</a></li>
+<li><a href="#%E5%85%B3%E6%B3%A8%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4%E8%80%8C%E9%9D%9E%E6%8A%BD%E8%B1%A1%E6%A6%82%E5%BF%B5">关注具体步骤而非抽象概念</a></li>
+<li><a href="#%E6%8F%90%E4%BE%9B%E6%9C%80%E4%BD%8E%E9%99%90%E5%BA%A6%E7%9A%84%E5%BF%85%E8%A6%81%E8%AF%B4%E6%98%8E">提供最低限度的必要说明</a></li>
+<li><a href="#%E5%8F%AA%E5%85%B3%E6%B3%A8%E7%94%A8%E6%88%B7%E9%9C%80%E8%A6%81%E9%87%87%E5%8F%96%E7%9A%84%E6%AD%A5%E9%AA%A4">只关注用户需要采取的步骤</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97-2">操作指南</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%9A%84%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97">如何写出好的操作指南</a>
+<ul>
+<li><a href="#%E6%8F%90%E4%BE%9B%E4%B8%80%E7%B3%BB%E5%88%97%E6%AD%A5%E9%AA%A4">提供一系列步骤</a></li>
+<li><a href="#%E5%85%B3%E6%B3%A8%E7%BB%93%E6%9E%9C">关注结果</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98">解决问题</a></li>
+<li><a href="#%E4%B8%8D%E8%A6%81%E8%A7%A3%E9%87%8A%E6%A6%82%E5%BF%B5">不要解释概念</a></li>
+<li><a href="#%E5%85%81%E8%AE%B8%E4%B8%80%E4%BA%9B%E7%81%B5%E6%B4%BB%E6%80%A7">允许一些灵活性</a></li>
+<li><a href="#%E8%AF%A5%E7%BB%93%E6%9D%9F%E5%B0%B1%E7%BB%93%E6%9D%9F">该结束就结束</a></li>
+<li><a href="#%E8%AE%A4%E7%9C%9F%E5%91%BD%E5%90%8D%E6%A0%87%E9%A2%98">认真命名标题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83-2">参考</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E5%A5%BD%E7%9A%84%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3">如何编写好的参考文档</a>
+<ul>
+<li><a href="#%E5%9C%A8%E4%BB%A3%E7%A0%81%E5%91%A8%E5%9B%B4%E6%9E%84%E5%BB%BA%E6%96%87%E6%A1%A3">在代码周围构建文档</a></li>
+<li><a href="#%E5%A7%8B%E7%BB%88%E5%A6%82%E4%B8%80">始终如一</a></li>
+<li><a href="#%E5%8F%AA%E8%BF%9B%E8%A1%8C%E6%8F%8F%E8%BF%B0">只进行描述</a></li>
+<li><a href="#%E5%87%86%E7%A1%AE">准确</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%AF%B4%E6%98%8E-2">说明</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%86%99%E5%87%BA%E5%A5%BD%E7%9A%84%E8%AF%B4%E6%98%8E">如何写出好的说明</a>
+<ul>
+<li><a href="#%E6%8F%90%E4%BE%9B%E4%B8%8A%E4%B8%8B%E6%96%87">提供上下文</a></li>
+<li><a href="#%E8%AE%A8%E8%AE%BA%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88%E5%92%8C%E6%84%8F%E8%A7%81">讨论替代方案和意见</a></li>
+<li><a href="#%E5%8B%BF%E6%8F%90%E4%BE%9B%E6%8A%80%E6%9C%AF%E5%8F%82%E8%80%83%E6%88%96%E6%8C%87%E5%AF%BC">勿提供技术参考或指导</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%85%B3%E4%BA%8E%E6%96%87%E6%A1%A3%E7%BB%93%E6%9E%84">关于文档结构</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%88%86%E7%95%8C%E4%B8%8D%E6%98%8E%E6%98%BE">为什么分界不明显？</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%A6%82%E6%AD%A4%E5%88%86%E6%9E%90">为什么要如此分析</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E4%BD%A0%E7%9A%84%E6%96%87%E6%A1%A3%E6%9B%B4%E6%9C%89%E7%94%A8">使你的文档更有用</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

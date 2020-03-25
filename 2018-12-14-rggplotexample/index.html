@@ -1,0 +1,667 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>R 语言可视化之案例 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="R 语言可视化之案例 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="qplot 使用
+导入所需数据格式为 data.frame
+
+data(mtcars)
+df &amp;lt;- mtcars[, c(&amp;quot;mpg&amp;quot;, &amp;quot;cyl&amp;quot;, &amp;quot;wt&amp;quot;)]
+head(..." />
+  <meta property="og:title" content="R 语言可视化之案例 - 思考问题的熊">
+  <meta property="og:description" content="qplot 使用
+导入所需数据格式为 data.frame
+
+data(mtcars)
+df &amp;lt;- mtcars[, c(&amp;quot;mpg&amp;quot;, &amp;quot;cyl&amp;quot;, &amp;quot;wt&amp;quot;)]
+head(..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2018-12-14-rggplotexample/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="R 语言可视化之案例 - 思考问题的熊">
+  <meta name="twitter:description" content="qplot 使用
+导入所需数据格式为 data.frame
+
+data(mtcars)
+df &amp;lt;- mtcars[, c(&amp;quot;mpg&amp;quot;, &amp;quot;cyl&amp;quot;, &amp;quot;wt&amp;quot;)]
+head(...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2018-12-14-rggplotexample/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          R 语言可视化之案例
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-403e567e0bc0295c.png" alt="R 语言可视化之案例" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2018-12-13 · 9 min read</div>
+          
+            <a href="https://kaopubear.top/tag/UrqlObNL0t/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              R
+            </a>
+          
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              数据科学
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="qplot-使用">qplot 使用</h2>
+<p>导入所需数据格式为 data.frame</p>
+<!--more-->
+<pre><code class="language-R">data(mtcars)
+df &lt;- mtcars[, c(&quot;mpg&quot;, &quot;cyl&quot;, &quot;wt&quot;)]
+head(df)
+</code></pre>
+<p>qplot() 基本用法</p>
+<pre><code class="language-R">qplot(x, y=NULL, data, geom=&quot;auto&quot;,
+      xlim = c(NA, NA), ylim =c(NA, NA))
+
+# geom 画什么图；main 题目；xlab,ylab xy 轴标签
+# color 颜色；size 点大小；shape 点形状
+</code></pre>
+<h3 id="scatter-plots-散点图">Scatter plots 散点图</h3>
+<pre><code class="language-R">library(ggplot2)
+# 基本款
+qplot(mpg, wt, data=mtcars)
+# 增加 standard error 和 smoothed line
+qplot(mpg, wt, data = mtcars, geom = c(&quot;point&quot;, &quot;smooth&quot;))
+# 分组增加 smoothed line
+qplot(mpg, wt, data = mtcars, color = factor(cyl),
+      geom=c(&quot;point&quot;, &quot;smooth&quot;))
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-b0a89ba4fb050fa5.png" alt="image.png" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-04fe8b465882d511.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-4b3052e9c45e43a8.png" alt="" loading="lazy"></figure>
+<h3 id="boxplot-violin-plot">boxplot violin plot</h3>
+<p><strong>boxplot</strong><br>
+geom=&quot;boxplot&quot;</p>
+<p><strong>dotplot</strong><br>
+geom=&quot;dotplot&quot;</p>
+<p><strong>violin</strong><br>
+geom=&quot;violin&quot;</p>
+<pre><code class="language-R"># Basic box plot from data frame
+qplot(group, weight, data = PlantGrowth,
+      geom=c(&quot;boxplot&quot;), fill = group)
+# fill 填充颜色
+
+# Dot plot
+qplot(group, weight, data = PlantGrowth,
+      geom=c(&quot;dotplot&quot;),
+      stackdir = &quot;center&quot;, binaxis = &quot;y&quot;,color = group, fill = group)
+
+# Violin plot
+qplot(group, weight, data = PlantGrowth,
+      geom=c(&quot;violin&quot;), trim = FALSE, fill = group)
+
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-07fd96484b5c2fb1.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-f0a1503ddb05c934.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-aef51db0e3b47563.png" alt="" loading="lazy"></figure>
+<h3 id="histogram-density-plot">histogram density plot</h3>
+<pre><code class="language-R">qplot(Sepal.Length, data = iris, geom = &quot;histogram&quot;, binwidth=0.1)
+qplot(Sepal.Length, data = iris, geom = &quot;density&quot;, color = Species,
+      main = &quot;test&quot;, xlab = &quot;x_test&quot;, ylab = &quot;y_test&quot;)
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d8d97548bce37a85.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-52f0b7794a2e4e06.png" alt="" loading="lazy"></figure>
+<h2 id="ggplot2-box-plot">ggplot2 box plot</h2>
+<pre><code class="language-R">ToothGrowth$dose &lt;- as.factor(ToothGrowth$dose)
+# notched box plot
+ggplot(ToothGrowth, aes(x=dose, y=len)) +
+  geom_boxplot(notch=TRUE, outlier.color = &quot;red&quot;)
+</code></pre>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-691e455b20a3bda2.png" alt="" loading="lazy"></figure>
+<h3 id="改变线颜色">改变线颜色</h3>
+<p>三种方法</p>
+<pre><code class="language-R">p&lt;-ggplot(ToothGrowth, aes(x=dose, y=len, color=dose)) +
+  geom_boxplot()
+p
+p+scale_color_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))
+p+scale_color_brewer(palette=&quot;Dark2&quot;)
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-53dc6f442b91a5f7.png" alt="" loading="lazy"></figure>
+<h3 id="改变箱颜色">改变箱颜色</h3>
+<pre><code class="language-R">p&lt;-ggplot(ToothGrowth, aes(x=dose, y=len, fill=dose)) +
+  geom_boxplot()
+p
+# Use custom color palettes
+p+scale_fill_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))
+# use brewer color palettes
+p+scale_fill_brewer(palette=&quot;Dark2&quot;)
+
+# 改变横坐标展示顺序
+p + scale_x_discrete(limits=c(&quot;2&quot;, &quot;0.5&quot;, &quot;1&quot;))
+</code></pre>
+<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-03e3aa92c0a27003.png" alt="" loading="lazy"></figure>
+<h3 id="多组展示">多组展示</h3>
+<pre><code class="language-R">ggplot(ToothGrowth, aes(x=dose, y=len, fill=supp)) +
+  geom_boxplot()
+</code></pre>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-db6218a043a99bf5.png" alt="" loading="lazy"></figure>
+<h3 id="定制">定制</h3>
+<pre><code class="language-R">
+bp &lt;- ggplot(ToothGrowth, aes(x=dose, y=len, fill=dose)) +
+  geom_boxplot()+
+  labs(title=&quot;Plot of length  per dose&quot;,x=&quot;Dose (mg)&quot;, y = &quot;Length&quot;)
+bp + theme_classic()
+bp + scale_fill_brewer(palette=&quot;Blues&quot;) + theme_classic()
+bp + scale_fill_brewer(palette=&quot;Dark2&quot;) + theme_minimal()
+</code></pre>
+<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-675d25a903f0fc3e.png" alt="" loading="lazy"></figure>
+<h2 id="violin-plots">violin plots</h2>
+<pre><code class="language-R">ToothGrowth$dose &lt;- as.factor(ToothGrowth$dose)
+
+# trim
+p &lt;- ggplot(ToothGrowth, aes(x=dose, y=len)) +
+  geom_violin()
+p
+# no trim
+p2&lt;-ggplot(ToothGrowth, aes(x=dose, y=len)) +
+  geom_violin(trim=FALSE)
+p2
+</code></pre>
+<h3 id="显示范围">显示范围</h3>
+<pre><code class="language-R"># 显示范围
+p + scale_x_discrete(limits=c(&quot;0.5&quot;, &quot;2&quot;))
+
+</code></pre>
+<h3 id="添加描述统计量">添加描述统计量</h3>
+<p>使用<code>stat_summary()</code></p>
+<pre><code class="language-R"># violin plot with mean points
+p + stat_summary(fun.y=mean, geom=&quot;point&quot;, shape=23, size=2)
+
+# 加箱线图
+p + geom_boxplot(width=0.1)
+
+</code></pre>
+<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d1db183d71afd5de.png" alt="" loading="lazy"></figure>
+<h3 id="修改颜色">修改颜色</h3>
+<p>和 box plot 类似</p>
+<pre><code class="language-R">
+p&lt;-ggplot(ToothGrowth, aes(x=dose, y=len, color=dose)) +
+  geom_violin(trim=FALSE)
+p
+# Use custom color palettes
+p+scale_color_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))
+# Use brewer color palettes
+p+scale_color_brewer(palette=&quot;Dark2&quot;)
+</code></pre>
+<h3 id="定制-2">定制</h3>
+<pre><code class="language-R">dp &lt;- ggplot(ToothGrowth, aes(x=dose, y=len, fill=dose)) +
+  geom_violin(trim=FALSE)+
+  geom_boxplot(width=0.1, fill=&quot;white&quot;)+
+  labs(title=&quot;Plot of length  by dose&quot;,x=&quot;Dose (mg)&quot;, y = &quot;Length&quot;)
+dp
+dp + scale_fill_brewer(palette=&quot;Blues&quot;) + theme_classic()
+</code></pre>
+<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-601bce27aed547b5.png" alt="" loading="lazy"></figure>
+<h2 id="histogram-直方图">histogram 直方图</h2>
+<h3 id="基础">基础</h3>
+<pre><code class="language-R">#构造数据
+set.seed(1234)
+df &lt;- data.frame(
+  sex=factor(rep(c(&quot;F&quot;, &quot;M&quot;), each=200)),
+  weight=round(c(rnorm(200, mean=55, sd=5), rnorm(200, mean=65, sd=5)))
+  )
+
+# 基础
+ggplot(df, aes(x=weight)) + geom_histogram()
+
+# 加 density
+ggplot(df, aes(x=weight)) +
+ geom_histogram(aes(y=..density..), colour=&quot;black&quot;, fill=&quot;white&quot;)+
+ geom_density(alpha=.2, fill=&quot;#FF6666&quot;)
+
+</code></pre>
+<figure data-type="image" tabindex="16"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d67148ef6cf28ba8.png" alt="" loading="lazy"></figure>
+<h3 id="修改颜色并分组">修改颜色并分组</h3>
+<pre><code class="language-R"># Change histogram plot line colors by groups
+ggplot(df, aes(x=weight, color=sex)) +
+  geom_histogram(fill=&quot;white&quot;)
+# Overlaid histograms
+ggplot(df, aes(x=weight, color=sex)) +
+  geom_histogram(fill=&quot;white&quot;, alpha=0.7, position=&quot;identity&quot;)
+
+ggplot(df, aes(x=weight, color=sex)) +
+  geom_histogram(fill=&quot;white&quot;, alpha=.7, position=&quot;dodge&quot;)
+</code></pre>
+<figure data-type="image" tabindex="17"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-9e46f2d52429d1a5.png" alt="" loading="lazy"></figure>
+<pre><code class="language-R">library(plyr)
+mu &lt;- ddply(df, &quot;sex&quot;, summarise, grp.mean=mean(weight))
+p&lt;-ggplot(df, aes(x=weight, color=sex)) +
+  geom_histogram(fill=&quot;white&quot;, position=&quot;dodge&quot;)+
+  geom_vline(data=mu, aes(xintercept=grp.mean, color=sex),
+             linetype=&quot;dashed&quot;)+
+  theme(legend.position=&quot;top&quot;)
+p
+# Use custom color palettes
+p+scale_color_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))
+# Use brewer color palettes
+p+scale_color_brewer(palette=&quot;Dark2&quot;)
+</code></pre>
+<figure data-type="image" tabindex="18"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-86678baeca1cc1ef.png" alt="" loading="lazy"></figure>
+<h3 id="填充">填充</h3>
+<pre><code class="language-R"># Use semi-transparent fill
+p&lt;-ggplot(df, aes(x=weight, fill=sex, color=sex)) +
+  geom_histogram(position=&quot;identity&quot;, alpha=0.5)
+p
+p+scale_color_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))+
+  scale_fill_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))
+</code></pre>
+<figure data-type="image" tabindex="19"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-c1da65e8c25f4001.png" alt="" loading="lazy"></figure>
+<h3 id="定制-3">定制</h3>
+<pre><code class="language-R">ggplot(df, aes(x=weight, color=sex, fill=sex)) +
+geom_histogram(aes(y=..density..), position=&quot;identity&quot;, alpha=0.5)+
+geom_density(alpha=0.6)+
+geom_vline(data=mu, aes(xintercept=grp.mean, color=sex),
+           linetype=&quot;dashed&quot;)+
+scale_color_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))+
+scale_fill_manual(values=c(&quot;#999999&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;))+
+labs(title=&quot;Weight histogram plot&quot;,x=&quot;Weight(kg)&quot;, y = &quot;Density&quot;)+
+theme_classic()
+</code></pre>
+<figure data-type="image" tabindex="20"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-725873fd0a53c77d.png" alt="" loading="lazy"></figure>
+<h2 id="desnsity-plot">desnsity plot</h2>
+<pre><code class="language-R">p&lt;-ggplot(df, aes(x=weight, fill=sex)) +
+  geom_density(alpha=0.4)
+p
+# Add mean lines
+p+geom_vline(data=mu, aes(xintercept=grp.mean, color=sex),
+             linetype=&quot;dashed&quot;)
+</code></pre>
+<figure data-type="image" tabindex="21"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-a6fe04dc47f89cf1.png" alt="" loading="lazy"></figure>
+<h2 id="scatter-plots">scatter plots</h2>
+<pre><code class="language-r">mtcars$cyl &lt;- as.factor(mtcars$cyl)
+
+# Change the point size
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point(aes(size=qsec))
+
+# Add the regression line
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point()+
+  geom_smooth(method=lm)
+# Remove the confidence interval
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point()+
+  geom_smooth(method=lm, se=FALSE)
+# Loess method
+ggplot(mtcars, aes(x=wt, y=mpg)) +
+  geom_point()+
+  geom_smooth()
+
+</code></pre>
+<figure data-type="image" tabindex="22"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-6edbbce5385c4ad1.png" alt="" loading="lazy"></figure>
+<h2 id="添加-error-bar">添加 Error bar</h2>
+<pre><code class="language-r">
+#+++++++++++++++++++++++++
+# Function to calculate the mean and the standard deviation
+  # for each group
+#+++++++++++++++++++++++++
+# data : a data frame
+# varname : the name of a column containing the variable
+  #to be summariezed
+# groupnames : vector of column names to be used as
+  # grouping variables
+data_summary &lt;- function(data, varname, groupnames){
+  require(plyr)
+  summary_func &lt;- function(x, col){
+    c(mean = mean(x[[col]], na.rm=TRUE),
+      sd = sd(x[[col]], na.rm=TRUE))
+  }
+  data_sum&lt;-ddply(data, groupnames, .fun=summary_func,
+                  varname)
+  data_sum &lt;- rename(data_sum, c(&quot;mean&quot; = varname))
+ return(data_sum)
+}
+
+df2 &lt;- data_summary(ToothGrowth, varname=&quot;len&quot;,
+                    groupnames=c(&quot;supp&quot;, &quot;dose&quot;))
+# Convert dose to a factor variable
+df2$dose=as.factor(df2$dose)
+
+library(ggplot2)
+# Default bar plot
+p&lt;- ggplot(df2, aes(x=dose, y=len, fill=supp)) +
+  geom_bar(stat=&quot;identity&quot;, color=&quot;black&quot;,
+           position=position_dodge()) +
+  geom_errorbar(aes(ymin=len-sd, ymax=len+sd), width=.2,
+                 position=position_dodge(.9))
+print(p)
+# Finished bar plot
+p+labs(title=&quot;Tooth length per dose&quot;, x=&quot;Dose (mg)&quot;, y = &quot;Length&quot;)+
+   theme_classic() +
+   scale_fill_manual(values=c('#999999','#E69F00'))
+
+# Default line plot
+p&lt;- ggplot(df2, aes(x=dose, y=len, group=supp, color=supp)) +
+  geom_line() +
+  geom_point()+
+  geom_errorbar(aes(ymin=len-sd, ymax=len+sd), width=.2,
+                 position=position_dodge(0.05))
+print(p)
+# Finished line plot
+p+labs(title=&quot;Tooth length per dose&quot;, x=&quot;Dose (mg)&quot;, y = &quot;Length&quot;)+
+   theme_classic() +
+   scale_color_manual(values=c('#999999','#E69F00'))
+
+</code></pre>
+<figure data-type="image" tabindex="23"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-0bb5e52f784d7fe0.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="24"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-65a591f04bf3f61a.png" alt="" loading="lazy"></figure>
+<p><strong>资料来源</strong></p>
+<p>http://www.sthda.com/english/wiki/ggplot2-essentials</p>
+<hr>
+<figure data-type="image" tabindex="25"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="26"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#qplot-%E4%BD%BF%E7%94%A8">qplot 使用</a>
+<ul>
+<li><a href="#scatter-plots-%E6%95%A3%E7%82%B9%E5%9B%BE">Scatter plots 散点图</a></li>
+<li><a href="#boxplot-violin-plot">boxplot violin plot</a></li>
+<li><a href="#histogram-density-plot">histogram density plot</a></li>
+</ul>
+</li>
+<li><a href="#ggplot2-box-plot">ggplot2 box plot</a>
+<ul>
+<li><a href="#%E6%94%B9%E5%8F%98%E7%BA%BF%E9%A2%9C%E8%89%B2">改变线颜色</a></li>
+<li><a href="#%E6%94%B9%E5%8F%98%E7%AE%B1%E9%A2%9C%E8%89%B2">改变箱颜色</a></li>
+<li><a href="#%E5%A4%9A%E7%BB%84%E5%B1%95%E7%A4%BA">多组展示</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6">定制</a></li>
+</ul>
+</li>
+<li><a href="#violin-plots">violin plots</a>
+<ul>
+<li><a href="#%E6%98%BE%E7%A4%BA%E8%8C%83%E5%9B%B4">显示范围</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E9%87%8F">添加描述统计量</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2">修改颜色</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6-2">定制</a></li>
+</ul>
+</li>
+<li><a href="#histogram-%E7%9B%B4%E6%96%B9%E5%9B%BE">histogram 直方图</a>
+<ul>
+<li><a href="#%E5%9F%BA%E7%A1%80">基础</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9%E9%A2%9C%E8%89%B2%E5%B9%B6%E5%88%86%E7%BB%84">修改颜色并分组</a></li>
+<li><a href="#%E5%A1%AB%E5%85%85">填充</a></li>
+<li><a href="#%E5%AE%9A%E5%88%B6-3">定制</a></li>
+</ul>
+</li>
+<li><a href="#desnsity-plot">desnsity plot</a></li>
+<li><a href="#scatter-plots">scatter plots</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0-error-bar">添加 Error bar</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>马尔科夫模型 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="马尔科夫模型 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="马尔科夫是谁
+马尔科夫是一位俄国的数学家，他最为人所知的是他在随机过程方面的研究。他早期研究的重点是数论而在 1900 年之后他所研究的重点转向了概率论。他研究的成果颇丰以至于在他 1905 年正式退休之后他仍然在教授课程直至去世。
+
+在他..." />
+  <meta property="og:title" content="马尔科夫模型 - 思考问题的熊">
+  <meta property="og:description" content="马尔科夫是谁
+马尔科夫是一位俄国的数学家，他最为人所知的是他在随机过程方面的研究。他早期研究的重点是数论而在 1900 年之后他所研究的重点转向了概率论。他研究的成果颇丰以至于在他 1905 年正式退休之后他仍然在教授课程直至去世。
+
+在他..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2017-08-16-longxing-bioinfo-markov/" />
+  <meta property="og:image" content="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-633baeeaf52df79a.jpg">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="马尔科夫模型 - 思考问题的熊">
+  <meta name="twitter:description" content="马尔科夫是谁
+马尔科夫是一位俄国的数学家，他最为人所知的是他在随机过程方面的研究。他早期研究的重点是数论而在 1900 年之后他所研究的重点转向了概率论。他研究的成果颇丰以至于在他 1905 年正式退休之后他仍然在教授课程直至去世。
+
+在他...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2017-08-16-longxing-bioinfo-markov/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          马尔科夫模型
+        </h1>
+        
+          <img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-633baeeaf52df79a.jpg" alt="马尔科夫模型" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2017-08-16 · 9 min read</div>
+          
+            <a href="https://kaopubear.top/tag/DvI6ypPftI/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              生物信息
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="马尔科夫是谁">马尔科夫是谁</h2>
+<p>马尔科夫是一位俄国的数学家，他最为人所知的是他在随机过程方面的研究。他早期研究的重点是数论而在 1900 年之后他所研究的重点转向了概率论。他研究的成果颇丰以至于在他 1905 年正式退休之后他仍然在教授课程直至去世。</p>
+<!--more-->
+<p>在他的研究中，马尔科夫成功地拓展了大数定理以及中心极限定理，并将其应用于由独立随机变量组成的特定序列中，如今这也被称为马尔可夫链。</p>
+<p>马尔可夫链被广泛的运用于物理学，经济学，统计学，生物学等方面。两个最著名的应用是布朗运动以及随机漫步。</p>
+<h2 id="什么是马尔科夫性质">什么是马尔科夫性质</h2>
+<p>一类随机过程：在给定当前状态的条件下，将来的状态独立于过去的状态。</p>
+<p>假定我们用一枚正反面概率一样的硬币玩一个简单的抛硬币的游戏。抛去质疑，假设马尔科夫性质不是已知的，并且我们希望去预测在十次抛掷以后，第 11 次正面朝上的概率。在条件依赖的假设之下（硬币对于过去的状态有记忆特性并且未来的状态也依赖于过去状态的序列）, 我们必须记录导致第 11 次结果的前十次结果的特定序列，并计算它们的联合概率。这个序列的联合概率就是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0.</mn><msup><mn>5</mn><mn>1</mn></msup><mn>0</mn><mo>=</mo><mn>0.0009765625</mn></mrow><annotation encoding="application/x-tex">0.5^10 = 0.0009765625</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord"><span class="mord">5</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">9</span><span class="mord">7</span><span class="mord">6</span><span class="mord">5</span><span class="mord">6</span><span class="mord">2</span><span class="mord">5</span></span></span></span>。在条件依赖下，第十一次抛掷正面朝上的概率就是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0.0009765625</mn><mo>∗</mo><mn>0.5</mn><mo>=</mo><mn>0.00048828125</mn></mrow><annotation encoding="application/x-tex">0.0009765625 * 0.5 = 0.00048828125</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">9</span><span class="mord">7</span><span class="mord">6</span><span class="mord">5</span><span class="mord">6</span><span class="mord">2</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">4</span><span class="mord">8</span><span class="mord">8</span><span class="mord">2</span><span class="mord">8</span><span class="mord">1</span><span class="mord">2</span><span class="mord">5</span></span></span></span></p>
+<p>这真的是第十一次抛掷正面朝上的概率吗？当然不是！</p>
+<p>我们知道硬币抛掷这一事件并不依赖于先前抛掷的结果。这枚硬币并没有记忆特性。这个连续抛掷的过程并没有编码先前的结果。每个抛掷都是独立事件并且是正反面概率一致的，又叫做与过去状态的条件独立。这就是马尔科夫性质。</p>
+<h2 id="什么是马尔科夫模型">什么是马尔科夫模型？</h2>
+<p>马尔科夫链（模型）描述了一类随机过程，假定未来状态的概率仅仅依赖于当前状态，不依赖于先前的状态。</p>
+<p>让我们以一个简单的例子开始。假设你的小狗处于三类状态之一，在给定当前状态的条件下，你想要模拟出未来状态的可能性。为此我们需要去指定状态空间，初始概率和转移概率。</p>
+<p>想象一下你有一只非常懒的胖狗，所以我们定义了状态空间为：睡觉，吃饭，赖皮。我们设置对应的初始概率为 35%, 35%, 和 30% 。</p>
+<p>下一步就是定义转移概率。在给定当前状态的条件下，他们就是保持相同状态的概率或者转移到不同状态的概率。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-cbd798c7c1de6e3a.jpg" alt="" loading="lazy"></figure>
+<p>画图表示</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-28339f2facac00b6.jpg" alt="" loading="lazy"></figure>
+<p>如果你想从任意节点开始沿着某一条边，他会告诉你这条小狗从一个状态转化为另一个状态的概率。举个例子来说吧，如果这条狗正在睡觉，我们能够发现有 40%几率这条狗会继续睡觉，40%的几率狗会醒来并且耍赖皮，还有 20%的概率狗会醒过来吃饭。</p>
+<p>定义</p>
+<blockquote>
+<p>A Markov chain describes a discrete stochastic process at successive times. The transitionsfrom one state to any of all states, includingitself, are governed by a probabilitydistribution</p>
+</blockquote>
+<ul>
+<li>一组离散状态之间在不同时刻的转移关系</li>
+<li>转移关系可以由概率分布描述即可</li>
+<li>唯一的要求是 t 时刻状态的概率分布由此前有限个 m 状态决定，m 阶马尔科夫</li>
+<li>如果最简单，则是一阶，仅与前一个状态相关</li>
+</ul>
+<h2 id="齐次马尔科夫链">齐次马尔科夫链</h2>
+<p>比对过程有三个状态，每个状态转移有一个概率，得到转移概率矩阵</p>
+<p>可以根据乘法定理计算比对的概率值</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-398ee06c08f0e799.jpg" alt="" loading="lazy"></figure>
+<p>通过引入马尔科夫链给出了比对的概率解释</p>
+<h2 id="隐马尔可夫">隐马尔可夫</h2>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-633baeeaf52df79a.jpg" alt="" loading="lazy"></figure>
+<p>HMM 是一种用参数表示的用于描述随机过程统计特性的概率模型，是一个双重随机过程，由两个部分组成</p>
+<ul>
+<li>马尔可夫链：用来描述状态的转移，用转移概率描述</li>
+<li>一般随机过程：用来描述状态的转移，用转移概率描述</li>
+</ul>
+<p>描述一个我们看不到系统状态，只能看到观测（但观测和状态之间有确定性的概率关系）的状态</p>
+<h3 id="如何理解隐马尔可夫模型">如何理解隐马尔可夫模型</h3>
+<p>假设我们有三中筛子，6 面体，4 面体和 8 面体</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-e26e6889d96a865e.jpg" alt="" loading="lazy"></figure>
+<p><strong>初始状态概率</strong>（ the initial state probabilities）：假设我们开始掷骰子，我们先从三个骰子里挑一个，挑到每一个骰子的概率都是 1/3，就是所谓的初始状态概率</p>
+<p><strong>可见状态链</strong>：我们掷骰子，得到一个数字， 是 1，2， 3， 4， 5， 6， 7， 8 中的一个。不停的重复上述过程，我们会得到一串数字，每个数字都是 1， 2， 3， 4， 5， 6， 7， 8 中的一个。例如我们可能得到这么一串数字（掷骰子 10 次）：1 6 3 5 2 7 3 5 2 4</p>
+<p><strong>隐含状态链</strong>：在隐马尔可夫模型中，我们不仅仅有这么一串可见状态链，还有一串隐含状态链。在这个例子里，这串隐含状态链就是你用的骰子的序列。比如，隐含状态链有可能是： D6 D8 D8 D6 D4 D8 D6 D6 D4 D8</p>
+<p><strong>转换概率</strong>（transition probability）：在这个例子里， D6 的下一个状态是 D4， D6，D8 的概率都是 1/3。 D4， D8 的下一个状态是 D4， D6， D8 的转换概率也都一样是 1/3。这样设定是为了最开始容易说清楚，但是我们其实是可以随意设定转换概率的。比如，我们可以这样定义， D6 后面不能接 D4， D6 后面是 D6 的概率是 0.9，是 D8 的概率是 0.1。</p>
+<p><strong>输出概率</strong>（ emission probability）：尽管可见状态之间没有转换概率，但是隐含状态和可见状态之间有一个概率叫做输出概率（ emission probability）。就例子来说，六面骰（ D6）产生 1 的输出概率是 1/6。产生 2， 3， 4， 5， 6 的概率也都是 1/6。我们同样可以对输出概率进行其他定义。比如，我有一个被赌场动过手脚的六面骰子，掷出来是 1 的概率更大，是 1/2，掷出来是 2， 3， 4，5， 6 的概率是 1/10。</p>
+<p>下图表示可见状态链和隐含状态连以及输出概率</p>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-166b3d7465ff23bc.jpg" alt="" loading="lazy"></figure>
+<p><strong>形式化定义</strong></p>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-03f117a664581d98.jpg" alt="" loading="lazy"></figure>
+<h3 id="模型三要素">模型三要素</h3>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-7134d45ecffbfe80.jpg" alt="" loading="lazy"></figure>
+<h3 id="模型难点">模型难点</h3>
+<ul>
+<li>
+<p>如果提前知道所有隐含状态之间的转换概率和所有隐含状态到所有可见状态之间的输出概率，做模拟是相当容易的。但是应用 HMM 模型时往往是缺失了一部分信息的</p>
+</li>
+<li>
+<p>如上面那个故事中，有时候你知道骰子有几种，每种骰子是什么，但是不知道掷出来的骰子序列</p>
+</li>
+<li>
+<p>有时候你只是看到了很多次掷骰子的结果，剩下的什么都不知道</p>
+</li>
+<li>
+<p>如何应用算法去估计这些缺失的信息，就成了一个很重要的问题</p>
+</li>
+</ul>
+<h3 id="解决的三个问题">解决的三个问题</h3>
+<p><strong>评估问题 evaluation</strong></p>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-6fab13ebf58ff5bc.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>怀疑自己的六面骰被赌场动过手脚了，有可能被换成另一种六面骰，这种六面骰掷出来是 1 的概率更大，是 1/2，掷出来是 2， 3， 4， 5， 6 的概率是 1/10。你怎么办？</p>
+</li>
+<li>
+<p>算一算正常的三个骰子掷出一段序列的概率，再算一算不正常的六面骰和另外两个正常骰子掷出这段序列的概率</p>
+</li>
+<li>
+<p>前向算法</p>
+</li>
+<li>
+<p>后向算法</p>
+</li>
+</ul>
+<p><strong>解码问题 decoding</strong></p>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-ec2da428e991e337.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>知道我有三个骰子， 分别是六面骰、四面骰、 八面骰。我也知道掷十次的结果（ 1 6 3 5 2 7 3 5 2 4），我不知道每次用了哪种骰子，我想知道最有可能的骰子序列</p>
+</li>
+<li>
+<p>Viterbi 算法（一种动态规划算法）</p>
+</li>
+</ul>
+<p><strong>学习问题 learning</strong></p>
+<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-a589f4b2b32e114f.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>对于 HMM 的参数选择和优化问题， 目前使用较广的处理方法是 Baum-Welch 算法（也就是 EM 算法）。</p>
+</li>
+<li>
+<p>该算法是一种迭代算法，初始时刻由用户给出各参数的经验估计值，通过不断迭代，使各个参数逐渐趋向更为合理的较优值</p>
+</li>
+</ul>
+<h2 id="总结">总结</h2>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-ef341865298ecd28.jpg" alt="" loading="lazy"></figure>
+<hr>
+<figure data-type="image" tabindex="13"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E6%98%AF%E8%B0%81">马尔科夫是谁</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E6%80%A7%E8%B4%A8">什么是马尔科夫性质</a></li>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E6%A8%A1%E5%9E%8B">什么是马尔科夫模型？</a></li>
+<li><a href="#%E9%BD%90%E6%AC%A1%E9%A9%AC%E5%B0%94%E7%A7%91%E5%A4%AB%E9%93%BE">齐次马尔科夫链</a></li>
+<li><a href="#%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB">隐马尔可夫</a>
+<ul>
+<li><a href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B">如何理解隐马尔可夫模型</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E4%B8%89%E8%A6%81%E7%B4%A0">模型三要素</a></li>
+<li><a href="#%E6%A8%A1%E5%9E%8B%E9%9A%BE%E7%82%B9">模型难点</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E7%9A%84%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98">解决的三个问题</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

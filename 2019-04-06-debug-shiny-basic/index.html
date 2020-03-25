@@ -1,0 +1,488 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>关于 Shiny 调试你应该知道的 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于 Shiny 调试你应该知道的 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="
+Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not..." />
+  <meta property="og:title" content="关于 Shiny 调试你应该知道的 - 思考问题的熊">
+  <meta property="og:description" content="
+Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-04-06-debug-shiny-basic/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="关于 Shiny 调试你应该知道的 - 思考问题的熊">
+  <meta name="twitter:description" content="
+Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-04-06-debug-shiny-basic/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          关于 Shiny 调试你应该知道的
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606002425.png" alt="关于 Shiny 调试你应该知道的" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-04-06 · 12 min read</div>
+          
+            <a href="https://kaopubear.top/tag/UrqlObNL0t/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              R
+            </a>
+          
+            <a href="https://kaopubear.top/tag/nVbnso_EhL/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              shiny
+            </a>
+          
+            <a href="https://kaopubear.top/tag/woFrWMXtsS/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              debug
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>Finding your bug is a process of confirming the many things that you believe are true — until you find one which is not true.</p>
+<p>—Norm Matloff</p>
+</blockquote>
+<!--more-->
+<p>第一次接触网页开发是两三年前的事，那时我曾经问过计划带我入门前端的前辈：入门前端的标准是什么。他当时用一种极平和的语气和我说：学会 dubug。几年后的今天我即便也写过一点网页工具，但还是依然没能入门。反思一下：一是 JavaScript 学的不好，二就是不敢说自己有多少 debug 的能力。</p>
+<p>遂放弃。</p>
+<p>最近因为需要又要涉及一点网页工具开发，同时因为需求整体和 R 交互比较多于是决定用 R 的 Shiny 来搞一搞。</p>
+<p>写了一个多星期我感觉 Shiny 确实解决了不熟悉前后端交互的人写网页的大多数问题，但如何 debug 的门槛还是摆在那里。比如前几天一个高手和我吐槽写 Shiny 时不知道改了什么突然不能正确运行了，更糟心的是还没有任何报错信息。当然，后来经过讨论发现其实并非没有报错信息，只是那时他没有找到而已。</p>
+<p>这篇文章就结合最近学习的一点资料，大致聊聊在 Shiny 中 debug 的一些方法。</p>
+<p><strong>Shiny debug 主要有三个步骤，分别是调试 (Debugging)，追踪(Tracing) 和错误处理(Error handling)</strong>。</p>
+<p>-<strong>Debugging</strong>: 所谓的调试就是猜，然后在你认为可能有错误的地方设置一个断点，再执行接下来每个语句的时候就都可以检查程序当时所在的状态。<br>
+-<strong>Tracing</strong>：可以在运行程序的时候收集程序运行产生的信息而无需暂停程序，在诊断系统性问题时因为我们无法频繁的中断使用这一方式就比较合适。<br>
+-<strong>Error handling</strong>: 在客户端和服务器端找到错误的来源并确定原因。</p>
+<h2 id="debugging-调试">Debugging 调试</h2>
+<h3 id="breakpoints-断点">breakpoints 断点</h3>
+<p>说到「断点」，我不由的想对 bug 说一句：</p>
+<blockquote>
+<p>静静地陪你走了好远好远，连眼睛红了都没有发现。</p>
+</blockquote>
+<p>如果你知道哪一行的代码有错（这话本身就像 bug）或者猜测很可能是哪里不对，就可以直接在所在行设置一个断点。Rstudio 只需在行号左边点一下鼠标就会出现红点提示标记成功。开始运行 Shiny 程序后会在断点处停止执行，然后就可以开始逐步执​​行进行代码调试了。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002519.png" alt="" loading="lazy"></figure>
+<p>如上图所示，我们在 40 和 41 行设置了两个断点，现在点击 <code>Run App</code>，代码运行会在 40 行处停下，绿色的箭头指向 41 行，并且在 console 中会有 browse 输出，如下图所示</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002554.png" alt="" loading="lazy"></figure>
+<p>这个时候我们可以方便的查看环境中已有的变量，例如这里已经运行完毕的 <code>x</code> 变量。如果想继续运行，可以点击 console 里 <strong>continue</strong>，程序又会向下运行。</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606002554.png" alt="" loading="lazy"></figure>
+<p>现在环境中存在 x 和 bin 两个变量，同时在 console 的 <code>browse[2]&gt;</code> 处你可以进行正常的 R 操作，例如查看变量内容或者做个加法运算，甚至你可以修改当前存在环境中的变量（当然不推荐这么操作）。</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003103.png" alt="" loading="lazy"></figure>
+<p>说到缺点，目前 breakpoints 只可以在 Rstudio IDE 中使用，而且只能用于 <code>ShinyServer</code> 函数中；另外如果代码很长显然不停的断点也很烦，同时它只能显示发生了什么但是无法告诉你为什么有些事情没有发生。</p>
+<p><strong>小结如下：</strong></p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003133.png" alt="" loading="lazy"></figure>
+<h3 id="browser-命令">browser() 命令</h3>
+<p>其实从上面 console 的截图也可以看到，断点就是执行了一次类 <code>browser()</code> 操作。但和断点不同的是，<code>browser()</code> 本身可以被写到任何地方。写法如下图所示：</p>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003221.png" alt="" loading="lazy"></figure>
+<p>甚至你还可以把 <code>browser()</code> 写进判断语句中，只在某些特定的情况下执行。例如下图所示，在 input 中的 bins 小于 40 时候程序会正常的执行，当大于 40 时才会自动停下，然后你就可以在调试器中查看具体的变量等信息。</p>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003238.png" alt="" loading="lazy"></figure>
+<p><strong>小结如下</strong></p>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003312.png" alt="" loading="lazy"></figure>
+<h2 id="tracing-追踪">Tracing 追踪</h2>
+<p>在许多情况下通过暂停执行来找问题比较困难，相反需要我们在程序运行时观察系统。对于 Shiny 的程序尤其如此，因为他不像 R 脚本那样线性运行。</p>
+<h3 id="showcase-mode">Showcase Mode</h3>
+<p>Shiny 在启动时，<code>runAPP()</code> 有一个选项默认是读取配置文件中的设置，它就是 <code>display.mode</code>。如果我们设置为 <code>display.mode=&quot;showcase&quot;</code>，在 Showcase 模式下，代码将与应用程序一起显示，并且程序的 server 端代码在执行时会出现黄色的闪烁进行提醒。这一功能对于可视化哪些部分代码正在执行非常有用。</p>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003326.png" alt="" loading="lazy"></figure>
+<p>如果想要默认开启这一功能，可以在该 Shiny 目录下创建一个 <code>DESCRIPTION</code> 文件并写入如下内容：</p>
+<pre><code>DisplayMode: Showcase
+Type: Shiny
+</code></pre>
+<p><strong>小结如下</strong></p>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003412.png" alt="" loading="lazy"></figure>
+<h3 id="reactive-log">Reactive Log</h3>
+<p>在 Shiny 中经常会用到响应对象，当开启 Reactive Log 之后，程序运行时除了可以告诉你正在执行哪些响应之外，日志还可以帮助你可视化展示响应对象之间的依赖关系。在开启一个新的 R session 时首先配置 <code>options(Shiny.reactlog=TRUE)</code>，然后在 Shiny app 中通过 Ctrl + F3 就可以启动可视化的 Reactive Log 文件，也可以在运行 Shiny 后使用 <code>showReactLog</code>  查看。详细信息可以在 <a href="http://Shiny.rstudio.com/reference/Shiny/latest/showReactLog.html">官方文档</a> 了解。</p>
+<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003418.png" alt="" loading="lazy"></figure>
+<h3 id="打印-tracing">打印 tracing</h3>
+<p>在各种编程语言中，一个万变不离其宗的调试技巧就是不停的输出。在 PHP 里面是不停的 <code>echo</code>，在 R 里可以不停的 <code>cat</code>。使用 <code>cat</code> 可以帮助你在不终止程序的情况下查看变量值。在 Shiny 中，最好的方式是打印标准错误(<code>stderr()</code>)。</p>
+<pre><code class="language-R"># generate bins based on input$bins from ui.R
+x    &lt;- faithful[, 2]
+bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
+cat(file=stderr(), &quot;drawing histogram with&quot;, input$bins, &quot;bins&quot;, &quot;\n&quot;)
+</code></pre>
+<p>进行上述修改后，运行 Shiny 每次调整 input 都会在 console 中打印输出。如下图所示</p>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003424.png" alt="" loading="lazy"></figure>
+<p><strong>小结如下</strong></p>
+<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003537.png" alt="" loading="lazy"></figure>
+<h3 id="shiny-server-进行-tracing">Shiny Server 进行 tracing</h3>
+<p>如果你的程序运行在 server 端而非本地，每次 Shiny 程序运行都会生成 log 文件，默认的路径是 <code>/var/log/Shiny-server/*.log</code>，而这一位置是可以在配置文件中通过 <code>log_dir</code> 进行修改的。如果程序运行没有出现问题，每次 Shiny 运行结束后文件会自动删除，如果报错了则会一直存在于 log 目录等你去宠幸。log 文件的命名格式为 <code>&lt;application directory name&gt;-YYYMMDD-HHmmss-&lt;port number or socket ID&gt;.log</code> 。</p>
+<h3 id="客户端和服务器端-tracing">客户端和服务器端 Tracing</h3>
+<p>一个 Shiny 程序包括 client (浏览器) 和 server (R 进程) 两部分。这两者通过 <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">websocket</a>连接，websocket 接收来自客户端的状态，例如输入控件新的赋值，同时发布来自服务器端的状态更改，例如新的输出。在一些比较复杂的情况下，你可以通过打开 trace 来跟踪 JSON 格式的 websocket 内容。</p>
+<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003545.png" alt="" loading="lazy"></figure>
+<p>如上图所示，在输出内容中，<code>SEND</code> 表示从浏览器发送到 R session 的数据；<code>RECV</code> 表示从 R session 发送到浏览器的数据。</p>
+<blockquote>
+<p>这一部分目前还没有实际用到，理解到位了可以再写一些。</p>
+</blockquote>
+<h2 id="errors-错误">Errors 错误</h2>
+<p>跑程序最怕看到的就是报错，但是真要有问题了最希望看到的就是明确的报错。</p>
+<h3 id="r-报错">R 报错</h3>
+<p>在 Shiny 中大多数报错信息都是由 R 引起的，在 0.13.0 之后的 Shiny 版本中已经有了比较直观的报错形式，会直接给出哪里的程序出现了错误。这里首先人为引入一个报错，当 input 大于 40 的时候停止程序并且抛出 <code>too many bins</code> 的报错信息。</p>
+<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003556.png" alt="" loading="lazy"></figure>
+<p>运行程序后调整输入如果错误，可以观察 console 的输出内容：</p>
+<figure data-type="image" tabindex="16"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003602.png" alt="" loading="lazy"></figure>
+<p>首先直接观察颜色不同的部分，直接告诉我们 <code>app.R</code> 的 <code>43</code> 行代码出现了问题。在报错部分，每一行内容前都有一个数字，例如 1，82，165 和 167，其表示的是在调用栈 (<a href="https://en.wikipedia.org/wiki/Call_stack">call stack</a>) 中的索引，可以看到这个例子中有接近 170 个调用栈。</p>
+<h3 id="javascript-errors">JavaScript errors</h3>
+<p>目前 Shiny 有很多第三方 JavaScript 组件，有时如果使用上面几种方式都没有定位到错误相关问题或者没有看到报错信息，很可能是 JavaScript 中发生错误导致程序出现了 bug。毕竟 Shiny 是个网页应用，各种和用户的交互少不了 JavaScript 的使用。</p>
+<p>要进行 JavaScript 的调试在 Rstudio 就不灵了。如果你是通过 Rstudio 打开了一个单独 Shiny 页面，可以通过右键单击 Shiny 页面，选择 <code>Inspect element</code> 进入 JavaScript console；如果你的 Shiny 页面是<strong>open in browser</strong>，也就是在浏览器中打开的，可以直接通过 <code>F12</code> 进入开发者模式打开 JavaScript console 。</p>
+<figure data-type="image" tabindex="17"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003706.png" alt="" loading="lazy"></figure>
+<p>在 Shiny 中 UI 的每个部分都会有一个 id 参数，这个 id 对应的参数在浏览器中解析之后就是对应着 HTML 标签中的 id。在 HTML 中，这个 id 是必须唯一（区别于 name）。因此，在 Shiny 的 ui 中每一个 id 参数也必须唯一。解析效果如下图所示：</p>
+<figure data-type="image" tabindex="18"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003715.png" alt="" loading="lazy"></figure>
+<p>如果你不小心在 UI 中写入了两个一样的 id，在上图中就有两个标签的 id 都是 a，程序运行后在 Rstudio 并不会抛出什么错误，但是在 Shiny 页面端的各种操作就进行不了。如果不在开发者模式下进行调试只能通过各种方法在 Rstudio 进行测试，但是如果打开 JavaScript 的 console，就会看到其实已经给出了明确的报错信息。</p>
+<figure data-type="image" tabindex="19"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003720.png" alt="" loading="lazy"></figure>
+<p>当然，Chrome 开发者工具的用法是在太多，这也是我在文章开头提到的自己入门不了前端的原因之一。如果在你的 Shiny 中用到了大量 JavaScript 相关内容，或者需要定制很多 CSS 相关的内容，可以学习一下官方的<a href="https://developers.google.com/web/tools/chrome-devtools/?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3">开发者工具文档</a>。</p>
+<p>至此，也就简单的写完了 R Shiny debug 的三个主要步骤，其中提到的每一个用法在实际使用中都需要进一步深入学习。当然，每一个方法用到的频率也各有不同，可以根据个人的实际情况进行后续的练习。</p>
+<h2 id="one-more-thingshinyjs">One more thing：shinyjs</h2>
+<p>写到这里本来文章就可以结束了，但是似乎总有哪里不对。</p>
+<p>为什么在 Rstudio 的 console 里就不能查看 JavaScript 的 log 信息。要知道 Rstudio GUI 本身使用的就是 <a href="https://www.qt.io/">QT</a> 框架，其中的很多部分都可以理解为一个网页。从维基百科或者它自己的说明中都可以看出这一点。</p>
+<figure data-type="image" tabindex="20"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003829.png" alt="" loading="lazy"></figure>
+<p>不信的话你也可以在 Rstuido 的每个 pane 里右击然后选择 <code>Inspect element</code> 看看会出现什么，比如在 Console 中右击</p>
+<figure data-type="image" tabindex="21"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003834.png" alt="" loading="lazy"></figure>
+<p>你会看到下面图所示的内容</p>
+<figure data-type="image" tabindex="22"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003849.png" alt="" loading="lazy"></figure>
+<p>既然如此，没有理由不去解决这个不方便的问题。其实在 R 中有一个专门为 Shiny 提高 JavaScript 使用体验开发的 R 包，叫做 <a href="https://deanattali.com/shinyjs/overview">shinyjs</a>。这个包的存在让 Shiny 使用 JavaScript 变得强大和高效了很多。其中针对调试有两个专门的函数。</p>
+<h3 id="showlog">showLog</h3>
+<blockquote>
+<p>Print any JavaScript console.log() messages in the R console, to make it easier and quicker to debug apps without having to open the JavaScript console.</p>
+</blockquote>
+<p>这个函数类似于 JavaScript 中的 <code>console.log()</code>，它可以把 JavaScript console 的信息显示在 R console 中而不需要再打开专门的 JavaScript console。</p>
+<h3 id="logjs">logjs</h3>
+<blockquote>
+<p>Print a message to the JavaScript console (mainly used for debugging purposes).</p>
+</blockquote>
+<p>这个函数则可以把信息输出到 JavaScript console 中方便进行调试。</p>
+<p>例如下面一段代码：</p>
+<pre><code class="language-R">library(ShinyJavaScript)
+
+if (interactive()) {
+    library(Shiny)
+    ShinyApp(
+        ui = fluidPage(
+            useShinyJavaScript(),  # Set up ShinyJavaScript
+            actionButton(&quot;btn&quot;, &quot;Click me&quot;)
+        ),
+        server = function(input, output) {
+            observeEvent(input$btn, {
+                # Change the following line for more examples
+                logJavaScript(R.Version())
+            })
+        }
+    )
+}
+</code></pre>
+<p>运行后通过点击 button ，就可以把 <code>R.Vsrsion()</code> 的信息输出到 JavaScript console 中，如下图所示：</p>
+<h2 id=""><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606003912.png" alt="" loading="lazy"></h2>
+<p>嗯，先写到这里吧。</p>
+<p>我的学习材料</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3">Chrome 开发者工具</a></li>
+<li><a href="https://shiny.rstudio.com/articles/debugging.html">Debugging Shiny applications</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio?mobile_site=true">Debugging with RStudio</a></li>
+<li><a href="https://deanattali.com/shinyjs/">shinyjs</a></li>
+</ul>
+<hr>
+<figure data-type="image" tabindex="23"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名 - 非商业性使用 - 禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="24"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+<figure data-type="image" tabindex="25"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-ef1e74963ce110a5.jpg" alt="加入靠谱熊基地，和大家一起交流" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#debugging-%E8%B0%83%E8%AF%95">Debugging 调试</a>
+<ul>
+<li><a href="#breakpoints-%E6%96%AD%E7%82%B9">breakpoints 断点</a></li>
+<li><a href="#browser-%E5%91%BD%E4%BB%A4">browser() 命令</a></li>
+</ul>
+</li>
+<li><a href="#tracing-%E8%BF%BD%E8%B8%AA">Tracing 追踪</a>
+<ul>
+<li><a href="#showcase-mode">Showcase Mode</a></li>
+<li><a href="#reactive-log">Reactive Log</a></li>
+<li><a href="#%E6%89%93%E5%8D%B0-tracing">打印 tracing</a></li>
+<li><a href="#shiny-server-%E8%BF%9B%E8%A1%8C-tracing">Shiny Server 进行 tracing</a></li>
+<li><a href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF-tracing">客户端和服务器端 Tracing</a></li>
+</ul>
+</li>
+<li><a href="#errors-%E9%94%99%E8%AF%AF">Errors 错误</a>
+<ul>
+<li><a href="#r-%E6%8A%A5%E9%94%99">R 报错</a></li>
+<li><a href="#javascript-errors">JavaScript errors</a></li>
+</ul>
+</li>
+<li><a href="#one-more-thingshinyjs">One more thing：shinyjs</a>
+<ul>
+<li><a href="#showlog">showLog</a></li>
+<li><a href="#logjs">logjs</a></li>
+</ul>
+</li>
+<li><a href="#">!</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

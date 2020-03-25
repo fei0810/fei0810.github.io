@@ -1,0 +1,418 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>我目前的云存储方法 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="我目前的云存储方法 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="云存储选择及我的使用感受
+
+国内大厂
+
+百度云盘：国内使用度最高，适合保存各种盗版资源，不充会员约等于没法用
+腾讯微云：不冲会员下载速度略好于百度云，但是可用空间只用10G
+
+
+
+
+
+
+国际大厂
+
+Google Drive：使用体验好易于协..." />
+  <meta property="og:title" content="我目前的云存储方法 - 思考问题的熊">
+  <meta property="og:description" content="云存储选择及我的使用感受
+
+国内大厂
+
+百度云盘：国内使用度最高，适合保存各种盗版资源，不充会员约等于没法用
+腾讯微云：不冲会员下载速度略好于百度云，但是可用空间只用10G
+
+
+
+
+
+
+国际大厂
+
+Google Drive：使用体验好易于协..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-12-02-mycloud/" />
+  <meta property="og:image" content="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214143938.jpg">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="我目前的云存储方法 - 思考问题的熊">
+  <meta name="twitter:description" content="云存储选择及我的使用感受
+
+国内大厂
+
+百度云盘：国内使用度最高，适合保存各种盗版资源，不充会员约等于没法用
+腾讯微云：不冲会员下载速度略好于百度云，但是可用空间只用10G
+
+
+
+
+
+
+国际大厂
+
+Google Drive：使用体验好易于协...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-12-02-mycloud/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          我目前的云存储方法
+        </h1>
+        
+          <img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214143938.jpg" alt="我目前的云存储方法" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-12-02 · 7 min read</div>
+          
+            <a href="https://kaopubear.top/tag/2mze5gMZQM/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              效率
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="云存储选择及我的使用感受">云存储选择及我的使用感受</h2>
+<ul>
+<li>国内大厂
+<ul>
+<li>百度云盘：国内使用度最高，适合保存各种盗版资源，不充会员约等于没法用</li>
+<li>腾讯微云：不冲会员下载速度略好于百度云，但是可用空间只用10G</li>
+</ul>
+</li>
+</ul>
+<!-- more -->
+<ul>
+<li>
+<p>国际大厂</p>
+<ul>
+<li>Google Drive：使用体验好易于协作，和国外用户使用方便，国内需要特殊操作</li>
+<li>OneDrive：如果在用 office 365 附赠 1T 空间，无需特殊操作即可使用</li>
+<li>iCloud：虽然 iCloud 只是苹果自己的云服务，但对于苹果全家桶的用户来说使用体验是最好的</li>
+</ul>
+</li>
+<li>
+<p>国内小厂</p>
+<ul>
+<li><a href="https://www.jianguoyun.com/">坚果云</a>：主打增量备份，可能是国内目前用来同步个人工作文件最好的选择</li>
+<li><a href="https://cowtransfer.com/">奶牛快传</a>：轻便快捷，非常适合用来分享文件，非常类似于国外的 Droplr</li>
+</ul>
+</li>
+<li>
+<p>国际小厂</p>
+<ul>
+<li><a href="https://droplr.com/">Droplr</a>：也是即用即走的云盘，适合用来分享文件，虽然无需特殊操作即可使用，但速度不及奶牛</li>
+<li>Dropbox：只做云盘的一家公司，也推出了协作功能，但是正常使用需要特殊操作且价格较高</li>
+</ul>
+</li>
+<li>
+<p>其它及自建</p>
+<ul>
+<li>115 网盘：我一直没用过但是一直听到有人提起的云盘</li>
+<li>和彩云：移动最新推出的云盘</li>
+<li><a href="https://item.jd.com/6117381.html">NAS</a>：可能是最安全的云盘选择，但是初期成本较高，我个人推荐群晖的两盘位入门款即可。</li>
+</ul>
+</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214143938.jpg" alt="" loading="lazy"></figure>
+<h2 id="我的选择标准">我的选择标准</h2>
+<p>选择使用什么网盘我的主要参考因素有4个：</p>
+<ol>
+<li>安全：如果是自用和私密为主的文件，首要因素一定是安全。当然，一个东西一旦上公有云，从原理上说就没有了绝对的安全。我只能根据以往的使用经历进行排除法，首先我的百度云里曾经出现过不是自己的文件，而且被非主动删除过文件；坚果云网站一直有无法彻底删除文件的bug，官方反馈说后期会修复。</li>
+<li>稳定：需要特殊操作才能使用的网盘注定在当前环境下无法作为主力网盘工具使用，日常重度使用的网盘争取要做到无感同步。</li>
+<li>易用：首先是多客户端均可使用，然后使用体验要好。另外，上传分享等各种操作要简单但是有最好不要有什么功能缺失。同时，最好针对图片等特殊类型文件有好的管理方式。对于分享类的网盘来说，易用的标准就是方便对方下载，比如无需注册即可下载，甚至无需注册就可以直接不限速下载。</li>
+<li>价格：价格的接受程度一方面是看绝对的数值大小，另一方面是要看对应工具的使用程度。比如坚果云从来没有过实际的打折活动，而且付费买的的空间也少的可怜，但是因为使用重度所以不能犹豫。</li>
+</ol>
+<h2 id="我目前的使用组合">我目前的使用组合</h2>
+<p>我目前在同时使用若干个云盘工具。</p>
+<ul>
+<li>按照使用频率排序：坚果云 &gt; OneDrive &gt; 奶牛快传 &gt; Google Drive &gt;&gt; Droplr &gt;&gt; 百度网盘≈腾讯微云。</li>
+<li>按照付费程度划分：坚果云和奶牛快传是专业版年订阅用户，OneDrive 是跟随 office 365 一起订阅，Droplr 是 10% 的价格入手了终身版，百度网盘和腾讯云会在极少数情况下临时订阅一个月。</li>
+<li>按照喜爱程度划分：目前使用体验最好的还是 Google Drive，坚果云和奶牛快传也很不错，OneDrive 虽然是微软的产品但是在 iOS 和 Mac 上却意外好用，而且会对照片进行智能分类（非常类似于Google Photo）</li>
+</ul>
+<p>具体的使用方法如下：</p>
+<p>我接近 40G 日常文件和工作文件全部是通过<strong>坚果云</strong>在 PC 和 MacBookPro 上进行同步的。而且因为坚果云支持 WebDav，所以在用 Zotero 的我目前还找不到好用的替代工具。</p>
+<!-- more -->
+<p>不过，考虑到坚果云的潜在不安全性（还不能彻底删除文件）以及鸡蛋不要装在一个篮子里的思想，我的所有不同设备（ Android 和 iPhone 以及电脑）的照片和 13G 左右的工作文件全部同步在了 <strong>OneDrive</strong>。另外，我所有的照片也都在Google photo中。这里需要说一下，Google Photo 真的牛逼，如果有条件一定要用。</p>
+<p>偶尔会被吐槽的 OneDrive 同步速度虽然赶不上坚果云，但从我一年多的使用体验来看上传下载的速度也完全说的过去，基本没有碰到不能同步的问题。目前 OneDrive 我保存了大致 20G 的文件，因为一直会买 office 365 ，所以我也在尝试更重度的使用 OneDrive，毕竟和坚果云那点可怜的空间比 1T 还是真香.等到毕业或者要彻底不用 PC 的时候，我的所有文件应该都会扔到 OneDrive 上。</p>
+<p><strong>奶牛快传</strong>是我目前最主要使用的文件分享工具。对于接收文件的用户来说，奶牛快传现阶段做到了无需注册即可不限速下载，这一点是尤其重要的，不过这里的不限速是说开发者不会主动限速，速度已经和你使用的网络有关，我在自己的网络环境下测试，一般上传是 10M 左右，下载是 5M 左右。不过，我也不知道这样的模式会不会多年一直持续下去。另外，高级用户可以自定义二级域名和背景图，设置各种下载规则，还是非常有逼格和好用的。</p>
+<p><strong>Google Drive</strong> 和 <strong>Droplr</strong> 使用相对就用比较轻度了，主要是和在国外的一些同学朋友分享文档以及协作使用。这两款工具的协作和使用体验都非常好，有机会推荐大家仔细体会，这里就不再展开。除此之外，大多数国外好用的其它工具都支持和 Google Drive 的联动，使用起来非常方便，比如Trello 和 Notion 就可以直接插入其中的文件。</p>
+<p>至于<strong>百度网盘和腾讯微云</strong>，我是真心不推荐，尤其是百度网盘，我里面存的应该只剩下各种分享来的「盗版资源」了。但在目前环境下从某种意义上讲，什么好用不重要，重要的是有多少人用。通常，如果有 10 个人给我发过来云盘链接，一般有 9 个是百度云。早前，我会咬牙充上一个月会员，现在有了按时长下载，不过我现在更多的做法是厚着脸皮问对方要账号。你给我分享了一个几十 G 的百度云链接，按道理就应该有百度云会员或者有办法让我顺利下载，你用百度云恶心一下我，我忍了，不过我也得稍微恶心一下你。微笑。</p>
+<hr>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BA%91%E5%AD%98%E5%82%A8%E9%80%89%E6%8B%A9%E5%8F%8A%E6%88%91%E7%9A%84%E4%BD%BF%E7%94%A8%E6%84%9F%E5%8F%97">云存储选择及我的使用感受</a></li>
+<li><a href="#%E6%88%91%E7%9A%84%E9%80%89%E6%8B%A9%E6%A0%87%E5%87%86">我的选择标准</a></li>
+<li><a href="#%E6%88%91%E7%9B%AE%E5%89%8D%E7%9A%84%E4%BD%BF%E7%94%A8%E7%BB%84%E5%90%88">我目前的使用组合</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

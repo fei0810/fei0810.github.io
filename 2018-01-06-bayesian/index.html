@@ -1,0 +1,363 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>先验后验和贝叶斯 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="先验后验和贝叶斯 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="随机并不随机
+设想一个转盘游戏有红黑两种，且颜色各占一半。现在请你写下自己的预测结果。如果你配合可以此刻直接写到评论区，再来看文章后续内容。
+
+首先要说的一点是，转盘是否公平，你心里其实已经预先有了答案。
+曾有大量人参与过这一实验，5 次转..." />
+  <meta property="og:title" content="先验后验和贝叶斯 - 思考问题的熊">
+  <meta property="og:description" content="随机并不随机
+设想一个转盘游戏有红黑两种，且颜色各占一半。现在请你写下自己的预测结果。如果你配合可以此刻直接写到评论区，再来看文章后续内容。
+
+首先要说的一点是，转盘是否公平，你心里其实已经预先有了答案。
+曾有大量人参与过这一实验，5 次转..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2018-01-06-bayesian/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ab572707ebbe72a.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="先验后验和贝叶斯 - 思考问题的熊">
+  <meta name="twitter:description" content="随机并不随机
+设想一个转盘游戏有红黑两种，且颜色各占一半。现在请你写下自己的预测结果。如果你配合可以此刻直接写到评论区，再来看文章后续内容。
+
+首先要说的一点是，转盘是否公平，你心里其实已经预先有了答案。
+曾有大量人参与过这一实验，5 次转...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2018-01-06-bayesian/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          先验后验和贝叶斯
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-1ab572707ebbe72a.png" alt="先验后验和贝叶斯" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2018-01-06 · 9 min read</div>
+          
+            <a href="https://kaopubear.top/tag/Ud1JPVbW1rU/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              统计
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="随机并不随机">随机并不随机</h2>
+<p>设想一个转盘游戏有红黑两种，且颜色各占一半。现在请你写下自己的预测结果。如果你配合可以此刻直接写到评论区，再来看文章后续内容。</p>
+<!--more-->
+<p>首先要说的一点是，转盘是否公平，你心里其实已经预先有了答案。</p>
+<p>曾有大量人参与过这一实验，5 次转动转轮产生的红、黑（R/B）颜色序列，一共有 32 种可能。由于每次转动转轮之后小球停在红色或黑色区域的概率相同，因此上述 32 种序列出现的概率也相同。</p>
+<p>事实上，人们的选择并不均匀。不信你可以看看自己写下的答案。其实，BBRBR、BRRBR 这类序列出现的次数远远超过预期，RBRBR 这类序列出现的次数则低于预期，而 RRRRR 几乎没有出现过。对于这样的结果，看起来似乎理所当然。与 BBRBR 相比，RRRRR 给人的感觉并不像一个随机序列，尽管转动转盘出现这两种结果的概率是相同的。</p>
+<p>如果再让你立刻说一个 1——20 之间的数字，你选择的是 17，或者是 7 么。大量测试显示如果让人们在 1——20 之间选一个数字，17 是最常被选到的数字。如果我们让人们在 0 至 9 之间选一个数字，他们最常选的是 7。在随机选择时，末尾是 0 和 5 的数字出现的次数远低于我们的预期，在人们心目中，这些数字的随机程度似乎比较低。</p>
+<h2 id="先验概率">先验概率</h2>
+<p>关于转盘的问题，我们通常默认它是一种非常公平的游戏，小球停在红色或黑色区域的概率是相同的。但是，就是有人认为转轮偏向于某个颜色。这其中包括：</p>
+<ul>
+<li>红色论：转轮偏向于红色，小球停在红色区域的次数占比为 60%。</li>
+<li>公平论：转轮是公平的，小球停在红色区域与黑色区域的次数相同。</li>
+<li>黑色论：转轮偏向于黑色，小球停在黑色区域的次数占比为 60%。</li>
+</ul>
+<p>如果我再问你这三种理论的置信度是多少？除非证据确凿，通常我们很可能会认为轮盘赌是公平的。例如公平概率为 90%，黑色论与红色论正确的概率分别只有 5%。</p>
+<p>注意，此时的 90，5，5 就是所谓的先验概率（priori probability），即认为某个理论正确的概率。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608125420.png" alt="" loading="lazy"></figure>
+<p>当然，不同的人可能有不同的先验概率：怀疑论者认为三个理论的先验概率都是 1/3，而有些人充分信任庄家的节操，认为红色论与黑色论的先验概率只有 1%。</p>
+<p>但是，这些先验概率不是一成不变的。如果我们找到了某理论优于另一理论的证据（例如，小球连续 5 次停在红色区域中），不同理论的置信度就会发生改变。</p>
+<h2 id="后验概率">后验概率</h2>
+<p>那么，这个规律在转盘中会起到什么作用。我们转动转轮 5 次，得到 RRRRR 的概率是多少呢？这个时候，之前的先验概率就要发挥作用了。</p>
+<p>在公平时，每次转动转轮后小球停在红色区域的概率为 1/2，因此，得到 RRRRR 这个结果的概率为：1/2×1/2×1/2×1/2×1/2=1/32=3.125%换言之，得到 RRRRR 与得到其他 31 种颜色序列的概率完全相同。</p>
+<p>如果黑色论是正确的，小球停在红色区域的概率为 40%，即 0.4，那么，得到 RRRRR 结果的概率为：0.4×0.4×0.4×0.4×0.4=1.024%</p>
+<p>如果红色论是正确的，小球停在红色区域的概率为 60%，那么，得到 RRRRR 结果的概率为：0.6×0.6×0.6×0.6×0.6= 7.76%</p>
+<p>公平论的先验概率为 0.9，这个先验概率的 3.125%，即 0.9×0.031 25（0.0281），即“公平论正确且小球 5 次停留的区域为 RRRRR”的方框中，剩下的 0.8719 则是“公平论正确但停留区域不是 RRRRR”。</p>
+<p>同理，红色论的先验概率是 0.05，因此，“红色论正确且结果为 RRRRR”的先验概率是 0.05×7.76%=0.0039；而“红色论正确但结果不是 RRRRR”的是 0.0461。黑色论的先验概率也是 0.05。但是，黑色论与 RRRRR 这个结果之间的关系很扭曲，因此，“黑色论正确且结果为 RRRRR”的概率为 0.05×1.024%=0.0005。</p>
+<p>我们可以画出下图。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190608125426.png" alt="" loading="lazy"></figure>
+<p>如果我们转动转盘并且真的得到 RRRRR 的结果，对红色论而言就是好消息，对黑色论而言则是坏消息。</p>
+<p>小球连续 5 次停在红色区域，这种情况位于方框图的下排，黑色论、公平论与红色论的先验概率分别为 0.0005、0.028 和 0.0039。换句话说，在这种情况下，公平论与红色论的先验概率比率大约是 7∶1，红色论与黑色论的先验概率比率大约是 8∶1。稍加换算，黑色论正确的概率是 1.5%; 公平论正确的概率是 86.5%; 红色论正确的概率是 12%。也就是说，和最初相比，由此可见，红色论的置信度增加一倍多，而黑色论的置信度几乎消失。置信度的这种变化是十分恰当的，小球连续 5 次停在红色区域，我们对转轮受到人为操纵的怀疑当然会增加。</p>
+<p>到这里，上述计算展示了在连续 5 次看到小球停在红色区域之后，公平论、红色论、黑色论的置信度的变化情况，也就是所谓的后验概率（posterior probability）。</p>
+<h2 id="贝叶斯推断">贝叶斯推断</h2>
+<p>**先验概率描述的是看到相关证据之前的置信度，而后验概率描述的是看到相关证据之后的置信度。**我们所做的工作叫作“贝叶斯推理”（Bayesian inference），由先验概率到后验概率的需要用到“贝叶斯定理”（Bayes’s Theorem）的概率公式。</p>
+<p>在贝叶斯推理的过程中，人们在看到证据后，某种理论的置信度不仅取决于证据的内容，还取决于一开始时的置信度。</p>
+<p>单纯地依靠零假设显著性检验的做法，其实违背了贝叶斯推理的本质。例如吃一个西瓜病情延缓和吃药病情延缓得到的统计概率都可能是 0.05。也就会让人认为西瓜与药有相同的疗效。</p>
+<p>费舍尔曾说过：“科研人员不会设一个固定的显著性临界值，然后年复一年，无论情况如何变化，都依据这条红线去推翻各种假设。相反，他们会在证据的启示下，结合自己的想法，认真考虑每一个具体案例。”</p>
+<p>贝叶斯定理对推理方法产生了广泛的影响，例如教会机器根据人们输入的大量数据来学习，但这些方法并不适用于回答是或否的问题。对于是或否的问题，人们常常借助费舍尔的方法做出判断。具体的说，信奉贝叶斯定理的统计学家通常对显著性检验不感冒，他们对“该新药是否有疗效”之类的问题不感兴趣，而是更关注如何建立一个预测模型，以便更准确地判断该药物的不同剂量在针对不同人群时可以取得什么样的疗效。</p>
+<p>回到最开始的问题。出现 RBRRB 与 RRRRR 这两个结果的可能性都非常小，而且概率相同，但是在人们看来，前者是随机结果，后者则不是，这是为什么？贝叶斯的统计学观点足以解释其原因。当看到 RRRRR 这个结果时，我们就会更加相信一个转轮盘做过手脚，小球会停在红色区域，对于这个理论，我们已经赋予了某个先验概率。但是，如果出现的结果是 RBRRB，我们确不会认为转轮中藏有可以产生 RBRRB 这个结果的特殊装置。先验概率不是一视同仁，而是有所取舍的。在心理上，有的想法会得到明显的重视，而对于 RBRRB 这一类结果，我们赋予它们的先验概率几乎接近于零。</p>
+<p>相较于复杂想法以及以完全陌生的现象为基础的想法，我们往往更喜欢简单的想法和那些通过类比我们所熟知的事物而产生的想法。这种喜好似乎是一种不公平的偏见，但是，如果没有任何偏见，我们就有可能整天都处于震惊的状态。比如，就在刚刚，我竟然听到外面有汽车嗯了三下喇叭。</p>
+<hr>
+<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E9%9A%8F%E6%9C%BA%E5%B9%B6%E4%B8%8D%E9%9A%8F%E6%9C%BA">随机并不随机</a></li>
+<li><a href="#%E5%85%88%E9%AA%8C%E6%A6%82%E7%8E%87">先验概率</a></li>
+<li><a href="#%E5%90%8E%E9%AA%8C%E6%A6%82%E7%8E%87">后验概率</a></li>
+<li><a href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%8E%A8%E6%96%AD">贝叶斯推断</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

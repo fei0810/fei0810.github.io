@@ -1,0 +1,504 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Linux Command Line 学习笔记4 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Linux Command Line 学习笔记4 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="
+说明；写 Linux Command Line 学习笔记系列文章本意只是记录自己学习 《Linux Command Line 》 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是..." />
+  <meta property="og:title" content="Linux Command Line 学习笔记4 - 思考问题的熊">
+  <meta property="og:description" content="
+说明；写 Linux Command Line 学习笔记系列文章本意只是记录自己学习 《Linux Command Line 》 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2017-09-14-LinuxCommandLine4/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Linux Command Line 学习笔记4 - 思考问题的熊">
+  <meta name="twitter:description" content="
+说明；写 Linux Command Line 学习笔记系列文章本意只是记录自己学习 《Linux Command Line 》 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2017-09-14-LinuxCommandLine4/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Linux Command Line 学习笔记4
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-514d60ae90b1ec7c.png" alt="Linux Command Line 学习笔记4" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2017-09-14 · 7 min read</div>
+          
+            <a href="https://kaopubear.top/tag/v0Xcy0jQaT/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              linux
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>说明；写 <strong>Linux Command Line 学习笔记</strong>系列文章本意只是记录自己学习 <strong>《Linux Command Line 》</strong> 这本书的过程中看到的一些自己没有留意到的地方，因此绝大多数内容只是记录了相关知识点而没有实际扩展内容，纯粹是为了自己后期回顾时有迹可循。另外，因为直接看的原版书，所以有些地方中英混杂。更详细地学习建议去阅读原书即可。</p>
+</blockquote>
+<!--more-->
+<h2 id="the-environment">The Environment</h2>
+<ul>
+<li>
+<p>shell 会话中维护着大量的信息称为环境</p>
+</li>
+<li>
+<p>查看环境变量<br>
+<code>printenv</code> 或者 <code>printenv USER</code><br>
+<code>set |less</code> 按照字母顺序显示<br>
+<code>echo $HOME</code></p>
+</li>
+<li>
+<p>别名不能用上述方法查看<br>
+<code>alias</code></p>
+</li>
+<li>
+<p>建立shell环境</p>
+<ul>
+<li>
+<p>shell会话类型<br>
+登陆<br>
+非登陆</p>
+</li>
+<li>
+<p>登录shell后会读取的启动文件<br>
+<code>/etc/profile</code> 应用于所有用户的全局配置脚本。</p>
+<p><code>~/.bash profile</code>用户私人的启动文件。可以用来扩展或重写全局配置脚本中的设置。</p>
+<p><code>~/.bash login</code> 如果文件<code>~/.bash profile</code> 没有找到，bash 会尝试读取这个脚本。</p>
+<p><code>~/.profile</code> 如果文件<code>~/.bash profile</code> 或文件<code>~/.bash login</code> 都没有找到，bash 会试图读取这个文件。</p>
+</li>
+<li>
+<p>非登陆shell读取文件<br>
+<code>/etc/bash.bashrc</code> 应用于所有用户的全局配置文件。<br>
+<code>~/.bashrc</code> 用户私有的启动文件。可以用来扩展或重写全局配置脚本中的设置。对普通用户来说十分重要。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>修改shell环境</strong></p>
+<p>通常，添加目录到PATH 变量或定义额外环境变量放置到.bash profile 文件中</p>
+<p>对于其它的更改，要放到.bashrc 文件</p>
+</li>
+<li>
+<p><strong>文本编辑器</strong></p>
+<p>不管什么时候你修改配置文件时，给你所做的更改加上注释都是一个好主意</p>
+<p>Shell 脚本和bash 启动文件都使用<code>#</code>符号来开始注释。</p>
+</li>
+<li>
+<p><strong>激活修改</strong></p>
+<p><code>source .bashrc</code> 无需重新登陆窗口</p>
+</li>
+</ul>
+<h2 id="a-gentle-introduction-to-vi">A Gentle Introduction To vi</h2>
+<ul>
+<li>
+<p>这里所指的vi其实全部是vim</p>
+</li>
+<li>
+<p>最重要的一点是知道如何退出vi</p>
+</li>
+<li>
+<p>vi是一个模式编辑器，在命令模式中几乎每个按键都是命令</p>
+</li>
+<li>
+<p>进入插入模式后可以写入文本</p>
+</li>
+<li>
+<p>保存工作 <code>:wq</code></p>
+</li>
+<li>
+<p><strong>Moving The Cursor Around</strong></p>
+<pre><code>l 向右移动一个字符
+h 向左移动一个字符
+j 向下移动一行
+k 向上移动一行
+0 (零) 移动到当前行行首
+ˆ 移动到当前行第一个非空字符
+$ 移动到当前行末尾
+w 移动到下一个单词或标点符号的开头
+W 移动到下一个单词开头，忽略标点
+b 移动到上一个单词或标点符号开头
+B 移动到上一个单词的开头，忽略标点符号
+Ctrl-f or Page Down 向下翻页
+Ctrl-b or Page Up 向上翻页
+numberG 移动到第number行。例如，1G 移动到文件的第一行。
+G 移动到文件末尾。
+</code></pre>
+</li>
+<li>
+<p><strong>Basic Editing</strong></p>
+<ul>
+<li>
+<p><code>i</code>命令进入编辑模式，但是光标无法进入行尾</p>
+</li>
+<li>
+<p><strong>追加</strong>文本</p>
+<p><code>a</code>命令，当光标在行尾时越过行尾进入插入模式<br>
+<code>A</code>命令，移动到当前行末尾进入插入模式追加文本</p>
+</li>
+<li>
+<p><strong>打开</strong>一行<br>
+在两行之间插入一个空白行并进入插入模式<br>
+<code>o</code> 当前行下方打开一行<br>
+<code>O</code> 当前行上方打开一行</p>
+</li>
+<li>
+<p><strong>删除</strong>文本</p>
+<pre><code>x 当前字符
+3x 当前字符及其后的两个字符
+dd 当前行
+5dd 当前行及随后的四行文本
+dW 从光标位置开始到下一个单词开头
+d$ 从光标位置开始到当前行尾
+d0 从光标位置开始到当前行首
+dˆ 从光标位置开始到文本行第一个非空字符
+dG 从当前行到文件末尾
+d20G 从当前行到文件第20行
+</code></pre>
+</li>
+<li>
+<p><strong>剪切复制和粘贴</strong></p>
+<p>剪切：<code>d</code>命令，删除的部分被复制到一个粘贴缓冲区<br>
+粘贴：<code>p</code>命令，把剪切板中文本粘贴到光标位置之后，大<code>P</code> 命令把文本粘贴到光标之前</p>
+<p><strong>复制</strong>：<code>y</code></p>
+<pre><code>yy 当前行
+5yy 当前行及随后的四行文本
+yW 从当前光标位置到下一个单词的开头
+y$ 从当前光标位置到当前行的末尾
+y0 从当前光标位置到行首
+yˆ 从当前光标位置到文本行的第一个非空字符
+yG 从当前行到文件末尾
+y20G 从当前行到文件的第20行
+</code></pre>
+</li>
+<li>
+<p><strong>连接行</strong><br>
+<code>J</code>命令（大写），两行变为一行</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>查找替换</strong><br>
+查找一行：<code>f</code> 命令；<code>fa</code> 查找a字符，<code>;</code>重复查找<br>
+查找文件：<code>/</code>命令；<code>/a</code> ,<code>n</code> 进行重复查找</p>
+</li>
+<li>
+<p><strong>全局查找替换</strong></p>
+<p><code>:%s/Line/line/g</code>；<code>1,4s/a/A/</code></p>
+<p><code>:</code> 冒号运行ex 命令。</p>
+<p><code>%</code> 指定要操作的行数。<code>%</code>表示从第一行到最后一行。</p>
+<p>操作范围也可以用<code>1,5</code> 来代替，或者用<code>1,$</code> 来代替，从第一行到文件的最后一行。如果省略了文本行的范围，那么操作只对当前行生效。</p>
+<p><code>s</code> 指定操作。在这种情况下是，替换（查找与替代）。</p>
+<p><code>/Line/line</code> 查找类型与替代文本。</p>
+<p><code>g</code> 全局，对文本行中所有匹配的字符串执行查找和替换操作。省略<code>g</code>，则只替换每个文本行中第一个匹配的字符串。</p>
+<ul>
+<li>确认模式<code>%s/Line/line/gc</code> (末尾加c)<pre><code>replace with Line (y/n/a/q/l/^E/^Y)?
+y 执行替换操作
+n 跳过这个匹配的实例
+a 对这个及随后所有匹配的字符串执行替换操作
+q or esc 退出替换操作
+l 执行这次替换并退出。l 是“last”的简写
+Ctrl-e, Ctrl-y 分别是向下滚动和向上滚动。用于查看建议替换的上下文
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>多文件编辑</strong></p>
+<p><code>vi a b</code> 同时打开a和b</p>
+<p>首先进入a中，输入 <code>:n</code> 进入b</p>
+<p>输入 <code>:N</code> 进入a</p>
+<p><code>:buffer</code>查看正在编辑哪些文件</p>
+<ul>
+<li>两文件之间复制<br>
+<code>:buffer 1</code> 进入a 文件，yy 复制一行<br>
+<code>:buffer 2</code> 进入b文件，p 粘贴</li>
+<li>在一个文件中插入另一个文件<br>
+打开<code>a</code>文件<br>
+输入 <code>:r b</code>(r 表示read)</li>
+</ul>
+</li>
+<li>
+<p><strong>保存文件</strong><br>
+<code>:wq</code> 保存并退出<br>
+<code>:w a1</code> 将正在编辑的a文件保存为副本a1(但此后编辑的还是a文件)</p>
+</li>
+</ul>
+<hr>
+<figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#the-environment">The Environment</a></li>
+<li><a href="#a-gentle-introduction-to-vi">A Gentle Introduction To vi</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

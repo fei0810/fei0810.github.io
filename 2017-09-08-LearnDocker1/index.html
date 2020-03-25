@@ -1,0 +1,528 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Docker 学习笔记 I - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Docker 学习笔记 I - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="
+越来越无法忍受目前用的几台服务器各种软件配置都不一致，无法做到随时无障碍切换，于是决定学点 Docker。
+
+
+什么是 docker
+Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的..." />
+  <meta property="og:title" content="Docker 学习笔记 I - 思考问题的熊">
+  <meta property="og:description" content="
+越来越无法忍受目前用的几台服务器各种软件配置都不一致，无法做到随时无障碍切换，于是决定学点 Docker。
+
+
+什么是 docker
+Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2017-09-08-LearnDocker1/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-244f341451b72f98.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Docker 学习笔记 I - 思考问题的熊">
+  <meta name="twitter:description" content="
+越来越无法忍受目前用的几台服务器各种软件配置都不一致，无法做到随时无障碍切换，于是决定学点 Docker。
+
+
+什么是 docker
+Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2017-09-08-LearnDocker1/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Docker 学习笔记 I
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-244f341451b72f98.png" alt="Docker 学习笔记 I" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2017-09-08 · 9 min read</div>
+          
+            <a href="https://kaopubear.top/tag/GzsCQRADtBW/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Docker
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>越来越无法忍受目前用的几台服务器各种软件配置都不一致，无法做到随时无障碍切换，于是决定学点 Docker。</p>
+</blockquote>
+<!--more-->
+<h2 id="什么是-docker">什么是 docker</h2>
+<p>Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护</p>
+<ul>
+<li>传统虚拟化</li>
+</ul>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/78b6e134-f29b-45e2-9bdf-7b813c0cc492.jpg" alt="" loading="lazy"></figure>
+<blockquote>
+<p>虚拟出一套硬件后，在其上运行一个完整操作系统，在该系统上再运行所需应用进程</p>
+</blockquote>
+<ul>
+<li>docker</li>
+</ul>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/cd2749aa-b3d3-4da8-b7ff-59cfa089aba2.jpg" alt="" loading="lazy"></figure>
+<blockquote>
+<p>容器内的应用进程直接运行于宿主的内核，容器内没有自己的内核，而且也没有进行硬件虚拟</p>
+</blockquote>
+<h2 id="docker-的优势">Docker 的优势</h2>
+<ul>
+<li>解决一致性问题
+<ul>
+<li>开发过程中一个常见的问题是环境一致性问题。由于开发环境、测试环境、生产环境不一致，导致有些 bug 并未在开发过程中被发现。</li>
+<li>而 Docker 的镜像提供了除内核外完整的运行时环境，确保了应用运行环境一致性，从而不会再出现 「这段代码在我机器上没问题啊」 这类问题。</li>
+</ul>
+</li>
+<li>维护和扩展</li>
+<li>迁移方便</li>
+<li>快速启动</li>
+</ul>
+<h2 id="理解-docker">理解 Docker</h2>
+<p><strong>镜像</strong></p>
+<ul>
+<li>操作系统分为内核和用户空间</li>
+<li>对于 Linux 而言，内核启动后，会挂载 root 文件系统为其提供用户空间支持</li>
+<li>Docker 镜像（Image），就相当于是一个 root 文件系统</li>
+<li>除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）</li>
+<li>镜像不包含任何动态数据，其内容在构建之后也不会被改变</li>
+</ul>
+<p><strong>分层存储</strong></p>
+<ul>
+<li>因为镜像包含操作系统完整的 root 文件系统，其体积往往是庞大的，因此在 Docker 设计时，就充分利用 Union FS 的技术，将其设计为分层存储的架构</li>
+<li>镜像并非是像一个 ISO 那样的打包文件，镜像只是一个虚拟的概念，其实际体现并非由一个文件组成，而是由一组文件系统组成，或者说，由多层文件系统联合组成</li>
+<li>镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层</li>
+<li>删除前一层文件的操作，实际不是真的删除前一层的文件，而是仅在当前层标记为该文件已删除</li>
+</ul>
+<p><strong>Docker 容器</strong></p>
+<ul>
+<li>镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。</li>
+<li>每一个容器运行时，是以镜像为基础层，在其上创建一个当前容器的存储层，我们可以称这个为容器运行时读写而准备的存储层为容器存储层。</li>
+<li>容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。因此，任何保存于容器存储层的信息都会随容器删除而丢失。</li>
+<li>容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 数据卷（Volume）、或者绑定宿主目录，在这些位置的读写会跳过容器存储层，直接对宿主（或网络存储）发生读写，其性能和稳定性更高。</li>
+<li>数据卷的生存周期独立于容器，容器消亡，数据卷不会消亡。因此，使用数据卷后，容器可以随意删除、重新 run，数据却不会丢失。</li>
+</ul>
+<p><strong>仓库 Docker Registry</strong></p>
+<ul>
+<li>一个 Docker Registry 中可以包含多个仓库（Repository）；每个仓库可以包含多个标签（Tag）；每个标签对应一个镜像。</li>
+<li>通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 &lt;仓库名&gt;:&lt;标签&gt; 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 latest 作为默认标签。</li>
+<li>仓库名经常以 两段式路径 形式出现，比如 jwilder/nginx-proxy，前者往往意味着 Docker Registry 多用户环境下的用户名，后者则往往是对应的软件名。</li>
+</ul>
+<h2 id="在虚拟机上安装-docker">在虚拟机上安装 Docker</h2>
+<p><strong>虚拟机版本</strong></p>
+<ul>
+<li><code>uname -r</code> : 4.10.0-30-generic</li>
+<li><code>sudo lsb_release -a</code> : Description:Ubuntu 17.04</li>
+</ul>
+<p><strong>安装 Docker</strong></p>
+<ul>
+<li>
+<p><code>sudo apt install docker. io</code></p>
+</li>
+<li>
+<p><code>service docker start</code></p>
+</li>
+<li>
+<p><code>sudo docker run hello-world</code></p>
+</li>
+<li>
+<p>出现如下内容</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/adcf10db-2306-4f75-8621-2f19aa5b8599.jpg" alt="" loading="lazy"></figure>
+<p><strong>查看 docker 版本号</strong></p>
+<ul>
+<li><code>docker -v：Docker version 1.12.6, build 78d1802</code></li>
+</ul>
+<p><strong>镜像加速器（被坑以后才发现的问题）</strong></p>
+<p>在国内下载很多镜像往往会有龟速现象发生，这里使用官方提供的加速器 registry mirror。</p>
+<ul>
+<li>The URL of the registry mirror for China is <a href="http://registry.docker-cn.com/">registry.docker-cn.com</a></li>
+<li>将此镜像设置为默认
+<ul>
+<li>新建文件<code>/etc/docker/daemon.json</code></li>
+<li>输入内容<code>{ &quot;registry-mirrors&quot;: [&quot;[https://registry.docker-cn.com](https://registry.docker-cn.com/)&quot;] }</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="使用-docker-安装第一个软件">使用 Docker 安装第一个软件</h2>
+<p>从 Docker Registry 获取镜像的命令是 docker pull</p>
+<ul>
+<li>命令格式 <code>docker pull [选项] [Docker Registry 地址]&lt;仓库名&gt;:&lt;标签&gt;</code></li>
+<li>地址格式：<code>&lt;域名/IP&gt;[: 端口号] 默认地址是 Docker Hub</code></li>
+<li>仓库名：两段式名称，既<code>&lt;用户名&gt;/&lt;软件名&gt;</code></li>
+</ul>
+<p>具体事例：<code>sudo docker pull biocontainers/blast</code></p>
+<ul>
+<li>
+<p>用户名是 biocontainers  。如果这里没有用户名，会从官方 library 中进行下载</p>
+</li>
+<li>
+<p>出现如下的界面</p>
+</li>
+</ul>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/1fe6e654-1ab8-4ef0-bc17-b4e9f5f51ee1.jpg" alt="" loading="lazy"></figure>
+<p>从下载过程中可以看到我们之前提及的分层存储的概念，镜像是由多层存储所构成。下载也是一层层的去下载，并非单一文件。</p>
+<p>下载过程中给出了每一层的 ID 的前 12 位。并且下载结束后，给出该镜像完整的 sha256 的摘要，以确保下载一致性。</p>
+<p>下载完成时显示的内容</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/49eda31d-7df3-43d9-927c-2148978df23f.jpg" alt="" loading="lazy"></figure>
+<h2 id="运行第一个-docker-程序">运行第一个 docker 程序</h2>
+<ul>
+<li>镜像安装成功后，以这个镜像为基础启动一个容器来运行</li>
+<li><code>docker run</code> 是运行容器的命令</li>
+<li>默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 --rm 可以避免浪费空间。</li>
+<li><code>sudo docker run biocontainers/blast blastp -help</code></li>
+<li>删除容器 <code>docker rm</code></li>
+</ul>
+<h2 id="列出镜像">列出镜像</h2>
+<ul>
+<li>命令 <code>docker images</code></li>
+</ul>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/d3cbd9f9-9d5d-4d17-bf11-b121731664e1.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>列表包含了仓库名、标签、镜像 ID、创建时间以及所占用的空间</p>
+</li>
+<li>
+<p>之前安装的 biocontainers/blast 占用了接近 2 个 G 的空间</p>
+</li>
+</ul>
+<h2 id="删除本地镜像">删除本地镜像</h2>
+<ul>
+<li>
+<p><code>docker rmi [选项] &lt;镜像 1&gt; [&lt;镜像 2&gt; ...]</code></p>
+<ul>
+<li>&lt;镜像&gt; 可以是 镜像短 ID、镜像长 ID、镜像名 或者 镜像摘要</li>
+<li>docker images 默认列出的就已经是短 ID</li>
+</ul>
+</li>
+<li>
+<p>实例 <code>sudo docker rmi b2b</code></p>
+</li>
+</ul>
+<p><strong>报错</strong>：<code>Error response from daemon: conflict: unable to delete b2b81d1fe174 (must be forced) - image is being used by stopped container 9bf4b361545d</code></p>
+<p>原因是没有删除容器，所以无法删除镜像</p>
+<ul>
+<li>
+<p>首先查看运行的容器有哪些：<br>
+<code>sudo docker ps -a -q</code></p>
+</li>
+<li>
+<p>然后删除相关的容器：<br>
+<code>sudo docker rm</code></p>
+</li>
+<li>
+<p>最后再删除镜像</p>
+<p><code>sudo dokcker rmi</code></p>
+</li>
+</ul>
+<p>删除流程如下图所示</p>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/4c9a9692-c263-4bb1-8ba8-cd5db2700c30.jpg" alt="" loading="lazy"></figure>
+<ul>
+<li>镜像的唯一标识是其 ID 和摘要，而一个镜像可以有多个标签</li>
+<li>删除镜像的时候，实际上是在要求删除某个标签的镜像。所以首先需要做的是将满足我们要求的所有镜像标签都取消（untagged）</li>
+<li>并非所有的 <code>docker rmi</code>都会产生删除镜像的行为，有可能仅仅是取消了某个标签而已。</li>
+<li>当该镜像所有的标签都被取消了，该镜像很可能会失去了存在的意义，因此会触发删除行为。</li>
+<li>镜像是多层存储结构，因此在删除的时候也是从上层向基础层方向依次进行判断删除。镜像的多层结构让镜像复用变动非常容易，因此很有可能某个其它镜像正依赖于当前镜像的某一层。这种情况，依旧不会触发删除该层的行为。</li>
+</ul>
+<h2 id="用户权限设置">用户权限设置</h2>
+<ul>
+<li>默认情况下，Docker 命令的运行需要根用户权限。一个解决办法是把用户加入 docker 用户组</li>
+<li>Docker 能够将<code>/run/docker.sock</code>的文件权限设为 660、用户组设为 docker。当把用户加入到 docker 用户组后，就无需使用 sudo 命令切换获取根用户权限。</li>
+</ul>
+<pre><code>sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+sudo service docker restart
+newgrp - docker # 切换用户组
+newgrp - `groups ${USER} | cut -d' ' -f1`
+</code></pre>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://yeasy.gitbooks.io/docker_practice/">https://yeasy.gitbooks.io/docker_practice/</a></li>
+<li><a href="http://www.runoob.com/docker/docker-hello-world.html">http://www.runoob.com/docker/docker-hello-world.html</a></li>
+</ul>
+<hr>
+<figure data-type="image" tabindex="8"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-docker">什么是 docker</a></li>
+<li><a href="#docker-%E7%9A%84%E4%BC%98%E5%8A%BF">Docker 的优势</a></li>
+<li><a href="#%E7%90%86%E8%A7%A3-docker">理解 Docker</a></li>
+<li><a href="#%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%B8%8A%E5%AE%89%E8%A3%85-docker">在虚拟机上安装 Docker</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-docker-%E5%AE%89%E8%A3%85%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%BD%AF%E4%BB%B6">使用 Docker 安装第一个软件</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA-docker-%E7%A8%8B%E5%BA%8F">运行第一个 docker 程序</a></li>
+<li><a href="#%E5%88%97%E5%87%BA%E9%95%9C%E5%83%8F">列出镜像</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E9%95%9C%E5%83%8F">删除本地镜像</a></li>
+<li><a href="#%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E8%AE%BE%E7%BD%AE">用户权限设置</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,534 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>csvtk命令行版极简dplyr - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="csvtk命令行版极简dplyr - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="写在前面
+
+什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。
+
+之前写 datamash 的使用教程，收到了一位读者的私信，内容如上。
+
+话说这位读者不是别人，正是大名鼎鼎 seqkit 和 csvtk 的开发..." />
+  <meta property="og:title" content="csvtk命令行版极简dplyr - 思考问题的熊">
+  <meta property="og:description" content="写在前面
+
+什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。
+
+之前写 datamash 的使用教程，收到了一位读者的私信，内容如上。
+
+话说这位读者不是别人，正是大名鼎鼎 seqkit 和 csvtk 的开发..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-06-28-csvtkbasic/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="csvtk命令行版极简dplyr - 思考问题的熊">
+  <meta name="twitter:description" content="写在前面
+
+什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。
+
+之前写 datamash 的使用教程，收到了一位读者的私信，内容如上。
+
+话说这位读者不是别人，正是大名鼎鼎 seqkit 和 csvtk 的开发...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-06-28-csvtkbasic/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          csvtk命令行版极简dplyr
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190628071316.png" alt="csvtk命令行版极简dplyr" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-06-28 · 11 min read</div>
+          
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              数据科学
+            </a>
+          
+            <a href="https://kaopubear.top/tag/v0Xcy0jQaT/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              linux
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="写在前面">写在前面</h2>
+<blockquote>
+<p>什么时候写 csvtk 呀，csvtk 也借鉴了些 datamash 的东西。</p>
+</blockquote>
+<p>之前写 <a href="https://kaopubear.top/2019-06-19-datamashmanual/">datamash 的使用教程</a>，收到了一位读者的私信，内容如上。</p>
+<!-- more -->
+<p>话说这位读者不是别人，正是大名鼎鼎 seqkit 和 csvtk 的开发者 <a href="https://github.com/shenwei356">shenwei356</a> (github ID)，江湖人称「爪哥」。我从来没有问过他为什么 ID 有个数字后缀「356」，我私以为是一年 365 天里有 356 天他都在写程序，剩下的几天过年放假。说到爪哥，如果你看到这篇文章之前不知道他我不怪你，但是今天以后希望他可以每天都和你在一起。</p>
+<p>爪哥用两个工具就让自己在生物信息领域有了一席之地。其中 seqkit 是用来处理 fasta/q 文本的工具，这篇文章要写的 csvtk 是处理 c/tsv 文本的工具。如果你感觉我的说法夸张了，不妨想想每天接触到的各种文件，无论是 gff 还是 bed 还是 sam 甚至是 vcf，其本质都是 tsv 格式，再加上 seqkit 针对的 fasta 和 fastq。如果你能熟练使用这两个工具，今后的每一天就都会感受到爪哥无微不至的关怀。我经常在敲完一行命令后会在心里大喊一声「爪哥NB」。</p>
+<h2 id="csvtk-特点">csvtk 特点</h2>
+<p>熟悉 Linux 的人谈到命令行的文本处理，定会奉上文本处理「三剑客」：awk，sed，grep。csvtk 并不想抢他们的风头，而是可以无痛的整合到各种处理流程中。它凭借自己的特点，让命令行里的文本处理更容易。</p>
+<p>csvtk 的特点之一是对 header 的识别和处理，它可以让你省去很多原本在使用 awk 等命令时针对 header 行的代码。既然考虑到了 header，特点之二就是支持通过列名来进行列的选择，这里的选择还包括<strong>反选</strong>和<strong>模糊选择</strong>。除此之外，之所以说便于和其他流程的整合，还因为它可以直接处理标准输入和压缩文本，同时这个软件本身不需要编译也没有任何其它依赖，非常容易安装，conda 可以直接搞定。</p>
+<p>csvtk 本身支持多线程以及若干子命令，用起来会发现通常其速度和效率比在 python 和 R 中输入很多行代码都要高。如果这些依旧不能打动你，csvtk 还有一个神奇的功能：直接用一行代码在命令行里<strong>画图</strong>。真 6。</p>
+<h2 id="csvtk-介绍">csvtk 介绍</h2>
+<p>csvtk 有三十多个子命令，基本上可以理解为是<strong>命令行版极简 dplyr 加若干 linux 命令的增强整合</strong>。子命令按照类别和功能分类，可以分为如下几类，其中结尾带有<code>+</code>的子命令是我常用的和值得尤其关注的。</p>
+<h3 id="文本信息类">文本信息类</h3>
+<ul>
+<li><code>headers</code> 打印首行（列名）</li>
+<li><code>dim</code> 查看文件的行列数 ，和 R 中的 <code>dim</code> 类似 <code>+</code></li>
+<li><code>summary</code> 对所选列进行简单的描述性统计，如果是统计内容是数字，则类似于 R 中的 <code>summary()</code> ，同时支持分组统计。如果统计内容是文本，支持类似于 <code>datamash</code> 的多内容统计。<code>+</code></li>
+</ul>
+<h3 id="格式转化类">格式转化类</h3>
+<ul>
+<li><code>pretty</code> 可以让 csv 变成漂亮的对齐易读表格<code>+</code></li>
+<li><code>transpose</code> 类似于 R 中的<code>t()</code>对数据进行转置</li>
+<li><code>csv2json</code> 则可以让数据转换为 json 格式</li>
+<li><code>csv2md</code> 则是炫酷的直接变成 markdown 支持的表格<code>+</code></li>
+</ul>
+<h3 id="集合操作类">集合操作类</h3>
+<p>这一类命令是操作的重点，有很多子命令，其中部分类似于 unix 中对应的命令但又有所区别。</p>
+<ul>
+<li><code>head</code> 查看文件开始若干行</li>
+<li><code>concat</code> 合并文件，类似于<code>cat</code>但是可以按照列名进行匹配合并</li>
+<li><code>sample</code> 按照比例对文本进行提取</li>
+<li><code>cut</code> 按照列选择，支持列数和列名，支持反选和模糊选择<code>+</code></li>
+<li><code>uniq</code> <strong>无需排序</strong>进行去重<code>+</code></li>
+<li><code>freq</code> 所选字段评率统计</li>
+<li><code>inter</code> 多个文件取交集</li>
+<li><code>grep</code> 类似于 lunix 的 grep，支持正则和反选等操作<code>+</code></li>
+<li><code>filter</code> 按照数学表达式筛选，支持多列判断，精简版</li>
+<li><code>filter2</code> 按照数学表达式筛选，约等于 lunix 中的 awk，复杂版<code>+</code></li>
+<li><code>join</code> 按照字段合并多个文件，类似于 linux 的 join</li>
+<li><code>split</code> 按照某列值拆分文件，也就是分组保存为多个文件</li>
+<li><code>collapse</code> 按照所选字段的 key 合并其它字段<code>+</code></li>
+</ul>
+<h3 id="文本编辑类">文本编辑类</h3>
+<p>如果你熟悉 R 中的 dplyr，这类型的子命令中有不少都会让你感觉熟悉。</p>
+<ul>
+<li><code>add-header</code> 增加列名</li>
+<li><code>del-header</code> 删除列名</li>
+<li><code>rename</code> 对列重命名</li>
+<li><code>rename2</code> 支持正则表达式的列重命名</li>
+<li><code>replace</code> 通过正则表达式替换所选列对应的内容，支持捕获变量，内置特殊替换符号<code>+</code></li>
+<li><code>mutate</code> 对某一列进行正则表达处理增加新的一列</li>
+<li><code>mutate2</code> 对多列进行 awk 类似的字符和数学表达式处理，增加新列<code>+</code></li>
+<li><code>gather</code>  类似于 dplyr 中的<code>gather()</code>函数，数据「由宽变长」</li>
+<li><code>sort</code> 支持按照一列或者多列排序，且支持自定义顺序排序</li>
+</ul>
+<h3 id="画图">画图</h3>
+<p>借助 gonum 中的 plot 包，csvtk 还可以直接画一些基本的统计图，这功能其实已经超越 dplyr 向着 ggplot2 挺进了。画图相关命令可以根据文件后缀自动确定输出类型。</p>
+<p>plot 支持 boxplot, histogram, line 和 scatter 四种图，图的主要元素都可以设置，支持的输出格式包括 eps/pdf/svg/tiff/jpg/png，对应如下三个命令：</p>
+<ul>
+<li><code>csvtk plot hist</code></li>
+<li><code>csvtk plot box</code></li>
+<li><code>csvtk plot line</code></li>
+</ul>
+<h2 id="csvtk-示例">csvtk 示例</h2>
+<p>因为篇幅的原因，这里仅展示几个使用示例，更多更详细的内容可以直接参考爪哥写的使用文档。另外本文使用的数据也来自官方测试数据。</p>
+<h3 id="描述统计量">描述统计量</h3>
+<p>csvtk 的 <code>summary</code> 命令有两个亮点，第一是支持对文本和数值的多种分组统计；第二个是可以过滤对应字段的非数值内容（比如<code>N/A</code>）。</p>
+<pre><code class="language-sh">$ cat digitals2.csv
+f1,f2,f3,f4,f5
+foo,bar,xyz,1,0
+foo,bar2,xyz,1.5,-1
+foo,bar2,xyz,3,2
+foo,bar,xyz,5,3
+foo,bar2,xyz,N/A,4
+
+</code></pre>
+<p>针对上述数据，按照第一列和第二列进行分组，同时计算第四列和第五列的和，排除非数值内容，以易读方式输出结果。命令如下：</p>
+<pre><code class="language-sh">$ cat digitals2.csv | \
+csvtk summary -i -f f4:sum,f5:sum -g f1,f2 | \
+csvtk pretty
+
+f1    f2     f4:sum   f5:sum
+bar   xyz    7.00     106.00
+bar   xyz2   4.00     4.00
+foo   bar    6.00     3.00
+foo   bar2   4.50     5.00
+</code></pre>
+<h3 id="一键变漂亮">一键变漂亮</h3>
+<p>上面已经用到的<code>pretty</code>命令可以让输出的结果更加易读。</p>
+<pre><code class="language-sh">$ cat names.csv
+id,first_name,last_name,username
+11,Rob,Pike,rob
+2,Ken,Thompson,ken
+4,Robert,Griesemer,gri
+1,Robert,Thompson,abc
+
+$ cat names.csv |csvtk pretty
+id   first_name   last_name   username
+11   Rob          Pike        rob
+2    Ken          Thompson    ken
+4    Robert       Griesemer   gri
+1    Robert       Thompson    abc
+
+$ cat names.csv |csvtk pretty -r
+id   first_name   last_name   username
+11          Rob        Pike        rob
+ 2          Ken    Thompson        ken
+ 4       Robert   Griesemer        gri
+ 1       Robert    Thompson        abc
+
+</code></pre>
+<h3 id="无需排序快速去重">无需排序快速去重</h3>
+<p>之前曾经讨论<a href="https://kaopubear.top/2019-06-03-uniq-big-file/">一个大文本去重的问题</a>，从当时的结果来看，对于大文本在 linux 中排序是去重的主要限速步骤。但是在 csvtk 中，可以不通过排序而直接进行去重。针对当时的问题，对于一个 3,741,430 行的文本，先排序再去重需要 30s 左右的时间，而使用 csvtk uniq 仅需要两三秒。</p>
+<pre><code class="language-sh">time awk 'OFS=&quot;\t&quot; { if($1&gt;$2){print $2,$1,$3} else {print} }' howtouniq.txt \
+    | csvtk uniq -H -t -f 1,2 &gt; howtouniq.txt.awk-csvtk
+
+#real    0m2.674s
+#user    0m5.660s
+#sys     0m0.482s
+</code></pre>
+<h3 id="复杂条件筛选数据">复杂条件筛选数据</h3>
+<p>csvtk 中的 <code>filter2</code> 支持使用复杂条件筛选数据，类似于 awk。首先支持 <code>+ - / * &amp; | ^ ** %</code> 等运算，也支持<code>&gt; &gt;= &lt; &lt;= == != =~ !~</code>，同时还可以使用<code>|| &amp;&amp;</code> 对多个条件进行组合。例如：</p>
+<pre><code class="language-sh">
+$ cat names.csv
+id,first_name,last_name,username
+11,&quot;Rob&quot;,&quot;Pike&quot;,rob
+2,Ken,Thompson,ken
+4,&quot;Robert&quot;,&quot;Griesemer&quot;,&quot;gri&quot;
+1,&quot;Robert&quot;,&quot;Thompson&quot;,&quot;abc&quot;
+NA,&quot;Robert&quot;,&quot;Abel&quot;,&quot;123&quot;
+
+$ cat names.csv | csvtk filter2 -f '$id &gt; 3 || $username==&quot;ken&quot;'
+id,first_name,last_name,username
+11,Rob,Pike,rob
+2,Ken,Thompson,ken
+4,Robert,Griesemer,gri
+
+</code></pre>
+<h3 id="快速添加新列">快速添加新列</h3>
+<p>使用<code>mutate2</code>可以按照复杂运算快速添加新的内容，支持的操作和<code>filter2</code>一致。</p>
+<p>比如拼接字符串：</p>
+<pre><code class="language-sh">$ cat names.csv  \
+    | csvtk mutate2 -n full_name -e ' $first_name + &quot; &quot; + $last_name ' \
+    | csvtk pretty
+id   first_name   last_name   username   full_name
+11   Rob          Pike        rob        Rob Pike
+2    Ken          Thompson    ken        Ken Thompson
+4    Robert       Griesemer   gri        Robert Griesemer
+1    Robert       Thompson    abc        Robert Thompson
+NA   Robert       Abel        123        Robert Abel
+
+</code></pre>
+<p>甚至还可以通过三元运算符进行判断填空：</p>
+<pre><code class="language-sh">cat digitals.tsv | csvtk mutate2 -t -H -e '$1 &gt; 5 ? &quot;big&quot; : &quot;small&quot; '
+4       5       6       small
+1       2       3       small
+7       8       0       big
+8       1,000   4       big
+</code></pre>
+<h3 id="单行命令快速出图">单行命令快速出图</h3>
+<p>在测试数据中，有一组数据包含不同组别的序列长度和 GC 含量，可以通过<code>plot hist</code>绘制长度的直方图，通过<code>plot box</code>绘制每组的 GC 含量箱线图。</p>
+<pre><code class="language-sh">
+$ zcat grouped_data.tsv.gz | head -n 5 | csvtk -t pretty
+Group     Length   GC Content
+Group A   97       57.73
+Group A   95       49.47
+Group A   97       49.48
+Group A   100      51.00
+
+csvtk -t plot hist grouped_data.tsv.gz -f 2 --title Histogram -o histogram.png
+
+csvtk -t plot box grouped_data.tsv.gz -g &quot;Group&quot; -f &quot;GC Content&quot; --width 3 --title &quot;Box plot&quot; &gt; boxplot.png
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190627224719.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190627224729.png" alt="" loading="lazy"></figure>
+<h2 id="one-more-thing">one more thing</h2>
+<p>文末还是要说回开发者。爪哥是一个非常勤奋的人，可以看看他的 GitHub，嗯，真绿。csvtk 最近一次 commit 是在 8 天前，seqkit 最近一次 commit 也是在 8 天前。</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190627225102.png" alt="" loading="lazy"></figure>
+<p>所以，如果你在使用过程中有什么问题和需求，不妨去给他提几个 issue，没准他一顺手就实现了你的想法。</p>
+<hr>
+<figure data-type="image" tabindex="4"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2">写在前面</a></li>
+<li><a href="#csvtk-%E7%89%B9%E7%82%B9">csvtk 特点</a></li>
+<li><a href="#csvtk-%E4%BB%8B%E7%BB%8D">csvtk 介绍</a>
+<ul>
+<li><a href="#%E6%96%87%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%B1%BB">文本信息类</a></li>
+<li><a href="#%E6%A0%BC%E5%BC%8F%E8%BD%AC%E5%8C%96%E7%B1%BB">格式转化类</a></li>
+<li><a href="#%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C%E7%B1%BB">集合操作类</a></li>
+<li><a href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E7%B1%BB">文本编辑类</a></li>
+<li><a href="#%E7%94%BB%E5%9B%BE">画图</a></li>
+</ul>
+</li>
+<li><a href="#csvtk-%E7%A4%BA%E4%BE%8B">csvtk 示例</a>
+<ul>
+<li><a href="#%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E9%87%8F">描述统计量</a></li>
+<li><a href="#%E4%B8%80%E9%94%AE%E5%8F%98%E6%BC%82%E4%BA%AE">一键变漂亮</a></li>
+<li><a href="#%E6%97%A0%E9%9C%80%E6%8E%92%E5%BA%8F%E5%BF%AB%E9%80%9F%E5%8E%BB%E9%87%8D">无需排序快速去重</a></li>
+<li><a href="#%E5%A4%8D%E6%9D%82%E6%9D%A1%E4%BB%B6%E7%AD%9B%E9%80%89%E6%95%B0%E6%8D%AE">复杂条件筛选数据</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%88%97">快速添加新列</a></li>
+<li><a href="#%E5%8D%95%E8%A1%8C%E5%91%BD%E4%BB%A4%E5%BF%AB%E9%80%9F%E5%87%BA%E5%9B%BE">单行命令快速出图</a></li>
+</ul>
+</li>
+<li><a href="#one-more-thing">one more thing</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,851 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>awk 入门与进阶 part2—模式动作输出与输入 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="awk 入门与进阶 part2—模式动作输出与输入 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="模式
+BEGIN END
+当 awk 从输入读取数据之前，首先执行 BEGIN 的语句；当所有输入数据读取完毕，最后执行 END 的语句。BEGIN 与 END 提供控制初始化与结尾的方式。FS 指定输入行分隔符；OFS 指定输出行分隔符。..." />
+  <meta property="og:title" content="awk 入门与进阶 part2—模式动作输出与输入 - 思考问题的熊">
+  <meta property="og:description" content="模式
+BEGIN END
+当 awk 从输入读取数据之前，首先执行 BEGIN 的语句；当所有输入数据读取完毕，最后执行 END 的语句。BEGIN 与 END 提供控制初始化与结尾的方式。FS 指定输入行分隔符；OFS 指定输出行分隔符。..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2018-06-03-awk2/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="awk 入门与进阶 part2—模式动作输出与输入 - 思考问题的熊">
+  <meta name="twitter:description" content="模式
+BEGIN END
+当 awk 从输入读取数据之前，首先执行 BEGIN 的语句；当所有输入数据读取完毕，最后执行 END 的语句。BEGIN 与 END 提供控制初始化与结尾的方式。FS 指定输入行分隔符；OFS 指定输出行分隔符。...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2018-06-03-awk2/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          awk 入门与进阶 part2—模式动作输出与输入
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606084536.jpg" alt="awk 入门与进阶 part2—模式动作输出与输入" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2018-06-03 · 16 min read</div>
+          
+            <a href="https://kaopubear.top/tag/v0Xcy0jQaT/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              linux
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="模式">模式</h2>
+<h3 id="begin-end">BEGIN END</h3>
+<p>当 awk 从输入读取数据之前，首先执行 BEGIN 的语句；当所有输入数据读取完毕，最后执行 END 的语句。BEGIN 与 END 提供控制初始化与结尾的方式。FS 指定输入行分隔符；OFS 指定输出行分隔符。</p>
+<!--more-->
+<p>任意一个表达式都可以作为任意一个运算符的操作数。如果一个表达式是数值形式而运算符要求字符串值，数值会自动转换成字符串；当运算符要求一个数值时字符串会自动转换成数值。</p>
+<p>在一个关系比较中，如果两个操作数都是数值，关系比较将会按照数值比较进行；否则的话，数值操作数会被转换成字符串，再将操作数按字符串的形式进行比较。</p>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>~</td>
+<td>匹配</td>
+</tr>
+<tr>
+<td>!~</td>
+<td>不匹配</td>
+</tr>
+</tbody>
+</table>
+<p>两个字符串的比较以<strong>字符为单位</strong>进行，一个字符串小于另一个，指的是比另一个字符串更先出现。</p>
+<pre><code class="language-shell">cat awk2.txt
+
+USSR    8649    275     Asia
+Canada  3852    25      North_America
+China   3705    1032    Asia
+USA     3615    237     North_America
+Brazil  3286    134     South_America
+India   1267    746     Asia
+
+#提取 A 和 B 开头的行
+awk '$1 &gt;= &quot;c&quot;' awk2.txt
+#如果都是字符串则比较哪一个字符首先出现
+awk '$1 &gt; $4' awk2.txt
+</code></pre>
+<h3 id="字符串与正则表达式">字符串与正则表达式</h3>
+<p>用斜括号包围，可以将一个正则表达式切换为一个模式。/test/, 正则表达式斜线中的空格是有意义的。</p>
+<ol>
+<li>/regexpr/<br>
+当当前输入行包含一段能够被 regexpr 匹配的子字符串时，该模式被匹配。</li>
+<li>expression ~ /regexpr/<br>
+如果 expression 的字符串值包含一段能够被 regexpr 匹配的子字符时，该模式被匹配。</li>
+<li>expression !~ /regexpr/<br>
+如果 expression 的字符串值不包含能够被 regexpr 匹配的子字符串，该模式被匹配。</li>
+</ol>
+<pre><code class="language-shell">awk '$4 ~ /Asia/' awk2.txt
+awk '$4 !~ /Asia/' awk2.txt
+</code></pre>
+<ol>
+<li>正则表达式的元字符包括：<br>
+\ ^ $ . [ ] | ( ) * + ?</li>
+<li>基本的正则表达式包括下面几种：<br>
+一个不是元字符的字符，例如 A，这个正则表达式匹配的就是它本身。<br>
+一个匹配特殊符号的转义字符：\t 匹配一个制表符。<br>
+一个被引用的元字符例如、*, 按字面意义匹配元字符。<br>
+^ 匹配一行的开始。<br>
+$ 匹配一行的结束。<br>
+. 匹配任意一个字符。<br>
+字符类：[ABC] 匹配字符 A, B 或 C。<br>
+字符类可包含缩写形式：[A-Za-z] 匹配单个字母。<br>
+互补的字符类：[^0-9] 匹配任意一个不是数字的字符。</li>
+<li>运算符：<br>
+选择：A|B 匹配 A 或 B。<br>
+拼接：AB 匹配紧跟 B 的 A。<br>
+闭包：A* 匹配 0 个或多个 A。<br>
+正闭包：A+ 匹配一个或多个 A。<br>
+零或一：A? 匹配空字符串或 A。<br>
+括号：被 (r) 匹配的字符串，与 r 所匹配的字符串相同。</li>
+</ol>
+<pre><code>
+# 匹配开始和结尾
+^c 匹配以字符 c 开始的字符串；
+c$ 匹配以字符 c 结束的字符串；
+^c$ 匹配只含有单个字符 c 的字符串；
+^.$ 匹配有且仅有一个字符的字符串；
+^...$ 匹配有且仅有 3 个字符的字符串；
+... 匹配任意 3 个字符；
+\.$ 匹配以句点结束的字符串。
+
+# 使用字符类进行匹配，使用连字符表示一个范围，无连字符为匹配其中任意一个字符。^ 表示互补。
+
+^[ABC] 匹配以 A, B, 或 C 开始的字符串；
+^[^ABC] 匹配以任意一个字符（除了 A, B, 或 C) 开始的字符串；
+[^ABC] 匹配任意一个字符，除了 A, B, 或 C;
+^[^a-z]$ 匹配任意一个有且仅有一个字符的字符串，且该字符不能是小写字母。
+
+# 符号*, + 与 ? 是一元运算符，用来指定正则表达式的重复次数。
+B* 匹配空字符串，或 B, BB, 等等。
+AB*C 匹配 AC, 或 ABC, ABBC, 等等。
+AB+C 匹配 ABC, 或 ABBC, ABBBC, 等等。
+AB?C 匹配 AC 或 ABC
+[A-Z]+ 匹配由一个或多个大写字母组成的字符串。
+(AB)+C 匹配 ABC, ABABC, ABABABC, 等等。
+</code></pre>
+<p>任意一个被一对斜杠包围的正则表达式都可以作为匹配运算符的右操作数，<code>$2 !~ /^[0-9]+$/</code> 打印第 2 个字段不全是数字的行。</p>
+<h3 id="复合模式">复合模式</h3>
+<p>逻辑运算符通过 ||(OR), &amp;&amp;(AND), !(NOT) 进行组合。</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>匹配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c</td>
+<td>非元字符 c</td>
+</tr>
+<tr>
+<td>\c</td>
+<td>转义序列或字面意义上的 c</td>
+</tr>
+<tr>
+<td>^</td>
+<td>字符串的开始</td>
+</tr>
+<tr>
+<td>$</td>
+<td>字符串的结束</td>
+</tr>
+<tr>
+<td>.</td>
+<td>任意一个字符</td>
+</tr>
+<tr>
+<td>[c1c2...]</td>
+<td>任意一个在 c1c2... 中的字符。</td>
+</tr>
+<tr>
+<td>[^c1c2...]</td>
+<td>任意一个不在 c1c2... 中的字符。</td>
+</tr>
+<tr>
+<td>[c1-c2...]</td>
+<td>任意一个在范围内的字符，范围由 c1 开始，由 c2 结束。</td>
+</tr>
+<tr>
+<td>[^c1-c2...]</td>
+<td>任意一个不在范围内的字符，范围由 c1 开始，由 c2 结束。</td>
+</tr>
+<tr>
+<td>r1|r2</td>
+<td>任意一个被 r1 或 r2 匹配的字符串。</td>
+</tr>
+<tr>
+<td>(r1)(r2)</td>
+<td>任意一个字串 xy, 其中 r1 匹配 x, 而 r2 匹配 y; 如果当中不含有选择运算符，那么括号是可以省略的</td>
+</tr>
+<tr>
+<td>(r)*</td>
+<td>零个或连续多个能被 r 匹配的字符串。</td>
+</tr>
+<tr>
+<td>(r)+</td>
+<td>一个或连续多个能被 r 匹配的字符串。</td>
+</tr>
+<tr>
+<td>(r)?</td>
+<td>零个或一个能被 r 匹配的字符串。 在这里括号可以省略。</td>
+</tr>
+<tr>
+<td>(r)</td>
+<td>任意一个能被 r 匹配的字符串</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sh">awk '$4 == &quot;Asia&quot; || $4 == &quot;North_America&quot;' awk2.txt
+awk '$4 ~ /^(Asia|North_America)$/' awk2.txt #选择运算符
+
+</code></pre>
+<h3 id="范围模式">范围模式</h3>
+<p>一个范围模式由两个被逗号分开的模式组成，如 pat1,pat2<br>
+一个范围模式匹配多个输入行，这些输入行从匹配 pat1 的行开始，到匹配 pat2 的行结束，且包括这两行；pat2 可以与 pat1 匹配到同一行，这时候模式的范围大小就退化到了一行。</p>
+<pre><code class="language-sh">awk 'FNR == 1, FNR == 5 { print FILENAME &quot;: &quot; $0 }' awk2.txt
+# FNR 目前读入的行数，FILENAME 当前输入文件名
+</code></pre>
+<h2 id="动作">动作</h2>
+<p>在一个模式–动作语句中，模式决定动作什么时候执行。有时候动作会非常简单如一条单独的打印或赋值语句。有些时候动作有可能是多条语句，语句之间用换行符或分号分开。</p>
+<p>动作语句包括</p>
+<ul>
+<li>expression, 包括常量，变量，赋值，函数调用等等。</li>
+<li>print expression-list</li>
+<li>printf(format, expression-list)</li>
+<li>if (expression) statements</li>
+<li>if (expression) statements else statements</li>
+<li>while (expression) statements</li>
+<li>for (expression; expression; expression) statements</li>
+<li>for (expression in array) statements</li>
+<li>do statements while (expression)</li>
+<li>break</li>
+<li>continue</li>
+</ul>
+<h3 id="表达式">表达式</h3>
+<p><strong>常量</strong>：包括字符串和数值。</p>
+<p><strong>变量</strong>：变量类型无需事先声明，内建变量都是大写，一个变量对应一个值。未初始化的变量值是空字符串与 0。</p>
+<p><strong>内建变量</strong>：ARG 命令行参数的个数；ARGV 命令行参数数组；FNR 当前输入文件记录个数；FS 输入行字段分隔符；NF 当前记录字段个数；NR 所读的记录数量（行数）；OFS 输出字段分隔符；RS 输入行记录分隔符。</p>
+<p><strong>字段变量</strong>：<code>$1, $2, $(NF-1)</code></p>
+<p><strong>算术运算符</strong>：% 取余数，^ 指数运算符，比较运算符；逻辑运算符 &amp;&amp; 或 || 与。</p>
+<p><strong>条件表达式</strong>，一个条件表达式具有形式：<code>expr1 ? expr2 : expr3</code>。首先 expr1 求值。如果值为真，也就是值非零或非空，那么整个条件表达式的值就会是 expr2 的值；否则，如果 expr1 的值为假，那么条件表达式的值就会是 expr3。expr2 与 expr3 只有其中一个会被求值。</p>
+<p><strong>赋值运算符</strong>：共有六种方式。+=，-=，*=，/=，%=，以及^=。它们的意义都是类似的：v op = e 等价于 v = v op e，但是 v 只被求值一次。赋值表达式：<code>pop = pop + $3</code> 可以用+= 写成更加紧凑的形式：<code>pop += $3</code> 。</p>
+<p><strong>内建算术函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>atan2(y,x)</td>
+<td>y/x 的反正切值</td>
+</tr>
+<tr>
+<td>cos(x)</td>
+<td>x 的余弦值，x 以弧度为单位</td>
+</tr>
+<tr>
+<td>exp(x)</td>
+<td>x 的指数函数</td>
+</tr>
+<tr>
+<td>int(x)</td>
+<td>x 的整数部分；当 x 大于 0 时，向 0 取整</td>
+</tr>
+<tr>
+<td>log(x)</td>
+<td>x 的自然对数（以 e 为底）</td>
+</tr>
+<tr>
+<td>rand()</td>
+<td>返回一个随机数 r, 0&lt;r&lt;1</td>
+</tr>
+<tr>
+<td>sin(x)</td>
+<td>x 的正弦值，x 以弧度为单位。</td>
+</tr>
+<tr>
+<td>sqrt(x)</td>
+<td>x 的方根</td>
+</tr>
+<tr>
+<td>srand(x)</td>
+<td>x 是 rand() 的新的随机数种子</td>
+</tr>
+</tbody>
+</table>
+<p>返回 1-n 的一个随机数<code>randint = int(n * rand()) + 1</code></p>
+<p>第二个字段有且仅有数字：<code>awk 'BEGIN { digits = &quot;^[0-9]+$&quot; }$2 ~ digits' awk2.txt</code></p>
+<p><strong>内建字符串函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gsub(r,s)</td>
+<td>将$0 中所有 r 替换为 s，返回替换发生的次数。</td>
+</tr>
+<tr>
+<td>gsub(r,s,t )</td>
+<td>将字符串 t 中所有出现的 r 替换为 s，返回替换发生的次数</td>
+</tr>
+<tr>
+<td>index(s,t)</td>
+<td>返回字符串 t 在 s 中第一次出现的位置，如果 t 没有出现的话，返回 0。</td>
+</tr>
+<tr>
+<td>length(s)</td>
+<td>返回 s 包含的字符个数</td>
+</tr>
+<tr>
+<td>match(s,r)</td>
+<td>测试 s 是否包含能被 r 匹配的子串，返回子串的起始位置或 0; 设置 RSTART 与 RLENGTH</td>
+</tr>
+<tr>
+<td>split(s,a)</td>
+<td>用 FS 将 s 分割到数组 a 中，返回字段的个数</td>
+</tr>
+<tr>
+<td>split(s,a,fs)</td>
+<td>用 fs 分割 s 到数组 a 中，返回字段的个数</td>
+</tr>
+<tr>
+<td>sprintf(fmt,expr-list)</td>
+<td>根据格式字符串 fmt 返回格式化后的 expr-list</td>
+</tr>
+<tr>
+<td>sub(r,s)</td>
+<td>将、$0 的最左最长的，能被 r 匹配的子字符串替换为 s，返回替换发生的次数。</td>
+</tr>
+<tr>
+<td>sub(r,s,t)</td>
+<td>把 t 的最左最长的，能被 r 匹配的子字符串替换为 s，返回替换发生的次数。</td>
+</tr>
+<tr>
+<td>substr(s,p)</td>
+<td>返回 s 中从位置 p 开始的后缀。</td>
+</tr>
+<tr>
+<td>substr(s,p,n)</td>
+<td>返回 s 中从位置 p 开始的，长度为 n 的子字符串。</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sh">awk '{gsub(/USA/,&quot;united states&quot;);print}' awk2.txt
+awk '{ $1 = substr($1, 1, 3); print $0 }' awk2.txt
+</code></pre>
+<p><strong>流程控制语句</strong></p>
+<p>Awk 提供花括号用于语句组合，if-else 用于判断，while，for，do 语句用于循环。 一条单独的语句总可以被替换为一个被花括号包围起来的语句列表，列表中的语句用换行符或分号分开，换行符可以出现在任何左花括号之后，也可以出现在任何右花括号之前。</p>
+<pre><code class="language-sh">if (expression)
+    statements1
+else
+    statements2
+
+{ for (i = 1; i &lt;= NF; i++)
+    print $i
+}
+
+do
+    statements
+while (expression)
+</code></pre>
+<p>do 循环执行 statements 一次，只要 expression 为真，就重复执行 statements。do 循环与 while , for 循环相比它的条件测试在循环体的底部，所以循环体至少会执行一次。</p>
+<p>有两种语句可以影响循环的运行：break 会导致控制流马上从包围着它的循环内退出，循环可以是 while，for，或 do。continue 导致下一次迭代开始；它使得执行流马上进入 while 与 do 的测试表达式，或 for 的 expression.</p>
+<h3 id="关联数组">关联数组</h3>
+<p>Awk 提供了一维数组，用于存放字符串与数值。数组与数组元素都不需要事先声明，也不需要说明数组中有多少个元素。就像变量一样，当被提及时，数组元素就会被创建，数组元素的默认初始值为 0 或空字符串&quot;&quot;。Awk 的数组与大多数其他语言最大的不同点在于数组元素的下标是字符串。</p>
+<pre><code class="language-sh">cat  awk2.txt
+USSR    8649    275     Asia
+Canada  3852    25      North_America
+China   3705    1032    Asia
+USA     3615    237     North_America
+Brazil  3286    134     South_America
+India   1267    746     Asia
+</code></pre>
+<pre><code class="language-sh">awk '/Asia/ { pop[&quot;Asia&quot;] += $3 }; /North_America/ { pop[&quot;NA&quot;] += $3 } END { print &quot;Asian population is&quot;, pop[&quot;Asia&quot;], &quot;million.&quot;;print &quot;European population is&quot;,pop[&quot;NA&quot;], &quot;million.&quot;}' awk2.txt
+
+#Asian population is 2053 million.
+#European population is 262 million.
+</code></pre>
+<p>这里数组下标是字符串，且数量会累积到数组 pop[&quot;&quot;] 中，如果我们需要统计每个地方的人口总和，或者统计多倍体中每个 subgenome 的总和，这种聚合问题使用关联数组非常方便，其数组下标可以是任意表达式。对于上面的内容，我们可以把<code>$4</code><br>
+作为下标，统计<code>$3</code>。</p>
+<pre><code class="language-sh">awk '{ pop[$4] += $3 }END{ for (name in pop) print name,pop[name]}' awk2.txt
+
+#North_America 262
+#Asia 2053
+#South_America 134
+</code></pre>
+<h2 id="输入">输入</h2>
+<p><strong>getline</strong> 函数</p>
+<p>awk 本质上是一个逐行处理过程，类似 for 循环，直到整个文件的每一行都被执行完毕。</p>
+<p>getline 抓取<strong>下</strong>一个记录，按照通常的方式把记录分割成一个个的字段。它会设置 NF，NR，和 FNR; 如果存在一个记录，返回 1，若遇到文件末尾，返回 0，发生错误时返回-1 （例如打开文件失败）.<br>
+表达式 getline x 会读取下一条记录到变量 x 中，并递增 NR 与 FNR，不会对记录进行分割，所以不会设置 NF。</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>被设置的变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getline</td>
+<td>$0, NF, NR, FNR</td>
+</tr>
+<tr>
+<td>getline var</td>
+<td>var, NR, FNR</td>
+</tr>
+<tr>
+<td>getline &lt;file</td>
+<td>$0, NF</td>
+</tr>
+<tr>
+<td>getline var &lt;file</td>
+<td>var</td>
+</tr>
+<tr>
+<td>cmd | getline</td>
+<td>$0, NF</td>
+</tr>
+<tr>
+<td>cmd | getlinevar</td>
+<td>var</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sh"># 只打印奇数
+seq 10 | awk '{getline; print $0}'
+# 只打印偶数
+seq 10 | awk '{print $0; getline}'
+# 奇数偶数行交换
+seq 10 | awk '{getline tmp; print tmp; print $0}'
+</code></pre>
+<p>同样的利用第一列信息判断，将第一列相同的第二列内容合并也可以使用 getline 函数。</p>
+<pre><code class="language-sh">cat awk3.txt
+
+a       qw
+a       we
+a       wet
+b       wer
+b       klj
+b       piu
+c       eie
+c       tmp
+c       ike
+
+awk 'BEGIN{getline;a=$1;printf (&quot;%s\t%s&quot;,$1,$2)}{if(a==$1){printf &quot;//&quot;$2}else{printf &quot;\n%s\t%s&quot;,$1,$2;a=$1}}END{printf &quot;\n&quot;}' awk3.txt
+
+a       qw//we//wet
+b       wer//klj//piu
+c       eie//tmp//ike
+
+</code></pre>
+<h2 id="输出">输出</h2>
+<h3 id="printf">print(f)</h3>
+<p>使用 print 输出时后面可以括号括住需要的内容，也可以不括住，但是当参数有<strong>关系运算符</strong>的时候必须使用括号才可以。默认的<code>print</code> 是<code>print $0</code>。打印空白行可以使用<code>print &quot;&quot;</code></p>
+<p>awk 的默认输出字段分隔符 (OFS) 是空格，默认的输出记录分隔符 (ORS) 是换行符。</p>
+<p>printf 用于产生格式化的输出，书写形式：<br>
+printf format,expression1,expression2,..., expressionn<br>
+printf(format,expression1,expression2, ..., expressionn)</p>
+<p>参数 format 是一个变量，字符串值含有字面文本与格式说明符，字面文本会按照文本的字面值输出，格式说明符规定了参数列表中的表达式将被如何格式化地输出。每一个格式说明符都以% 开始，以转换字符结束，可能含有下面三种修饰符：</p>
+<ul>
+<li>- 表达式在域内左对齐</li>
+<li>width 为了达到规定的宽度必要时填充空格</li>
+<li>.prec 字符串最大宽度或十进制数的小数部分的位数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>打印</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c</td>
+<td>ASCII 字符</td>
+</tr>
+<tr>
+<td>d</td>
+<td>十进制整数</td>
+</tr>
+<tr>
+<td>e</td>
+<td>[-]d.ddddddE[+-]dd</td>
+</tr>
+<tr>
+<td>f</td>
+<td>[-]ddd.dddddd</td>
+</tr>
+<tr>
+<td>g</td>
+<td>按照 e 或 f 进行转换，选择较短的</td>
+</tr>
+<tr>
+<td>s</td>
+<td>字符串</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-sh">echo 5.55 |awk '{printf &quot;%d\n&quot;,$1}'
+#5
+echo 5.55 |awk '{printf &quot;%5d\n&quot;,$1}'
+#    5
+echo 0.5555555555 |awk '{printf &quot;%.3e\n&quot;,$1}'
+#5.556e-01
+echo 0.5555555555 |awk '{printf &quot;%.3f\n&quot;,$1}'
+#0.556
+echo 0.5555555555 |awk '{printf &quot;%.3g\n&quot;,$1}'
+#0.556
+echo 0.5555555555 |awk '{printf &quot;%-10g\n&quot;,$1}'
+#0.555556
+echo 0.5555555555 |awk '{printf &quot;%10g\n&quot;,$1}'
+#  0.555556
+</code></pre>
+<h3 id="输出到文件">输出到文件</h3>
+<p>重定向运算符&gt; 与&gt;&gt; 用于将输出重定向到文件，而不是原来的标准输出。</p>
+<pre><code class="language-sh">awk '{ print($1, $3) &gt; ($3 &gt; 100 ? &quot;big.txt&quot; : &quot;small.txt&quot;) }'
+# 第三列大于 100 输入到一个文件，小于 100 输入到另外一个
+
+awk '{ print &gt;&gt; $1 }' tmp.gtf
+# 按照染色体分割文件
+</code></pre>
+<hr>
+<figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%A8%A1%E5%BC%8F">模式</a>
+<ul>
+<li><a href="#begin-end">BEGIN END</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%8E%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">字符串与正则表达式</a></li>
+<li><a href="#%E5%A4%8D%E5%90%88%E6%A8%A1%E5%BC%8F">复合模式</a></li>
+<li><a href="#%E8%8C%83%E5%9B%B4%E6%A8%A1%E5%BC%8F">范围模式</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8A%A8%E4%BD%9C">动作</a>
+<ul>
+<li><a href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F">表达式</a></li>
+<li><a href="#%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84">关联数组</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5">输入</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA">输出</a>
+<ul>
+<li><a href="#printf">print(f)</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E5%88%B0%E6%96%87%E4%BB%B6">输出到文件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

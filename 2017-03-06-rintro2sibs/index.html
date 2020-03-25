@@ -1,0 +1,631 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>给初学者的 R 语言介绍 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="给初学者的 R 语言介绍 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="几点说明：
+
+文档由 R Markdown[1] 写成。
+
+
+
+
+下文是我暂时能想到的一些内容，水平有限，供大家了解，大牛小神都可以出门右拐不用看哈。
+
+
+写作初衷：目前在水中科院上海分院这边生物统计学助教，本文及后续一段时间里的 R 相关..." />
+  <meta property="og:title" content="给初学者的 R 语言介绍 - 思考问题的熊">
+  <meta property="og:description" content="几点说明：
+
+文档由 R Markdown[1] 写成。
+
+
+
+
+下文是我暂时能想到的一些内容，水平有限，供大家了解，大牛小神都可以出门右拐不用看哈。
+
+
+写作初衷：目前在水中科院上海分院这边生物统计学助教，本文及后续一段时间里的 R 相关..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2017-03-06-rintro2sibs/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="给初学者的 R 语言介绍 - 思考问题的熊">
+  <meta name="twitter:description" content="几点说明：
+
+文档由 R Markdown[1] 写成。
+
+
+
+
+下文是我暂时能想到的一些内容，水平有限，供大家了解，大牛小神都可以出门右拐不用看哈。
+
+
+写作初衷：目前在水中科院上海分院这边生物统计学助教，本文及后续一段时间里的 R 相关...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2017-03-06-rintro2sibs/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          给初学者的 R 语言介绍
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-b3c3ca8fd7fd10c0.png" alt="给初学者的 R 语言介绍" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2018-03-06 · 16 min read</div>
+          
+            <a href="https://kaopubear.top/tag/UrqlObNL0t/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              R
+            </a>
+          
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              数据科学
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="几点说明">几点说明：</h2>
+<ol>
+<li>文档由 <strong>R Markdown</strong><sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> 写成。</li>
+</ol>
+<!--more-->
+<ol start="2">
+<li>
+<p>下文是我暂时能想到的一些内容，水平有限，供大家了解，大牛小神都可以出门右拐不用看哈。</p>
+</li>
+<li>
+<p><strong>写作初衷</strong>：目前在水中科院上海分院这边生物统计学助教，本文及后续一段时间里的 R 相关内容主要是为了供这门课的同学参考，同时也是自我总结的过程。</p>
+</li>
+</ol>
+<h2 id="数据科学重要性">数据科学重要性</h2>
+<p>摩尔定律 <sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> 告诉我们计算机的计算能力每两年就会翻一倍，这使得数以百万计的计算机生成了大规模数据集。</p>
+<p>海量的数据如何处理成了各行各业都需要面对和解决的问题；如何从海量信息中提取有效信息并总结出一般性的规律也值得我们去思考。</p>
+<p>数据驱动下产生的这门学科，被我们称为数据科学（Data science），其中涉及到数据的收集、处理、分析和呈现四大方面。</p>
+<p>2012 年，哈佛商业评论将** Data Scientist **定义为 21 世纪最性感的职业 <a href="%E6%9C%89%E5%9B%BE%E6%9C%89%E7%9C%9F%E7%9B%B8">^3</a>。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d3264a2fd559c58e.png" alt="" loading="lazy"></figure>
+<p><strong>数据科学和我们每个人都不遥远</strong></p>
+<ul>
+<li>
+<p>如何高效准确地从各种各样的 paper 中找到自己需要的信息。</p>
+</li>
+<li>
+<p>如何快速地将各种信息进行整理并且提炼出自己的看法，以便和老板 talk 的时候侃侃而谈。</p>
+</li>
+<li>
+<p>如何让自己的实验数据更具有说服力。</p>
+</li>
+<li>
+<p>如何处理自己辛苦搬砖产生的大量实验数据。</p>
+</li>
+</ul>
+<hr>
+<h2 id="生物统计学重要性">生物统计学重要性</h2>
+<p>数据科学家是不是 21 世纪最性感的职业我们在这里先不做评论，但是从小你我就都听过：</p>
+<blockquote>
+<p>21 世纪是生命科学的世纪</p>
+</blockquote>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-9f3a557d3738bed7.png" alt="" loading="lazy"></figure>
+<p>很多人也是因为这句话而走上了一条不归路。</p>
+<p>学生物的人，在属于你们的世纪里从事这个世纪最性感的职业，走上人生巅峰一定指日而待。当然，就算是在生物领域里多接触学习一些和数据科学相关的知识，看起来也是一件很炫酷的事情。</p>
+<p>而生物统计学这门课，就是所有实验狗窥探程序猿或者数据科学家生活最简单的一条途径。</p>
+<p><strong>学习生物统计学课程</strong></p>
+<ul>
+<li>
+<p>如果稍微长点心，就算不能<strong>入门</strong>一门编程语言，最起码也可以<strong>看见那扇门</strong>。</p>
+</li>
+<li>
+<p>如果稍微用点心，以后看到文献中复杂的统计学方法或者炫酷的数据展示方式，也能大概知道它是怎么来的。</p>
+</li>
+<li>
+<p>如果再多用点心，很可能今后进行大量的实验数据处理时也可以独当一面，放弃用了很多年（其实还是不会用）的 Excel</p>
+</li>
+<li>
+<p>如果你突然发现自己在数据分析方面很有天赋，那就是前途无量了。</p>
+</li>
+</ul>
+<hr>
+<h2 id="怎样入门数据科学">怎样入门数据科学</h2>
+<p>这里的标题用了数据科学没有用生物统计学，是想说在这门课上接触到的东西，绝不仅仅只能用来分析你手上那些生物学数据。另一方面，标题里用了<strong>入门</strong>而非掌握或者精通，是想说通过短短的一学期课程，你几乎不可能学好或者掌握一门复杂的学科，最多也就是入门。</p>
+<p>至于之后的事情，是从入门到精通还是从入门到放弃，并不在我们目前的讨论范围。</p>
+<p>如果想入门数据科学或者在实际工作中运用一些数据科学的知识，你最起码需要从以下几个方面入手。其中，生物统计学这门课给你提供的更多是<strong>基础的统计学知识</strong>和<strong>如何正确地处理数据</strong>，而我们即将接触的一门编程语言，则完全可以帮助你做好以下很多方面的工作，比如方便快捷地获取数据，正确地处理数据和恰当的展示你的数据。</p>
+<h3 id="数学和统计知识">数学和统计知识</h3>
+<p>这门课程会从介绍最基本的统计学概念开始，随后会涉及到多种常见的统计学模型和假设检验。<br>
+你要做的，就是努力回忆残存的高中和大学数学与统计知识，争取理解各种常见的统计学名词和概念究竟是什么意思。</p>
+<h3 id="了解自己的研究领域">了解自己的研究领域</h3>
+<p>没有背景的数据分析是没有意义的，生物学尤其如此。一定不要做了一堆实验得到一堆数据然后分析一通发现不知道自己要说什么。充分了解自己的研究领域是必要的。</p>
+<h3 id="合理地获取数据">合理地获取数据</h3>
+<p>通过哪些途径和手段可以获取已有的公共数据是你需要考虑的问题。其实，很多时候我们都是在做重复的工作，大量的公共数据很有可能就足够回答你的问题。但是，你并不知道它在哪或者该怎么用。<br>
+学会如何合理地设计自己的实验也非常重要。实验盲目做太多，数据重复没意义而且关键是累；实验设计的不合理，数据再怎么分析也没意义。</p>
+<h3 id="正确地处理数据">正确地处理数据</h3>
+<p>你要的数据需要用什么实验来做，得到的数据又应该用什么方法来处理。你的数据背景是否干净，你的实验数据是否需要进行预处理，你用的统计模型是否合适。有时候万年 t-test 很难有太强的说服力。</p>
+<h3 id="恰当地展示数据">恰当地展示数据</h3>
+<p>如果你有了类似于 DNA 双螺旋的发现，你的实验结果再怎么展示问题都不大。但更多时候，你的实验结果并不能让所有人兴奋或者信服。这时，如何把自己的实验数据更好地展示给别人，从而让别人更容易理解进而愿意接受你的观点就显得非常重要了。</p>
+<p>同样的一套数据，有时候用不同的方法展示效果会有巨大的差别。保证数据真实性的情况下，让你的图看起来更加漂亮总没有坏处。毕竟，我们对任何东西的第一印象永远是颜值。</p>
+<hr>
+<h2 id="数据科学常用语言">数据科学常用语言</h2>
+<blockquote>
+<p>这一部分，我会罗列若干种非自然语言，每一个在数据科学中都有广泛的应用。这里所谓的语言，很多也是开发环境或者软件，你只需要有个印象。我的目的是想在后面说为什么从学 R 开始。更具体的内容可以参考这篇文章 <a href="http://kaopubear.top/2017/02/22/BecomingADataScientist/">《数据科学家的成长之路 [译]》</a></p>
+</blockquote>
+<h3 id="excel">Excel</h3>
+<p>没错，我把 Excel 作为一门语言放在这里了，你发现自己竟然掌握了一门数据科学常用语言，而且用了那么多年。</p>
+<p>你可能会按列求和、查找替换、求方差标准差，甚至还会分列。但是，你会用几个 Excel 常用函数呢，比如最基本的 VLOOKUP/SUMIF/COUNTIF；你能熟练的使用透视表么。我们就不提宏和 VBA 了，其实这也是把 Excel 算做一门语言的原因。</p>
+<h3 id="matlab">MATLAB</h3>
+<p>MATLAB 是一款鼎鼎大名的数据分析软件，如果你偶尔听说过各种类型的建模比赛，那么多数少不了 MATLAB 的身影。如果你日常的工作涉及到图像处理或者各种信号处理，学它是没错的。除此以外，如果你打开过 MATLAB 的软件，你会发现它类似于 Excel 可视化的交互可以让人很容易上手而无需面对看起来吓人的命令行。作为一款商业数据分析软件，它最大的特点就是贵。</p>
+<h3 id="python">Python</h3>
+<p>Python 是一门非常强大且用途极其广泛的编程语言，在数据科学界也受到很多人的喜爱。各种各样的库可以满足数据科学不同方面的各种需求：对于神经网络，有 Theano 和 Tensorflow；面向机器学习有 scikit-learn；面向数据分析有 NumPy 和 Pandas。而且，据绝大多数人反馈，他可能是最容易入门的语言之一，而且它是免费的开源语言。你不需要因为使用它而支付任何费用。</p>
+<p>如果你是一个井井有条的强迫症患者，Python 很适合你，它会强制使用者在代码中留出正确的空白和缩进。另外，如果你第一眼就知道 Python 该怎么读，说明你们有缘，不妨去多了解一下。</p>
+<h3 id="sql">SQL</h3>
+<p>谈到数据库的时候，基本上是逃不掉 SQL 的。不过，如果不做数据库或者网站开发，它对你基本也没太大用处。而且学术届或者说生物圈的人，其实很少在日常中使用 SQL 对数据进行增删改查和统计。而其他大多数和大数据相关的领域和行业，学会 SQL 是必须的。</p>
+<h3 id="r">R</h3>
+<p>记住，R 语言是统计学家为了统计学家进行统计学工作而开发的一种语言。这看起来和程序猿没什么关系，是不是瞬间亲切了很多。</p>
+<p>和 Python 一样，R 也是免费开源的。类似于 Python 中的库，R 里各种各样的包则可以满足你对于统计学的一切幻想。和 Python 相比，它还有一个很大的优点，就是你不会读错它的名字。</p>
+<hr>
+<h2 id="为什么要学习-r">为什么要学习 R</h2>
+<h3 id="r-的诞生">R 的诞生</h3>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-5924fb1bac4a0da5.jpg" alt="" loading="lazy"></figure>
+<p>1992 年，<strong>肉丝</strong>（Ross Ihaka）和<strong>萝卜特</strong>（Robert Gentleman）两个人在 S 语言（贝尔实验室开发的一种统计用编程语言）的基础上开始构思一种新的用于统计学分析的开源语言，直到 1995 年第一个版本正式发布（和各位年龄相仿）<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>。因为他们名字的第一个字母都是 R，所以这门语言就被叫做 R。这两个人都是统计学教授出身，再加上 R 语言的生父 S 语言，所以** R 语言在统计学方面有着纯正的血统**！</p>
+<p>如果你平时的工作会涉及到统计学，那么接触 R 语言实在是太正常不过了。</p>
+<p>另外，关于 R 语言的开发者，看名字（Ross 和 Robert）部分人以为是伉俪，其实就是两个大老爷们。如图所示</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-bf1b5dcdec73aa31.png" alt="" loading="lazy"></figure>
+<h3 id="r-的发展">R 的发展</h3>
+<p>作为开源软件的 R 能够迅速发展，很大程度上取决于其活跃的社区。学习 R，很大程度上也是学习各种 R 包的使用。截止目前（2017 年 2 月 25 日），CRAN(Comprehensive R Archive Network)<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup> 上已经有 10162 个可以获取的 R 扩展包，内容涉及各行各业，可以适用于各种复杂的统计。各地的 CRAN 镜像都是 R 网站的备份文件，内容完全一样，你可以选择离自己最近的去访问。</p>
+<h3 id="r-的特长">R 的特长</h3>
+<p>在 R 官网有这样几句介绍</p>
+<blockquote>
+<p>R provides a wide variety of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering, …) and graphical techniques, and is highly extensible.</p>
+</blockquote>
+<blockquote>
+<p>One of R’s strengths is the ease with which well-designed publication-quality plots can be produced, including mathematical symbols and formulae where needed.</p>
+</blockquote>
+<ul>
+<li>
+<p>因为 R 语言本身为统计而生，所以你能想到的所有统计相关的工作，R 都可以非常简洁的用几行命令（甚至 1 行命令）帮你完成。</p>
+</li>
+<li>
+<p>R 高度的可扩展性正是体现在它那 1 万多个包上，你想做的几乎所有事情都可以用现有的 R 包来辅助完成（当然，有些工作即便能完成但也不适合）。</p>
+</li>
+<li>
+<p>R 另一个杀手锏就是其强大的绘图功能，正如上面的英文介绍所言，R 可以画图，画各种各样的图，画各种各样高逼格的图，画各种各样高逼格可以直接出版的图。</p>
+</li>
+<li>
+<p>完善的统计学功能再加上强大的绘图功能，就是你学习的最大理由。</p>
+</li>
+<li>
+<p>对于生物相关的工作者而言，他们还有一个巨大的福利就是 Bioconductor<sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup>，这里面的一千多个 R 包都是用来解决生物（信息）问题的。</p>
+</li>
+</ul>
+<hr>
+<h2 id="r-应用示例">R 应用示例</h2>
+<blockquote>
+<p>在这一部分，仅仅是给展示几个用 R 可以轻松完成的相对有趣的工作。<br>
+安装对应包后应该可以直接运行</p>
+</blockquote>
+<h3 id="示例-1-ggplot2-画图">示例 1 ggplot2 画图</h3>
+<pre><code class="language-{r}">#第一次使用，需要安装相应的包
+#以后只需要调用即可
+#install.packages(&quot;ggplot2&quot;)
+library(&quot;ggplot2&quot;)
+theta &lt;- seq(0,24*pi, len=2000)
+radius &lt;- exp(cos(theta)) - 2*cos(4*theta) + sin(theta/12)^5
+dd &lt;- data.frame(x=radius*sin(theta), y=radius*cos(theta))
+ggplot(dd, aes(x, y))+geom_path()+xlab(&quot;&quot;)+ylab(&quot;&quot;)
+
+</code></pre>
+<p>效果展示</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-b8e73adce2650cfe.png" alt="" loading="lazy"></figure>
+<h3 id="示例-2-词频分析及词云">示例 2 词频分析及词云</h3>
+<pre><code class="language-{r}"># install.packages(&quot;wordcloud2&quot;)
+library(wordcloud2)
+wordcloud2(demoFreqC, size = 0.7, shape = 'diamond')
+</code></pre>
+<p>效果展示</p>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-c800b174e5b4af60.png" alt="" loading="lazy"></figure>
+<h3 id="示例-3-查看我国各地空气质量">示例 3 查看我国各地空气质量 <sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup></h3>
+<pre><code class="language-{r}">#install.packages(&quot;rvest&quot;)
+#install.packages(&quot;leafletCN&quot;)
+#install.packages(&quot;rgeos&quot;)
+Sys.setlocale(&quot;LC_CTYPE&quot;, &quot;eng&quot;)
+library(rvest)
+library(leafletCN)
+library(rgeos)
+doc = read_html(&quot;http://www.pm25s.com/cn/rank/&quot;)
+cities = doc %&gt;% html_nodes(&quot;.cityrank a&quot;) %&gt;%
+  html_text()
+cities = iconv(cities, &quot;UTF-8&quot;, &quot;UTF-8&quot;)
+AQI = doc %&gt;% html_nodes(&quot;span[class^='lv']&quot;) %&gt;%
+  html_text() %&gt;% .[c(F,F,T)] %&gt;% as.numeric
+dat = data.frame(city = cities, AQI = AQI)
+geojsonMap(dat, &quot;city&quot;,
+           popup =  paste0(dat$city,&quot;:&quot;,dat$AQI),
+           palette = &quot;Reds&quot;, legendTitle = &quot;AQI&quot;)
+</code></pre>
+<p>效果展示</p>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d248b9c4a6a9f824.png" alt="" loading="lazy"></figure>
+<hr>
+<h2 id="如何尝试入门-r-语言">如何尝试入门 R 语言</h2>
+<blockquote>
+<p>一开始这一部分的标题是 <strong>如何学好 R 语言</strong>，但是写这部分东西需要很强的功底，我知道自己根本谈不上学好。<br>
+后来又打算叫 <strong>如何入门 R 语言</strong>，但是每个人能付出的精力和能力又各不相同，而且因为平时我用 R 的地方不太多，只是最近担任助教才又开始继续学习。为了避免看了文章却没入门的朋友来吐槽，机智如我，干脆就叫<strong>如何尝试入门 R 语言</strong>。</p>
+</blockquote>
+<h3 id="学习路线">学习路线</h3>
+<p>看到这篇文章的一部分人很可能是我担任助教这门课（生物统计学）的同学，而另一部分人很可能与生物信息学相关。</p>
+<h4 id="为了通过考试">为了通过考试</h4>
+<p>如果你是前者而且仅仅是为了通过最后的考试，我建议你只需要在每节理论课后认真理解老师上课的内容，在每节讨论课后拿出两三天消化我们作业题中用到的 R 语言知识点就可以了。</p>
+<ul>
+<li>大致了解一下 R 语言是什么，能干什么用（看完这篇文章，这部分就可以了）。</li>
+<li>学习如何在 R 的官网下载 R，如何在自己的电脑安装 R 并成功运行。</li>
+<li>学习如何安装 Rstudio，并且了解其基本的用法（这步可省略）。</li>
+<li>学习如何查看 R 帮助文档（这步很重要）。</li>
+<li>学习如何将作业中的数据（作业中通常是 txt 或者 csv 格式）正确地导入 R。</li>
+<li>了解 R 语言中的常见变量。</li>
+<li>学习 R 语言一些最基本的命令，如安装包、调用包、读入写入文件、构造矩阵和基础绘图等。</li>
+<li>学习在 R 中如何使用（课上提到的）统计学相关函数，了解其参数的含义。</li>
+<li>能够独立完成最后几次作业和上一年的期末考试题。</li>
+</ul>
+<h4 id="生物信息学相关">生物信息学相关</h4>
+<ul>
+<li>了解 R 语言在生物信息学领域的应用。</li>
+<li>理解 R 语言中的各种变量。</li>
+<li>学习如何创建数据集、清洗数据和使用常见的统计分析方法。</li>
+<li>能够对数据进行高级操作，对数据进行转换。</li>
+<li>学习 R 语言的中高级绘图方法，能够使用 ggplot2。</li>
+<li>学习 R 中高级统计分析方法，如聚类、主成分分析和线性回归等。</li>
+<li>学习并熟练使用自己研究领域相关的 R 包（通过 bioconductor）。</li>
+</ul>
+<p>个人感觉，如果能完成上述几条学习路线，那么 R 语言就算入门了。</p>
+<p>入门的标准是什么呢？我想就是给你一份数据让你处理，你脑子里的第一反应是可不可用 R 做；如果给你一个任务，你能上手尝试用 R 去解决。</p>
+<h3 id="参考资料">参考资料</h3>
+<p>这里罗列部分在尝试入门的过程中，可能会有用的资料。</p>
+<p><strong>在线资料</strong></p>
+<p><a href="https://www.r-project.org/">R 语言官网</a><br>
+<a href="https://cran.r-project.org/manuals.html">R 语言官方文档</a><br>
+<a href="https://www.rstudio.com/">RStudio 官网</a><br>
+<a href="https://www.bioconductor.org/">Bioconductor 官网</a><br>
+<a href="https://awesome-r.com/">R 语言资料库</a><br>
+<a href="https://www.rdocumentation.org/">R 函数和包的在线帮助文档</a><br>
+<a href="http://cos.name/">统计之都社区</a></p>
+<p><strong>中文书籍</strong></p>
+<p>《R 语言编程艺术》<br>
+《R 语言实战》<br>
+《统计建模与 R 软件》<br>
+《ggplot2: 数据分析与图形艺术》</p>
+<hr>
+<figure data-type="image" tabindex="8"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>R markdown 官网网站 http://rmarkdown.rstudio.com <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>摩尔定律 https://en.wikipedia.org/wiki/Moore%27s_law <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>R language https://wiki2.org/en/R_(programming_language) <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn4" class="footnote-item"><p>CRAN 官网 https://cran.r-project.org/ <a href="#fnref4" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn5" class="footnote-item"><p>Bioconductor 官网 https://www.bioconductor.org/ <a href="#fnref5" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn6" class="footnote-item"><p>示例 3 来源：http://langdawei.com/2017/01/07/aqi.html <a href="#fnref6" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%87%A0%E7%82%B9%E8%AF%B4%E6%98%8E">几点说明：</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E9%87%8D%E8%A6%81%E6%80%A7">数据科学重要性</a></li>
+<li><a href="#%E7%94%9F%E7%89%A9%E7%BB%9F%E8%AE%A1%E5%AD%A6%E9%87%8D%E8%A6%81%E6%80%A7">生物统计学重要性</a></li>
+<li><a href="#%E6%80%8E%E6%A0%B7%E5%85%A5%E9%97%A8%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6">怎样入门数据科学</a>
+<ul>
+<li><a href="#%E6%95%B0%E5%AD%A6%E5%92%8C%E7%BB%9F%E8%AE%A1%E7%9F%A5%E8%AF%86">数学和统计知识</a></li>
+<li><a href="#%E4%BA%86%E8%A7%A3%E8%87%AA%E5%B7%B1%E7%9A%84%E7%A0%94%E7%A9%B6%E9%A2%86%E5%9F%9F">了解自己的研究领域</a></li>
+<li><a href="#%E5%90%88%E7%90%86%E5%9C%B0%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE">合理地获取数据</a></li>
+<li><a href="#%E6%AD%A3%E7%A1%AE%E5%9C%B0%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE">正确地处理数据</a></li>
+<li><a href="#%E6%81%B0%E5%BD%93%E5%9C%B0%E5%B1%95%E7%A4%BA%E6%95%B0%E6%8D%AE">恰当地展示数据</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%B8%B8%E7%94%A8%E8%AF%AD%E8%A8%80">数据科学常用语言</a>
+<ul>
+<li><a href="#excel">Excel</a></li>
+<li><a href="#matlab">MATLAB</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#sql">SQL</a></li>
+<li><a href="#r">R</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0-r">为什么要学习 R</a>
+<ul>
+<li><a href="#r-%E7%9A%84%E8%AF%9E%E7%94%9F">R 的诞生</a></li>
+<li><a href="#r-%E7%9A%84%E5%8F%91%E5%B1%95">R 的发展</a></li>
+<li><a href="#r-%E7%9A%84%E7%89%B9%E9%95%BF">R 的特长</a></li>
+</ul>
+</li>
+<li><a href="#r-%E5%BA%94%E7%94%A8%E7%A4%BA%E4%BE%8B">R 应用示例</a>
+<ul>
+<li><a href="#%E7%A4%BA%E4%BE%8B-1-ggplot2-%E7%94%BB%E5%9B%BE">示例 1 ggplot2 画图</a></li>
+<li><a href="#%E7%A4%BA%E4%BE%8B-2-%E8%AF%8D%E9%A2%91%E5%88%86%E6%9E%90%E5%8F%8A%E8%AF%8D%E4%BA%91">示例 2 词频分析及词云</a></li>
+<li><a href="#%E7%A4%BA%E4%BE%8B-3-%E6%9F%A5%E7%9C%8B%E6%88%91%E5%9B%BD%E5%90%84%E5%9C%B0%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F">示例 3 查看我国各地空气质量 [^7]</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%B0%9D%E8%AF%95%E5%85%A5%E9%97%A8-r-%E8%AF%AD%E8%A8%80">如何尝试入门 R 语言</a>
+<ul>
+<li><a href="#%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF">学习路线</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BA%86%E9%80%9A%E8%BF%87%E8%80%83%E8%AF%95">为了通过考试</a></li>
+<li><a href="#%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E7%9B%B8%E5%85%B3">生物信息学相关</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

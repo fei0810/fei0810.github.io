@@ -1,0 +1,420 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>数据库网站 API 知多少 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="数据库网站 API 知多少 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="API
+API 这个词在大多数人看来可能和 CNS 差不多，前者天天听说就是用不上，后者天天读就是发不了。
+不过，通过今天的一个简短介绍，今后 API 这个东西你就用上了，因为在文章最后我将会展示一个最最基础且高频的 API 使用示例。
+
+..." />
+  <meta property="og:title" content="数据库网站 API 知多少 - 思考问题的熊">
+  <meta property="og:description" content="API
+API 这个词在大多数人看来可能和 CNS 差不多，前者天天听说就是用不上，后者天天读就是发不了。
+不过，通过今天的一个简短介绍，今后 API 这个东西你就用上了，因为在文章最后我将会展示一个最最基础且高频的 API 使用示例。
+
+..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-10-26-apibasic/" />
+  <meta property="og:image" content="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150555.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="数据库网站 API 知多少 - 思考问题的熊">
+  <meta name="twitter:description" content="API
+API 这个词在大多数人看来可能和 CNS 差不多，前者天天听说就是用不上，后者天天读就是发不了。
+不过，通过今天的一个简短介绍，今后 API 这个东西你就用上了，因为在文章最后我将会展示一个最最基础且高频的 API 使用示例。
+
+...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-10-26-apibasic/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          数据库网站 API 知多少
+        </h1>
+        
+          <img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191214150555.png" alt="数据库网站 API 知多少" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-10-26 · 8 min read</div>
+          
+            <a href="https://kaopubear.top/tag/1BY38A9TE/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              编程
+            </a>
+          
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              数据科学
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="api">API</h2>
+<p>API 这个词在大多数人看来可能和 CNS 差不多，前者天天听说就是用不上，后者天天读就是发不了。</p>
+<p>不过，通过今天的一个简短介绍，今后 API 这个东西你就用上了，因为在文章最后我将会展示一个最最基础且高频的 API 使用示例。</p>
+<!-- more -->
+<p>所谓 API(Application Programming Interface) 就是应用程序接口。这个应用程序可以类比于手机和电脑，这个接口就类似于数据线，如果我们想用数据线把东西在两个设备之前传输，就需要两者可以接受彼此的传输协议。</p>
+<p>对一个应用程序来说，如果你想快速的和它交换数据，也需要采用应用程序可以识别的规则。对于一些成熟的应用程序和网站来说，通常都会提供自己的一套API供开发者友好的使用，一方面可以大大扩展应用程序的生态环境，另一方面也可以避免暴力的爬虫。</p>
+<p>我们通过下图的「印象笔记 API」为例，如果你使用过印象笔记（Evernote）的话，会发现大量第三方应用都可以支持绑定印象笔记账户进行各种创建笔记推送笔记等操作。这里不是印象笔记去适配第三方应用，而是它提供了一个完善的 API，可以供其他开发者来使用。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025131718.png" alt="" loading="lazy"></figure>
+<h3 id="rest-api">REST API</h3>
+<p>API 之后还有一个概念是 REST API。 REST(Representational State Transfer) 的中文翻译一般是「表现层状态转化」（这也太抽象了吧），这个架构是 Roy Thomas Fielding 在2000年的毕业论文里提到的，他同时还是HTTP协议（1.0版和1.1版）的主要设计者、Apache服务器软件的作者之一、Apache基金会的第一任主席。</p>
+<p>关于究竟什么是「<a href="https://en.wikipedia.org/wiki/Representational_state_transfe">表现层状态转化</a>」这里就跳过了，因为不跳过你也不会看（我也解释不清楚）。只需要了解，符合 REST 设计风格的 Web API 称为 RESTful API，有如下几个要点：</p>
+<ul>
+<li>资源地址：URI，比如：<code>http://example.com/resources</code>。</li>
+<li>传输的资源：Web服务接受与返回的互联网媒体类型，比如JSON，XML，YAML等。</li>
+<li>对资源的操作：Web服务在该资源上所支持的一系列请求方法，比如：POST，GET，PUT 或 DELETE。</li>
+</ul>
+<h2 id="常用数据库-api">常用数据库 API</h2>
+<h3 id="ncbi">NCBI</h3>
+<p>NCBI 是啥就不介绍了，如果太多的功能没用过 PubMed 应该怎么也用过。在 NCBI 的开发文档中，有一个部分专门是讲 API 的。</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/home/develop/api/">NCBI 提供的 API</a> 如下图所示，如果需要可以去看看。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025132036.png" alt="" loading="lazy"></figure>
+<h3 id="embl-ebi">EMBL-EBI</h3>
+<p>EMBL-EBI 来自于欧洲，里面有很多很多数据库都是我们日常会使用的，只是你可以还不知道它们和 EBI 有关系的，例如存放了大量基因组及相关数据的 Ensembl ，包括大量蛋白序列和功能信息的数据库 UniPort，当然还有还有不逊色与 pubmed 的文献数据库 Europe PMC。</p>
+<p>从个人的使用体验来说，一般能用EBI的时候我就尽量会绕过NCBI，因为整个一系列网站用起来都要更舒服些，文档查起来更顺手些，对一些有进阶需求的开发者会更友好些（如果你有二次开发的需求，经过对比不难理解我的感受）。</p>
+<p>目前 EBI 比较知名的几个数据库都有很不错的 RESTful API 支持。</p>
+<p>其中 Ensembl 支持 21 个 POST 和 98 个 GET 操作，可以在<a href="https://rest.ensembl.org/">官方说明</a>中查看；<a href="https://www.ebi.ac.uk/proteins/api/doc/index.html">Uniport 数据库</a> 和 <a href="http://europepmc.org/RestfulWebService">Europe PMC</a> 也有大量的操作支持。通过这些 API 你就可以接触到数据库中有的所有信息和  33 million 的文献。另外，EBI 还有一个 <a href="https://www.ebi.ac.uk/QuickGO/api/index.html">QuickGO</a> 的网站也支持 RESTful API 。</p>
+<p>他们的 API 完善到直接在 <a href="http://europepmc.org/abstract/MED/30976793">NAR 发了一篇文章</a>。</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025172836.png" alt="" loading="lazy"></figure>
+<p>可用的数据库和工具如下</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025173044.png" alt="" loading="lazy"></figure>
+<h2 id="使用-api">使用 API</h2>
+<p>这里以 Ensembl 的一个基础 API 为例对使用方法进行简单的演示。如果我们在 Ensembl 的网站上查看一个基因，会是如下页面。在左侧我况圈出来的是和这个基因相关的所有信息，其中99%的信息都可以通过 API 获取到。</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025174653.png" alt="" loading="lazy"></figure>
+<h3 id="查看单基因信息">查看单基因信息</h3>
+<p>这里以最基础的单基因信息查询作为示例。Ensembl 的 RUSTful API 支持使用各种语言实现，既可以在 Unix 操作系统中使用 curl 和 wget 命令，也可以使用 python java perl 和 R 语言来操作。</p>
+<p>如果要是用 wget 来查询一个基因的话，查询规则示例是<code>http://rest.ensembl.org/lookup/id/AT4G34410?expand=1'</code>。其实这就是一个简单的我们都能理解的「网址」，其中 id 后面是我们要查询的基因id，问号后面可以添加任意支持的参数。另外，还需要 header 信息<code>'Content-type:application/json'</code> 来指定获取的资源类型。</p>
+<p>运行命令如下：</p>
+<pre><code class="language-sh">wget -q --header='Content-type:application/json' 'http://rest.ensembl.org/lookup/id/AT4G34410?expand=1'  -O -
+</code></pre>
+<p>得到的内容会是一行 json 内容，这个信息大家看到都是崩溃的我就不直接放上来了。我们可以使用一些命令和操作稍微进行美化。</p>
+<pre><code class="language-sh">wget -q --header='Content-type:application/json' 'http://rest.ensembl.org/lookup/id/AT4G34410?expand=1'  -O - | jq '.' -
+</code></pre>
+<p>通过 jq 这个命令，可以让输出变成标准的 json 格式。输出截图如下：</p>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025181847.png" alt="" loading="lazy"></figure>
+<p>为了更方面的处理 json 内容和进行后一步的分析，我们可以移步到 R 中，看看如何使用。</p>
+<p>要在 R 使用 RUSTful API 并进行后续的 json 文件处理，首先需要加载两个包，<code>httr</code> 用来调取 GET 和 POST 等命令，<code>jsonlite</code> 用来处理 json 格式的文件。</p>
+<p>httr 会把 GET 的结果保存为一个 response 类型的对象，其中包括了 url，状态码以及header等各种各样的信息，jsonlite 可以帮助我们根据需求提取 json 里的内容并输出为 list 对象。</p>
+<p>简单的运行命令如下：</p>
+<pre><code class="language-R"># 加载 R 包
+library(httr)
+library(jsonlite)
+
+# 指定 server
+server &lt;- &quot;http://rest.ensembl.org&quot;
+# 指定查询内容,为了方便展示这里 expand=0
+ext &lt;- &quot;/lookup/id/ENSG00000157764?expand=0&quot;
+# 使用 httr 包的 GET 进行查询
+r &lt;- GET(paste(server, ext, sep = &quot;&quot;), content_type(&quot;application/json&quot;))
+# 这里的 r 是一个response类型的对象。
+# 将http错误转换为R错误方便debug
+stop_for_status(r)
+</code></pre>
+<p>到这里其实查询的步骤已经文章，对象 r 的结构如下：</p>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025184102.png" alt="" loading="lazy"></figure>
+<p>接下来就是首先把这个对象中的内容转换为json然后在转换为table即可，命令非常简单。</p>
+<pre><code class="language-r">list &lt;- fromJSON(toJSON(content(r)))
+tb &lt;- do.call(rbind,list)
+</code></pre>
+<p>得到的table内容如下</p>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20191025185136.png" alt="" loading="lazy"></figure>
+<p>如果需要稍微优雅一些，可以改写为一个函数，如果需要一次查找多个基因，可以使用 POST 方法。</p>
+<p>你可能会好奇使用 API 的优势在哪里。</p>
+<p>如果只是查找一个基因，API 的优势并不明显，如果只是偶尔查找几个基因，API 的优势也不明显。那什么使用就有优势了呢，类比于「印象笔记」以及和它相关的使用了「印象笔记 API」的第三方应用，不知道会不会给你一些启发。话不能说的太透，点到为止，更多的应用场景我们以后有机会再聊。</p>
+<h2 id="资料">资料</h2>
+<p><a href="https://www.ebi.ac.uk/training/online/course/ensembl-rest-api">Ebsembl 的在线 API 课程</a></p>
+<p><a href="https://github.com/Ensembl/ensembl-rest/wiki">Ensembl REST APIs 使用说明</a></p>
+<p><a href="https://cran.r-project.org/web/packages/rentrez/vignettes/rentrez_tutorial.html">rentrez</a></p>
+<p><a href="https://rpubs.com/plantagenet/481658">REST API in R</a></p>
+<p><a href="https://bioconductor.org/packages/3.10/bioc/html/biomaRt.html">BiomaRt</a></p>
+<hr>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#api">API</a>
+<ul>
+<li><a href="#rest-api">REST API</a></li>
+</ul>
+</li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E5%BA%93-api">常用数据库 API</a>
+<ul>
+<li><a href="#ncbi">NCBI</a></li>
+<li><a href="#embl-ebi">EMBL-EBI</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8-api">使用 API</a>
+<ul>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%8D%95%E5%9F%BA%E5%9B%A0%E4%BF%A1%E6%81%AF">查看单基因信息</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

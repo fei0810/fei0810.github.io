@@ -1,0 +1,452 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>任务协作管理工具 Trello 使用简介 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="任务协作管理工具 Trello 使用简介 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="为什么使用 Trello
+在和一些小伙伴聊天的过程中，发现大家都有一个类似的困惑。每天听到看到不少好东西都会产生「深究一下」的欲望，但是这些想法和素材要么被忘记了要么就因为时间精力没空继续展开学习。
+
+于是就萌生了建立一个「写作素材共享协作..." />
+  <meta property="og:title" content="任务协作管理工具 Trello 使用简介 - 思考问题的熊">
+  <meta property="og:description" content="为什么使用 Trello
+在和一些小伙伴聊天的过程中，发现大家都有一个类似的困惑。每天听到看到不少好东西都会产生「深究一下」的欲望，但是这些想法和素材要么被忘记了要么就因为时间精力没空继续展开学习。
+
+于是就萌生了建立一个「写作素材共享协作..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2018-12-14-usetrello/" />
+  <meta property="og:image" content="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200118114522.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="任务协作管理工具 Trello 使用简介 - 思考问题的熊">
+  <meta name="twitter:description" content="为什么使用 Trello
+在和一些小伙伴聊天的过程中，发现大家都有一个类似的困惑。每天听到看到不少好东西都会产生「深究一下」的欲望，但是这些想法和素材要么被忘记了要么就因为时间精力没空继续展开学习。
+
+于是就萌生了建立一个「写作素材共享协作...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2018-12-14-usetrello/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          任务协作管理工具 Trello 使用简介
+        </h1>
+        
+          <img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200118114522.png" alt="任务协作管理工具 Trello 使用简介" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2018-12-14 · 12 min read</div>
+          
+            <a href="https://kaopubear.top/tag/tg-VHYKad/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              工具
+            </a>
+          
+            <a href="https://kaopubear.top/tag/2mze5gMZQM/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              效率
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="为什么使用-trello">为什么使用 Trello</h2>
+<p>在和一些小伙伴聊天的过程中，发现大家都有一个类似的困惑。每天听到看到不少好东西都会产生「深究一下」的欲望，但是这些想法和素材要么被忘记了要么就因为时间精力没空继续展开学习。</p>
+<!-- more -->
+<p>于是就萌生了建立一个「写作素材共享协作小组」的想法，加入这个小组的成员每周共享自己发现或者感兴趣的素材，然后在所有素材中每周至少输出一篇相关的文章在小组内分享。类似于你买香蕉我买苹果，大家聚在一起分着吃。关于这个协作小组，目前正处于试运行阶段，在12月月底我们会正式面向大家开放，并在2019年1月开始正式运行起来。</p>
+<p>想法要落地就需要一个方便的工具。根据写作流程的特殊性，这个工具要可以很好地跟踪每个素材和主题的状态进度，同时成员之间要可以相互协作和沟通，为此我们引入了 <strong><a href="https://trello.com/home">Trello</a></strong> 。</p>
+<p>Trello 是一款著名的全平台项目管理、任务管理、多人协作工具。Trello 是一种简便、免费、灵活的可视化方式，可以管理你的项目并组织各种事务， 已经得到了世界各地数百万人的信任。它以外表简约的看板风格著称，功能强大，几乎无所不包，但复杂的功能都被很好的收起到恰当的地方，又很好的突出了重点。同时，因为被财大气粗的<a href="https://blog.trello.com/trello-atlassian">Atlassian</a> 收购了，所以主要的基础功能全部免费。</p>
+<p>看板 (Kanban) 一词起源于日语，看板管理则源自丰田的“及时生产”（JIT，just-in-time）系统，即利用看板在各工序、各车间、各工厂以及与协作厂之间传送作业命令，使各工序都按照看板所传递的信息执行，以此保证在必需时间制造必需数量的必需产品，最终达到及时化生产的目的。我们希望即将到来的协作是简洁且透明的，所有信息都能通过一个醒目简单的辐射源影响到所有成员，可以调动大家的积极性和主动性。</p>
+<p>简单来说，Trello 目前可以满足我们两大主要需求：<strong>可协作可跟踪，简单易用。</strong></p>
+<h2 id="如何快速上手-trello">如何快速上手 Trello</h2>
+<blockquote>
+<p>如果你有时间，建议仔细阅读一下 <a href="https://trello.com/guide">看板学习指南</a> ，大概需要时间 30 分钟；如果没时间只需要浏览本文即可。另外，如果你想查看具体的 Trello 看板使用案例，可以参考 <a href="https://trello.com/inspiration">Trello 灵感</a> 。</p>
+</blockquote>
+<h3 id="基本概念">基本概念</h3>
+<p>Trello 看板有且只有四个关键组件，如下图所示：</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-84e7b3df2c570dff.png" alt="" loading="lazy"></figure>
+<ol>
+<li>A <strong>看板</strong> - 看板代表一个项目或是一个信息跟踪的平台，可以用来组织任务并与他人进行合作。</li>
+<li>B <strong>列表</strong> - 列表可用于创建工作流，列表中的卡片可随着工作流从开始到完成在列表之间移动，可在看板中添加的列表的数量没有限制，并可随心所欲进行组织。它可以保持卡片 (C) 在进度的各个阶段有序组织。</li>
+<li>C <strong>卡片</strong> - <strong>看板的基本单位是卡片</strong>。一个卡片可以代表一个任务和观点。卡片可以是需要做的事情，如待写的文章，或者需要记住的事情。只需点击任何列表底部的“添加卡片”创建新卡片，然后对其进行命名即可。通过点击卡片可对其进行自定义，以便容纳各种实用信息。在列表之间拖放卡片可以显示进度。</li>
+<li><strong>菜单</strong> - 在 Trello 看板的右侧是菜单，也就是看板的任务控制中心。该菜单用于管理成员、控制设置、过滤卡片和启用 <a href="https://trello.com/power-ups?utm_source=guide&amp;utm_medium=board%20basics">Power-Ups</a> 支持的第三方功能。还可以在菜单的动态订阅源中查看看板上发生的所有动态。 不妨用一些时间查阅菜单提供的所有功能。</li>
+</ol>
+<h3 id="创建看板列表和卡片">创建看板列表和卡片</h3>
+<p>针对即将成立的「写作资源共享协作小组」，我们会把所有参加的朋友添加到同一个团队中，只要加入这个团队就可以查看编辑和修改团队内的所有看板内容，同时你也可以选择加入「写作学习资源共享」这个具体的看板。因此，目前暂时不需要自行创建看板和列表（当然，创建的方法也非常简单），日常使用做多的就是创建卡片。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-e12c729851479c8e.jpg" alt="" loading="lazy"></figure>
+<ol>
+<li>
+<p>单击第一个列表中的“<a href="http://help.trello.com/article/729-adding-cards">添加卡片</a>”可以需要完成的每个任务添加卡片。保持卡片标题简洁明了有助于成员更轻松的浏览</p>
+</li>
+<li>
+<p>在卡片内部可以添加很多信息，从而让每个人清楚了解需要完成哪些工作，例如：</p>
+<ul>
+<li>到期时间</li>
+<li>描述</li>
+<li>清单</li>
+<li>附件</li>
+<li>评论</li>
+</ul>
+</li>
+</ol>
+<h3 id="卡片操作详情">卡片操作详情</h3>
+<p>Trello 可能在表面上看起来简单，但其具有无穷的内在功能。每一张卡片在点击打开后都会进入「卡片背面」，展示具体的内容信息。</p>
+<ol>
+<li><strong>卡片描述</strong>  在这里你可以添加更多有关卡片、网站链接或分步骤指示方面的具体信息。要给卡片添加详细信息，可单击卡片背面顶部的“编辑”(Edit the description)。甚至还可以通过<a href="http://help.trello.com/article/821-using-markdown-in-trello">Markdown</a>设置你的文字格式。</li>
+<li><strong>评论与动态</strong> — 在与团队成员沟通和协作时可为卡片添加评论，如提供反馈信息或更新信息。你还可以使用 @ 在评论中提及看板或团队的成员，他们会在 Trello 中收到相应通知。活动则是卡片上所有评论和操作的时间轴。</li>
+<li><strong>添加</strong>部分为卡片背面提供了更多工具。
+<ul>
+<li><strong>添加成员</strong>可以向卡片添加成员以分配任务，轻松查看其他人正在做什么、还需要做哪些工作。</li>
+<li>为需要子任务或具有多个步骤的卡片<strong>添加清单</strong>，以确保不会出现疏漏。你甚至可以从看板上的其他卡片<a href="http://help.trello.com/article/737-adding-checklists-to-cards">复制清单</a>，以及通过 @ 提及人员的方式将其分配到清单项目。</li>
+<li>为具有截止日期的卡片添加<strong>到期时间</strong>，<strong>卡片成员将在到期前 24 小时收到通知</strong>。任务完成后，到期时间可以标记为已完成。</li>
+<li>可从计算机及 Dropbox、Google Drive、Box 和 OneDrive 等众多云存储服务中<strong>添加附件</strong>。（但是因为目前的网络问题，就暂时不介绍和使用了）</li>
+</ul>
+</li>
+</ol>
+<h2 id="使用-trellos-做些什么">使用 Trellos 做些什么</h2>
+<h3 id="跟踪">跟踪</h3>
+<p>最常见的 Trello 使用方式是在项目或流程中跟踪任务。项目一般都有起止日期，如规划一项活动或构建一项新功能，而流程一般具有持续性，如日程业务运营或管理编辑日历。我们的写作进度流程也是一种任务跟踪。在这些看板上，卡片代表需要完成的任务，列表通常代表一系列步骤。列表的结构可以非常简单，例如“收集箱”、“进行中”和“已完成”，也可以根据流程需要非常详细，卡片在从开始到完成期间从左向右移动。</p>
+<p><strong>实用功能：</strong></p>
+<ul>
+<li><strong>拖放</strong> - 在各个列表之间拖放卡片以显示进度，在一个列表中上下移动卡片以进行优先级排序。</li>
+<li><strong>到期时间</strong> - 向卡片添加到期时间，以便随时掌握期限，并且在完成时标记到期时间为已完成。</li>
+<li><strong>添加成员</strong> - 通过向卡片添加成员来分配任务，从而让每个人轻松查看其他人正在做什么。</li>
+<li><strong>清单</strong> - 将任务分解到其关键组件中，确保不会出现任何遗漏。</li>
+</ul>
+<h3 id="存储">存储</h3>
+<p>Trellos 本身不具有很强的云盘属性，但是也可以进行轻量存储。</p>
+<p><strong>实用功能</strong></p>
+<ul>
+<li><strong>附件</strong> - 从你的计算机或常见的云服务（如 Google Drive、Dropbox 和 OneDrive）通过 Power-Ups 附加文件，以便组织文档、文件和资产。</li>
+<li><strong>Markdown</strong> - 通过 Markdown 格式工具创建更明晰、更有序的卡片说明。你可通过 Markdown 为你的文本添加标题、大纲式列表、斜体、黑体、链接等等。</li>
+<li><strong>标签</strong> - 使用标签标记卡片，然后使用过滤功能快速显示具有相关标记的所有卡片。如果不希望标签在普通卡片正面出现但仍然希望可以进行过滤，可使用灰色标签。</li>
+<li><strong>搜索</strong> - 使用 Trello 强大的搜索功能找出要搜寻的任何卡片。随心所欲创建卡片，数量不受限制，Trello 始终能够便捷地找出你的卡片。</li>
+</ul>
+<h3 id="协作">协作</h3>
+<p>Trello 的标志功能之一是与他人协调合作非常容易。可以在一处位置查看所需的一切内容并访问所有的信息。</p>
+<p>协作往往能引导人们围绕正在完成的工作展开精彩的讨论，催生建设性的反馈，以及对一项圆满完成的工作任务给予（理所应当的）祝贺。以下是一些如何让对话进行下去的快速提示：</p>
+<ul>
+<li><strong>对卡片发表评论</strong>，为你的团队提供状态更新。这样他们就能知道哪些工作正在进行中，此后就不必再打扰你。</li>
+<li>在评论中 @ 提及他们可向他们发送通知，引导他们直接进入手头的任务。这是一种很棒的请求输入、共享信息或将任务传递给工作流中的下一责任人的方法。</li>
+<li>分别使用 @card 和 @board 提及卡片或整个看板上的所有人。小心使用你新发现的 @提及权力哦！</li>
+<li>感觉...情绪翻涌？在表情符号比言词更能表达情感的时候，不妨单击评论框底部的 😄，发出你的“声音”来。</li>
+</ul>
+<h2 id="几个使用-tips">几个使用 Tips</h2>
+<h3 id="快捷键">快捷键</h3>
+<p>Trello 提供大量省时省力的键盘快捷键，在 Trello 中，单击键盘上的问号键可查看全部快键键，或检查看这个<a href="http://blog.trello.com/trello-keyboard-shortcuts-infographic?utm_source=guide&amp;utm_medium=pro%20tips">便捷列表</a>。</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-06f30eddff1146ea.png" alt="" loading="lazy"></figure>
+<p>其中一些最受欢迎的：</p>
+<ul>
+<li>想要快速查看你在看板上的所有卡片？请使用快捷键 <strong>Q</strong>。</li>
+<li>将鼠标悬停在卡片上并按<strong>空格键</strong>即可将自己添加到卡片中。使用 <strong>M</strong> 键将其他人添加到卡片中，这样所有任务都不会属于你。</li>
+<li>从不错过重要日期，使用 <strong>D</strong> 键添加到期时间。</li>
+<li>使用 <strong>Shift-Enter</strong> 将卡片保存起来，然后进入卡片背面。这简直就是买一送一的特别优惠。</li>
+<li>使用 <strong>L</strong> 键打开标签菜单，然后使用 <strong>F</strong> 键过滤这些标签以显示对你最重要的内容。</li>
+</ul>
+<h3 id="搜索">搜索</h3>
+<p>需要快速查找时，可在左上角的搜索栏中输入，Trello 将显示与你的查询相关的卡片和看板。而且支持很多快捷搜索方式，例如，使用 <strong>@me</strong>会返回你的所有卡片，<strong>due:week</strong> 会返回未来七天内到期的所有卡片，<strong>label:red</strong> 则会返回应用了红色标签的所有卡片，<a href="http://help.trello.com/article/808-searching-for-cards-all-boards">以及更多更多功能</a>。</p>
+<p>多个运算符可以串联使用，如 <strong>@me due:overdue -list:done</strong> 可以显示你的所有过期且并未处于名为“Done（完成）”的列表中的卡片。关于只一点可以查看<a href="https://trello.com/b/QtjSVKOf/the-ultimate-board-of-trello-tips-tricks">“终极提示和技巧”Trello 看板</a>。</p>
+<h3 id="快速添加成员至某卡片">快速添加成员至某卡片</h3>
+<p>通过将其头像从菜单的“成员”区域<strong>拖拽</strong>至 Trello 卡片添加成员至卡片，这样所有人在打开看板时就知道可以做些什么。</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-16a37dd9c854be72.png" alt="" loading="lazy"></figure>
+<p>也可以在某一个具体的卡片中添加成员，如下图所示</p>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-0ac3cd83b237cb31.png" alt="" loading="lazy"></figure>
+<h3 id="邮件订阅提醒">邮件订阅提醒</h3>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d7312ef84efc03d0.png" alt="" loading="lazy"></figure>
+<p>可以在个人的设置页面设置以什么频率接受提醒，也可以通过邮件进行回复。通过邮件回复时收件人是你在 Trello 中的私有邮箱。</p>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-3bf76a47b5a08de8.png" alt="" loading="lazy"></figure>
+<h3 id="删除卡片">删除卡片</h3>
+<p>如果误建了一个卡片，你发现自己可能找不到删除选项，这个时候你要把这个任务首先进行归档才能删除。</p>
+<h3 id="移动端和插件">移动端和插件</h3>
+<p>Trello 有移动端APP 可以下载，使用体验还是不错的。如果你不想经常打开Trello 的网页添加任务，不妨试一试官方的<a href="https://chrome.google.com/webstore/detail/trello/dmdidbedhnbabookbkpkgomahnocimke">Chrome 插件</a> 。添加卡片和打开都要方便不少。</p>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/177622-d095afdf703880ea.png" alt="" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-trello">为什么使用 Trello</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-trello">如何快速上手 Trello</a>
+<ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">基本概念</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E7%9C%8B%E6%9D%BF%E5%88%97%E8%A1%A8%E5%92%8C%E5%8D%A1%E7%89%87">创建看板列表和卡片</a></li>
+<li><a href="#%E5%8D%A1%E7%89%87%E6%93%8D%E4%BD%9C%E8%AF%A6%E6%83%85">卡片操作详情</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%BF%E7%94%A8-trellos-%E5%81%9A%E4%BA%9B%E4%BB%80%E4%B9%88">使用 Trellos 做些什么</a>
+<ul>
+<li><a href="#%E8%B7%9F%E8%B8%AA">跟踪</a></li>
+<li><a href="#%E5%AD%98%E5%82%A8">存储</a></li>
+<li><a href="#%E5%8D%8F%E4%BD%9C">协作</a></li>
+</ul>
+</li>
+<li><a href="#%E5%87%A0%E4%B8%AA%E4%BD%BF%E7%94%A8-tips">几个使用 Tips</a>
+<ul>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a></li>
+<li><a href="#%E6%90%9C%E7%B4%A2">搜索</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E6%B7%BB%E5%8A%A0%E6%88%90%E5%91%98%E8%87%B3%E6%9F%90%E5%8D%A1%E7%89%87">快速添加成员至某卡片</a></li>
+<li><a href="#%E9%82%AE%E4%BB%B6%E8%AE%A2%E9%98%85%E6%8F%90%E9%86%92">邮件订阅提醒</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E5%8D%A1%E7%89%87">删除卡片</a></li>
+<li><a href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%92%8C%E6%8F%92%E4%BB%B6">移动端和插件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

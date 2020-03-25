@@ -1,0 +1,399 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>每周文献-190322-DNA甲基化分析工具及silencers鉴定 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="每周文献-190322-DNA甲基化分析工具及silencers鉴定 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data
+
+**DOI(url)😗*https://doi.org/10.1186/s13059-019-1664-9..." />
+  <meta property="og:title" content="每周文献-190322-DNA甲基化分析工具及silencers鉴定 - 思考问题的熊">
+  <meta property="og:description" content="文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data
+
+**DOI(url)😗*https://doi.org/10.1186/s13059-019-1664-9..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-03-22-weeklypaper/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="每周文献-190322-DNA甲基化分析工具及silencers鉴定 - 思考问题的熊">
+  <meta name="twitter:description" content="文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data
+
+**DOI(url)😗*https://doi.org/10.1186/s13059-019-1664-9...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-03-22-weeklypaper/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          每周文献-190322-DNA甲基化分析工具及silencers鉴定
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190606091343.png" alt="每周文献-190322-DNA甲基化分析工具及silencers鉴定" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-03-22 · 5 min read</div>
+          
+            <a href="https://kaopubear.top/tag/EqrCpMmApu/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              文献
+            </a>
+          
+            <a href="https://kaopubear.top/tag/MoSquIwnNqz/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              表观遗传
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="文献题目rnbeads-20-comprehensive-analysis-of-dna-methylation-data">文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data</h2>
+<!--more-->
+<p>**DOI(url)😗*https://doi.org/10.1186/s13059-019-1664-9</p>
+<p>**发表日期：**14 March 2019</p>
+<h3 id="关键点">关键点</h3>
+<p>DNA 甲基化全功能分析 R 包 RnBeads 2.0 更新。</p>
+<h3 id="参考意义">参考意义</h3>
+<p>DNA 甲基化是一种被广泛研究的表观遗传标记，其在发育和疾病中具有重要作用。最近甲基化分析工具 RnBeads 在 bioconductor 上更新了其 2.0 版本。它可以分析目前诸多种类的甲基化数据，并且可以完成目前甲基化分析相关所有主流内容。<br>
+本次升级主要是在输入数据、分析方法、交互界面以及计算效率上进行了提升。软件官方地址为 https://rnbeads.org/index.html 可以进行进一步了解。</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606091401.png" alt="" loading="lazy"></figure>
+<p>在文章中给出了三个应用示例。分别是使用 Infinium 450k 芯片分析大量的血液样本 DNA 甲基化数据；利用 WGBS 数据在全基因组范围内分析造血细胞的 DNA 甲基化情况；利用 RRBS 数据分析在肿瘤中对 DNA 甲基化异质性进行定量分析。我没有测试是不是文章中所有的图都是 R 包直接出图，如果是的话感觉整体分析起来还是比较方便。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606091413.png" alt="" loading="lazy"></figure>
+<h3 id="相关内容">相关内容</h3>
+<p>目前常见的 DN 甲基化测序手段</p>
+<ul>
+<li>Whole-genome bisulfite sequencing (WGBS)
+<ul>
+<li>genome-wide coverage</li>
+<li>single-basepair resolution</li>
+<li>poor sensitivity for detecting small differences</li>
+</ul>
+</li>
+<li>Reduced representation bisulfite sequencing (RRBS)
+<ul>
+<li>cost-effective</li>
+<li>studying DNA methylation heterogeneity</li>
+</ul>
+</li>
+<li>the microarray-based Infinium DNA methylation assays
+<ul>
+<li>MethylationEPIC BeadChip (EPIC)</li>
+<li>HumanMethylation450 BeadChip (450k)</li>
+</ul>
+</li>
+</ul>
+<h2 id="文献题目compressed-filesystem-for-managing-large-genome-collections">文献题目：Compressed Filesystem for Managing Large Genome Collections</h2>
+<p>**DOI(url)😗*https://doi.org/10.1093/bioinformatics/btz192</p>
+<p>**发表日期：**18 March 2019</p>
+<h3 id="关键点-2">关键点</h3>
+<p>如何管理众多的基因组文件</p>
+<h3 id="参考意义-2">参考意义</h3>
+<p>基因组数据的增长速度在一定程度上超过了我们的存储容量，另外还有传输，处理和分析的问题。每隔几天就会看到又有新的基因组被发布，这其中不乏类似于小麦这种的超大基因组。可能你服务器上有大大小小的很多基因组，如何把他们进行合理的压缩和管理就成了一个问题。该工具基于物种间的相似性对基因组数据进行压缩，感觉自己后面可能会用的到，先放在这里有需要的时候方便再查看。</p>
+<h3 id="相关内容-2">相关内容</h3>
+<p>说到基因组管理工具，还有一个 <a href="https://github.com/simonvh/genomepy">genomepy</a> 是用来从三大数据库进行下载的。</p>
+<h2 id="文献题目identification-of-human-silencers-by-correlating-cross-tissue-epigenetic-profiles-and-gene-expression">文献题目：Identification of human silencers by correlating cross-tissue epigenetic profiles and gene expression.</h2>
+<p>**DOI(url)😗*https://doi.org/10.1101/gr.247007.118</p>
+<p>**发表日期：**18 Mar 2019</p>
+<h3 id="关键点-3">关键点</h3>
+<p>鉴定 enhancers 的多但是鉴定 silencers 的少</p>
+<h3 id="参考意义-3">参考意义</h3>
+<p>作者利用具有组织特异性的 H3K27me3-DNase I 超敏感位点（DHS）peaks 与 25 种不同细胞系中邻近基因的表达负相关，同时利用 Hi-C loops 或者 eQTL 进行进一步的鉴定。另外，这些位置也富集了 CTCF, MECOM, SMAD4 和 SNAI3 等 transcriptional repressors。除此之外，作者发现 snp 在预测 silencers 时和疾病表型显著相关。</p>
+<h3 id="相关内容-3">相关内容</h3>
+<p>表观修饰作用</p>
+<blockquote>
+<p>The methylation of H3K9, H3K27, or H4K20 is commonly associated with transcriptional down-regulation (Mozzetta et al.2015). In particular, H3K9me3 features heterochromatin formation of chromosomal regions with tandem repeat structures (Kim and Kim 2012). H3K27me3, which is catalyzed and maintained by Polycomb repressive complexes (PRCs), directly inhibits gene transcription by impeding or poising the occupancy of RNA polymerase II (van Kruijsbergen et al. 2015). Transcriptional dynamics during development and disease initiation have been attributed to H3K27me3 (Simon and Kingston 2009; Sexton et al.2012; Jiang et al. 2013; Pinello et al. 2014; Laprell et al. 2017). Notwithstanding the fact that H3K27me3 is well-known as modification of silencers, the regulatory contribution of H3K27me3 has been asserted to be context-dependent (Young et al. 2011; Lv et al.2016). H3K27me3 and H3K4me1, simultaneously recruited by Polycomb repressive complex 2 (PRC2), collaborate to precisely fine-tune the expression of targeting genes in pluripotent cells(Mikkelsen et al. 2007; Schwartz and Pirrotta 2008).</p>
+</blockquote>
+<p>相关文献</p>
+<p><a href="https://www.nature.com/articles/ng.2746">Epigenetic memory at embryonic enhancers identified in DNA methylation maps from adult mouse tissues</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3864351/">Genome-wide analysis of histone marks identifying an epigenetic signature of promoters and enhancers underlying cardiac hypertrophy</a></p>
+<hr>
+<figure data-type="image" tabindex="3"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名 - 非商业性使用 - 禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%96%87%E7%8C%AE%E9%A2%98%E7%9B%AErnbeads-20-comprehensive-analysis-of-dna-methylation-data">文献题目：RnBeads 2.0: comprehensive analysis of DNA methylation data</a>
+<ul>
+<li><a href="#%E5%85%B3%E9%94%AE%E7%82%B9">关键点</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%84%8F%E4%B9%89">参考意义</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9">相关内容</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E7%8C%AE%E9%A2%98%E7%9B%AEcompressed-filesystem-for-managing-large-genome-collections">文献题目：Compressed Filesystem for Managing Large Genome Collections</a>
+<ul>
+<li><a href="#%E5%85%B3%E9%94%AE%E7%82%B9-2">关键点</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%84%8F%E4%B9%89-2">参考意义</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9-2">相关内容</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E7%8C%AE%E9%A2%98%E7%9B%AEidentification-of-human-silencers-by-correlating-cross-tissue-epigenetic-profiles-and-gene-expression">文献题目：Identification of human silencers by correlating cross-tissue epigenetic profiles and gene expression.</a>
+<ul>
+<li><a href="#%E5%85%B3%E9%94%AE%E7%82%B9-3">关键点</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%84%8F%E4%B9%89-3">参考意义</a></li>
+<li><a href="#%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9-3">相关内容</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

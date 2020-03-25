@@ -1,0 +1,436 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>关于 Markdown 你应该知道的 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于 Markdown 你应该知道的 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="写在前面（写作原因）
+Markdown 近两年太火了，以至于 MAC 端 Markdown 编辑器基本上一个月就能新出一款。很多人对 Markdown 依旧没有多少了解，这主要体现在两方面：
+
+一方面有些人觉得 Markdown 是万能的：..." />
+  <meta property="og:title" content="关于 Markdown 你应该知道的 - 思考问题的熊">
+  <meta property="og:description" content="写在前面（写作原因）
+Markdown 近两年太火了，以至于 MAC 端 Markdown 编辑器基本上一个月就能新出一款。很多人对 Markdown 依旧没有多少了解，这主要体现在两方面：
+
+一方面有些人觉得 Markdown 是万能的：..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2017-02-04-trymarkdown/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="关于 Markdown 你应该知道的 - 思考问题的熊">
+  <meta name="twitter:description" content="写在前面（写作原因）
+Markdown 近两年太火了，以至于 MAC 端 Markdown 编辑器基本上一个月就能新出一款。很多人对 Markdown 依旧没有多少了解，这主要体现在两方面：
+
+一方面有些人觉得 Markdown 是万能的：...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2017-02-04-trymarkdown/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          关于 Markdown 你应该知道的
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/177622-06acfb6d318c0f64.png" alt="关于 Markdown 你应该知道的" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2017-02-04 · 9 min read</div>
+          
+            <a href="https://kaopubear.top/tag/JFowL4_oEpM/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              markdown
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="写在前面写作原因">写在前面（写作原因）</h2>
+<p>Markdown 近两年太火了，以至于 MAC 端 Markdown 编辑器基本上一个月就能新出一款。很多人对 Markdown 依旧没有多少了解，这主要体现在两方面：</p>
+<!-- more -->
+<p>一方面有些人觉得 Markdown 是万能的：一看别人推荐什么工具自己就跟着用，一上来就学各种所谓语法；或者自己还没体会一个东西的精髓就到处给别人推荐，别人不用他还生气。</p>
+<p>另一方面有些人觉得 Markdown 是万万不能的：一部分选择固守自己的舒适区域（比如 word），不愿意接触，认为学习难度大；另一部分用着更高级的 LaTeX 等其他工具觉得 Markdown 太 low，用着丢人。</p>
+<p>为了让上述两部分人不本末倒置，能够先脱离那些基本的语法，从一个不同的视角去了解 Markdown，所以简单写一些东西。</p>
+<h2 id="markdown-诞生历史">Markdown 诞生历史：</h2>
+<p>Markdown 由 John Gruber 在 2004 年创建，至今已经是 12 年的时间。</p>
+<p>关于 Markdown 最初的定义如下：</p>
+<blockquote>
+<p>a plain text formatting syntax（注意：是纯文本的语法）<br>
+a software tool, written in Perl, that converts the plain text formatting to HTML</p>
+</blockquote>
+<p>最初的设计理念：</p>
+<blockquote>
+<p>The overriding design goal for Markdown's formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it's been marked up with tags or formatting instructions.（简单说就是易读）</p>
+</blockquote>
+<h2 id="mrakdown-有哪些优点">Mrakdown 有哪些优点</h2>
+<p>通过 Markdown 的起源和最初的设计理念可知，Markdown 最大的一个特点是易读，而另一个特点是易写。</p>
+<h3 id="所谓易读">所谓易读</h3>
+<p>绝对不要理解为<strong>排版之后呈现出来的结果</strong>易读，你认真想一下格式化都完成了，打两个符号和点几下鼠标得到的最终效果是一样的，怎么可能是指格式化后的结果易读呢？</p>
+<p>这里的<strong>易读</strong>是说你读<strong>最原始的 Markdown 文件</strong>（也就是以 .md 结尾的文件）非常容易，不会像读 HTML 网页那样满屏幕都是*&lt;尖括号&gt;<em>和</em>各种缩进*（最近正在写网站的我对这一点有很深的体会）。易读的特点，对于要看各种文档的程序员是非常友善的。</p>
+<h3 id="所谓易写">所谓易写</h3>
+<p>一方面你可以和类似于 office 之类的软件去对比，写作的过程中你（基本上）可以脱离对鼠标的依赖。这样就带来了两个好处：你不需要先辛苦码字，然后再辛苦地用鼠标点来点去格式化你的文本；你可以集中精力在文字上，只要你事先有了一个清晰的框架，写作和格式化文本可以一气呵成，如果使用即时呈现的编辑器，那么所见即所得</p>
+<p>另一方面你可以和类似于 HTML 之类的东西去对比，你不需要记住太多和写作无关的 tag，也不需要让那一堆尖括号和各种缩进扰乱了自己的写作思路。</p>
+<p>除此之外，Markdown 的学习曲线非常平缓，找个介绍语法的网站读半个小时，找个在线编辑器练习一个小时，你就可以比较顺利地运用这种轻量级标记语言。</p>
+<h3 id="markdown-和-html-的区别">Markdown 和 HTML 的区别</h3>
+<p>在这里需要强调一下 Markdown 和 HTML 的区别。</p>
+<p>如果你了解一点前端的知识就应该知道 HTML 的全称是<strong>超文本标记语言</strong>（英语：HyperText Markup Language，简称：HTML），所以 HTML 也是一种文本标记语言。Markdown 的定义是“轻量级”标记语言，而 HTML 是“超”，所以 Markdown 是基本不可能取代 HTML 作用的，你倒是可以把它看成 HTML 的一个子集。</p>
+<p>就工作原理而言，你所写的 Markdown 格式文本，也是最终转换为 HTML 进而在网页上呈现。</p>
+<h2 id="mrakdown-有哪些缺点">Mrakdown 有哪些缺点</h2>
+<p>从辩证的角度看问题，任何一个事物的优点在另一个维度都可能变成它的缺点。</p>
+<p>在这里同样如此，因为 Markdown 诞生之初就被定义为<strong>面向纯文本</strong>的语言，所以不管如何进化，<strong>插入图片和表格</strong>永远都是它的硬伤。优化图片和表格的插入体验也是后来各种编辑器突出的卖点；因为 Markdown 诞生之初就被定义为<strong>轻量级的语言</strong>，你要知道，即便是对文本而言，也有很多它应付不了的事情。</p>
+<ul>
+<li>让某一行居中？做不到</li>
+<li>让某一行右对齐？做不到</li>
+<li>想更换字体？做不到</li>
+<li>想改变颜色？做不到</li>
+<li>想改变布局？做不到</li>
+</ul>
+<p>其实不止这些，Markdown 根本就不支持其它和布局格式相关的内容。原因很简单，如上文所述，Markdown 是 HTML 的子集，而和<strong>布局格式</strong>相关的内容是 CSS 的本职工作。</p>
+<h3 id="和-latex-的区别">和 LaTeX 的区别</h3>
+<p>如果你不知道什么是 LaTeX 的话自行百度吧。LaTeX 从它生下来，能定位以及量级和 Markdown 就都不是一个水平。</p>
+<p>LaTeX 是一个强大的排版工具，注意，是<strong>排版</strong>工具。绝大多数高质量的书籍排版或者论文版本，一些逼格很高的简历排版都会使用 LaTeX。另外，LaTeX 最强大的功能在于其对各种复杂数学公式的支持和呈现。而 Markdown 根本就不能称之为一个排版工具，真正意义上的排版功能它一个没有。虽然它可以定义一个题目（<em>语法是若干个#）</em>，但是这个题目放在你页面的左边右边还是中间它不关心。不过，现在已经有很多编辑器支持在 Markdown 中插入 LaTeX 语法了。</p>
+<p>所以用一句老话总结：革命只有分工不同，没有高低贵贱之分。</p>
+<h3 id="没有完全统一的标准">没有完全统一的标准</h3>
+<p>这个缺点你可能感受不到，但其实是最大的问题。</p>
+<p>比较有趣的是，早些时候多个使用 Markdown 的互联网巨头联合起来想制订一个统一的标准叫做** Standard Markdown**。结果这个事儿被创始人知道了，老爷子不开心，说你不能用 standard 这么官方的名字，因为我就没想让它统一。后来这个计划更名为** Common Markdown**，对了，这个计划牵头的人就是大名鼎的 Stack Overflow 创始人。</p>
+<h2 id="为什么近些年如此火爆">为什么近些年如此火爆</h2>
+<p>首先是因为 Markdown 本身易读易写的特点。</p>
+<p>另一方面，一个东西发明出来，如果没人推广那自然就会默默无闻直至灭亡。那么近些年都是谁在推广使用并且支持它呢？<strong>Reddit, Github, Stack Overflow, BioStar</strong> 等等，**Rstudio **甚至有一套专门的 R Markdown 供使用 R 语言的人们来运用。如果你了解上面哪怕一个东西目前的火爆程度，都应该可以理解为什么他们使用的 Markdown 会被更多人了解和接受。</p>
+<p>此外，有人说 21 世纪是生命科学的世纪，但目前看起来更像是程序员的世界，程序员在各种社区大量使用 Markdown，再加上近几年互联网的发展，火爆也就不足为奇了。</p>
+<h2 id="适用于那些群体">适用于那些群体</h2>
+<p>基于 Markdown 的优缺点以及火爆的原因，我们可以得出如下的结论，Markdown 这套东西比较适合：</p>
+<ul>
+<li>经常阅读书写各种技术文档的技术人员</li>
+<li>混迹于各种技术论坛和社区的程序猿</li>
+<li>经常码字并且追求效率和流畅度的文字工作者</li>
+<li>只求排版简单明了不求过分花哨的网站编辑</li>
+<li>喜欢分享，爱好写作的博客或者专栏作者</li>
+<li>喜欢整理各种读书笔记学习笔记的学生党</li>
+</ul>
+<p>如果你是上述中的某一类人，笔者推荐你对 Markdown 进行一些基础的学习和应用。你的生活应该会有所改变。</p>
+<p>如果不是，那么我想说：<strong>任何一个工具即使它再简单再火爆，只要不能提高你的效率或者改善你的体验都请你无视它。</strong></p>
+<h2 id="有哪些编辑器可以使用-markdown">有哪些编辑器可以使用 Markdown</h2>
+<p>这里仅仅列举部分我个人体验过的</p>
+<h3 id="windows">Windows</h3>
+<p>Typora（好用且免费）</p>
+<h3 id="mac-os">Mac OS</h3>
+<p>Ulysses （文字工作者最爱，不仅仅是编辑器且贵）</p>
+<p>MWeb （国产，完成度高，支持多平台分享，如印象笔记和 WordPress）</p>
+<p>Typora （好用且免费）</p>
+<h3 id="ios">iOS</h3>
+<p>MWeb （同 Mac OS）</p>
+<p>Bear（免费有内购，不只是编辑器）</p>
+<p>锤子便签（免费，易用，全平台）</p>
+<h3 id="android">Android</h3>
+<p>锤子便签（免费，易用，全平台）</p>
+<h3 id="chrome-插件">Chrome 插件</h3>
+<p>Markdown Here（神器，免费，可以配合印象笔记使用）</p>
+<h3 id="国内写作平台">国内写作平台</h3>
+<p>简书</p>
+<h3 id="笔记类应用">笔记类应用</h3>
+<p>为知笔记（自身支持）</p>
+<p>有道云笔记（自身支持）</p>
+<p>印象笔记（因为印象本身的设计机制（<em>支持全文及图片内文字搜索</em>) 和附件（<em>图片等</em>）存储机制，并不支持，但是原生的各种快捷键已经足够强大。如果你想使用的话，配合马克飞象、Markdown Here 或者 MWeb 使用，效果都很好）</p>
+<h2 id="如何学习-markdown">如何学习 Markdown</h2>
+<p>一旦你清楚了自己要不要使用 Markdown，那么学习它的用法根本就没有什么难度。</p>
+<p>这里推荐一个网站：<a href="http://wowubuntu.com/markdown/">Markdown 语法说明</a></p>
+<p><strong>记住，如果你决定开始用一个东西，你还会担心学不会么？</strong></p>
+<hr>
+<figure data-type="image" tabindex="1"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2%E5%86%99%E4%BD%9C%E5%8E%9F%E5%9B%A0">写在前面（写作原因）</a></li>
+<li><a href="#markdown-%E8%AF%9E%E7%94%9F%E5%8E%86%E5%8F%B2">Markdown 诞生历史：</a></li>
+<li><a href="#mrakdown-%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E7%82%B9">Mrakdown 有哪些优点</a>
+<ul>
+<li><a href="#%E6%89%80%E8%B0%93%E6%98%93%E8%AF%BB">所谓易读</a></li>
+<li><a href="#%E6%89%80%E8%B0%93%E6%98%93%E5%86%99">所谓易写</a></li>
+<li><a href="#markdown-%E5%92%8C-html-%E7%9A%84%E5%8C%BA%E5%88%AB">Markdown 和 HTML 的区别</a></li>
+</ul>
+</li>
+<li><a href="#mrakdown-%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%BA%E7%82%B9">Mrakdown 有哪些缺点</a>
+<ul>
+<li><a href="#%E5%92%8C-latex-%E7%9A%84%E5%8C%BA%E5%88%AB">和 LaTeX 的区别</a></li>
+<li><a href="#%E6%B2%A1%E6%9C%89%E5%AE%8C%E5%85%A8%E7%BB%9F%E4%B8%80%E7%9A%84%E6%A0%87%E5%87%86">没有完全统一的标准</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%91%E4%BA%9B%E5%B9%B4%E5%A6%82%E6%AD%A4%E7%81%AB%E7%88%86">为什么近些年如此火爆</a></li>
+<li><a href="#%E9%80%82%E7%94%A8%E4%BA%8E%E9%82%A3%E4%BA%9B%E7%BE%A4%E4%BD%93">适用于那些群体</a></li>
+<li><a href="#%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BC%96%E8%BE%91%E5%99%A8%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-markdown">有哪些编辑器可以使用 Markdown</a>
+<ul>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#mac-os">Mac OS</a></li>
+<li><a href="#ios">iOS</a></li>
+<li><a href="#android">Android</a></li>
+<li><a href="#chrome-%E6%8F%92%E4%BB%B6">Chrome 插件</a></li>
+<li><a href="#%E5%9B%BD%E5%86%85%E5%86%99%E4%BD%9C%E5%B9%B3%E5%8F%B0">国内写作平台</a></li>
+<li><a href="#%E7%AC%94%E8%AE%B0%E7%B1%BB%E5%BA%94%E7%94%A8">笔记类应用</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A6%82%E4%BD%95%E5%AD%A6%E4%B9%A0-markdown">如何学习 Markdown</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

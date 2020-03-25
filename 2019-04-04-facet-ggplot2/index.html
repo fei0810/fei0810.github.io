@@ -1,0 +1,590 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>用漫威数据学习 ggplot2 facet - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="用漫威数据学习 ggplot2 facet - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="
+本文主要内容翻译整理自：Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2，部分代码有修改。
+
+ggplot2 一个非常强大的功能就是进..." />
+  <meta property="og:title" content="用漫威数据学习 ggplot2 facet - 思考问题的熊">
+  <meta property="og:description" content="
+本文主要内容翻译整理自：Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2，部分代码有修改。
+
+ggplot2 一个非常强大的功能就是进..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-04-04-facet-ggplot2/" />
+  <meta property="og:image" content="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="用漫威数据学习 ggplot2 facet - 思考问题的熊">
+  <meta name="twitter:description" content="
+本文主要内容翻译整理自：Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2，部分代码有修改。
+
+ggplot2 一个非常强大的功能就是进...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-04-04-facet-ggplot2/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          用漫威数据学习 ggplot2 facet
+        </h1>
+        
+          <img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png" alt="用漫威数据学习 ggplot2 facet" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-04-04 · 10 min read</div>
+          
+            <a href="https://kaopubear.top/tag/UrqlObNL0t/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              R
+            </a>
+          
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              数据科学
+            </a>
+          
+            <a href="https://kaopubear.top/tag/haFk19Ljigu/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              ggplot2
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <blockquote>
+<p>本文主要内容翻译整理自：<a href="http://www.zevross.com/blog/2019/04/02/easy-multi-panel-plots-in-r-using-facet_wrap-and-facet_grid-from-ggplot2/">Easy multi-panel plots in R using facet_wrap() and facet_grid() from ggplot2</a>，部分代码有修改。</p>
+</blockquote>
+<p>ggplot2 一个非常强大的功能就是进行  multi-panel plots 的呈现，也就是我们常说的分面（facet）。通过使用 facet_wrap() 或者 facet_grid() 这样的函数我们就可以很方面的将单一的一个图变为多个相关的图。本文将通过一个具体的数据示例帮助你理解 ggplot2 分面的不同方法以及参数。</p>
+<!--more-->
+<h2 id="数据准备集">数据准备集</h2>
+<p>为了纪念  Captain Marvel  和即将到来的 Avengers: Endgame ，我们将使用来自 Kaggle 的 <a href="https://www.kaggle.com/fivethirtyeight/fivethirtyeight-comic-characters-dataset#marvel-wikia-data.csv,">漫威角色数据集</a></p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085631.png" alt="" loading="lazy"></figure>
+<p>我们将主要用到其中的 3 个变量信息：</p>
+<ul>
+<li>YEAR: 角色第一次出现的年份</li>
+<li>SEX: 角色的性别</li>
+<li>ALIGN：角色的人设，包括好坏和中立</li>
+</ul>
+<p>在进行分析之前，首先对数据进行几步清洗，比如去除上述三个变量存在缺失值的数据，对变量进行更简单的重命名，同时因为涉及到的角色太多我们只选择那些出现次数大于 100 次的角色。</p>
+<pre><code class="language-R">library(ggplot2)
+library(dplyr)
+
+marvel &lt;- readr::read_csv(&quot;marvel-wikia-data.csv&quot;)
+
+marvel &lt;- filter(marvel, SEX != &quot;&quot;, ALIGN !=&quot;&quot;, Year != &quot;&quot;) %&gt;%
+  filter(!is.na(APPEARANCES), APPEARANCES&gt;100) %&gt;%
+  mutate(SEX = stringr::str_replace(SEX, &quot;Characters&quot;, &quot;&quot;)) %&gt;%
+  arrange(desc(APPEARANCES)) %&gt;%
+  rename(gender = SEX) %&gt;%
+  rename_all(tolower)
+</code></pre>
+<h2 id="按照年份统计角色出现次数">按照年份统计角色出现次数</h2>
+<p>在整篇文章中，我们将生成按年份分组的演员数来作为整个分析过程的开始，在某些情况下还会生成其他一些分组变量。对于这个初始图我们仅是按年进行简单的计算。</p>
+<pre><code class="language-R">marvel_count &lt;- count(marvel, year)
+glimpse(marvel_count)
+# glimpse 可以展示数据的观测和变量数量以及每一列的名字和尽可能多的列信息，和 structure 类似。
+## Observations: 57
+## Variables: 2
+## $ year &lt;dbl&gt; 1939, 1940, 1941, 1943, 1944, 1947, 1948, 1949, 1950, 195...
+## $ n    &lt;int&gt; 3, 5, 4, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 7, 20, 36, 34, 21,...
+</code></pre>
+<p>首先画一个由线点构成的单一图形。</p>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;,size = 1) +
+    geom_point(color=&quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by year&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;)
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606090403.png" alt="" loading="lazy"></figure>
+<h2 id="使用-facet_wrap-按照角色人设分面">使用 facet_wrap() 按照角色人设分面</h2>
+<p>首先按照 year 和 alignment 来统计数目</p>
+<pre><code class="language-R">marvel_count &lt;- count(marvel, year, align)
+glimpse(marvel_count)
+## Observations: 114
+## Variables: 3
+## $ year  &lt;dbl&gt; 1939, 1939, 1940, 1940, 1941, 1941, 1943, 1944, 1947, 19...
+## $ align &lt;chr&gt; &quot;Good Characters&quot;, &quot;Neutral Characters&quot;, &quot;Bad Characters...
+## $ n     &lt;int&gt; 2, 1, 1, 4, 1, 3, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 6, 4,...
+</code></pre>
+<p>只需要在上面绘图命令的结尾加上 <code>+ facet_wrap(~ align)</code> 就可以绘制按照 alignment 分面的 multi-panel plot</p>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;,size = 1) +
+    geom_point(color=&quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by year&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+    facet_wrap(~ align)
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085759.png" alt="" loading="lazy"></figure>
+<p>这张图拥有了更大的信息量，比如我们可以发现在 1963 和 1964 年出现了大量的坏蛋，随后则逐渐减少；而好人在后面还是一直在稳定的加入。在未特殊指定的情况下，这里 <code>facet_wrap</code> 选择了一行展示三个图。</p>
+<p>如果对 <code>facet_wrap()</code> 使用两个变量，其实只需要简单的使用 <code>+</code> 来进行链接。但是通常情况下，为了更好的调整布局，建议使用 <code>facet_grid()</code>。</p>
+<pre><code class="language-R">marvel_count &lt;- count(marvel, year, align, gender)
+ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;,size = 1) +
+    geom_point(color=&quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by year&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+    facet_wrap(~ align + gender)
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085820.png" alt="" loading="lazy"></figure>
+<h2 id="按照-facet_grid-指定行列进行绘图">按照 facet_grid() 指定行列进行绘图</h2>
+<p><code>facet_grid(row_variable ~ column_variable)</code> 可以通过指定行和列来进行绘图，例如使用 align 作为行变量，gender 作为列变量</p>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;,size = 1) +
+    geom_point(color=&quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by year&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+    facet_grid(align ~ gender)
+</code></pre>
+<figure data-type="image" tabindex="5"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085827.png" alt="" loading="lazy"></figure>
+<p>如果想要排除行或者列变量可以通过 <code>.</code> 来进行代替。如下所示：</p>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;,size = 1) +
+    geom_point(color=&quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by year&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+    facet_grid(. ~ gender)
+</code></pre>
+<figure data-type="image" tabindex="6"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085833.png" alt="" loading="lazy"></figure>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;,size = 1) +
+    geom_point(color=&quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by year&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+    facet_grid(align ~ .)
+
+</code></pre>
+<figure data-type="image" tabindex="7"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085839.png" alt="" loading="lazy"></figure>
+<h2 id="颜色有时效果更好">颜色有时效果更好</h2>
+<p>在时间序列数据中，使用两条不同颜色的线有时比分面效率要更高。</p>
+<pre><code class="language-R"># Limit to male and female and change levels for drawing order
+marvel_count &lt;- filter(marvel_count, gender%in%c(&quot;Female&quot;, &quot;Male&quot;)) %&gt;%
+    mutate(gender = factor(gender, levels = c(&quot;Male&quot;, &quot;Female&quot;)))
+
+ggplot(data = marvel_count, aes(year, n, color = gender)) +
+    geom_line(size = 1) +
+    geom_point() +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by gender&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;)
+</code></pre>
+<figure data-type="image" tabindex="8"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085845.png" alt="" loading="lazy"></figure>
+<p>颜色和分面混用也不失为一个高效的选择。</p>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n, color = gender)) +
+    geom_line(size = 1) +
+    geom_point() +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by alignment &amp; gender&quot;,
+         subtitle = &quot;(limited to characters with more than 100 appearances)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;)+
+    facet_grid(. ~ align)
+</code></pre>
+<figure data-type="image" tabindex="9"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085852.png" alt="" loading="lazy"></figure>
+<h2 id="几个常用参数">几个常用参数</h2>
+<p>在 faceting 函数中，有一些参数是通用的，只是在使用略有差别。</p>
+<h3 id="nrow-或者-ncol">nrow 或者 ncol</h3>
+<ul>
+<li>只对 <code>facet_wrap()</code> 有效</li>
+<li>控制图形布局</li>
+</ul>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+  geom_line(color = &quot;steelblue&quot;,size = 1) +
+  geom_point(color = &quot;steelblue&quot;) +
+  theme_classic() +
+  facet_wrap(~ gender + align, nrow = 2) +
+  labs(title = &quot;New Marvel characters by gender &amp; alignment&quot;,
+       subtitle = &quot;(using nrow=2)&quot;,
+       y = &quot;Count of new characters&quot;, x = &quot;&quot;)
+</code></pre>
+<figure data-type="image" tabindex="10"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085900.png" alt="" loading="lazy"></figure>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+  geom_line(color = &quot;steelblue&quot;, size = 1) +
+  geom_point(color =&quot;steelblue&quot;) +
+  theme_classic() +
+  facet_wrap(~ gender + align, ncol = 6) +
+  labs(title = &quot;New Marvel Characters by gender &amp; alignment&quot;,
+       subtitle = &quot;(using ncol=6)&quot;,
+       y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+  theme(
+       axis.text.x = element_text(angle=50, hjust=1)
+  )
+</code></pre>
+<figure data-type="image" tabindex="11"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085908.png" alt="" loading="lazy"></figure>
+<h3 id="margins">margins</h3>
+<ul>
+<li>只对 <code>facet_grid</code> 有效</li>
+<li>增加额外的一个分面进行汇总</li>
+</ul>
+<pre><code class="language-R">marvel_count &lt;-
+    mutate(marvel_count, align = stringr::str_replace(align, &quot;Characters&quot;, &quot;&quot;))
+
+ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;, size = 1) +
+    geom_point(color = &quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by alignment &amp; gender&quot;,
+         subtitle = &quot;(margins= TRUE)&quot;,
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+    facet_grid(align ~ gender, margins=TRUE)
+
+</code></pre>
+<figure data-type="image" tabindex="12"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085912.png" alt="" loading="lazy"></figure>
+<h3 id="自由定义不一致的-y-轴">自由定义不一致的 Y 轴</h3>
+<p>可以使用 <code>scales = &quot;free&quot;</code> 或者 <code>scales = &quot;free_x&quot;</code> 或者 <code>&quot;free_y&quot;</code> 进行设置。但是一定要注意这样的图可能会使读者造成误解。</p>
+<pre><code class="language-R">ggplot(marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;, size = 1) +
+    facet_wrap(~gender, scales = &quot;free_y&quot;)+
+    theme_classic() +
+    labs(title = 'with&quot;free&quot;y axes' ,
+         y = &quot;Count of new Marvel characters&quot;)
+
+</code></pre>
+<figure data-type="image" tabindex="13"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085918.png" alt="" loading="lazy"></figure>
+<h3 id="space">space</h3>
+<ul>
+<li>仅 <code>facet_grid()</code> 有效</li>
+<li>控制每个 panel 的高和宽</li>
+<li>默认所有的 panels 有一样的 size</li>
+<li>可以设置 &quot;free&quot;, &quot;free_y&quot; &quot;free_x&quot; 三个参数</li>
+<li>需要和 <code>scales = &quot;free&quot;</code> 一起连用</li>
+</ul>
+<pre><code class="language-R">ggplot(data = marvel_count, aes(year, n)) +
+    geom_line(color = &quot;steelblue&quot;, size = 1) +
+    geom_point(color = &quot;steelblue&quot;) +
+    theme_classic() +
+    labs(title = &quot;New Marvel characters by alignment &amp; gender&quot;,
+         subtitle = '(space =&quot;free&quot;)',
+         y = &quot;Count of new characters&quot;, x = &quot;&quot;) +
+    facet_grid(align ~ gender, space=&quot;free&quot;, scales=&quot;free&quot;)
+</code></pre>
+<figure data-type="image" tabindex="14"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085923.png" alt="" loading="lazy"></figure>
+<h3 id="stripposition">strip.position</h3>
+<ul>
+<li>仅 <code>facet_wrap()</code> 可用</li>
+<li>控制 facet subset labels</li>
+<li>有四个选项 &quot;top&quot; (default), &quot;bottom&quot;, &quot;left&quot; 和 &quot;right&quot;</li>
+</ul>
+<pre><code class="language-R">ggplot(marvel_count, aes(year, n)) +
+  geom_line(color = &quot;steelblue&quot;, size = 1) +
+  theme_classic() +
+  facet_wrap(~gender, strip.position = &quot;right&quot;) +
+  labs(title = 'strip.postition =&quot;right&quot;',
+       y = &quot;Count of new Marvel characters&quot;)
+</code></pre>
+<figure data-type="image" tabindex="15"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085928.png" alt="" loading="lazy"></figure>
+<h3 id="switch">switch</h3>
+<ul>
+<li>进对 <code>facet_grid()</code> 有效</li>
+<li>默认是右上角</li>
+<li><code>x</code> 会让 label 在底部，<code>y</code> 右改为左，<code>both</code> 则改为左下</li>
+</ul>
+<pre><code class="language-R">ggplot(marvel_count, aes(year, n)) +
+    geom_line(color = &quot;Steelblue&quot;, size = 1) +
+    theme_classic() +
+    facet_grid(~gender, switch = &quot;x&quot;  ) +
+    labs(title = 'switch =&quot;x&quot;',
+         y = &quot;Count of new Marvel characters&quot;)
+
+</code></pre>
+<figure data-type="image" tabindex="16"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190606085936.png" alt="" loading="lazy"></figure>
+<hr>
+<figure data-type="image" tabindex="17"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名 - 非商业性使用 - 禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="18"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87%E9%9B%86">数据准备集</a></li>
+<li><a href="#%E6%8C%89%E7%85%A7%E5%B9%B4%E4%BB%BD%E7%BB%9F%E8%AE%A1%E8%A7%92%E8%89%B2%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0">按照年份统计角色出现次数</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-facet_wrap-%E6%8C%89%E7%85%A7%E8%A7%92%E8%89%B2%E4%BA%BA%E8%AE%BE%E5%88%86%E9%9D%A2">使用 facet_wrap() 按照角色人设分面</a></li>
+<li><a href="#%E6%8C%89%E7%85%A7-facet_grid-%E6%8C%87%E5%AE%9A%E8%A1%8C%E5%88%97%E8%BF%9B%E8%A1%8C%E7%BB%98%E5%9B%BE">按照 facet_grid() 指定行列进行绘图</a></li>
+<li><a href="#%E9%A2%9C%E8%89%B2%E6%9C%89%E6%97%B6%E6%95%88%E6%9E%9C%E6%9B%B4%E5%A5%BD">颜色有时效果更好</a></li>
+<li><a href="#%E5%87%A0%E4%B8%AA%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0">几个常用参数</a>
+<ul>
+<li><a href="#nrow-%E6%88%96%E8%80%85-ncol">nrow 或者 ncol</a></li>
+<li><a href="#margins">margins</a></li>
+<li><a href="#%E8%87%AA%E7%94%B1%E5%AE%9A%E4%B9%89%E4%B8%8D%E4%B8%80%E8%87%B4%E7%9A%84-y-%E8%BD%B4">自由定义不一致的 Y 轴</a></li>
+<li><a href="#space">space</a></li>
+<li><a href="#stripposition">strip.position</a></li>
+<li><a href="#switch">switch</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

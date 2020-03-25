@@ -1,0 +1,844 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>linux极简统计分析工具datamash教程 - 思考问题的熊</title>
+<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
+<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="linux极简统计分析工具datamash教程 - 思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-91022805-1');
+  </script>
+    
+
+  <meta name="description" content="引子
+之前写 awk 教程的时候，曾经提到过一些对文本中行列进行某些计算统计的需求，例如使用数组分类求和。一些基本需求 awk 都可以实现，但是写起来稍显复杂。在 R 中使用 dplyr 或者基础函数 aggregate() 可以方便的进行..." />
+  <meta property="og:title" content="linux极简统计分析工具datamash教程 - 思考问题的熊">
+  <meta property="og:description" content="引子
+之前写 awk 教程的时候，曾经提到过一些对文本中行列进行某些计算统计的需求，例如使用数组分类求和。一些基本需求 awk 都可以实现，但是写起来稍显复杂。在 R 中使用 dplyr 或者基础函数 aggregate() 可以方便的进行..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://kaopubear.top/2019-06-19-datamashmanual/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="linux极简统计分析工具datamash教程 - 思考问题的熊">
+  <meta name="twitter:description" content="引子
+之前写 awk 教程的时候，曾经提到过一些对文本中行列进行某些计算统计的需求，例如使用数组分类求和。一些基本需求 awk 都可以实现，但是写起来稍显复杂。在 R 中使用 dplyr 或者基础函数 aggregate() 可以方便的进行...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kaopubear.top/2019-06-19-datamashmanual/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://kaopubear.top/media/css/prism-github.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://kaopubear.top" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      思考问题的熊
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          linux极简统计分析工具datamash教程
+        </h1>
+        
+          <img src="https://raw.githubusercontent.com/fei0810/image-host/master/img/20190619174819.png" alt="linux极简统计分析工具datamash教程" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2019-06-19 · 18 min read</div>
+          
+            <a href="https://kaopubear.top/tag/bPxOfgU9YC/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              数据科学
+            </a>
+          
+            <a href="https://kaopubear.top/tag/v0Xcy0jQaT/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              linux
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="引子">引子</h2>
+<p>之前写 awk 教程的时候，曾经提到过一些对文本中行列进行某些计算统计的需求，例如使用数组分类求和。一些基本需求 awk 都可以实现，但是写起来稍显复杂。在 R 中使用 <strong>dplyr</strong> 或者基础函数 <code>aggregate()</code> 可以方便的进行分组操作，如果能在 linux 中使用更加简洁的单行命令针对数值和字符进行一些基本运算就省去了在 R 终端操作的时间。这篇文章介绍一个 linux 中能满足这类需求的工具 <strong>GNU datamash</strong>。</p>
+<!-- more -->
+<p>两个使用 awk 的例子如下：</p>
+<pre><code class="language-sh">cat  awk2.txt
+USSR    8649    275     Asia
+Canada  3852    25      North_America
+China   3705    1032    Asia
+USA     3615    237     North_America
+Brazil  3286    134     South_America
+India   1267    746     Asia
+</code></pre>
+<pre><code class="language-sh">awk '{ pop[$4] += $3 }END{ for (name in pop) print name,pop[name]}' awk2.txt
+
+#North_America 262
+#Asia 2053
+#South_America 134
+</code></pre>
+<p>例如利用<code>getline</code>通过第一列信息判断，将第一列相同的第二列内容合并。</p>
+<pre><code class="language-sh">cat awk3.txt
+
+a       qw
+a       we
+a       wet
+b       wer
+b       klj
+b       piu
+c       eie
+c       tmp
+c       ike
+
+awk 'BEGIN{getline;a=$1;printf (&quot;%s\t%s&quot;,$1,$2)}{if(a==$1){printf &quot;,&quot;$2}else{printf &quot;\n%s\t%s&quot;,$1,$2;a=$1}}END{printf &quot;\n&quot;}' awk3.txt
+
+a       qw,we,wet
+b       wer,klj,piu
+c       eie,tmp,ike
+
+</code></pre>
+<h2 id="datamash-是什么">datamash 是什么</h2>
+<p>在 gnu <a href="https://www.gnu.org/software/datamash/">官网</a> 中，用了下面一句话来介绍 datamash。</p>
+<blockquote>
+<p>GNU datamash is a command-line program which performs basic numeric, textual and statistical operations on input textual data files.</p>
+</blockquote>
+<p><strong>datamash 作为一个命令行程序可以对文本文件进行数字和文本相关的基本统计操作</strong>（虽说基本但是所有的操作都足够常用高频）。</p>
+<p>使用前首先进行安装，可以通过<code>sudo apt-get install datamash</code>来进行安装或者通过源码来安装最新版本，这里采用第二种方式。</p>
+<pre><code class="language-sh">wget https://ftp.gnu.org/gnu/datamash/datamash-1.4.tar.gz
+tar -xzf datamash-1.4.tar.gz
+cd datamash-1.4
+./configure
+make
+make check
+sudo make install
+</code></pre>
+<h2 id="调用格式与参数">调用格式与参数</h2>
+<p>datamash 的基本调用格式如下：</p>
+<pre><code class="language-sh">datamash [option]… op1 column1  [op2 column2 …]
+</code></pre>
+<p>上面的内容转换为描述语言就是：在<code>option</code>的参数下，对<code>column1</code>列进行<code>op1</code>操作，对<code>column2</code>列进行<code>op2</code>操作。如果使用<code>--group</code> 参数，所有的<code>operation</code>都将会分组进行；如果没有使用<code>--group</code>，所有的<code>operation</code>会对所有的值进行。需要说明的是这里的<code>column1</code> 可以是表示第几列的数字，当使用<code>-H</code>或者<code>--header-in</code>时可以是所选字段的名称，可以使用列名，当 operation 要求输入成对数据的时候使用<code>:</code> 连接，比如<code>spearson 5:6</code>。</p>
+<h3 id="主要-operation">主要 operation</h3>
+<blockquote>
+<p>不同版本支持的参数不同，以下参数适用于 v1.4 版本。在分组统计相关的参数中，p/s 前缀分别代表 population 或者 sample。一般而言，sample 对应的计算等同于 R 中对应函数，例如<code>sstdev</code> 和 <code>sd()</code>是一致的。</p>
+</blockquote>
+<p><strong>Primary operations</strong>:</p>
+<p>primary operations 决定了文件将被如何处理，如果 primary operatino 没有设置，整个文件将会被逐行处理（针对 per-line operation）或者将所有行按照一组进行处理。</p>
+<ul>
+<li><code>groupby</code>：分组等同于 <code>--group</code>或者<code>-g</code>参数。后面指定用于分组的列</li>
+<li><code>crosstab</code>：类似于 excel 中的数据透视表 Pivot Table，可以按照两列来处理矩阵，默认是计算在 a,b 中出现的次数</li>
+<li><code>transpose</code>：交换行列，转置，等价于 R 中的<code>t()</code></li>
+<li><code>reverse</code>：反转字段顺序，交换列</li>
+<li><code>check</code>：验证数据结构，保证每行字段相同</li>
+</ul>
+<p><strong>Line-Filtering operations:</strong></p>
+<ul>
+<li><code>rmdup</code>：删除有重复键值的行</li>
+</ul>
+<p><strong>Per-Line operations:</strong></p>
+<ul>
+<li><code>round</code>：四舍五入整数值</li>
+<li><code>floor</code>：不小于输入的最小整数值，向上取</li>
+<li><code>ceil</code>：不大于输入的最大整数值，向下取</li>
+<li><code>trunc</code>：取整数部分</li>
+<li><code>frac</code>：取小数部分</li>
+</ul>
+<p><strong>Group-by Numeric operations:</strong></p>
+<ul>
+<li><code>sum</code>：求和</li>
+<li><code>min</code>：最小值</li>
+<li><code>max</code>：最大值</li>
+<li><code>absmin</code>：最小绝对值</li>
+<li><code>absmax</code>：最大的绝对值</li>
+<li><code>range</code>：最大值-最小值</li>
+</ul>
+<p><strong>Group-by Textual/Numeric operations:</strong></p>
+<ul>
+<li><code>count</code> ：分组中元素个数</li>
+<li><code>first</code>：分组中第一个值</li>
+<li><code>last</code>：分组中最后一个值</li>
+<li><code>rand</code>：分组中一个随机值</li>
+<li><code>unique</code>：逗号分割的所有唯一值</li>
+<li><code>collapse</code>：逗号分科的所有值</li>
+<li><code>countunique</code>：唯一值的个数</li>
+</ul>
+<p><strong>Group-by Statistical operations:</strong></p>
+<ul>
+<li>
+<p><code>mean</code>：均值</p>
+</li>
+<li>
+<p><code>mode</code>：众数</p>
+</li>
+<li>
+<p><code>median</code>：中位数</p>
+</li>
+<li>
+<p><code>q1</code>：第一四分位数</p>
+</li>
+<li>
+<p><code>q3</code>：第三四分位数</p>
+</li>
+<li>
+<p><code>iqr</code>：四分位距</p>
+</li>
+<li>
+<p><code>perc</code>：百分位值，默认取 95，<code>perc:25</code> 等同于<code>q1</code></p>
+</li>
+<li>
+<p><code>antimode</code>：最少出现的数</p>
+</li>
+<li>
+<p><code>pstdev</code>：总体标准差</p>
+</li>
+<li>
+<p><code>sstdev</code>：样本标准差</p>
+</li>
+<li>
+<p><code>pvar</code>：总体方差</p>
+</li>
+<li>
+<p><code>svar</code> ：样本方差</p>
+</li>
+<li>
+<p><code>mad</code>：scaled 绝对中位差</p>
+</li>
+<li>
+<p><code>madraw</code>：原始绝对中位差</p>
+</li>
+<li>
+<p><code>sskew</code>：样本偏度</p>
+<p>关于 sskew 值对应区间的说明</p>
+<figure data-type="image" tabindex="1"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190619122052.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p><code>pskew</code>：总体偏度</p>
+</li>
+<li>
+<p><code>skurt</code>：样本超值峰度</p>
+</li>
+<li>
+<p><code>pkurt</code>：总体超值峰度</p>
+</li>
+<li>
+<p><code>jarque</code>：Jarque-Beta test for normality P 值</p>
+</li>
+<li>
+<p><code>dpo</code>：D'Agostino-Pearson Omnibus test for normality P 值</p>
+</li>
+<li>
+<p><code>scov</code>：样本协方差（要求 pair 数据）</p>
+</li>
+<li>
+<p><code>pcov</code>：总体协方差（要求 pair 数据）</p>
+</li>
+<li>
+<p><code>spearson</code>：样本 pearson 相关系数（要求 pair 数据）</p>
+</li>
+<li>
+<p><code>ppearson</code>：总体 pearson 相关系数（要求 pair 数据）</p>
+</li>
+</ul>
+<h3 id="主要参数">主要参数</h3>
+<ul>
+<li><code>-f</code>, <code>--full</code>: 进行计算前打印所有行</li>
+<li><code>-g</code>, <code>--group</code>：按照列分组</li>
+<li><code>--header-in</code>：输入文件第一行为列名，不进行计算</li>
+<li><code>--header-out</code>：输出第一行为列名</li>
+<li><code>-i</code>：对文本操作是忽略大小写</li>
+<li><code>-s</code>：分组前先排序，等同于<code>sort</code></li>
+<li><code>-t</code>：指定输入文件分隔符</li>
+<li><code>--output-delimiter</code>：指定输出文件分隔符</li>
+<li><code>--narm</code>：跳过 NA</li>
+<li><code>-R</code>, <code>--round</code>：输出结果保留几位小数</li>
+<li><code>-W</code>, <code>--whitespace</code>: 使用一个或者多个空格或者 tab 作为分隔符</li>
+</ul>
+<h2 id="操作示例">操作示例</h2>
+<p>使用软件自带的测试数据集 <code>scores_h.txt</code>，有三列，分别是学生姓名科目和成绩。</p>
+<pre><code class="language-sh">cat /usr/local/share/datamash/examples/scores_h.txt |head
+Name    Major   Score
+Shawn   Arts    65
+Marques Arts    58
+Fernando        Arts    78
+Paul    Arts    63
+Walter  Arts    75
+Derek   Arts    60
+Nathaniel       Arts    88
+Tyreque Arts    74
+Trevon  Arts    74
+</code></pre>
+<h3 id="文本基本操作">文本基本操作</h3>
+<pre><code class="language-sh">#检查行列完整性
+$ cat scores_h.txt |datamash check
+
+84 lines, 3 fields
+
+# 交换列顺序
+$ cat scores_h.txt |datamash reverse |head -n5
+
+Score   Major   Name
+65      Arts    Shawn
+58      Arts    Marques
+78      Arts    Fernando
+63      Arts    Paul
+
+# 根据前两列构建透视表，且显示分数
+$ cat scores_h.txt |datamash --header-in crosstab 1,2 unique 3 |head
+
+# 因为这个文件有 header 所以需要使用 --header-in 参数
+    Arts    Business        Engineering     Health-Medicine Life-Sciences   Social-Sciences
+Aaron   N/A     83      N/A     N/A     58      N/A
+Allen   N/A     N/A     N/A     N/A     50      N/A
+Andre   N/A     N/A     N/A     72      N/A     N/A
+Angel   N/A     N/A     N/A     100     N/A     N/A
+Anthony N/A     N/A     N/A     N/A     32      N/A
+Antonio N/A     N/A     88      N/A     N/A     N/A
+Austin  N/A     N/A     N/A     N/A     91      N/A
+Avery   N/A     N/A     51      N/A     N/A     N/A
+Brandon N/A     N/A     N/A     N/A     72      N/A
+
+</code></pre>
+<h3 id="分组统计操作">分组统计操作</h3>
+<p>统计每门课的选课人数</p>
+<pre><code class="language-sh">$ datamash --header-in --sort groupby 2 count 2 &lt; scores_h.txt
+Arts    19
+Business        11
+Engineering     13
+Health-Medicine 13
+Life-Sciences   12
+Social-Sciences 15
+</code></pre>
+<p>查看每门课程的最高分和最低分，在这里使用<code>--header-out</code> 输出时会自动添加列名</p>
+<pre><code class="language-sh">$ datamash --header-in --header-out --sort groupby 2  min 3 max 3 &lt; scores_h.txt
+GroupBy(Major)  min(Score)      max(Score)
+Arts    46      88
+Business        79      94
+Engineering     39      99
+Health-Medicine 72      100
+Life-Sciences   14      91
+Social-Sciences 27      90
+</code></pre>
+<p>因为这是有列名的输入文件，使用<code>--header-in</code>参数后可以使用列名来进行计算。统计每门课程的平局分和标准差，在显示的结果中要求只保留两位小数即可。</p>
+<pre><code class="language-sh">$ datamash --header-in --header-out --sort -R 2 \
+groupby 2  mean Score pstdev Score &lt; scores_h.txt
+
+GroupBy(Major)  mean(Score)     pstdev(Score)
+Arts    68.95   10.14
+Business        87.36   4.94
+Engineering     66.54   19.10
+Health-Medicine 90.62   8.86
+Life-Sciences   55.33   19.73
+Social-Sciences 60.27   16.64
+
+</code></pre>
+<p>如果想要对文本中的数字进行简化，可以使用如下几个命令：</p>
+<pre><code class="language-sh">$ (echo num; seq -1.25 0.25 1.25) \
+|datamash --full -H round 1 ceil 1 floor 1 trunc 1 frac 1
+
+num     round(num)      ceil(num)       floor(num)      trunc(num)      frac(num)
+-1.25   -1      -1      -2      -1      -0.25
+-1.00   -1      -1      -1      -1      0
+-0.75   -1      0       -1      0       -0.75
+-0.50   -1      0       -1      0       -0.5
+-0.25   0       0       -1      0       -0.25
+0.00    0       0       0       0       0
+0.25    0       1       0       0       0.25
+0.50    1       1       0       0       0.5
+0.75    1       1       0       0       0.75
+1.00    1       1       1       1       0
+1.25    1       2       1       1       0.25
+</code></pre>
+<p>在实际的服务器管理中，可能需要统计一些系统用户信息。这些信息存放在<code>/etc/passwd</code>中，<code>:</code>分割。这里使用<code>login shells</code> 进行分组，然后统计用户数。</p>
+<pre><code class="language-sh">$ cat /etc/passwd | datamash -t : --output-delimiter $'\t' --sort groupby 7 count 7
+
+/bin/bash       10
+/bin/false      22
+/bin/sh 3
+/bin/sync       1
+/usr/sbin/nologin       17
+</code></pre>
+<h2 id="生信相关文本">生信相关文本</h2>
+<h3 id="基因表达矩阵">基因表达矩阵</h3>
+<p>假设有一个行为基因列为组织的表达矩阵如下所示</p>
+<pre><code class="language-sh">$ cut -f1-5 input.matrix |head
+geneid  Flag    Leaf    Node    Sheath
+G1011   0       0.11069839039242035     4.578044680376127       2.202828823551847
+G1031   0.09338340723174347     0.11069839039242035     0.46883590100237443     0
+G5133   0       0       0.05515716482380876     0
+G3987   2.5213519952570738      3.09955493098777        583.17670368213 16.598059042576708
+G5604   0.09338340723174347     0       2.923329735661864       0.051228577291903415
+G5664   0       0.11069839039242035     0.6067288130618963      0
+G4107   0       0.11069839039242035     4.21952310902137        0.15368573187571025
+G4147   0.09338340723174347     0       0.19305007688333065     0.051228577291903415
+G5786   0       0.33209517117726106     5.1296163286142145      0.9221143912542615
+
+</code></pre>
+<p>我想要计算每个基因在所有组织中的表达情况（均值标准差），可以进行如下操作</p>
+<pre><code class="language-sh">$ cat input.matrix |datamash transpose \
+|datamash --header-in --header-out  mean 2-10 sstdev 2-10 |datamash transpose
+
+mean(G1011)     3.4218560658562
+mean(G1031)     0.13477809345566
+mean(G5133)     0.026272278033758
+mean(G3987)     237.63686611126
+mean(G5604)     1.6544141646051
+mean(G5664)     0.25398335468086
+mean(G4107)     0.92018619120978
+mean(G4147)     0.074272982619755
+mean(G5786)     1.8763718749021
+sstdev(G1011)   3.6565336756012
+sstdev(G1031)   0.15591791251859
+sstdev(G5133)   0.025561380705389
+sstdev(G3987)   276.34845044642
+sstdev(G5604)   1.9673226520581
+sstdev(G5664)   0.23076182316703
+sstdev(G4107)   1.5120321659008
+sstdev(G4147)   0.063632028432619
+sstdev(G5786)   2.1600115292083
+</code></pre>
+<p>但是上面的格式看起来不是很美观，可以利用 datamash 自身的命令稍加调整</p>
+<pre><code class="language-sh">$ cat input.matrix |datamash transpose \
+|datamash --header-in --header-out  sstdev 2-10 mean 2-10 \
+|datamash transpose |sed 's/(/\t/;s/)//' \
+|datamash crosstab 1,2 unique 3 |datamash transpose
+
+    mean    sstdev
+G1011   3.4218560658562 3.6565336756012
+G1031   0.13477809345566        0.15591791251859
+G3987   237.63686611126 276.34845044642
+G4107   0.92018619120978        1.5120321659008
+G4147   0.074272982619755       0.063632028432619
+G5133   0.026272278033758       0.025561380705389
+G5604   1.6544141646051 1.9673226520581
+G5664   0.25398335468086        0.23076182316703
+G5786   1.8763718749021 2.1600115292083
+
+</code></pre>
+<h3 id="genepred-文件操作">GenePred 文件操作</h3>
+<p>genepred 和 gff3 文件格式信息一致，但是更加便于我们进行操作。genepred 文件有两种格式，其中一种是标准格式，一种是 extended 格式，具体解释如下。</p>
+<pre><code>table genePred
+&quot;A gene prediction.&quot;
+    (
+    string  name;               &quot;Name of gene&quot;
+    string  chrom;              &quot;Chromosome name&quot;
+    char[1] strand;             &quot;+ or - for strand&quot;
+    uint    txStart;            &quot;Transcription start position&quot;
+    uint    txEnd;              &quot;Transcription end position&quot;
+    uint    cdsStart;           &quot;Coding region start&quot;
+    uint    cdsEnd;             &quot;Coding region end&quot;
+    uint    exonCount;          &quot;Number of exons&quot;
+    uint[exonCount] exonStarts; &quot;Exon start positions&quot;
+    uint[exonCount] exonEnds;   &quot;Exon end positions&quot;
+    )
+
+table genePredExt
+&quot;A gene prediction with some additional info.&quot;
+    (
+    string name;        	&quot;Name of gene (usually transcript_id from GTF)&quot;
+    string chrom;       	&quot;Chromosome name&quot;
+    char[1] strand;     	&quot;+ or - for strand&quot;
+    uint txStart;       	&quot;Transcription start position&quot;
+    uint txEnd;         	&quot;Transcription end position&quot;
+    uint cdsStart;      	&quot;Coding region start&quot;
+    uint cdsEnd;        	&quot;Coding region end&quot;
+    uint exonCount;     	&quot;Number of exons&quot;
+    uint[exonCount] exonStarts; &quot;Exon start positions&quot;
+    uint[exonCount] exonEnds;   &quot;Exon end positions&quot;
+    int score;            	&quot;Score&quot;
+    string name2;       	&quot;Alternate name (e.g. gene_id from GTF)&quot;
+    string cdsStartStat; 	&quot;Status of CDS start annotation (none, unknown, incomplete, or complete)&quot;
+    string cdsEndStat;   	&quot;Status of CDS end annotation (none, unknown, incomplete, or complete)&quot;
+    lstring exonFrames; 	&quot;Exon frame offsets {0,1,2}&quot;
+    )
+</code></pre>
+<p>首先检查一下我们的数据情况，可以看出是 extended 格式</p>
+<pre><code class="language-sh">$ datamash check &lt; test.genepred
+133744 lines, 15 fields
+</code></pre>
+<p>统计每个基因的转录本个数，同时输出这些转录本的 id</p>
+<pre><code class="language-sh">cat test.genepred|datamash -s -g 12 count 1 collapse 1
+</code></pre>
+<p>看看每个染色体有多少基因</p>
+<pre><code class="language-sh">$ cat test.genepred|datamash -s -g 2 countunique 12  |head
+chr1A_part1	2694
+chr1A_part2	1650
+chr1B_part1	2428
+chr1B_part2	2286
+chr1D_part1	3698
+chr1D_part2	786
+chr2A_part1	2712
+chr2A_part2	3085
+chr2B_part1	3076
+chr2B_part2	3033
+
+</code></pre>
+<p>如果结合<code>awk</code>还可以进行很多筛选。例如统计每个基因转录本的个数，这些转录本中外显子的最大值最小值，然后挑选出多余 3 个转录本的基因。</p>
+<pre><code class="language-sh">$ cat test.genepred|datamash -s -g 12 count 8 min 8 max 8 |awk '$2&gt;2' |head
+test1A02G001900	10	9	10
+test1A02G005600	6	12	13
+test1A02G009000	3	11	13
+test1A02G012500	4	13	14
+test1A02G013800	4	12	13
+test1A02G016900	3	8	12
+test1A02G030900	3	6	8
+test1A02G035500	4	3	5
+test1A02G039100	5	5	9
+test1A02G047200	3	10	12
+</code></pre>
+<p>除此以外，针对 bed 文件也有非常高频的使用场景这里就不再展示了。</p>
+<h2 id="其它-one-liner">其它 one-liner</h2>
+<p>说到使用单行命令解决问题，通常都是 perl 的骄傲，当然 awk 也绝对是一把好手。如果特别喜欢用 R，其实命令行里也可以通过<code>Rscript -e</code>来强行单行。以下简单举一些例子进行比较。</p>
+<h3 id="awk-和-datamash">awk 和 datamash</h3>
+<p>awk 计算 mean min 和 max 都没有压力，使用 END 可以解决问题。</p>
+<pre><code class="language-sh">$ seq 10 | datamash sum 1
+55
+$ seq 10 | awk '{sum+=$1} END {print sum}'
+55
+
+$ seq -5 1 7 | datamash min 1
+-5
+$ seq -5 1 7 | awk 'NR==1 {min=$1} NR&gt;1 &amp;&amp; $1&lt;min { min=$1 } END {print min}'
+-5
+
+$ seq 10 | datamash mean 1
+5.5
+$ seq 10 | awk '{sum+=$1} END {print sum/NR}'
+5.5
+</code></pre>
+<p>如果要进行分组操作，awk 就需要数组和 <code>getline</code> 来搞定。有时候需要写很长一行命令，并不是很划算。</p>
+<p>首先构造一个两个的矩阵：</p>
+<pre><code class="language-sh">printf &quot;%s\t%d\n&quot; a 1 b 2 a 3 b 4 a 3 a 6 &gt; test.txt
+</code></pre>
+<p>awk 根据第一列的 key 进行分组统计个数以及求和，可以看出awk 需要写的各种括号实在是不少。</p>
+<pre><code class="language-sh"># 统计个数
+$ cat test.txt |datamash -s -g 1 count 2
+a       6
+b       4
+$ cat test.txt |awk '{a[$1]++} END {for(i in a) { print i, a[i] }}'
+a 6
+b 4
+
+#求和
+$ cat test.txt| datamash -s -g 1 sum 2
+a	13
+b	6
+
+$ cat test.txt |awk '{a[$1]+=$2} END {for(i in a) { print i, a[i] }}'
+a 13
+b 6
+
+</code></pre>
+<h3 id="r-和-datamash">R 和 datamash</h3>
+<p>尽管可能 90% 以上的人说到单行命令都不会想到 R，但 R 确实可以强行单行。不过要单行操作用到的更多是 R 基础函数，很多喜闻乐见的包用起来就不方便了。</p>
+<p>当统计基本的描述统计量时，以下为两者的对比，此时感觉 R 的 <code>summary()</code> 更方便。</p>
+<pre><code class="language-sh">$ cat test.txt| datamash --header-out  min 2 q1 2 median 2 mean 2 q3 2 max 2
+min(field-2)	q1(field-2)	median(field-2)	mean(field-2)	q3(field-2)	max(field-2)
+1	2.25	3	3.1666666666667	3.75	6
+
+$ cat test.txt| Rscript -e 'summary(read.table(&quot;stdin&quot;))'
+ V1          V2
+ a:4   Min.   :1.000
+ b:2   1st Qu.:2.250
+       Median :3.000
+       Mean   :3.167
+       3rd Qu.:3.750
+       Max.   :6.000
+</code></pre>
+<p>如果要分组计算，R 可以使用<code>aggregate</code>。</p>
+<pre><code class="language-sh">$ cat test.txt|datamash -s --header-out -g 1 min 2 q1 2 median 2 mean 2 q3 2 max 2
+GroupBy(field-1)	min(field-2)	q1(field-2)	median(field-2)	mean(field-2)	q3(field-2)	max(field-2)
+a	1	2.5	3	3.25	3.75	6
+b	2	2.5	3	3	3.5	4
+
+$ cat test.txt|Rscript -e 'a=read.table(&quot;stdin&quot;)' -e 'aggregate(a$V2,by=list(a$V1),summary)'
+  Group.1 x.Min. x.1st Qu. x.Median x.Mean x.3rd Qu. x.Max.
+1       a   1.00      2.50     3.00   3.25      3.75   6.00
+2       b   2.00      2.50     3.00   3.00      3.50   4.00
+
+</code></pre>
+<p>总之，在 Linux 下有这么好用的一个工具，命令简单且可以轻松通过管道符和 awk 以及 sed 等连用，完成平时分析数据时的很多基本需求。推荐学习和使用。</p>
+<p>参考网站：</p>
+<ul>
+<li><a href="https://www.gnu.org/software/datamash/">main page</a></li>
+<li><a href="https://www.gnu.org/software/datamash/manual/datamash.html">datamash manual</a></li>
+</ul>
+<hr>
+<figure data-type="image" tabindex="2"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="" loading="lazy"></figure>
+<p><strong>本文作者</strong>：思考问题的熊</p>
+<p><strong>版权声明</strong>：本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-nd/4.0">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议 (CC BY-NC-ND 4.0)</a> 进行许可。</p>
+<figure data-type="image" tabindex="3"><img src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20190628083754.png" alt="扫码即刻沟通" loading="lazy"></figure>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%BC%95%E5%AD%90">引子</a></li>
+<li><a href="#datamash-%E6%98%AF%E4%BB%80%E4%B9%88">datamash 是什么</a></li>
+<li><a href="#%E8%B0%83%E7%94%A8%E6%A0%BC%E5%BC%8F%E4%B8%8E%E5%8F%82%E6%95%B0">调用格式与参数</a>
+<ul>
+<li><a href="#%E4%B8%BB%E8%A6%81-operation">主要 operation</a></li>
+<li><a href="#%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0">主要参数</a></li>
+</ul>
+</li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B">操作示例</a>
+<ul>
+<li><a href="#%E6%96%87%E6%9C%AC%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">文本基本操作</a></li>
+<li><a href="#%E5%88%86%E7%BB%84%E7%BB%9F%E8%AE%A1%E6%93%8D%E4%BD%9C">分组统计操作</a></li>
+</ul>
+</li>
+<li><a href="#%E7%94%9F%E4%BF%A1%E7%9B%B8%E5%85%B3%E6%96%87%E6%9C%AC">生信相关文本</a>
+<ul>
+<li><a href="#%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E7%9F%A9%E9%98%B5">基因表达矩阵</a></li>
+<li><a href="#genepred-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C">GenePred 文件操作</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E5%AE%83-one-liner">其它 one-liner</a>
+<ul>
+<li><a href="#awk-%E5%92%8C-datamash">awk 和 datamash</a></li>
+<li><a href="#r-%E5%92%8C-datamash">R 和 datamash</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://kaopubear.top/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'HJ4ltM8KvCxAwTaMUjzls2a1-gzGzoHsz',
+    appKey: 'mk4aFvoMPRnkE0VRiuYBp1mc',
+    pageSize: 10,
+    notify: true,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '不妨评论交流',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
