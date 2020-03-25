@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://blog.kaopubear.top</id>
+    <id>https://kaopubear.top</id>
     <title>思考问题的熊</title>
-    <updated>2020-03-25T14:10:16.132Z</updated>
+    <updated>2020-03-25T14:36:54.217Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://blog.kaopubear.top"/>
-    <link rel="self" href="https://blog.kaopubear.top/atom.xml"/>
+    <link rel="alternate" href="https://kaopubear.top"/>
+    <link rel="self" href="https://kaopubear.top/atom.xml"/>
     <subtitle>很高兴和你相遇&lt;br&gt;这里正在记录我的所思所学</subtitle>
-    <logo>https://blog.kaopubear.top/images/avatar.png</logo>
-    <icon>https://blog.kaopubear.top/favicon.ico</icon>
+    <logo>https://kaopubear.top/images/avatar.png</logo>
+    <icon>https://kaopubear.top/favicon.ico</icon>
     <rights>All rights reserved 2020, 思考问题的熊</rights>
     <entry>
         <title type="html"><![CDATA[靠谱熊的每周分享 第3期]]></title>
-        <id>https://blog.kaopubear.top/2020-03-15-weeklyshare3/</id>
-        <link href="https://blog.kaopubear.top/2020-03-15-weeklyshare3/">
+        <id>https://kaopubear.top/2020-03-15-weeklyshare3/</id>
+        <link href="https://kaopubear.top/2020-03-15-weeklyshare3/">
         </link>
         <updated>2020-03-15T10:22:45.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="刊首语">刊首语</h2>
@@ -25,8 +25,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[非蠢既坏 别这么想]]></title>
-        <id>https://blog.kaopubear.top/2020-03-07-HanlonRazor/</id>
-        <link href="https://blog.kaopubear.top/2020-03-07-HanlonRazor/">
+        <id>https://kaopubear.top/2020-03-07-HanlonRazor/</id>
+        <link href="https://kaopubear.top/2020-03-07-HanlonRazor/">
         </link>
         <updated>2020-03-07T15:43:20.000Z</updated>
         <summary type="html"><![CDATA[<p>「能解释为愚蠢的，就不要解释为恶意」</p>
@@ -36,8 +36,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[靠谱熊的每周分享 第2期]]></title>
-        <id>https://blog.kaopubear.top/2020-03-06-weeklyshare2/</id>
-        <link href="https://blog.kaopubear.top/2020-03-06-weeklyshare2/">
+        <id>https://kaopubear.top/2020-03-06-weeklyshare2/</id>
+        <link href="https://kaopubear.top/2020-03-06-weeklyshare2/">
         </link>
         <updated>2020-03-06T10:14:10.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="刊首语">刊首语</h2>
@@ -51,8 +51,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[R 的 20 年]]></title>
-        <id>https://blog.kaopubear.top/2020-02-29-r20years/</id>
-        <link href="https://blog.kaopubear.top/2020-02-29-r20years/">
+        <id>https://kaopubear.top/2020-02-29-r20years/</id>
+        <link href="https://kaopubear.top/2020-02-29-r20years/">
         </link>
         <updated>2020-02-28T17:02:16.000Z</updated>
         <summary type="html"><![CDATA[<p>最近有<a href="https://jozef.io/r921-happy-birthday-r/">一篇文章</a>从三个纬度介绍了 R 这 20 年的发展。</p>
@@ -62,8 +62,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[靠谱熊的每周分享 第1期]]></title>
-        <id>https://blog.kaopubear.top/2020-02-28-weeklyshare1/</id>
-        <link href="https://blog.kaopubear.top/2020-02-28-weeklyshare1/">
+        <id>https://kaopubear.top/2020-02-28-weeklyshare1/</id>
+        <link href="https://kaopubear.top/2020-02-28-weeklyshare1/">
         </link>
         <updated>2020-02-28T14:04:29.000Z</updated>
         <summary type="html"><![CDATA[<h2 id="刊首语">刊首语</h2>
@@ -75,8 +75,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[停课不停学 推荐 7 门有趣实用的线上课程]]></title>
-        <id>https://blog.kaopubear.top/2020-01-06-7mooc/</id>
-        <link href="https://blog.kaopubear.top/2020-01-06-7mooc/">
+        <id>https://kaopubear.top/2020-01-06-7mooc/</id>
+        <link href="https://kaopubear.top/2020-01-06-7mooc/">
         </link>
         <updated>2020-02-06T05:13:01.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -90,8 +90,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[在家复工，学生党如何使用学术资源]]></title>
-        <id>https://blog.kaopubear.top/2020-02-05-searchpaper/</id>
-        <link href="https://blog.kaopubear.top/2020-02-05-searchpaper/">
+        <id>https://kaopubear.top/2020-02-05-searchpaper/</id>
+        <link href="https://kaopubear.top/2020-02-05-searchpaper/">
         </link>
         <updated>2020-02-05T05:10:07.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -105,8 +105,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[跨平台协作，让飞书实时接收语雀更新提醒]]></title>
-        <id>https://blog.kaopubear.top/2020-02-01-larkandyuque/</id>
-        <link href="https://blog.kaopubear.top/2020-02-01-larkandyuque/">
+        <id>https://kaopubear.top/2020-02-01-larkandyuque/</id>
+        <link href="https://kaopubear.top/2020-02-01-larkandyuque/">
         </link>
         <updated>2020-02-01T05:59:33.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -120,8 +120,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[特殊时期假期返程实录]]></title>
-        <id>https://blog.kaopubear.top/2020-01-31-returnschool/</id>
-        <link href="https://blog.kaopubear.top/2020-01-31-returnschool/">
+        <id>https://kaopubear.top/2020-01-31-returnschool/</id>
+        <link href="https://kaopubear.top/2020-01-31-returnschool/">
         </link>
         <updated>2020-01-31T10:01:24.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -135,8 +135,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[需要远程办公，不妨用 Trello 进行组织和协作]]></title>
-        <id>https://blog.kaopubear.top/2020-01-29-trellowithothers/</id>
-        <link href="https://blog.kaopubear.top/2020-01-29-trellowithothers/">
+        <id>https://kaopubear.top/2020-01-29-trellowithothers/</id>
+        <link href="https://kaopubear.top/2020-01-29-trellowithothers/">
         </link>
         <updated>2020-01-29T05:05:45.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
