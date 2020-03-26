@@ -1,437 +1,371 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh">
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>思考问题的熊</title>
-<link rel="shortcut icon" href="https://kaopubear.top/favicon.ico">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
-<link rel="stylesheet" href="https://kaopubear.top/media/css/tailwind.css">
-<link rel="stylesheet" href="https://kaopubear.top/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="思考问题的熊 - Atom Feed" href="https://kaopubear.top/atom.xml">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="思考问题的熊个人介绍" />
+  <meta name="author" content="FeiZhao" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
 
+  <title>思考问题的熊</title>
+  <!--
+Reflux Template
+https://templatemo.com/tm-531-reflux
+-->
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91022805-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config', 'UA-91022805-1');
-  </script>
-    
-
-  <meta name="description" content="很高兴和你相遇<br>这里正在记录我的所思所学" />
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css" />
+  <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+  <link rel="stylesheet" href="assets/css/owl.css" />
+  <link rel="stylesheet" href="assets/css/lightbox.css" />
 </head>
 <body>
-  <div class="antialiased flex flex-col min-h-screen" id="app">
-
-    <div class="nav py-3 md:py-8 fixed w-full z-10 bg-gray-50 dark:bg-gray-700 transition-all duration-300" :class="{ 'scroll': scrolled }">
-  <div class="flex justify-end px-4">
-    <div class="w-8 h-8 flex justify-center items-center rounded-full md:hidden" @click="showMenu = !showMenu">
-      <i class="ri-close-line" v-show="showMenu"></i>
-      <i class="ri-menu-3-line" v-show="!showMenu"></i>
-    </div>
-  </div>
-  <nav class="max-w-4xl w-full mx-auto text-center flex flex-col md:flex-row justify-center md:block" :class="`${ showMenu ? 'block' : 'hidden' }`">
-    
-      <a href="/" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        首页
-      </a>
-    
-      <a href="https://kaopubear.top/podcast/" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        播客
-      </a>
-    
-      <a href="/post/project" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        项目
-      </a>
-    
-      <a href="/archives" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        归档
-      </a>
-    
-      <a href="/tags" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        标签
-      </a>
-    
-      <a href="/post/about" target="" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-        关于
-      </a>
-    
-    <a href="https://kaopubear.top/atom.xml" target="_blank" class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded dark:hover:bg-gray-600 hover:bg-gray-200">
-      RSS
-    </a>
-  </nav>
-</div>
-
-    <div class="max-w-4xl w-full mx-auto ">
-      
-        <header class="flex py-16 md:py-32 mt-12 flex-col md:flex-row px-4 md:px-0 animated fadeIn">
-  <div class="flex-1 order-2 md:order-1 md:pr-16">
-    <div class="text-4xl font-bold text-center md:text-left">
-      思考问题的熊
-    </div>
-    <div class="text-xl text-gray-500 mt-4 text-center md:text-left">
-      很高兴和你相遇<br>这里正在记录我的所思所学
-    </div>
-    
-      <div class="mt-8 text-center md:text-left">
-        <a
-          href="https://t.zsxq.com/UjiEaYZ" 
-          arget="_blank"
-          class="text-sm bg-yellow-50 dark:bg-indigo-500 dark:text-gray-700 font-semibold px-4 py-2 inline-block yellow-btn transition-fast rounded"
-        >加入靠谱熊基地</a>
-      </div>
-    
-    
-      <div class="mt-8 flex items-center">
-        
-          <div class="text-gray-500 mr-2">
-            保持联系
+  <div id="page-wraper">
+    <!-- Sidebar Menu -->
+    <div class="responsive-nav">
+      <i class="fa fa-bars" id="menu-toggle"></i>
+      <div id="menu" class="menu">
+        <i class="fa fa-times" id="menu-close"></i>
+        <div class="container">
+          <div class="image">
+            <a href="#"><img src="assets/images/avataaarsnewsmile.png" alt="" /></a>
           </div>
-        
-        
-          
-            
-              <div class="relative mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 transition-fast dark:hover:bg-gray-600 wechat">
-                <i class="ri-wechat-line"></i>
-                <img src="/media/images/custom-wechat.png" alt="" class="absolute left-0 w-32" style="max-width: initial; top: 100%;" >
+          <div class="author-content">
+            <h4>思考问题的熊</h4>
+            <p>生物信息在读博士</p>
+          </div>
+          <nav class="main-nav" role="navigation">
+            <ul class="main-menu">
+              <li><a href="#section1">关于我</a></li>
+              <li><a href="#section2">不妨一读</a></li>
+              <li><a href="#section3">熊言熊语</a></li>
+              <li><a href="#section4">更多内容</a></li>
+            </ul>
+          </nav>
+          <div class="social-network">
+            <ul class="soial-icons">
+              <li>
+                <a href="https://weibo.com/277440877"><i class="fa fa-weibo"></i></a>
+              </li>
+              <li>
+                <a href="https://twitter.com/kaopubear"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="https://github.com/fei0810"><i class="fa fa-github"></i></a>
+              </li>
+              <li>
+                <a href="mailto:zhaofei920810@gmail.com"><i class="fa fa-envelope"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="copyright-text">
+            <p>Copyright 2020 Kaopubear Design</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section about-me" data-section="section1">
+      <div class="container">
+        <div class="section-heading">
+          <h2>关于我</h2>
+          <div class="line-dec"></div>
+          <span>取名「思考问题的熊」后体型逐渐向 ID
+            发展，中科院生物信息学在读博士，正在为博士毕业做准备。生信技能树核心成员、印象笔记资深印象大使、少数派作者，曾担任两年中科院生物统计研究生课程助教，组织并主持第一届生物信息人才论坛。</span>
+        </div>
+        <div class="left-image-post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-image">
+                <img src="assets/images/4.png" alt="" />
               </div>
-            
-          
-        
-          
-            
-              <a href="mailto:zhaofei920810@gmail.com" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
-                <i class="ri-mail-line"></i>
-              </a>
-            
-          
-        
-          
-            
-              <a href="https://github.com/fei0810" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
-                <i class="ri-github-line"></i>
-              </a>
-            
-          
-        
-          
-            
-              <a href="https://twitter.com/kaopubear" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
-                <i class="ri-twitter-line"></i>
-              </a>
-            
-          
-        
-          
-            
-              <a href="https://weibo.com/zhaofei920810" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
-                <i class="ri-weibo-line"></i>
-              </a>
-            
-          
-        
-          
-            
-              <a href="https://www.zhihu.com/people/ibear_share/posts" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
-                <i class="ri-zhihu-line"></i>
-              </a>
-            
-          
-        
-          
-        
-          
-            
-              <a href="https://t.me/kaopubear" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
-                <i class="ri-telegram-line"></i>
-              </a>
-            
-          
-        
-          
-        
-          
-        
-          
-        
-          
-            
-              <a href="https://t.zsxq.com/UjiEaYZ" target="_blank" class="mr-2 w-8 h-8 inline-flex items-center justify-center text-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast">
-                <i class="ri-qq-line"></i>
-              </a>
-            
-          
-        
+            </div>
+            <div class="col-md-6">
+              <div class="right-text">
+                <h4><a href="https://blog.kaopubear.top/" , target="_blank">记录所思所学</a></h4>
+                <p>
+                  作为一个喜欢写字的人，不严格地回溯，大四开始密集写作至今已有 6
+                  年时间。不少好友都是通过写作和分享相识，5
+                  年前写的考研复习手册至今还会收到反馈，专业类学习笔记帮助了不少人，数字工具的使用指南让我正在一名 Power User。我会坚持通过博客记录日常的所思所学。
+                </p>
+                <div class="white-button">
+                  <a href="https://blog.kaopubear.top" , target="_blank">前往博客</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-image-post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-text">
+                <h4><a href="https://www.yuque.com/biotrainee" , target="_blank">生物信息知识库</a></h4>
+                <p>
+                  生信技能树成立至今三年多的时间里，我们积累了海量优质教程和各类稿件的同时也汇集了一大批优秀作者，更是拥有了 10
+                  多万一起成长的读者。我们正在将生物信息不同领域的主干知识以「知识库」形式进行系统呈现，把多年的分享再做一次迭代和沉淀。希望所有对生物信息感兴趣的人在入门进阶的时候可以有章可循。
+                </p>
+                <div class="white-button">
+                  <a href="https://www.yuque.com/biotrainee" , target="_blank">前往知识库</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="right-image">
+                <img src="assets/images/3.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="third-image-post">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="left-image">
+                <img src="assets/images/5.png" alt="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="right-text">
+                <h4><a href="https://book.kaopubear.top" , target="_blank">聊聊考研复习这件事</a></h4>
+                <p>
+                  大四那一年关于「考研复习」这个主题前前后后写了二十多万字，经过几次修订已经整理成册《靠谱学长说
+                  聊聊考研复习这件事》。虽然已有几年没有更新但内容并不过时，如果你是因为考研复习找到这里，可以直接从阅读这本书开始，祝一切顺利，加油。
+                </p>
+                <div class="white-button">
+                  <a href="https://book.kaopubear.top" , target="_blank">靠谱学长说</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    
-  </div>
-  <div class="md:mx-8 flex-shrink-0 self-start rounded-full border-4 border-dotted border-transparent hover:border-yellow-50 p-2 w-32 h-32 order-1 md:order-2 mx-auto s3-dotted">
-    <img class="rounded-full object-cover" src="https://kaopubear.top/images/avatar.png?v=1585147236229" alt="思考问题的熊" width="100%" height="100%">
-  </div>
-</header>
-      
+    </section>
 
-      <div class="shadow-box bg-white dark:bg-gray-600 border-gray-300 rounded-none md:rounded-lg -mx-1 md:mx-0 md:px-0">
-        
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-03-15-weeklyshare3/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          靠谱熊的每周分享 第3期
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-03-15</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <h2 id="刊首语">刊首语</h2>
-<p>本周想分享一个「汉隆剃刀」经验法则：<strong>能解释为愚蠢的，就不要解释为恶意。</strong></p>
-
+    <section class="section my-services" data-section="section2">
+      <div class="container">
+        <div class="section-heading">
+          <h2>不妨一读</h2>
+          <div class="line-dec"></div>
+          <span>从不同角度罗列一些由我主导或参与的项目，如果博客文章不知从何看起或者仅仅想了解某些方面的内容可以从这里开始。</span>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="service-item">
+              <div class="first-service-icon service-icon"></div>
+              <h4><a href="https://kaopubear.top/productivity_tools/" , target="_blank">生产力工具使用指南</a></h4>
+              <p>
+                生产力工具在这里指那些可以让人高效产出，节省时间，展现自我同时使用愉悦的工具。该专题会定期选取一个不同类型的工具作为主题进行介绍，并分享可行的学习路径。
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-item">
+              <div class="second-service-icon service-icon"></div>
+              <h4><a href="https://kaopubear.top/learnR" , target="_blank">R 语言学习</a></h4>
+              <p>
+                R 是统计学家为了进行统计学工作而开发的语言，对于非计算机专业背景的人来说学习门槛并不高。包括数据分析、可视化和网站制作等在内的工作都可以使用 R 进行。
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-item">
+              <div class="third-service-icon service-icon"></div>
+              <h4><a href="https://www.researchgate.net/profile/Fei_Zhao44" , target="_blank">生物信息与表观遗传</a></h4>
+              <p>
+                生物信息与表观遗传学是我研究生阶段的主要方向，通过高通量数据来分析研究感兴趣的生物学问题，如高通量测序辅助基因定位方法、工具和平台的开发。查看<a
+                  href="https://www.researchgate.net/profile/Fei_Zhao44" , target="_blank">ResearchGate</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-item">
+              <div class="fourth-service-icon service-icon"></div>
+              <h4><a href="https://www.bilibili.com/video/BV1KJ411p7WN" , target="_blank">生物信息教程</a></h4>
+              <p>
+                谨以此课程的上线纪念一位故去的朋友，他曾是这门课程最早的学员之一，当时对课程给予了不错的评价，也曾希望我录制更多的课程让大家看到。感谢，我会一直记得你。
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <a href="https://kaopubear.top/2020-03-15-weeklyshare3/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200315191859.png" alt="靠谱熊的每周分享 第3期">
-    
-  </div>
+    </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-03-07-HanlonRazor/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          非蠢既坏 别这么想
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-03-07</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <p>「能解释为愚蠢的，就不要解释为恶意」</p>
+    <section class="section my-work" data-section="section3">
+      <div class="container">
+        <div class="section-heading">
+          <h2>熊言熊语</h2>
+          <div class="line-dec"></div>
+          <span>「熊言熊语」是一档由思考问题的熊主持的播客（Podcast）栏目，更新频率保双争单（争取周更），思考问题的熊和他的朋友们会一起聊专业聊学习聊生活。欢迎通过<a
+              href="https://podcast.kaopubear.top" , target="_blank">熊言熊语官网</a>以及 Apple Podcast
+            和泛用型播客客户端订阅收听。</span>
+        </div>
+        <div class="row">
+          <div class="isotope-wrapper">
+            <form class="isotope-toolbar">
+              <label><input type="radio" data-type="*" checked="" name="isotope-filter" />
+                <span>所有</span></label>
+              <label><input type="radio" data-type="stand-up" name="isotope-filter" />
+                <span>单口</span></label>
+              <label><input type="radio" data-type="interview" name="isotope-filter" />
+                <span>访谈</span></label>
+              <label><input type="radio" data-type="dialogue" name="isotope-filter" />
+                <span>对话</span></label>
+            </form>
+            <div class="isotope-box">
+              <div class="isotope-item" data-type="interview">
+                <figure class="snip1321">
+                  <img src="assets/images/S1E1.png" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://podcast.kaopubear.top/episodes/s1e1" , target="_blank"><i
+                        class="fa fa-search"></i></a>
+                    <h5>生信技能树创始人Jimmy的成长与蜕变</h5>
+                    <p>听多年好友、生信技能树的创始人Jimmy聊聊自己的经历和目前的状态。</p>
+                  </figcaption>
+                </figure>
+              </div>
 
+              <div class="isotope-item" data-type="stand-up">
+                <figure class="snip1321">
+                  <img src="assets/images/S1E0.png" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://podcast.kaopubear.top/episodes/s1e0" , target="_blank"><i
+                        class="fa fa-search"></i></a>
+                    <h5>为什么要做一档播客</h5>
+                    <p>聊聊为什么要尝试做一档播客节目</p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <!-- <div class="isotope-item" data-type="stand-up">
+                <figure class="snip1321">
+                  <img src="assets/images/S1E0.png" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://podcast.kaopubear.top/episodes/s1e0" , target="_blank"><i
+                        class="fa fa-search"></i></a>
+                    <h5>为什么要做一档播客</h5>
+                    <p>聊聊为什么要尝试做一档播客节目</p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="isotope-item" data-type="stand-up">
+                <figure class="snip1321">
+                  <img src="assets/images/S1E0.png" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://podcast.kaopubear.top/episodes/s1e0" , target="_blank"><i
+                        class="fa fa-search"></i></a>
+                    <h5>为什么要做一档播客</h5>
+                    <p>聊聊为什么要尝试做一档播客节目</p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="isotope-item" data-type="stand-up">
+                <figure class="snip1321">
+                  <img src="assets/images/S1E0.png" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://podcast.kaopubear.top/episodes/s1e0" , target="_blank"><i
+                        class="fa fa-search"></i></a>
+                    <h5>为什么要做一档播客</h5>
+                    <p>聊聊为什么要尝试做一档播客节目</p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="isotope-item" data-type="stand-up">
+                <figure class="snip1321">
+                  <img src="assets/images/S1E0.png" alt="sq-sample26" />
+                  <figcaption>
+                    <a href="https://podcast.kaopubear.top/episodes/s1e0" , target="_blank"><i
+                        class="fa fa-search"></i></a>
+                    <h5>为什么要做一档播客</h5>
+                    <p>聊聊为什么要尝试做一档播客节目</p>
+                  </figcaption>
+                </figure>
+              </div> -->
+            </div>
+          </div>
+        </div>
       </div>
-      <a href="https://kaopubear.top/2020-03-07-HanlonRazor/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200307235300.png" alt="非蠢既坏 别这么想">
-    
-  </div>
+    </section>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-03-06-weeklyshare2/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          靠谱熊的每周分享 第2期
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-03-06</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <h2 id="刊首语">刊首语</h2>
-<p>本周把自己一年多没更新的个人公众号(思考问题的熊)更新了一次，结果很快就有了五十多条留言。<br>
-很多人都在反馈自己过去三四年发生和经历的事情，很神奇的感受，看似没有交集但是却也没有断了联系。</p>
-
+    <section class="section contact-me" data-section="section4">
+      <div class="container">
+        <div class="section-heading">
+          <h2>更多内容</h2>
+          <div class="line-dec"></div>
+          <span>欢迎订阅我的博客「<a href="https://blog.kaopubear.top" , target="_blank">思考问题的熊</a>」和播客「<a
+              href="https://podcast.kaopubear.top" , target="_blank">熊言熊语</a>」，更多内容，即将呈现……</span>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <img src="assets/images/todo.png" alt="sq-sample26" />
+          </div>
+        </div>
       </div>
-      <a href="https://kaopubear.top/2020-03-06-weeklyshare2/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200306200456.jpg" alt="靠谱熊的每周分享 第2期">
-    
+    </section>
   </div>
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-02-29-r20years/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          R 的 20 年
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-02-29</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <p>最近有<a href="https://jozef.io/r921-happy-birthday-r/">一篇文章</a>从三个纬度介绍了 R 这 20 年的发展。</p>
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-      </div>
-      <a href="https://kaopubear.top/2020-02-29-r20years/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200301010445.png" alt="R 的 20 年">
-    
-  </div>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+    //according to loftblog tut
+    $(".main-menu li:first").addClass("active");
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-02-28-weeklyshare1/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          靠谱熊的每周分享 第1期
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-02-28</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <h2 id="刊首语">刊首语</h2>
-<p>在「素材学习分享小组」进行的第二个年头，为了让它能再向前走一小步，我们决定以电子杂志的形式发布「素材学习分享周刊」。</p>
+    var showSection = function showSection(section, isAnimate) {
+      var direction = section.replace(/#/, ""),
+        reqSection = $(".section").filter(
+          '[data-section="' + direction + '"]'
+        ),
+        reqSectionPos = reqSection.offset().top - 0;
 
-      </div>
-      <a href="https://kaopubear.top/2020-02-28-weeklyshare1/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200228220902.png" alt="靠谱熊的每周分享 第1期">
-    
-  </div>
+      if (isAnimate) {
+        $("body, html").animate({
+            scrollTop: reqSectionPos
+          },
+          800
+        );
+      } else {
+        $("body, html").scrollTop(reqSectionPos);
+      }
+    };
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-01-06-7mooc/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          停课不停学 推荐 7 门有趣实用的线上课程
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-02-06</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <blockquote>
-<p>本文首发于「<a href="https://sspai.com/post/58754">少数派</a>」</p>
-</blockquote>
+    var checkSection = function checkSection() {
+      $(".section").each(function () {
+        var $this = $(this),
+          topEdge = $this.offset().top - 80,
+          bottomEdge = topEdge + $this.height(),
+          wScroll = $(window).scrollTop();
+        if (topEdge < wScroll && bottomEdge > wScroll) {
+          var currentId = $this.data("section"),
+            reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+          reqLink
+            .closest("li")
+            .addClass("active")
+            .siblings()
+            .removeClass("active");
+        }
+      });
+    };
 
-      </div>
-      <a href="https://kaopubear.top/2020-01-06-7mooc/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200207125707.png" alt="停课不停学 推荐 7 门有趣实用的线上课程">
-    
-  </div>
+    $(".main-menu").on("click", "a", function (e) {
+      e.preventDefault();
+      showSection($(this).attr("href"), true);
+    });
 
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-02-05-searchpaper/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          在家复工，学生党如何使用学术资源
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-02-05</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <blockquote>
-<p>本文首发于「<a href="https://sspai.com/post/58708">少数派</a>」</p>
-</blockquote>
-
-      </div>
-      <a href="https://kaopubear.top/2020-02-05-searchpaper/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200207125701.png" alt="在家复工，学生党如何使用学术资源">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-02-01-larkandyuque/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          跨平台协作，让飞书实时接收语雀更新提醒
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-02-01</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <blockquote>
-<p>本文首发于「<a href="https://sspai.com/post/58650">少数派</a>」</p>
-</blockquote>
-
-      </div>
-      <a href="https://kaopubear.top/2020-02-01-larkandyuque/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200207140110.png" alt="跨平台协作，让飞书实时接收语雀更新提醒">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-01-31-returnschool/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          特殊时期假期返程实录
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-01-31</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <blockquote>
-<p>这些天虽然发生了很多事情，全国不少地方都封城或者各种停运，但我今天还是按照原计划返回了上海，接下来将是按照规定的两周居家自行观察。</p>
-</blockquote>
-
-      </div>
-      <a href="https://kaopubear.top/2020-01-31-returnschool/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://vnote-1254299507.cos.ap-shanghai.myqcloud.com/1580464844_20200131180015268_157183707.png" alt="特殊时期假期返程实录">
-    
-  </div>
-
-  <div class="p-8 border-b border-gray-200 dark:border-gray-700 flex relative overflow-hidden flex-col md:flex-row animated fadeIn">
-    
-    <div class="flex-1 order-2 md:order-1">
-      <h2 class="text-2xl font-semibold mb-4">
-        <a href="https://kaopubear.top/2020-01-29-trellowithothers/" class="text-gray-700 dark:text-gray-200 border-b-2 border-dotted border-gray-200 dark:border-gray-400 dark:hover:border-gray-200 hover:border-gray-600 transition-all duration-100">
-          需要远程办公，不妨用 Trello 进行组织和协作
-        </a>
-      </h2>
-      <div class="mb-4 text-xs text-gray-500">2020-01-29</div>
-      <div class="mb-4 text-gray-500 dark:text-gray-300">
-        <blockquote>
-<p>本文首发于「<a href="https://sspai.com/post/58609">少数派</a>」</p>
-</blockquote>
-
-      </div>
-      <a href="https://kaopubear.top/2020-01-29-trellowithothers/" class="btn">
-        Read more
-      </a>
-    </div>
-    
-      <img class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover featured-img order-1 md:order-2 w-full h-40 md:w-56 md:h-32" loading="lazy" src="https://kaopubear-1254299507.cos.ap-shanghai.myqcloud.com/picgo/20200207130241.png" alt="需要远程办公，不妨用 Trello 进行组织和协作">
-    
-  </div>
-  
-      </div>
-
-      
-  <div class="my-4 flex justify-between px-4 md:px-0">
-    
-    
-      <a href="https://kaopubear.top/page/2" class="btn btn-white">
-        下一页
-        <i class="ri-arrow-right-line ml-4"></i>
-      </a>
-    
-  </div>
-
-      <footer class="py-12 text-center px-4 md:px-0" v-pre>
-  加入<a href="https://t.zsxq.com/UjiEaYZ" target="_blank">知识星球</a>
-</footer>
-
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://kaopubear.top/media/scripts/main.js"></script>
+    $(window).scroll(function () {
+      checkSection();
+    });
+  </script>
 </body>
 
 </html>
